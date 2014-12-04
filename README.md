@@ -1,1 +1,1 @@
-This is the binaryanalysisplatform.github.io blog website.
+This is the [Binary Analysis Blog](http://binaryanalysisplatform.github.io) website.
