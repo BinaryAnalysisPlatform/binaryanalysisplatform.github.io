@@ -1,0 +1,1284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap_common.Unop.html">
+<link rel="Up" href="Bap_common.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_plugin" rel="Chapter" href="Bap_plugin.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_types" rel="Chapter" href="Bap_types.html">
+<link title="Bap_addr" rel="Chapter" href="Bap_addr.html">
+<link title="Bap_arch" rel="Chapter" href="Bap_arch.html">
+<link title="Bap_bil" rel="Chapter" href="Bap_bil.html">
+<link title="Bap_bitvector" rel="Chapter" href="Bap_bitvector.html">
+<link title="Bap_common" rel="Chapter" href="Bap_common.html">
+<link title="Bap_exp" rel="Chapter" href="Bap_exp.html">
+<link title="Bap_int_conversions" rel="Chapter" href="Bap_int_conversions.html">
+<link title="Bap_integer" rel="Chapter" href="Bap_integer.html">
+<link title="Bap_integer_intf" rel="Chapter" href="Bap_integer_intf.html">
+<link title="Bap_regular" rel="Chapter" href="Bap_regular.html">
+<link title="Bap_seq" rel="Chapter" href="Bap_seq.html">
+<link title="Bap_size" rel="Chapter" href="Bap_size.html">
+<link title="Bap_stmt" rel="Chapter" href="Bap_stmt.html">
+<link title="Bap_type" rel="Chapter" href="Bap_type.html">
+<link title="Bap_var" rel="Chapter" href="Bap_var.html">
+<link title="Bap_image" rel="Chapter" href="Bap_image.html">
+<link title="Bap_memory" rel="Chapter" href="Bap_memory.html">
+<link title="Bap_table" rel="Chapter" href="Bap_table.html">
+<link title="Image_backend" rel="Chapter" href="Image_backend.html">
+<link title="Image_common" rel="Chapter" href="Image_common.html">
+<link title="Image_internal_std" rel="Chapter" href="Image_internal_std.html">
+<link title="Bap_disasm" rel="Chapter" href="Bap_disasm.html">
+<link title="Bap_disasm_arm" rel="Chapter" href="Bap_disasm_arm.html">
+<link title="Bap_disasm_arm_bit" rel="Chapter" href="Bap_disasm_arm_bit.html">
+<link title="Bap_disasm_arm_branch" rel="Chapter" href="Bap_disasm_arm_branch.html">
+<link title="Bap_disasm_arm_env" rel="Chapter" href="Bap_disasm_arm_env.html">
+<link title="Bap_disasm_arm_flags" rel="Chapter" href="Bap_disasm_arm_flags.html">
+<link title="Bap_disasm_arm_lifter" rel="Chapter" href="Bap_disasm_arm_lifter.html">
+<link title="Bap_disasm_arm_mem" rel="Chapter" href="Bap_disasm_arm_mem.html">
+<link title="Bap_disasm_arm_mem_shift" rel="Chapter" href="Bap_disasm_arm_mem_shift.html">
+<link title="Bap_disasm_arm_mov" rel="Chapter" href="Bap_disasm_arm_mov.html">
+<link title="Bap_disasm_arm_mul" rel="Chapter" href="Bap_disasm_arm_mul.html">
+<link title="Bap_disasm_arm_shift" rel="Chapter" href="Bap_disasm_arm_shift.html">
+<link title="Bap_disasm_arm_types" rel="Chapter" href="Bap_disasm_arm_types.html">
+<link title="Bap_disasm_arm_utils" rel="Chapter" href="Bap_disasm_arm_utils.html">
+<link title="Bap_disasm_basic" rel="Chapter" href="Bap_disasm_basic.html">
+<link title="Bap_disasm_block" rel="Chapter" href="Bap_disasm_block.html">
+<link title="Bap_disasm_insn" rel="Chapter" href="Bap_disasm_insn.html">
+<link title="Bap_disasm_prim" rel="Chapter" href="Bap_disasm_prim.html">
+<link title="Bap_disasm_rec" rel="Chapter" href="Bap_disasm_rec.html">
+<link title="Bap_disasm_types" rel="Chapter" href="Bap_disasm_types.html">
+<link title="Bap_insn_kind" rel="Chapter" href="Bap_insn_kind.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Dwarf_data" rel="Chapter" href="Dwarf_data.html">
+<link title="Dwarf_fbi" rel="Chapter" href="Dwarf_fbi.html">
+<link title="Dwarf_input" rel="Chapter" href="Dwarf_input.html">
+<link title="Dwarf_leb128" rel="Chapter" href="Dwarf_leb128.html">
+<link title="Dwarf_types" rel="Chapter" href="Dwarf_types.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Elf_parse" rel="Chapter" href="Elf_parse.html">
+<link title="Elf_types" rel="Chapter" href="Elf_types.html">
+<link title="Elf_utils" rel="Chapter" href="Elf_utils.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html"><link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<link title="Basic modules" rel="Section" href="#2_Basicmodules">
+<link title="Basic Interfaces" rel="Section" href="#2_BasicInterfaces">
+<title>Bap_common.Arch</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap_common.Unop.html" title="Bap_common.Unop">Previous</a>
+&nbsp;<a class="up" href="Bap_common.html" title="Bap_common">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Bap_common.Arch.html">Bap_common.Arch</a></h1>
+
+<pre><span class="keyword">module</span> Arch: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_common.Arch.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Supported architectures<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEx86"><span class="keyword">type</span> <code class="type"></code>x86</span> = <code class="type">[ `x86 | `x86_64 ]</code> </pre>
+
+
+<pre><span id="VAL__x86_of_sexp__"><span class="keyword">val</span> __x86_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEx86">x86</a></code></pre>
+<pre><span id="VALx86_of_sexp"><span class="keyword">val</span> x86_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEx86">x86</a></code></pre>
+<pre><span id="VALsexp_of_x86"><span class="keyword">val</span> sexp_of_x86</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEx86">x86</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_x86"><span class="keyword">val</span> all_of_x86</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEx86">x86</a> list</code></pre>
+<pre><span id="VALcompare_x86"><span class="keyword">val</span> compare_x86</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEx86">x86</a> -> <a href="Bap_common.Arch.html#TYPEx86">x86</a> -> int</code></pre>
+<pre><span id="VALbin_size_x86"><span class="keyword">val</span> bin_size_x86</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_x86"><span class="keyword">val</span> bin_write_x86</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `x86 | `x86_64 ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_x86"><span class="keyword">val</span> bin_writer_x86</span> : <code class="type">[< `x86 | `x86_64 ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_x86__"><span class="keyword">val</span> __bin_read_x86__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `x86 | `x86_64 ]</code></pre>
+<pre><span id="VALbin_read_x86"><span class="keyword">val</span> bin_read_x86</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> [> `x86 | `x86_64 ]</code></pre>
+<pre><span id="VALbin_reader_x86"><span class="keyword">val</span> bin_reader_x86</span> : <code class="type">[> `x86 | `x86_64 ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_x86"><span class="keyword">val</span> bin_x86</span> : <code class="type">[ `x86 | `x86_64 ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEarm"><span class="keyword">type</span> <code class="type"></code>arm</span> = <code class="type">[ `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `thumb<br>       | `thumbeb ]</code> </pre>
+
+
+<pre><span id="VAL__arm_of_sexp__"><span class="keyword">val</span> __arm_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEarm">arm</a></code></pre>
+<pre><span id="VALarm_of_sexp"><span class="keyword">val</span> arm_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEarm">arm</a></code></pre>
+<pre><span id="VALsexp_of_arm"><span class="keyword">val</span> sexp_of_arm</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEarm">arm</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_arm"><span class="keyword">val</span> all_of_arm</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEarm">arm</a> list</code></pre>
+<pre><span id="VALcompare_arm"><span class="keyword">val</span> compare_arm</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEarm">arm</a> -> <a href="Bap_common.Arch.html#TYPEarm">arm</a> -> int</code></pre>
+<pre><span id="VALbin_size_arm"><span class="keyword">val</span> bin_size_arm</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_arm"><span class="keyword">val</span> bin_write_arm</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -><br>       [< `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `thumb<br>        | `thumbeb ] -><br>       Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_arm"><span class="keyword">val</span> bin_writer_arm</span> : <code class="type">[< `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `thumb<br>        | `thumbeb ]<br>       Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_arm__"><span class="keyword">val</span> __bin_read_arm__</span> : <code class="type">'a -><br>       pos_ref:'b -><br>       int -><br>       [> `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `thumb<br>        | `thumbeb ]</code></pre>
+<pre><span id="VALbin_read_arm"><span class="keyword">val</span> bin_read_arm</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -><br>       [> `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `thumb<br>        | `thumbeb ]</code></pre>
+<pre><span id="VALbin_reader_arm"><span class="keyword">val</span> bin_reader_arm</span> : <code class="type">[> `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `thumb<br>        | `thumbeb ]<br>       Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_arm"><span class="keyword">val</span> bin_arm</span> : <code class="type">[ `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `thumb<br>       | `thumbeb ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEaarch64"><span class="keyword">type</span> <code class="type"></code>aarch64</span> = <code class="type">[ `aarch64 | `aarch64_be ]</code> </pre>
+
+
+<pre><span id="VAL__aarch64_of_sexp__"><span class="keyword">val</span> __aarch64_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a></code></pre>
+<pre><span id="VALaarch64_of_sexp"><span class="keyword">val</span> aarch64_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a></code></pre>
+<pre><span id="VALsexp_of_aarch64"><span class="keyword">val</span> sexp_of_aarch64</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_aarch64"><span class="keyword">val</span> all_of_aarch64</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a> list</code></pre>
+<pre><span id="VALcompare_aarch64"><span class="keyword">val</span> compare_aarch64</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a> -> <a href="Bap_common.Arch.html#TYPEaarch64">aarch64</a> -> int</code></pre>
+<pre><span id="VALbin_size_aarch64"><span class="keyword">val</span> bin_size_aarch64</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_aarch64"><span class="keyword">val</span> bin_write_aarch64</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `aarch64 | `aarch64_be ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_aarch64"><span class="keyword">val</span> bin_writer_aarch64</span> : <code class="type">[< `aarch64 | `aarch64_be ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_aarch64__"><span class="keyword">val</span> __bin_read_aarch64__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `aarch64 | `aarch64_be ]</code></pre>
+<pre><span id="VALbin_read_aarch64"><span class="keyword">val</span> bin_read_aarch64</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -> [> `aarch64 | `aarch64_be ]</code></pre>
+<pre><span id="VALbin_reader_aarch64"><span class="keyword">val</span> bin_reader_aarch64</span> : <code class="type">[> `aarch64 | `aarch64_be ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_aarch64"><span class="keyword">val</span> bin_aarch64</span> : <code class="type">[ `aarch64 | `aarch64_be ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEppc"><span class="keyword">type</span> <code class="type"></code>ppc</span> = <code class="type">[ `ppc | `ppc64 | `ppc64le ]</code> </pre>
+
+
+<pre><span id="VAL__ppc_of_sexp__"><span class="keyword">val</span> __ppc_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEppc">ppc</a></code></pre>
+<pre><span id="VALppc_of_sexp"><span class="keyword">val</span> ppc_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEppc">ppc</a></code></pre>
+<pre><span id="VALsexp_of_ppc"><span class="keyword">val</span> sexp_of_ppc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEppc">ppc</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_ppc"><span class="keyword">val</span> all_of_ppc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEppc">ppc</a> list</code></pre>
+<pre><span id="VALcompare_ppc"><span class="keyword">val</span> compare_ppc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEppc">ppc</a> -> <a href="Bap_common.Arch.html#TYPEppc">ppc</a> -> int</code></pre>
+<pre><span id="VALbin_size_ppc"><span class="keyword">val</span> bin_size_ppc</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_ppc"><span class="keyword">val</span> bin_write_ppc</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -><br>       [< `ppc | `ppc64 | `ppc64le ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_ppc"><span class="keyword">val</span> bin_writer_ppc</span> : <code class="type">[< `ppc | `ppc64 | `ppc64le ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_ppc__"><span class="keyword">val</span> __bin_read_ppc__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `ppc | `ppc64 | `ppc64le ]</code></pre>
+<pre><span id="VALbin_read_ppc"><span class="keyword">val</span> bin_read_ppc</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -> [> `ppc | `ppc64 | `ppc64le ]</code></pre>
+<pre><span id="VALbin_reader_ppc"><span class="keyword">val</span> bin_reader_ppc</span> : <code class="type">[> `ppc | `ppc64 | `ppc64le ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_ppc"><span class="keyword">val</span> bin_ppc</span> : <code class="type">[ `ppc | `ppc64 | `ppc64le ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEmips"><span class="keyword">type</span> <code class="type"></code>mips</span> = <code class="type">[ `mips | `mips64 | `mips64el | `mipsel ]</code> </pre>
+
+
+<pre><span id="VAL__mips_of_sexp__"><span class="keyword">val</span> __mips_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEmips">mips</a></code></pre>
+<pre><span id="VALmips_of_sexp"><span class="keyword">val</span> mips_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEmips">mips</a></code></pre>
+<pre><span id="VALsexp_of_mips"><span class="keyword">val</span> sexp_of_mips</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEmips">mips</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_mips"><span class="keyword">val</span> all_of_mips</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEmips">mips</a> list</code></pre>
+<pre><span id="VALcompare_mips"><span class="keyword">val</span> compare_mips</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEmips">mips</a> -> <a href="Bap_common.Arch.html#TYPEmips">mips</a> -> int</code></pre>
+<pre><span id="VALbin_size_mips"><span class="keyword">val</span> bin_size_mips</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_mips"><span class="keyword">val</span> bin_write_mips</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -><br>       [< `mips | `mips64 | `mips64el | `mipsel ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_mips"><span class="keyword">val</span> bin_writer_mips</span> : <code class="type">[< `mips | `mips64 | `mips64el | `mipsel ]<br>       Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_mips__"><span class="keyword">val</span> __bin_read_mips__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `mips | `mips64 | `mips64el | `mipsel ]</code></pre>
+<pre><span id="VALbin_read_mips"><span class="keyword">val</span> bin_read_mips</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -> [> `mips | `mips64 | `mips64el | `mipsel ]</code></pre>
+<pre><span id="VALbin_reader_mips"><span class="keyword">val</span> bin_reader_mips</span> : <code class="type">[> `mips | `mips64 | `mips64el | `mipsel ]<br>       Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_mips"><span class="keyword">val</span> bin_mips</span> : <code class="type">[ `mips | `mips64 | `mips64el | `mipsel ]<br>       Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEsparc"><span class="keyword">type</span> <code class="type"></code>sparc</span> = <code class="type">[ `sparc | `sparcv9 ]</code> </pre>
+
+
+<pre><span id="VAL__sparc_of_sexp__"><span class="keyword">val</span> __sparc_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEsparc">sparc</a></code></pre>
+<pre><span id="VALsparc_of_sexp"><span class="keyword">val</span> sparc_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEsparc">sparc</a></code></pre>
+<pre><span id="VALsexp_of_sparc"><span class="keyword">val</span> sexp_of_sparc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsparc">sparc</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_sparc"><span class="keyword">val</span> all_of_sparc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsparc">sparc</a> list</code></pre>
+<pre><span id="VALcompare_sparc"><span class="keyword">val</span> compare_sparc</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsparc">sparc</a> -> <a href="Bap_common.Arch.html#TYPEsparc">sparc</a> -> int</code></pre>
+<pre><span id="VALbin_size_sparc"><span class="keyword">val</span> bin_size_sparc</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_sparc"><span class="keyword">val</span> bin_write_sparc</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `sparc | `sparcv9 ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_sparc"><span class="keyword">val</span> bin_writer_sparc</span> : <code class="type">[< `sparc | `sparcv9 ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_sparc__"><span class="keyword">val</span> __bin_read_sparc__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `sparc | `sparcv9 ]</code></pre>
+<pre><span id="VALbin_read_sparc"><span class="keyword">val</span> bin_read_sparc</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -> [> `sparc | `sparcv9 ]</code></pre>
+<pre><span id="VALbin_reader_sparc"><span class="keyword">val</span> bin_reader_sparc</span> : <code class="type">[> `sparc | `sparcv9 ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_sparc"><span class="keyword">val</span> bin_sparc</span> : <code class="type">[ `sparc | `sparcv9 ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEnvptx"><span class="keyword">type</span> <code class="type"></code>nvptx</span> = <code class="type">[ `nvptx | `nvptx64 ]</code> </pre>
+
+
+<pre><span id="VAL__nvptx_of_sexp__"><span class="keyword">val</span> __nvptx_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a></code></pre>
+<pre><span id="VALnvptx_of_sexp"><span class="keyword">val</span> nvptx_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a></code></pre>
+<pre><span id="VALsexp_of_nvptx"><span class="keyword">val</span> sexp_of_nvptx</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_nvptx"><span class="keyword">val</span> all_of_nvptx</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a> list</code></pre>
+<pre><span id="VALcompare_nvptx"><span class="keyword">val</span> compare_nvptx</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a> -> <a href="Bap_common.Arch.html#TYPEnvptx">nvptx</a> -> int</code></pre>
+<pre><span id="VALbin_size_nvptx"><span class="keyword">val</span> bin_size_nvptx</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_nvptx"><span class="keyword">val</span> bin_write_nvptx</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `nvptx | `nvptx64 ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_nvptx"><span class="keyword">val</span> bin_writer_nvptx</span> : <code class="type">[< `nvptx | `nvptx64 ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_nvptx__"><span class="keyword">val</span> __bin_read_nvptx__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `nvptx | `nvptx64 ]</code></pre>
+<pre><span id="VALbin_read_nvptx"><span class="keyword">val</span> bin_read_nvptx</span> : <code class="type">Bin_prot.Common.buf -><br>       pos_ref:Bin_prot.Common.pos_ref -> [> `nvptx | `nvptx64 ]</code></pre>
+<pre><span id="VALbin_reader_nvptx"><span class="keyword">val</span> bin_reader_nvptx</span> : <code class="type">[> `nvptx | `nvptx64 ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_nvptx"><span class="keyword">val</span> bin_nvptx</span> : <code class="type">[ `nvptx | `nvptx64 ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEhexagon"><span class="keyword">type</span> <code class="type"></code>hexagon</span> = <code class="type">[ `hexagon ]</code> </pre>
+
+
+<pre><span id="VAL__hexagon_of_sexp__"><span class="keyword">val</span> __hexagon_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a></code></pre>
+<pre><span id="VALhexagon_of_sexp"><span class="keyword">val</span> hexagon_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a></code></pre>
+<pre><span id="VALsexp_of_hexagon"><span class="keyword">val</span> sexp_of_hexagon</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_hexagon"><span class="keyword">val</span> all_of_hexagon</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a> list</code></pre>
+<pre><span id="VALcompare_hexagon"><span class="keyword">val</span> compare_hexagon</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a> -> <a href="Bap_common.Arch.html#TYPEhexagon">hexagon</a> -> int</code></pre>
+<pre><span id="VALbin_size_hexagon"><span class="keyword">val</span> bin_size_hexagon</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_hexagon"><span class="keyword">val</span> bin_write_hexagon</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `hexagon ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_hexagon"><span class="keyword">val</span> bin_writer_hexagon</span> : <code class="type">[< `hexagon ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_hexagon__"><span class="keyword">val</span> __bin_read_hexagon__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `hexagon ]</code></pre>
+<pre><span id="VALbin_read_hexagon"><span class="keyword">val</span> bin_read_hexagon</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> [> `hexagon ]</code></pre>
+<pre><span id="VALbin_reader_hexagon"><span class="keyword">val</span> bin_reader_hexagon</span> : <code class="type">[> `hexagon ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_hexagon"><span class="keyword">val</span> bin_hexagon</span> : <code class="type">[ `hexagon ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEr600"><span class="keyword">type</span> <code class="type"></code>r600</span> = <code class="type">[ `r600 ]</code> </pre>
+
+
+<pre><span id="VAL__r600_of_sexp__"><span class="keyword">val</span> __r600_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEr600">r600</a></code></pre>
+<pre><span id="VALr600_of_sexp"><span class="keyword">val</span> r600_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEr600">r600</a></code></pre>
+<pre><span id="VALsexp_of_r600"><span class="keyword">val</span> sexp_of_r600</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEr600">r600</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_r600"><span class="keyword">val</span> all_of_r600</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEr600">r600</a> list</code></pre>
+<pre><span id="VALcompare_r600"><span class="keyword">val</span> compare_r600</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEr600">r600</a> -> <a href="Bap_common.Arch.html#TYPEr600">r600</a> -> int</code></pre>
+<pre><span id="VALbin_size_r600"><span class="keyword">val</span> bin_size_r600</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_r600"><span class="keyword">val</span> bin_write_r600</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `r600 ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_r600"><span class="keyword">val</span> bin_writer_r600</span> : <code class="type">[< `r600 ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_r600__"><span class="keyword">val</span> __bin_read_r600__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `r600 ]</code></pre>
+<pre><span id="VALbin_read_r600"><span class="keyword">val</span> bin_read_r600</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> [> `r600 ]</code></pre>
+<pre><span id="VALbin_reader_r600"><span class="keyword">val</span> bin_reader_r600</span> : <code class="type">[> `r600 ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_r600"><span class="keyword">val</span> bin_r600</span> : <code class="type">[ `r600 ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEsystemz"><span class="keyword">type</span> <code class="type"></code>systemz</span> = <code class="type">[ `systemz ]</code> </pre>
+
+
+<pre><span id="VAL__systemz_of_sexp__"><span class="keyword">val</span> __systemz_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEsystemz">systemz</a></code></pre>
+<pre><span id="VALsystemz_of_sexp"><span class="keyword">val</span> systemz_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEsystemz">systemz</a></code></pre>
+<pre><span id="VALsexp_of_systemz"><span class="keyword">val</span> sexp_of_systemz</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsystemz">systemz</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_systemz"><span class="keyword">val</span> all_of_systemz</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsystemz">systemz</a> list</code></pre>
+<pre><span id="VALcompare_systemz"><span class="keyword">val</span> compare_systemz</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEsystemz">systemz</a> -> <a href="Bap_common.Arch.html#TYPEsystemz">systemz</a> -> int</code></pre>
+<pre><span id="VALbin_size_systemz"><span class="keyword">val</span> bin_size_systemz</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_systemz"><span class="keyword">val</span> bin_write_systemz</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `systemz ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_systemz"><span class="keyword">val</span> bin_writer_systemz</span> : <code class="type">[< `systemz ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_systemz__"><span class="keyword">val</span> __bin_read_systemz__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `systemz ]</code></pre>
+<pre><span id="VALbin_read_systemz"><span class="keyword">val</span> bin_read_systemz</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> [> `systemz ]</code></pre>
+<pre><span id="VALbin_reader_systemz"><span class="keyword">val</span> bin_reader_systemz</span> : <code class="type">[> `systemz ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_systemz"><span class="keyword">val</span> bin_systemz</span> : <code class="type">[ `systemz ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPExcore"><span class="keyword">type</span> <code class="type"></code>xcore</span> = <code class="type">[ `xcore ]</code> </pre>
+
+
+<pre><span id="VAL__xcore_of_sexp__"><span class="keyword">val</span> __xcore_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPExcore">xcore</a></code></pre>
+<pre><span id="VALxcore_of_sexp"><span class="keyword">val</span> xcore_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPExcore">xcore</a></code></pre>
+<pre><span id="VALsexp_of_xcore"><span class="keyword">val</span> sexp_of_xcore</span> : <code class="type"><a href="Bap_common.Arch.html#TYPExcore">xcore</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall_of_xcore"><span class="keyword">val</span> all_of_xcore</span> : <code class="type"><a href="Bap_common.Arch.html#TYPExcore">xcore</a> list</code></pre>
+<pre><span id="VALcompare_xcore"><span class="keyword">val</span> compare_xcore</span> : <code class="type"><a href="Bap_common.Arch.html#TYPExcore">xcore</a> -> <a href="Bap_common.Arch.html#TYPExcore">xcore</a> -> int</code></pre>
+<pre><span id="VALbin_size_xcore"><span class="keyword">val</span> bin_size_xcore</span> : <code class="type">'a -> int</code></pre>
+<pre><span id="VALbin_write_xcore"><span class="keyword">val</span> bin_write_xcore</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -> [< `xcore ] -> Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_xcore"><span class="keyword">val</span> bin_writer_xcore</span> : <code class="type">[< `xcore ] Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_xcore__"><span class="keyword">val</span> __bin_read_xcore__</span> : <code class="type">'a -> pos_ref:'b -> int -> [> `xcore ]</code></pre>
+<pre><span id="VALbin_read_xcore"><span class="keyword">val</span> bin_read_xcore</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> [> `xcore ]</code></pre>
+<pre><span id="VALbin_reader_xcore"><span class="keyword">val</span> bin_reader_xcore</span> : <code class="type">[> `xcore ] Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_xcore"><span class="keyword">val</span> bin_xcore</span> : <code class="type">[ `xcore ] Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `aarch64<br>       | `aarch64_be<br>       | `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `hexagon<br>       | `mips<br>       | `mips64<br>       | `mips64el<br>       | `mipsel<br>       | `nvptx<br>       | `nvptx64<br>       | `ppc<br>       | `ppc64<br>       | `ppc64le<br>       | `r600<br>       | `sparc<br>       | `sparcv9<br>       | `systemz<br>       | `thumb<br>       | `thumbeb<br>       | `x86<br>       | `x86_64<br>       | `xcore ]</code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap_common.Arch.Variants.html">Variants</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_common.Arch.Variants.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEt">t</a></code></pre>
+<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_common.Arch.html#TYPEt">t</a></code></pre>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALall"><span class="keyword">val</span> all</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> list</code></pre>
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> -> <a href="Bap_common.Arch.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALcompare_t"><span class="keyword">val</span> compare_t</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> -> <a href="Bap_common.Arch.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">[< `aarch64<br>        | `aarch64_be<br>        | `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `hexagon<br>        | `mips<br>        | `mips64<br>        | `mips64el<br>        | `mipsel<br>        | `nvptx<br>        | `nvptx64<br>        | `ppc<br>        | `ppc64<br>        | `ppc64le<br>        | `r600<br>        | `sparc<br>        | `sparcv9<br>        | `systemz<br>        | `thumb<br>        | `thumbeb<br>        | `x86<br>        | `x86_64<br>        | `xcore ] -><br>       int</code></pre>
+<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">Bin_prot.Common.buf -><br>       pos:Bin_prot.Common.pos -><br>       [< `aarch64<br>        | `aarch64_be<br>        | `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `hexagon<br>        | `mips<br>        | `mips64<br>        | `mips64el<br>        | `mipsel<br>        | `nvptx<br>        | `nvptx64<br>        | `ppc<br>        | `ppc64<br>        | `ppc64le<br>        | `r600<br>        | `sparc<br>        | `sparcv9<br>        | `systemz<br>        | `thumb<br>        | `thumbeb<br>        | `x86<br>        | `x86_64<br>        | `xcore ] -><br>       Bin_prot.Common.pos</code></pre>
+<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">[< `aarch64<br>        | `aarch64_be<br>        | `arm<br>        | `armeb<br>        | `armv4<br>        | `armv4t<br>        | `armv5<br>        | `armv6<br>        | `armv7<br>        | `hexagon<br>        | `mips<br>        | `mips64<br>        | `mips64el<br>        | `mipsel<br>        | `nvptx<br>        | `nvptx64<br>        | `ppc<br>        | `ppc64<br>        | `ppc64le<br>        | `r600<br>        | `sparc<br>        | `sparcv9<br>        | `systemz<br>        | `thumb<br>        | `thumbeb<br>        | `x86<br>        | `x86_64<br>        | `xcore ]<br>       Core_kernel.Std.Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">'a -> pos_ref:'b -> int -> <a href="Bap_common.Arch.html#TYPEt">t</a></code></pre>
+<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">Bin_prot.Common.buf -> pos_ref:Bin_prot.Common.pos_ref -> <a href="Bap_common.Arch.html#TYPEt">t</a></code></pre>
+<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> Core_kernel.Std.Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap_common.Arch.html#TYPEt">t</a> Core_kernel.Std.Bin_prot.Type_class.t</code></pre><br>
+Common BIL type definitions.
+<p>
+
+    In this module basic types are defined, and it can be considered
+    as an internal <code class="code"><span class="constructor">Std</span></code> module, that should be included most modules,
+    internal to the library.<br>
+<br>
+<h2 id="2_Basicmodules">Basic modules</h2>
+    The following modules defines the most basic types, on which the
+    `bap_core` library is built.<br>
+<br>
+<h2 id="2_BasicInterfaces">Basic Interfaces</h2><br>
+<br>
+Defines possible sizes for operations operands<br>
+<br>
+size of operand<br>
+<br>
+size of address<br>
+<br>
+The IR type of a BIL expression<br>
+<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immidiate<br>
+<br>
+<code class="code"><span class="constructor">Mem</span> (a,t)</code>memory with a specifed addr_size<br>
+<br>
+Different forms of casting<br>
+<br>
+0-padding widening cast.<br>
+<br>
+Sign-extending widening cast.<br>
+<br>
+Narrowning cast. Keeps the high bits.<br>
+<br>
+Narrowing cast. Keeps the low bits.<br>
+<br>
+Binary operations implemented in the IR<br>
+<br>
+Integer addition. (commutative, associative)<br>
+<br>
+Subtract second integer from first.<br>
+<br>
+Integer multiplication. (commutative, associative)<br>
+<br>
+Unsigned integer division.<br>
+<br>
+Signed integer division.<br>
+<br>
+Unsigned modulus.<br>
+<br>
+Signed modulus.<br>
+<br>
+Left shift.<br>
+<br>
+Right shift, fill with 0.<br>
+<br>
+Right shift, sign extend.<br>
+<br>
+Bitwise and. (commutative, associative)<br>
+<br>
+Bitwise or. (commutative, associative)<br>
+<br>
+Bitwise xor. (commutative, associative)<br>
+<br>
+Equals. (commutative) (associative on booleans)<br>
+<br>
+Not equals. (commutative) (associative on booleans)<br>
+<br>
+Unsigned less than.<br>
+<br>
+Unsigned less than or equal to.<br>
+<br>
+Signed less than.<br>
+<br>
+Signed less than or equal to.<br>
+<br>
+Unary operations implemented in the IR<br>
+<br>
+Negate. (2's complement)<br>
+<br>
+Bitwise not.<br>
+<br>
+Supported architectures<br>
+</body></html>

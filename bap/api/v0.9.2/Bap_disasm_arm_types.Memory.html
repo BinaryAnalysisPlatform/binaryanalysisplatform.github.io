@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap_disasm_arm_types.Basic.html">
+<link rel="next" href="Bap_disasm_arm_types.Cond.html">
+<link rel="Up" href="Bap_disasm_arm_types.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_plugin" rel="Chapter" href="Bap_plugin.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_types" rel="Chapter" href="Bap_types.html">
+<link title="Bap_addr" rel="Chapter" href="Bap_addr.html">
+<link title="Bap_arch" rel="Chapter" href="Bap_arch.html">
+<link title="Bap_bil" rel="Chapter" href="Bap_bil.html">
+<link title="Bap_bitvector" rel="Chapter" href="Bap_bitvector.html">
+<link title="Bap_common" rel="Chapter" href="Bap_common.html">
+<link title="Bap_exp" rel="Chapter" href="Bap_exp.html">
+<link title="Bap_int_conversions" rel="Chapter" href="Bap_int_conversions.html">
+<link title="Bap_integer" rel="Chapter" href="Bap_integer.html">
+<link title="Bap_integer_intf" rel="Chapter" href="Bap_integer_intf.html">
+<link title="Bap_regular" rel="Chapter" href="Bap_regular.html">
+<link title="Bap_seq" rel="Chapter" href="Bap_seq.html">
+<link title="Bap_size" rel="Chapter" href="Bap_size.html">
+<link title="Bap_stmt" rel="Chapter" href="Bap_stmt.html">
+<link title="Bap_type" rel="Chapter" href="Bap_type.html">
+<link title="Bap_var" rel="Chapter" href="Bap_var.html">
+<link title="Bap_image" rel="Chapter" href="Bap_image.html">
+<link title="Bap_memory" rel="Chapter" href="Bap_memory.html">
+<link title="Bap_table" rel="Chapter" href="Bap_table.html">
+<link title="Image_backend" rel="Chapter" href="Image_backend.html">
+<link title="Image_common" rel="Chapter" href="Image_common.html">
+<link title="Image_internal_std" rel="Chapter" href="Image_internal_std.html">
+<link title="Bap_disasm" rel="Chapter" href="Bap_disasm.html">
+<link title="Bap_disasm_arm" rel="Chapter" href="Bap_disasm_arm.html">
+<link title="Bap_disasm_arm_bit" rel="Chapter" href="Bap_disasm_arm_bit.html">
+<link title="Bap_disasm_arm_branch" rel="Chapter" href="Bap_disasm_arm_branch.html">
+<link title="Bap_disasm_arm_env" rel="Chapter" href="Bap_disasm_arm_env.html">
+<link title="Bap_disasm_arm_flags" rel="Chapter" href="Bap_disasm_arm_flags.html">
+<link title="Bap_disasm_arm_lifter" rel="Chapter" href="Bap_disasm_arm_lifter.html">
+<link title="Bap_disasm_arm_mem" rel="Chapter" href="Bap_disasm_arm_mem.html">
+<link title="Bap_disasm_arm_mem_shift" rel="Chapter" href="Bap_disasm_arm_mem_shift.html">
+<link title="Bap_disasm_arm_mov" rel="Chapter" href="Bap_disasm_arm_mov.html">
+<link title="Bap_disasm_arm_mul" rel="Chapter" href="Bap_disasm_arm_mul.html">
+<link title="Bap_disasm_arm_shift" rel="Chapter" href="Bap_disasm_arm_shift.html">
+<link title="Bap_disasm_arm_types" rel="Chapter" href="Bap_disasm_arm_types.html">
+<link title="Bap_disasm_arm_utils" rel="Chapter" href="Bap_disasm_arm_utils.html">
+<link title="Bap_disasm_basic" rel="Chapter" href="Bap_disasm_basic.html">
+<link title="Bap_disasm_block" rel="Chapter" href="Bap_disasm_block.html">
+<link title="Bap_disasm_insn" rel="Chapter" href="Bap_disasm_insn.html">
+<link title="Bap_disasm_prim" rel="Chapter" href="Bap_disasm_prim.html">
+<link title="Bap_disasm_rec" rel="Chapter" href="Bap_disasm_rec.html">
+<link title="Bap_disasm_types" rel="Chapter" href="Bap_disasm_types.html">
+<link title="Bap_insn_kind" rel="Chapter" href="Bap_insn_kind.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Dwarf_data" rel="Chapter" href="Dwarf_data.html">
+<link title="Dwarf_fbi" rel="Chapter" href="Dwarf_fbi.html">
+<link title="Dwarf_input" rel="Chapter" href="Dwarf_input.html">
+<link title="Dwarf_leb128" rel="Chapter" href="Dwarf_leb128.html">
+<link title="Dwarf_types" rel="Chapter" href="Dwarf_types.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Elf_parse" rel="Chapter" href="Elf_parse.html">
+<link title="Elf_types" rel="Chapter" href="Elf_types.html">
+<link title="Elf_utils" rel="Chapter" href="Elf_utils.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html"><link title="Printing and outputing" rel="Section" href="#3_Printingandoutputing">
+<link title="Interfacing with C" rel="Section" href="#3_InterfacingwithC">
+<link title="Printing and outputing" rel="Section" href="#3_Printingandoutputing">
+<link title="Interfacing with C" rel="Section" href="#3_InterfacingwithC">
+<title>Bap_disasm_arm_types.Memory</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap_disasm_arm_types.Basic.html" title="Bap_disasm_arm_types.Basic">Previous</a>
+&nbsp;<a class="up" href="Bap_disasm_arm_types.html" title="Bap_disasm_arm_types">Up</a>
+&nbsp;<a class="post" href="Bap_disasm_arm_types.Cond.html" title="Bap_disasm_arm_types.Cond">Next</a>
+</div>
+<h1>Module <a href="type_Bap_disasm_arm_types.Memory.html">Bap_disasm_arm_types.Memory</a></h1>
+
+<pre><span class="keyword">module</span> Memory: <code class="type"><a href="Bap_memory.html">Bap_memory</a></code></pre><hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?pos:int -><br>       ?len:int -><br>       <a href="Bap_types.Std.html#TYPEendian">Bap_types.Std.endian</a> -><br>       <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -><br>       Core_kernel.Std.Bigstring.t -> <a href="Bap_memory.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALview"><span class="keyword">val</span> view</span> : <code class="type">?word_size:<a href="Bap_types.Std.html#TYPEsize">Bap_types.Std.size</a> -><br>       ?from:<a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -><br>       ?words:int -> <a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_memory.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">view word_size ~from ~words mem</code> returns a new memory
+    that represents the specified region of memory <code class="code">mem</code>. <code class="code">copy</code>
+    function performs deep copy.<br>
+</div>
+<div class="param_info"><code class="code">words</code> : defaults to the end of the memory region.</div>
+
+<pre><span id="VALrange"><span class="keyword">val</span> range</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -><br>       <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -><br>       <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -> <a href="Bap_memory.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">range mem a0 a1</code> returns a view on <code class="code">mem</code> starting from
+    address <code class="code">a0</code> and ending at <code class="code">a1</code>, bounds inclusive<br>
+</div>
+
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_memory.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">merge m1 m2</code> takes two memory regions, that either intersects or
+    share edges (i.e., difference between <code class="code">min_addr</code> of one of the
+    blocks and <code class="code">max_addr</code> of another is less then or equal to one, and
+    returns memory blocks that spans memory starting from the address
+    <pre class="codepre"><code class="code">min&nbsp;(min_addr&nbsp;m1)&nbsp;(min_addr&nbsp;m2)</code></pre> and ending with address
+    <pre class="codepre"><code class="code">max&nbsp;(max_addr&nbsp;m1)&nbsp;(max_addr&nbsp;m2)</code></pre>.
+<p>
+
+    Will return an error, if either the above state precondition
+    doesn't hold, or if this two memory blocks doesn't share the same
+    underlying memory (i.e., bases), or if they have different
+    endianness.<br>
+</div>
+
+<pre><span id="VALfirst_byte"><span class="keyword">val</span> first_byte</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_memory.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">first_byte m</code> returns first byte of <code class="code">m</code> as a memory
+<p>
+<code class="code">last_byte m</code> returns last byte of <code class="code">m</code> as a memory<br>
+</div>
+
+<pre><span id="VALlast_byte"><span class="keyword">val</span> last_byte</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_memory.html#TYPEt">t</a></code></pre>
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEendian">Bap_types.Std.endian</a></code></pre><div class="info ">
+returns the order of bytes in a word<br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">?disp:int -><br>       ?index:int -><br>       ?scale:<a href="Bap_types.Std.html#TYPEsize">Bap_types.Std.size</a> -><br>       ?addr:<a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -><br>       <a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEword">Bap_types.Std.word</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">get word_size mem addr</code> reads memory value from the specified
+    address. <code class="code">word_size</code> default to <code class="code"><span class="keywordsign">`</span>r8</code><br>
+</div>
+
+<pre><span id="VAL(^)"><span class="keyword">val</span> (^)</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -><br>       <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -> <a href="Bap_types.Std.html#TYPEword">Bap_types.Std.word</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">m^n</code> dereferences a byte at address <code class="code">n</code><br>
+</div>
+
+<pre><span id="VAL(^!)"><span class="keyword">val</span> (^!)</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -> <a href="Bap_types.Std.html#TYPEword">Bap_types.Std.word</a></code></pre><div class="info ">
+<code class="code">m^.n</code> dereferences a byte at address <code class="code">n</code><br>
+</div>
+
+<pre><span id="VALmax_addr"><span class="keyword">val</span> max_addr</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a></code></pre><div class="info ">
+<code class="code">{max,min}_addr</code> function specify upper and lower bounds of the memory<br>
+</div>
+
+<pre><span id="VALmin_addr"><span class="keyword">val</span> min_addr</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a></code></pre>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">length</code> returns the length of the memory in bytes<br>
+</div>
+
+<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -> bool</code></pre><div class="info ">
+<code class="code">contains mem addr</code> returns true if <code class="code">mem</code> contains address <code class="code">addr</code><br>
+</div>
+
+<pre><span id="VALcompare_with"><span class="keyword">val</span> compare_with</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -><br>       <a href="Bap_types.Std.html#TYPEaddr">Bap_types.Std.addr</a> -> [ `addr_is_above | `addr_is_below | `addr_is_inside ]</code></pre><div class="info ">
+<code class="code">compare_with mem addr</code> compares memory with <code class="code">addr</code><br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_memory.Input.html">Input</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_memory.Input.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A set of low level input operations.
+</div>
+<br>
+<h3 id="3_Printingandoutputing">Printing and outputing</h3><br>
+
+<pre><span class="keyword">include</span> Printable</pre>
+
+<pre><span id="VALhexdump"><span class="keyword">val</span> hexdump</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">hexdump t out</code> outputs hexdump (as per <code class="code">hexdump -<span class="constructor">C</span></code>) of the
+    memory to formatter <code class="code">out</code><br>
+</div>
+
+<pre><span class="keyword">include</span> Memory_iterators</pre>
+<div class="info ">
+a set of iterators, with identity monad.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_memory.With_error.html">With_error</a>: <code class="type">Memory_iterators</code><code class="type">  with type t := t
+                                      and type 'a m = 'a Or_error.t</code></pre><div class="info">
+iterators lifter to the Or_error monad
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_memory.Make_iterators.html">Make_iterators</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type">Core_kernel.Std.Monad.S</code><code class="code">) </code>: <code class="type">Memory_iterators</code><code class="type">  with type t := t
+                      and type 'a m = 'a M.t</code></pre><div class="info">
+lifts iterators to monad <code class="code"><span class="constructor">M</span></code>
+</div>
+<br>
+<h3 id="3_InterfacingwithC">Interfacing with C</h3>
+<p>
+
+    The following interfaces is supposed to be used only for the
+    purposes of exposing memory to c programs.<br>
+
+<pre><span id="VALto_buffer"><span class="keyword">val</span> to_buffer</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> Core_kernel.Std.Bigsubstring.t</code></pre><div class="info ">
+<code class="code">to_buffers mem</code> creates a buffer representing the memory <code class="code">mem</code>.
+    It is not specified whether the returned buffer has some sharing
+    with underlying implementation. In other words the returned buffer
+    shouldn't be modified.
+<p>
+
+    Since it is not guaranteed that memory is contiguous, a sequence of
+    buffers is returned, with each buffer representing a contiguous
+    part of memory.<br>
+</div>
+
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap_memory.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre><br>
+defaults to <code class="code">0</code><br>
+<br>
+defaults to full length<br>
+<br>
+<code class="code">view word_size ~from ~words mem</code> returns a new memory
+    that represents the specified region of memory <code class="code">mem</code>. <code class="code">copy</code>
+    function performs deep copy.<br>
+<br>
+<code class="code">range mem a0 a1</code> returns a view on <code class="code">mem</code> starting from
+    address <code class="code">a0</code> and ending at <code class="code">a1</code>, bounds inclusive<br>
+<br>
+<code class="code">merge m1 m2</code> takes two memory regions, that either intersects or
+    share edges (i.e., difference between <code class="code">min_addr</code> of one of the
+    blocks and <code class="code">max_addr</code> of another is less then or equal to one, and
+    returns memory blocks that spans memory starting from the address
+    <pre class="codepre"><code class="code">min&nbsp;(min_addr&nbsp;m1)&nbsp;(min_addr&nbsp;m2)</code></pre> and ending with address
+    <pre class="codepre"><code class="code">max&nbsp;(max_addr&nbsp;m1)&nbsp;(max_addr&nbsp;m2)</code></pre>.
+<p>
+
+    Will return an error, if either the above state precondition
+    doesn't hold, or if this two memory blocks doesn't share the same
+    underlying memory (i.e., bases), or if they have different
+    endianness.<br>
+<br>
+<code class="code">first_byte m</code> returns first byte of <code class="code">m</code> as a memory<br>
+<br>
+<code class="code">last_byte m</code> returns last byte of <code class="code">m</code> as a memory<br>
+<br>
+returns the order of bytes in a word<br>
+<br>
+<code class="code">get word_size mem addr</code> reads memory value from the specified
+    address. <code class="code">word_size</code> default to <code class="code"><span class="keywordsign">`</span>r8</code><br>
+<br>
+<code class="code">m^n</code> dereferences a byte at address <code class="code">n</code><br>
+<br>
+<code class="code">m^.n</code> dereferences a byte at address <code class="code">n</code><br>
+<br>
+<code class="code">{max,min}_addr</code> function specify upper and lower bounds of the memory<br>
+<br>
+<code class="code">length</code> returns the length of the memory in bytes<br>
+<br>
+<code class="code">contains mem addr</code> returns true if <code class="code">mem</code> contains address <code class="code">addr</code><br>
+<br>
+<code class="code">compare_with mem addr</code> compares memory with <code class="code">addr</code><br>
+<br>
+A set of low level input operations.
+    Note: it is more effective to use above head iterators, instead
+    of this low level interface, since iterators do not need to check
+    every memory access.<br>
+<br>
+<code class="code">reader mem ~pos_ref</code> defines a set of functions with a
+      common interface. Each function accepts a memory <code class="code">mem</code> and a
+      <code class="code">pos_ref</code> - a reference to a address that should be read. This
+      reference will be updated for the amount of bytes that was
+      actually read.<br>
+<br>
+<h3 id="3_Printingandoutputing">Printing and outputing</h3><br>
+<br>
+<code class="code">hexdump t out</code> outputs hexdump (as per <code class="code">hexdump -<span class="constructor">C</span></code>) of the
+    memory to formatter <code class="code">out</code><br>
+<br>
+a set of iterators, with identity monad.<br>
+<br>
+iterators lifter to the Or_error monad<br>
+<br>
+lifts iterators to monad <code class="code"><span class="constructor">M</span></code><br>
+<br>
+<h3 id="3_InterfacingwithC">Interfacing with C</h3>
+<p>
+
+    The following interfaces is supposed to be used only for the
+    purposes of exposing memory to c programs.<br>
+<br>
+<code class="code">to_buffers mem</code> creates a buffer representing the memory <code class="code">mem</code>.
+    It is not specified whether the returned buffer has some sharing
+    with underlying implementation. In other words the returned buffer
+    shouldn't be modified.
+<p>
+
+    Since it is not guaranteed that memory is contiguous, a sequence of
+    buffers is returned, with each buffer representing a contiguous
+    part of memory.<br>
+</body></html>

@@ -1,0 +1,568 @@
+<html><head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_plugin" rel="Chapter" href="Bap_plugin.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_types" rel="Chapter" href="Bap_types.html">
+<link title="Bap_addr" rel="Chapter" href="Bap_addr.html">
+<link title="Bap_arch" rel="Chapter" href="Bap_arch.html">
+<link title="Bap_bil" rel="Chapter" href="Bap_bil.html">
+<link title="Bap_bitvector" rel="Chapter" href="Bap_bitvector.html">
+<link title="Bap_common" rel="Chapter" href="Bap_common.html">
+<link title="Bap_exp" rel="Chapter" href="Bap_exp.html">
+<link title="Bap_int_conversions" rel="Chapter" href="Bap_int_conversions.html">
+<link title="Bap_integer" rel="Chapter" href="Bap_integer.html">
+<link title="Bap_integer_intf" rel="Chapter" href="Bap_integer_intf.html">
+<link title="Bap_regular" rel="Chapter" href="Bap_regular.html">
+<link title="Bap_seq" rel="Chapter" href="Bap_seq.html">
+<link title="Bap_size" rel="Chapter" href="Bap_size.html">
+<link title="Bap_stmt" rel="Chapter" href="Bap_stmt.html">
+<link title="Bap_type" rel="Chapter" href="Bap_type.html">
+<link title="Bap_var" rel="Chapter" href="Bap_var.html">
+<link title="Bap_image" rel="Chapter" href="Bap_image.html">
+<link title="Bap_memory" rel="Chapter" href="Bap_memory.html">
+<link title="Bap_table" rel="Chapter" href="Bap_table.html">
+<link title="Image_backend" rel="Chapter" href="Image_backend.html">
+<link title="Image_common" rel="Chapter" href="Image_common.html">
+<link title="Image_internal_std" rel="Chapter" href="Image_internal_std.html">
+<link title="Bap_disasm" rel="Chapter" href="Bap_disasm.html">
+<link title="Bap_disasm_arm" rel="Chapter" href="Bap_disasm_arm.html">
+<link title="Bap_disasm_arm_bit" rel="Chapter" href="Bap_disasm_arm_bit.html">
+<link title="Bap_disasm_arm_branch" rel="Chapter" href="Bap_disasm_arm_branch.html">
+<link title="Bap_disasm_arm_env" rel="Chapter" href="Bap_disasm_arm_env.html">
+<link title="Bap_disasm_arm_flags" rel="Chapter" href="Bap_disasm_arm_flags.html">
+<link title="Bap_disasm_arm_lifter" rel="Chapter" href="Bap_disasm_arm_lifter.html">
+<link title="Bap_disasm_arm_mem" rel="Chapter" href="Bap_disasm_arm_mem.html">
+<link title="Bap_disasm_arm_mem_shift" rel="Chapter" href="Bap_disasm_arm_mem_shift.html">
+<link title="Bap_disasm_arm_mov" rel="Chapter" href="Bap_disasm_arm_mov.html">
+<link title="Bap_disasm_arm_mul" rel="Chapter" href="Bap_disasm_arm_mul.html">
+<link title="Bap_disasm_arm_shift" rel="Chapter" href="Bap_disasm_arm_shift.html">
+<link title="Bap_disasm_arm_types" rel="Chapter" href="Bap_disasm_arm_types.html">
+<link title="Bap_disasm_arm_utils" rel="Chapter" href="Bap_disasm_arm_utils.html">
+<link title="Bap_disasm_basic" rel="Chapter" href="Bap_disasm_basic.html">
+<link title="Bap_disasm_block" rel="Chapter" href="Bap_disasm_block.html">
+<link title="Bap_disasm_insn" rel="Chapter" href="Bap_disasm_insn.html">
+<link title="Bap_disasm_prim" rel="Chapter" href="Bap_disasm_prim.html">
+<link title="Bap_disasm_rec" rel="Chapter" href="Bap_disasm_rec.html">
+<link title="Bap_disasm_types" rel="Chapter" href="Bap_disasm_types.html">
+<link title="Bap_insn_kind" rel="Chapter" href="Bap_insn_kind.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Dwarf_data" rel="Chapter" href="Dwarf_data.html">
+<link title="Dwarf_fbi" rel="Chapter" href="Dwarf_fbi.html">
+<link title="Dwarf_input" rel="Chapter" href="Dwarf_input.html">
+<link title="Dwarf_leb128" rel="Chapter" href="Dwarf_leb128.html">
+<link title="Dwarf_types" rel="Chapter" href="Dwarf_types.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Elf_parse" rel="Chapter" href="Elf_parse.html">
+<link title="Elf_types" rel="Chapter" href="Elf_types.html">
+<link title="Elf_utils" rel="Chapter" href="Elf_utils.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html"><title>Bap.Std</title>
+</head>
+<body>
+<code class="code"><span class="keyword">sig</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Regular</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Regular</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Integer</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Integer</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Printable</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Printable</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">Regular</span>&nbsp;=&nbsp;<span class="constructor">Bap_common</span>.<span class="constructor">Regular</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">Integer</span>&nbsp;=&nbsp;<span class="constructor">Bap_common</span>.<span class="constructor">Integer</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">Printable</span>&nbsp;=&nbsp;<span class="constructor">Bap_common</span>.<span class="constructor">Printable</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Arch</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Arch</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Var</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Var</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Type</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Type</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bool_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;reg8_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;reg16_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;reg32_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;reg64_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mem32_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mem64_t&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Exp</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Size</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Size</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Stmt</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Stmt</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Bitvector</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Bitvector</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Addr</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Addr</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Word</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Word</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;endian&nbsp;=&nbsp;<span class="constructor">Bap_common</span>.endian&nbsp;=&nbsp;<span class="constructor">LittleEndian</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">BigEndian</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_endian&nbsp;:&nbsp;endian&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_endian&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_endian&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_endian&nbsp;:&nbsp;endian&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_endian__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_endian&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_endian&nbsp;:&nbsp;endian&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_endian&nbsp;:&nbsp;endian&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__endian_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;endian_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_endian&nbsp;:&nbsp;endian&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Size</span>.p&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;[&lt;&nbsp;<span class="constructor">Size</span>.all&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__size_p_of_sexp__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;([&lt;&nbsp;<span class="constructor">Size</span>.all&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a))&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;size_p_of_sexp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;([&lt;&nbsp;<span class="constructor">Size</span>.all&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a))&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(([&lt;&nbsp;<span class="constructor">Size</span>.all&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(([&lt;&nbsp;<span class="constructor">Size</span>.all&nbsp;]&nbsp;<span class="keyword">as</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;size_p&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_size_p&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos:<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>d<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_size_p__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>d<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_size_p&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_p&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;addr_size&nbsp;=&nbsp;<span class="constructor">Bap_common</span>.addr_size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__addr_size_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr_size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;addr_size_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr_size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_addr_size&nbsp;:&nbsp;addr_size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_addr_size&nbsp;:&nbsp;addr_size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr_size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_addr_size&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_addr_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>r32&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>r64&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_addr_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span>r32&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>r64&nbsp;]&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_addr_size__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_addr_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&gt;&nbsp;<span class="keywordsign">`</span>r32&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>r64&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_addr_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&gt;&nbsp;<span class="keywordsign">`</span>r32&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>r64&nbsp;]&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_addr_size&nbsp;:&nbsp;[&nbsp;<span class="keywordsign">`</span>r32&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>r64&nbsp;]&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;size&nbsp;=&nbsp;<span class="constructor">Size</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__size_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;size_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_size&nbsp;:&nbsp;size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_size&nbsp;:&nbsp;size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_size&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_size__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.size<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_size&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.size&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;typ&nbsp;=&nbsp;<span class="constructor">Type</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__typ_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;typ_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_typ&nbsp;:&nbsp;typ&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_typ&nbsp;:&nbsp;typ&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;typ&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_typ&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_typ&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.typ&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_typ&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.typ&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_typ__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_typ&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.typ<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_typ&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.typ&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_typ&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.typ&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;var&nbsp;=&nbsp;<span class="constructor">Var</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__var_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;var<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;var_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;var<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_var&nbsp;:&nbsp;var&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_var&nbsp;:&nbsp;var&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;var&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_var&nbsp;:&nbsp;<span class="constructor">Var</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_var&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Var</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_var&nbsp;:&nbsp;<span class="constructor">Var</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_var__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Var</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_var&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Var</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_var&nbsp;:&nbsp;<span class="constructor">Var</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_var&nbsp;:&nbsp;<span class="constructor">Var</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;stmt&nbsp;=&nbsp;<span class="constructor">Stmt</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__stmt_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;stmt<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;stmt_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;stmt<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_stmt&nbsp;:&nbsp;stmt&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_stmt&nbsp;:&nbsp;stmt&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;stmt&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_stmt&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_stmt&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_stmt&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_stmt__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_stmt&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_stmt&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_stmt&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;exp&nbsp;=&nbsp;<span class="constructor">Exp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__exp_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;exp<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;exp_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;exp<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_exp&nbsp;:&nbsp;exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_exp&nbsp;:&nbsp;exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_exp&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_exp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_exp&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.exp&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_exp__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.exp<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_exp&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.exp<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_exp&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.exp&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_exp&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.exp&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;bil&nbsp;=&nbsp;stmt&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bil_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bil<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bil_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bil<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_bil&nbsp;:&nbsp;bil&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_bil&nbsp;:&nbsp;bil&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bil&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_bil&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_bil&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_bil&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_bil__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_bil&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_bil&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_bil&nbsp;:&nbsp;<span class="constructor">Bap_bil</span>.stmt&nbsp;list&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;arch&nbsp;=&nbsp;<span class="constructor">Arch</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__arch_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;arch<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;arch_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;arch<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_arch&nbsp;:&nbsp;arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_arch&nbsp;:&nbsp;arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_arch&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_arch&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_arch&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.arch&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_arch__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.arch<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_arch&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_common</span>.arch<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_arch&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_common</span>.arch&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_arch&nbsp;:&nbsp;<span class="constructor">Bap_common</span>.arch&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;addr&nbsp;=&nbsp;<span class="constructor">Addr</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__addr_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;addr_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_addr&nbsp;:&nbsp;addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_addr&nbsp;:&nbsp;addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_addr&nbsp;:&nbsp;<span class="constructor">Addr</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_addr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Addr</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_addr&nbsp;:&nbsp;<span class="constructor">Addr</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_addr__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Addr</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_addr&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Addr</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_addr&nbsp;:&nbsp;<span class="constructor">Addr</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_addr&nbsp;:&nbsp;<span class="constructor">Addr</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;word&nbsp;=&nbsp;<span class="constructor">Word</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__word_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;word<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;word_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;word<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_word&nbsp;:&nbsp;word&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_word&nbsp;:&nbsp;word&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;word&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_word&nbsp;:&nbsp;<span class="constructor">Word</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_word&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Word</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_word&nbsp;:&nbsp;<span class="constructor">Word</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_word__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Word</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_word&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Word</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_word&nbsp;:&nbsp;<span class="constructor">Word</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_word&nbsp;:&nbsp;<span class="constructor">Word</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;cast&nbsp;=&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__cast_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;cast<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;cast_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;cast<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_cast&nbsp;:&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_cast&nbsp;:&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_cast&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_cast&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_cast&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_cast__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_cast&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_cast&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_cast&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Cast</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;unop&nbsp;=&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__unop_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unop<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;unop_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unop<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_unop&nbsp;:&nbsp;unop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_unop&nbsp;:&nbsp;unop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_unop&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_unop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_unop&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_unop__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_unop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_unop&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_unop&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Unop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;binop&nbsp;=&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__binop_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;binop<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;binop_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;binop<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_binop&nbsp;:&nbsp;binop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_binop&nbsp;:&nbsp;binop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;binop&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_binop&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_binop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_binop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_binop__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>c<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_binop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_binop&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_binop&nbsp;:&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Binop</span>.t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Seq</span>&nbsp;=&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.<span class="constructor">Seq</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;(&nbsp;^::&nbsp;)&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_seq</span>.seq&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_seq</span>.seq<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;seq&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Seq</span>.seq<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__seq_of_sexp__&nbsp;:&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;seq<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;seq_of_sexp&nbsp;:&nbsp;(<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;seq<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_seq&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;seq&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;bigstring&nbsp;=&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;int_of_int32&nbsp;:&nbsp;int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;int_of_int64&nbsp;:&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;int_of_nativeint&nbsp;:&nbsp;nativeint&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;int_of_word&nbsp;:&nbsp;<span class="constructor">Bap_bitvector</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Table</span>&nbsp;=&nbsp;<span class="constructor">Image_internal_std</span>.<span class="constructor">Table</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;table&nbsp;=&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Table</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_table&nbsp;:&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;table&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Backend</span>&nbsp;=&nbsp;<span class="constructor">Image_internal_std</span>.<span class="constructor">Backend</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;backend&nbsp;=&nbsp;<span class="constructor">Backend</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Memory</span>&nbsp;=&nbsp;<span class="constructor">Image_internal_std</span>.<span class="constructor">Memory</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;mem&nbsp;=&nbsp;<span class="constructor">Memory</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_mem&nbsp;:&nbsp;mem&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Image</span>&nbsp;=&nbsp;<span class="constructor">Bap_image</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Section</span>&nbsp;=&nbsp;<span class="constructor">Image</span>.<span class="constructor">Sec</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Symbol</span>&nbsp;=&nbsp;<span class="constructor">Image</span>.<span class="constructor">Sym</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;image&nbsp;=&nbsp;<span class="constructor">Image</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;symbol&nbsp;=&nbsp;<span class="constructor">Symbol</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__symbol_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.symbol<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;symbol_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.symbol<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_symbol&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_symbol&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.symbol&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_symbol&nbsp;:&nbsp;<span class="constructor">Symbol</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_symbol&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Symbol</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_symbol&nbsp;:&nbsp;<span class="constructor">Symbol</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_symbol__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Symbol</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_symbol&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Symbol</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_symbol&nbsp;:&nbsp;<span class="constructor">Symbol</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_symbol&nbsp;:&nbsp;<span class="constructor">Symbol</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;section&nbsp;=&nbsp;<span class="constructor">Section</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__section_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.section<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;section_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.section<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_section&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.section&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_section&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.section&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.section&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_section&nbsp;:&nbsp;<span class="constructor">Section</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_section&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Section</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_section&nbsp;:&nbsp;<span class="constructor">Section</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_section__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Section</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_section&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Section</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_section&nbsp;:&nbsp;<span class="constructor">Section</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_section&nbsp;:&nbsp;<span class="constructor">Section</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Basic</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Basic</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Rec</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Rec</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Kind</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Kind</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Op</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Op</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Reg</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Reg</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Fmm</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Fmm</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Imm</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Imm</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;reg&nbsp;=&nbsp;<span class="constructor">Reg</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__reg_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;reg<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;reg_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;reg<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_reg&nbsp;:&nbsp;reg&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_reg&nbsp;:&nbsp;reg&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;reg&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_reg&nbsp;:&nbsp;<span class="constructor">Reg</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_reg&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reg</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_reg&nbsp;:&nbsp;<span class="constructor">Reg</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_reg__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reg</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_reg&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Reg</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_reg&nbsp;:&nbsp;<span class="constructor">Reg</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reg&nbsp;:&nbsp;<span class="constructor">Reg</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;imm&nbsp;=&nbsp;<span class="constructor">Imm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__imm_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;imm<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;imm_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;imm<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_imm&nbsp;:&nbsp;imm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_imm&nbsp;:&nbsp;imm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;imm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_imm&nbsp;:&nbsp;<span class="constructor">Imm</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_imm&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Imm</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_imm&nbsp;:&nbsp;<span class="constructor">Imm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_imm__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Imm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_imm&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Imm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_imm&nbsp;:&nbsp;<span class="constructor">Imm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_imm&nbsp;:&nbsp;<span class="constructor">Imm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;fmm&nbsp;=&nbsp;<span class="constructor">Fmm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__fmm_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;fmm<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;fmm_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;fmm<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_fmm&nbsp;:&nbsp;fmm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_fmm&nbsp;:&nbsp;fmm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;fmm&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_fmm&nbsp;:&nbsp;<span class="constructor">Fmm</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_fmm&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fmm</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_fmm&nbsp;:&nbsp;<span class="constructor">Fmm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_fmm__&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fmm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_fmm&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Fmm</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_fmm&nbsp;:&nbsp;<span class="constructor">Fmm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_fmm&nbsp;:&nbsp;<span class="constructor">Fmm</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;kind&nbsp;=&nbsp;<span class="constructor">Kind</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__kind_of_sexp__&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;kind<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;kind_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;kind<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_kind&nbsp;:&nbsp;kind&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_kind&nbsp;:&nbsp;kind&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;kind&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_kind&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">Barrier</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Call</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Conditional_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Indirect_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_affect_control_flow</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_load</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_store</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Return</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Terminator</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unconditional_branch</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_kind&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;pos:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">Barrier</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Call</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Conditional_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Indirect_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_affect_control_flow</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_load</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_store</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Return</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Terminator</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unconditional_branch</span>&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_kind&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[&lt;&nbsp;<span class="keywordsign">`</span><span class="constructor">Barrier</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Call</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Conditional_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Indirect_branch</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_affect_control_flow</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_load</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">May_store</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Return</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Terminator</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unconditional_branch</span>&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_kind__&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Kind</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_kind&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.buf&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pos_ref:<span class="constructor">Bin_prot</span>.<span class="constructor">Common</span>.pos_ref&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Kind</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_kind&nbsp;:&nbsp;<span class="constructor">Kind</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_kind&nbsp;:&nbsp;<span class="constructor">Kind</span>.t&nbsp;<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Arm</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Arm</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;disasm&nbsp;=&nbsp;<span class="constructor">Bap_disasm</span>.disasm<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;disasm<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;insn&nbsp;=&nbsp;<span class="constructor">Bap_disasm_insn</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;op&nbsp;=&nbsp;<span class="constructor">Bap_disasm_types</span>.<span class="constructor">Op</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;block&nbsp;=&nbsp;<span class="constructor">Bap_disasm_block</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disassemble&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?roots:<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.addr&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Image_internal_std</span>.mem&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disassemble_image&nbsp;:&nbsp;?roots:<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.addr&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;disassemble_file&nbsp;:&nbsp;?roots:<span class="constructor">Bap_types</span>.<span class="constructor">Std</span>.addr&nbsp;list&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Disasm</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm</span>.<span class="constructor">Disasm</span><br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_insn&nbsp;:&nbsp;insn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_insn&nbsp;:&nbsp;insn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;insn&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_insn__&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;insn)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Write</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_insn&nbsp;:&nbsp;insn&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_op&nbsp;:&nbsp;op&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_op&nbsp;:&nbsp;op&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;op&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_op__&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;op)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Write</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_op&nbsp;:&nbsp;op&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_block&nbsp;:&nbsp;block&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare_block&nbsp;:&nbsp;block&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;block&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Insn</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_insn</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Block</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_block</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Disasm_expert</span>&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Basic</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_basic</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Recursive</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_rec</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Kind</span>&nbsp;=&nbsp;<span class="constructor">Bap_insn_kind</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Insn</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_basic</span>.<span class="constructor">Insn</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Block</span>&nbsp;=&nbsp;<span class="constructor">Bap_disasm_rec</span>.<span class="constructor">Block</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Dwarf</span>&nbsp;=&nbsp;<span class="constructor">Bap_dwarf</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Elf</span>&nbsp;=&nbsp;<span class="constructor">Bap_elf</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;elf&nbsp;=&nbsp;<span class="constructor">Elf</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Plugin</span>&nbsp;=&nbsp;<span class="constructor">Bap_plugin</span><br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Plugins</span>&nbsp;=&nbsp;<span class="constructor">Bap_plugins</span><br>
+<span class="keyword">end</span></code></body></html>

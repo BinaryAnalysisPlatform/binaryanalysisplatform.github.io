@@ -1,0 +1,438 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap_plugins.html">
+<link rel="next" href="Bap_addr.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_plugin" rel="Chapter" href="Bap_plugin.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_types" rel="Chapter" href="Bap_types.html">
+<link title="Bap_addr" rel="Chapter" href="Bap_addr.html">
+<link title="Bap_arch" rel="Chapter" href="Bap_arch.html">
+<link title="Bap_bil" rel="Chapter" href="Bap_bil.html">
+<link title="Bap_bitvector" rel="Chapter" href="Bap_bitvector.html">
+<link title="Bap_common" rel="Chapter" href="Bap_common.html">
+<link title="Bap_exp" rel="Chapter" href="Bap_exp.html">
+<link title="Bap_int_conversions" rel="Chapter" href="Bap_int_conversions.html">
+<link title="Bap_integer" rel="Chapter" href="Bap_integer.html">
+<link title="Bap_integer_intf" rel="Chapter" href="Bap_integer_intf.html">
+<link title="Bap_regular" rel="Chapter" href="Bap_regular.html">
+<link title="Bap_seq" rel="Chapter" href="Bap_seq.html">
+<link title="Bap_size" rel="Chapter" href="Bap_size.html">
+<link title="Bap_stmt" rel="Chapter" href="Bap_stmt.html">
+<link title="Bap_type" rel="Chapter" href="Bap_type.html">
+<link title="Bap_var" rel="Chapter" href="Bap_var.html">
+<link title="Bap_image" rel="Chapter" href="Bap_image.html">
+<link title="Bap_memory" rel="Chapter" href="Bap_memory.html">
+<link title="Bap_table" rel="Chapter" href="Bap_table.html">
+<link title="Image_backend" rel="Chapter" href="Image_backend.html">
+<link title="Image_common" rel="Chapter" href="Image_common.html">
+<link title="Image_internal_std" rel="Chapter" href="Image_internal_std.html">
+<link title="Bap_disasm" rel="Chapter" href="Bap_disasm.html">
+<link title="Bap_disasm_arm" rel="Chapter" href="Bap_disasm_arm.html">
+<link title="Bap_disasm_arm_bit" rel="Chapter" href="Bap_disasm_arm_bit.html">
+<link title="Bap_disasm_arm_branch" rel="Chapter" href="Bap_disasm_arm_branch.html">
+<link title="Bap_disasm_arm_env" rel="Chapter" href="Bap_disasm_arm_env.html">
+<link title="Bap_disasm_arm_flags" rel="Chapter" href="Bap_disasm_arm_flags.html">
+<link title="Bap_disasm_arm_lifter" rel="Chapter" href="Bap_disasm_arm_lifter.html">
+<link title="Bap_disasm_arm_mem" rel="Chapter" href="Bap_disasm_arm_mem.html">
+<link title="Bap_disasm_arm_mem_shift" rel="Chapter" href="Bap_disasm_arm_mem_shift.html">
+<link title="Bap_disasm_arm_mov" rel="Chapter" href="Bap_disasm_arm_mov.html">
+<link title="Bap_disasm_arm_mul" rel="Chapter" href="Bap_disasm_arm_mul.html">
+<link title="Bap_disasm_arm_shift" rel="Chapter" href="Bap_disasm_arm_shift.html">
+<link title="Bap_disasm_arm_types" rel="Chapter" href="Bap_disasm_arm_types.html">
+<link title="Bap_disasm_arm_utils" rel="Chapter" href="Bap_disasm_arm_utils.html">
+<link title="Bap_disasm_basic" rel="Chapter" href="Bap_disasm_basic.html">
+<link title="Bap_disasm_block" rel="Chapter" href="Bap_disasm_block.html">
+<link title="Bap_disasm_insn" rel="Chapter" href="Bap_disasm_insn.html">
+<link title="Bap_disasm_prim" rel="Chapter" href="Bap_disasm_prim.html">
+<link title="Bap_disasm_rec" rel="Chapter" href="Bap_disasm_rec.html">
+<link title="Bap_disasm_types" rel="Chapter" href="Bap_disasm_types.html">
+<link title="Bap_insn_kind" rel="Chapter" href="Bap_insn_kind.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Dwarf_data" rel="Chapter" href="Dwarf_data.html">
+<link title="Dwarf_fbi" rel="Chapter" href="Dwarf_fbi.html">
+<link title="Dwarf_input" rel="Chapter" href="Dwarf_input.html">
+<link title="Dwarf_leb128" rel="Chapter" href="Dwarf_leb128.html">
+<link title="Dwarf_types" rel="Chapter" href="Dwarf_types.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Elf_parse" rel="Chapter" href="Elf_parse.html">
+<link title="Elf_types" rel="Chapter" href="Elf_types.html">
+<link title="Elf_utils" rel="Chapter" href="Elf_utils.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html"><link title="Type abbreviations" rel="Section" href="#2_Typeabbreviations">
+<link title="Common type abbreviations" rel="Section" href="#2_Commontypeabbreviations">
+<link title="How to use the library " rel="Subsection" href="#3_Howtousethelibrary">
+<link title="Linking, loading and other staff" rel="Subsection" href="#3_Linkingloadingandotherstaff">
+<link title="Using in toplevel " rel="Subsection" href="#3_Usingintoplevel">
+<link title="How to use the library " rel="Subsection" href="#3_Howtousethelibrary">
+<link title="Linking, loading and other staff" rel="Subsection" href="#3_Linkingloadingandotherstaff">
+<link title="Using in toplevel " rel="Subsection" href="#3_Usingintoplevel">
+<title>Bap_types</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap_plugins.html" title="Bap_plugins">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Bap_addr.html" title="Bap_addr">Next</a>
+</div>
+<h1>Module <a href="type_Bap_types.html">Bap_types</a></h1>
+
+<pre><span class="keyword">module</span> Bap_types: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Bap base types.
+<p>
+
+    This library introduces base types for Binary Analysis Platform.
+<p>
+
+    Library provides 7 core types, namely:
+<p>
+<ul>
+<li><code class="code">arch</code> - computer architecture</li>
+<li><code class="code">size</code> - word or addresses size</li>
+<li><code class="code">var</code>  - a typed variable</li>
+<li><code class="code"><span class="keyword">type</span></code> - types of expressions</li>
+<li><code class="code">exp</code>  - bil expression</li>
+<li><code class="code">stmt</code> - bil statement</li>
+<li><code class="code">addr</code>,
+      <code class="code">word</code> - represents imidiate data,
+               this types are indeed synonyms to <code class="code"><span class="constructor">Bitvector</span>.t</code>.</li>
+</ul>
+
+    Every type implements <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code> interface. This interface is
+    very similiar to core's <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to
+    represent a type that is as common as built-in type. One should
+    expect to find any function that is implemented for such types as
+    <code class="code">int</code>, <code class="code">string</code>, <code class="code">char</code>, etc. To name a few, this interface
+    includes:
+<p>
+<ul>
+<li>comparison functions: (<code class="code">&lt;, &gt;, &lt;= , &gt;= , compare, between, ...</code>);</li>
+<li>each type defines a polymorphic <code class="code"><span class="constructor">Map</span></code> with keys of type <code class="code">t</code>;</li>
+<li>each type provides a <code class="code"><span class="constructor">Set</span></code> with values of type <code class="code">t</code>;</li>
+<li>for those, courage enough there is also an AVL tree;</li>
+<li>hastable is exposed via <code class="code"><span class="constructor">Table</span></code> module;</li>
+<li>sexpable and binable interface;</li>
+<li><code class="code">to_string</code>, <code class="code">str</code>, <code class="code">pp</code>, <code class="code">ppo</code>, <code class="code">pps</code> functions
+      for pretty-printing.</li>
+</ul>
+
+    And most types usually provides much more.<br>
+</div>
+<hr width="100%">
+<br>
+Bap base types.
+<p>
+
+    This library introduces base types for Binary Analysis Platform.
+<p>
+
+    Library provides 7 core types, namely:
+<p>
+<ul>
+<li><code class="code">arch</code> - computer architecture</li>
+<li><code class="code">size</code> - word or addresses size</li>
+<li><code class="code">var</code>  - a typed variable</li>
+<li><code class="code"><span class="keyword">type</span></code> - types of expressions</li>
+<li><code class="code">exp</code>  - bil expression</li>
+<li><code class="code">stmt</code> - bil statement</li>
+<li><code class="code">addr</code>,
+      <code class="code">word</code> - represents imidiate data,
+               this types are indeed synonyms to <code class="code"><span class="constructor">Bitvector</span>.t</code>.</li>
+</ul>
+
+    Every type implements <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code> interface. This interface is
+    very similiar to core's <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to
+    represent a type that is as common as built-in type. One should
+    expect to find any function that is implemented for such types as
+    <code class="code">int</code>, <code class="code">string</code>, <code class="code">char</code>, etc. To name a few, this interface
+    includes:
+<p>
+<ul>
+<li>comparison functions: (<code class="code">&lt;, &gt;, &lt;= , &gt;= , compare, between, ...</code>);</li>
+<li>each type defines a polymorphic <code class="code"><span class="constructor">Map</span></code> with keys of type <code class="code">t</code>;</li>
+<li>each type provides a <code class="code"><span class="constructor">Set</span></code> with values of type <code class="code">t</code>;</li>
+<li>for those, courage enough there is also an AVL tree;</li>
+<li>hastable is exposed via <code class="code"><span class="constructor">Table</span></code> module;</li>
+<li>sexpable and binable interface;</li>
+<li><code class="code">to_string</code>, <code class="code">str</code>, <code class="code">pp</code>, <code class="code">ppo</code>, <code class="code">pps</code> functions
+      for pretty-printing.</li>
+</ul>
+
+    And most types usually provides much more.<br>
+<br>
+<h3 id="3_Howtousethelibrary">How to use the library </h3>
+<p>
+
+     You should start any code relying on <code class="code">bap-types</code> library with a
+<p>
+
+     <code class="code"><span class="keyword">open</span> <span class="constructor">Bap</span>.<span class="constructor">Std</span></code>
+<p>
+
+     (or open <code class="code"><span class="constructor">Bap_types</span>.<span class="constructor">Std</span></code> if you're developing inside bap)
+<p>
+
+     It is a good idea, to open <code class="code"><span class="constructor">Core_kenel</span>.<span class="constructor">Std</span></code> before. You should
+     never use modules that are not exposed by the <code class="code"><span class="constructor">Std</span></code> module directly,
+     if you need something from this, that export it via <code class="code"><span class="constructor">Std</span></code> module,
+     and make a pull request, or whatever. Although, while these
+     modules are barred, their interfaces can still serve as good
+     reference and documentation, that's why they are installed along
+     with the library package.
+<p>
+
+     For each exported type, there is a module with the same name
+     (module capitalization), that implements its interface. For
+     example, type <code class="code">exp</code> is indeed a type abbreviation for <code class="code"><span class="constructor">Exp</span>.t</code>, and
+     module <code class="code"><span class="constructor">Exp</span></code> contains all functions and types related to type
+     <code class="code">exp</code>. Most modules consists of two parts:<ul>
+<li>base part, that usually defines types and constructors,</li>
+<li>main part, that extends the type interface with common
+     functions. This is hidden from a user, but it is good to know
+     about this, since it will help you to find a documentation. For
+     example, module <code class="code"><span class="constructor">Stmt</span></code>, that implements interface for type <code class="code">stmt</code>,
+     consists of module <code class="code"><span class="constructor">Bap_bil</span>.<span class="constructor">Stmt</span></code> extended by <code class="code"><span class="constructor">Bap_stmt</span></code> module,
+     but from a user's perspective, you will see only <code class="code"><span class="constructor">Stmt</span></code> module,
+     with fields from both modules merged. For a reference purpose,
+     although it is a good idea to look in <code class="code"><span class="constructor">Bap_bil</span>.<span class="constructor">Stmt</span></code> module for
+     type definitions, and <code class="code"><span class="constructor">Bap_stmt</span></code> for extra functions. But, again,
+     you do not need to actually reference this modules from your code,
+     for example, to create a hashtable of statements, just type:</li>
+</ul>
+
+     <code class="code"><span class="keyword">let</span> table = <span class="constructor">Stmt</span>.<span class="constructor">Table</span>.create ()</code>
+<p>
+
+     If a type is a variant type, and most types in <code class="code">bap-types</code>
+     library, are variant, then for each contructor named <code class="code"><span class="constructor">Name</span></code>, you
+     will find a corresponding function named <code class="code">name</code> that will accept
+     the same number of arguments as the arity of the constructor. For
+     example, type <code class="code">exp</code> has a contructor <code class="code"><span class="constructor">Extract</span> int * int * t)</code>, and
+     there is a corresponding function named <code class="code">extract</code>, that has type
+     <code class="code">int <span class="keywordsign">-&gt;</span> int <span class="keywordsign">-&gt;</span> t <span class="keywordsign">-&gt;</span> t</code>. See <code class="code">variantslib</code> for more information about,
+     variants interface.
+<p>
+
+     <h3 id="3_Linkingloadingandotherstaff">Linking, loading and other staff</h3>
+<p>
+
+     Library is organized as a main library, named <code class="code">bap-types</code>, and
+     several sublibraries, namely:
+<p>
+<ul>
+<li><code class="code">top</code> for loading <code class="code">bap-types</code> with all its dependencies to a
+     ocaml's toplevel.</li>
+</ul>
+<ul>
+<li><code class="code">bap-types.serialization</code> - provides facilities for marshaling
+     and demarshaling base types;</li>
+</ul>
+<ul>
+<li><code class="code">conceval</code> - for checking BIL semantics;</li>
+</ul>
+
+     <h3 id="3_Usingintoplevel">Using in toplevel </h3>
+<p>
+
+     To start tackling with BIL and BAP in an OCaml's toplevel all that
+     you need, is invoke the following commands in a toplevel
+     (including '#' symbol):
+<p>
+
+     <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>use&nbsp;<span class="string">"topfind"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>require&nbsp;<span class="string">"bap-types.top"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+     This will install pretty-printers for bap-types, types in core
+     kernel, and perform all needed customizations.<br>
+
+<pre><span class="keyword">module</span> <a href="Bap_types.Std.html">Std</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_types.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><br>
+Bap base types.
+<p>
+
+    This library introduces base types for Binary Analysis Platform.
+<p>
+
+    Library provides 7 core types, namely:
+<p>
+<ul>
+<li><code class="code">arch</code> - computer architecture</li>
+<li><code class="code">size</code> - word or addresses size</li>
+<li><code class="code">var</code>  - a typed variable</li>
+<li><code class="code"><span class="keyword">type</span></code> - types of expressions</li>
+<li><code class="code">exp</code>  - bil expression</li>
+<li><code class="code">stmt</code> - bil statement</li>
+<li><code class="code">addr</code>,
+      <code class="code">word</code> - represents imidiate data,
+               this types are indeed synonyms to <code class="code"><span class="constructor">Bitvector</span>.t</code>.</li>
+</ul>
+
+    Every type implements <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code> interface. This interface is
+    very similiar to core's <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to
+    represent a type that is as common as built-in type. One should
+    expect to find any function that is implemented for such types as
+    <code class="code">int</code>, <code class="code">string</code>, <code class="code">char</code>, etc. To name a few, this interface
+    includes:
+<p>
+<ul>
+<li>comparison functions: (<code class="code">&lt;, &gt;, &lt;= , &gt;= , compare, between, ...</code>);</li>
+<li>each type defines a polymorphic <code class="code"><span class="constructor">Map</span></code> with keys of type <code class="code">t</code>;</li>
+<li>each type provides a <code class="code"><span class="constructor">Set</span></code> with values of type <code class="code">t</code>;</li>
+<li>for those, courage enough there is also an AVL tree;</li>
+<li>hastable is exposed via <code class="code"><span class="constructor">Table</span></code> module;</li>
+<li>sexpable and binable interface;</li>
+<li><code class="code">to_string</code>, <code class="code">str</code>, <code class="code">pp</code>, <code class="code">ppo</code>, <code class="code">pps</code> functions
+      for pretty-printing.</li>
+</ul>
+
+    And most types usually provides much more.<br>
+<br>
+<h3 id="3_Howtousethelibrary">How to use the library </h3>
+<p>
+
+     You should start any code relying on <code class="code">bap-types</code> library with a
+<p>
+
+     <code class="code"><span class="keyword">open</span> <span class="constructor">Bap</span>.<span class="constructor">Std</span></code>
+<p>
+
+     (or open <code class="code"><span class="constructor">Bap_types</span>.<span class="constructor">Std</span></code> if you're developing inside bap)
+<p>
+
+     It is a good idea, to open <code class="code"><span class="constructor">Core_kenel</span>.<span class="constructor">Std</span></code> before. You should
+     never use modules that are not exposed by the <code class="code"><span class="constructor">Std</span></code> module directly,
+     if you need something from this, that export it via <code class="code"><span class="constructor">Std</span></code> module,
+     and make a pull request, or whatever. Although, while these
+     modules are barred, their interfaces can still serve as good
+     reference and documentation, that's why they are installed along
+     with the library package.
+<p>
+
+     For each exported type, there is a module with the same name
+     (module capitalization), that implements its interface. For
+     example, type <code class="code">exp</code> is indeed a type abbreviation for <code class="code"><span class="constructor">Exp</span>.t</code>, and
+     module <code class="code"><span class="constructor">Exp</span></code> contains all functions and types related to type
+     <code class="code">exp</code>. Most modules consists of two parts:<ul>
+<li>base part, that usually defines types and constructors,</li>
+<li>main part, that extends the type interface with common
+     functions. This is hidden from a user, but it is good to know
+     about this, since it will help you to find a documentation. For
+     example, module <code class="code"><span class="constructor">Stmt</span></code>, that implements interface for type <code class="code">stmt</code>,
+     consists of module <code class="code"><span class="constructor">Bap_bil</span>.<span class="constructor">Stmt</span></code> extended by <code class="code"><span class="constructor">Bap_stmt</span></code> module,
+     but from a user's perspective, you will see only <code class="code"><span class="constructor">Stmt</span></code> module,
+     with fields from both modules merged. For a reference purpose,
+     although it is a good idea to look in <code class="code"><span class="constructor">Bap_bil</span>.<span class="constructor">Stmt</span></code> module for
+     type definitions, and <code class="code"><span class="constructor">Bap_stmt</span></code> for extra functions. But, again,
+     you do not need to actually reference this modules from your code,
+     for example, to create a hashtable of statements, just type:</li>
+</ul>
+
+     <code class="code"><span class="keyword">let</span> table = <span class="constructor">Stmt</span>.<span class="constructor">Table</span>.create ()</code>
+<p>
+
+     If a type is a variant type, and most types in <code class="code">bap-types</code>
+     library, are variant, then for each contructor named <code class="code"><span class="constructor">Name</span></code>, you
+     will find a corresponding function named <code class="code">name</code> that will accept
+     the same number of arguments as the arity of the constructor. For
+     example, type <code class="code">exp</code> has a contructor <code class="code"><span class="constructor">Extract</span> int * int * t)</code>, and
+     there is a corresponding function named <code class="code">extract</code>, that has type
+     <code class="code">int <span class="keywordsign">-&gt;</span> int <span class="keywordsign">-&gt;</span> t <span class="keywordsign">-&gt;</span> t</code>. See <code class="code">variantslib</code> for more information about,
+     variants interface.
+<p>
+
+     <h3 id="3_Linkingloadingandotherstaff">Linking, loading and other staff</h3>
+<p>
+
+     Library is organized as a main library, named <code class="code">bap-types</code>, and
+     several sublibraries, namely:
+<p>
+<ul>
+<li><code class="code">top</code> for loading <code class="code">bap-types</code> with all its dependencies to a
+     ocaml's toplevel.</li>
+</ul>
+<ul>
+<li><code class="code">bap-types.serialization</code> - provides facilities for marshaling
+     and demarshaling base types;</li>
+</ul>
+<ul>
+<li><code class="code">conceval</code> - for checking BIL semantics;</li>
+</ul>
+
+     <h3 id="3_Usingintoplevel">Using in toplevel </h3>
+<p>
+
+     To start tackling with BIL and BAP in an OCaml's toplevel all that
+     you need, is invoke the following commands in a toplevel
+     (including '#' symbol):
+<p>
+
+     <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>use&nbsp;<span class="string">"topfind"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>require&nbsp;<span class="string">"bap-types.top"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+     This will install pretty-printers for bap-types, types in core
+     kernel, and perform all needed customizations.<br>
+<br>
+A definition for a regular type, and a handy module,
+      that can create regular types out of thin air.<br>
+<br>
+Processor architecture.
+<p>
+
+      Note: if you're looking for a <code class="code"><span class="constructor">ARCH</span></code> signature it is in the very
+      bottom of the file.<br>
+<br>
+Typed and always fresh variables.<br>
+<br>
+Types of BIL expressions<br>
+<br>
+This module exports first-class type definitions,
+      like <code class="code">reg8_t</code>, or <code class="code">mem32_t</code>. Look at <code class="code"><span class="constructor">Bap_type</span></code>, for more.<br>
+<br>
+BIL expressions.<br>
+<br>
+Sizes of expression operands<br>
+<br>
+Bil statements<br>
+<br>
+Bitvector is an ubiquitous module, that represents bitstrings and
+      arbitrary sized numbers at once. It is used to represent
+      addresses, imidiate operands and memories. It is suggested, that
+      depending on a context, one should use <code class="code"><span class="constructor">Addr</span></code> module and
+      corresponding type to represent addresses, and <code class="code"><span class="constructor">Word</span></code> module to
+      denote other values. Although they all will point to the same
+      type, it will be a little more explicit, and more understandable.<br>
+<br>
+Address representation.
+      This module not only includes <code class="code"><span class="constructor">Bit_vector</span></code> implementation, but also
+      adds some helpful functions, that makes good sense for addresses.
+      Look at <code class="code"><span class="constructor">Bap_addr</span></code> for more information.<br>
+<br>
+A fancy abbreviation for bitvectors, that are supposed to
+       represent data<br>
+<br>
+Byte endian. This is the only not first class type in a bap-types.
+      Sorry, no mapping and tables for this type.<br>
+<br>
+<h2 id="2_Typeabbreviations">Type abbreviations</h2>
+      In this section there is a type abbreviation for all
+      main types and auxiliary types.<br>
+<br>
+polymorphic sizes allows one to specify explicitly a set of
+      acceptable sizes, e.g., <code class="code"><span class="keyword">type</span> mmx = [<span class="keywordsign">`</span>r128 <span class="keywordsign">|</span> <span class="keywordsign">`</span>r256] poly_size</code><br>
+<br>
+<code class="code">addr_size</code> is a subset of sizes that contains only two
+      instances <code class="code"><span class="keywordsign">`</span>r32</code> and <code class="code"><span class="keywordsign">`</span>r64</code><br>
+<br>
+<h2 id="2_Commontypeabbreviations">Common type abbreviations</h2><br>
+</body></html>
