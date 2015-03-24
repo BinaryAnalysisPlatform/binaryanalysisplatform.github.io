@@ -1,6 +1,5 @@
 ---
 layout: post
-permalink: bap-byteweight
 title: bap-byteweight: Find functions in stripped binaries
 ---
 
