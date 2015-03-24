@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bap-byteweight: Find functions in stripped binaries
+title: bap-byteweight Find functions in stripped binaries
 ---
 
 BAP 0.9.5 includes the `bap-byteweight` utility to identify function starts. The
