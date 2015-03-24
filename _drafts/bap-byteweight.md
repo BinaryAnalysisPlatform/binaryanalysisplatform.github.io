@@ -22,10 +22,12 @@ ByteWeight consists of three commands: `update`, `symbols`, and `find`.
 
 `bap-byteweight update` is to download and install latest signatures from BAP platform. For unstripped
 binaries, one can get symbol information through symbol table by running:
+
 `bap-byteweight symbols [test_bin]`
 
 For stripped binaries, one can use the ByteWeight signatures to identify
 function starts by running:
+
 `bap-byteweight find [test_bin]`
 
 In our experiments with 2,200 binaries in
