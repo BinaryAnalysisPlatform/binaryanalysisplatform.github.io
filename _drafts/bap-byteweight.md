@@ -1,6 +1,6 @@
 ---
 layout: post
-title: bap-byteweight Find functions in stripped binaries
+title: Bap-byteweight&#58; Find functions in stripped binaries
 ---
 
 BAP 0.9.5 includes the `bap-byteweight` utility to identify function starts. The
@@ -9,7 +9,7 @@ main idea of ByteWeight is to
  - Identify functions from testing binaries, which may be stripped.
 The ByteWeight algorithm is covered in
 depth in our
-[2014 USENIX Presentation](https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/bao).
+[2014 USENIX Paper](https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/bao).
 
 ByteWeight consists of:
  - A classifier that takes in a binary, a ByteWeight trained model, and outputs
@@ -20,7 +20,10 @@ recognize functions from other compilers.
 
 ByteWeight consists of three commands: `update`, `symbols`, and `find`.
 
-`bap-byteweight update` is to download and install latest signatures from BAP platform. For unstripped
+BAP provides trained signatures for binaries in x86, x86-64 and arm which user can
+utilize directly without training by themselves. To obtain these signatures,
+user can use the `bap-byteweight update` command, which is to download and
+install the latest signatures from BAP platform. For unstripped
 binaries, one can get symbol information through symbol table by running:
 
 `bap-byteweight symbols [test_bin]`
