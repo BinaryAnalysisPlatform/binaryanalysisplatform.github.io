@@ -4,21 +4,17 @@ title: Bap-byteweight&#58; Find functions in stripped binaries
 ---
 
 BAP 0.9.5 includes the `bap-byteweight` utility to identify function starts. The
-main idea of ByteWeight is to
- - Learn features of function starts from a set of training binaries with symbol tables (for ground truth)
- - Identify functions from testing binaries, which may be stripped.
-The ByteWeight algorithm is covered in
-depth in our
-[2014 USENIX Paper](https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/bao).
+key idea of ByteWeight is to learn features of function starts from a set of
+training/unstripped binaries with symbol tables, and then to identify functions
+from testing binaries which may be stripped.  The ByteWeight algorithm is
+covered in depth in our [2014 USENIX
+Paper](https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/bao).
 
-ByteWeight consists of:
- - A classifier that takes in a binary, a ByteWeight trained model, and outputs
-function start addresses.  We include a model trained over gcc-produced
-executables.
- - An algorithm for learning a new model, e.g., if you want to extend ByteWeight to
-recognize functions from other compilers.
-
-ByteWeight consists of three commands: `update`, `symbols`, and `find`.
+ByteWeight consists of a classifier that outputs the function start addresses
+given a binary and a trained signature. Moreover, ByteWeight provides the
+classifier-training algorithm for user to train user's own classifier on his own
+binary set. For instance, if one wants to extend ByteWeight to recognize
+functions from other compilers, he can use the `bap-byteweight train` command.
 
 BAP provides trained signatures for binaries in x86, x86-64 and arm which user can
 utilize directly without training by themselves. To obtain these signatures,
@@ -33,25 +29,52 @@ function starts by running:
 
 `bap-byteweight find [test_bin]`
 
-In our experiments with 2,200 binaries in
-[x86](https://github.com/BinaryAnalysisPlatform/x86-binaries) and
-[x86-64](https://github.com/BinaryAnalysisPlatform/x86_64-binaries), we found that
+In our experiments with 2,476 binaries in
+[x86](https://github.com/BinaryAnalysisPlatform/x86-binaries),
+[x86-64](https://github.com/BinaryAnalysisPlatform/x86_64-binaries) and
+[arm](https://github.com/BinaryAnalysisPlatform/arm-binaries), we found that
 ByteWeight has better accuracy than
-[IDA Pro](https://www.hex-rays.com/products/ida/) in function start identification. In
-our test, we measured:
- - False negatives. IDA missed 266,672 functions with respect to ground truth,
-while ByteWeight missed 44,621 functions.
- - False positives. IDA misidentified 459,247 functions, while ByteWeight
-misidentified 43,992 functions.
+[IDA Pro](https://www.hex-rays.com/products/ida/) 6.7 in function start
+identification. Specifically, we measured:
+
+ - True Positives (TP), which are true functions and was identified by
+     the tool correctly.
+ - False Negatives (FN), which are missing functions that should have
+     been identified by the tool.
+ - False Positives (FP), which are false functions identified by the
+     function start identification tool.
+
+     The evaluation result is shown in the below table. IDA identified less true
+functions than ByteWeight did, and IDA missed and mis-identified more functions
+than ByteWeight in all three architectures.
+
+![tff]({{localhost}}/assets/bap-mbw-tff.png)
+
+We also measure the precision, recall and F_0.5 metrics in terms of the test
+suite in three architectures. Precision is calculated by Precision = TP / (TP + FP), which
+indicates the proportion of correct functions among all functions identified by
+the tool. Recall is calculated by Recall = TP / (TP + FN), which indicates the proportion
+of functions that the tool identified among all correct functions. F_0.5 is a
+comprehensive measurement of precision and recall, which we calculate by F_0.5 =
+1.5 * Precision * Recall / (0.5 * Precision + Recall).
+
+The precision, recall and F_0.5 metrics for both ByteWeight and IDA for test
+binaries in arm, x86 and x86_64 is shown in the below table. Based on the table,
+ByteWeight has higher precision, recall and F_0.5 measurement than IDA in all
+three architectures.
+
+
+![fpr]({{localhost}}/assets/bap-mbw-fpr.png)
 
 Of course your results may vary, but we believe the above is a reasonably strong
 indicator ByteWeight performs well.  We also provide an evaluation command for
 user to compare ByteWeight’s result against IDA Pro’s results using the command:
 
-`bap-byteweight evaluation [test_bin]`
+`bap-measure-byteweight [OPTION]… [test_bin] [tool] [ground_truth]`
 
-This command outputs the precision, recall, F_0.5 measurement for both
-ByteWeight and IDA Pro.
+This command outputs one or more metrics among true positive, false positive,
+false negative, precision, recall and F_0.5 in terms of the test binary. User
+can use this command to evaluate either ByteWeight or IDA.
 
-For more detail, please check the manual of `bap-byteweight` by command
-`bap-byteweight --help`.
+For more detail, please check the manual of `bap-measure-byteweight` by command
+`bap-measure-byteweight --help`.
