@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Bap.Std.Insn.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Insn.Trie</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Insn.html" title="Bap.Std.Insn">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Bap.Std.Insn.Trie.html">Bap.Std.Insn.Trie</a></h1>
+
+<pre><span class="keyword">module</span> Trie: <code class="code">sig</code> <a href="Bap.Std.Insn.Trie.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<h3 id="3_PrefixTree">Prefix Tree</h3>
+        This module provides a trie data structure where a sequence of
+        instructions is used as a key (and an individual instruction
+        as a token). Two implementations are provided, a regular, where
+        insns are compared as-is, and normalized, where instructions are
+        compared using normalized comparison.
+<p>
+
+        In normalized comparison concerete immediate values are ignored,
+        and if instructions have different number of operands, then only
+        then excess operands are excluded from the comparison.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEkey"><span class="keyword">type</span> <code class="type"></code>key</span> </pre>
+<div class="info ">
+Trie requires 0(1) get operation<br>
+</div>
+
+
+<pre><span id="VALkey_of_insns"><span class="keyword">val</span> key_of_insns</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">Bap.Std.Insn.t</a> list -> <a href="Bap.Std.Insn.Trie.html#TYPEkey">key</a></code></pre><div class="info ">
+<code class="code">key_of_insns insns</code> takes a list of instructions and transforms
+          it to <code class="code">key</code><br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a>: <code class="type"><a href="Bap.Std.Trie.html">Bap.Std.Trie</a></code><code class="type">  with type key = key</code></pre>
+<pre><span class="keyword">include</span> <a href="Bap.Std.Trie.html">Bap.Std.Trie</a></pre>
+</body></html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Bap.Std.Target.ABI.html">
+<link rel="Up" href="Bap.Std.Target.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Minimum set of required definitions" rel="Section" href="#3_Minimumsetofrequireddefinitions">
+<title>Bap.Std.Target.CPU</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Target.html" title="Bap.Std.Target">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Target.ABI.html" title="Bap.Std.Target.ABI">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Target.CPU.html">Bap.Std.Target.CPU</a></h1>
+
+<pre><span class="keyword">module</span> CPU: <code class="type"><a href="Bap.Std.CPU.html">Bap.Std.CPU</a></code><code class="type"> </code></pre><hr width="100%">
+<br>
+<h3 id="3_Minimumsetofrequireddefinitions">Minimum set of required definitions</h3><br>
+
+<pre><span id="VALgpr"><span class="keyword">val</span> gpr</span> : <code class="type">Bap.Std.Var.Set.t</code></pre><div class="info ">
+A set of general purpose registers<br>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre><div class="info ">
+Memory<br>
+</div>
+
+<pre><span id="VALpc"><span class="keyword">val</span> pc</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre><div class="info ">
+Program counter<br>
+</div>
+
+<pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre><div class="info ">
+Stack pointer<br>
+</div>
+
+<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre><div class="info ">
+<h4 id="4_Flagregisters">Flag registers</h4><br>
+</div>
+
+<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre>
+<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre>
+<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre>
+<pre><span id="VALaddr_of_pc"><span class="keyword">val</span> addr_of_pc</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a></code></pre>
+<pre><span id="VALis_reg"><span class="keyword">val</span> is_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre><div class="info ">
+<h3 id="3_Predicates">Predicates</h3><br>
+</div>
+
+<pre><span id="VALis_flag"><span class="keyword">val</span> is_flag</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_sp"><span class="keyword">val</span> is_sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_bp"><span class="keyword">val</span> is_bp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_pc"><span class="keyword">val</span> is_pc</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_zf"><span class="keyword">val</span> is_zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_cf"><span class="keyword">val</span> is_cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_vf"><span class="keyword">val</span> is_vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_nf"><span class="keyword">val</span> is_nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre>
+<pre><span id="VALis_mem"><span class="keyword">val</span> is_mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> bool</code></pre></body></html>

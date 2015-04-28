@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.abi</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;</div>
+<h1>Class type <a href="type_Bap.Std.abi.html">Bap.Std.abi</a></h1>
+
+<pre><span id="TYPEabi"><span class="keyword">class type</span> abi</span> = <code class="code">object</code> <a href="Bap.Std.abi-c.html">..</a> <code class="code">end</code></pre><div class="info classtype top">
+ABI interface.
+      Each ABI object must implement this interface.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="METHODid"><span class="keyword">method</span> id</span> : <code class="type">string list</code></pre><div class="info ">
+unique identifier of the ABI.
+        Used to communicate between to ABI's.
+<p>
+
+        The order of id parts should be from more specific, to less
+        specific, i.e. in reverse order (so that deriving classes can
+        easily append their own parts). The architecture shouldn't be
+        specified in the id, as two ABIs from different architectures
+        should never met.
+<p>
+
+        A good start whould be to use:
+        <code class="code">specific; compiler; os; vendor</code>
+<p>
+
+        Example: <code class="code">"*exit"; "gnueabi"; "linux"; "unknown"</code>
+<p>
+
+        Will encode an ABI of <code class="code">exit</code> family of functions for ARM linux
+        gnueabi. The recommended printing format for the ABI is to
+        append the arch name and print all constituents of the name from
+        right to left, using "-" symbol as a separator.
+<p>
+
+        In any case, the meaning of the identifier is specific to a
+        particular family of ABIs, that are, usually inherit the same
+        parent or set of parents.<br>
+</div>
+
+<pre><span id="METHODspecific"><span class="keyword">method</span> specific</span> : <code class="type">bool</code></pre><div class="info ">
+<code class="code">self#specific</code> is <code class="code">true</code> if this ABI is specific
+        for the provided function. The <code class="code">specific</code> ABI is always more
+        preferrable to non-specific one. If more than one specific
+        ABIs is applicable for the provided symbol, than the normal
+        resolution process will be used (see method <code class="code">choose</code>)<br>
+</div>
+
+<pre><span id="METHODchoose"><span class="keyword">method</span> choose</span> : <code class="type"><a href="Bap.Std.abi-c.html">abi</a> -> int</code></pre><div class="info ">
+<code class="code">self#choose other</code> used to sort a set of applicable ABI.
+<p>
+
+        Must return:<ul>
+<li><code class="code">0</code> if <code class="code">other</code> abi is not known or is considered equaly
+        applicable for the given context.</li>
+<li><code class="code">1</code> if <code class="code">other</code> abi is known, and <code class="code">self</code> is preferrable
+        to <code class="code">other</code></li>
+<li><code class="code">-1</code> if <code class="code">other</code> abi is more preferrable. This value can
+        be even returned when the other abi is not known to <code class="code">self</code>.</li>
+</ul>
+
+        In case of inconsistency the solving mechanism will consider
+        inconsistent abi's as equal. The examples of inconsistent
+        comparison results are: both abis preferred each other, or
+        both abis claimed that they are preferrable.<br>
+</div>
+
+<pre><span id="METHODreturn_value"><span class="keyword">method</span> return_value</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> option</code></pre><div class="info ">
+<code class="code">return_value</code> returns an expression, that can be used to return
+        a value from a function. Use <code class="code">Bil.concat</code> to represent return
+        value that doesn't fit into one register<br>
+</div>
+
+<pre><span id="METHODargs"><span class="keyword">method</span> args</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
+<code class="code">args</code> returns a list of expressions that represents
+        arguments of the given function. Each expression can be
+        annotated with suggested name<br>
+</div>
+
+<pre><span id="METHODvars"><span class="keyword">method</span> vars</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
+<code class="code">vars</code> returns a list of expressions, that represents
+        local variables of the function<br>
+</div>
+
+<pre><span id="METHODrecords"><span class="keyword">method</span> records</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list list</code></pre><div class="info ">
+<code class="code">records</code> returns a list of records, found in the symbol.<br>
+</div>
+</body></html>

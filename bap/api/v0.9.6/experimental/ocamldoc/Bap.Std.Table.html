@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Memory.html">
+<link rel="next" href="Bap.Std.Location.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Table relations" rel="Section" href="#4_Tablerelations">
+<link title="Examples" rel="Subsection" href="#5_Examples">
+<title>Bap.Std.Table</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Memory.html" title="Bap.Std.Memory">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Location.html" title="Bap.Std.Location">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Table.html">Bap.Std.Table</a></h1>
+
+<pre><span class="keyword">module</span> Table: <code class="code">sig</code> <a href="Bap.Std.Table.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Table.
+<p>
+
+      Tables are used to partition memory region into a set of
+      non-intersecting areas. Each area is assosiated with arbitrary
+      value of type <code class="code">'a</code> bound to the type of the table.
+<p>
+
+      All operations over tables are purely applicative, i.e. there is
+      no observable side-effects. Although, they employ some kind of
+      caching underneath the hood, so that they perform better if
+      they're  build once and used many times.
+<p>
+
+      Tables can be also linked. For example, if you have two tables
+      mapping the same memory region to a different sets of values, you
+      can create a mapping from one set of values to another. See <code class="code">link</code>
+      function for mode details.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code> </pre>
+
+
+<pre><span id="TYPEhashable"><span class="keyword">type</span> <code class="type">'a</code> hashable</span> = <code class="type">'a Core_kernel.Std.Hashtbl.Hashable.t</code> </pre>
+
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a></code></pre><div class="info ">
+creates an empty table<br>
+</div>
+
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a></code></pre><div class="info ">
+creates a table containing one bindins<br>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">add table mem v</code> returns a new table with added mapping from a
+        mem region <code class="code">mem</code> to a data value <code class="code">v</code><br>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a></code></pre><div class="info ">
+returns a new table with all mappings from the mem region
+        <code class="code">mem</code> removed<br>
+</div>
+
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -><br>       f:((<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a> -><br>          [ `ignore<br>          | `rebind of <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a<br>          | `remove<br>          | `update of <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a -> 'a ]) -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">change tab mem ~f</code> function <code class="code">f</code> is applied to a set of all memory
+        regions that intersects with <code class="code">mem</code>. If function <code class="code">f</code> evaluates to
+        <code class="code">`remap (new_mem,y)</code> then all memory regions that have had
+        intersections with <code class="code">mem</code> will be removed from the new map and
+        memory region <code class="code">new_mem</code> will be mapped to <code class="code">y</code>. If <code class="code">f</code> evaluates to
+        <code class="code">`remove</code>, then the regions will be removed, and nothing will be
+        added. If it evaluates to <code class="code">`skip</code> then the table will be returned
+        unchanged.  Intersections are passed sorted in an ascending order.<br>
+</div>
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">length table</code> returns a number of entries in the table<br>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a option</code></pre><div class="info ">
+<code class="code">find table mem</code> finds an element mapped to the memory region <code class="code">mem</code><br>
+</div>
+
+<pre><span id="VALfind_addr"><span class="keyword">val</span> find_addr</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) option</code></pre><div class="info ">
+<code class="code">find_addr tab addr</code> finds a memory region that contains a
+        specified <code class="code">addr</code><br>
+</div>
+
+<pre><span id="VALintersections"><span class="keyword">val</span> intersections</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a></code></pre><div class="info ">
+<code class="code">intersections table mem</code> returns all mappings in a <code class="code">table</code> that
+        have intersections with <code class="code">mem</code><br>
+</div>
+
+<pre><span id="VALfold_intersections"><span class="keyword">val</span> fold_intersections</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> init:'b -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'b -> 'b) -> 'b</code></pre><div class="info ">
+<code class="code">fold_intersections table mem</code> folds over all regions
+        intersecting with <code class="code">mem</code><br>
+</div>
+
+<pre><span id="VALhas_intersections"><span class="keyword">val</span> has_intersections</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> bool</code></pre><div class="info ">
+<code class="code">has_intersections tab mem</code> is true iff some portion of <code class="code">mem</code> is
+        is already mapped in <code class="code">tab</code>.<br>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> bool</code></pre><div class="info ">
+<code class="code">mem table mem</code> is true if table contains mem region <code class="code">mem</code><br>
+</div>
+
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) option</code></pre><div class="info ">
+<code class="code">next table elt</code> returns element next to <code class="code">elt</code>, if any<br>
+</div>
+
+<pre><span id="VALprev"><span class="keyword">val</span> prev</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) option</code></pre><div class="info ">
+<code class="code">next table elt</code> returns element preceding to <code class="code">elt</code>, if any<br>
+</div>
+
+<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) option</code></pre><div class="info ">
+<code class="code">min tab</code> return the lowest binding<br>
+</div>
+
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type">'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) option</code></pre><div class="info ">
+<code class="code">max tab</code> return the highest binding<br>
+</div>
+
+<pre><span id="TYPEr"><span class="keyword">type</span> <code class="type">('a, 'm)</code> r</span> </pre>
+<div class="info ">
+Relation multiplicity.
+        For a given type <code class="code">'a</code> creates type <code class="code">'m</code><br>
+</div>
+
+<br>
+<h4 id="4_Tablerelations">Table relations</h4><br>
+
+<pre><span id="VALmany"><span class="keyword">val</span> many</span> : <code class="type">('a, 'a <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
+<code class="code">0..*</code><br>
+</div>
+
+<pre><span id="VALat_least_one"><span class="keyword">val</span> at_least_one</span> : <code class="type">('a, 'a * 'a <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre>
+<pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type">('a, 'a) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
+<code class="code">1..1</code><br>
+</div>
+
+<pre><span id="VALmaybe_one"><span class="keyword">val</span> maybe_one</span> : <code class="type">('a, 'a option) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
+<code class="code">0..1</code><br>
+</div>
+<br>
+<code class="code">link relation t t1 t2</code> takes two tables and returns a mapping
+        from elements of one table to elements of other table.
+<p>
+
+        Parameter <code class="code">t</code> specifies a <code class="code">hashable</code> typeclass of the type <code class="code">'a</code>. If
+        type <code class="code">'a</code> implements <code class="code">Hashable</code> interface, then you can obtain it
+        with <code class="code">hashable</code> function, e.g. <code class="code">Int.hashable</code> with return the
+        appropriate type class. If <code class="code">'a</code> doesn't implement <code class="code">Hashable</code>, then
+        it can be implemented manually.
+<p>
+
+        Relation specifies the multiplicity of the relation between
+        entities from table <code class="code">t1</code> to entities from table <code class="code">t2</code>, and is
+        summarized below:
+<p>
+<ul>
+<li><code class="code">one_to_many</code> means that a particular region from table <code class="code">t1</code> can
+        span several memory regions from table <code class="code">t2</code>. Example: segments
+        to symbols relation.</li>
+</ul>
+<ul>
+<li><code class="code">one_to_one</code> means that for each value of type <code class="code">'a</code> there is
+        exactly one value of type <code class="code">'b</code>. This relation should be used with
+        caution, since it is quantified over _all_ values of type
+        <code class="code">'a</code>. Indeed, it should be used only for cases, when it can be
+        guaranteed, that it is impossible to create such value of type
+        <code class="code">'b</code>, that has no correspondence in table <code class="code">t2</code>. Otherwise,
+        <code class="code">one_to_maybe_one</code> relation should be used. Example: llvm
+        machine code to assembly string relation.</li>
+</ul>
+<ul>
+<li><code class="code">one_to_maybe_one</code> means that for each value in table <code class="code">t1</code> there
+        exists at most one value in table <code class="code">t2</code>. Example: function to
+        symbol relation.</li>
+</ul>
+
+        <h5 id="5_Examples">Examples</h5>
+        <pre class="codepre"><code class="code">          let mc_of_insn  = link one_to:one Insn.hashable insns mcs
+          let syms_of_sec = link one_to:many Sec.hashable  secs syms
+        </code></pre><br>
+
+<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">one_to:('b, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'a -> 'r</code></pre>
+<pre><span id="VALrev_map"><span class="keyword">val</span> rev_map</span> : <code class="type">one_to:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a>, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> ('a -> 'r) Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">rev_map arity t tab</code> creates a reverse mapping from values of
+        typeclass <code class="code">t</code> stored in table <code class="code">tab</code> to memory regions.
+<p>
+
+        Note. not every mapping is reversable, for example, trying to obtain
+        a reverse of surjective mapping as a one-to-one mapping will
+        result in an error. But surjective mappings can be reversed
+        using <code class="code">~one_to:many</code> mapping. A particular example of surjective
+        mapping is <code class="code">symbol</code> tables, in a case when functions can occupy
+        several non-contiguous regions of memory.
+<p>
+
+        <h5 id="5_Examples">Examples</h5>
+<p>
+
+        To create a mapping from a function symbol to sequence of memory
+        regions with it code:
+<p>
+
+        <pre class="codepre"><code class="code">rev_map one_to:many Sym.hashable tab</code></pre><br>
+</div>
+
+<pre><span id="TYPEranged"><span class="keyword">type</span> <code class="type">'a</code> ranged</span> = <code class="type">?start:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> ?until:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a</code> </pre>
+<div class="info ">
+<h3 id="3_Iterators">Iterators</h3>
+<p>
+
+        This section provides a common set of iterators. Note: name
+        iterator is used in a functional meaning, i.e., an iterator is a
+        function that takes a data structure and another function, and
+        applies it to all elements in some manner.
+<p>
+
+        All iterators share some common part of interface that was lifted
+        to a <code class="code">'a ranged</code> type. When you see
+<p>
+
+        <code class="code">('a t -&gt; f:('a -&gt; bool) -&gt; bool) ranged</code>
+<p>
+
+        just mentally substitute it with:
+<p>
+
+        <code class="code">?start -&gt; ?until -&gt; 'a t -&gt; f:('a -&gt; bool) -&gt; bool</code>.
+<p>
+
+        In other words <code class="code">'f ranged</code> just prepends <code class="code">?start -&gt; ?until -&gt;</code> to
+        function with type <code class="code">'f</code> (do not forget that <code class="code">'f</code> can be an arrow
+        type).
+<p>
+
+        <code class="code">start</code> and <code class="code">until</code> parameters allows to narrow iteration to some
+        subset of table. If they are unspecified then iteration would be
+        performed on all table entries in an ascending order of
+        addresses. If they are specified, then if <code class="code">start &lt;= until</code>, then
+        iteration will be performed in the same order but on a specified
+        subset. In the case, when <code class="code">start &gt; until</code>, iteration will be
+        performed in a decreasing order.<br>
+</div>
+
+
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> int) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfind_if"><span class="keyword">val</span> find_if</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> 'a option) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b option) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> init:'b -> f:('a -> 'b -> 'b) -> 'b)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> unit) -> unit) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfind_mapi"><span class="keyword">val</span> find_mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'b option) -> 'b option)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> init:'b -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'b -> 'b) -> 'b)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> unit) -> unit)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'b) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
+removes all mappings that do not satisfy the predicate<br>
+</div>
+
+<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfilteri"><span class="keyword">val</span> filteri</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> bool) -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -><br>        f:(<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a -> 'b option) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * 'a) Core_kernel.Std.Sequence.t)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
+<code class="code">to_sequence tab</code> converts the table <code class="code">t</code> to a
+        sequence of key-value pairs.<br>
+</div>
+
+<pre><span id="VALregions"><span class="keyword">val</span> regions</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
+<code class="code">regions table</code> returns in an ascending order of addresses all
+        memory regions mapped in a <code class="code">table</code><br>
+</div>
+
+<pre><span id="VALelements"><span class="keyword">val</span> elements</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
+<code class="code">regions table</code> returns in an ascending order of addresses all
+        elements mapped in a <code class="code">table</code><br>
+</div>
+</body></html>

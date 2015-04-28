@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Symtab.html">
+<link rel="next" href="Bap.Std.Dwarf.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Project</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Symtab.html" title="Bap.Std.Symtab">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Dwarf.html" title="Bap.Std.Dwarf">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Project.html">Bap.Std.Project</a></h1>
+
+<pre><span class="keyword">module</span> Project: <code class="code">sig</code> <a href="Bap.Std.Project.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.arch">arch</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+architecture<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.disasm">disasm</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdisasm">Bap.Std.disasm</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+disassembly of a program<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.memory">memory</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+annotations<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.storage">storage</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> Core_kernel.Std.String.Map.t</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+arbitrary data storage<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.symbols">symbols</span>&nbsp;: <code class="type">string <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<span class="warning">Deprecated.</span>symbol table<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.base">base</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<span class="warning">Deprecated.</span>base memory<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+}
+
+<div class="info ">
+The result of Binary analysis.<br>
+</div>
+
+
+<pre><span id="TYPEcolor"><span class="keyword">type</span> <code class="type"></code>color</span> = <code class="type">[ `black | `blue | `cyan | `green | `magenta | `red | `white | `yellow ]</code> </pre>
+
+<br>
+all string tags supports the following substitutions:
+<p>
+<ul>
+<li>$region_ - name of region of file
+        to which it belongs. For example, in ELF this name will
+        correspond to the section name</li>
+</ul>
+<ul>
+<li>$symbol_ - name or address of the symbol to which this
+        memory belongs</li>
+</ul>
+<ul>
+<li>$asm - assembler listing of the memory region</li>
+</ul>
+<ul>
+<li>$bil - BIL code of the tagged memory region</li>
+</ul>
+<ul>
+<li>$block_ - name or address of a basic block to which
+        this region belongs</li>
+</ul>
+<ul>
+<li>$min_addr, $addr - starting address of a memory region</li>
+</ul>
+<ul>
+<li>$max_addr - address of the last byte of a memory region.</li>
+</ul>
+<br>
+
+<pre><span id="VALtext"><span class="keyword">val</span> text</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+an arbitrary text<br>
+</div>
+
+<pre><span id="VALhtml"><span class="keyword">val</span> html</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+the associated data is an html markup<br>
+</div>
+
+<pre><span id="VALcomment"><span class="keyword">val</span> comment</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
+<pre><span id="VALpython"><span class="keyword">val</span> python</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
+<pre><span id="VALshell"><span class="keyword">val</span> shell</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
+<pre><span id="VALmark"><span class="keyword">val</span> mark</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+just mark a region<br>
+</div>
+
+<pre><span id="VALcolor"><span class="keyword">val</span> color</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+attach a color<br>
+</div>
+
+<pre><span id="VALweight"><span class="keyword">val</span> weight</span> : <code class="type">float <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+attach a weight to a memory<br>
+</div>
+
+<pre><span id="VALregister_plugin"><span class="keyword">val</span> register_plugin</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
+<code class="code">register plugin</code> registers <code class="code">plugin</code> in the system<br>
+</div>
+
+<pre><span id="VALregister_plugin'"><span class="keyword">val</span> register_plugin'</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
+<code class="code">register' plugin</code> registers a <code class="code">plugin</code> that will be
+        evaluated only for side effect.<br>
+</div>
+
+<pre><span id="VALregister_plugin_with_args"><span class="keyword">val</span> register_plugin_with_args</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre>
+<pre><span id="VALregister_plugin_with_args'"><span class="keyword">val</span> register_plugin_with_args'</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre>
+<pre><span id="VALplugins"><span class="keyword">val</span> plugins</span> : <code class="type">unit -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) list</code></pre><div class="info ">
+A list of registered plugins in the order of registration<br>
+</div>
+</body></html>

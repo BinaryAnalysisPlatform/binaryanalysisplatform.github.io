@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Bap.Std.Dwarf.Section.html">
+<link rel="Up" href="Bap.Std.Dwarf.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Dwarf.Leb128</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Dwarf.html" title="Bap.Std.Dwarf">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Dwarf.Section.html" title="Bap.Std.Dwarf.Section">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a></h1>
+
+<pre><span class="keyword">module</span> Leb128: <code class="code">sig</code> <a href="Bap.Std.Dwarf.Leb128.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
+an encoded value<br>
+</div>
+
+
+<pre><span id="TYPEencoder"><span class="keyword">type</span> <code class="type">'a</code> encoder</span> = <code class="type">?signed:bool -> 'a -> <a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a></code> </pre>
+<div class="info ">
+<code class="code">encode ~signed v</code> encodes value <code class="code">v</code> in a LEB128 format. If
+          signed is true, then uses signed encoding.
+<p>
+<code class="code">decode leb</code> decodes a number from LEB128 representation.<br>
+</div>
+
+
+<pre><span id="TYPEdecoder"><span class="keyword">type</span> <code class="type">'a</code> decoder</span> = <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> 'a Core_kernel.Std.Or_error.t</code> </pre>
+
+
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">size leb</code> return size in bytes of the number stored in LEB128
+          encoding.<br>
+</div>
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">?signed:bool -><br>       string -><br>       pos_ref:int Pervasives.ref -><br>       <a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> string -> pos:int -> unit</code></pre>
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">int <a href="Bap.Std.Dwarf.Leb128.html#TYPEdecoder">decoder</a></code></pre>
+<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type">int32 <a href="Bap.Std.Dwarf.Leb128.html#TYPEdecoder">decoder</a></code></pre>
+<pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type">int64 <a href="Bap.Std.Dwarf.Leb128.html#TYPEdecoder">decoder</a></code></pre>
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int <a href="Bap.Std.Dwarf.Leb128.html#TYPEencoder">encoder</a></code></pre>
+<pre><span id="VALof_int32"><span class="keyword">val</span> of_int32</span> : <code class="type">int32 <a href="Bap.Std.Dwarf.Leb128.html#TYPEencoder">encoder</a></code></pre>
+<pre><span id="VALof_int64"><span class="keyword">val</span> of_int64</span> : <code class="type">int64 <a href="Bap.Std.Dwarf.Leb128.html#TYPEencoder">encoder</a></code></pre></body></html>
