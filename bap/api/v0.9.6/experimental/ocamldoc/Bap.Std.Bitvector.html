@@ -16,9 +16,10 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Some predefined constant constructors " rel="Section" href="#4_Somepredefinedconstantconstructors">
-<link title="Helpful shortcuts " rel="Section" href="#4_Helpfulshortcuts">
-<link title="Iteration over bitvector components " rel="Section" href="#4_Iterationoverbitvectorcomponents">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Common Interfaces" rel="Section" href="#2_CommonInterfaces">
+<link title="Some predefined constant constructors " rel="Section" href="#2_Somepredefinedconstantconstructors">
+<link title="Helpful shortcuts " rel="Section" href="#2_Helpfulshortcuts">
+<link title="Iteration over bitvector components " rel="Section" href="#2_Iterationoverbitvectorcomponents">
 <title>Bap.Std.Bitvector</title>
 </head>
 <body>
@@ -29,13 +30,10 @@
 <h1>Module <a href="type_Bap.Std.Bitvector.html">Bap.Std.Bitvector</a></h1>
 
 <pre><span class="keyword">module</span> Bitvector: <code class="code">sig</code> <a href="Bap.Std.Bitvector.html">..</a> <code class="code">end</code></pre><div class="info module top">
-<h2 id="bitv">Bitvector</h2>
+Bitvector -- a type for representing binary values.
 <p>
 
-      Bitvector -- a type for representing binary values.
-<p>
-
-      <h3 id="3_Overview">Overview </h3>
+      <h2 id="2_Overview">Overview </h2>
 <p>
 
       A numeric value with a 2-complement binary representation. It is
@@ -51,7 +49,7 @@
       them, if you know what kind of operands you're expecting.
 <p>
 
-      <h4 id="4_Clarificationsendiannessandbitordering">Clarifications endianness and bit-ordering </h4>
+      <h2 id="2_Clarificationsendiannessandbitordering">Clarifications endianness and bit-ordering </h2>
 <p>
 
       Bitvector should be considered as an number with an arbitrary
@@ -73,7 +71,7 @@
       agnostic.
 <p>
 
-      <h4 id="4_Clarificationonsizemorphism">Clarification on size-morphism </h4>
+      <h2 id="2_Clarificationonsizemorphism">Clarification on size-morphism </h2>
 <p>
 
       Size-monomorphic operations (as opposed to size-polymorphic
@@ -101,7 +99,7 @@
       guarantee that all keys in a hash-table have equal size.
 <p>
 
-      <h4 id="4_Clarificationonsigns">Clarification on signs</h4>
+      <h2 id="2_Clarificationonsigns">Clarification on signs</h2>
 <p>
 
       By default all numbers represented by a bitvector are considered
@@ -128,7 +126,7 @@
       </code></pre>
 <p>
 
-      <h4 id="4_Clarificationonstringrepresentation">Clarification on string representation </h4>
+      <h2 id="2_Clarificationonstringrepresentation">Clarification on string representation </h2>
 <p>
 
       As a part of <code class="code">Identifiable</code> interface bitvector provides a pair of
@@ -161,15 +159,17 @@
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a></code> </pre>
 <div class="info ">
-<h4 id="4_CommonInterfaces">Common Interfaces</h4>
+<code class="code">word</code> is an abbreviation to <code class="code">Bitvector.t</code><br>
+</div>
+
+<br>
+<h2 id="2_CommonInterfaces">Common Interfaces</h2>
 <p>
 
         Bitvector is a value, first of all, so it supports a common set of
         a value interface: it can be stored, compared, it can be a key in
         a dictionary, etc. Moreover, being a number it can be compared
         with zero and applied to a common set of integer operations.<br>
-</div>
-
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 <div class="info ">
@@ -216,17 +216,14 @@ Specifies the order of bytes in a word.<br>
 
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
-<h4 id="4_Constructors">Constructors</h4>
-<p>
-
-        We provide several conversions from primitive data types.<br>
+<h2 id="2_Constructors">Constructors</h2><br>
 </div>
 
 <pre><span id="VALof_bool"><span class="keyword">val</span> of_bool</span> : <code class="type">bool -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">width:int -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALof_int32"><span class="keyword">val</span> of_int32</span> : <code class="type">?width:int -> int32 -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALof_int64"><span class="keyword">val</span> of_int64</span> : <code class="type">?width:int -> int64 -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><br>
-<h4 id="4_Somepredefinedconstantconstructors">Some predefined constant constructors </h4><br>
+<h2 id="2_Somepredefinedconstantconstructors">Some predefined constant constructors </h2><br>
 
 <pre><span id="VALb0"><span class="keyword">val</span> b0</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">b0 = of_bool false</code> is a zero bit
@@ -235,7 +232,7 @@ Specifies the order of bytes in a word.<br>
 </div>
 
 <pre><span id="VALb1"><span class="keyword">val</span> b1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><br>
-<h4 id="4_Helpfulshortcuts">Helpful shortcuts </h4><br>
+<h2 id="2_Helpfulshortcuts">Helpful shortcuts </h2><br>
 
 <pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">one width</code> number one with a specified <code class="code">width</code>, is a shortcut for
@@ -266,7 +263,7 @@ Specifies the order of bytes in a word.<br>
 </div>
 
 <pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int Core_kernel.Std.Or_error.t</code></pre><div class="info ">
-<h4 id="4_Conversionstointegers">Conversions to integers </h4><br>
+<h2 id="2_Conversionstobuiltinintegers">Conversions to built-in integers </h2><br>
 </div>
 
 <pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int32 Core_kernel.Std.Or_error.t</code></pre>
@@ -352,7 +349,7 @@ Specifies the order of bytes in a word.<br>
 <code class="code">a -- n</code> is <code class="code">npred a n</code><br>
 </div>
 <br>
-<h4 id="4_Iterationoverbitvectorcomponents">Iteration over bitvector components </h4><br>
+<h2 id="2_Iterationoverbitvectorcomponents">Iteration over bitvector components </h2><br>
 
 <pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Core_kernel.Std.Sequence.t</code></pre><div class="info ">
 <code class="code">to_bytes x order</code> returns bytes of <code class="code">x</code> in a specified <code class="code">order</code>.
@@ -374,7 +371,7 @@ Arithmetic raised into <code class="code">Or_error</code> monad
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Int_exn.html">Int_exn</a>: <code class="type"><a href="Bap.Std.Integer.html">Bap.Std.Integer</a></code><code class="type">  with type t = t</code></pre><div class="info">
-Arithmetics that raise exceptions.
+Arithmetic that raises exceptions.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Trie.html">Trie</a>: <code class="code">sig</code> <a href="Bap.Std.Bitvector.Trie.html">..</a> <code class="code">end</code></pre><div class="info">

@@ -26,11 +26,35 @@
 <h1>Module type <a href="type_Bap.Std.ABI.html">Bap.Std.ABI</a></h1>
 
 <pre><span class="keyword">module type</span> ABI = <code class="code">sig</code> <a href="Bap.Std.ABI.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
-Abstract interface for ABI.
+Application Binary Interface
 <p>
 
-      Each lifted architecture provides an ABI module, that implements
-      a superset of this interface.<br>
+      Under this name, we're gathering several different concepts, like:
+<p>
+<ul>
+<li>calling convention</li>
+<li>stack frame organization</li>
+<li>data representation</li>
+<li>special functions</li>
+</ul>
+
+      Later we may extend the ABI class to handle system calls, type
+      inference and other stuff.
+<p>
+
+      Each ABI object is constructed specifically to a particular
+      symbol using the following functional constructor, of the
+      following type:
+<p>
+
+      <code class="code">?image:image -&gt; ?sym:string -&gt; mem -&gt; block -&gt; abi option</code>
+<p>
+
+      ABI constructors are registered in the target specific lifter,
+      and constructed for each symbol. Afterwards a set of most
+      (and equally) applicable ABIs is provided to a calling part,
+      to which it is left the final decision on how to disambiguate
+      them.<br>
 </div>
 <hr width="100%">
 

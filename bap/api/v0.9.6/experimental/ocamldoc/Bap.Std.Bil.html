@@ -16,7 +16,9 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="AST Visitors" rel="Section" href="#bil_visitor">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Functional constructors" rel="Section" href="#2_Functionalconstructors">
+<link title="AST Visitors" rel="Section" href="#bil_visitor">
+<link title="BIL Helper functions" rel="Section" href="#bil_helpers">
 <title>Bap.Std.Bil</title>
 </head>
 <body>
@@ -27,7 +29,7 @@
 <h1>Module <a href="type_Bap.Std.Bil.html">Bap.Std.Bil</a></h1>
 
 <pre><span class="keyword">module</span> Bil: <code class="code">sig</code> <a href="Bap.Std.Bil.html">..</a> <code class="code">end</code></pre><div class="info module top">
-<h3 id="bil_main">Main BIL module</h3>
+Main BIL module
 <p>
 
       This module defines BIL language and is useful to write BIL
@@ -49,7 +51,9 @@
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Types.html">Types</a>: <code class="code">sig</code> <a href="Bap.Std.Bil.Types.html">..</a> <code class="code">end</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Types.html">Types</a>: <code class="code">sig</code> <a href="Bap.Std.Bil.Types.html">..</a> <code class="code">end</code></pre><br>
+include all constructors into Bil namespace<br>
+
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a></pre>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">stmt list</code> </pre>
@@ -62,12 +66,18 @@ Infix operators
 </div>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a></pre>
+<br>
+<h2 id="2_Functionalconstructors">Functional constructors</h2><br>
 
 <pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> exp -> stmt</code></pre><div class="info ">
-<h5 id="5_Functionalconstructors">Functional constructors</h5><br>
+<code class="code">move v x</code> evaluate <code class="code">x</code> and assign its value to <code class="code">v</code><br>
 </div>
 
-<pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type">exp -> stmt</code></pre>
+<pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type">exp -> stmt</code></pre><div class="info ">
+<code class="code">jmp t</code> evaluate expression <code class="code">t</code> to absolute address and
+        transfer control to that address<br>
+</div>
+
 <pre><span id="VALspecial"><span class="keyword">val</span> special</span> : <code class="type">string -> stmt</code></pre>
 <pre><span id="VALwhile_"><span class="keyword">val</span> while_</span> : <code class="type">exp -> stmt list -> stmt</code></pre>
 <pre><span id="VALif_"><span class="keyword">val</span> if_</span> : <code class="type">exp -> stmt list -> stmt list -> stmt</code></pre>
@@ -109,7 +119,7 @@ Infix operators
 <pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">if_:exp -> then_:exp -> else_:exp -> exp</code></pre>
 <pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">Bap.Std.nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">Bap.Std.nat1</a> -> exp -> exp</code></pre>
 <pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">exp -> exp -> exp</code></pre><br>
-<h4 id="bil_visitor">AST Visitors</h4>.
+<h2 id="bil_visitor">AST Visitors</h2>.
 <p>
 
         <code class="code">visitor</code> folds arbitrary value over the AST, <code class="code">finder</code> is a
@@ -133,6 +143,8 @@ A visitor with shortcut.
 <pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Bil.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code">object</code> <a href="Bap.Std.Bil.mapper-c.html">..</a> <code class="code">end</code></pre><div class="info">
 AST transformation.
 </div>
+<br>
+<h2 id="bil_helpers">BIL Helper functions</h2><br>
 
 <pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">'a #<a href="Bap.Std.Bil.finder-c.html">finder</a> -> stmt list -> 'a option</code></pre><div class="info ">
 <code class="code">find_map finder bil</code> search in the BIL<br>

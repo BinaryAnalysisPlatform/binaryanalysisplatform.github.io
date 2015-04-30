@@ -22,47 +22,11 @@
 <h1>Module <a href="type_Bap.html">Bap</a></h1>
 
 <pre><span class="keyword">module</span> Bap: <code class="code">sig</code> <a href="Bap.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Binary Analysis Platform API.
-<p>
-
-    <h1 id="1_Overview">Overview</h1>
-<p>
-
-    BAP has a layered architecture currently consisting of four
-    layers:
-<p>
-<ul>
-<li>Core types - defines Binary Intermidiate Language
-    (BIL) as well as some common basic types, commonly usable for
-    binary analysis.</li>
-</ul>
-<ul>
-<li>Memory model - loads and represents binary in the
-    memory;</li>
-</ul>
-<ul>
-<li>Disassembling - the first pass of the analysis -
-    disassembles and lifts binary to BIL.</li>
-</ul>
-<ul>
-<li>Semantic analysis - the seconds pass of decompilation,
-    that performs lifting to IR and provides useful analysis.</li>
-</ul>
-
-    <h2 id="2_Howtousethelibrary">How to use the library </h2>
-<p>
-
-     You should start any code relying on <code class="code">bap-types</code> library with a
-<p>
-
-     <code class="code">open Bap.Std</code>
-<p>
-
-     It is a good idea, to open <code class="code">Core_kenel.Std</code> before.<br>
+<h1 id="1_BinaryAnalysisPlatformLibrary">Binary Analysis Platform Library</h1><br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.html">Std</a>: <code class="code">sig</code> <a href="Bap.Std.html">..</a> <code class="code">end</code></pre><div class="info">
-BAP API
+Binary Analysis Platform Library
 </div>
 </body></html>

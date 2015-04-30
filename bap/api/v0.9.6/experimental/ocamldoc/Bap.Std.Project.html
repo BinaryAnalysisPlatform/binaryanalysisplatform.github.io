@@ -25,7 +25,14 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Project.html">Bap.Std.Project</a></h1>
 
-<pre><span class="keyword">module</span> Project: <code class="code">sig</code> <a href="Bap.Std.Project.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Project: <code class="code">sig</code> <a href="Bap.Std.Project.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Target of analysis.<br>
+</div>
+<hr width="100%">
+<br>
+A project groups together all the information recovered from
+        the underlying binary information. It is also used for
+        interaction between plugins.<br>
 
 <pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
 <tr>
@@ -90,40 +97,38 @@ arbitrary data storage<br>
 </tr></table>
 }
 
-<div class="info ">
-The result of Binary analysis.<br>
-</div>
 
 
 <pre><span id="TYPEcolor"><span class="keyword">type</span> <code class="type"></code>color</span> = <code class="type">[ `black | `blue | `cyan | `green | `magenta | `red | `white | `yellow ]</code> </pre>
 
 <br>
-all string tags supports the following substitutions:
+all string tags attached to a memory region supports the
+        following substitutions:
 <p>
 <ul>
-<li>$region_ - name of region of file
+<li><code class="code">$region_{name,addr,min_addr,max_addr}</code> - name of region of file
         to which it belongs. For example, in ELF this name will
         correspond to the section name</li>
 </ul>
 <ul>
-<li>$symbol_ - name or address of the symbol to which this
+<li><code class="code">$symbol_{name,addr}</code> - name or address of the symbol to which this
         memory belongs</li>
 </ul>
 <ul>
-<li>$asm - assembler listing of the memory region</li>
+<li><code class="code">$asm</code> - assembler listing of the memory region</li>
 </ul>
 <ul>
-<li>$bil - BIL code of the tagged memory region</li>
+<li><code class="code">$bil</code> - BIL code of the tagged memory region</li>
 </ul>
 <ul>
-<li>$block_ - name or address of a basic block to which
+<li><code class="code">$block_{name,addr}</code> - name or address of a basic block to which
         this region belongs</li>
 </ul>
 <ul>
-<li>$min_addr, $addr - starting address of a memory region</li>
+<li><code class="code">$min_addr, $addr</code> - starting address of a memory region</li>
 </ul>
 <ul>
-<li>$max_addr - address of the last byte of a memory region.</li>
+<li><code class="code">$max_addr</code> - address of the last byte of a memory region.</li>
 </ul>
 <br>
 

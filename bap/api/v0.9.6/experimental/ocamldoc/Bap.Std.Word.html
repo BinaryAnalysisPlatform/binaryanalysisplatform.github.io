@@ -25,8 +25,11 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Word.html">Bap.Std.Word</a></h1>
 
-<pre><span class="keyword">module</span> Word: <code class="type">module type of Bitvector</code><code class="type">  with type t = word</code></pre><div class="info module top">
-Shortcut for bitvectors that represents words<br>
+<pre><span class="keyword">module</span> Word: <code class="type">module type of Bitvector</code><code class="type"> 
+    with type t = word
+     and type endian = endian
+     and type comparator_witness = Bitvector.comparator_witness</code></pre><div class="info module top">
+Shortcut for bitvectors that represent words<br>
 </div>
 <hr width="100%">
 </body></html>

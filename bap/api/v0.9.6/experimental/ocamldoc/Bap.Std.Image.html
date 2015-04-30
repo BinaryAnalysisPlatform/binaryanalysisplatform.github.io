@@ -17,9 +17,9 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Bap" rel="Chapter" href="Bap.html"><link title="Type definitions" rel="Section" href="#2_Typedefinitions">
+<link title="Constructing" rel="Section" href="#2_Constructing">
+<link title="Attributes" rel="Section" href="#2_Attributes">
 <link title="Backend Interface" rel="Section" href="#2_BackendInterface">
-<link title="Constructing" rel="Subsection" href="#6_Constructing">
-<link title="Attributes" rel="Subsection" href="#6_Attributes">
 <title>Bap.Std.Image</title>
 </head>
 <body>
@@ -56,7 +56,7 @@ symbol<br>
 <pre><span id="TYPEpath"><span class="keyword">type</span> <code class="type"></code>path</span> = <code class="type">string</code> </pre>
 
 <br>
-<h6 id="6_Constructing">Constructing</h6><br>
+<h2 id="2_Constructing">Constructing</h2><br>
 
 <pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type"></code>result</span> = <code class="type">(<a href="Bap.Std.Image.html#TYPEt">t</a> * Core_kernel.Std.Error.t list) Core_kernel.Std.Or_error.t</code> </pre>
 <div class="info ">
@@ -85,7 +85,7 @@ constructing an image can result in actual image and a set
         <code class="code">data</code>. See <a href="Bap.Std.Image.html#VALcreate"><code class="code">Bap.Std.Image.create</code></a> for <code class="code">backend</code> parameter.<br>
 </div>
 <br>
-<h6 id="6_Attributes">Attributes</h6><br>
+<h2 id="2_Attributes">Attributes</h2><br>
 
 <pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a></code></pre>
 <pre><span id="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> string option</code></pre>
@@ -94,23 +94,20 @@ constructing an image can result in actual image and a set
 <pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Bap.Std.endian</a></code></pre>
 <pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> Core_kernel.Std.Bigstring.t</code></pre>
 <pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> <a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre><div class="info ">
-<h6 id="6_Tables">Tables </h6><br>
+<h2 id="2_Tables">Tables </h2><br>
 </div>
 
 <pre><span id="VALsections"><span class="keyword">val</span> sections</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre>
-<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre><div class="info ">
-<span class="warning">Deprecated.</span>: this will be removed in a next release<br>
+<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre>
+<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+<h2 id="2_Tags">Tags</h2><br>
 </div>
 
-<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
 <pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
 <pre><span id="VALregion"><span class="keyword">val</span> region</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
-<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code></pre><div class="info ">
-returns memory<br>
-</div>
-
+<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code></pre>
 <pre><span id="VALmemory_of_section"><span class="keyword">val</span> memory_of_section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code></pre><div class="info ">
-<h6 id="6_Mappings">Mappings </h6>
+<h2 id="2_Mappings">Mappings </h2>
 <p>
 <code class="code">memory_of_symbol sym</code>: returns the memory of symbol in acending order.<br>
 </div>
@@ -123,7 +120,7 @@ Image Section.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Image.Sym.html">Sym</a>: <code class="code">sig</code> <a href="Bap.Std.Image.Sym.html">..</a> <code class="code">end</code></pre><div class="info">
-An entity from symbol table
+Symbol.
 </div>
 <br>
 <h2 id="2_BackendInterface">Backend Interface</h2><br>

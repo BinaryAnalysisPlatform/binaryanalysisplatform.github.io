@@ -26,7 +26,9 @@
 <h1>Module <a href="type_Bap.Std.Var.html">Bap.Std.Var</a></h1>
 
 <pre><span class="keyword">module</span> Var: <code class="code">sig</code> <a href="Bap.Std.Var.html">..</a> <code class="code">end</code></pre><div class="info module top">
-BIL variable<br>
+BIL variable.
+      BIL variables are regular values. Every call to
+      <code class="code">create</code> will create a fresh variable.<br>
 </div>
 <hr width="100%">
 
@@ -37,16 +39,22 @@ BIL variable<br>
 <div class="info ">
 implements <code class="code">Regular</code> interface<br>
 </div>
-<br>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tmp:bool -> string -> <a href="Bap.Std.html#TYPEtyp">Bap.Std.typ</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?tmp name typ</code> creates a fresh new variable with
         assosiated <code class="code">name</code> and type <code class="code">typ</code>. The created variable is
         absolutely new, and is comparable to true only with itself.<br>
+</div>
+<div class="param_info"><code class="code">tmp</code> : designates variable is temporary, with whatever
+        meaning assosiated to it by a caller.</div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tmp:bool -> string -> <a href="Bap.Std.html#TYPEtyp">Bap.Std.typ</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre>
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> string</code></pre>
 <pre><span id="VALtyp"><span class="keyword">val</span> typ</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtyp">Bap.Std.typ</a></code></pre>
 <pre><span id="VALis_tmp"><span class="keyword">val</span> is_tmp</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">is_tmp</code> true if variable is temporary<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Var.V1.html">V1</a>: <code class="code">sig</code> <a href="Bap.Std.Var.V1.html">..</a> <code class="code">end</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Var.V1.html">V1</a>: <code class="code">sig</code> <a href="Bap.Std.Var.V1.html">..</a> <code class="code">end</code></pre><div class="info">
+Serialization format
+</div>
+</body></html>

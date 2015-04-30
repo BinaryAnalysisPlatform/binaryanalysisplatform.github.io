@@ -32,7 +32,10 @@ Printable interface is implemented by a significant amount of
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.Printable.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.Printable.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">to_string x</code> returns a human-readable representation of <code class="code">x</code><br>
+</div>
+
 <pre><span id="VALstr"><span class="keyword">val</span> str</span> : <code class="type">unit -> <a href="Bap.Std.Printable.html#TYPEt">t</a> -> string</code></pre><div class="info ">
 <code class="code">str () t</code> is formatted output function that matches "%a"
         conversion format specifier in functions, that prints to string,
@@ -57,6 +60,8 @@ will print to a standard <code class="code">output_channel</code>, useful for us
 
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 <div class="info ">
-this will include <code class="code">pp</code> function from <code class="code">Core</code> that has type <code class="code">t printer</code><br>
+this will include <code class="code">pp</code> function from <code class="code">Core</code> that has type
+        <code class="code">t printer</code>, and can be used in <code class="code">Format.printf</code>
+        family of functions<br>
 </div>
 </body></html>

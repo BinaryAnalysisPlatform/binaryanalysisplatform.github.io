@@ -26,7 +26,31 @@
 <h1>Module <a href="type_Bap.Std.Tag.html">Bap.Std.Tag</a></h1>
 
 <pre><span class="keyword">module</span> Tag: <code class="code">sig</code> <a href="Bap.Std.Tag.html">..</a> <code class="code">end</code></pre><div class="info module top">
-Tag module<br>
+Extensible variants
+<p>
+
+      This module creates an extensible variant type, that resembles
+      extensible variant types, introduced in 4.02, but even more safe.
+<p>
+
+      To extend variant type with a new constructor, use
+<p>
+
+      <code class="code">Tag.register constructor_name sexp_of_constructor</code>, where
+<p>
+
+      constructor name can be any name, and can even clash with previous
+      definitions it is guaranteed, that you will receive a new
+      representation of the constructor, every time you're calling this
+      function even if parameters are the same. The returned value is
+      supposed to be exposed in a module, for later use in other
+      modules, c.f., <a href="Bap.Std.Image.html">Image</a> module defines three constructors:<ul>
+<li><code class="code">Image.symbol</code> for Image symbols, that basically can be seen as
+      <code class="code">Image.Symbol of sym</code></li>
+<li><code class="code">Image.section</code> for image sections;</li>
+<li><code class="code">Image.region</code> for other named image memory regions.</li>
+</ul>
+<br>
 </div>
 <hr width="100%">
 

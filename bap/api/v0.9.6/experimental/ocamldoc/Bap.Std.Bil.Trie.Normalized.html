@@ -59,5 +59,19 @@ a key type that is used to lookup data<br>
 <code class="code">longest_match trie key</code><br>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a> -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a></code></pre></body></html>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">length trie</code> returns the amount of entries in the <code class="code">trie</code><br>
+</div>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a> -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a></code></pre><div class="info ">
+<code class="code">pp pp_val</code> creates a printer for a given value printer
+        <code class="code">pp_val</code>. Example:
+<p>
+
+        <code class="code">let int_trie = String.Trie.pp pp_int</code>
+<p>
+
+        will create a printer for a <code class="code">String.Trie</code> that is populated by
+        integers.<br>
+</div>
+</body></html>

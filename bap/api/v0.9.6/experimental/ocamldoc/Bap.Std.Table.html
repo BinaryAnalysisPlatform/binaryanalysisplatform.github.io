@@ -16,8 +16,8 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Table relations" rel="Section" href="#4_Tablerelations">
-<link title="Examples" rel="Subsection" href="#5_Examples">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Table relations" rel="Section" href="#2_Tablerelations">
+<link title="Examples" rel="Subsection" href="#3_Examples">
 <title>Bap.Std.Table</title>
 </head>
 <body>
@@ -139,7 +139,7 @@ Relation multiplicity.
 </div>
 
 <br>
-<h4 id="4_Tablerelations">Table relations</h4><br>
+<h2 id="2_Tablerelations">Table relations</h2><br>
 
 <pre><span id="VALmany"><span class="keyword">val</span> many</span> : <code class="type">('a, 'a <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
 <code class="code">0..*</code><br>
@@ -190,7 +190,9 @@ Relation multiplicity.
         symbol relation.</li>
 </ul>
 
-        <h5 id="5_Examples">Examples</h5>
+        <h3 id="3_Examples">Examples</h3>
+<p>
+
         <pre class="codepre"><code class="code">          let mc_of_insn  = link one_to:one Insn.hashable insns mcs
           let syms_of_sec = link one_to:many Sec.hashable  secs syms
         </code></pre><br>
@@ -209,11 +211,8 @@ Relation multiplicity.
         several non-contiguous regions of memory.
 <p>
 
-        <h5 id="5_Examples">Examples</h5>
-<p>
-
-        To create a mapping from a function symbol to sequence of memory
-        regions with it code:
+        For example, to create a mapping from a function symbol to
+        sequence of memory regions with it code:
 <p>
 
         <pre class="codepre"><code class="code">rev_map one_to:many Sym.hashable tab</code></pre><br>
@@ -221,7 +220,7 @@ Relation multiplicity.
 
 <pre><span id="TYPEranged"><span class="keyword">type</span> <code class="type">'a</code> ranged</span> = <code class="type">?start:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> ?until:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> 'a</code> </pre>
 <div class="info ">
-<h3 id="3_Iterators">Iterators</h3>
+<h2 id="2_Iterators">Iterators</h2>
 <p>
 
         This section provides a common set of iterators. Note: name

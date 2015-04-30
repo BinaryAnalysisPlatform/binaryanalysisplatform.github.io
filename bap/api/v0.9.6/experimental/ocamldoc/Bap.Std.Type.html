@@ -27,7 +27,24 @@
 
 <pre><span class="keyword">module</span> Type: <code class="code">sig</code> <a href="Bap.Std.Type.html">..</a> <code class="code">end</code></pre><div class="info module top">
 The type of a BIL expression.
-      Each BIL expression, should evaluate to one the following types.<br>
+<p>
+
+      Each BIL expression is either an immediate value of a given
+      width, or a chunk of memory of a give size. The following
+      predefined constructors are brought to the scope:
+<p>
+<ul>
+<li><a href="Bap.Std.html#VALbool_t">bool_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg8_t">reg8_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg16_t">reg16_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg32_t">reg32_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg64_t">reg64_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg128_t">reg128_t</a>;</li>
+<li><a href="Bap.Std.html#VALreg256_t">reg256_t</a>;</li>
+<li><a href="Bap.Std.html#VALmem32_t">mem32_t</a>;</li>
+<li><a href="Bap.Std.html#VALmem64_t">mem64_t</a>.</li>
+</ul>
+<br>
 </div>
 <hr width="100%">
 
@@ -53,4 +70,7 @@ type is either an immediate value of memory reference<br>
 
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+<div class="info ">
+BIL type is regular<br>
+</div>
 </body></html>

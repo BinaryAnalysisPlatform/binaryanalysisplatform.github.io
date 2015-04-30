@@ -61,13 +61,10 @@ set when assembler information is stored
 <td></td></tr>
 <tr><td align="left"><br>B</td></tr>
 <tr><td><a href="Bap.Std.html#TYPEbil">bil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-Type abbreviations
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
 <td><div class="info">
-Binary operations implemented in the IR
+Binary operations implemented in the BIL
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEbinop">binop</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -151,7 +148,10 @@ Expose <code class="code">endian</code> constructors to <code class="code">Bap.S
 <tr><td><a href="Bap.Std.Disasm.html#TYPEerror">error</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
-<td></td></tr>
+<td><div class="info">
+BIL expression variants
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#TYPEexp">exp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>F</td></tr>
@@ -321,6 +321,8 @@ predicate to drive the disassembler
       type <code class="code">'a</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.html#TYPEproject">project</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>R</td></tr>
 <tr><td><a href="Bap.Std.Table.html#TYPEr">r</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
@@ -431,10 +433,7 @@ an encoded value
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html#TYPEt">t</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td><div class="info">
-The result of Binary analysis.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Symtab.html#TYPEt">t</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.ARM.Cond.html#TYPEt">t</a> [<a href="Bap.Std.ARM.Cond.html">Bap.Std.ARM.Cond</a>]</td>
@@ -538,7 +537,7 @@ type is either an immediate value of memory reference
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#TYPEt">t</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-Common Interfaces
+<code class="code">word</code> is an abbreviation to <code class="code">Bitvector.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#TYPEt">t</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>

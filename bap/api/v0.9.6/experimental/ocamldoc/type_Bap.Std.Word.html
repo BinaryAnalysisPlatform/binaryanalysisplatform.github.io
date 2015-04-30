@@ -48,7 +48,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;max&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;_squelch_unused_module_warning_&nbsp;:&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;comparator_witness<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;comparator_witness&nbsp;=&nbsp;<span class="constructor">Bitvector</span>.comparator_witness<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;validate_lbound&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;min:t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Comparable_intf</span>.bound&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Validate</span>.check<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;validate_ubound&nbsp;:<br>
@@ -1127,7 +1127,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">exception</span>&nbsp;<span class="constructor">Width</span><br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;endian&nbsp;=&nbsp;<span class="constructor">LittleEndian</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">BigEndian</span><br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;endian&nbsp;=&nbsp;endian&nbsp;=&nbsp;<span class="constructor">LittleEndian</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">BigEndian</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_bool&nbsp;:&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_int&nbsp;:&nbsp;width:int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>

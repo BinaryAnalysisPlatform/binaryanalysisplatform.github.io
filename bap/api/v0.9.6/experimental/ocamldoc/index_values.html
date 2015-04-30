@@ -261,7 +261,7 @@ returns a mapping from memory regions to basic blocks.
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALbool_t">bool_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Predefined type constructors
+one bit
 </div>
 </td></tr>
 <tr><td align="left"><br>C</td></tr>
@@ -405,7 +405,11 @@ lifts basic register to a ARM one
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALcreate">create</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create ?tmp name typ</code> creates a fresh new variable with
+        assosiated <code class="code">name</code> and type <code class="code">typ</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALcreate">create</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 <code class="code">create ()</code> creates new empty trie
@@ -905,7 +909,11 @@ Predicates
 <td></td></tr>
 <tr><td align="left"><br>J</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALjmp">jmp</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">jmp t</code> evaluate expression <code class="code">t</code> to absolute address and
+        transfer control to that address
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALjump">jump</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 jump to the specified memory and continue disassembly in it.
@@ -961,7 +969,10 @@ jump to the specified memory and continue disassembly in it.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALlength">length</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">length trie</code> returns the amount of entries in the <code class="code">trie</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALlet_">let_</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Target.html#VALlift">lift</a> [<a href="Bap.Std.Target.html">Bap.Std.Target</a>]</td>
@@ -1110,9 +1121,15 @@ Memory
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALmem32_t">mem32_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">mem32_t size</code> 32-bit chunk of memory of a given <code class="code">size</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALmem64_t">mem64_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">mem64_t size</code>  32-bit chunk of memory of a given <code class="code">size</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Block_accessors.html#VALmemory">memory</a> [<a href="Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a>]</td>
 <td><div class="info">
 <code class="code">memory blk</code> memory region, occupied by a block
@@ -1124,10 +1141,7 @@ the memory region we're currently working on
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALmemory">memory</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
-<td><div class="info">
-returns memory
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALmemory_of_section">memory_of_section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 Mappings 
@@ -1191,7 +1205,7 @@ returns a sequence of memory regions occupied by the given
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALmove">move</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-Functional constructors
+<code class="code">move v x</code> evaluate <code class="code">x</code> and assign its value to <code class="code">v</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALmul">mul</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
@@ -1401,7 +1415,11 @@ A list of registered plugins in the order of registration
 <tr><td><a href="Bap.Std.Byteweight.S.html#VALpp">pp</a> [<a href="Bap.Std.Byteweight.S.html">Bap.Std.Byteweight.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALpp">pp</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">pp pp_val</code> creates a printer for a given value printer
+        <code class="code">pp_val</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALpp_adt">pp_adt</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
 <code class="code">pp_adt</code> prints instruction in ADT format, suitable for reading
@@ -1433,7 +1451,10 @@ synonym for <code class="code">str</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Block_traverse.html#VALpreds">preds</a> [<a href="Bap.Std.Block_traverse.html">Bap.Std.Block_traverse</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">preds blk</code> block immediate predecessors in unspecified order.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALpreds">preds</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 current set of predicates
@@ -1507,17 +1528,35 @@ current set of predicates
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALread">read</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALreg128_t">reg128_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+128-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALreg16_t">reg16_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+16-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALreg256_t">reg256_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+256-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALreg32_t">reg32_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+32-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALreg64_t">reg64_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+64-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALreg8_t">reg8_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+8-bit width value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALregion">region</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALregions">regions</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -1615,7 +1654,10 @@ returns a new table with all mappings from the mem region
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsection">section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Tags
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsection_of_symbol">section_of_symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsections">sections</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -1737,9 +1779,7 @@ enables storing instruction kinds information
 <tr><td><a href="Bap.Std.Image.html#VALsymbol">symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbols">symbols</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
-<td><div class="info">
-<span class="deprecated"></span></div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbols_of_section">symbols_of_section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>T</td></tr>
@@ -1814,7 +1854,7 @@ an arbitrary text
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_int">to_int</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-Conversions to integers 
+Conversions to built-in integers 
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALto_int32">to_int32</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
@@ -1845,7 +1885,10 @@ registers given ABI under the given target
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Printable.html#VALto_string">to_string</a> [<a href="Bap.Std.Printable.html">Bap.Std.Printable</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_string x</code> returns a human-readable representation of <code class="code">x</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Imm.html#VALto_word">to_word</a> [<a href="Bap.Std.Imm.html">Bap.Std.Imm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.Key.html#VALtoken_hash">token_hash</a> [<a href="Bap.Std.Trie.Key.html">Bap.Std.Trie.Key</a>]</td>
