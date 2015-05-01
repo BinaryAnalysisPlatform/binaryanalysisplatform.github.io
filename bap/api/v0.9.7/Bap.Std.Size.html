@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Trie.html">
+<link rel="next" href="Bap.Std.Bitvector.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Lifting from int" rel="Section" href="#3_Liftingfromint">
+<title>Bap.Std.Size</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Trie.html" title="Bap.Std.Trie">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Bitvector.html" title="Bap.Std.Bitvector">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Size.html">Bap.Std.Size</a></h1>
+
+<pre><span class="keyword">module</span> Size: <code class="code">sig</code> <a href="Bap.Std.Size.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Type safe operand and register sizes.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEall"><span class="keyword">type</span> <code class="type"></code>all</span> = <code class="type">[ `r16 | `r32 | `r64 | `r8 ]</code> </pre>
+<div class="info ">
+Defines possible sizes for operations operands<br>
+</div>
+
+
+<pre><span id="TYPEp"><span class="keyword">type</span> <code class="type">[< <a href="Bap.Std.Size.html#TYPEall">all</a> ]</code> p</span> = <code class="type">[< <a href="Bap.Std.Size.html#TYPEall">all</a> ] as 'a</code> </pre>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Size.html#TYPEall">all</a> <a href="Bap.Std.Size.html#TYPEp">p</a></code> </pre>
+
+<br>
+<h3 id="3_Liftingfromint">Lifting from int</h3><br>
+
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+        otherwise.<br>
+</div>
+
+<pre><span id="VALof_int_exn"><span class="keyword">val</span> of_int_exn</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_int_exn n</code> the same as <code class="code">of_int</code>, but raises exception
+        instead of returning <code class="code">Error</code><br>
+</div>
+
+<pre><span id="VALof_int_opt"><span class="keyword">val</span> of_int_opt</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">of_int_opt n</code> the same as <code class="code">of_int</code> but uses <code class="code">option</code> type
+        instead of <code class="code">Or_error.t</code><br>
+</div>
+
+<pre><span id="VALaddr_of_int"><span class="keyword">val</span> addr_of_int</span> : <code class="type">int -> [ `r32 | `r64 ] Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">addr_of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+        otherwise.<br>
+</div>
+
+<pre><span id="VALaddr_of_int_exn"><span class="keyword">val</span> addr_of_int_exn</span> : <code class="type">int -> [ `r32 | `r64 ]</code></pre><div class="info ">
+<code class="code">addr_of_int_exn n</code> the same as <code class="code">addr_of_int</code>, but raises exception
+        instead of returning <code class="code">Error</code><br>
+</div>
+
+<pre><span id="VALaddr_of_int_opt"><span class="keyword">val</span> addr_of_int_opt</span> : <code class="type">int -> [ `r32 | `r64 ] option</code></pre><div class="info ">
+<code class="code">addr_of_int_opt n</code> the same as <code class="code">addr_of_int</code> but uses <code class="code">option</code> type
+        instead of <code class="code">Or_error.t</code><br>
+</div>
+
+<pre><span id="VALaddr_of_word_size"><span class="keyword">val</span> addr_of_word_size</span> : <code class="type">Core_kernel.Std.Word_size.t -> [ `r32 | `r64 ]</code></pre>
+<pre><span id="VALword_of_addr_size"><span class="keyword">val</span> word_of_addr_size</span> : <code class="type">[ `r32 | `r64 ] -> Core_kernel.Std.Word_size.t</code></pre>
+<pre><span id="VALto_addr_size"><span class="keyword">val</span> to_addr_size</span> : <code class="type"><a href="Bap.Std.Size.html#TYPEt">t</a> -> [ `r32 | `r64 ] Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type">[< <a href="Bap.Std.Size.html#TYPEall">all</a> ] <a href="Bap.Std.Size.html#TYPEp">p</a> -> int</code></pre><div class="info ">
+<code class="code">to_bits size</code> returns the number of bits.<br>
+</div>
+
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">[< <a href="Bap.Std.Size.html#TYPEall">all</a> ] <a href="Bap.Std.Size.html#TYPEp">p</a> -> int</code></pre>
+<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+</body></html>

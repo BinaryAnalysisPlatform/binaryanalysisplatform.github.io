@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Bap.Std.Disasm_expert.Basic.Trie.html">
+<link rel="Up" href="Bap.Std.Disasm_expert.Basic.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Disasm_expert.Basic.Insn</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Disasm_expert.Basic.html" title="Bap.Std.Disasm_expert.Basic">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Disasm_expert.Basic.Trie.html" title="Bap.Std.Disasm_expert.Basic.Trie">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a></h1>
+
+<pre><span class="keyword">module</span> Insn: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.Basic.Insn.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Basic instruction.
+          This instruction is an opaque pointer into C-backend, thus
+          it is protected with phantom types.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'k)</code> t</span> = <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">Bap.Std.Disasm_expert.Basic.insn</a></code> </pre>
+
+
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> Core_kernel.Std.Sexp.t</code></pre>
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> string</code></pre>
+<pre><span id="VALkinds"><span class="keyword">val</span> kinds</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Bap.Std.Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Bap.Std.Kind.t</a> list</code></pre>
+<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Bap.Std.Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Bap.Std.Kind.t</a> -> bool</code></pre>
+<pre><span id="VALasm"><span class="keyword">val</span> asm</span> : <code class="type">(<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">Bap.Std.Disasm_expert.Basic.asm</a>, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       string</code></pre>
+<pre><span id="VALops"><span class="keyword">val</span> ops</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEop">Bap.Std.op</a> array</code></pre></body></html>

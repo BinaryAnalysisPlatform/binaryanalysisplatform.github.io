@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Location.html">
+<link rel="next" href="Bap.Std.Image.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Backend</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Location.html" title="Bap.Std.Location">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Image.html" title="Bap.Std.Image">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Backend.html">Bap.Std.Backend</a></h1>
+
+<pre><span class="keyword">module</span> Backend: <code class="code">sig</code> <a href="Bap.Std.Backend.html">..</a> <code class="code">end</code></pre><div class="info module top">
+A backend interface.
+<p>
+
+      This interface must be implemented by a backend plugin, and
+      registered with <code class="code">Image.register</code> function in order to be
+      accessible for loading images.<br>
+</div>
+<hr width="100%">
+
+<pre><code><span id="TYPEperm"><span class="keyword">type</span> <code class="type"></code>perm</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTperm.R"><span class="constructor">R</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTperm.W"><span class="constructor">W</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTperm.X"><span class="constructor">X</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTperm.Or"><span class="constructor">Or</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Backend.html#TYPEperm">perm</a> * <a href="Bap.Std.Backend.html#TYPEperm">perm</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+memory access permissions<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.Section.html">Section</a>: <code class="code">sig</code> <a href="Bap.Std.Backend.Section.html">..</a> <code class="code">end</code></pre><div class="info">
+A named contiguous part of file with permissions.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.Sym.html">Sym</a>: <code class="code">sig</code> <a href="Bap.Std.Backend.Sym.html">..</a> <code class="code">end</code></pre><div class="info">
+Symbol definition, that can span several non-contiguous parts of
+        memory
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.Region.html">Region</a>: <code class="code">sig</code> <a href="Bap.Std.Backend.Region.html">..</a> <code class="code">end</code></pre><div class="info">
+Just a named region of memory.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.Img.html">Img</a>: <code class="code">sig</code> <a href="Bap.Std.Backend.Img.html">..</a> <code class="code">end</code></pre><div class="info">
+A Img from a backend perspective.
+</div>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">Core_kernel.Std.Bigstring.t -> <a href="Bap.Std.Backend.Img.html#TYPEt">Img.t</a> option</code> </pre>
+<div class="info ">
+the actual interface to be implemented<br>
+</div>
+
+</body></html>
