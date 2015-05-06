@@ -3,7 +3,8 @@ layout: post
 title: Bap-byteweight&#58; Find functions in stripped binaries
 ---
 
-BAP 0.9.5 includes the `bap-byteweight` utility to identify function starts.
+
+BAP 0.9.7 includes the `bap-byteweight` utility to identify function starts.
 Function start information is useful for program analysis, and function
 identification is a preliminary and necessary step in many binary analysis
 techniques and applications. Function information is stored as the symbols in
@@ -60,12 +61,13 @@ than ByteWeight in all three architectures.
 
 We also measure the precision, recall and [F0.5
 metrics](http://en.wikipedia.org/wiki/F1_score) in terms of the test suite in
-three architectures. Precision is calculated by Precision = TP / (TP + FP),
+three architectures. Precision is calculated by $$Precision=\frac{TP}{TP+FP}$$
 which indicates the proportion of correct functions among all functions
-identified by the tool. Recall is calculated by Recall = TP / (TP + FN), which
-indicates the proportion of functions that the tool identified among all correct
-functions. F0.5 is calculate by F0.5 = 1.5 * Precision * Recall / (0.5 *
-Precision + Recall), and is often used as a comprehensive measurement combining precision and recall.
+identified by the tool. Recall is calculated by $$Recall = \frac{TP}{TP+FN}$$
+which indicates the proportion of functions that the tool identified among all correct
+functions. F0.5 is calculate by $$F_{0.5} = \frac{1.5 \cdot Precision \cdot
+Recall}{0.5 \cdot Precision + Recall}$$ and is often used as a comprehensive
+measurement combining precision and recall.
 
 ![fpr]({{localhost}}/assets/bap-mbw-fpr.png)
 
