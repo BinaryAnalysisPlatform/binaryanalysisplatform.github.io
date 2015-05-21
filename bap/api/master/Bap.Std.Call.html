@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Arg.html">
+<link rel="next" href="Bap.Std.Label.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Call</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Arg.html" title="Bap.Std.Arg">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Label.html" title="Bap.Std.Label">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Call.html">Bap.Std.Call</a></h1>
+
+<pre><span class="keyword">module</span> Call: <code class="code">sig</code> <a href="Bap.Std.Call.html">..</a> <code class="code">end</code></pre><div class="info module top">
+A control transfer to another subroutine.<br>
+</div>
+<hr width="100%">
+<br>
+calls have two-fold representation. From the intra-procedural
+        point of view call is a transfer of control to the next
+        address with a side effect of calling to other
+        subroutine. From the iter-procedural point of view, call is
+        transfer of control from caller to the callee, that may or may
+        not result in a return to the caller side.  Thus each call is
+        represented by two labels. The <code class="code">target</code> label points to the
+        procedure that is called, the <code class="code">return</code> label denotes a block
+        to which the control flow should (but mustn't) continue when
+        called subroutine returns.<br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEcall">Bap.Std.call</a></code> </pre>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?return:<a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> target:<a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> unit -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ?return ~target ()</code> creates a call to the <code class="code">target</code>
+        subroutine. If <code class="code">return</code> is not provided, that it is assumed that
+        subroutine doesn't return.<br>
+</div>
+
+<pre><span id="VALtarget"><span class="keyword">val</span> target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a></code></pre><div class="info ">
+returns the target of the call<br>
+</div>
+
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> option</code></pre><div class="info ">
+returns call continuation<br>
+</div>
+
+<pre><span id="VALwith_target"><span class="keyword">val</span> with_target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+updates target<br>
+</div>
+
+<pre><span id="VALwith_return"><span class="keyword">val</span> with_return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+updates return continuation<br>
+</div>
+
+<pre><span id="VALwith_noreturn"><span class="keyword">val</span> with_noreturn</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+marks call as a "noreturn"<br>
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+</body></html>

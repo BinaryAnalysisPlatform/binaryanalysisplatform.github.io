@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Label.html">
+<link rel="next" href="Bap.Std.Dwarf.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Project</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Label.html" title="Bap.Std.Label">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Dwarf.html" title="Bap.Std.Dwarf">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Project.html">Bap.Std.Project</a></h1>
+
+<pre><span class="keyword">module</span> Project: <code class="code">sig</code> <a href="Bap.Std.Project.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Target of analysis.<br>
+</div>
+<hr width="100%">
+<br>
+A project groups together all the information recovered from
+        the underlying binary information. It is also used for
+        interaction between plugins.<br>
+
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.arch">arch</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >architecture</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.disasm">disasm</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdisasm">Bap.Std.disasm</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >disassembly of a program</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.memory">memory</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >annotations</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.storage">storage</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdict">Bap.Std.dict</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >arbitrary data storage</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.program">program</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEprogram">Bap.Std.program</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Program lifter to BAP IR</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.symbols">symbols</span>&nbsp;: <code class="type">string <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.base">base</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?tags:string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a> list -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute ?tags p</code> apply substitutions in text values
+        associated with the provided tags in project memory. <code class="code">tags</code>
+        defaults to <code class="code">[comment; python; shell]</code>.
+<p>
+
+        The following substitutions are performed:
+<p>
+<ul>
+<li><code class="code">$region{_name,_addr,_min_addr,_max_addr}</code> - name of region of file
+        to which it belongs. For example, in ELF this name will
+        correspond to the section name</li>
+</ul>
+<ul>
+<li><code class="code">$symbol{_name,_addr,_min_addr,_max_addr}</code> - name or address
+        of the symbol to which this memory belongs</li>
+</ul>
+<ul>
+<li><code class="code">$asm</code> - assembler listing of the memory region</li>
+</ul>
+<ul>
+<li><code class="code">$bil</code> - BIL code of the tagged memory region</li>
+</ul>
+<ul>
+<li><code class="code">$block{_name,_addr,_min_addr,_max_addr}</code> - name or address of a basic
+        block to which this region belongs</li>
+</ul>
+<ul>
+<li><code class="code">$min_addr, $addr</code> - starting address of a memory region</li>
+</ul>
+<ul>
+<li><code class="code">$max_addr</code> - address of the last byte of a memory region.</li>
+</ul>
+<br>
+</div>
+
+<pre><span id="VALregister_plugin"><span class="keyword">val</span> register_plugin</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
+<code class="code">register plugin</code> registers <code class="code">plugin</code> in the system<br>
+</div>
+
+<pre><span id="VALregister_plugin'"><span class="keyword">val</span> register_plugin'</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
+<code class="code">register' plugin</code> registers a <code class="code">plugin</code> that will be
+        evaluated only for side effect.<br>
+</div>
+
+<pre><span id="VALregister_plugin_with_args"><span class="keyword">val</span> register_plugin_with_args</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre>
+<pre><span id="VALregister_plugin_with_args'"><span class="keyword">val</span> register_plugin_with_args'</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre>
+<pre><span id="VALplugins"><span class="keyword">val</span> plugins</span> : <code class="type">unit -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) list</code></pre><div class="info ">
+A list of registered plugins in the order of registration<br>
+</div>
+</body></html>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Dwarf.Data.html">
+<link rel="Up" href="Bap.Std.Dwarf.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Dwarf.Fbi</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Dwarf.Data.html" title="Bap.Std.Dwarf.Data">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Dwarf.html" title="Bap.Std.Dwarf">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Bap.Std.Dwarf.Fbi.html">Bap.Std.Dwarf.Fbi</a></h1>
+
+<pre><span class="keyword">module</span> Fbi: <code class="code">sig</code> <a href="Bap.Std.Dwarf.Fbi.html">..</a> <code class="code">end</code></pre><div class="info module top">
+Function boundary identification.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap.Std.Dwarf.Data.html#TYPEt">Bap.Std.Dwarf.Data.t</a> -> <a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<code class="code">create data</code> tries to create a DWARF reader, from
+          supplied <code class="code">data</code>. May yield an error, if there wasn't sufficient
+          sections, or if format is not understandable.
+<p>
+
+          To provide information about functions parser needs at least this
+          three sections:
+<p>
+<ul>
+<li>.debug_abbrev <code class="code">Section.Abbr</code></li>
+<li>.debug_info   <code class="code">Section.Info</code></li>
+<li>.debug_str    <code class="code">Section.Str</code></li>
+</ul>
+<br>
+</div>
+
+<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap.Std.Dwarf.html#TYPEfn">Bap.Std.Dwarf.fn</a>) Core_kernel.Std.Sequence.t</code></pre><div class="info ">
+<code class="code">functions searcher</code> enumerates functions<br>
+</div>
+</body></html>
