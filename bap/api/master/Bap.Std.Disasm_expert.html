@@ -25,25 +25,25 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a></h1>
 
-<pre><span class="keyword">module</span> Disasm_expert: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Disasm_expert: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Expert interface to disassembler.
 <p>
 
       This interface is rather complicated, and is built around two
-      implementations of the disassembler <code class="code">Basic</code> and <code class="code">Recursive</code>.
-      <code class="code">Basic</code> provides an efficient (and very lazy) linear sweep,
-      driven in a continuation passing style. On top of the <code class="code">Basic</code>
-      the <code class="code">Recursive</code> disassembler is built, that reconstructs the
+      implementations of the disassembler <code class="code"><span class="constructor">Basic</span></code> and <code class="code"><span class="constructor">Recursive</span></code>.
+      <code class="code"><span class="constructor">Basic</span></code> provides an efficient (and very lazy) linear sweep,
+      driven in a continuation passing style. On top of the <code class="code"><span class="constructor">Basic</span></code>
+      the <code class="code"><span class="constructor">Recursive</span></code> disassembler is built, that reconstructs the
       control flow graph, and represents the latter as a table of
       blocks.<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Basic.html">Basic</a>: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.Basic.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Basic.html">Basic</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Basic disassembler.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Recursive.html">Recursive</a>: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.Recursive.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Recursive.html">Recursive</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Recursive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Recursive Descent Disassembler.
 </div>
 </body></html>

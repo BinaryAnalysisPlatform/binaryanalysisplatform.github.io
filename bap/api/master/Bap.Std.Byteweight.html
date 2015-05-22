@@ -23,13 +23,13 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Byteweight.html">Bap.Std.Byteweight</a></h1>
 
-<pre><span class="keyword">module</span> Byteweight: <code class="code">sig</code> <a href="Bap.Std.Byteweight.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Byteweight: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Byteweight.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Byteweight Algorithm implementation<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Byteweight.Corpus.html">Corpus</a> = <code class="code">sig</code> <a href="Bap.Std.Byteweight.Corpus.html">..</a> <code class="code">end</code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Byteweight.S.html">S</a> = <code class="code">sig</code> <a href="Bap.Std.Byteweight.S.html">..</a> <code class="code">end</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Byteweight.Make.html">Make</a>: <div class="sig_block"><code class="code">functor (</code><code class="code">Corpus</code><code class="code"> : </code><code class="type"><a href="Bap.Std.Byteweight.Corpus.html">Corpus</a></code><code class="code">) -&gt; </code><div class="sig_block"><code class="code">functor (</code><code class="code">Trie</code><code class="code"> : </code><code class="type"><a href="Bap.Std.Trie.html">Bap.Std.Trie</a></code><code class="type">  with type key = Corpus.key</code><code class="code">) -&gt; </code><code class="type"><a href="Bap.Std.Byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
-         and type corpus = Corpus.t</code></div></div></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Byteweight.Bytes.html">Bytes</a>: <code class="code">sig</code> <a href="Bap.Std.Byteweight.Bytes.html">..</a> <code class="code">end</code></pre></body></html>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Byteweight.Corpus.html">Corpus</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Byteweight.Corpus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Byteweight.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Byteweight.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Byteweight.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Corpus</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Byteweight.Corpus.html">Corpus</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Trie</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Trie.html">Trie</a></code><code class="type">  with type key = Corpus.key</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
+         and type corpus = Corpus.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Byteweight.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Byteweight.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

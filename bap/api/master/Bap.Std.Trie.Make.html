@@ -23,8 +23,8 @@
 </div>
 <h1>Functor <a href="type_Bap.Std.Trie.Make.html">Bap.Std.Trie.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make: <div class="sig_block"><code class="code">functor (</code><code class="code">Key</code><code class="code"> : </code><code class="type"><a href="Bap.Std.Trie.Key.html">Key</a></code><code class="code">) -&gt; </code><code class="type"><a href="Bap.Std.Trie.html">Bap.Std.Trie</a></code><code class="type">  with type key = Key.t</code></div></pre><div class="info module top">
-Create a trie for a given <code class="code">Key</code><br>
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Key</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Trie.Key.html">Key</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Trie.html">Trie</a></code><code class="type">  with type key = Key.t</code></pre><div class="info module top">
+Create a trie for a given <code class="code"><span class="constructor">Key</span></code><br>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -66,9 +66,9 @@ a key type that is used to lookup data<br>
 
 <pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> ('a option -> 'a option) -> unit</code></pre><div class="info ">
 <code class="code">change trie key f</code> if trie has <code class="code">data</code> associated with <code class="code">key</code> then
-        <code class="code">f</code> will be called with <code class="code">Some data</code>, otherwise it will be called
-        with <code class="code">None</code>. If <code class="code">f</code> returns <code class="code">None</code> then there will be no data
-        associated with <code class="code">key</code>, if <code class="code">f</code> returns <code class="code">Some thing</code>, then <code class="code">thing</code>
+        <code class="code">f</code> will be called with <code class="code"><span class="constructor">Some</span> data</code>, otherwise it will be called
+        with <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> returns <code class="code"><span class="constructor">None</span></code> then there will be no data
+        associated with <code class="code">key</code>, if <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> thing</code>, then <code class="code">thing</code>
         will be bound to <code class="code">key</code><br>
 </div>
 
@@ -82,15 +82,15 @@ a key type that is used to lookup data<br>
 <code class="code">length trie</code> returns the amount of entries in the <code class="code">trie</code><br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a> -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_val</code> creates a printer for a given value printer
         <code class="code">pp_val</code>. Example:
 <p>
 
-        <code class="code">let int_trie = String.Trie.pp pp_int</code>
+        <code class="code"><span class="keyword">let</span> int_trie = <span class="constructor">String</span>.<span class="constructor">Trie</span>.pp pp_int</code>
 <p>
 
-        will create a printer for a <code class="code">String.Trie</code> that is populated by
+        will create a printer for a <code class="code"><span class="constructor">String</span>.<span class="constructor">Trie</span></code> that is populated by
         integers.<br>
 </div>
 </body></html>

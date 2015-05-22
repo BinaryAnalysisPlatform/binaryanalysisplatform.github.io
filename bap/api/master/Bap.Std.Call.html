@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Call.html">Bap.Std.Call</a></h1>
 
-<pre><span class="keyword">module</span> Call: <code class="code">sig</code> <a href="Bap.Std.Call.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Call: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Call.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 A control transfer to another subroutine.<br>
 </div>
 <hr width="100%">
@@ -41,28 +41,28 @@ calls have two-fold representation. From the intra-procedural
         to which the control flow should (but mustn't) continue when
         called subroutine returns.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEcall">Bap.Std.call</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEcall">call</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?return:<a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> target:<a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> unit -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?return:<a href="Bap.Std.html#TYPElabel">label</a> -> target:<a href="Bap.Std.html#TYPElabel">label</a> -> unit -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?return ~target ()</code> creates a call to the <code class="code">target</code>
         subroutine. If <code class="code">return</code> is not provided, that it is assumed that
         subroutine doesn't return.<br>
 </div>
 
-<pre><span id="VALtarget"><span class="keyword">val</span> target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a></code></pre><div class="info ">
+<pre><span id="VALtarget"><span class="keyword">val</span> target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">label</a></code></pre><div class="info ">
 returns the target of the call<br>
 </div>
 
-<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> option</code></pre><div class="info ">
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">label</a> option</code></pre><div class="info ">
 returns call continuation<br>
 </div>
 
-<pre><span id="VALwith_target"><span class="keyword">val</span> with_target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALwith_target"><span class="keyword">val</span> with_target</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
 updates target<br>
 </div>
 
-<pre><span id="VALwith_return"><span class="keyword">val</span> with_return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">Bap.Std.label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALwith_return"><span class="keyword">val</span> with_return</span> : <code class="type"><a href="Bap.Std.Call.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Call.html#TYPEt">t</a></code></pre><div class="info ">
 updates return continuation<br>
 </div>
 

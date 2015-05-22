@@ -28,7 +28,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Bil.html">Bap.Std.Bil</a></h1>
 
-<pre><span class="keyword">module</span> Bil: <code class="code">sig</code> <a href="Bap.Std.Bil.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Bil: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Main BIL module
 <p>
 
@@ -36,22 +36,22 @@ Main BIL module
       programs and expressions.
 <p>
 
-      Example: <pre class="codepre"><code class="code">Bil.([
-          v := exp_of_op src lsr int32 1;
-          r := exp_of_op src;
-          s := int32 31;
-          while_ (var v &lt;&gt; int32 0) [
-            r := var r lsl int32 1;
-            r := var r lor (var v land int32 1);
-            v := var v lsr int32 1;
-            s := var s - int32 1;
-          ];
-          dest := var r lsl var s;
-        ]) cond</code></pre><br>
+      Example: <pre class="codepre"><code class="code"><span class="constructor">Bil</span>.([<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;exp_of_op&nbsp;src&nbsp;<span class="keyword">lsr</span>&nbsp;int32&nbsp;1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;exp_of_op&nbsp;src;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;int32&nbsp;31;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while_&nbsp;(var&nbsp;v&nbsp;&lt;&gt;&nbsp;int32&nbsp;0)&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;int32&nbsp;1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lor</span>&nbsp;(var&nbsp;v&nbsp;<span class="keyword">land</span>&nbsp;int32&nbsp;1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;var&nbsp;v&nbsp;<span class="keyword">lsr</span>&nbsp;int32&nbsp;1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;var&nbsp;s&nbsp;-&nbsp;int32&nbsp;1;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dest&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;var&nbsp;s;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])&nbsp;cond</code></pre><br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Types.html">Types</a>: <code class="code">sig</code> <a href="Bap.Std.Bil.Types.html">..</a> <code class="code">end</code></pre><br>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Types.html">Types</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><br>
 include all constructors into Bil namespace<br>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a></pre>
@@ -61,7 +61,7 @@ include all constructors into Bil namespace<br>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Printable.html">Bap.Std.Printable</a></pre>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Infix.html">Infix</a>: <code class="code">sig</code> <a href="Bap.Std.Bil.Infix.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Infix.html">Infix</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Infix.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Infix operators
 </div>
 
@@ -69,7 +69,7 @@ Infix operators
 <br>
 <h2 id="2_Functionalconstructors">Functional constructors</h2><br>
 
-<pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> exp -> stmt</code></pre><div class="info ">
+<pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt</code></pre><div class="info ">
 <code class="code">move v x</code> evaluate <code class="code">x</code> and assign its value to <code class="code">v</code><br>
 </div>
 
@@ -107,17 +107,17 @@ Infix operators
 <pre><span id="VALsle"><span class="keyword">val</span> sle</span> : <code class="type">binop</code></pre>
 <pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">unop</code></pre>
 <pre><span id="VALnot"><span class="keyword">val</span> not</span> : <code class="type">unop</code></pre>
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">mem:exp -> addr:exp -> <a href="Bap.Std.html#TYPEendian">Bap.Std.endian</a> -> <a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> exp</code></pre>
-<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type">mem:exp -> addr:exp -> exp -> <a href="Bap.Std.html#TYPEendian">Bap.Std.endian</a> -> <a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> exp</code></pre>
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">mem:exp -> addr:exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre>
+<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type">mem:exp -> addr:exp -> exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre>
 <pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">binop -> exp -> exp -> exp</code></pre>
 <pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">unop -> exp -> exp</code></pre>
-<pre><span id="VALvar"><span class="keyword">val</span> var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> exp</code></pre>
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> exp</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">cast -> <a href="Bap.Std.html#TYPEnat1">Bap.Std.nat1</a> -> exp -> exp</code></pre>
-<pre><span id="VALlet_"><span class="keyword">val</span> let_</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> exp -> exp -> exp</code></pre>
-<pre><span id="VALunknown"><span class="keyword">val</span> unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">Bap.Std.typ</a> -> exp</code></pre>
+<pre><span id="VALvar"><span class="keyword">val</span> var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp</code></pre>
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> exp</code></pre>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">cast -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> exp -> exp</code></pre>
+<pre><span id="VALlet_"><span class="keyword">val</span> let_</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> exp -> exp</code></pre>
+<pre><span id="VALunknown"><span class="keyword">val</span> unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> exp</code></pre>
 <pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">if_:exp -> then_:exp -> else_:exp -> exp</code></pre>
-<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">Bap.Std.nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">Bap.Std.nat1</a> -> exp -> exp</code></pre>
+<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> exp -> exp</code></pre>
 <pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">exp -> exp -> exp</code></pre><br>
 <h2 id="bil_visitor">AST Visitors</h2>.
 <p>
@@ -127,20 +127,20 @@ Infix operators
         that maps AST, allowing limited transformation of its
         structure.<br>
 
-<pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Bil.state-c.html">state</a></span> : <code class="type"></code><code class="code">object</code> <a href="Bap.Std.Bil.state-c.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Bil.state-c.html">state</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.state-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 All visitors provides some information about the current
         position of the visitor
 </div>
 
-<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code">object</code> <a href="Bap.Std.Bil.visitor-c.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Visitor.
 </div>
 
-<pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.finder-c.html">finder</a></span> : <code class="type"></code><code class="code">object</code> <a href="Bap.Std.Bil.finder-c.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.finder-c.html">finder</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.finder-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 A visitor with shortcut.
 </div>
 
-<pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Bil.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code">object</code> <a href="Bap.Std.Bil.mapper-c.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Bil.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 AST transformation.
 </div>
 <br>
@@ -169,18 +169,18 @@ AST transformation.
 <code class="code">map mapper bil</code> map or transform BIL program.<br>
 </div>
 
-<pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> stmt list -> bool</code></pre><div class="info ">
-<code class="code">is_referenced x p</code> is <code class="code">true</code> if <code class="code">x</code> is referenced in some expression or
+<pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> stmt list -> bool</code></pre><div class="info ">
+<code class="code">is_referenced x p</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">x</code> is referenced in some expression or
         statement in program <code class="code">p</code>:
         BUG: currently occurrences on the left hand side of the
         assignment operator is considered a reference too.<br>
 </div>
 
-<pre><span id="VALis_assigned"><span class="keyword">val</span> is_assigned</span> : <code class="type">?strict:bool -> <a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> stmt list -> bool</code></pre><div class="info ">
-<code class="code">is_assigned x p</code> is <code class="code">true</code> if there exists such <code class="code">Move</code>
+<pre><span id="VALis_assigned"><span class="keyword">val</span> is_assigned</span> : <code class="type">?strict:bool -> <a href="Bap.Std.html#TYPEvar">var</a> -> stmt list -> bool</code></pre><div class="info ">
+<code class="code">is_assigned x p</code> is <code class="code"><span class="keyword">true</span></code> if there exists such <code class="code"><span class="constructor">Move</span></code>
         statement, that <code class="code">x</code> occures on the left side of it. If <code class="code">strict</code>
         is true, then only unconditional assignments. By default,
-        <code class="code">strict</code> is <code class="code">false</code><br>
+        <code class="code">strict</code> is <code class="code"><span class="keyword">false</span></code><br>
 </div>
 
 <pre><span id="VALprune_unreferenced"><span class="keyword">val</span> prune_unreferenced</span> : <code class="type">stmt list -> stmt list</code></pre><div class="info ">
@@ -197,7 +197,7 @@ AST transformation.
         expression <code class="code">y</code> in program <code class="code">p</code><br>
 </div>
 
-<pre><span id="VALsubstitute_var"><span class="keyword">val</span> substitute_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> exp -> stmt list -> stmt list</code></pre><div class="info ">
+<pre><span id="VALsubstitute_var"><span class="keyword">val</span> substitute_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt list -> stmt list</code></pre><div class="info ">
 <code class="code">substitute_var x y p</code> substitutes all occurences of variable <code class="code">x</code>
         by expression <code class="code">y</code><br>
 </div>
@@ -219,7 +219,7 @@ AST transformation.
         cycle.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Trie.html">Trie</a>: <code class="code">sig</code> <a href="Bap.Std.Bil.Trie.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Tries on BIL.
 </div>
 </body></html>

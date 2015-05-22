@@ -25,7 +25,7 @@
 </div>
 <h1>Module type <a href="type_Bap.Std.ABI.html">Bap.Std.ABI</a></h1>
 
-<pre><span class="keyword">module type</span> ABI = <code class="code">sig</code> <a href="Bap.Std.ABI.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+<pre><span class="keyword">module type</span> ABI = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ABI.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
 Application Binary Interface
 <p>
 
@@ -47,7 +47,7 @@ Application Binary Interface
       following type:
 <p>
 
-      <code class="code">?image:image -&gt; ?sym:string -&gt; mem -&gt; block -&gt; abi option</code>
+      <code class="code">?image:image <span class="keywordsign">-&gt;</span> ?sym:string <span class="keywordsign">-&gt;</span> mem <span class="keywordsign">-&gt;</span> block <span class="keywordsign">-&gt;</span> abi option</code>
 <p>
 
       ABI constructors are registered in the target specific lifter,
@@ -58,26 +58,26 @@ Application Binary Interface
 </div>
 <hr width="100%">
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?merge:(<a href="Bap.Std.abi-c.html">Bap.Std.abi</a> list -> <a href="Bap.Std.abi-c.html">Bap.Std.abi</a>) -><br>       ?image:<a href="Bap.Std.html#TYPEimage">Bap.Std.image</a> -><br>       ?sym:string -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> <a href="Bap.Std.html#TYPEblock">Bap.Std.block</a> -> <a href="Bap.Std.abi-c.html">Bap.Std.abi</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?merge:(<a href="Bap.Std.abi-c.html">abi</a> list -> <a href="Bap.Std.abi-c.html">abi</a>) -><br>       ?image:<a href="Bap.Std.html#TYPEimage">image</a> -><br>       ?sym:string -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.html#TYPEblock">block</a> -> <a href="Bap.Std.abi-c.html">abi</a></code></pre><div class="info ">
 creates a set of ABI for the provided symbol.
         Until <code class="code">all</code> parameter is set to true the ABI will be
         disambiguated, using <code class="code">choose</code> method. Only equally
         valid ABI are returned.<br>
 </div>
 
-<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.abi-c.html">Bap.Std.abi</a> list -> <a href="Bap.Std.abi-c.html">Bap.Std.abi</a></code></pre><div class="info ">
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.abi-c.html">abi</a> list -> <a href="Bap.Std.abi-c.html">abi</a></code></pre><div class="info ">
 <code class="code">merge abis</code> create an abi that tries to take best from all
         provided abi. If the input list is empty, then the stub abi
         will be returned.<br>
 </div>
 
 <pre><span id="VALmerge_id"><span class="keyword">val</span> merge_id</span> : <code class="type">string list -> string list -> string list</code></pre>
-<pre><span name="TYPEstub"><span class="keyword">class</span> <a href="Bap.Std.ABI.stub-c.html">stub</a></span> : <code class="type"></code><code class="type"><a href="Bap.Std.abi-c.html">Bap.Std.abi</a></code></pre><div class="info">
+<pre><span name="TYPEstub"><span class="keyword">class</span> <a href="Bap.Std.ABI.stub-c.html">stub</a></span> : <code class="type"></code><code class="type"><a href="Bap.Std.abi-c.html">abi</a></code></pre><div class="info">
 ABI that understands nothing.
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a> -> string list -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> string list -> string</code></pre><div class="info ">
 registers given ABI under the given target<br>
 </div>
 
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type"><a href="Bap.Std.html#TYPEabi_constructor">Bap.Std.abi_constructor</a> -> unit</code></pre></body></html>
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type"><a href="Bap.Std.html#TYPEabi_constructor">abi_constructor</a> -> unit</code></pre></body></html>

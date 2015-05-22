@@ -25,15 +25,15 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a></h1>
 
-<pre><span class="keyword">module</span> Int_err: <code class="code">sig</code> <a href="Bap.Std.Bitvector.Int_err.html">..</a> <code class="code">end</code></pre><div class="info module top">
-<h2 id="2_ArithmeticraisedintoOrerrormonad">Arithmetic raised into <code class="code">Or_error</code> monad </h2>
+<pre><span class="keyword">module</span> Int_err: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.Int_err.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<h2 id="2_ArithmeticraisedintoOrerrormonad">Arithmetic raised into <code class="code"><span class="constructor">Or_error</span></code> monad </h2>
 <p>
 
         All binary integer operations are only well defined on operands
         with equal sizes.
 <p>
 
-        Module <code class="code">Int</code> provides a set of integer operations that do not
+        Module <code class="code"><span class="constructor">Int</span></code> provides a set of integer operations that do not
         raise exceptions, but return values raised to an Or_error
         monad.
 <p>
@@ -41,36 +41,36 @@
         Example:
 <p>
 
-        <code class="code">Z.(i16 v1 + i16 v2 / int 16 v3)</code>,
+        <code class="code"><span class="constructor">Z</span>.(i16 v1 + i16 v2 / int 16 v3)</code>,
 <p>
 
         or just:
 <p>
 
-        <code class="code">Z.(!$v1 + !$v2 / !$v3)</code>.<br>
+        <code class="code"><span class="constructor">Z</span>.(!$v1 + !$v2 / !$v3)</code>.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">!$v</code> lifts <code class="code">v</code> to an Or_error monad. It is, essentially, the
-          same as <code class="code">Ok v</code><br>
+          same as <code class="code"><span class="constructor">Ok</span> v</code><br>
 </div>
 
-<pre><span id="VALi1"><span class="keyword">val</span> i1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi1"><span class="keyword">val</span> i1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
 The following lifter will check that their operand has a
           corresponding width.<br>
 </div>
 
-<pre><span id="VALi4"><span class="keyword">val</span> i4</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALi8"><span class="keyword">val</span> i8</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALi16"><span class="keyword">val</span> i16</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALi32"><span class="keyword">val</span> i32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALi64"><span class="keyword">val</span> i64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
-<code class="code">int w v</code> will be <code class="code">Ok</code> if <code class="code">v</code> has width <code class="code">w</code><br>
+<pre><span id="VALi4"><span class="keyword">val</span> i4</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre>
+<pre><span id="VALi8"><span class="keyword">val</span> i8</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre>
+<pre><span id="VALi16"><span class="keyword">val</span> i16</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre>
+<pre><span id="VALi32"><span class="keyword">val</span> i32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre>
+<pre><span id="VALi64"><span class="keyword">val</span> i64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre>
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">int w v</code> will be <code class="code"><span class="constructor">Ok</span></code> if <code class="code">v</code> has width <code class="code">w</code><br>
 </div>
 
-<pre><span id="VALof_word_size"><span class="keyword">val</span> of_word_size</span> : <code class="type">Core_kernel.Std.Word_size.t -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bap.Std.Bitvector.t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_word_size"><span class="keyword">val</span> of_word_size</span> : <code class="type">Word_size.t -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">of_word_size w</code> creates a lifter for a specified word size
           <code class="code">w</code>, i.e. either <code class="code">i64</code> or <code class="code">i32</code><br>
 </div>

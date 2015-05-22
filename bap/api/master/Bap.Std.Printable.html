@@ -23,7 +23,7 @@
 </div>
 <h1>Module type <a href="type_Bap.Std.Printable.html">Bap.Std.Printable</a></h1>
 
-<pre><span class="keyword">module type</span> Printable = <code class="code">sig</code> <a href="Bap.Std.Printable.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+<pre><span class="keyword">module type</span> Printable = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
 Printable interface is implemented by a significant amount of
       BAP types.<br>
 </div>
@@ -40,13 +40,13 @@ Printable interface is implemented by a significant amount of
 <code class="code">str () t</code> is formatted output function that matches "%a"
         conversion format specifier in functions, that prints to string,
         e.g., <code class="code">sprintf</code>, <code class="code">failwithf</code>, <code class="code">errorf</code> and, suprisingly all
-        <code class="code">Lwt</code> printing function, including <code class="code">Lwt_io.printf</code> and logging
+        <code class="code"><span class="constructor">Lwt</span></code> printing function, including <code class="code"><span class="constructor">Lwt_io</span>.printf</code> and logging
         (or any other function with type ('a,unit,string,...)
         formatN`. Example:
 <p>
 
-        <code class="code">Or_error.errorf "type %a is not valid for %a"
-          Type.str ty Exp.str exp</code><br>
+        <code class="code"><span class="constructor">Or_error</span>.errorf <span class="string">"type %a is not valid for %a"</span>
+          <span class="constructor">Type</span>.str ty <span class="constructor">Exp</span>.str exp</code><br>
 </div>
 
 <pre><span id="VALpps"><span class="keyword">val</span> pps</span> : <code class="type">unit -> <a href="Bap.Std.Printable.html#TYPEt">t</a> -> string</code></pre><div class="info ">
@@ -60,8 +60,8 @@ will print to a standard <code class="code">output_channel</code>, useful for us
 
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 <div class="info ">
-this will include <code class="code">pp</code> function from <code class="code">Core</code> that has type
-        <code class="code">t printer</code>, and can be used in <code class="code">Format.printf</code>
+this will include <code class="code">pp</code> function from <code class="code"><span class="constructor">Core</span></code> that has type
+        <code class="code">t printer</code>, and can be used in <code class="code"><span class="constructor">Format</span>.printf</code>
         family of functions<br>
 </div>
 </body></html>

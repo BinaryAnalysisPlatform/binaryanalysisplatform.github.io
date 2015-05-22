@@ -23,7 +23,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a></h1>
 
-<pre><span class="keyword">module</span> Input: <code class="code">sig</code> <a href="Bap.Std.Memory.Input.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Input: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Memory.Input.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 A set of low level input operations.
         Note: it is more effective to use above head iterators, instead
         of this low level interface, since iterators do not need to check
@@ -31,7 +31,7 @@ A set of low level input operations.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a</code> reader</span> = <code class="type"><a href="Bap.Std.Memory.html#TYPEt">Bap.Std.Memory.t</a> -><br>       pos_ref:<a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> Pervasives.ref -> 'a Core_kernel.Std.Or_error.t</code> </pre>
+<pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a</code> reader</span> = <code class="type"><a href="Bap.Std.Memory.html#TYPEt">Memory.t</a> -><br>       pos_ref:<a href="Bap.Std.html#TYPEaddr">addr</a> Pervasives.ref -> 'a Or_error.t</code> </pre>
 <div class="info ">
 <code class="code">reader mem ~pos_ref</code> defines a set of functions with a
           common interface. Each function accepts a memory <code class="code">mem</code> and a
@@ -42,10 +42,10 @@ A set of low level input operations.
 </div>
 
 
-<pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type">word_size:<a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> <a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALint8"><span class="keyword">val</span> int8</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALuint8"><span class="keyword">val</span> uint8</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALint16"><span class="keyword">val</span> int16</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALuint16"><span class="keyword">val</span> uint16</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
-<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre></body></html>
+<pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type">word_size:<a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALint8"><span class="keyword">val</span> int8</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALuint8"><span class="keyword">val</span> uint8</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALint16"><span class="keyword">val</span> int16</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALuint16"><span class="keyword">val</span> uint16</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre>
+<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a></code></pre></body></html>

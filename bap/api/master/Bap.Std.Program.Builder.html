@@ -21,7 +21,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Program.Builder.html">Bap.Std.Program.Builder</a></h1>
 
-<pre><span class="keyword">module</span> Builder: <code class="code">sig</code> <a href="Bap.Std.Program.Builder.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Builder: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Program.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Program builder.<br>
 </div>
 <hr width="100%">
@@ -32,13 +32,13 @@ Initializes an empty builder.<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Bap.Std.tid</a> -> ?subs:int -> unit -> <a href="Bap.Std.Program.Builder.html#TYPEt">t</a></code></pre>
-<pre><span id="VALadd_sub"><span class="keyword">val</span> add_sub</span> : <code class="type"><a href="Bap.Std.Program.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsub">Bap.Std.sub</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?subs:int -> unit -> <a href="Bap.Std.Program.Builder.html#TYPEt">t</a></code></pre>
+<pre><span id="VALadd_sub"><span class="keyword">val</span> add_sub</span> : <code class="type"><a href="Bap.Std.Program.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
 <code class="code">add_sub builder sub</code> appends a subroutine term to the
           program.<br>
 </div>
 
-<pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type"><a href="Bap.Std.Program.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEprogram">Bap.Std.program</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code></pre><div class="info ">
+<pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type"><a href="Bap.Std.Program.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
 fixes the result<br>
 </div>
 </body></html>

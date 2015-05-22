@@ -21,7 +21,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a></h1>
 
-<pre><span class="keyword">module</span> Builder: <code class="code">sig</code> <a href="Bap.Std.Blk.Builder.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Builder: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Blk.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Builder interface.<br>
 </div>
 <hr width="100%">
@@ -35,7 +35,7 @@ This interface provides an efficient way to build new
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Bap.Std.tid</a> -><br>       ?phis:int -> ?defs:int -> ?jmps:int -> unit -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?phis:int -> ?defs:int -> ?jmps:int -> unit -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ~tid ~phis ~defs ~jmp ()</code> creates a block builder.
           If <code class="code">tid</code> parameter is specified, then the new block will
           have this tid. If any of <code class="code">phis</code>, <code class="code">defs</code> or <code class="code">jmps</code> parameters
@@ -45,22 +45,22 @@ This interface provides an efficient way to build new
           hint must be a positive number.<br>
 </div>
 
-<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">Bap.Std.def</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
 appends a definition
 <p>
 appends a jump<br>
 </div>
 
-<pre><span id="VALadd_jmp"><span class="keyword">val</span> add_jmp</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEjmp">Bap.Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_jmp"><span class="keyword">val</span> add_jmp</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
 appends a phi node<br>
 </div>
 
-<pre><span id="VALadd_phi"><span class="keyword">val</span> add_phi</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEphi">Bap.Std.phi</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_phi"><span class="keyword">val</span> add_phi</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
 appends generic element<br>
 </div>
 
-<pre><span id="VALadd_elt"><span class="keyword">val</span> add_elt</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.Blk.html#TYPEelt">Bap.Std.Blk.elt</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_elt"><span class="keyword">val</span> add_elt</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.Blk.html#TYPEelt">Blk.elt</a> -> unit</code></pre><div class="info ">
 returns current result<br>
 </div>
 
-<pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEblk">Bap.Std.blk</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code></pre></body></html>
+<pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre></body></html>

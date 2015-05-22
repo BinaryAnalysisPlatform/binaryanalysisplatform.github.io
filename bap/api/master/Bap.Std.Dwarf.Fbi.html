@@ -23,7 +23,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Dwarf.Fbi.html">Bap.Std.Dwarf.Fbi</a></h1>
 
-<pre><span class="keyword">module</span> Fbi: <code class="code">sig</code> <a href="Bap.Std.Dwarf.Fbi.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Fbi: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Dwarf.Fbi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Function boundary identification.<br>
 </div>
 <hr width="100%">
@@ -31,7 +31,7 @@ Function boundary identification.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap.Std.Dwarf.Data.html#TYPEt">Bap.Std.Dwarf.Data.t</a> -> <a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap.Std.Dwarf.Data.html#TYPEt">Dwarf.Data.t</a> -> <a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">create data</code> tries to create a DWARF reader, from
           supplied <code class="code">data</code>. May yield an error, if there wasn't sufficient
           sections, or if format is not understandable.
@@ -41,14 +41,14 @@ Function boundary identification.<br>
           three sections:
 <p>
 <ul>
-<li>.debug_abbrev <code class="code">Section.Abbr</code></li>
-<li>.debug_info   <code class="code">Section.Info</code></li>
-<li>.debug_str    <code class="code">Section.Str</code></li>
+<li>.debug_abbrev <code class="code"><span class="constructor">Section</span>.<span class="constructor">Abbr</span></code></li>
+<li>.debug_info   <code class="code"><span class="constructor">Section</span>.<span class="constructor">Info</span></code></li>
+<li>.debug_str    <code class="code"><span class="constructor">Section</span>.<span class="constructor">Str</span></code></li>
 </ul>
 <br>
 </div>
 
-<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap.Std.Dwarf.html#TYPEfn">Bap.Std.Dwarf.fn</a>) Core_kernel.Std.Sequence.t</code></pre><div class="info ">
+<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap.Std.Dwarf.html#TYPEfn">Dwarf.fn</a>) Sequence.t</code></pre><div class="info ">
 <code class="code">functions searcher</code> enumerates functions<br>
 </div>
 </body></html>

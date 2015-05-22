@@ -25,19 +25,19 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Block.html">Bap.Std.Block</a></h1>
 
-<pre><span class="keyword">module</span> Block: <code class="code">sig</code> <a href="Bap.Std.Block.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Block: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Basic block of machine instructions.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblock">Bap.Std.block</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblock">block</a></code> </pre>
 
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a></pre>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Block_traverse.html">Bap.Std.Block_traverse</a></pre>
 
-<pre><span id="VALdfs"><span class="keyword">val</span> dfs</span> : <code class="type">?order:[ `post | `pre ] -><br>       ?next:(<a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a>) -><br>       ?bound:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALdfs"><span class="keyword">val</span> dfs</span> : <code class="type">?order:[ `post | `pre ] -><br>       ?next:(<a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a>) -><br>       ?bound:<a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">dfs ?next ?bound blk</code> searches from the <code class="code">blk</code> using DFS.
 <p>
 
@@ -54,15 +54,15 @@ Basic block of machine instructions.<br>
         property of a <code class="code">next</code> function, not the algorithm itsef.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Block.Cfg.html">Cfg</a>: <code class="code">sig</code> <a href="Bap.Std.Block.Cfg.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Block.Cfg.html">Cfg</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.Cfg.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 A classic control flow graph using OCamlgraph library.
 </div>
 
-<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type">?bound:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.t</code></pre><div class="info ">
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type">?bound:<a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.t</code></pre><div class="info ">
 <code class="code">to_graph ?bound entry</code> builds a graph starting with <code class="code">entry</code> and
         spanning all reachable blocks that are bounded by a memory region
         <code class="code">bound</code>.<br>
 </div>
 <div class="param_info"><code class="code">bound</code> : defaults to infinite memory region.</div>
 
-<pre><span id="VALto_imperative_graph"><span class="keyword">val</span> to_imperative_graph</span> : <code class="type">?bound:<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.Imperative.t</code></pre></body></html>
+<pre><span id="VALto_imperative_graph"><span class="keyword">val</span> to_imperative_graph</span> : <code class="type">?bound:<a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.Imperative.t</code></pre></body></html>

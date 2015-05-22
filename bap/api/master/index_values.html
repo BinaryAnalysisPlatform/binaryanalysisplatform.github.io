@@ -220,20 +220,20 @@ current position of the disassembler
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALaddr_of_int">addr_of_int</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
-<code class="code">addr_of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+<code class="code">addr_of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALaddr_of_int_exn">addr_of_int_exn</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">addr_of_int_exn n</code> the same as <code class="code">addr_of_int</code>, but raises exception
-        instead of returning <code class="code">Error</code>
+        instead of returning <code class="code"><span class="constructor">Error</span></code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALaddr_of_int_opt">addr_of_int_opt</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">addr_of_int_opt n</code> the same as <code class="code">addr_of_int</code> but uses <code class="code">option</code> type
-        instead of <code class="code">Or_error.t</code>
+        instead of <code class="code"><span class="constructor">Or_error</span>.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALaddr_of_pc">addr_of_pc</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -287,7 +287,7 @@ target-specific assembler string representing the instruction
 <tr><td align="left"><br>B</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALb0">b0</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-<code class="code">b0 = of_bool false</code> is a zero bit
+<code class="code">b0 = of_bool <span class="keyword">false</span></code> is a zero bit
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALb1">b1</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
@@ -364,8 +364,8 @@ updates the label
 <tr><td><a href="Bap.Std.Trie.html#VALchange">change</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 <code class="code">change trie key f</code> if trie has <code class="code">data</code> associated with <code class="code">key</code> then
-        <code class="code">f</code> will be called with <code class="code">Some data</code>, otherwise it will be called
-        with <code class="code">None</code>.
+        <code class="code">f</code> will be called with <code class="code"><span class="constructor">Some</span> data</code>, otherwise it will be called
+        with <code class="code"><span class="constructor">None</span></code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALclone">clone</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
@@ -423,7 +423,7 @@ A human readable comment
 <tr><td><a href="Bap.Std.Memmap.html#VALcontains">contains</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
 <td><div class="info">
 <code class="code">contains map addr</code> true if there exists such memory region <code class="code">mem</code>,
-        that <code class="code">Memory.contains mem addr</code>
+        that <code class="code"><span class="constructor">Memory</span>.contains mem addr</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALcontains">contains</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
@@ -782,7 +782,7 @@ A name of a file
 <tr><td><a href="Bap.Std.Term.html#VALfilter">filter</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">filter t p ~f</code> returns a term <code class="code">p</code> with subterms <code class="code">c</code> for which
-        <code class="code">f c = false</code> removed.
+        <code class="code">f c = <span class="keyword">false</span></code> removed.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfilter">filter</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -794,7 +794,7 @@ removes all mappings that do not satisfy the predicate
 <td><div class="info">
 <code class="code">filter_map t p ~f</code> returns term <code class="code">p</code> with all subterms of type
         <code class="code">t</code> filter_mapped with function <code class="code">f</code>, i.e., all terms for which
-        function <code class="code">f</code> returned <code class="code">Some thing</code> are substituted by the
+        function <code class="code">f</code> returned <code class="code"><span class="constructor">Some</span> thing</code> are substituted by the
         <code class="code">thing</code>, otherwise they're removed from the parent term
 </div>
 </td></tr>
@@ -820,7 +820,7 @@ removes all mappings that do not satisfy the predicate
 <td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALfind">find</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">find t p id</code> is <code class="code">Some c</code> if term <code class="code">p</code> has a subterm of type <code class="code">t</code>
+<code class="code">find t p id</code> is <code class="code"><span class="constructor">Some</span> c</code> if term <code class="code">p</code> has a subterm of type <code class="code">t</code>
         such that <code class="code">tid c = id</code>.
 </div>
 </td></tr>
@@ -956,7 +956,7 @@ A set of general purpose registers
 <tr><td align="left"><br>H</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALhas_attr">has_attr</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">has_attr term attr</code> is <code class="code">true</code> if <code class="code">term</code> has attribute <code class="code">attr</code>
+<code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALhas_intersections">has_intersections</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -967,14 +967,14 @@ A set of general purpose registers
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALhas_side_effect">has_side_effect</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">has_side_effect</code> is <code class="code">true</code> if instruction may load or store
+<code class="code">has_side_effect</code> is <code class="code"><span class="keyword">true</span></code> if instruction may load or store
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Op.Normalized.html#VALhash">hash</a> [<a href="Bap.Std.Op.Normalized.html">Bap.Std.Op.Normalized</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALhexdump">hexdump</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
-<code class="code">hexdump t out</code> outputs hexdump (as per <code class="code">hexdump -C</code>) of the
+<code class="code">hexdump t out</code> outputs hexdump (as per <code class="code">hexdump -<span class="constructor">C</span></code>) of the
         memory to formatter <code class="code">out</code>
 </div>
 </td></tr>
@@ -1054,7 +1054,7 @@ returns all instructions that was successfully decoded in an
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALint">int</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
 <td><div class="info">
-<code class="code">int w v</code> will be <code class="code">Ok</code> if <code class="code">v</code> has width <code class="code">w</code>
+<code class="code">int w v</code> will be <code class="code"><span class="constructor">Ok</span></code> if <code class="code">v</code> has width <code class="code">w</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALint16">int16</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
@@ -1097,7 +1097,7 @@ returns all instructions that was successfully decoded in an
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALis_assigned">is_assigned</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">is_assigned x p</code> is <code class="code">true</code> if there exists such <code class="code">Move</code>
+<code class="code">is_assigned x p</code> is <code class="code"><span class="keyword">true</span></code> if there exists such <code class="code"><span class="constructor">Move</span></code>
         statement, that <code class="code">x</code> occures on the left side of it.
 </div>
 </td></tr>
@@ -1105,14 +1105,14 @@ returns all instructions that was successfully decoded in an
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_call">is_call</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_call</code> is <code class="code">true</code> for all call instructions
+<code class="code">is_call</code> is <code class="code"><span class="keyword">true</span></code> for all call instructions
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_cf">is_cf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_conditional_jump">is_conditional_jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_conditional</code> <code class="code">true</code> for conditional jumps
+<code class="code">is_conditional</code> <code class="code"><span class="keyword">true</span></code> for conditional jumps
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.Sym.html#VALis_debug">is_debug</a> [<a href="Bap.Std.Image.Sym.html">Bap.Std.Image.Sym</a>]</td>
@@ -1132,12 +1132,12 @@ returns all instructions that was successfully decoded in an
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_indirect_jump">is_indirect_jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_indirect_jump</code> <code class="code">true</code> if it is indirect
+<code class="code">is_indirect_jump</code> <code class="code"><span class="keyword">true</span></code> if it is indirect
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_jump">is_jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_jump</code> <code class="code">true</code> for all jumps
+<code class="code">is_jump</code> <code class="code"><span class="keyword">true</span></code> for all jumps
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_mem">is_mem</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -1155,7 +1155,7 @@ returns all instructions that was successfully decoded in an
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALis_referenced">is_referenced</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">is_referenced x p</code> is <code class="code">true</code> if <code class="code">x</code> is referenced in some expression or
+<code class="code">is_referenced x p</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">x</code> is referenced in some expression or
         statement in program <code class="code">p</code>:
         BUG: currently occurrences on the left hand side of the
         assignment operator is considered a reference too.
@@ -1168,7 +1168,7 @@ Predicates
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_return">is_return</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_return</code> <code class="code">true</code> for returns
+<code class="code">is_return</code> <code class="code"><span class="keyword">true</span></code> for returns
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_sp">is_sp</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -1180,7 +1180,7 @@ Predicates
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_unconditional_jump">is_unconditional_jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
-<code class="code">is_unconditional</code> iff <code class="code">is_jump &amp;&amp; not is_conditional_jump</code>
+<code class="code">is_unconditional</code> iff <code class="code">is_jump <span class="keywordsign">&amp;&amp;</span> not is_conditional_jump</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_vf">is_vf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -1347,7 +1347,7 @@ returns the left hand side of a definition
 <tr><td><a href="Bap.Std.html#VALlinear_sweep_exn">linear_sweep_exn</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <code class="code">linear_sweep_exn</code> same as <code class="code">linear_sweep</code>, but raises an
-      exception, instead of returning <code class="code">Or_error</code> monad
+      exception, instead of returning <code class="code"><span class="constructor">Or_error</span></code> monad
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALlink">link</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -1551,8 +1551,8 @@ returns a sequence of memory regions occupied by the given
         share edges (i.e., difference between <code class="code">min_addr</code> of one of the
         blocks and <code class="code">max_addr</code> of another is less then or equal to one, and
         returns memory blocks that spans memory starting from the address
-        <pre class="codepre"><code class="code">min (min_addr m1) (min_addr m2)</code></pre> and ending with address
-        <pre class="codepre"><code class="code">max (max_addr m1) (max_addr m2)</code></pre>.
+        <pre class="codepre"><code class="code">min&nbsp;(min_addr&nbsp;m1)&nbsp;(min_addr&nbsp;m2)</code></pre> and ending with address
+        <pre class="codepre"><code class="code">max&nbsp;(max_addr&nbsp;m1)&nbsp;(max_addr&nbsp;m2)</code></pre>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.ABI.html#VALmerge_id">merge_id</a> [<a href="Bap.Std.ABI.html">Bap.Std.ABI</a>]</td>
@@ -1614,6 +1614,11 @@ name of a register
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.Sec.html#VALname">name</a> [<a href="Bap.Std.Image.Sec.html">Bap.Std.Image.Sec</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Value.Tag.html#VALname">name</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
+<td><div class="info">
+<code class="code">name cons</code> returns a name of a constructor.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALname">name</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALneg">neg</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -1653,13 +1658,13 @@ name of a register
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALnpred">npred</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-<code class="code">npred m n</code> is <code class="code">Fn.apply_n_times ~n pred addr</code>, but more
+<code class="code">npred m n</code> is <code class="code"><span class="constructor">Fn</span>.apply_n_times ~n pred addr</code>, but more
         efficient.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALnsucc">nsucc</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-<code class="code">nsucc m n</code> is <code class="code">Fn.apply_n_times ~n succ m</code>, but more
+<code class="code">nsucc m n</code> is <code class="code"><span class="constructor">Fn</span>.apply_n_times ~n succ m</code>, but more
         efficient.
 </div>
 </td></tr>
@@ -1705,7 +1710,7 @@ Creating
 <td></td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALof_int">of_int</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
-<code class="code">of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+<code class="code">of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.
 </div>
 </td></tr>
@@ -1720,13 +1725,13 @@ Creating
 <tr><td><a href="Bap.Std.Size.html#VALof_int_exn">of_int_exn</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">of_int_exn n</code> the same as <code class="code">of_int</code>, but raises exception
-        instead of returning <code class="code">Error</code>
+        instead of returning <code class="code"><span class="constructor">Error</span></code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALof_int_opt">of_int_opt</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">of_int_opt n</code> the same as <code class="code">of_int</code> but uses <code class="code">option</code> type
-        instead of <code class="code">Or_error.t</code>
+        instead of <code class="code"><span class="constructor">Or_error</span>.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALof_string">of_string</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -1738,7 +1743,7 @@ Creating
 <tr><td><a href="Bap.Std.Arch.html#VALof_string">of_string</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td><div class="info">
 <code class="code">of_string s</code> will try to be clever and to capture all
-        commonly known synonyms, e.g., <code class="code">of_string "i686"</code> will
+        commonly known synonyms, e.g., <code class="code">of_string <span class="string">"i686"</span></code> will
         work
 </div>
 </td></tr>
@@ -1782,7 +1787,7 @@ instruction operands
 <tr><td align="left"><br>P</td></tr>
 <tr><td><a href="Bap.Std.Program.html#VALparent">parent</a> [<a href="Bap.Std.Program.html">Bap.Std.Program</a>]</td>
 <td><div class="info">
-<code class="code">parent t program id</code> is <code class="code">Some p</code> iff <code class="code">find t p id &lt;&gt; None</code>
+<code class="code">parent t program id</code> is <code class="code"><span class="constructor">Some</span> p</code> iff <code class="code">find t p id &lt;&gt; <span class="constructor">None</span></code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALpc">pc</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -2096,9 +2101,15 @@ returns call continuation
 <tr><td><a href="Bap.Std.Term.html#VALsame">same</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">same x y</code> returns true if <code class="code">x</code> and <code class="code">y</code> represents the same
-        object, i.e., <code class="code">Tid.(tid x = tid y)</code>
+        entity, i.e., <code class="code"><span class="constructor">Tid</span>.(tid x = tid y)</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Value.Tag.html#VALsame">same</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Value.Tag.html#VALsame_witness">same_witness</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Value.Tag.html#VALsame_witness_exn">same_witness_exn</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Signatures.html#VALsave">save</a> [<a href="Bap.Std.Signatures.html">Bap.Std.Signatures</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsdivide">sdivide</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -2252,7 +2263,7 @@ enables storing instruction kinds information
 <code class="code">str () t</code> is formatted output function that matches "%a"
         conversion format specifier in functions, that prints to string,
         e.g., <code class="code">sprintf</code>, <code class="code">failwithf</code>, <code class="code">errorf</code> and, suprisingly all
-        <code class="code">Lwt</code> printing function, including <code class="code">Lwt_io.printf</code> and logging
+        <code class="code"><span class="constructor">Lwt</span></code> printing function, including <code class="code"><span class="constructor">Lwt_io</span>.printf</code> and logging
         (or any other function with type ('a,unit,string,...)
         formatN`.
 </div>
@@ -2421,7 +2432,7 @@ Conversions to built-in integers
 </td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
 <td><div class="info">
-<code class="code">to_sequence map</code> converts the memmap <code class="code">'a t</code> to a sequence of
+<code class="code">to_sequence map</code> converts the memmap <code class="code"><span class="keywordsign">'</span>a t</code> to a sequence of
         key-value pairs
 </div>
 </td></tr>
@@ -2439,11 +2450,6 @@ registers given ABI under the given target
 <tr><td><a href="Bap.Std.Printable.html#VALto_string">to_string</a> [<a href="Bap.Std.Printable.html">Bap.Std.Printable</a>]</td>
 <td><div class="info">
 <code class="code">to_string x</code> returns a human-readable representation of <code class="code">x</code>
-</div>
-</td></tr>
-<tr><td><a href="Bap.Std.Value.Tag.html#VALto_string">to_string</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
-<td><div class="info">
-<code class="code">to_string cons</code> returns a name of a constructor.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Imm.html#VALto_word">to_word</a> [<a href="Bap.Std.Imm.html">Bap.Std.Imm</a>]</td>

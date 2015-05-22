@@ -29,7 +29,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Bitvector.html">Bap.Std.Bitvector</a></h1>
 
-<pre><span class="keyword">module</span> Bitvector: <code class="code">sig</code> <a href="Bap.Std.Bitvector.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Bitvector: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Bitvector -- a type for representing binary values.
 <p>
 
@@ -43,9 +43,9 @@ Bitvector -- a type for representing binary values.
       Each value is attributed by a its bit-width. All arithmetic
       operations over values are done modulo their widths. It is an
       error to apply arithmetic operation to values with different
-      widths. Default implementations will raise a <code class="code">Width</code> exception,
+      widths. Default implementations will raise a <code class="code"><span class="constructor">Width</span></code> exception,
       however there exists a family of modules that provide arithmetic
-      operations lifted to an <code class="code">Or_error.t</code> monad. It is suggested to use
+      operations lifted to an <code class="code"><span class="constructor">Or_error</span>.t</code> monad. It is suggested to use
       them, if you know what kind of operands you're expecting.
 <p>
 
@@ -61,8 +61,8 @@ Bitvector -- a type for representing binary values.
       (big-endian). Sometimes id does matter, sometimes it doesn't. In a
       latter case you can just use a default native-endian
       interface. But in a former case, please consider using explicit
-      modules, either <code class="code">Bytes_LE</code> or <code class="code">Bytes_BE</code>, even if you know that
-      your system is <code class="code">LE</code>. Things change.
+      modules, either <code class="code"><span class="constructor">Bytes_LE</span></code> or <code class="code"><span class="constructor">Bytes_BE</span></code>, even if you know that
+      your system is <code class="code"><span class="constructor">LE</span></code>. Things change.
 <p>
 
       Bits are always numbered from right to left, with least
@@ -76,10 +76,10 @@ Bitvector -- a type for representing binary values.
 
       Size-monomorphic operations (as opposed to size-polymorphic
       comparison) doesn't allow to compare two operands with different
-      sizes, and either raise exception or return <code class="code">Error</code>. If we would
-      have type safe interface, with type <code class="code">t</code> defined as <code class="code">type 'a t</code>,
-      where <code class="code">'a</code> stands for size, then size-monomorphic operations will
-      have type <code class="code">'a t -&gt; 'a t -&gt; _</code>, and size-polymorphic <code class="code">'a t -&gt; 'b t -&gt; _</code>.
+      sizes, and either raise exception or return <code class="code"><span class="constructor">Error</span></code>. If we would
+      have type safe interface, with type <code class="code">t</code> defined as <code class="code"><span class="keyword">type</span> <span class="keywordsign">'</span>a t</code>,
+      where <code class="code"><span class="keywordsign">'</span>a</code> stands for size, then size-monomorphic operations will
+      have type <code class="code"><span class="keywordsign">'</span>a t <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a t <span class="keywordsign">-&gt;</span> _</code>, and size-polymorphic <code class="code"><span class="keywordsign">'</span>a t <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>b t <span class="keywordsign">-&gt;</span> _</code>.
 <p>
 
       By default, size-polymorphic comparison is used (for rationale of
@@ -90,12 +90,12 @@ Bitvector -- a type for representing binary values.
       ascending order:
 <p>
 
-      <pre class="codepre"><code class="code"> 0x0:1, 0x0:32, 0x0:64, 0x1:1, 0x1:32, 0xD:4, 0xDEADBEEF:32</code></pre>.
+      <pre class="codepre"><code class="code">&nbsp;0x0:1,&nbsp;0x0:32,&nbsp;0x0:64,&nbsp;0x1:1,&nbsp;0x1:32,&nbsp;0xD:4,&nbsp;0xDEADBEEF:32</code></pre>.
 <p>
 
-      A size-monomorphic interfaced is exposed in a <code class="code">Mono</code> submodule. So
-      if you want a monomorphic map, then just use <code class="code">Mono.Map</code> module.
-      Note, <code class="code">Mono</code> submodule doesn't provide <code class="code">Table</code>, since we cannot
+      A size-monomorphic interfaced is exposed in a <code class="code"><span class="constructor">Mono</span></code> submodule. So
+      if you want a monomorphic map, then just use <code class="code"><span class="constructor">Mono</span>.<span class="constructor">Map</span></code> module.
+      Note, <code class="code"><span class="constructor">Mono</span></code> submodule doesn't provide <code class="code"><span class="constructor">Table</span></code>, since we cannot
       guarantee that all keys in a hash-table have equal size.
 <p>
 
@@ -108,7 +108,7 @@ Bitvector -- a type for representing binary values.
       can use <code class="code">signed</code> operator to temporary cast your value to signed.
       We use temporary to emphasize that, the signedness property won't
       propagate to the result of the operation, e.g. result of the
-      following expression: <code class="code">Int_exn.(signed x / y)</code> will not be signed.
+      following expression: <code class="code"><span class="constructor">Int_exn</span>.(signed x / y)</code> will not be signed.
 <p>
 
       If any operand of a binary operation is signed, then a signed
@@ -117,49 +117,49 @@ Bitvector -- a type for representing binary values.
 
       Remember to use explicit casts, whenever you really need a signed
       representation. Examples:
-      <pre class="codepre"><code class="code">        let x = of_int ~-6 ~width:8
-        let y = to_int x          (* y = 250 *)
-        let z = to_int (signed x) (* z = ~-6 *)
-        let zero = of_int 0 ~width:8
-        let p = x &lt; zero          (* p = false *)
-        let q = signed x &lt; zero   (* p = true *)
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;x&nbsp;=&nbsp;of_int&nbsp;<span class="keywordsign">~-</span>6&nbsp;~width:8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;y&nbsp;=&nbsp;to_int&nbsp;x&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;y&nbsp;=&nbsp;250&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;z&nbsp;=&nbsp;to_int&nbsp;(signed&nbsp;x)&nbsp;<span class="comment">(*&nbsp;z&nbsp;=&nbsp;~-6&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;zero&nbsp;=&nbsp;of_int&nbsp;0&nbsp;~width:8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;p&nbsp;=&nbsp;x&nbsp;&lt;&nbsp;zero&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;p&nbsp;=&nbsp;false&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;q&nbsp;=&nbsp;signed&nbsp;x&nbsp;&lt;&nbsp;zero&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;p&nbsp;=&nbsp;true&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       <h2 id="2_Clarificationonstringrepresentation">Clarification on string representation </h2>
 <p>
 
-      As a part of <code class="code">Identifiable</code> interface bitvector provides a pair of
+      As a part of <code class="code"><span class="constructor">Identifiable</span></code> interface bitvector provides a pair of
       complement functions: <code class="code">to_string</code> and <code class="code">of_string</code>, that provides
       facilities to store bitvector as a human readable string, and to
       restore it from string. The format of the representation is the
       following (in EBNF):
-      <pre class="codepre"><code class="code">        repr  = [sign], base, digit, {digit}, ":", size | true | false;
-        sign  = "+" | "-";
-        base  = "0x" | "0b" | "0o";
-        size  = dec, {dec};
-        digit = dec | oct | hex;
-        dec   = ?decimal digit?;
-        oct   = ?octal digit?;
-        hex   = ?hexadecimal digit?;
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repr&nbsp;&nbsp;=&nbsp;[sign],&nbsp;base,&nbsp;digit,&nbsp;{digit},&nbsp;<span class="string">":"</span>,&nbsp;size&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keyword">true</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keyword">false</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;&nbsp;=&nbsp;<span class="string">"+"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"-"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base&nbsp;&nbsp;=&nbsp;<span class="string">"0x"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"0b"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"0o"</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;&nbsp;=&nbsp;dec,&nbsp;{dec};<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digit&nbsp;=&nbsp;dec&nbsp;<span class="keywordsign">|</span>&nbsp;oct&nbsp;<span class="keywordsign">|</span>&nbsp;hex;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dec&nbsp;&nbsp;&nbsp;=&nbsp;?decimal&nbsp;digit?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oct&nbsp;&nbsp;&nbsp;=&nbsp;?octal&nbsp;digit?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hex&nbsp;&nbsp;&nbsp;=&nbsp;?hexadecimal&nbsp;digit?;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       Examples:
-      <code class="code">0x5D:32, 0b0101:16, 5:64, +5:8, +0x5D:16, true, false.</code>.
+      <code class="code">0x5D:32, 0b0101:16, 5:64, +5:8, +0x5D:16, <span class="keyword">true</span>, <span class="keyword">false</span>.</code>.
 <p>
 
-      Form <code class="code">false</code> is a shortcut for <code class="code">0:1</code>, as well as <code class="code">true</code> is <code class="code">1:1</code>.
+      Form <code class="code"><span class="keyword">false</span></code> is a shortcut for <code class="code">0:1</code>, as well as <code class="code"><span class="keyword">true</span></code> is <code class="code">1:1</code>.
 <p>
 
       If <code class="code">base</code> is omitted base-10 is assumed. The output format is
-      lways <code class="code">"0x", hex, {hex}</code> in an unsigned form.<br>
+      lways <code class="code"><span class="string">"0x"</span>, hex, {hex}</code> in an unsigned form.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEword">word</a></code> </pre>
 <div class="info ">
-<code class="code">word</code> is an abbreviation to <code class="code">Bitvector.t</code><br>
+<code class="code">word</code> is an abbreviation to <code class="code"><span class="constructor">Bitvector</span>.t</code><br>
 </div>
 
 <br>
@@ -184,7 +184,7 @@ Bitvector implements a common set of operations that are
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Mono.html">Mono</a>: <code class="type">Comparable</code><code class="type">  with type t := t</code></pre>
 <pre><span id="EXCEPTIONWidth"><span class="keyword">exception</span> Width</span></pre>
 <div class="info ">
-<code class="code">Width</code> exception is raised when size-monomorphic operation is
+<code class="code"><span class="constructor">Width</span></code> exception is raised when size-monomorphic operation is
         applied to operands with different sizes.<br>
 </div>
 
@@ -194,14 +194,20 @@ Bitvector implements a common set of operations that are
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTendian.LittleEndian"><span class="constructor">LittleEndian</span></span></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >least significant byte comes first</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+least significant byte comes first<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTendian.BigEndian"><span class="constructor">BigEndian</span></span></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >most  significant byte comes first</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+most  significant byte comes first<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 
 <div class="info ">
@@ -220,9 +226,9 @@ Specifies the order of bytes in a word.<br>
 <h2 id="2_Somepredefinedconstantconstructors">Some predefined constant constructors </h2><br>
 
 <pre><span id="VALb0"><span class="keyword">val</span> b0</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">b0 = of_bool false</code> is a zero bit
+<code class="code">b0 = of_bool <span class="keyword">false</span></code> is a zero bit
 <p>
-<code class="code">b1 = of_bool true</code> is a one bit<br>
+<code class="code">b1 = of_bool <span class="keyword">true</span></code> is a one bit<br>
 </div>
 
 <pre><span id="VALb1"><span class="keyword">val</span> b1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><br>
@@ -253,15 +259,15 @@ Specifies the order of bytes in a word.<br>
         <code class="code">num</code> argument is copied
 <p>
 
-        <code class="code">width</code> defaults to <code class="code">String.length num</code><br>
+        <code class="code">width</code> defaults to <code class="code"><span class="constructor">String</span>.length num</code><br>
 </div>
 
-<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int Or_error.t</code></pre><div class="info ">
 <h2 id="2_Conversionstobuiltinintegers">Conversions to built-in integers </h2><br>
 </div>
 
-<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int32 Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int64 Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int32 Or_error.t</code></pre>
+<pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int64 Or_error.t</code></pre>
 <pre><span id="VALstring_of_value"><span class="keyword">val</span> string_of_value</span> : <code class="type">?hex:bool -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> string</code></pre>
 <pre><span id="VALsigned"><span class="keyword">val</span> signed</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">signed t</code> casts t to a signed type, so that any operations
@@ -280,7 +286,7 @@ Specifies the order of bytes in a word.<br>
 <code class="code">bitwidth bv</code> return a bit-width, i.e., the amount of bits<br>
 </div>
 
-<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">?hi:int -><br>       ?lo:int -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">?hi:int -><br>       ?lo:int -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">extract bv ~hi ~lo</code> extracts a subvector from <code class="code">bv</code>, starting
         from bit <code class="code">hi</code> and ending with <code class="code">lo</code>. Bits are enumerated from
         right to left (from least significant to most), starting from
@@ -326,12 +332,12 @@ Specifies the order of bytes in a word.<br>
 </div>
 
 <pre><span id="VALnsucc"><span class="keyword">val</span> nsucc</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">nsucc m n</code> is <code class="code">Fn.apply_n_times ~n succ m</code>, but more
+<code class="code">nsucc m n</code> is <code class="code"><span class="constructor">Fn</span>.apply_n_times ~n succ m</code>, but more
         efficient.<br>
 </div>
 
 <pre><span id="VALnpred"><span class="keyword">val</span> npred</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">npred m n</code> is <code class="code">Fn.apply_n_times ~n pred addr</code>, but more
+<code class="code">npred m n</code> is <code class="code"><span class="constructor">Fn</span>.apply_n_times ~n pred addr</code>, but more
         efficient.<br>
 </div>
 
@@ -345,7 +351,7 @@ Specifies the order of bytes in a word.<br>
 <br>
 <h2 id="2_Iterationoverbitvectorcomponents">Iteration over bitvector components </h2><br>
 
-<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Core_kernel.Std.Sequence.t</code></pre><div class="info ">
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Sequence.t</code></pre><div class="info ">
 <code class="code">to_bytes x order</code> returns bytes of <code class="code">x</code> in a specified <code class="code">order</code>.
         Each byte is represented as a <code class="code">bitvector</code> itself.
 <p>
@@ -353,22 +359,22 @@ Specifies the order of bytes in a word.<br>
         with bytes represented by <code class="code">char</code> type<br>
 </div>
 
-<pre><span id="VALto_chars"><span class="keyword">val</span> to_chars</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> char Core_kernel.Std.Sequence.t</code></pre>
-<pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> bool Core_kernel.Std.Sequence.t</code></pre><div class="info ">
+<pre><span id="VALto_chars"><span class="keyword">val</span> to_chars</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> char Sequence.t</code></pre>
+<pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> bool Sequence.t</code></pre><div class="info ">
 <code class="code">to_bits x order</code> returns bits of <code class="code">x</code> in a specified <code class="code">order</code>.
         <code class="code">order</code> defines only the ordering of words in a bitvector, bits
         will always be in MSB first order.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Int_err.html">Int_err</a>: <code class="code">sig</code> <a href="Bap.Std.Bitvector.Int_err.html">..</a> <code class="code">end</code></pre><div class="info">
-Arithmetic raised into <code class="code">Or_error</code> monad 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Int_err.html">Int_err</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.Int_err.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Arithmetic raised into <code class="code"><span class="constructor">Or_error</span></code> monad 
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Int_exn.html">Int_exn</a>: <code class="type"><a href="Bap.Std.Integer.html">Bap.Std.Integer</a></code><code class="type">  with type t = t</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Int_exn.html">Int_exn</a>: <code class="type"><a href="Bap.Std.Integer.html">Integer</a></code><code class="type">  with type t = t</code></pre><div class="info">
 Arithmetic that raises exceptions.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Trie.html">Trie</a>: <code class="code">sig</code> <a href="Bap.Std.Bitvector.Trie.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Prefix trees for bitvectors.
 </div>
 </body></html>

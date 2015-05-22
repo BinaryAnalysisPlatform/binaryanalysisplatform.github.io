@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Project.html">Bap.Std.Project</a></h1>
 
-<pre><span class="keyword">module</span> Project: <code class="code">sig</code> <a href="Bap.Std.Project.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Project: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Target of analysis.<br>
 </div>
 <hr width="100%">
@@ -39,56 +39,77 @@ A project groups together all the information recovered from
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.arch">arch</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >architecture</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<code><span id="TYPEELTt.arch">arch</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+architecture<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.disasm">disasm</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdisasm">Bap.Std.disasm</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >disassembly of a program</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<code><span id="TYPEELTt.disasm">disasm</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdisasm">disasm</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+disassembly of a program<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.memory">memory</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >annotations</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<code><span id="TYPEELTt.memory">memory</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+annotations<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.storage">storage</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdict">Bap.Std.dict</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >arbitrary data storage</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<code><span id="TYPEELTt.storage">storage</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+arbitrary data storage<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.program">program</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEprogram">Bap.Std.program</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" >Program lifter to BAP IR</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+<code><span id="TYPEELTt.program">program</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Program lifter to BAP IR<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.symbols">symbols</span>&nbsp;: <code class="type">string <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code>;</code></td>
-
+<code><span id="TYPEELTt.symbols">symbols</span>&nbsp;: <code class="type">string <a href="Bap.Std.html#TYPEtable">table</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<span class="warning">Deprecated.</span>symbol table<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.base">base</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code>;</code></td>
-
+<code><span id="TYPEELTt.base">base</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a></code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<span class="warning">Deprecated.</span>base memory<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
 
 
-<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?tags:string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a> list -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?tags:string <a href="Bap.Std.html#TYPEtag">tag</a> list -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">substitute ?tags p</code> apply substitutions in text values
         associated with the provided tags in project memory. <code class="code">tags</code>
         defaults to <code class="code">[comment; python; shell]</code>.

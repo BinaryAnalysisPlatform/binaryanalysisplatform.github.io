@@ -23,7 +23,7 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Bap.Std.Target.html">Bap.Std.Target</a></h1>
 
-<pre><span class="keyword">module type</span> Target = <code class="code">sig</code> <a href="Bap.Std.Target.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+<pre><span class="keyword">module type</span> Target = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Target.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
 Abstract interface for all targets.
 <p>
 
@@ -37,9 +37,9 @@ Abstract interface for all targets.
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Target.CPU.html">CPU</a>: <code class="type"><a href="Bap.Std.CPU.html">Bap.Std.CPU</a></code><code class="type"> </code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Target.ABI.html">ABI</a>: <code class="type"><a href="Bap.Std.ABI.html">Bap.Std.ABI</a></code><code class="type"> </code></pre>
-<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">Bap.Std.Disasm_expert.Basic.insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">Bap.Std.bil</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Target.CPU.html">CPU</a>: <code class="type"><a href="Bap.Std.CPU.html">CPU</a></code><code class="type"> </code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Target.ABI.html">ABI</a>: <code class="type"><a href="Bap.Std.ABI.html">ABI</a></code><code class="type"> </code></pre>
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">Disasm_expert.Basic.insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Or_error.t</code></pre><div class="info ">
 <code class="code">lift mem insn</code> lifts provided instruction to BIL.
         Usually you do not need to call this function directly, as
         <code class="code">disassemble</code> function will do the lifting.<br>

@@ -157,7 +157,7 @@ Specifies the order of bytes in a word.
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEendian">endian</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Expose <code class="code">endian</code> constructors to <code class="code">Bap.Std</code> namespace
+Expose <code class="code">endian</code> constructors to <code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span></code> namespace
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
@@ -309,7 +309,7 @@ opaque memory
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEmemmap">memmap</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-interval trees from memory regions to <code class="code">'a</code>
+interval trees from memory regions to <code class="code"><span class="keywordsign">'</span>a</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Arch.html#TYPEmips">mips</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
@@ -358,8 +358,8 @@ predicate to drive the disassembler
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEprinter">printer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-<code class="code">'a printer</code> defines a type for pretty-printers for a value of
-      type <code class="code">'a</code>.
+<code class="code"><span class="keywordsign">'</span>a printer</code> defines a type for pretty-printers for a value of
+      type <code class="code"><span class="keywordsign">'</span>a</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEprogram">program</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -414,7 +414,7 @@ section
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEseq">seq</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-type abbreviation for <code class="code">'a Sequence.t</code>
+type abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEsize">size</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -605,7 +605,7 @@ the actual interface to be implemented
 <td></td></tr>
 <tr><td><a href="Bap.Std.Vector.html#TYPEt">t</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
-a type of vector holding elements of type <code class="code">'a</code>
+a type of vector holding elements of type <code class="code"><span class="keywordsign">'</span>a</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Seq.html#TYPEt">t</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
@@ -624,8 +624,8 @@ In order to construct a value with the given type you must
 </td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#TYPEt">t</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
 <td><div class="info">
-<code class="code">register ~name ~uuid (module T)</code> creates a new variant
-          constructor, that accepts values of type <code class="code">T.t</code>.
+<code class="code">register ~name ~uuid (<span class="keyword">module</span> <span class="constructor">T</span>)</code> creates a new variant
+          constructor, that accepts values of type <code class="code"><span class="constructor">T</span>.t</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Value.html#TYPEt">t</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
@@ -652,7 +652,7 @@ type is either an immediate value of memory reference
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#TYPEt">t</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-<code class="code">word</code> is an abbreviation to <code class="code">Bitvector.t</code>
+<code class="code">word</code> is an abbreviation to <code class="code"><span class="constructor">Bitvector</span>.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Size.html#TYPEt">t</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
@@ -671,14 +671,14 @@ trie can store arbitrary data
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtable">table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-a table from memory to <code class="code">'a</code>
+a table from memory to <code class="code"><span class="keywordsign">'</span>a</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Dwarf.html#TYPEtag">tag</a> [<a href="Bap.Std.Dwarf.html">Bap.Std.Dwarf</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Value.html#TYPEtag">tag</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
-Tag constructor of type <code class="code">'a</code>
+Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtag">tag</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>

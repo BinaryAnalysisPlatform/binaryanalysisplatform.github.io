@@ -25,12 +25,12 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Phi.html">Bap.Std.Phi</a></h1>
 
-<pre><span class="keyword">module</span> Phi: <code class="code">sig</code> <a href="Bap.Std.Phi.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Phi: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Phi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 PHI-node<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEphi">Bap.Std.phi</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 <div class="info ">
 Phi nodes are used to represent the values, that the same
         variable can take depending on control flow paths.
@@ -48,20 +48,20 @@ Phi nodes are used to represent the values, that the same
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> <a href="Bap.Std.html#TYPEdef">Bap.Std.def</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create var def</code> create a bogus phi-node with only one
         definition<br>
 </div>
 
-<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre>
-<pre><span id="VALdefs"><span class="keyword">val</span> defs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">Bap.Std.def</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
+<pre><span id="VALdefs"><span class="keyword">val</span> defs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">defs phi</code> enumerates all definitions in a phi node<br>
 </div>
 
-<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">Bap.Std.def</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">add_def phi def</code> appends new definition to a phi node<br>
 </div>
 
-<pre><span id="VALremove_def"><span class="keyword">val</span> remove_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Bap.Std.tid</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre>
+<pre><span id="VALremove_def"><span class="keyword">val</span> remove_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 </body></html>

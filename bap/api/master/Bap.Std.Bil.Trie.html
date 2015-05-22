@@ -23,7 +23,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Bil.Trie.html">Bap.Std.Bil.Trie</a></h1>
 
-<pre><span class="keyword">module</span> Trie: <code class="code">sig</code> <a href="Bap.Std.Bil.Trie.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Trie: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Tries on BIL.
 <p>
 
@@ -33,12 +33,12 @@ Tries on BIL.
         The default one is not normalized and will compare bil statements
         literally. This means that comparison is sensitive to variable
         names and immediate values. Depending on your context it may be
-        find or not. For example, two <code class="code">SP</code> variables may compare as different
+        find or not. For example, two <code class="code"><span class="constructor">SP</span></code> variables may compare as different
         if one of them was obtained from different compilation (and met
         the other one through some persistant storage, e.g., file on hard
         disk). Moreover, BIL obtained from different lifters will have
         different names for the same registers. All this issues are
-        addressed in normalized <code class="code">Trie</code>.<br>
+        addressed in normalized <code class="code"><span class="constructor">Trie</span></code>.<br>
 </div>
 <hr width="100%">
 
@@ -59,6 +59,6 @@ Tries on BIL.
           be compared differently to (2 + x).<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Trie.Normalized.html">Normalized</a>: <code class="type"><a href="Bap.Std.Trie.html">Bap.Std.Trie</a></code><code class="type">  with type key = normalized_bil</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Trie.Normalized.html">Normalized</a>: <code class="type"><a href="Bap.Std.Trie.html">Trie</a></code><code class="type">  with type key = normalized_bil</code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Trie.html">Bap.Std.Trie</a></pre>
 </body></html>

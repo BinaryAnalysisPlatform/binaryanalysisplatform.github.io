@@ -25,15 +25,15 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Imm.html">Bap.Std.Imm</a></h1>
 
-<pre><span class="keyword">module</span> Imm: <code class="code">sig</code> <a href="Bap.Std.Imm.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Imm: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Imm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Integer immediate operand<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimm">Bap.Std.imm</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a></code> </pre>
 
 
-<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> width:int -> <a href="Bap.Std.html#TYPEword">Bap.Std.word</a> option</code></pre>
+<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> width:int -> <a href="Bap.Std.html#TYPEword">word</a> option</code></pre>
 <pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> int64</code></pre>
 <pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> int option</code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>

@@ -25,15 +25,15 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Symtab.html">Bap.Std.Symtab</a></h1>
 
-<pre><span class="keyword">module</span> Symtab: <code class="code">sig</code> <a href="Bap.Std.Symtab.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Symtab: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Symtab.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 <span class="warning">Deprecated.</span>will be removed soon<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">string <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">string <a href="Bap.Std.html#TYPEtable">table</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> list -><br>       <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> <a href="Bap.Std.html#TYPEblock">Bap.Std.block</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.html#TYPEblock">block</a> <a href="Bap.Std.html#TYPEtable">table</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create roots base cfg</code>
         creates a symbol table from <code class="code">cfg</code>. If no roots are
         provided, then only calls<br>
@@ -45,7 +45,7 @@
 callsite
 </div>
 
-<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">Bap.Std.block</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a> -> Graph.t</code></pre><div class="info ">
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">block</a> <a href="Bap.Std.html#TYPEtable">table</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a> -> Graph.t</code></pre><div class="info ">
 <code class="code">to_graph blocks syms</code> creates a callgraph. Edges of the graph
         are labeled with a callsite<br>
 </div>

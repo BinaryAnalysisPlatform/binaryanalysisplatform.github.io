@@ -25,30 +25,30 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Value.html">Bap.Std.Value</a></h1>
 
-<pre><span class="keyword">module</span> Value: <code class="code">sig</code> <a href="Bap.Std.Value.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Value: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Universal Values.
 <p>
 
       This module creates an extensible variant type, that resembles
       extensible variant types, introduced in 4.02, but even more safe
       and more extensible, and, what really matters,
-      serializable. Basically you should think of <code class="code">Value.t</code> as a union
+      serializable. Basically you should think of <code class="code"><span class="constructor">Value</span>.t</code> as a union
       type, aka sum type, that can be extended in any place, including
       your plugin code. Where extending is adding new constructor. To
       add new constructor, you need to register it, e.g.,
 <p>
 
-      <pre class="codepre"><code class="code">        let function_signature = Value.Tag.register (module String)
-            ~name:"function_signature"
-            ~uuid:"2175c28c-08ca-4052-8385-3a01e1c6ab6f"
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;function_signature&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">String</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"function_signature"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"2175c28c-08ca-4052-8385-3a01e1c6ab6f"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       This is merely equivalent to adding a branch
 <p>
 
-      <pre class="codepre"><code class="code">        | Function_signature of string
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Function_signature</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       to existing union type. The main difference is that the <code class="code">name</code>
@@ -65,39 +65,39 @@ Universal Values.
       order to prevent the abuse of the system.
 <p>
 
-      The <code class="code">(module String)</code> syntax creates a value from the module
-      <code class="code">String</code>, (so called first-class module). The module should
-      implement <code class="code">Value.S</code> signature, that requires pretty-printing,
+      The <code class="code">(<span class="keyword">module</span> <span class="constructor">String</span>)</code> syntax creates a value from the module
+      <code class="code"><span class="constructor">String</span></code>, (so called first-class module). The module should
+      implement <code class="code"><span class="constructor">Value</span>.<span class="constructor">S</span></code> signature, that requires pretty-printing,
       comparison function and serialization.
 <p>
 
-      <pre class="codepre"><code class="code">        module type S = sig
-          type t with bin_io, compare, sexp
-
-          val pp : Format.formatter -&gt; t -&gt; unit
-        end
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">S</span>&nbsp;=&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pp&nbsp;:&nbsp;<span class="constructor">Format</span>.formatter&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-      The good news is that, most of the types in <code class="code">Core</code> and <code class="code">Bap</code> do
+      The good news is that, most of the types in <code class="code"><span class="constructor">Core</span></code> and <code class="code"><span class="constructor">Bap</span></code> do
       conform with the requirements. Usually, one can implement the
       requirements very easily by using type-driven syntax extensions
       (although, you still need to implement pretty-printing function
       yourself):
 <p>
 
-      <pre class="codepre"><code class="code">        module Loc = struct
-          type t = string * int * int
-          with bin_io, compare, sexp
-
-          let pp ppf (file,line,col) =
-            Format.fprintf ppf "%s:%d:%d" file line col
-        end
-
-        let loc = Value.Tag.register (module Loc)
-            ~name:"loc"
-            ~uuid:"400e190e-ce21-488d-87b1-c101709621a8"
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>&nbsp;=&nbsp;<span class="keyword">struct</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;string&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pp&nbsp;ppf&nbsp;(file,line,col)&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Format</span>.fprintf&nbsp;ppf&nbsp;<span class="string">"%s:%d:%d"</span>&nbsp;file&nbsp;line&nbsp;col<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;loc&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"loc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"400e190e-ce21-488d-87b1-c101709621a8"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       The returned value, is a tag that can be used to constructed
@@ -106,9 +106,9 @@ Universal Values.
       into the value container, and later to unpack it:
 <p>
 
-      <pre class="codepre"><code class="code">        # let main_pos = Value.create loc ("test.c", 20, 2);;
-        val main_pos : value = test.c:20:2
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_pos&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;loc&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2);;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_pos&nbsp;:&nbsp;value&nbsp;=&nbsp;test.c:20:2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       You may see, that OCaml pretty-prints the value. That's neat!
@@ -117,26 +117,26 @@ Universal Values.
       values, for example, you can put them in one container, e.g.,
 <p>
 
-      <pre class="codepre"><code class="code">        # let main_t = Value.create function_signature
-              "void main(int argc, const char *argv[])";;
-        val main_t : value = void main(int argc, const char *argv[])
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_t&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;function_signature<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_t&nbsp;:&nbsp;value&nbsp;=&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-      <pre class="codepre"><code class="code">        # let main = [main_pos; main_t];;
-        val main : value list = [
-            test.c:20:2;
-            void main(int argc, const char *argv[])
-          ]
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;=&nbsp;[main_pos;&nbsp;main_t];;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main&nbsp;:&nbsp;value&nbsp;list&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.c:20:2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-      To extract value you can use <code class="code">Value.get</code> function:
+      To extract value you can use <code class="code"><span class="constructor">Value</span>.get</code> function:
 <p>
 
-      <pre class="codepre"><code class="code">        # Value.get loc main_pos;;
-        - : Loc.t option = Some ("test.c", 20, 2)
-      </code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Value</span>.get&nbsp;loc&nbsp;main_pos;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;<span class="constructor">Loc</span>.t&nbsp;option&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       This will require an extra allocation of an <code class="code">option</code> container,
@@ -144,14 +144,14 @@ Universal Values.
       For this special case you can use a more efficient:
 <p>
 
-      <pre class="codepre"><code class="code">if Value.is loc then Value.get_exn loc main_pos</code></pre>.
+      <pre class="codepre"><code class="code"><span class="keyword">if</span>&nbsp;<span class="constructor">Value</span>.is&nbsp;loc&nbsp;<span class="keyword">then</span>&nbsp;<span class="constructor">Value</span>.get_exn&nbsp;loc&nbsp;main_pos</code></pre>.
 <p>
 
       Underneath the hood, the values of type <code class="code">value</code> is just a pair
       of an original value and runtime type information. For
       performance reasons the RTTI is usually just an integer. But
       for serialization we use persistent UUID for storing RTTI type.
-      To get it, one can use <code class="code">Value.typeid</code> function.
+      To get it, one can use <code class="code"><span class="constructor">Value</span>.typeid</code> function.
 <p>
 
       The comparison of two values of type <code class="code">value</code> is actually a
@@ -197,11 +197,11 @@ a universal value<br>
 
 <pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type">'a</code> tag</span> </pre>
 <div class="info ">
-Tag constructor of type <code class="code">'a</code><br>
+Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</code><br>
 </div>
 
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Value.S.html">S</a> = <code class="code">sig</code> <a href="Bap.Std.Value.S.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Value.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 A required interface for the type to be lifted to value.
 </div>
 
@@ -252,11 +252,11 @@ persistent type identifier<br>
 <code class="code">tagname value</code> returns a constructor name of the <code class="code">value</code><br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Tag.html">Tag</a>: <code class="code">sig</code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Tag.html">Tag</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Variants of values.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Typeid.html">Typeid</a>: <code class="type"><a href="Bap.Std.Regular.html">Bap.Std.Regular</a></code><code class="type">  with type t = typeid</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Typeid.html">Typeid</a>: <code class="type"><a href="Bap.Std.Regular.html">Regular</a></code><code class="type">  with type t = typeid</code></pre><div class="info">
 Persistent type identifiers.
 </div>
 
@@ -264,6 +264,6 @@ Persistent type identifiers.
 <div class="info ">
 Although values of type <code class="code">value</code> implements regular interface
         it is recommended to used <code class="code">dict</code> data structure instead of
-        those, that are provided by <code class="code">Regular</code> interface.x<br>
+        those, that are provided by <code class="code"><span class="constructor">Regular</span></code> interface.x<br>
 </div>
 </body></html>

@@ -23,15 +23,15 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a></h1>
 
-<pre><span class="keyword">module</span> Recursive: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.Recursive.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Recursive: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Recursive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Recursive Descent Disassembler.
-        This disassembler is built on top of <code class="code">Basic</code> disassembler. It
+        This disassembler is built on top of <code class="code"><span class="constructor">Basic</span></code> disassembler. It
         uses work list algorithm to implement recursive descent
         disassembly and lazily reconstructs the whole program CFG.
 <p>
 
         This is an expert-level module, and it is suggested to use
-        high-level <code class="code">Disasm</code> interface, that is built ontop of this
+        high-level <code class="code"><span class="constructor">Disasm</span></code> interface, that is built ontop of this
         module.<br>
 </div>
 <hr width="100%">
@@ -42,22 +42,22 @@ Recursive Descent Disassembler.
 <pre><span id="TYPEblock"><span class="keyword">type</span> <code class="type"></code>block</span> </pre>
 
 
-<pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Bap.Std.Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">Bap.Std.bil</a> Core_kernel.Std.Or_error.t</code> </pre>
+<pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Or_error.t</code> </pre>
 
 
-<pre><span id="TYPEmaybe_insn"><span class="keyword">type</span> <code class="type"></code>maybe_insn</span> = <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Bap.Std.Disasm_expert.Basic.full_insn</a> option * <a href="Bap.Std.html#TYPEbil">Bap.Std.bil</a> option</code> </pre>
+<pre><span id="TYPEmaybe_insn"><span class="keyword">type</span> <code class="type"></code>maybe_insn</span> = <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> option * <a href="Bap.Std.html#TYPEbil">bil</a> option</code> </pre>
 
 
-<pre><span id="TYPEdecoded"><span class="keyword">type</span> <code class="type"></code>decoded</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEmaybe_insn">maybe_insn</a></code> </pre>
+<pre><span id="TYPEdecoded"><span class="keyword">type</span> <code class="type"></code>decoded</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEmaybe_insn">maybe_insn</a></code> </pre>
 
 
-<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Failed_to_disasm of <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a><br>       | `Failed_to_lift of<br>           <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Bap.Std.Disasm_expert.Basic.full_insn</a> *<br>           Core_kernel.Std.Error.t ]</code> </pre>
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Failed_to_disasm of <a href="Bap.Std.html#TYPEmem">mem</a><br>       | `Failed_to_lift of<br>           <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> *<br>           Error.t ]</code> </pre>
 
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backend:string -><br>       ?lifter:<a href="Bap.Std.Disasm_expert.Recursive.html#TYPElifter">lifter</a> -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> -> <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre>
-<pre><span id="VALblocks"><span class="keyword">val</span> blocks</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEblock">block</a> <a href="Bap.Std.Table.html#TYPEt">Bap.Std.Table.t</a></code></pre>
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backend:string -><br>       ?lifter:<a href="Bap.Std.Disasm_expert.Recursive.html#TYPElifter">lifter</a> -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> Or_error.t</code></pre>
+<pre><span id="VALblocks"><span class="keyword">val</span> blocks</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEblock">block</a> <a href="Bap.Std.Table.html#TYPEt">Table.t</a></code></pre>
 <pre><span id="VALerrors"><span class="keyword">val</span> errors</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> list</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Recursive.Block.html">Block</a>: <code class="code">sig</code> <a href="Bap.Std.Disasm_expert.Recursive.Block.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Recursive.Block.html">Block</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Recursive.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Low-level opaque representation of basic block.
 </div>
 </body></html>

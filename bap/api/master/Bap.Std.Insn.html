@@ -26,15 +26,15 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Insn.html">Bap.Std.Insn</a></h1>
 
-<pre><span class="keyword">module</span> Insn: <code class="code">sig</code> <a href="Bap.Std.Insn.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Insn: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Assembly instruction.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEinsn">Bap.Std.insn</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a></code> </pre>
 
 
-<pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type"><a href="Bap.Std.Op.html#TYPEt">Bap.Std.Op.t</a></code> </pre>
+<pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type"><a href="Bap.Std.Op.html#TYPEt">Op.t</a></code> </pre>
 
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
@@ -47,7 +47,7 @@ returns backend specific name of instruction<br>
 target-specific assembler string representing the instruction<br>
 </div>
 
-<pre><span id="VALbil"><span class="keyword">val</span> bil</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEbil">Bap.Std.bil</a></code></pre><div class="info ">
+<pre><span id="VALbil"><span class="keyword">val</span> bil</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEbil">bil</a></code></pre><div class="info ">
 returns BIL program specifying instruction semantics<br>
 </div>
 
@@ -58,27 +58,27 @@ instruction operands<br>
 <h3 id="3_Instructionpredicates">Instruction predicates</h3><br>
 
 <pre><span id="VALis_jump"><span class="keyword">val</span> is_jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_jump</code> <code class="code">true</code> for all jumps<br>
+<code class="code">is_jump</code> <code class="code"><span class="keyword">true</span></code> for all jumps<br>
 </div>
 
 <pre><span id="VALis_conditional_jump"><span class="keyword">val</span> is_conditional_jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_conditional</code> <code class="code">true</code> for conditional jumps<br>
+<code class="code">is_conditional</code> <code class="code"><span class="keyword">true</span></code> for conditional jumps<br>
 </div>
 
 <pre><span id="VALis_unconditional_jump"><span class="keyword">val</span> is_unconditional_jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_unconditional</code> iff <code class="code">is_jump &amp;&amp; not is_conditional_jump</code><br>
+<code class="code">is_unconditional</code> iff <code class="code">is_jump <span class="keywordsign">&amp;&amp;</span> not is_conditional_jump</code><br>
 </div>
 
 <pre><span id="VALis_indirect_jump"><span class="keyword">val</span> is_indirect_jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_indirect_jump</code> <code class="code">true</code> if it is indirect<br>
+<code class="code">is_indirect_jump</code> <code class="code"><span class="keyword">true</span></code> if it is indirect<br>
 </div>
 
 <pre><span id="VALis_call"><span class="keyword">val</span> is_call</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_call</code> is <code class="code">true</code> for all call instructions<br>
+<code class="code">is_call</code> is <code class="code"><span class="keyword">true</span></code> for all call instructions<br>
 </div>
 
 <pre><span id="VALis_return"><span class="keyword">val</span> is_return</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_return</code> <code class="code">true</code> for returns<br>
+<code class="code">is_return</code> <code class="code"><span class="keyword">true</span></code> for returns<br>
 </div>
 
 <pre><span id="VALmay_affect_control_flow"><span class="keyword">val</span> may_affect_control_flow</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
@@ -87,7 +87,7 @@ instruction operands<br>
 </div>
 
 <pre><span id="VALhas_side_effect"><span class="keyword">val</span> has_side_effect</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">has_side_effect</code> is <code class="code">true</code> if instruction may load or store<br>
+<code class="code">has_side_effect</code> is <code class="code"><span class="keyword">true</span></code> if instruction may load or store<br>
 </div>
 
 <pre><span id="VALmay_load"><span class="keyword">val</span> may_load</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
@@ -98,19 +98,19 @@ instruction operands<br>
 <code class="code">may_store</code> is true if instruction may store data to memory<br>
 </div>
 
-<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">Bap.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp_adt</code> prints instruction in ADT format, suitable for reading
         by evaluating in many languages, e.g. Python, Js, etc<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.html">Trie</a>: <code class="code">sig</code> <a href="Bap.Std.Insn.Trie.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Prefix Tree
         This module provides a trie data structure where a sequence of
         instructions is used as a key (and an individual instruction
         as a token).
 </div>
 
-<pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">?bil:<a href="Bap.Std.html#TYPEbil">Bap.Std.bil</a> -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Bap.Std.Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">?bil:<a href="Bap.Std.html#TYPEbil">bil</a> -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
 <h3 id="3_Creating">Creating</h3>
         The following functions will create <code class="code">insn</code> instances from a lower
         level representation.<br>

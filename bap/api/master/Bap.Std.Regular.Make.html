@@ -21,7 +21,7 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap.Std.Regular.Make.html">Bap.Std.Regular.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make: <div class="sig_block"><code class="code">functor (</code><code class="code">M</code><code class="code"> : </code><code class="code">sig</code><div class="sig_block">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="code"><span class="keyword">sig</span></code><div class="sig_block">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
 type t should be binable, sexpable and provide compare function<br>
@@ -31,7 +31,7 @@ type t should be binable, sexpable and provide compare function<br>
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 
 <pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">t -> int</code></pre>
-<pre><span id="VALmodule_name"><span class="keyword">val</span> module_name</span> : <code class="type">string</code></pre></div><code class="code">end</code><code class="code">) -&gt; </code><code class="type"><a href="Bap.Std.Regular.html">Bap.Std.Regular</a></code><code class="type">  with type t := M.t</code></div></pre><table border="0" cellpadding="3" width="100%">
+<pre><span id="VALmodule_name"><span class="keyword">val</span> module_name</span> : <code class="type">string</code></pre></div><code class="code"><span class="keyword">end</span></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Regular.html">Regular</a></code><code class="type">  with type t := M.t</code></pre><table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>

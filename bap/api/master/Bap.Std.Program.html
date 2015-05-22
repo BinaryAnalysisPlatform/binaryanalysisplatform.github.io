@@ -25,26 +25,26 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Program.html">Bap.Std.Program</a></h1>
 
-<pre><span class="keyword">module</span> Program: <code class="code">sig</code> <a href="Bap.Std.Program.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Program: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Program.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Program.<br>
 </div>
 <hr width="100%">
 <br>
 Program is a collection of function terms.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">Bap.Std.program</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap.Std.Program.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ()</code> creates an empty program.<br>
 </div>
 
-<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> list -><br>       <a href="Bap.Std.html#TYPEblock">Bap.Std.block</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a> -> <a href="Bap.Std.html#TYPEprogram">Bap.Std.program</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code></pre><div class="info ">
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEblock">block</a> <a href="Bap.Std.html#TYPEtable">table</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
 <code class="code">lift roots cfg</code> takes a set of function starts and a whole
         program cfg and returns a program term.<br>
 </div>
 
-<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">Bap.Std.cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Bap.Std.tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> option</code></pre><div class="info ">
+<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">
 <code class="code">lookup t program id</code> is like find but performs deep
         lookup in the whole <code class="code">program</code> for a term with a given <code class="code">id</code>.
         This function is memoized, so it has amortized O(1)
@@ -52,11 +52,11 @@ Program is a collection of function terms.<br>
         the total amount of terms in program.<br>
 </div>
 
-<pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">Bap.Std.cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Bap.Std.tid</a> -> 'a <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a> option</code></pre><div class="info ">
-<code class="code">parent t program id</code> is <code class="code">Some p</code> iff <code class="code">find t p id &lt;&gt; None</code><br>
+<pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">
+<code class="code">parent t program id</code> is <code class="code"><span class="constructor">Some</span> p</code> iff <code class="code">find t p id &lt;&gt; <span class="constructor">None</span></code><br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Program.Builder.html">Builder</a>: <code class="code">sig</code> <a href="Bap.Std.Program.Builder.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Program.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Program.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Program builder.
 </div>
 

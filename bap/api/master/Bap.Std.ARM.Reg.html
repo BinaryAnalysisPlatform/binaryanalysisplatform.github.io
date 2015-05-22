@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.ARM.Reg.html">Bap.Std.ARM.Reg</a></h1>
 
-<pre><span class="keyword">module</span> Reg: <code class="code">sig</code> <a href="Bap.Std.ARM.Reg.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Reg: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ARM.Reg.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 ARM Registers.<br>
 </div>
 <hr width="100%">
@@ -57,7 +57,7 @@ conditition code registers<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `CPSR<br>       | `ITSTATE<br>       | `LR<br>       | `Nil<br>       | `PC<br>       | `R0<br>       | `R1<br>       | `R10<br>       | `R11<br>       | `R12<br>       | `R2<br>       | `R3<br>       | `R4<br>       | `R5<br>       | `R6<br>       | `R7<br>       | `R8<br>       | `R9<br>       | `SP<br>       | `SPSR ]</code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEreg">Bap.Std.Disasm_expert.Basic.reg</a> -> <a href="Bap.Std.ARM.Reg.html#TYPEt">t</a> option</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEreg">Disasm_expert.Basic.reg</a> -> <a href="Bap.Std.ARM.Reg.html#TYPEt">t</a> option</code></pre><div class="info ">
 lifts basic register to a ARM one<br>
 </div>
 

@@ -23,16 +23,16 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a></h1>
 
-<pre><span class="keyword">module</span> Tag: <code class="code">sig</code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Tag: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Variants of values.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Bap.Std.Value.tag</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Value.tag</a></code> </pre>
 <div class="info ">
-<code class="code">register ~name ~uuid (module T)</code> creates a new variant
-          constructor, that accepts values of type <code class="code">T.t</code>. Module <code class="code">T</code>
-          should implement <code class="code">Binable.S</code> and <code class="code">Sexpable.S</code> interfaces,
+<code class="code">register ~name ~uuid (<span class="keyword">module</span> <span class="constructor">T</span>)</code> creates a new variant
+          constructor, that accepts values of type <code class="code"><span class="constructor">T</span>.t</code>. Module <code class="code"><span class="constructor">T</span></code>
+          should implement <code class="code"><span class="constructor">Binable</span>.<span class="constructor">S</span></code> and <code class="code"><span class="constructor">Sexpable</span>.<span class="constructor">S</span></code> interfaces,
           provide <code class="code">compare</code> and pretty-printing <code class="code">pp</code> functions. This
           functions will be used to print, compare and serialize
           values.
@@ -43,14 +43,17 @@ Variants of values.<br>
           abuse of type system.
 <p>
 
-          The returned value of type <code class="code">T.t tag</code> is a special key that
+          The returned value of type <code class="code"><span class="constructor">T</span>.t tag</code> is a special key that
           can be used with <code class="code">create</code> and <code class="code">get</code> functions to pack and
-          unpack values of type <code class="code">T.t</code> into <code class="code">value</code>.<br>
+          unpack values of type <code class="code"><span class="constructor">T</span>.t</code> into <code class="code">value</code>.<br>
 </div>
 
 
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">name:<a href="Bap.Std.Value.html#TYPEliteral">Bap.Std.Value.literal</a> -><br>       uuid:<a href="Bap.Std.Value.html#TYPEliteral">Bap.Std.Value.literal</a> -><br>       (module Bap.Std.Value.S with type t = 'a) -> 'a <a href="Bap.Std.Value.html#TYPEtag">Bap.Std.Value.tag</a></code></pre>
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">'a <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">to_string cons</code> returns a name of a constructor.<br>
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">name:<a href="Bap.Std.Value.html#TYPEliteral">Value.literal</a> -><br>       uuid:<a href="Bap.Std.Value.html#TYPEliteral">Value.literal</a> -><br>       (module Bap.Std.Value.S with type t = 'a) -> 'a <a href="Bap.Std.Value.html#TYPEtag">Value.tag</a></code></pre>
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">name cons</code> returns a name of a constructor.<br>
 </div>
-</body></html>
+
+<pre><span id="VALsame"><span class="keyword">val</span> same</span> : <code class="type">'a <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> bool</code></pre>
+<pre><span id="VALsame_witness"><span class="keyword">val</span> same_witness</span> : <code class="type">'a <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -><br>       'b <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> ('a, 'b) Type_equal.t option</code></pre>
+<pre><span id="VALsame_witness_exn"><span class="keyword">val</span> same_witness_exn</span> : <code class="type">'a <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -><br>       'b <a href="Bap.Std.Value.Tag.html#TYPEt">t</a> -> ('a, 'b) Type_equal.t</code></pre></body></html>

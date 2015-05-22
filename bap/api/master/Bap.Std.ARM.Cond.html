@@ -23,7 +23,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.ARM.Cond.html">Bap.Std.ARM.Cond</a></h1>
 
-<pre><span class="keyword">module</span> Cond: <code class="code">sig</code> <a href="Bap.Std.ARM.Cond.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Cond: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ARM.Cond.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Condition prefixes.<br>
 </div>
 <hr width="100%">
@@ -31,7 +31,7 @@ Condition prefixes.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `AL<br>       | `CC<br>       | `CS<br>       | `EQ<br>       | `GE<br>       | `GT<br>       | `HI<br>       | `LE<br>       | `LS<br>       | `LT<br>       | `MI<br>       | `NE<br>       | `PL<br>       | `VC<br>       | `VS ]</code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Bap.Std.word</a> -> <a href="Bap.Std.ARM.Cond.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.ARM.Cond.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 decodes condition value from a word<br>
 </div>
 

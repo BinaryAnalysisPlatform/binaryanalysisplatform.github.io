@@ -23,7 +23,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a></h1>
 
-<pre><span class="keyword">module</span> Leb128: <code class="code">sig</code> <a href="Bap.Std.Dwarf.Leb128.html">..</a> <code class="code">end</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Leb128: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Dwarf.Leb128.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
@@ -40,7 +40,7 @@ an encoded value<br>
 </div>
 
 
-<pre><span id="TYPEdecoder"><span class="keyword">type</span> <code class="type">'a</code> decoder</span> = <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> 'a Core_kernel.Std.Or_error.t</code> </pre>
+<pre><span id="TYPEdecoder"><span class="keyword">type</span> <code class="type">'a</code> decoder</span> = <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> 'a Or_error.t</code> </pre>
 
 
 <pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> int</code></pre><div class="info ">
@@ -48,7 +48,7 @@ an encoded value<br>
           encoding.<br>
 </div>
 
-<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">?signed:bool -><br>       string -><br>       pos_ref:int Pervasives.ref -><br>       <a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">?signed:bool -><br>       string -><br>       pos_ref:int Pervasives.ref -><br>       <a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> Or_error.t</code></pre>
 <pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="Bap.Std.Dwarf.Leb128.html#TYPEt">t</a> -> string -> pos:int -> unit</code></pre>
 <pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">int <a href="Bap.Std.Dwarf.Leb128.html#TYPEdecoder">decoder</a></code></pre>
 <pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type">int32 <a href="Bap.Std.Dwarf.Leb128.html#TYPEdecoder">decoder</a></code></pre>

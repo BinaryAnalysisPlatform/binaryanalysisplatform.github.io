@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Arch.html">Bap.Std.Arch</a></h1>
 
-<pre><span class="keyword">module</span> Arch: <code class="code">sig</code> <a href="Bap.Std.Arch.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Arch: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Arch.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Architecture<br>
 </div>
 <hr width="100%">
@@ -68,20 +68,20 @@ Architecture<br>
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bap.Std.Arch.html#TYPEt">t</a> option</code></pre><div class="info ">
 <code class="code">of_string s</code> will try to be clever and to capture all
-        commonly known synonyms, e.g., <code class="code">of_string "i686"</code> will
+        commonly known synonyms, e.g., <code class="code">of_string <span class="string">"i686"</span></code> will
         work<br>
 </div>
 
-<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">Bap.Std.addr_size</a></code></pre><div class="info ">
+<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre><div class="info ">
 <code class="code">addr_size arch</code> returns an address size for a given <code class="code">arch</code><br>
 </div>
 
-<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Bap.Std.endian</a></code></pre><div class="info ">
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
 <code class="code">endian arch</code> returns a word endianness of the <code class="code">arch</code><br>
 </div>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 <div class="info ">
-<code class="code">arch</code> type implements <code class="code">Regular</code>  interface<br>
+<code class="code">arch</code> type implements <code class="code"><span class="constructor">Regular</span></code>  interface<br>
 </div>
 </body></html>

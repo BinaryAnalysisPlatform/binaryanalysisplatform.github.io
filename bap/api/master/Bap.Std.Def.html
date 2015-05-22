@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Def.html">Bap.Std.Def</a></h1>
 
-<pre><span class="keyword">module</span> Def: <code class="code">sig</code> <a href="Bap.Std.Def.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Def: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Def.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Definition.<br>
 </div>
 <hr width="100%">
@@ -37,26 +37,26 @@ The definition is an assignment. The left hand side of an
         The definition is the only way for a block to perform some
         side effects.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdef">Bap.Std.def</a> <a href="Bap.Std.html#TYPEterm">Bap.Std.term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Bap.Std.exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create x exp</code> creates definition <code class="code">x := exp</code><br>
 </div>
 
-<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">Bap.Std.var</a></code></pre><div class="info ">
+<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
 returns the left hand side of a definition
 <p>
 returns the right hand side of a definition<br>
 </div>
 
-<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">Bap.Std.exp</a></code></pre>
-<pre><span id="VALwith_lhs"><span class="keyword">val</span> with_lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">Bap.Std.var</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre>
+<pre><span id="VALwith_lhs"><span class="keyword">val</span> with_lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
 updates the lhs of definition
 <p>
 updates the right hand side of a definition<br>
 </div>
 
-<pre><span id="VALwith_rhs"><span class="keyword">val</span> with_rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">Bap.Std.exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre>
+<pre><span id="VALwith_rhs"><span class="keyword">val</span> with_rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 </body></html>

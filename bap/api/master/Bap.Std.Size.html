@@ -26,7 +26,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Size.html">Bap.Std.Size</a></h1>
 
-<pre><span class="keyword">module</span> Size: <code class="code">sig</code> <a href="Bap.Std.Size.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Size: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Size.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Type safe operand and register sizes.<br>
 </div>
 <hr width="100%">
@@ -45,39 +45,39 @@ Defines possible sizes for operations operands<br>
 <br>
 <h3 id="3_Liftingfromint">Lifting from int</h3><br>
 
-<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> Core_kernel.Std.Or_error.t</code></pre><div class="info ">
-<code class="code">of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.<br>
 </div>
 
 <pre><span id="VALof_int_exn"><span class="keyword">val</span> of_int_exn</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_int_exn n</code> the same as <code class="code">of_int</code>, but raises exception
-        instead of returning <code class="code">Error</code><br>
+        instead of returning <code class="code"><span class="constructor">Error</span></code><br>
 </div>
 
 <pre><span id="VALof_int_opt"><span class="keyword">val</span> of_int_opt</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> option</code></pre><div class="info ">
 <code class="code">of_int_opt n</code> the same as <code class="code">of_int</code> but uses <code class="code">option</code> type
-        instead of <code class="code">Or_error.t</code><br>
+        instead of <code class="code"><span class="constructor">Or_error</span>.t</code><br>
 </div>
 
-<pre><span id="VALaddr_of_int"><span class="keyword">val</span> addr_of_int</span> : <code class="type">int -> [ `r32 | `r64 ] Core_kernel.Std.Or_error.t</code></pre><div class="info ">
-<code class="code">addr_of_int n</code> return <code class="code">Ok `rn</code> if <code class="code">`rn</code> exists, <code class="code">Error</code>
+<pre><span id="VALaddr_of_int"><span class="keyword">val</span> addr_of_int</span> : <code class="type">int -> [ `r32 | `r64 ] Or_error.t</code></pre><div class="info ">
+<code class="code">addr_of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.<br>
 </div>
 
 <pre><span id="VALaddr_of_int_exn"><span class="keyword">val</span> addr_of_int_exn</span> : <code class="type">int -> [ `r32 | `r64 ]</code></pre><div class="info ">
 <code class="code">addr_of_int_exn n</code> the same as <code class="code">addr_of_int</code>, but raises exception
-        instead of returning <code class="code">Error</code><br>
+        instead of returning <code class="code"><span class="constructor">Error</span></code><br>
 </div>
 
 <pre><span id="VALaddr_of_int_opt"><span class="keyword">val</span> addr_of_int_opt</span> : <code class="type">int -> [ `r32 | `r64 ] option</code></pre><div class="info ">
 <code class="code">addr_of_int_opt n</code> the same as <code class="code">addr_of_int</code> but uses <code class="code">option</code> type
-        instead of <code class="code">Or_error.t</code><br>
+        instead of <code class="code"><span class="constructor">Or_error</span>.t</code><br>
 </div>
 
-<pre><span id="VALaddr_of_word_size"><span class="keyword">val</span> addr_of_word_size</span> : <code class="type">Core_kernel.Std.Word_size.t -> [ `r32 | `r64 ]</code></pre>
-<pre><span id="VALword_of_addr_size"><span class="keyword">val</span> word_of_addr_size</span> : <code class="type">[ `r32 | `r64 ] -> Core_kernel.Std.Word_size.t</code></pre>
-<pre><span id="VALto_addr_size"><span class="keyword">val</span> to_addr_size</span> : <code class="type"><a href="Bap.Std.Size.html#TYPEt">t</a> -> [ `r32 | `r64 ] Core_kernel.Std.Or_error.t</code></pre>
+<pre><span id="VALaddr_of_word_size"><span class="keyword">val</span> addr_of_word_size</span> : <code class="type">Word_size.t -> [ `r32 | `r64 ]</code></pre>
+<pre><span id="VALword_of_addr_size"><span class="keyword">val</span> word_of_addr_size</span> : <code class="type">[ `r32 | `r64 ] -> Word_size.t</code></pre>
+<pre><span id="VALto_addr_size"><span class="keyword">val</span> to_addr_size</span> : <code class="type"><a href="Bap.Std.Size.html#TYPEt">t</a> -> [ `r32 | `r64 ] Or_error.t</code></pre>
 <pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type">[< <a href="Bap.Std.Size.html#TYPEall">all</a> ] <a href="Bap.Std.Size.html#TYPEp">p</a> -> int</code></pre><div class="info ">
 <code class="code">to_bits size</code> returns the number of bits.<br>
 </div>

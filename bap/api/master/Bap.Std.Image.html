@@ -29,14 +29,14 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Image.html">Bap.Std.Image</a></h1>
 
-<pre><span class="keyword">module</span> Image: <code class="code">sig</code> <a href="Bap.Std.Image.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Image: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Binary Image.<br>
 </div>
 <hr width="100%">
 <br>
 <h2 id="2_Typedefinitions">Type definitions</h2><br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimage">Bap.Std.image</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimage">image</a></code> </pre>
 <div class="info ">
 image<br>
 </div>
@@ -58,7 +58,7 @@ symbol<br>
 <br>
 <h2 id="2_Constructing">Constructing</h2><br>
 
-<pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type"></code>result</span> = <code class="type">(<a href="Bap.Std.Image.html#TYPEt">t</a> * Core_kernel.Std.Error.t list) Core_kernel.Std.Or_error.t</code> </pre>
+<pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type"></code>result</span> = <code class="type">(<a href="Bap.Std.Image.html#TYPEt">t</a> * Error.t list) Or_error.t</code> </pre>
 <div class="info ">
 constructing an image can result in actual image and a set
         (hopefully empty) of errors occured in a process of decoding an
@@ -77,55 +77,55 @@ constructing an image can result in actual image and a set
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">?backend:string -> string -> <a href="Bap.Std.Image.html#TYPEresult">result</a></code></pre><div class="info ">
 <code class="code">of_string ?backend ~data</code> creates an image from the specified
-        <code class="code">data</code>. See <a href="Bap.Std.Image.html#VALcreate"><code class="code">Bap.Std.Image.create</code></a> for <code class="code">backend</code> parameter.<br>
+        <code class="code">data</code>. See <a href="Bap.Std.Image.html#VALcreate"><code class="code"><span class="constructor">Image</span>.create</code></a> for <code class="code">backend</code> parameter.<br>
 </div>
 
-<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">?backend:string -> Core_kernel.Std.Bigstring.t -> <a href="Bap.Std.Image.html#TYPEresult">result</a></code></pre><div class="info ">
+<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">?backend:string -> Bigstring.t -> <a href="Bap.Std.Image.html#TYPEresult">result</a></code></pre><div class="info ">
 <code class="code">of_bigstring ?backend ~data</code> creates an image from the specified
-        <code class="code">data</code>. See <a href="Bap.Std.Image.html#VALcreate"><code class="code">Bap.Std.Image.create</code></a> for <code class="code">backend</code> parameter.<br>
+        <code class="code">data</code>. See <a href="Bap.Std.Image.html#VALcreate"><code class="code"><span class="constructor">Image</span>.create</code></a> for <code class="code">backend</code> parameter.<br>
 </div>
 <br>
 <h2 id="2_Attributes">Attributes</h2><br>
 
-<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a></code></pre>
+<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre>
 <pre><span id="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> string option</code></pre>
-<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">Bap.Std.arch</a></code></pre>
-<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">Bap.Std.addr_size</a></code></pre>
-<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Bap.Std.endian</a></code></pre>
-<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> Core_kernel.Std.Bigstring.t</code></pre>
-<pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> <a href="Bap.Std.html#TYPEword">Bap.Std.word</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre><div class="info ">
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">arch</a></code></pre>
+<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre>
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre>
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> Bigstring.t</code></pre>
+<pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
 <h2 id="2_Tables">Tables </h2><br>
 </div>
 
-<pre><span id="VALsections"><span class="keyword">val</span> sections</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre>
-<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEtable">Bap.Std.table</a></code></pre>
-<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre><div class="info ">
+<pre><span id="VALsections"><span class="keyword">val</span> sections</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre>
+<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre>
+<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsec">sec</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
 <h2 id="2_Tags">Tags</h2><br>
 </div>
 
-<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
-<pre><span id="VALregion"><span class="keyword">val</span> region</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Bap.Std.tag</a></code></pre>
-<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">Bap.Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Bap.Std.memmap</a></code></pre>
-<pre><span id="VALmemory_of_section"><span class="keyword">val</span> memory_of_section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code></pre><div class="info ">
+<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
+<pre><span id="VALregion"><span class="keyword">val</span> region</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
+<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre>
+<pre><span id="VALmemory_of_section"><span class="keyword">val</span> memory_of_section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> -> <a href="Bap.Std.html#TYPEmem">mem</a></code></pre><div class="info ">
 <h2 id="2_Mappings">Mappings </h2>
 <p>
 <code class="code">memory_of_symbol sym</code>: returns the memory of symbol in acending order.<br>
 </div>
 
-<pre><span id="VALmemory_of_symbol"><span class="keyword">val</span> memory_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a></code></pre>
-<pre><span id="VALsymbols_of_section"><span class="keyword">val</span> symbols_of_section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEseq">Bap.Std.seq</a></code></pre>
+<pre><span id="VALmemory_of_symbol"><span class="keyword">val</span> memory_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEmem">mem</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
+<pre><span id="VALsymbols_of_section"><span class="keyword">val</span> symbols_of_section</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
 <pre><span id="VALsection_of_symbol"><span class="keyword">val</span> section_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsym">sym</a> -> <a href="Bap.Std.Image.html#TYPEsec">sec</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Image.Sec.html">Sec</a>: <code class="code">sig</code> <a href="Bap.Std.Image.Sec.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Image.Sec.html">Sec</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Sec.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Image Section.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Image.Sym.html">Sym</a>: <code class="code">sig</code> <a href="Bap.Std.Image.Sym.html">..</a> <code class="code">end</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Image.Sym.html">Sym</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Sym.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Symbol.
 </div>
 <br>
 <h2 id="2_BackendInterface">Backend Interface</h2><br>
 
-<pre><span id="VALregister_backend"><span class="keyword">val</span> register_backend</span> : <code class="type">name:string -> <a href="Bap.Std.Backend.html#TYPEt">Bap.Std.Backend.t</a> -> [ `Duplicate | `Ok ]</code></pre><div class="info ">
+<pre><span id="VALregister_backend"><span class="keyword">val</span> register_backend</span> : <code class="type">name:string -> <a href="Bap.Std.Backend.html#TYPEt">Backend.t</a> -> [ `Duplicate | `Ok ]</code></pre><div class="info ">
 <code class="code">register_backend ~name backend</code> tries to register backend under
         the specified <code class="code">name</code>.<br>
 </div>

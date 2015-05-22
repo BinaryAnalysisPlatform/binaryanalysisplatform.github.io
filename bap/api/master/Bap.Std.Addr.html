@@ -25,14 +25,14 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Addr.html">Bap.Std.Addr</a></h1>
 
-<pre><span class="keyword">module</span> Addr: <code class="code">sig</code> <a href="Bap.Std.Addr.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Addr: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Addr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Shortcut for bitvectors that represent addresses<br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a></pre>
 
-<pre><span id="VALmemref"><span class="keyword">val</span> memref</span> : <code class="type">?disp:int -><br>       ?index:int -> ?scale:<a href="Bap.Std.html#TYPEsize">Bap.Std.size</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a></code></pre><div class="info ">
+<pre><span id="VALmemref"><span class="keyword">val</span> memref</span> : <code class="type">?disp:int -><br>       ?index:int -> ?scale:<a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
 <code class="code">memref ?disp ?index ?scale base</code> mimics a memory reference syntax
         in gas assembler,   <code class="code">dis(base,index,scale)</code>
         assembler operation. It returns address at
@@ -40,7 +40,7 @@ Shortcut for bitvectors that represent addresses<br>
 </div>
 <div class="param_info"><code class="code">disp</code> : stands for displacement and defaults to <code class="code">0</code></div>
 <div class="param_info"><code class="code">index</code> : defaults for <code class="code">0</code></div>
-<div class="param_info"><code class="code">scale</code> : defaults to <code class="code">`r8</code>
+<div class="param_info"><code class="code">scale</code> : defaults to <code class="code"><span class="keywordsign">`</span>r8</code>
 <p>
 
         All operations are taken modulo ,

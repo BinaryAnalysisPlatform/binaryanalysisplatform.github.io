@@ -25,7 +25,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Vector.html">Bap.Std.Vector</a></h1>
 
-<pre><span class="keyword">module</span> Vector: <code class="code">sig</code> <a href="Bap.Std.Vector.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Vector: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Vector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Resizable Array.
 <p>
 
@@ -35,9 +35,9 @@ Resizable Array.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEvector">Bap.Std.vector</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEvector">vector</a></code> </pre>
 <div class="info ">
-a type of vector holding elements of type <code class="code">'a</code><br>
+a type of vector holding elements of type <code class="code"><span class="keywordsign">'</span>a</code><br>
 </div>
 
 
@@ -69,7 +69,7 @@ a type of vector holding elements of type <code class="code">'a</code><br>
 <pre><span id="VALmap_to_array"><span class="keyword">val</span> map_to_array</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b array</code></pre><div class="info ">
 <code class="code">map_to_array xs ~f</code> copies data from <code class="code">xs</code> to an array applying
         <code class="code">f</code> to each element. See also <code class="code">to_array</code> function from
-        <code class="code">Container.S1</code> interface<br>
+        <code class="code"><span class="constructor">Container</span>.<span class="constructor">S1</span></code> interface<br>
 </div>
 
 <pre><span class="keyword">include</span> Container.S1</pre>

@@ -25,7 +25,7 @@
 </div>
 <h1>Module type <a href="type_Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a></h1>
 
-<pre><span class="keyword">module type</span> Block_accessors = <code class="code">sig</code> <a href="Bap.Std.Block_accessors.html">..</a> <code class="code">end</code></pre><div class="info modtype top">
+<pre><span class="keyword">module type</span> Block_accessors = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block_accessors.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
 Access to block attributes.
       This interface provides only access to block attributes, but
       doesn't allow to navigate to other blocks.<br>
@@ -41,8 +41,8 @@ Access to block attributes.
 </div>
 
 
-<pre><span id="VALaddr"><span class="keyword">val</span> addr</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Bap.Std.addr</a></code></pre>
-<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a></code></pre><div class="info ">
+<pre><span id="VALaddr"><span class="keyword">val</span> addr</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre>
+<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a></code></pre><div class="info ">
 <code class="code">memory blk</code> memory region, occupied by a block<br>
 </div>
 
@@ -54,7 +54,7 @@ Access to block attributes.
 <code class="code">terminator blk</code> last instruction of the block<br>
 </div>
 
-<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -><br>       (<a href="Bap.Std.html#TYPEmem">Bap.Std.mem</a> * <a href="Bap.Std.Block_accessors.html#TYPEinsn">insn</a>) list</code></pre><div class="info ">
+<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Block_accessors.html#TYPEt">t</a> -><br>       (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.Block_accessors.html#TYPEinsn">insn</a>) list</code></pre><div class="info ">
 <code class="code">insns blk</code> returns a list of block instructions<br>
 </div>
 
