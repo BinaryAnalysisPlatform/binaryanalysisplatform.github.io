@@ -649,7 +649,8 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;dfs&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;?order:[&nbsp;<span class="keywordsign">`</span>post&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>pre&nbsp;]&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;?next:(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.seq)&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;?bound:<span class="constructor">Bap</span>.<span class="constructor">Std</span>.mem&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.seq<br>
+&nbsp;&nbsp;&nbsp;&nbsp;?bound:(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.seq<br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Cfg</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Block</span>&nbsp;:<br>
@@ -1479,10 +1480,10 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;remove_edge_e&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;edge&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_graph&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;?bound:<span class="constructor">Bap</span>.<span class="constructor">Std</span>.mem&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?bound:(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.<span class="constructor">Cfg</span>.<span class="constructor">Block</span>.t&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.<span class="constructor">Cfg</span>.t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;to_imperative_graph&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;?bound:<span class="constructor">Bap</span>.<span class="constructor">Std</span>.mem&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?bound:(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool)&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.<span class="constructor">Cfg</span>.<span class="constructor">Block</span>.t&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Block</span>.<span class="constructor">Cfg</span>.<span class="constructor">Imperative</span>.t<br>
 <span class="keyword">end</span></code></body></html>

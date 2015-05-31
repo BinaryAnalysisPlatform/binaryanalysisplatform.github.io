@@ -93,6 +93,7 @@ Union type for all element types<br>
         is the entry.<br>
 </div>
 
+<pre><span id="VALfrom_insn"><span class="keyword">val</span> from_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> list</code></pre>
 <pre><span id="VALsplit_while"><span class="keyword">val</span> split_while</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> bool) -> <a href="Bap.Std.Blk.html#TYPEt">t</a> * <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">split_while blk ~f</code> splits <code class="code">blk</code> into two block: the first
         block holds all definitions for which <code class="code">f p</code> is true and has

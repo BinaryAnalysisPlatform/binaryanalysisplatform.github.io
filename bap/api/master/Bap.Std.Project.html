@@ -16,7 +16,9 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Project</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Extensible record" rel="Section" href="#3_Extensiblerecord">
+<link title="Registering and running passes" rel="Section" href="#3_Registeringandrunningpasses">
+<title>Bap.Std.Project</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Label.html" title="Bap.Std.Label">Previous</a>
@@ -31,91 +33,92 @@ Target of analysis.<br>
 <hr width="100%">
 <br>
 A project groups together all the information recovered from
-        the underlying binary information. It is also used for
-        interaction between plugins.<br>
+        the underlying binary. It is also used for exchanging
+        information between <a href="Bap.Std.html#plugins">passes</a>.<br>
 
-<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.arch">arch</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-architecture<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.disasm">disasm</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdisasm">disasm</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-disassembly of a program<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.memory">memory</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-annotations<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.storage">storage</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-arbitrary data storage<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.program">program</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-Program lifter to BAP IR<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.symbols">symbols</span>&nbsp;: <code class="type">string <a href="Bap.Std.html#TYPEtable">table</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<span class="warning">Deprecated.</span>symbol table<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTt.base">base</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a></code>;</code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<span class="warning">Deprecated.</span>base memory<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
-</tr></table>
-}
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">?on_warning:(Error.t -> unit Or_error.t) -><br>       ?backend:string -><br>       ?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       string -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_file filename</code> creates a project from a binary file. The
+        file must be in format, supportable by some of our loader plugins,
+        e.g., ELF, COFF, MACH-O, etc.<br>
+</div>
+<div class="param_info"><code class="code">on_warning</code> : is a function that will be called if some
+        non-critical problem has occurred during loading file;</div>
+<div class="param_info"><code class="code">backend</code> : allows to choose loader plugin</div>
+<div class="param_info"><code class="code">name</code> : is a naming function, that allows to specify a
+        name for a function starting at give address. If <code class="code"><span class="constructor">None</span></code> is
+        provided, then the default naming scheme will be used, i.e.,
+        <code class="code">sub_ADDR</code>.</div>
+<div class="param_info"><code class="code">roots</code> : allows to provide starting approximation of the
+        roots for recursive disassembling procedure. Each root should
+        be a start of a function.</div>
 
-<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?tags:string <a href="Bap.Std.html#TYPEtag">tag</a> list -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">substitute ?tags p</code> apply substitutions in text values
-        associated with the provided tags in project memory. <code class="code">tags</code>
-        defaults to <code class="code">[comment; python; shell]</code>.
+<pre><span id="VALfrom_image"><span class="keyword">val</span> from_image</span> : <code class="type">?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_image image</code> is like <a href="Bap.Std.Project.html#VALfrom_file"><code class="code"><span class="constructor">Project</span>.from_file</code></a> but accepts already
+        loaded image of a binary file<br>
+</div>
+
+<pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_mem arch mem</code> creates a project directly from a memory
+        object. Parameters <code class="code">name</code> and <code class="code">roots</code> has the same meaning as
+        in <a href="Bap.Std.Project.html#VALfrom_file"><code class="code"><span class="constructor">Project</span>.from_file</code></a><br>
+</div>
+
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">?base:<a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       ?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -> string -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_string arch string</code> creates a memory object from a
+        provided string and uses <a href="Bap.Std.Project.html#VALfrom_mem"><code class="code"><span class="constructor">Project</span>.from_mem</code></a> to create a project.<br>
+</div>
+
+<pre><span id="VALfrom_bigstring"><span class="keyword">val</span> from_bigstring</span> : <code class="type">?base:<a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       ?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       Bigstring.t -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_bigstring arch bigstring</code> is the same as <a href="Bap.Std.Project.html#VALfrom_string"><code class="code"><span class="constructor">Project</span>.from_string</code></a>
+        but accepts a value of type <code class="code">bigstring</code><br>
+</div>
+
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">arch</a></code></pre><div class="info ">
+<code class="code">arch project</code> reveals the architecture of a loaded file<br>
+</div>
+
+<pre><span id="VALdisasm"><span class="keyword">val</span> disasm</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdisasm">disasm</a></code></pre><div class="info ">
+<code class="code">disasm project</code> returns results of disassembling<br>
+</div>
+
+<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
+<code class="code">program project</code> returns a program lifted into <a href="Bap.Std.html#sema">IR</a><br>
+</div>
+
+<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsymtab">symtab</a></code></pre><div class="info ">
+<code class="code">symbols t</code> returns reconstructed symbol table<br>
+</div>
+
+<pre><span id="VALwith_symbols"><span class="keyword">val</span> with_symbols</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsymtab">symtab</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">with_symbols project symbols</code> updates <code class="code">project</code> symbols<br>
+</div>
+
+<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre><div class="info ">
+<code class="code">memory t</code> returns the memory as an interval tree marked with
+        arbitrary values.<br>
+</div>
+
+<pre><span id="VALtag_memory"><span class="keyword">val</span> tag_memory</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">tag_memory project region tag value</code> tags given <code class="code">region</code> of
+        memory in <code class="code">project</code> with a given <code class="code">tag</code> and <code class="code">value</code>. Example:
+        <code class="code"><span class="constructor">Project</span>.tag_memory project tained color red</code><br>
+</div>
+
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> string <a href="Bap.Std.html#TYPEtag">tag</a> -> string -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute p region tag value</code> is like
+        <a href="Bap.Std.Project.html#VALtag_memory">tag_memory</a>, but it will also apply
+        substitutions in the provided string value, as per OCaml
+        standard library's <code class="code"><span class="constructor">Buffer</span>.add_substitute</code> function.
 <p>
 
-        The following substitutions are performed:
+        Example: <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Project</span>.substitute&nbsp;project&nbsp;comment&nbsp;<span class="string">"$symbol&nbsp;starts&nbsp;at&nbsp;$symbol_addr"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        The following substitutions are supported:
 <p>
 <ul>
 <li><code class="code">$region{_name,_addr,_min_addr,_max_addr}</code> - name of region of file
@@ -145,18 +148,92 @@ Program lifter to BAP IR<br>
 <br>
 </div>
 
-<pre><span id="VALregister_plugin"><span class="keyword">val</span> register_plugin</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
-<code class="code">register plugin</code> registers <code class="code">plugin</code> in the system<br>
+<pre><span id="VALwith_memory"><span class="keyword">val</span> with_memory</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">with_memory project</code> updates project memory. It is
+        recommended to use <a href="Bap.Std.Project.html#VALtag_memory"><code class="code"><span class="constructor">Project</span>.tag_memory</code></a> and <a href="Bap.Std.Project.html#VALsubstitute"><code class="code"><span class="constructor">Project</span>.substitute</code></a> instead of this
+        function, if possible.<br>
+</div>
+<br>
+<h3 id="3_Extensiblerecord">Extensible record</h3>
+<p>
+
+        Project can also be viewed as an extensible record, where one
+        can store arbitrary values. Example,
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;p&nbsp;=&nbsp;<span class="constructor">Project</span>.set&nbsp;project&nbsp;color&nbsp;<span class="keywordsign">`</span>green<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        This will set field <code class="code">color</code> to a value <code class="code"><span class="keywordsign">`</span>green</code>.<br>
+
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">set project field value</code> sets a <code class="code">field</code> to a give value. If
+        <code class="code">field</code> was already set, then new value overrides the old
+        one. Otherwise the field is added.<br>
 </div>
 
-<pre><span id="VALregister_plugin'"><span class="keyword">val</span> register_plugin'</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
-<code class="code">register' plugin</code> registers a <code class="code">plugin</code> that will be
-        evaluated only for side effect.<br>
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a option</code></pre><div class="info ">
+<code class="code">get project field</code> returns the value of the <code class="code">field</code> if it
+        exists<br>
 </div>
 
-<pre><span id="VALregister_plugin_with_args"><span class="keyword">val</span> register_plugin_with_args</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre>
-<pre><span id="VALregister_plugin_with_args'"><span class="keyword">val</span> register_plugin_with_args'</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre>
-<pre><span id="VALplugins"><span class="keyword">val</span> plugins</span> : <code class="type">unit -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) list</code></pre><div class="info ">
-A list of registered plugins in the order of registration<br>
+<pre><span id="VALhas"><span class="keyword">val</span> has</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> bool</code></pre><div class="info ">
+<code class="code">has project field</code> checks whether field exists or not. Useful
+        for fields of type unit, that actually isomorphic to bool fields,
+        e.g., <code class="code"><span class="keyword">if</span> <span class="constructor">Project</span>.has project mark</code><br>
+</div>
+<br>
+<h3 id="3_Registeringandrunningpasses">Registering and running passes</h3>
+<p>
+
+        To add new pass one of the following <code class="code">register_*</code> functions
+        should be called.<br>
+
+<pre><span id="VALregister_pass"><span class="keyword">val</span> register_pass</span> : <code class="type">string -> (<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
+<code class="code">register_pass name pass</code> registers project transformation,
+        that doesn't require command line arguments.<br>
+</div>
+
+<pre><span id="VALregister_pass'"><span class="keyword">val</span> register_pass'</span> : <code class="type">string -> (<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
+<code class="code">register_pass name pass</code> registers <code class="code">pass</code> that doesn't modify
+        the project effect and is run only for side effect.<br>
+</div>
+
+<pre><span id="VALregister_pass_with_args"><span class="keyword">val</span> register_pass_with_args</span> : <code class="type">string -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
+<code class="code">register_pass_with_args name pass</code> registers <code class="code">pass</code> that
+        requires command line arguments. The arguments will be passed
+        in the first parameter of the <code class="code">pass</code> function.<br>
+</div>
+
+<pre><span id="VALregister_pass_with_args'"><span class="keyword">val</span> register_pass_with_args'</span> : <code class="type">string -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
+<code class="code">register_pass_with_args' name pass</code> register a <code class="code">pass</code> that
+        requires arguments for a side effect<br>
+</div>
+
+<pre><span id="VALrun_pass"><span class="keyword">val</span> run_pass</span> : <code class="type">?argv:string array -> string -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">run_pass ?argv name project</code> runs a pass that has a provided
+        <code class="code">name</code>. Returns <code class="code"><span class="constructor">None</span></code> if no such pass was registered.
+<p>
+
+        If pass requires command line arguments then they will be
+        provided to a pass as a first parameter. The arguments will be
+        extracted from <code class="code">argv</code> array (which defaults to <code class="code"><span class="constructor">Sys</span>.argv</code>) by
+        removing all arguments that doesn't start with
+        <code class="code">--name-</code>. Then, from all command arguments that are left, the
+        <code class="code">--name-</code> prefix is substituted with <code class="code">--</code>. For example, if
+        <code class="code">argv</code> contained <code class="code"> [| <span class="string">"bap"</span>; <span class="string">"-lcallgraph"</span>;
+        <span class="string">"--callgraph-help"</span>|]</code> then pass that registered itself under
+        <code class="code">callgraph</code> name will receive the following array of arguments
+        <code class="code"> [| <span class="string">"callgraph"</span>; --help |] </code>. That means, that plugins can't
+        accept arguments that are anonymous or short options.
+<p>
+
+        Note: currently only the following syntax is supported:
+         <code class="code">--plugin-name-agrument-name=value</code>, the following IS NOT
+         supported <code class="code">--plugin-name-argument-name value</code>.<br>
+</div>
+
+<pre><span id="VALrun_passes"><span class="keyword">val</span> run_passes</span> : <code class="type">?argv:string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">run_passes ?argv project</code> folds <code class="code">project</code> over all registered
+        passes. Passes are invoked in the order of
+        registration. Command line arguments are passed as described
+        in <a href="Bap.Std.Project.html#VALrun_pass"><code class="code"><span class="constructor">Project</span>.run_pass</code></a> function.<br>
 </div>
 </body></html>

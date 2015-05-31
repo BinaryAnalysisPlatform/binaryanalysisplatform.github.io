@@ -211,6 +211,8 @@ appends generic element
           program.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALadd_symbol">add_symbol</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Block_accessors.html#VALaddr">addr</a> [<a href="Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALaddr">addr</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -262,6 +264,11 @@ current position of the disassembler
 <tr><td><a href="Bap.Std.Vector.html#VALappend">append</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
 <code class="code">append xs x</code> appends <code class="code">x</code> to the end of <code class="code">xs</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALarch">arch</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">arch project</code> reveals the architecture of a loaded file
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALarch">arch</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -324,6 +331,11 @@ returns BIL program specifying instruction semantics
 <tr><td><a href="Bap.Std.html#VALblk_t">blk_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 blk
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm.html#VALblock">block</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
+<td><div class="info">
+start of basic block
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALblocks">blocks</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
@@ -518,12 +530,6 @@ appends a block to a subroutine
 </td></tr>
 <tr><td><a href="Bap.Std.Tid.html#VALcreate">create</a> [<a href="Bap.Std.Tid.html">Bap.Std.Tid</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Symtab.html#VALcreate">create</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
-<td><div class="info">
-<code class="code">create roots base cfg</code>
-        creates a symbol table from <code class="code">cfg</code>.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.ABI.html#VALcreate">create</a> [<a href="Bap.Std.ABI.html">Bap.Std.ABI</a>]</td>
 <td><div class="info">
 creates a set of ABI for the provided symbol.
@@ -586,6 +592,8 @@ lifts basic register to a ARM one
 <code class="code">create ()</code> creates new empty trie
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALcreate_bound">create_bound</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALcreate_call">create_call</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
 <td><div class="info">
 <code class="code">create_call ?cond target</code> transfer control to subroutine
@@ -652,6 +660,11 @@ def
 </td></tr>
 <tr><td><a href="Bap.Std.Label.html#VALdirect">direct</a> [<a href="Bap.Std.Label.html">Bap.Std.Label</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALdisasm">disasm</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">disasm project</code> returns results of disassembling
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALdisassemble">disassemble</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <code class="code">disassemble ?roots arch mem</code> disassemble provided memory region
@@ -741,6 +754,8 @@ returns the order of bytes in a word
 <code class="code">endian arch</code> returns a word endianness of the <code class="code">arch</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALentry_of_fn">entry_of_fn</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALentry_point">entry_point</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALeq">eq</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -785,11 +800,19 @@ A name of a file
         <code class="code">f c = <span class="keyword">false</span></code> removed.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Memmap.html#VALfilter">filter</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
+<td><div class="info">
+<code class="code">filter map f</code> returns a map that contains only those elements
+        for which <code class="code">f</code> evaluated to <code class="code"><span class="keyword">true</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfilter">filter</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 removes all mappings that do not satisfy the predicate
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Seq.html#VALfilter">filter</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALfilter_map">filter_map</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">filter_map t p ~f</code> returns term <code class="code">p</code> with all subterms of type
@@ -848,6 +871,10 @@ removes all mappings that do not satisfy the predicate
         specified <code class="code">addr</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALfind_by_name">find_by_name</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALfind_by_start">find_by_start</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfind_if">find_if</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfind_if">find_if</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
@@ -880,6 +907,10 @@ removes all mappings that do not satisfy the predicate
         reached.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALfns_of_addr">fns_of_addr</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALfns_of_mem">fns_of_mem</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfold">fold</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfold">fold</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
@@ -909,6 +940,37 @@ removes all mappings that do not satisfy the predicate
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfor_all">for_all</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALfrom_bigstring">from_bigstring</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">from_bigstring arch bigstring</code> is the same as <a href="Bap.Std.Project.html#VALfrom_string"><code class="code"><span class="constructor">Project</span>.from_string</code></a>
+        but accepts a value of type <code class="code">bigstring</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALfrom_file">from_file</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">from_file filename</code> creates a project from a binary file.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALfrom_image">from_image</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">from_image image</code> is like <a href="Bap.Std.Project.html#VALfrom_file"><code class="code"><span class="constructor">Project</span>.from_file</code></a> but accepts already
+        loaded image of a binary file
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.html#VALfrom_insn">from_insn</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALfrom_mem">from_mem</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">from_mem arch mem</code> creates a project directly from a memory
+        object.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALfrom_string">from_string</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">from_string arch string</code> creates a memory object from a
+        provided string and uses <a href="Bap.Std.Project.html#VALfrom_mem"><code class="code"><span class="constructor">Project</span>.from_mem</code></a> to create a project.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Fbi.html#VALfunctions">functions</a> [<a href="Bap.Std.Dwarf.Fbi.html">Bap.Std.Dwarf.Fbi</a>]</td>
 <td><div class="info">
 <code class="code">functions searcher</code> enumerates functions
@@ -917,6 +979,12 @@ removes all mappings that do not satisfy the predicate
 <tr><td align="left"><br>G</td></tr>
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALge">ge</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALget">get</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">get project field</code> returns the value of the <code class="code">field</code> if it
+        exists
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALget">get</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
 <code class="code">get word_size mem addr</code> reads memory value from the specified
@@ -954,6 +1022,11 @@ A set of general purpose registers
 </div>
 </td></tr>
 <tr><td align="left"><br>H</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALhas">has</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">has project field</code> checks whether field exists or not.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALhas_attr">has_attr</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code>
@@ -1007,7 +1080,12 @@ The following lifter will check that their operand has a
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALinsn">insn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td><div class="info">
-Tags to annotate memory
+machine instruction
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm.html#VALinsn_addr">insn_addr</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
+<td><div class="info">
+address of instruction
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALinsn_at_addr">insn_at_addr</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
@@ -1512,12 +1590,20 @@ Memory
 <code class="code">memory blk</code> memory region, occupied by a block
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALmemory">memory</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">memory t</code> returns the memory as an interval tree marked with
+        arbitrary values.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALmemory">memory</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 the memory region we're currently working on
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALmemory">memory</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALmemory_of_fn">memory_of_fn</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALmemory_of_section">memory_of_section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
@@ -1620,6 +1706,8 @@ name of a register
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALname">name</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALname_of_fn">name_of_fn</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALneg">neg</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
@@ -1808,11 +1896,6 @@ phi
 </td></tr>
 <tr><td><a href="Bap.Std.Config.html#VALpkg_version">pkg_version</a> [<a href="Bap.Std.Config.html">Bap.Std.Config</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Project.html#VALplugins">plugins</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td><div class="info">
-A list of registered plugins in the order of registration
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALplus">plus</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Buffer.html#VALpos">pos</a> [<a href="Bap.Std.Dwarf.Buffer.html">Bap.Std.Dwarf.Buffer</a>]</td>
@@ -1887,6 +1970,11 @@ current set of predicates
 <code class="code">next table elt</code> returns element preceding to <code class="code">elt</code>, if any
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALprogram">program</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">program project</code> returns a program lifted into <a href="Bap.Std.html#sema">IR</a>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALprune_unreferenced">prune_unreferenced</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 <code class="code">prune_unreferenced p</code> remove all assignments to variables that
@@ -1952,6 +2040,8 @@ A command in python language
 <td></td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALread">read</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALreconstruct">reconstruct</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALreg128_t">reg128_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 128-bit width value
@@ -2000,27 +2090,38 @@ A command in python language
         the specified <code class="code">name</code>.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Project.html#VALregister_plugin">register_plugin</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<tr><td><a href="Bap.Std.Project.html#VALregister_pass">register_pass</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
-<code class="code">register plugin</code> registers <code class="code">plugin</code> in the system
+<code class="code">register_pass name pass</code> registers project transformation,
+        that doesn't require command line arguments.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Project.html#VALregister_plugin'">register_plugin'</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<tr><td><a href="Bap.Std.Project.html#VALregister_pass'">register_pass'</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
-<code class="code">register' plugin</code> registers a <code class="code">plugin</code> that will be
-        evaluated only for side effect.
+<code class="code">register_pass name pass</code> registers <code class="code">pass</code> that doesn't modify
+        the project effect and is run only for side effect.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Project.html#VALregister_plugin_with_args">register_plugin_with_args</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Project.html#VALregister_plugin_with_args'">register_plugin_with_args'</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALregister_pass_with_args">register_pass_with_args</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">register_pass_with_args name pass</code> registers <code class="code">pass</code> that
+        requires command line arguments.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALregister_pass_with_args'">register_pass_with_args'</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">register_pass_with_args' name pass</code> register a <code class="code">pass</code> that
+        requires arguments for a side effect
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALremove">remove</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">remove t p id</code> returns a block that doesn't contain element
         with the given <code class="code">id</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALremove">remove</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALremove">remove</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
 <td><div class="info">
 <code class="code">remove map mem</code> removes all bindings to <code class="code">mem</code>
@@ -2097,6 +2198,18 @@ returns call continuation
           performs recursive disassembly of specified memory <code class="code">mem</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALrun_pass">run_pass</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">run_pass ?argv name project</code> runs a pass that has a provided
+        <code class="code">name</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALrun_passes">run_passes</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">run_passes ?argv project</code> folds <code class="code">project</code> over all registered
+        passes.
+</div>
+</td></tr>
 <tr><td align="left"><br>S</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALsame">same</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
@@ -2130,6 +2243,11 @@ Tags
 <td></td></tr>
 <tr><td><a href="Bap.Std.Var.V1.html#VALserialize">serialize</a> [<a href="Bap.Std.Var.V1.html">Bap.Std.Var.V1</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALset">set</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">set project field value</code> sets a <code class="code">field</code> to a give value.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Vector.html#VALset">set</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
 <code class="code">set vec n x</code> sets <code class="code">n</code>'th element of a vector <code class="code">vec</code> to <code class="code">x</code> if
@@ -2289,8 +2407,10 @@ Name of a subroutine
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALsubstitute">substitute</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
-<code class="code">substitute ?tags p</code> apply substitutions in text values
-        associated with the provided tags in project memory.
+<code class="code">substitute p region tag value</code> is like
+        <a href="Bap.Std.Project.html#VALtag_memory">tag_memory</a>, but it will also apply
+        substitutions in the provided string value, as per OCaml
+        standard library's <code class="code"><span class="constructor">Buffer</span>.add_substitute</code> function.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsubstitute">substitute</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -2320,11 +2440,22 @@ Name of a subroutine
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbol">symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALsymbols">symbols</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">symbols t</code> returns reconstructed symbol table
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbols">symbols</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbols_of_section">symbols_of_section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALtag_memory">tag_memory</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">tag_memory project region tag value</code> tags given <code class="code">region</code> of
+        memory in <code class="code">project</code> with a given <code class="code">tag</code> and <code class="code">value</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.html#VALtagname">tagname</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 <code class="code">tagname value</code> returns a constructor name of the <code class="code">value</code>
@@ -2347,8 +2478,8 @@ Symbolic name of a target
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALtarget_of_arch">target_of_arch</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-<code class="code">target_of_arch arch</code> creates a module for the given <code class="code">arch</code>, if
-      <code class="code">arch</code> is not lifted, the stub module is returned.
+<code class="code">target_of_arch arch</code> returns a module packed into value, that
+      abstracts target architecture.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Block_accessors.html#VALterminator">terminator</a> [<a href="Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a>]</td>
@@ -2391,11 +2522,6 @@ Symbolic name of a target
 <td></td></tr>
 <tr><td><a href="Bap.Std.Fmm.html#VALto_float">to_float</a> [<a href="Bap.Std.Fmm.html">Bap.Std.Fmm</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Symtab.html#VALto_graph">to_graph</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
-<td><div class="info">
-<code class="code">to_graph blocks syms</code> creates a callgraph.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALto_graph">to_graph</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
 <code class="code">to_graph ?bound entry</code> builds a graph starting with <code class="code">entry</code> and
@@ -2430,6 +2556,8 @@ Conversions to built-in integers
         given term <code class="code">p</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Symtab.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
 <td><div class="info">
 <code class="code">to_sequence map</code> converts the memmap <code class="code"><span class="keywordsign">'</span>a t</code> to a sequence of
@@ -2520,6 +2648,11 @@ updated jump's guard condition
 updates the lhs of definition
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALwith_memory">with_memory</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">with_memory project</code> updates project memory.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALwith_name">with_name</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
 <td><div class="info">
 updates subroutine name
@@ -2554,6 +2687,11 @@ updates return continuation
 </td></tr>
 <tr><td><a href="Bap.Std.Def.html#VALwith_rhs">with_rhs</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALwith_symbols">with_symbols</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">with_symbols project symbols</code> updates <code class="code">project</code> symbols
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Call.html#VALwith_target">with_target</a> [<a href="Bap.Std.Call.html">Bap.Std.Call</a>]</td>
 <td><div class="info">
 updates target

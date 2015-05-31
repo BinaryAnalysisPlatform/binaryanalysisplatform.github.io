@@ -123,6 +123,11 @@ memory map, aka interval trees<br>
         and <code class="code">tag</code> is a <code class="code">tag</code> assosiated with that region.<br>
 </div>
 
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">filter map f</code> returns a map that contains only those elements
+        for which <code class="code">f</code> evaluated to <code class="code"><span class="keyword">true</span></code><br>
+</div>
+
 <pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">filter_map m f</code> creates a new map by applying a function <code class="code">f</code> to
         each tag. If <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> x</code> then this region will be mapped

@@ -21,7 +21,7 @@
 <link title="Memory model" rel="Subsection" href="#image">
 <link title="Disassembler" rel="Subsection" href="#disasm">
 <link title="Semantic Analysis" rel="Subsection" href="#sema">
-<link title="Writing Program Analysis Plugins" rel="Subsection" href="#project">
+<link title="Writing Program Analysis Plugins" rel="Subsection" href="#plugins">
 <link title="Auxiliary libraries" rel="Subsection" href="#aux">
 <title>Bap.Std</title>
 </head>
@@ -37,60 +37,67 @@
 <h2 id="2_Overview">Overview</h2>
 <p>
 
-      BAP has a layered architecture currently consisting of four
-      layers:
+      BAP has a layered architecture consisting of four
+      layers. Although the layers are not really observable from outside
+      of the library, they make it easier to learn the library, as
+      they introduce new concepts sequentially. On top of this layers,
+      the <a href="Bap.Std.html#TYPEproject">Project</a> module is defined, that
+      consolidates all information about target of an
+      analysis. <code class="code"><span class="constructor">Project</span></code> module may be viewed as an entry point to
+      the library.
 <p>
 
-      <pre class="verbatim">        +-----------------------------------------+
-        |  +-----------------------------------+  |
-        |  |                                   |  |
-        |  |       Foundation Library          |  |
-        |  |                                   |  |
-        |  +-----------------------------------+  |
-        |                                         |
-        |  +-----------------------------------+  |
-        |  |                                   |  |
-        |  |          Memory Model             |  |
-        |  |                                   |  |
-        |  +-----------------------------------+  |
-        |                                         |
-        |  +-----------------------------------+  |
-        |  |                                   |  |
-        |  |           Disassembly             |  |
-        |  |                                   |  |
-        |  +-----------------------------------+  |
-        |                                         |
-        |  +-----------------------------------+  |
-        |  |                                   |  |
-        |  |        Semantic Analysis          |  |
-        |  |                                   |  |
-        |  +-----------------------------------+  |
-        +-----------------------------------------+
+      <pre class="verbatim">        +-----------------------------------------------------+
+        | +--------+   +-----------------------------------+  |
+        | |        |   |                                   |  |
+        | |        |   |       Foundation Library          |  |
+        | |        |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   P    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |   R    |   |                                   |  |
+        | |        |   |          Memory Model             |  |
+        | |   O    |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   J    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |   E    |   |                                   |  |
+        | |        |   |           Disassembly             |  |
+        | |   C    |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   T    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |        |   |                                   |  |
+        | |        |   |        Semantic Analysis          |  |
+        | |        |   |                                   |  |
+        | +--------+   +-----------------------------------+  |
+        +-----------------------------------------------------+
      </pre>
 <p>
 
-      The <a href="Bap.Std.html#bfl">Foundation library</a> defines core types that are used
-      throughout the BAP library for binary analysis. The
+      The <a href="Bap.Std.html#bfl">Foundation library</a> defines <a href="Bap.Std.Bil.html">BAP Instruction
+      language</a> data types, as well as other useful data structures,
+      like <a href="Bap.Std.Value.html"><code class="code"><span class="constructor">Value</span></code></a>, <a href="Bap.Std.Trie.html"><code class="code"><span class="constructor">Trie</span></code></a>, <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Vector</span></code></a>, etc. The
       <a href="Bap.Std.html#image">Memory model</a> layer is responsible for loading
-      and parsing binary objects and representing them in memory. It
-      also defines a few useful data structures that are used
-      extensively by later layers. The next layer performs
-      <a href="Bap.Std.html#disasm">disassembly</a> and lifting to BIL. Finally,
-      the <a href="Bap.Std.html#sema">semantic analysis</a> layer transforms a
-      binary into an IR representation, and further provides a set of
-      handful analysis tools.
+      and parsing binary objects and representing them in computer
+      memory. It also defines a few useful data structures that are
+      used extensively by later layers, like <a href="Bap.Std.Table.html"><code class="code"><span class="constructor">Table</span></code></a> and
+      <a href="Bap.Std.Memmap.html"><code class="code"><span class="constructor">Memmap</span></code></a>. The next layer performs
+      <a href="Bap.Std.html#disasm">disassembly</a> and lifting to BIL. Finally, the
+      <a href="Bap.Std.html#sema">semantic analysis</a> layer transforms a binary
+      into an IR representation, that is suitable for writing analysis.
 <p>
 
-      Another important point of view is the BAP plugin architecture,
-      similar to that of GIMP or Frama-C. BAP features a pluggable
-      architecture with a number of extension points. For example,
-      even the LLVM disassembler is considered a type of plugin.
-      Currently we support three such extension points in BAP:
+      Another important point of view is the BAP plugin architecture.
+      Similar to GIMP or Frama-C, BAP features a pluggable architecture
+      with a number of extension points. For example, even the LLVM
+      disassembler is considered a type of plugin.  Currently we
+      support three such extension points in BAP:
 <p>
 <ul>
 <li><a href="Bap.Std.Backend.html">loaders</a> - to add new binary object loaders;</li>
 <li>disassemblers - to add new disassemblers;</li>
-<li><a href="Bap.Std.Project.html">program analysis</a> - to analyze programs.</li>
+<li><a href="Bap.Std.html#TYPEproject">program analysis</a> - to write analysis.</li>
 </ul>
 
       The latter category of plugins is most widely used. Therefore,
@@ -128,7 +135,7 @@
       toolkit utilities. These utilities extend plugin functionality
       by providing access to the state of the target of analysis or,
       in our parlance, to the <a href="Bap.Std.html#TYPEproject">project</a>. (See
-      <a href="Bap.Std.html#project"><i>Writing Program Analysis Plugins</i></a>).
+      <a href="Bap.Std.html#TYPEproject"><code class="code">project</code></a>).
 <p>
 
       Other than library itself, and the BAP toolkit, there are two
@@ -144,31 +151,32 @@
 <h2 id="bfl">Foundation Library</h2>
 <p>
 
-      At this layer we define the core types that are tightly
-      integrated with Binary Intermediate Language (<a href="Bap.Std.Bil.html">BIL</a>). The
-      core types are:
+      At this layer we define (<a href="Bap.Std.Bil.html">Binary Instruction language</a>)
+      and few other useful data structures:
 <p>
 <ul>
-<li><a href="Bap.Std.Arch.html">arch</a> - to denote computer architecture;</li>
-<li><a href="Bap.Std.Size.html">size</a> - to specify sizes of wors or addresses;</li>
-<li><a href="Bap.Std.Var.html">var</a>  - BIL variable;</li>
-<li><a href="Bap.Std.Type.html">typ</a> - OCaml type for BIL type;</li>
-<li><a href="Bap.Std.Exp.html">exp</a>  - BIL expression;</li>
-<li><a href="Bap.Std.Stmt.html">stmt</a> - BIL statement;</li>
-<li><a href="Bap.Std.Bitvector.html">word,addr</a> - a bitvector data structure
-        to represent immediate data;</li>
-<li><a href="Bap.Std.Value.html">'a tag</a> and <a href="Bap.Std.Value.html">value</a> - an extensible variant type,
-        aka existential, aka type <code class="code">any</code>;</li>
+<li><a href="Bap.Std.Arch.html">arch</a> - describes computer architecture;</li>
+<li><a href="Bap.Std.Size.html">size</a> - word and register sizes;</li>
+<li><a href="Bap.Std.Var.html">var</a>  - <a href="Bap.Std.Bil.html">BIL</a> variable;</li>
+<li><a href="Bap.Std.Type.html">typ</a> - <a href="Bap.Std.Bil.html">BIL</a> type system;</li>
+<li><a href="Bap.Std.Exp.html">exp</a>  - <a href="Bap.Std.Bil.html">BIL</a> expression sub-language;</li>
+<li><a href="Bap.Std.Stmt.html">stmt</a> - <a href="Bap.Std.Bil.html">BIL</a> statements;</li>
+<li><a href="Bap.Std.Bitvector.html">bitvector</a> - a bitvector data structure
+        to represent immediate data, used usually by their aliases</li>
+<li><a href="Bap.Std.html#TYPEword"><code class="code">word</code></a> and <a href="Bap.Std.html#TYPEaddr"><code class="code">addr</code></a>;</li>
+<li><a href="Bap.Std.Value.html">value</a> - an extensible variant type;</li>
+<li><a href="Bap.Std.Dict.html">dict</a> - an extensible record;</li>
+<li><a href="Bap.Std.Vector.html">vector</a> - array that can grow;</li>
 <li><a href="Bap.Std.Seq.html">'a seq</a> - slightly extended Core <code class="code"><span class="constructor">Sequence</span></code>, aka lazy
         list.</li>
 </ul>
 
-      Every type implements the <a href="Bap.Std.Regular.html">Regular</a> interface. This
-      interface is very similar to Core's <code class="code"><span class="constructor">Identifiable</span></code>, and is
-      supposed to represent a type that is as common as a built-in
-      type. One should expect to find any function that is
-      implemented for such types as <code class="code">int</code>, <code class="code">string</code>, <code class="code">char</code>, etc.
-      Namely, this interface includes:
+      Most of the types implement the <a href="Bap.Std.Regular.html">Regular</a>
+      interface. This interface is very similar to Core's
+      <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to represent a type that is as
+      common as a built-in type. One should expect to find any
+      function that is implemented for such types as <code class="code">int</code>, <code class="code">string</code>,
+      <code class="code">char</code>, etc.  Namely, this interface includes:
 <p>
 <ul>
 <li>comparison functions: (<code class="code">&lt;, &gt;, &lt;= , &gt;= , compare, between, ...</code>);</li>
@@ -204,11 +212,36 @@
       <code class="code">mem:exp <span class="keywordsign">-&gt;</span> addr:exp <span class="keywordsign">-&gt;</span> endian <span class="keywordsign">-&gt;</span> size <span class="keywordsign">-&gt;</span> exp</code>
 <p>
 
+      <h3 id="value">Value</h3>
+<p>
+
+      <a href="Bap.Std.Value.html">Universal values</a> can be viewed as extensible variants on
+      steroids. Not only they maybe extended, but they also can be
+      serialized, compared with user-defined comparison function and
+      even pretty printed.
+<p>
+
+      <h3 id="dict">Dict</h3>
+<p>
+
+      Like <a href="Bap.Std.Value.html">value</a> is an extensible sum type, <a href="Bap.Std.Dict.html">dict</a>
+      can be viewed as extensible product type. Dict is a sequence of
+      values of type <a href="Bap.Std.html#TYPEvalue"><code class="code">value</code></a>, with <a href="Bap.Std.Value.Tag.html">tags</a> used as field
+      names. Of course, fields are unique.
+<p>
+
+      <h3 id="vector">Vector</h3>
+<p>
+
+      Vector is an implementation of STL like vectors with logarithmic
+      push back.
+<p>
+
       <h3 id="tries">Tries</h3>
 <p>
 
-      The Foundation library also defines a prefix tree data
-      structure that proves useful for binary analysis applications.
+      The Foundation library also defines a prefix tree data structure
+      that proves to be useful for binary analysis applications.
       <a href="Bap.Std.Trie.html">Trie</a>s in BAP is a functor that derives a
       polymorphic trie data structure for a given
       <a href="Bap.Std.Trie.Key.html">Key</a>.
@@ -489,21 +522,21 @@
         +--------------------------------------------------------+
      </pre><br>
 <br>
-<h2 id="project">Writing Program Analysis Plugins</h2>
+<h2 id="plugins">Writing Program Analysis Plugins</h2>
 <p>
 
-      To write a program analysis plugin you need to implement a
-      function with one of the following interfaces:
+      To write a program analysis plugin (or pass in short) you need to
+      implement a function with one of the following interfaces:
 <p>
 <ul>
 <li><code class="code">project <span class="keywordsign">-&gt;</span> project</code> and register it with
-        <a href="Bap.Std.Project.html#VALregister_plugin">register_plugin</a>;</li>
+        <a href="Bap.Std.Project.html#VALregister_pass">register_pass</a>;</li>
 <li><code class="code">project <span class="keywordsign">-&gt;</span> unit</code> and register it with
-         <a href="Bap.Std.Project.html#VALregister_plugin'">register_plugin'</a>;</li>
+         <a href="Bap.Std.Project.html#VALregister_pass'">register_pass'</a>;</li>
 <li><code class="code">string array <span class="keywordsign">-&gt;</span> project <span class="keywordsign">-&gt;</span> project</code> and register it with
-        <a href="Bap.Std.Project.html#VALregister_plugin_with_args">register_plugin_with_args</a>;</li>
+        <a href="Bap.Std.Project.html#VALregister_pass_with_args">register_pass_with_args</a>;</li>
 <li><code class="code">string array <span class="keywordsign">-&gt;</span> project <span class="keywordsign">-&gt;</span> unit</code> and register it with
-        <a href="Bap.Std.Project.html#VALregister_plugin_with_args'">register_plugin_with_args'</a>.</li>
+        <a href="Bap.Std.Project.html#VALregister_pass_with_args'">register_pass_with_args'</a>.</li>
 </ul>
 
       Once loaded from the <code class="code">bap</code> utility (see <code class="code">man bap</code>) this function
@@ -528,28 +561,23 @@
       attaching attributes to IR terms.
 <p>
 
-      <h3 id="3_Predefinedtags">Predefined tags</h3>
+      <h3 id="3_Memorymarks">Memory marks</h3>
 <p>
 
-      Depending on the analysis performed and input parameters there
-      would be different values in memory maps and storage.
-      Here are summary
+      By default the memory is marked with the following marks:
 <p>
 <ul>
 <li><a href="Bap.Std.Image.html#VALregion">region</a> -- for regions of memory that had a
       particular name in the original binary. For example, in ELF,
       sections have names that annotate a corresponding memory
-      region. Of course, this will be available only if the project
-      was loaded from some binary container.</li>
+      region. If project was created from memory object, then the
+      overall memory will be marked as a <code class="code"><span class="string">"bap.user"</span></code> region.</li>
 </ul>
 <ul>
 <li><a href="Bap.Std.Image.html#VALsection">section</a> -- if the binary data was loaded
       from a binary format that contains sections (aka segments), then
       the corresponding memory regions are be marked. Sections provide
       access to permission information.</li>
-</ul>
-<ul>
-<li><a href="Bap.Std.Image.html#VALsymbol">symbol</a> -- for annotating with symbol names.</li>
 </ul>
 <br>
 <br>
@@ -1046,11 +1074,18 @@ Operand
 <pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type"><a href="Bap.Std.Op.html#TYPEt">Op.t</a></code> </pre>
 
 
+<pre><span id="TYPEsymtab"><span class="keyword">type</span> <code class="type"></code>symtab</span> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Symtab.html">Symtab</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Symtab.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Reconstructed symbol table
+</div>
+
 <pre><span id="TYPEabi"><span class="keyword">class type</span> <a href="Bap.Std.abi-c.html">abi</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.abi-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 ABI interface.
 </div>
 
-<pre><span id="TYPEabi_constructor"><span class="keyword">type</span> <code class="type"></code>abi_constructor</span> = <code class="type">?image:<a href="Bap.Std.html#TYPEimage">image</a> -><br>       ?sym:string -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.html#TYPEblock">block</a> -> <a href="Bap.Std.abi-c.html">abi</a></code> </pre>
+<pre><span id="TYPEabi_constructor"><span class="keyword">type</span> <code class="type"></code>abi_constructor</span> = <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">Symtab.t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">Symtab.fn</a> -> <a href="Bap.Std.abi-c.html">abi</a></code> </pre>
 <div class="info ">
 symbol name may be provided if known. Also an access
       to the whole binary image is provided if there is one.<br>
@@ -1108,8 +1143,11 @@ Abstract interface for all targets.
 </div>
 
 <pre><span id="VALtarget_of_arch"><span class="keyword">val</span> target_of_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> (module Bap.Std.Target)</code></pre><div class="info ">
-<code class="code">target_of_arch arch</code> creates a module for the given <code class="code">arch</code>, if
-      <code class="code">arch</code> is not lifted, the stub module is returned.<br>
+<code class="code">target_of_arch arch</code> returns a module packed into value, that
+      abstracts target architecture. The returned module has type
+      <a href="Bap.Std.Target.html"><code class="code"><span class="constructor">Target</span></code></a> and can be unpacked locally with:
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Target</span>&nbsp;=&nbsp;(<span class="keyword">val</span>&nbsp;<span class="constructor">Project</span>.target&nbsp;project)&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.ARM.html">ARM</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ARM.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1123,9 +1161,6 @@ ARM architecture.
 <pre><span class="keyword">module</span> <a href="Bap.Std.AMD64.html">AMD64</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.AMD64.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 <code class="code">x86-64</code> architecture
 </div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Symtab.html">Symtab</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Symtab.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<span class="deprecated"></span></div>
 
 <pre><span id="TYPEterm"><span class="keyword">type</span> <code class="type">'a</code> term</span> </pre>
 <div class="info ">
