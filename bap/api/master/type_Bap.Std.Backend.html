@@ -16,7 +16,7 @@
 <body>
 <code class="code"><span class="keyword">sig</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;perm&nbsp;=&nbsp;<span class="constructor">R</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">W</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">X</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Or</span>&nbsp;<span class="keyword">of</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.perm&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.perm<br>
-&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Section</span>&nbsp;:<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Segment</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;:&nbsp;string;<br>
@@ -25,7 +25,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;location&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.location;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
-&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Sym</span>&nbsp;:<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Symbol</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name&nbsp;:&nbsp;string;<br>
@@ -34,16 +34,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locations&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.location&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.location&nbsp;list;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
-&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Region</span>&nbsp;:<br>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Section</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span>&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{&nbsp;name&nbsp;:&nbsp;string;&nbsp;location&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.location;&nbsp;}&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Img</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arch&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.arch;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entry&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sections&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Section</span>.t&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Section</span>.t&nbsp;list;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Sym</span>.t&nbsp;list;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;regions&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Region</span>.t&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;segments&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Segment</span>.t&nbsp;*&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Segment</span>.t&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Symbol</span>.t&nbsp;list;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sections&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Section</span>.t&nbsp;list;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.<span class="constructor">Img</span>.t&nbsp;option<br>

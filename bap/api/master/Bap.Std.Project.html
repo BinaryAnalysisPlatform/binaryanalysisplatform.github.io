@@ -121,7 +121,7 @@ A project groups together all the information recovered from
         The following substitutions are supported:
 <p>
 <ul>
-<li><code class="code">$region{_name,_addr,_min_addr,_max_addr}</code> - name of region of file
+<li><code class="code">$section{_name,_addr,_min_addr,_max_addr}</code> - name of region of file
         to which it belongs. For example, in ELF this name will
         correspond to the section name</li>
 </ul>
@@ -186,30 +186,53 @@ A project groups together all the information recovered from
         To add new pass one of the following <code class="code">register_*</code> functions
         should be called.<br>
 
-<pre><span id="VALregister_pass"><span class="keyword">val</span> register_pass</span> : <code class="type">string -> (<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
-<code class="code">register_pass name pass</code> registers project transformation,
-        that doesn't require command line arguments.<br>
-</div>
+<pre><span id="TYPEregister"><span class="keyword">type</span> <code class="type">'a</code> register</span> = <code class="type">?deps:string list -> string -> 'a -> unit</code> </pre>
 
-<pre><span id="VALregister_pass'"><span class="keyword">val</span> register_pass'</span> : <code class="type">string -> (<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
-<code class="code">register_pass name pass</code> registers <code class="code">pass</code> that doesn't modify
-        the project effect and is run only for side effect.<br>
-</div>
 
-<pre><span id="VALregister_pass_with_args"><span class="keyword">val</span> register_pass_with_args</span> : <code class="type">string -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
+<pre><span id="VALregister_pass_with_args"><span class="keyword">val</span> register_pass_with_args</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Project.html#TYPEregister">register</a></code></pre><div class="info ">
 <code class="code">register_pass_with_args name pass</code> registers <code class="code">pass</code> that
         requires command line arguments. The arguments will be passed
-        in the first parameter of the <code class="code">pass</code> function.<br>
+        in the first parameter of the <code class="code">pass</code> function.
+<p>
+
+        Parameter <code class="code">deps</code> is list of dependencies. Each dependency is a
+        name of a pass, that should be run before the <code class="code">pass</code>. If
+        dependency pass is not registered it will be auto-loaded (See
+        <a href="Bap.Std.Project.html#VALrun_passes"><code class="code"><span class="constructor">Project</span>.run_passes</code></a>)<br>
 </div>
 
-<pre><span id="VALregister_pass_with_args'"><span class="keyword">val</span> register_pass_with_args'</span> : <code class="type">string -> (string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) -> unit</code></pre><div class="info ">
+<pre><span id="VALregister_pass"><span class="keyword">val</span> register_pass</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a>) <a href="Bap.Std.Project.html#TYPEregister">register</a></code></pre><div class="info ">
+<code class="code">register_pass ?deps name pass</code> registers project transformation,
+        that doesn't require command line arguments.
+        (See <a href="Bap.Std.Project.html#VALregister_pass_with_args"><code class="code"><span class="constructor">Project</span>.register_pass_with_args</code></a>)<br>
+</div>
+
+<pre><span id="VALregister_pass'"><span class="keyword">val</span> register_pass'</span> : <code class="type">(<a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) <a href="Bap.Std.Project.html#TYPEregister">register</a></code></pre><div class="info ">
+<code class="code">register_pass ?deps name pass</code> registers <code class="code">pass</code> that doesn't modify
+        the project effect and is run only for side effect.
+        (See <a href="Bap.Std.Project.html#VALregister_pass_with_args"><code class="code"><span class="constructor">Project</span>.register_pass_with_args</code></a>)<br>
+</div>
+
+<pre><span id="VALregister_pass_with_args'"><span class="keyword">val</span> register_pass_with_args'</span> : <code class="type">(string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> unit) <a href="Bap.Std.Project.html#TYPEregister">register</a></code></pre><div class="info ">
 <code class="code">register_pass_with_args' name pass</code> register a <code class="code">pass</code> that
-        requires arguments for a side effect<br>
+        requires arguments for a side effect.
+        (See <a href="Bap.Std.Project.html#VALregister_pass_with_args"><code class="code"><span class="constructor">Project</span>.register_pass_with_args</code></a>)<br>
 </div>
 
-<pre><span id="VALrun_pass"><span class="keyword">val</span> run_pass</span> : <code class="type">?argv:string array -> string -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> option</code></pre><div class="info ">
-<code class="code">run_pass ?argv name project</code> runs a pass that has a provided
-        <code class="code">name</code>. Returns <code class="code"><span class="constructor">None</span></code> if no such pass was registered.
+<pre><span id="VALrun_passes"><span class="keyword">val</span> run_passes</span> : <code class="type">?library:string list -><br>       ?argv:string array -><br>       <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">run_passes ?library ?argv project</code> folds <code class="code">project</code> over all
+        registered passes. Passes are invoked in the order of
+        registration.
+<p>
+
+        If pass has dependencies, then they will be run before the
+        pass. The dependencies will be auto-loaded if needed. The
+        auto-loading procedure will look for the file with the
+        specified name (modulo hyphens) and <code class="code"><span class="string">".plugin"</span></code> extension in
+        current folder and all folders specified with <code class="code">library</code>
+        argument. If nothing found, then it will search for plugins of
+        system <code class="code"><span class="string">"bap.pass"</span></code> using findlib. If the dependency cannot be
+        satisfied <code class="code">run_pass</code> will terminate with error.
 <p>
 
         If pass requires command line arguments then they will be
@@ -228,12 +251,5 @@ A project groups together all the information recovered from
         Note: currently only the following syntax is supported:
          <code class="code">--plugin-name-agrument-name=value</code>, the following IS NOT
          supported <code class="code">--plugin-name-argument-name value</code>.<br>
-</div>
-
-<pre><span id="VALrun_passes"><span class="keyword">val</span> run_passes</span> : <code class="type">?argv:string array -> <a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">run_passes ?argv project</code> folds <code class="code">project</code> over all registered
-        passes. Passes are invoked in the order of
-        registration. Command line arguments are passed as described
-        in <a href="Bap.Std.Project.html#VALrun_pass"><code class="code"><span class="constructor">Project</span>.run_pass</code></a> function.<br>
 </div>
 </body></html>

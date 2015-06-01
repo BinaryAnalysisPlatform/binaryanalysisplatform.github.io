@@ -275,7 +275,7 @@
 </ul>
 <ul>
 <li><a href="Bap.Std.Image.html">image</a> - represents a binary object with all its
-       symbols, sections and other meta information.</li>
+       symbols, segments, sections and other meta information.</li>
 </ul>
 
       The <code class="code"><span class="constructor">Image</span></code> module uses the plugin system to load binary
@@ -567,16 +567,16 @@
       By default the memory is marked with the following marks:
 <p>
 <ul>
-<li><a href="Bap.Std.Image.html#VALregion">region</a> -- for regions of memory that had a
+<li><a href="Bap.Std.Image.html#VALsection">section</a> -- for regions of memory that had a
       particular name in the original binary. For example, in ELF,
       sections have names that annotate a corresponding memory
       region. If project was created from memory object, then the
-      overall memory will be marked as a <code class="code"><span class="string">"bap.user"</span></code> region.</li>
+      overall memory will be marked as a <code class="code"><span class="string">"bap.user"</span></code> section.</li>
 </ul>
 <ul>
-<li><a href="Bap.Std.Image.html#VALsection">section</a> -- if the binary data was loaded
-      from a binary format that contains sections (aka segments), then
-      the corresponding memory regions are be marked. Sections provide
+<li><a href="Bap.Std.Image.html#VALsegment">segment</a> -- if the binary data was loaded
+      from a binary format that contains segments, then the
+      corresponding memory regions are be marked. Segments provide
       access to permission information.</li>
 </ul>
 <br>
@@ -997,7 +997,7 @@ values of type <code class="code">insn</code> represents machine instructions de
 
 <pre><span id="VALdisassemble_image"><span class="keyword">val</span> disassemble_image</span> : <code class="type">?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -> <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.html#TYPEdisasm">disasm</a></code></pre><div class="info ">
 <code class="code">disassemble_image image</code> disassemble given image.
-      Will take executable sections of the image and disassemble it,
+      Will take executable segments of the image and disassemble it,
       applying <code class="code">disassemble</code> function. If no roots are specified, then
       symbol table will be used as a source of roots. If file doesn't
       contain one, then entry point will be used.<br>
@@ -1078,7 +1078,7 @@ Operand
 
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Symtab.html">Symtab</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Symtab.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Reconstructed symbol table
+Reconstructed symbol table.
 </div>
 
 <pre><span id="TYPEabi"><span class="keyword">class type</span> <a href="Bap.Std.abi-c.html">abi</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.abi-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
