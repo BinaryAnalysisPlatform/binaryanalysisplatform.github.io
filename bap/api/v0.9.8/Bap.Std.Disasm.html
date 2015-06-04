@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Memmap.html">
+<link rel="next" href="Bap.Std.Kind.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Tags" rel="Section" href="#2_Tags">
+<title>Bap.Std.Disasm</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Memmap.html" title="Bap.Std.Memmap">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Kind.html" title="Bap.Std.Kind">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Disasm.html">Bap.Std.Disasm</a></h1>
+
+<pre><span class="keyword">module</span> Disasm: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Disassembled program.
+<p>
+
+      This module provides an interface for values of type <code class="code">disasm</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdisasm">disasm</a></code> </pre>
+
+
+<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns all instructions that was successfully decoded in an
+        ascending order of their addresses. Each instruction is
+        accompanied with its block of memory.<br>
+</div>
+
+<pre><span id="VALblocks"><span class="keyword">val</span> blocks</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEblock">block</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
+returns a mapping from memory regions to basic blocks. One may
+        think this as a whole program CFG that is constructed on the
+        fly.<br>
+</div>
+
+<pre><span id="VALinsn_at_mem"><span class="keyword">val</span> insn_at_mem</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.html#TYPEinsn">insn</a> option</code></pre><div class="info ">
+performs lookup for an instruction that occupies exactly
+        the given piece of memory. If you need to find all instructions
+        that lies in a given region of memory, use <code class="code">insns_of_mem</code> or
+        <code class="code">insns_of_block</code> functions.<br>
+</div>
+
+<pre><span id="VALinsns_at_mem"><span class="keyword">val</span> insns_at_mem</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">insns_of_mem</code> returns all instructions that occupies memory
+        regions that have intersections with <code class="code">mem</code>.<br>
+</div>
+
+<pre><span id="VALmems_of_insn"><span class="keyword">val</span> mems_of_insn</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns a sequence of memory regions occupied by the given
+        instruction.<br>
+</div>
+
+<pre><span id="VALinsn_at_addr"><span class="keyword">val</span> insn_at_addr</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) option</code></pre><div class="info ">
+<code class="code">insn_at_addr t addr</code> finds instruction to which the <code class="code">addr</code>
+        belongs. In other words if instruction at given address is
+        found it doesn't mean, that it starts at this address.
+        Consider comparison with <code class="code">min_addr</code> if you need to match
+        starting address only.<br>
+</div>
+
+<pre><span id="VALspan"><span class="keyword">val</span> span</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns a blocks of memory that was visited during the
+        disassembly. The regions are merged with <code class="code"><span class="constructor">Memory</span>.merge</code> if
+        possible. So it returns the least possible amount of contiguous
+        memory regions<br>
+</div>
+
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Failed of Error.t<br>       | `Failed_to_disasm of <a href="Bap.Std.html#TYPEmem">mem</a><br>       | `Failed_to_lift of <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a> * Error.t ]</code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.Error.html">Error</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t := error</code></pre>
+<pre><span id="VALerrors"><span class="keyword">val</span> errors</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.Disasm.html#TYPEerror">error</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns a list of all errors and warnings that occurred during
+        the disassembling<br>
+</div>
+<br>
+<h2 id="2_Tags">Tags</h2><br>
+
+<pre><span id="VALblock"><span class="keyword">val</span> block</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+start of basic block<br>
+</div>
+
+<pre><span id="VALinsn"><span class="keyword">val</span> insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+machine instruction<br>
+</div>
+
+<pre><span id="VALinsn_addr"><span class="keyword">val</span> insn_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+address of instruction<br>
+</div>
+</body></html>

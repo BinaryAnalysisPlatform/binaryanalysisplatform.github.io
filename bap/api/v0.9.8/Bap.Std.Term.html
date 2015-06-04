@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Tid.html">
+<link rel="next" href="Bap.Std.Program.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Example" rel="Section" href="#2_Example">
+<link title="Attributes" rel="Section" href="#2_Attributes">
+<title>Bap.Std.Term</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Tid.html" title="Bap.Std.Tid">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Program.html" title="Bap.Std.Program">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Term.html">Bap.Std.Term</a></h1>
+
+<pre><span class="keyword">module</span> Term: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Term.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+IR language term.<br>
+</div>
+<hr width="100%">
+<br>
+Term is a building block of the
+        <a href="Bap.Std.html#sema">Intermediate Representation</a> of the binary program.
+<p>
+
+        This module provides functions that are overloaded for
+        different term classes. Term class is denoted with an explicit
+        instance of type <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>b)cls</code>, where <code class="code"><span class="keywordsign">'</span>a</code> stands for the parent
+        term and <code class="code"><span class="keywordsign">'</span>b</code> for the child term.
+<p>
+
+        <h2 id="2_Example">Example</h2>
+<p>
+
+        Give a block
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Blk</span>.create&nbsp;();;</code></pre>
+        <pre class="verbatim">val b : Blk.t =
+        00000003:</pre>
+<p>
+
+        We can append a definition to it with an overloaded
+        <code class="code"><span class="constructor">Term</span>.append</code>
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.append&nbsp;def_t&nbsp;b&nbsp;d_1;;</code></pre>
+        <pre class="verbatim">val b : blk term =
+        00000003:
+        00000001: x := y + z
+       </pre>
+<p>
+
+        Update a value of a definition in the block:
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.update&nbsp;def_t&nbsp;b&nbsp;d_2;;</code></pre>
+        <pre class="verbatim">val b : blk term =
+        00000003:
+        00000001: x := true
+       </pre><br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
+<div class="info ">
+term type<br>
+</div>
+
+
+<pre><span id="VALclone"><span class="keyword">val</span> clone</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">clone term</code> creates an object with a fresh new identifier
+        that has the same contents as <code class="code">term</code>, i.e., that is
+        syntactically the same.<br>
+</div>
+
+<pre><span id="VALsame"><span class="keyword">val</span> same</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">same x y</code> returns true if <code class="code">x</code> and <code class="code">y</code> represents the same
+        entity, i.e., <code class="code"><span class="constructor">Tid</span>.(tid x = tid y)</code><br>
+</div>
+
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">name t</code> returns name of the term<br>
+</div>
+
+<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<code class="code">tid entity</code> returns the unique tidentifier of the <code class="code">entity</code><br>
+</div>
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">length t p</code> returns the amount of terms of type <code class="code">t</code> in the
+        parent term <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">find t p id</code> is <code class="code"><span class="constructor">Some</span> c</code> if term <code class="code">p</code> has a subterm of type <code class="code">t</code>
+        such that <code class="code">tid c = id</code>.<br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">update t p c</code> if term <code class="code">p</code> contains a term with id equal to
+        <code class="code">tid c</code> then return <code class="code">p</code> with this term substituted with <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">remove t p id</code> returns a block that doesn't contain element
+        with the given <code class="code">id</code><br>
+</div>
+
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">to_sequence ?rev t p</code> returns all subterms of type <code class="code">t</code> of the
+        given term <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       f:('b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a>) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map t p ~f</code> returns term <code class="code">p</code> with all subterms of type <code class="code">t</code>
+        mapped with function <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       f:('b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">filter_map t p ~f</code> returns term <code class="code">p</code> with all subterms of type
+        <code class="code">t</code> filter_mapped with function <code class="code">f</code>, i.e., all terms for which
+        function <code class="code">f</code> returned <code class="code"><span class="constructor">Some</span> thing</code> are substituted by the
+        <code class="code">thing</code>, otherwise they're removed from the parent term<br>
+</div>
+
+<pre><span id="VALconcat_map"><span class="keyword">val</span> concat_map</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       f:('b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> list) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">concat_map t p ~f</code> substitute subterm <code class="code">c</code> of type <code class="code">t</code> in
+        parent term <code class="code">p</code> with <code class="code">f c</code>. If <code class="code">f c</code> is an empty list, then
+        <code class="code">c</code> doesn't occur in a new parent term, if <code class="code">f c</code> is a
+        singleton list, then <code class="code">c</code> is substituted with the <code class="code">f c</code>, like
+        in <code class="code">map</code>. If <code class="code">f c</code> is a list of <code class="code">n</code> elements, then in the
+        place of <code class="code">c</code> this <code class="code">n</code> elements are inserted.<br>
+</div>
+
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> f:('b <a href="Bap.Std.Term.html#TYPEt">t</a> -> bool) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">filter t p ~f</code> returns a term <code class="code">p</code> with subterms <code class="code">c</code> for which
+        <code class="code">f c = <span class="keyword">false</span></code> removed.<br>
+</div>
+
+<pre><span id="VALfirst"><span class="keyword">val</span> first</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">first t p</code> returns the first subterm of type <code class="code">t</code> of a given
+        parent <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALlast"><span class="keyword">val</span> last</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">last t p</code> returns a last subterm of type <code class="code">t</code> of a given
+        parent <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">next t p id</code> returns a term that preceeds a term with a given
+        <code class="code">id</code>, if such exists.<br>
+</div>
+
+<pre><span id="VALprev"><span class="keyword">val</span> prev</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">next t p id</code> returns a term that is after a term with a given
+        <code class="code">id</code>, if such exists.<br>
+</div>
+
+<pre><span id="VALafter"><span class="keyword">val</span> after</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?rev:bool -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">after t ?rev p tid</code> returns all subterms in term <code class="code">p</code> that
+        occur after a term with a given <code class="code">tid</code>. if <code class="code">rev</code> is <code class="code"><span class="keyword">true</span></code> or
+        omitted then terms are returned in the evaluation
+        order. Otherwise they're reversed. If there is no term with a
+        given <code class="code">tid</code>, then an empty sequence is returned.<br>
+</div>
+
+<pre><span id="VALbefore"><span class="keyword">val</span> before</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?rev:bool -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">before t ?rev p tid</code> returns all term that occurs before
+        defintion with given <code class="code">tid</code> in blk. If there is no such
+        definition, then the sequence will be empty.<br>
+</div>
+<div class="param_info"><code class="code">rev</code> : has
+        the same meaning as in <a href="Bap.Std.Term.html#VALafter"><code class="code"><span class="constructor">Term</span>.after</code></a>.</div>
+
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?after:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">append t ~after:this p c</code> returns the <code class="code">p</code> term with <code class="code">c</code>
+        appended after <code class="code">this</code> term. If <code class="code">after</code> is not specified, then
+        append <code class="code">def</code> to the end of the parent term (if it makes sense,
+        otherwise it is just added).  If <code class="code">this</code> doesn't occur in the
+        <code class="code">p</code> term then do nothing. The term tid is preserved.<br>
+</div>
+
+<pre><span id="VALprepend"><span class="keyword">val</span> prepend</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?before:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">prepend t ~before:this p c</code> returns the <code class="code">p</code> with <code class="code">c</code> inserted
+        before <code class="code">this</code> term. If <code class="code">before</code> is left unspecified, then
+        insert the <code class="code">c</code> at the beginning of the <code class="code">p</code> if it is a
+        sequence, otherwise just insert. If <code class="code">this</code> is specified but
+        doesn't occur in the <code class="code">p</code> then <code class="code">p</code> is returned as is.  In all
+        cases, the returned term has the same <code class="code">tid</code> as <code class="code">p</code>.<br>
+</div>
+<br>
+<h2 id="2_Attributes">Attributes</h2>
+<p>
+
+        Terms attribute set can be extended, using <a href="Bap.Std.Value.html">universal
+        values</a>. A value of type <code class="code"><span class="keywordsign">'</span>a tag</code> is used to denote an
+        attribute of type <code class="code"><span class="keywordsign">'</span>a</code> with the name <code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span>.name tag</code>.
+<p>
+
+        With the provided interface Term can be treated as an
+        extensible record.<br>
+
+<pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">set_attr term attr value</code> attaches an <code class="code">value</code> to attribute
+        <code class="code">attr</code> in <code class="code">term</code><br>
+</div>
+
+<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b option</code></pre><div class="info ">
+<code class="code">get_attr term attr</code> returns a value of the given <code class="code">attr</code> in
+        <code class="code">term</code><br>
+</div>
+
+<pre><span id="VALhas_attr"><span class="keyword">val</span> has_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> bool</code></pre><div class="info ">
+<code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code><br>
+</div>
+
+<pre><span id="VALdel_attr"><span class="keyword">val</span> del_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">del_attr term attr</code> deletes attribute <code class="code">attr</code> from <code class="code">term</code><br>
+</div>
+</body></html>

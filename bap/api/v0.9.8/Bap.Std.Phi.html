@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Jmp.html">
+<link rel="next" href="Bap.Std.Arg.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Phi</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Jmp.html" title="Bap.Std.Jmp">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Arg.html" title="Bap.Std.Arg">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Phi.html">Bap.Std.Phi</a></h1>
+
+<pre><span class="keyword">module</span> Phi: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Phi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+PHI-node<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
+<div class="info ">
+Phi nodes are used to represent the values, that the same
+        variable can take depending on control flow paths.
+        Phi nodes should occur only in blocks that has more than one
+        incoming edges, i.e., in blocks to which there is a transfer
+        of control flow from more than one block.
+<p>
+
+        Each element of a phi-node corresponds to a particular
+        incoming edge.
+<p>
+
+        Note: phi-node doesn't define variable, the definition occurs
+        in one of the edges.<br>
+</div>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create var def</code> create a bogus phi-node with only one
+        definition<br>
+</div>
+
+<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
+<pre><span id="VALdefs"><span class="keyword">val</span> defs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">defs phi</code> enumerates all definitions in a phi node<br>
+</div>
+
+<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add_def phi def</code> appends new definition to a phi node<br>
+</div>
+
+<pre><span id="VALremove_def"><span class="keyword">val</span> remove_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre>
+<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+</body></html>

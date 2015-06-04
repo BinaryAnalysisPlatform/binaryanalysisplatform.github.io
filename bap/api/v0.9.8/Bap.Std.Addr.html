@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Word.html">
+<link rel="next" href="Bap.Std.Type.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Addr</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Word.html" title="Bap.Std.Word">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Type.html" title="Bap.Std.Type">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Addr.html">Bap.Std.Addr</a></h1>
+
+<pre><span class="keyword">module</span> Addr: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Addr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Shortcut for bitvectors that represent addresses<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a></pre>
+
+<pre><span id="VALmemref"><span class="keyword">val</span> memref</span> : <code class="type">?disp:int -><br>       ?index:int -> ?scale:<a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
+<code class="code">memref ?disp ?index ?scale base</code> mimics a memory reference syntax
+        in gas assembler,   <code class="code">dis(base,index,scale)</code>
+        assembler operation. It returns address at
+        <code class="code">base + index * scale + dis</code>.<br>
+</div>
+<div class="param_info"><code class="code">disp</code> : stands for displacement and defaults to <code class="code">0</code></div>
+<div class="param_info"><code class="code">index</code> : defaults for <code class="code">0</code></div>
+<div class="param_info"><code class="code">scale</code> : defaults to <code class="code"><span class="keywordsign">`</span>r8</code>
+<p>
+
+        All operations are taken modulo ,
+        where <code class="code">n = bitwidth base</code>.</div>
+</body></html>
