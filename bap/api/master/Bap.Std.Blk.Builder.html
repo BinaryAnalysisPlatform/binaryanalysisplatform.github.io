@@ -25,14 +25,15 @@
 Builder interface.<br>
 </div>
 <hr width="100%">
-<br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
 This interface provides an efficient way to build new
           blocks. It is also useful, when rebuilding existing block,
           as it allows to specify the <code class="code">tid</code> of the block. It is a user
           responsibility to preserve the uniqueness of tidentifiers
           throughout the program instance.<br>
-
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+</div>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?phis:int -> ?defs:int -> ?jmps:int -> unit -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
@@ -43,6 +44,15 @@ This interface provides an efficient way to build new
           of the expected amount of the corresponding entries. Since
           it is the hint, it can mismatch with the actual size. The
           hint must be a positive number.<br>
+</div>
+
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">?same_tid:bool -><br>       ?copy_phis:bool -><br>       ?copy_defs:bool -><br>       ?copy_jmps:bool -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">init blk</code> creates a builder based on an existing
+          block. If <code class="code">copy_phis</code>, <code class="code">copy_defs</code> or <code class="code">copy_jmps</code> is <code class="code"><span class="keyword">true</span></code>
+          (defaults to <code class="code"><span class="keyword">false</span></code>), then prepopulate builder with
+          corresponding terms from block <code class="code">blk</code>. If <code class="code">same_tid</code> is true
+          (default), then a resulting block will have the same <code class="code">tid</code>
+          as block <code class="code">blk</code>. Otherwise, a fresh new <code class="code">tid</code> will be created.<br>
 </div>
 
 <pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">

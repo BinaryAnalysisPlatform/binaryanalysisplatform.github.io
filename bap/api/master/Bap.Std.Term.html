@@ -108,6 +108,11 @@ term type<br>
         such that <code class="code">tid c = id</code>.<br>
 </div>
 
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">find t p id</code> like <a href="Bap.Std.Term.html#VALfind"><code class="code"><span class="constructor">Term</span>.find</code></a> but raises <code class="code"><span class="constructor">Not_found</span></code> if nothing
+        is found.<br>
+</div>
+
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">update t p c</code> if term <code class="code">p</code> contains a term with id equal to
         <code class="code">tid c</code> then return <code class="code">p</code> with this term substituted with <code class="code">p</code><br>
@@ -118,9 +123,21 @@ term type<br>
         with the given <code class="code">id</code><br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">to_sequence ?rev t p</code> returns all subterms of type <code class="code">t</code> of the
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ('b <a href="Bap.Std.Term.html#TYPEt">t</a> option -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">change t p id f</code> if <code class="code">p</code> contains subterm with of a given kind
+        <code class="code">t</code> and identifier <code class="code">id</code>, then apply <code class="code">f</code> to this
+        subterm. Otherwise, apply <code class="code">f</code> to <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> return <code class="code"><span class="constructor">None</span></code>,
+        then remove this subterm (given it did exist), otherwise,
+        update parent with a new subterm.<br>
+</div>
+
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">enum ?rev t p</code> enumerate all subterms of type <code class="code">t</code> of the
         given term <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">to_sequence ?rev t p</code> is a synonym for <code class="code">enum</code>.<br>
 </div>
 
 <pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       f:('b <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a>) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">

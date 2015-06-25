@@ -27,8 +27,24 @@
 
 <pre><span class="keyword">module</span> Var: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Var.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 BIL variable.
-      BIL variables are regular values. Every call to
-      <code class="code">create</code> will create a fresh variable.<br>
+      BIL variables are regular values. Variables can versioned. I.e.,
+      a version number can be added to a variable, to represent the
+      same variable but at different time or space (control flow path).
+      This is particulary useful for representing variables in SSA
+      form.
+<p>
+
+      By default, comparison functions takes version number into
+      account. In order to compare two variables regardless their
+      version number use <code class="code">same</code> function, or compare with <code class="code">base x</code>.
+<p>
+
+      Temporary variables (those, that are created with flag
+      <code class="code">tmp:<span class="keyword">true</span></code> argument, are treated differently. Every time a
+      temporary variable is created a fresh new identifier is created
+      and appended to a provided name (interleaved with '_'
+      character). So that it is impossible to create two equal
+      temporary variables.<br>
 </div>
 <hr width="100%">
 
@@ -41,17 +57,39 @@ implements <code class="code"><span class="constructor">Regular</span></code> in
 </div>
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tmp:bool -> string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create ?tmp name typ</code> creates a fresh new variable with
-        assosiated <code class="code">name</code> and type <code class="code">typ</code>. The created variable is
-        absolutely new, and is comparable to true only with itself.<br>
+<code class="code">create ?tmp name typ</code> creates a variable with associated
+        <code class="code">name</code> and type <code class="code">typ</code>. A newly created variable has version
+        equal to 0.
+<p>
+
+        If <code class="code">tmp</code> is <code class="code"><span class="keyword">true</span></code> then a fresh new identifier is created by
+        incrementing a hidden counter, and prepending it to a variable
+        name.<br>
 </div>
-<div class="param_info"><code class="code">tmp</code> : designates variable is temporary, with whatever
-        meaning assosiated to it by a caller.</div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> string</code></pre>
 <pre><span id="VALtyp"><span class="keyword">val</span> typ</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtyp">typ</a></code></pre>
 <pre><span id="VALis_tmp"><span class="keyword">val</span> is_tmp</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">is_tmp</code> true if variable is temporary<br>
+</div>
+
+<pre><span id="VALrenumber"><span class="keyword">val</span> renumber</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">renumber var ver</code> returns a variable, that is identical to
+        <code class="code">var</code>, but with version equal to <code class="code">ver</code><br>
+</div>
+
+<pre><span id="VALversion"><span class="keyword">val</span> version</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">version v</code> returns a variable version<br>
+</div>
+
+<pre><span id="VALbase"><span class="keyword">val</span> base</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">base var</code> returns an original variable. Essentially,
+        identical to <code class="code">renumber var 0</code><br>
+</div>
+
+<pre><span id="VALsame"><span class="keyword">val</span> same</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">same x y</code> compares variables ignoring versions, i.e.,
+        <code class="code">same x y</code> iff <code class="code">equal (base x) (base y)</code><br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Var.V1.html">V1</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Var.V1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

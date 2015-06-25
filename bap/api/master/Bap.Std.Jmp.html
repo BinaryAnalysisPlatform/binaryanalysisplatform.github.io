@@ -74,7 +74,7 @@ Jmp is the only way to transfer control from block to block.
 </div>
 
 <pre><span id="VALcreate_int"><span class="keyword">val</span> create_int</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> int -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create_int ?cond int_number</code> call interrupt subroutine<br>
+<code class="code">create_int ?cond int_number return</code> call interrupt subroutine<br>
 </div>
 
 <pre><span id="VALkind"><span class="keyword">val</span> kind</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a></code></pre><div class="info ">
@@ -83,6 +83,11 @@ Jmp is the only way to transfer control from block to block.
 
 <pre><span id="VALcond"><span class="keyword">val</span> cond</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
 <code class="code">cond jmp</code> returns the jump guard condition<br>
+</div>
+
+<pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map_exp jmp ~f</code> applies <code class="code">f</code> to each expression in a <code class="code">jmp</code>,
+        e.g., conditions and indirect labels.<br>
 </div>
 
 <pre><span id="VALwith_cond"><span class="keyword">val</span> with_cond</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">

@@ -55,29 +55,7 @@ Logically block consists of a set of <a href="Bap.Std.Phi.html">phi nodes</a>, a
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><code><span id="TYPEelt"><span class="keyword">type</span> <code class="type"></code>elt</span> = </code></pre><table class="typetable">
-<tr>
-<td align="left" valign="top" >
-<code><span class="keyword">|</span></code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTelt.Def"><span class="constructor">Def</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a></code></code></td>
-
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code><span class="keyword">|</span></code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTelt.Phi"><span class="constructor">Phi</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a></code></code></td>
-
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code><span class="keyword">|</span></code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTelt.Jmp"><span class="constructor">Jmp</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a></code></code></td>
-
-</tr></table>
-
+<pre><span id="TYPEelt"><span class="keyword">type</span> <code class="type"></code>elt</span> = <code class="type">[ `Def of <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a><br>       | `Jmp of <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a><br>       | `Phi of <a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> ]</code> </pre>
 <div class="info ">
 Union type for all element types<br>
 </div>
@@ -147,6 +125,36 @@ Union type for all element types<br>
         order will be the following: all jumps in the opposite order,
         then definitions in the opposite order, and finally
         $\Phi$-nodes.<br>
+</div>
+
+<pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type">?skip:[ `def | `jmp | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map_exp b ~f</code> applies function <code class="code">f</code> for each expression in
+        block <code class="code">b</code>. By default function <code class="code">f</code> will be applied to all
+        values of type <code class="code">exp</code>, including right hand sides of
+        phi-nodes, definitions, jump conditions and targets. <code class="code">skip</code>
+        parameter allows to skip expressions from a given term kind.<br>
+</div>
+
+<pre><span id="VALmap_lhs"><span class="keyword">val</span> map_lhs</span> : <code class="type">?skip:[ `def | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEvar">var</a>) -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map_lhs blk ~f</code> applies <code class="code">f</code> to every left hand side variable
+        in def and phi subterms of <code class="code">blk</code>. Parameter <code class="code">skip</code> allows to
+        ignore particular terms.  E.g.,
+        <code class="code">map_lhs ~skip:[<span class="keywordsign">`</span>phi] ~f:(substitute vars)</code>.<br>
+</div>
+
+<pre><span id="VALfind_var"><span class="keyword">val</span> find_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEvar">var</a> -><br>       [ `Def of <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> | `Phi of <a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> ]<br>       option</code></pre><div class="info ">
+<code class="code">find_var blk var</code> finds a last definition of a variable <code class="code">var</code>
+        in a block <code class="code">blk</code>.<br>
+</div>
+
+<pre><span id="VALdefines_var"><span class="keyword">val</span> defines_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">defines_var blk x</code> true if there exists such phi term or def
+        term with left hand side equal to <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALuses_var"><span class="keyword">val</span> uses_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">uses_var blk x</code> true if variable <code class="code">x</code> occurs on the right
+        hand side of any phi or def term.<br>
 </div>
 
 <pre><span id="VALdominated"><span class="keyword">val</span> dominated</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> by:<a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> bool</code></pre><div class="info ">

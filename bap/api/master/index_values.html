@@ -180,11 +180,6 @@ A common set of infix operators
 appends an argument
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Phi.html#VALadd_def">add_def</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
-<td><div class="info">
-<code class="code">add_def phi def</code> appends new definition to a phi node
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html#VALadd_def">add_def</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
 <td><div class="info">
 appends a definition
@@ -314,6 +309,11 @@ target-specific assembler string representing the instruction
 restarts last step.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Var.html#VALbase">base</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<td><div class="info">
+<code class="code">base var</code> returns an original variable.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALbefore">before</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">before t ?rev p tid</code> returns all term that occurs before
@@ -370,6 +370,13 @@ one bit
 <tr><td><a href="Bap.Std.Label.html#VALchange">change</a> [<a href="Bap.Std.Label.html">Bap.Std.Label</a>]</td>
 <td><div class="info">
 updates the label
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALchange">change</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">change t p id f</code> if <code class="code">p</code> contains subterm with of a given kind
+        <code class="code">t</code> and identifier <code class="code">id</code>, then apply <code class="code">f</code> to this
+        subterm.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALchange">change</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -496,8 +503,8 @@ A human readable comment
 </td></tr>
 <tr><td><a href="Bap.Std.Phi.html#VALcreate">create</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
 <td><div class="info">
-<code class="code">create var def</code> create a bogus phi-node with only one
-        definition
+<code class="code">create var label exp</code> creates a phi-node that associates a
+        variable <code class="code">var</code> with an expression <code class="code">exp</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALcreate">create</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
@@ -593,8 +600,8 @@ lifts basic register to a ARM one
 </td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALcreate">create</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
-<code class="code">create ?tmp name typ</code> creates a fresh new variable with
-        assosiated <code class="code">name</code> and type <code class="code">typ</code>.
+<code class="code">create ?tmp name typ</code> creates a variable with associated
+        <code class="code">name</code> and type <code class="code">typ</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALcreate">create</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
@@ -621,7 +628,7 @@ lifts basic register to a ARM one
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALcreate_int">create_int</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
 <td><div class="info">
-<code class="code">create_int ?cond int_number</code> call interrupt subroutine
+<code class="code">create_int ?cond int_number return</code> call interrupt subroutine
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALcreate_ret">create_ret</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
@@ -649,9 +656,10 @@ def
 </td></tr>
 <tr><td><a href="Bap.Std.Signatures.html#VALdefault_path">default_path</a> [<a href="Bap.Std.Signatures.html">Bap.Std.Signatures</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Phi.html#VALdefs">defs</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<tr><td><a href="Bap.Std.Blk.html#VALdefines_var">defines_var</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
-<code class="code">defs phi</code> enumerates all definitions in a phi node
+<code class="code">defines_var blk x</code> true if there exists such phi term or def
+        term with left hand side equal to <code class="code">x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALdel_attr">del_attr</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
@@ -775,6 +783,12 @@ returns the order of bytes in a word
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALentry_point">entry_point</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALenum">enum</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">enum ?rev t p</code> enumerate all subterms of type <code class="code">t</code> of the
+        given term <code class="code">p</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALeq">eq</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALerrors">errors</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
@@ -933,6 +947,12 @@ removes all mappings that do not satisfy the predicate
 <td></td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfind_mapi">find_mapi</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Blk.html#VALfind_var">find_var</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td><div class="info">
+<code class="code">find_var blk var</code> finds a last definition of a variable <code class="code">var</code>
+        in a block <code class="code">blk</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALfirst">first</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">first t p</code> returns the first subterm of type <code class="code">t</code> of a given
@@ -1159,6 +1179,12 @@ The following lifter will check that their operand has a
 <td><div class="info">
 <code class="code">indirect exp</code> creates a label that is resolved to an
         expression <code class="code">exp</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.Builder.html#VALinit">init</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
+<td><div class="info">
+<code class="code">init blk</code> creates a builder based on an existing
+          block.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALinsn">insn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
@@ -1608,6 +1634,36 @@ returns the left hand side of a definition
 <code class="code">map mapper bil</code> map or transform BIL program.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALmap_exp">map_exp</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">map_exp t ~f</code> applies <code class="code">f</code> to all expressions on the right
+        hand side of a phi-node <code class="code">t</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Jmp.html#VALmap_exp">map_exp</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
+<td><div class="info">
+<code class="code">map_exp jmp ~f</code> applies <code class="code">f</code> to each expression in a <code class="code">jmp</code>,
+        e.g., conditions and indirect labels.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Def.html#VALmap_exp">map_exp</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
+<td><div class="info">
+<code class="code">map_exp def f</code> applies <code class="code">f</code> to a <code class="code">rhs</code> of <code class="code">def</code> and returns
+        an updated definition.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.html#VALmap_exp">map_exp</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td><div class="info">
+<code class="code">map_exp b ~f</code> applies function <code class="code">f</code> for each expression in
+        block <code class="code">b</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.html#VALmap_lhs">map_lhs</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td><div class="info">
+<code class="code">map_lhs blk ~f</code> applies <code class="code">f</code> to every left hand side variable
+        in def and phi subterms of <code class="code">blk</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Vector.html#VALmap_to_array">map_to_array</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
 <code class="code">map_to_array xs ~f</code> copies data from <code class="code">xs</code> to an array applying
@@ -1944,6 +2000,14 @@ Creating
         instead of <code class="code"><span class="constructor">Or_error</span>.t</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALof_list">of_list</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">of_list var bindings</code> creates a phi-node, that for each pair
+        of <code class="code">label,exp</code> in the <code class="code">bindings</code> list associates variable <code class="code">var</code>
+        with expression <code class="code">exp</code> if control flow reaches this point via block
+        labeled with <code class="code">label</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALof_string">of_string</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 <code class="code">of_string ?backend ~data</code> creates an image from the specified
@@ -2250,6 +2314,8 @@ A command in python language
         requires arguments for a side effect.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALremove">remove</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALremove">remove</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">remove t p id</code> returns a block that doesn't contain element
@@ -2280,8 +2346,6 @@ returns a new table with all mappings from the mem region
 </td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALremove">remove</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Phi.html#VALremove_def">remove_def</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALremove_dominators">remove_dominators</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
 <td><div class="info">
 <code class="code">remove_dominators map mem</code> removes all bindings that are
@@ -2292,6 +2356,12 @@ returns a new table with all mappings from the mem region
 <td><div class="info">
 <code class="code">remove_intersections map mem</code> removes all bindings that
         that intersects with <code class="code">mem</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Var.html#VALrenumber">renumber</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<td><div class="info">
+<code class="code">renumber var ver</code> returns a variable, that is identical to
+        <code class="code">var</code>, but with version equal to <code class="code">ver</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html#VALresult">result</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
@@ -2358,6 +2428,12 @@ returns call continuation
 </td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#VALsame">same</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Var.html#VALsame">same</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<td><div class="info">
+<code class="code">same x y</code> compares variables ignoring versions, i.e.,
+        <code class="code">same x y</code> iff <code class="code">equal (base x) (base y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#VALsame_witness">same_witness</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#VALsame_witness_exn">same_witness_exn</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
@@ -2388,6 +2464,19 @@ Tags
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsegments">segments</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALselect">select</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">select phi label</code> takes the value corresponding to a control
+        flow path marked with <code class="code">label</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALselect_or_unknown">select_or_unknown</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">select_or_unknown phi label</code> is <code class="code">exp</code> if
+        <code class="code">select phi label = <span class="constructor">Some</span> exp</code>, otherwise returns a
+        <code class="code"><span class="constructor">Bil</span>.unknown</code> expression.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Var.V1.html#VALserialize">serialize</a> [<a href="Bap.Std.Var.V1.html">Bap.Std.Var.V1</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALset">set</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
@@ -2705,8 +2794,7 @@ Conversions to built-in integers
 <td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">to_sequence ?rev t p</code> returns all subterms of type <code class="code">t</code> of the
-        given term <code class="code">p</code>
+<code class="code">to_sequence ?rev t p</code> is a synonym for <code class="code">enum</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Symtab.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
@@ -2758,17 +2846,39 @@ registers given ABI under the given target
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunsigned">unsigned</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALupdate">update</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">update phi label exp</code> associates expression <code class="code">exp</code> with a
+        control flow path labeled with <code class="code">label</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALupdate">update</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">update t p c</code> if term <code class="code">p</code> contains a term with id equal to
         <code class="code">tid c</code> then return <code class="code">p</code> with this term substituted with <code class="code">p</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Blk.html#VALuses_var">uses_var</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td><div class="info">
+<code class="code">uses_var blk x</code> true if variable <code class="code">x</code> occurs on the right
+        hand side of any phi or def term.
+</div>
+</td></tr>
 <tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALvalues">values</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">values phi</code> enumerate all possible values.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arg.html#VALvar">var</a> [<a href="Bap.Std.Arg.html">Bap.Std.Arg</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALvar">var</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Var.html#VALversion">version</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<td><div class="info">
+<code class="code">version v</code> returns a variable version
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALvf">vf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALvf">vf</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
@@ -2799,6 +2909,12 @@ updated jump's guard condition
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALwith_kind">with_kind</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Phi.html#VALwith_lhs">with_lhs</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
+<td><div class="info">
+<code class="code">with_lhs phi var</code> updates a left hand side of <code class="code">phi</code> with
+        <code class="code">var</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Def.html#VALwith_lhs">with_lhs</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
 <td><div class="info">
 updates the lhs of definition
@@ -2834,6 +2950,11 @@ marks call as a "noreturn"
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALwith_preds">with_preds</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 updates the set of predicates, that rules the stop condition.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html#VALwith_program">with_program</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<code class="code">with_program project program</code> updates a project program
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Call.html#VALwith_return">with_return</a> [<a href="Bap.Std.Call.html">Bap.Std.Call</a>]</td>

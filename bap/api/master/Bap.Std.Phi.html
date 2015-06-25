@@ -32,36 +32,64 @@ PHI-node<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 <div class="info ">
-Phi nodes are used to represent the values, that the same
-        variable can take depending on control flow paths.
-        Phi nodes should occur only in blocks that has more than one
-        incoming edges, i.e., in blocks to which there is a transfer
-        of control flow from more than one block.
+Phi nodes are used to represent a set of values, that can be
+        assigned to a given variable depending on a control flow path
+        taken.  Phi nodes should occur only in blocks that has more
+        than one incoming edge, i.e., in blocks to which there is a
+        transfer of control flow from more than one block.
 <p>
 
         Each element of a phi-node corresponds to a particular
-        incoming edge.
-<p>
-
-        Note: phi-node doesn't define variable, the definition occurs
-        in one of the edges.<br>
+        incoming edge.<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create var def</code> create a bogus phi-node with only one
-        definition<br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create var label exp</code> creates a phi-node that associates a
+        variable <code class="code">var</code> with an expression <code class="code">exp</code>. This expression
+        should be selected if a control flow enters a block, that owns
+        this phi-node from a block labeled with <code class="code">label</code>. Example,
+        <code class="code">create x loop_header y</code>.<br>
+</div>
+
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> (<a href="Bap.Std.html#TYPEtid">tid</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_list var bindings</code> creates a phi-node, that for each pair
+        of <code class="code">label,exp</code> in the <code class="code">bindings</code> list associates variable <code class="code">var</code>
+        with expression <code class="code">exp</code> if control flow reaches this point via block
+        labeled with <code class="code">label</code>.<br>
+</div>
+
+<pre><span id="VALvalues"><span class="keyword">val</span> values</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEtid">tid</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">values phi</code> enumerate all possible values.<br>
 </div>
 
 <pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
-<pre><span id="VALdefs"><span class="keyword">val</span> defs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">defs phi</code> enumerates all definitions in a phi node<br>
+<pre><span id="VALwith_lhs"><span class="keyword">val</span> with_lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">with_lhs phi var</code> updates a left hand side of <code class="code">phi</code> with
+        <code class="code">var</code><br>
 </div>
 
-<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">add_def phi def</code> appends new definition to a phi node<br>
+<pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">map_exp t ~f</code> applies <code class="code">f</code> to all expressions on the right
+        hand side of a phi-node <code class="code">t</code><br>
 </div>
 
-<pre><span id="VALremove_def"><span class="keyword">val</span> remove_def</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre>
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">update phi label exp</code> associates expression <code class="code">exp</code> with a
+        control flow path labeled with <code class="code">label</code>.<br>
+</div>
+
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> option</code></pre><div class="info ">
+<code class="code">select phi label</code> takes the value corresponding to a control
+        flow path marked with <code class="code">label</code>.<br>
+</div>
+
+<pre><span id="VALselect_or_unknown"><span class="keyword">val</span> select_or_unknown</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<code class="code">select_or_unknown phi label</code> is <code class="code">exp</code> if
+        <code class="code">select phi label = <span class="constructor">Some</span> exp</code>, otherwise returns a
+        <code class="code"><span class="constructor">Bil</span>.unknown</code> expression.<br>
+</div>
+
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 </body></html>
