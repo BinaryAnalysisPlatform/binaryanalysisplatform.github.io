@@ -107,6 +107,8 @@ Basic block of machine instructions.
 Low-level opaque representation of basic block.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Bool.html">Bool</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Buffer.html">Buffer</a> [<a href="Bap.Std.Dwarf.html">Bap.Std.Dwarf</a>]</td>
 <td><div class="info">
 Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
@@ -162,6 +164,10 @@ A control transfer to another subroutine.
 A classic control flow graph using OCamlgraph library.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Char.html">Char</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Char.html">Char</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.ARM.Cond.html">Cond</a> [<a href="Bap.Std.ARM.html">Bap.Std.ARM</a>]</td>
 <td><div class="info">
 Condition prefixes.
@@ -203,12 +209,32 @@ Dwarf library
 </div>
 </td></tr>
 <tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Bap.Std.Graph.Edge.html">Edge</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+Edge interface
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html">Edge</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td><div class="info">
+since in IR the order of edges defines semantics, we provide
+          extra functions
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Elf.html">Elf</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Parse binary data in ELF format.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Equiv.html">Equiv</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Ordinal for representing equivalence.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm.Error.html">Error</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Exp.html">Exp</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Exp.html">Exp</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Exp.html">Exp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
@@ -219,6 +245,11 @@ Parse binary data in ELF format.
 <tr><td><a href="Bap.Std.Dwarf.Fbi.html">Fbi</a> [<a href="Bap.Std.Dwarf.html">Bap.Std.Dwarf</a>]</td>
 <td><div class="info">
 Function boundary identification.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Filtered.html">Filtered</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+functorized version of a <code class="code"><span class="constructor">Graphlib</span>.filter</code> function.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Fmm.html">Fmm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -234,6 +265,32 @@ Current function representation.
 <tr><td><a href="Bap.Std.Dwarf.Form.html">Form</a> [<a href="Bap.Std.Dwarf.html">Bap.Std.Dwarf</a>]</td>
 <td><div class="info">
 Attribute form
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Frontier.html">Frontier</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Frontier.html">Frontier</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Frontier.html">Frontier</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Frontier maps each node into a possibly empty set of nodes.
+</div>
+</td></tr>
+<tr><td align="left"><br>G</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html">Graphlib</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Generic Graph Library
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Group.html">Group</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Group.html">Group</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Group.html">Group</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Group is a non-empty set that is a result of partitioning of an
+      underlying set <code class="code"><span class="constructor">S</span></code> into a set of non-intersecting and non-empty
+      subsets that cover set <code class="code"><span class="constructor">S</span></code>.
 </div>
 </td></tr>
 <tr><td align="left"><br>I</td></tr>
@@ -287,6 +344,10 @@ Assembly instruction.
 Basic instruction.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Int.html">Int</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Int.html">Int</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html">Int_err</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 Arithmetic raised into <code class="code"><span class="constructor">Or_error</span></code> monad 
@@ -295,6 +356,11 @@ Arithmetic raised into <code class="code"><span class="constructor">Or_error</sp
 <tr><td><a href="Bap.Std.Bitvector.Int_exn.html">Int_exn</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 Arithmetic that raises exceptions.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.html">Ir</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+IR code as a graph.
 </div>
 </td></tr>
 <tr><td align="left"><br>J</td></tr>
@@ -327,16 +393,30 @@ A locations of a chunk of memory
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap.Std.Byteweight.Make.html">Make</a> [<a href="Bap.Std.Byteweight.html">Bap.Std.Byteweight</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Make.html">Make</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Node</span>)(<span class="constructor">Edge</span>)</code> creates a module that implements <code class="code"><span class="constructor">Graph</span></code>
+        interface and has unlabeled nodes of type <code class="code"><span class="constructor">Node</span>.t</code> and edges
+        labeled with <code class="code"><span class="constructor">Edge</span>.t</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.Make.html">Make</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Create a trie for a given <code class="code"><span class="constructor">Key</span></code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Opaque.Make.html">Make</a> [<a href="Bap.Std.Opaque.html">Bap.Std.Opaque</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Regular.Make.html">Make</a> [<a href="Bap.Std.Regular.html">Bap.Std.Regular</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory.Make_iterators.html">Make_iterators</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
 lifts iterators to monad <code class="code"><span class="constructor">M</span></code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Mapper.html">Mapper</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+functorized version of <a href="Bap.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.view</code></a> function.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memmap.html">Memmap</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -352,6 +432,13 @@ Memory region
 <tr><td><a href="Bap.Std.Bitvector.Mono.html">Mono</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Bap.Std.Graph.Node.html">Node</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+Node interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Node.html">Node</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Insn.Trie.html">Bap.Std.Insn.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Disasm_expert.Basic.Trie.html">Bap.Std.Disasm_expert.Basic.Trie</a>]</td>
@@ -364,6 +451,13 @@ Normalized comparison.
 <tr><td><a href="Bap.Std.Bil.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Bil.Trie.html">Bap.Std.Bil.Trie</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>O</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Of_ocamlgraph.html">Of_ocamlgraph</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Of_ocamlgraph</span>(<span class="constructor">O</span>)</code> creates an adapter module, that implements
+        <code class="code"><span class="constructor">Graphlib</span></code> interface on top of the module implementing
+        <code class="code"><span class="constructor">OCamlGraph</span></code> interface.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.ARM.Op.html">Op</a> [<a href="Bap.Std.ARM.html">Bap.Std.ARM</a>]</td>
 <td><div class="info">
 ARM instruction operands
@@ -374,7 +468,30 @@ ARM instruction operands
 Operand
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Opaque.html">Opaque</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+</div>
+</td></tr>
 <tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Partition.html">Partition</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Partition.html">Partition</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Partition.html">Partition</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Result of a set partitioning.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Path.html">Path</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Path.html">Path</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Path.html">Path</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Path between two nodes.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Phi.html">Phi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 PHI-node
@@ -458,11 +575,19 @@ Type safe operand and register sizes.
 </td></tr>
 <tr><td><a href="Bap.Std.html">Std</a> [<a href="Bap.html">Bap</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Stmt.html">Stmt</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Stmt.html">Stmt</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Stmt.html">Stmt</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Regular</span></code> interface for BIL statements
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.String.html">String</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.String.html">String</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Trie.String.html">String</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Sub.html">Sub</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -512,6 +637,30 @@ IR language term.
 Term identifier
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Tid.html">Tid</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Tid.html">Tid</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
+        OCamlGraph interface for a persistent graph.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Tree.html">Tree</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td><div class="info">
+Printable interface for auxiliary data structures
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Tree.html">Tree</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Tree.html">Tree</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Tree is a particular subtype of a graph for which
+      each node has only one predecessor, and there is only
+      one path between tree root and any other node.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.Trie.html">Trie</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
 Prefix Tree
@@ -545,6 +694,10 @@ Prefix trees for bitvectors.
 Constructs a trie
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Type.html">Type</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Type.html">Type</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Type.html">Type</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 The type of a BIL expression.
@@ -559,17 +712,28 @@ Persistent type identifiers.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html">Types</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Unit.html">Unit</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap.Std.Var.V1.html">V1</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
 Serialization format
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Value.html">Value</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Value.html">Value</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Value.html">Value</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Universal Values.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Var.html">Var</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Var.html">Var</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Var.html">Var</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 BIL variable.
@@ -586,6 +750,10 @@ Resizable Array.
 iterators lifter to the Or_error monad
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Word.html">Word</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Graphs.Word.html">Word</a> [<a href="Bap.Std.Graphlib.Graphs.html">Bap.Std.Graphlib.Graphs</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Word.html">Word</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Shortcut for bitvectors that represent words

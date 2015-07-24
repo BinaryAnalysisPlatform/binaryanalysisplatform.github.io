@@ -29,19 +29,17 @@
 Program.<br>
 </div>
 <hr width="100%">
-<br>
-Program is a collection of function terms.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap.Std.Program.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create ()</code> creates an empty program.<br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> unit -> <a href="Bap.Std.Program.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ?tid ()</code> creates an empty program. If <code class="code">tid</code><br>
 </div>
 
 <pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEsymtab">symtab</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
-<code class="code">lift roots cfg</code> takes a set of function starts and a whole
-        program cfg and returns a program term.<br>
+<code class="code">lift symbols</code> takes a table of functions and return a whole
+        program lifted into IR<br>
 </div>
 
 <pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">

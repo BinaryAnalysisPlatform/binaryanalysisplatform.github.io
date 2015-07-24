@@ -29,19 +29,12 @@
 Definition.<br>
 </div>
 <hr width="100%">
-<br>
-The definition is an assignment. The left hand side of an
-        assignment is a variable, and the right side is an expression.
-<p>
-
-        The definition is the only way for a block to perform some
-        side effects.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create x exp</code> creates definition <code class="code">x := exp</code><br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ?tid x exp</code> creates definition <code class="code">x := exp</code><br>
 </div>
 
 <pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">

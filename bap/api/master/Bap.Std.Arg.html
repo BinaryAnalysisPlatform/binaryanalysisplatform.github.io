@@ -29,16 +29,11 @@
 Subroutine argument.<br>
 </div>
 <hr width="100%">
-<br>
-In the IR model subroutines are not functions, that has a return
-        value, but a more general subroutine that has a set of
-        arguments, that can be used for  input, output or both
-        purposes.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?intent:<a href="Bap.Std.html#TYPEintent">intent</a> -> ?name:string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?intent:<a href="Bap.Std.html#TYPEintent">intent</a> -> ?name:string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?intent ?name typ</code> creates an argument. If intent is
         not specified it is left unkown.<br>
 </div>

@@ -16,11 +16,7 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Common Interfaces" rel="Section" href="#2_CommonInterfaces">
-<link title="Some predefined constant constructors " rel="Section" href="#2_Somepredefinedconstantconstructors">
-<link title="Helpful shortcuts " rel="Section" href="#2_Helpfulshortcuts">
-<link title="Iteration over bitvector components " rel="Section" href="#2_Iterationoverbitvectorcomponents">
-<title>Bap.Std.Bitvector</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Bitvector</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Size.html" title="Bap.Std.Size">Previous</a>
@@ -162,14 +158,6 @@ Bitvector -- a type for representing binary values.
 <code class="code">word</code> is an abbreviation to <code class="code"><span class="constructor">Bitvector</span>.t</code><br>
 </div>
 
-<br>
-<h2 id="2_CommonInterfaces">Common Interfaces</h2>
-<p>
-
-        Bitvector is a value, first of all, so it supports a common set of
-        a value interface: it can be stored, compared, it can be a key in
-        a dictionary, etc. Moreover, being a number it can be compared
-        with zero and applied to a common set of integer operations.<br>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 <div class="info ">
@@ -222,18 +210,14 @@ Specifies the order of bytes in a word.<br>
 <pre><span id="VALof_bool"><span class="keyword">val</span> of_bool</span> : <code class="type">bool -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">width:int -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALof_int32"><span class="keyword">val</span> of_int32</span> : <code class="type">?width:int -> int32 -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
-<pre><span id="VALof_int64"><span class="keyword">val</span> of_int64</span> : <code class="type">?width:int -> int64 -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><br>
-<h2 id="2_Somepredefinedconstantconstructors">Some predefined constant constructors </h2><br>
-
+<pre><span id="VALof_int64"><span class="keyword">val</span> of_int64</span> : <code class="type">?width:int -> int64 -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALb0"><span class="keyword">val</span> b0</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">b0 = of_bool <span class="keyword">false</span></code> is a zero bit
 <p>
 <code class="code">b1 = of_bool <span class="keyword">true</span></code> is a one bit<br>
 </div>
 
-<pre><span id="VALb1"><span class="keyword">val</span> b1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><br>
-<h2 id="2_Helpfulshortcuts">Helpful shortcuts </h2><br>
-
+<pre><span id="VALb1"><span class="keyword">val</span> b1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre>
 <pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">one width</code> number one with a specified <code class="code">width</code>, is a shortcut for
         <code class="code">of_int 1 ~width</code>
@@ -348,10 +332,8 @@ Specifies the order of bytes in a word.<br>
 <pre><span id="VAL(--)"><span class="keyword">val</span> (--)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">a -- n</code> is <code class="code">npred a n</code><br>
 </div>
-<br>
-<h2 id="2_Iterationoverbitvectorcomponents">Iteration over bitvector components </h2><br>
 
-<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Sequence.t</code></pre><div class="info ">
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">to_bytes x order</code> returns bytes of <code class="code">x</code> in a specified <code class="code">order</code>.
         Each byte is represented as a <code class="code">bitvector</code> itself.
 <p>
@@ -359,8 +341,8 @@ Specifies the order of bytes in a word.<br>
         with bytes represented by <code class="code">char</code> type<br>
 </div>
 
-<pre><span id="VALto_chars"><span class="keyword">val</span> to_chars</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> char Sequence.t</code></pre>
-<pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> bool Sequence.t</code></pre><div class="info ">
+<pre><span id="VALto_chars"><span class="keyword">val</span> to_chars</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> char <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
+<pre><span id="VALto_bits"><span class="keyword">val</span> to_bits</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> -> bool <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">to_bits x order</code> returns bits of <code class="code">x</code> in a specified <code class="code">order</code>.
         <code class="code">order</code> defines only the ordering of words in a bitvector, bits
         will always be in MSB first order.<br>

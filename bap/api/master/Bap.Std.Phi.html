@@ -44,7 +44,7 @@ Phi nodes are used to represent a set of values, that can be
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create var label exp</code> creates a phi-node that associates a
         variable <code class="code">var</code> with an expression <code class="code">exp</code>. This expression
         should be selected if a control flow enters a block, that owns
@@ -52,7 +52,7 @@ Phi nodes are used to represent a set of values, that can be
         <code class="code">create x loop_header y</code>.<br>
 </div>
 
-<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> (<a href="Bap.Std.html#TYPEtid">tid</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       <a href="Bap.Std.html#TYPEvar">var</a> -> (<a href="Bap.Std.html#TYPEtid">tid</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_list var bindings</code> creates a phi-node, that for each pair
         of <code class="code">label,exp</code> in the <code class="code">bindings</code> list associates variable <code class="code">var</code>
         with expression <code class="code">exp</code> if control flow reaches this point via block

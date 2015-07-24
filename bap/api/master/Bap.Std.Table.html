@@ -16,9 +16,7 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Table relations" rel="Section" href="#2_Tablerelations">
-<link title="Examples" rel="Subsection" href="#3_Examples">
-<title>Bap.Std.Table</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Table</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Memory.html" title="Bap.Std.Memory">Previous</a>
@@ -138,8 +136,6 @@ Relation multiplicity.
         For a given type <code class="code"><span class="keywordsign">'</span>a</code> creates type <code class="code"><span class="keywordsign">'</span>m</code><br>
 </div>
 
-<br>
-<h2 id="2_Tablerelations">Table relations</h2><br>
 
 <pre><span id="VALmany"><span class="keyword">val</span> many</span> : <code class="type">('a, 'a <a href="Bap.Std.html#TYPEseq">seq</a>) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
 <code class="code">0..*</code><br>
@@ -153,49 +149,6 @@ Relation multiplicity.
 <pre><span id="VALmaybe_one"><span class="keyword">val</span> maybe_one</span> : <code class="type">('a, 'a option) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
 <code class="code">0..1</code><br>
 </div>
-<br>
-<code class="code">link relation t t1 t2</code> takes two tables and returns a mapping
-        from elements of one table to elements of other table.
-<p>
-
-        Parameter <code class="code">t</code> specifies a <code class="code">hashable</code> typeclass of the type <code class="code"><span class="keywordsign">'</span>a</code>. If
-        type <code class="code"><span class="keywordsign">'</span>a</code> implements <code class="code"><span class="constructor">Hashable</span></code> interface, then you can obtain it
-        with <code class="code">hashable</code> function, e.g. <code class="code"><span class="constructor">Int</span>.hashable</code> with return the
-        appropriate type class. If <code class="code"><span class="keywordsign">'</span>a</code> doesn't implement <code class="code"><span class="constructor">Hashable</span></code>, then
-        it can be implemented manually.
-<p>
-
-        Relation specifies the multiplicity of the relation between
-        entities from table <code class="code">t1</code> to entities from table <code class="code">t2</code>, and is
-        summarized below:
-<p>
-<ul>
-<li><code class="code">one_to_many</code> means that a particular region from table <code class="code">t1</code> can
-        span several memory regions from table <code class="code">t2</code>. Example: segments
-        to symbols relation.</li>
-</ul>
-<ul>
-<li><code class="code">one_to_one</code> means that for each value of type <code class="code"><span class="keywordsign">'</span>a</code> there is
-        exactly one value of type <code class="code"><span class="keywordsign">'</span>b</code>. This relation should be used with
-        caution, since it is quantified over _all_ values of type
-        <code class="code"><span class="keywordsign">'</span>a</code>. Indeed, it should be used only for cases, when it can be
-        guaranteed, that it is impossible to create such value of type
-        <code class="code"><span class="keywordsign">'</span>b</code>, that has no correspondence in table <code class="code">t2</code>. Otherwise,
-        <code class="code">one_to_maybe_one</code> relation should be used. Example: llvm
-        machine code to assembly string relation.</li>
-</ul>
-<ul>
-<li><code class="code">one_to_maybe_one</code> means that for each value in table <code class="code">t1</code> there
-        exists at most one value in table <code class="code">t2</code>. Example: function to
-        symbol relation.</li>
-</ul>
-
-        <h3 id="3_Examples">Examples</h3>
-<p>
-
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;mc_of_insn&nbsp;&nbsp;=&nbsp;link&nbsp;one_to:one&nbsp;<span class="constructor">Insn</span>.hashable&nbsp;insns&nbsp;mcs<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;syms_of_sec&nbsp;=&nbsp;link&nbsp;one_to:many&nbsp;<span class="constructor">Sec</span>.hashable&nbsp;&nbsp;secs&nbsp;syms<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 
 <pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">one_to:('b, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'a -> 'r</code></pre>
 <pre><span id="VALrev_map"><span class="keyword">val</span> rev_map</span> : <code class="type">one_to:(<a href="Bap.Std.html#TYPEmem">mem</a>, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> ('a -> 'r) Or_error.t</code></pre><div class="info ">

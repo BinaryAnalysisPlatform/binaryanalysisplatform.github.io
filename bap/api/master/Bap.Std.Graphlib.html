@@ -1,0 +1,383 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Equiv.html">
+<link rel="next" href="Bap.Std.Memory.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Graphlib</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Equiv.html" title="Bap.Std.Equiv">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Memory.html" title="Bap.Std.Memory">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Graphlib.html">Bap.Std.Graphlib</a></h1>
+
+<pre><span class="keyword">module</span> Graphlib: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Generic Graph Library<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type t = 'c and type Edge.label = 'b and type Node.label = 'a) -><br>       ?nodes:'a list -> ?edges:('a * 'a * 'b) list -> unit -> 'c</code></pre><div class="info ">
+<code class="code">create (<span class="keyword">module</span> <span class="constructor">G</span>) ~nodes ~edges ()</code> creates a graph using
+        implementation provided by <code class="code"><span class="keyword">module</span> <span class="constructor">G</span></code>.
+        Example:
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.<span class="constructor">String</span>.<span class="constructor">Bool</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;g&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.create&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;~edges:[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"entry"</span>,&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="keyword">true</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="string">"exit"</span>,&nbsp;<span class="keyword">false</span>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="keyword">true</span>]&nbsp;()<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+
+<pre><span id="VALto_dot"><span class="keyword">val</span> to_dot</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?graph_attrs:('c -> <a href="Bap.Std.html#TYPEgraph_attr">graph_attr</a> list) -><br>       ?node_attrs:('n -> <a href="Bap.Std.html#TYPEnode_attr">node_attr</a> list) -><br>       ?edge_attrs:('e -> <a href="Bap.Std.html#TYPEedge_attr">edge_attr</a> list) -><br>       ?string_of_node:('n -> string) -><br>       ?string_of_edge:('e -> string) -><br>       ?channel:Pervasives.out_channel -><br>       ?formatter:Format.formatter -> ?filename:string -> 'c -> unit</code></pre><div class="info ">
+<code class="code">to_dot (<span class="keyword">module</span> <span class="constructor">G</span>) ~filename:<span class="string">"graph.dot"</span> g</code> dumps graph <code class="code">g</code>
+        using <code class="code">dot</code> format. This is a customizable version of printing
+        function. For most cases it will be enough to use <code class="code"><span class="constructor">G</span>.pp</code> or
+        <code class="code"><span class="constructor">G</span>.to_string</code> function. Use this function, if you really need
+        to customize your output.<br>
+</div>
+<div class="param_info"><code class="code">graph_attrs</code> : a list of global graph attributes;</div>
+<div class="param_info"><code class="code">node_attrs</code> : a list of node specific attributes;</div>
+<div class="param_info"><code class="code">edge_attrs</code> : a list of edge specific attributes;</div>
+<div class="param_info"><code class="code">string_of_node</code> : used to print nodes;</div>
+<div class="param_info"><code class="code">string_of_edge</code> : used to print edges;</div>
+<div class="param_info"><code class="code">channel</code> : where to output the graph;</div>
+<div class="param_info"><code class="code">formatter</code> : where to output the graph;</div>
+<div class="param_info"><code class="code">filename</code> : where to output the graph;
+<p>
+
+        Note: if no output parameter is provided, the graph will not be
+        outputted. More than one output targets is OK. For example,
+        <code class="code">to_dot (<span class="keyword">module</span> <span class="constructor">G</span>) ~filename:<span class="string">"graph.dot"</span> ~channel:stdout g</code> will
+        output graph <code class="code">g</code> into both file named <code class="code"><span class="string">"graph.dot"</span></code> and
+        standard output.
+<p>
+
+        Note: if <code class="code">string_of_node</code> function is not provided, then graph
+        nodes will be labeled with the reverse post order number.</div>
+
+<pre><span id="VALdepth_first_search"><span class="keyword">val</span> depth_first_search</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -><br>       ?start_tree:('n -> 's -> 's) -><br>       ?enter_node:(int -> 'n -> 's -> 's) -><br>       ?leave_node:(int -> 'n -> 's -> 's) -><br>       ?enter_edge:(<a href="Bap.Std.html#TYPEedge_kind">edge_kind</a> -> 'e -> 's -> 's) -><br>       ?leave_edge:(<a href="Bap.Std.html#TYPEedge_kind">edge_kind</a> -> 'e -> 's -> 's) -> 'c -> init:'s -> 's</code></pre><div class="info ">
+<code class="code">depth_first_search (<span class="keyword">module</span> <span class="constructor">G</span>) ~init g</code>.  It is the most
+        important algorithm of the Graphlib. It builds a forest of
+        spanning trees of a graph, classifies graph edges and numbers
+        nodes. It is a Swiss-army knife, that is very useful in
+        implementing many other algorithms. You can think of this
+        function as <code class="code">fold</code> on steroids. But unlike <code class="code">fold</code>, that
+        accepts only one function, the <code class="code">depth_first_search</code> accepts 5
+        different functions, that will be called on different
+        situations, allowing you to «fill in the blanks» of your
+        algorithm.
+<p>
+
+        Although <code class="code">depth_first_search</code> doesn't allow you to drive the
+        walk itself, there're still ways to do this, using <a href="Bap.Std.Graphlib.html#VALfiltered"><code class="code"><span class="constructor">Graphlib</span>.filtered</code></a>
+        function. That allows you to hide nodes or edges from the
+        walker, thus effectively erasing them from a graph, without
+        even touching it.<br>
+</div>
+<div class="param_info"><code class="code">rev</code> : if true, then the graph <code class="code">g</code> is traversed in a
+        reverse direction. This is essentially the same, as reversing
+        the graph, but make sure, that you've adjusted the start
+        node.</div>
+<div class="param_info"><code class="code">start</code> : if specified, then the traverse will be started
+        from the node that is equal to node <code class="code">start</code>. Otherwise the
+        traverse is started from the first node of a graph as returned
+        by <code class="code"><span class="constructor">G</span>.nodes</code>, i.e., usually it is an arbitrary node.</div>
+<div class="param_info"><code class="code">start_tree</code> : <code class="code">node</code> <code class="code">state</code> is called on each new spanning
+        tree started by the algorithm. If all nodes are reachable from
+        the start node, then this function will be called only
+        once. If all nodes of a graph are connected, then this
+        function, will be called only once.</div>
+<div class="param_info"><code class="code">enter_node</code> : <code class="code">pre</code> <code class="code">node</code> <code class="code">state</code> is called when a node
+        is first discovered by the traversal. The number is a preorder
+        number, also known as depth-first number or <code class="code">dfnum</code>. All nodes
+        are entered in a pre-order.</div>
+<div class="param_info"><code class="code">leave_node</code> : <code class="code">rpost</code> <code class="code">node</code> <code class="code">state</code> is called when all
+        successors of a <code class="code">node</code> are left (finished). The provided
+        number is a reverse post order number, that also defines a
+        topological sorting order of a graph. All nodes, are left in
+        a post order.</div>
+<div class="param_info"><code class="code">enter_edge</code> : <code class="code">kind</code> <code class="code">edge</code> <code class="code">state</code> is called when and
+        <code class="code">edge</code> is first discovered. Edge kinds are described below.
+        The destination of the edge may not be discovered (i.e.,
+        entered) yet. But the source is already entered (but not
+        finished).</div>
+<div class="param_info"><code class="code">leave_edge</code> : <code class="code">kind</code> <code class="code">edge</code> <code class="code">state</code> is called when the
+        edge destination is at least started.
+<p>
+
+        <h2 id="2_Edgesclassification">Edges classification</h2>
+<p>
+
+        An edge in a spanning tree, produced by a depth first walk,
+        can belong to one of the following category (kind):
+<p>
+<ul>
+<li>Tree edges constitutes a spanning tree <code class="code"><span class="constructor">T</span></code> of a graph;</li>
+<li>Forward edges go from an ancestor to a descendants in
+          a tree <code class="code"><span class="constructor">T</span></code>;</li>
+<li>Back edges go from descendants to ancestors in <code class="code"><span class="constructor">T</span></code>,
+          including node itself (they are also known as cycle
+          edges).</li>
+<li>Cross edges - all other edges, i.e., such edges for
+          which doesn't go from ancestors to descendants or vice
+          verse. They are possible since, tree defines only partial
+          ordering.</li>
+</ul>
+
+        With respect to a pre-order and reverse post-ordering
+        numbering the source <code class="code">x</code> and a destination <code class="code">y</code> of an edge with
+        a given <code class="code">kind</code> satisfy to the following inequalities:
+<p>
+
+        <pre class="verbatim">          +---------+-----------------+---------------------+
+          | Tree    | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
+          | Forward | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
+          | Back    | pre[x] &gt;= pre[y] | rpost[x] &gt;= rpost[y] |
+          | Cross   | pre[x] &gt; pre[y] | rpost[x] &lt; rpost[y] |
+          +---------+-----------------+---------------------+
+       </pre>
+<p>
+
+        Note: since there can be more than one valid order of
+        traversal of the same graph, (and thus more than one valid
+        spanning tree), depending on a traversal the same edges can be
+        classified differently. With the only exception, that a back
+        edge will be always a back edge, disregarding the particular
+        order.
+<p>
+
+        (** <h3 id="3_Complexity">Complexity</h3>  *)
+        The algorithm is linear in time and space (including the stack
+        space). In fact, for small graphs it uses stack, but for large
+        graphs dynamically switches to a heap storage.</div>
+
+<pre><span id="VALdepth_first_visit"><span class="keyword">val</span> depth_first_visit</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -> 'c -> init:'s -> ('n, 'e, 's) <a href="Bap.Std.dfs_visitor-c.html">dfs_visitor</a> -> 's</code></pre><div class="info ">
+<code class="code">depth_first_visit (<span class="keyword">module</span> <span class="constructor">G</span>) ~init visitor g</code> allows to
+        specify visiting functions using object. That opens space for
+        re-usability and using open recursion.<br>
+</div>
+
+<pre><span name="TYPEdfs_identity_visitor"><span class="keyword">class</span> <code class="type">[['n, 'e, 's]]</code> <a href="Bap.Std.Graphlib.dfs_identity_visitor-c.html">dfs_identity_visitor</a></span> : <code class="type"></code><code class="type">[['n, 'e, 's]]</code> <code class="type"><a href="Bap.Std.dfs_visitor-c.html">dfs_visitor</a></code></pre>
+<pre><span id="VALreverse_postorder_traverse"><span class="keyword">val</span> reverse_postorder_traverse</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns a sequence of nodes in reverse post order.<br>
+</div>
+
+<pre><span id="VALpostorder_traverse"><span class="keyword">val</span> postorder_traverse</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+returns a sequence of nodes in post order<br>
+</div>
+
+<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n -> 'n <a href="Bap.Std.html#TYPEtree">tree</a></code></pre><div class="info ">
+<code class="code">dominators (<span class="keyword">module</span> <span class="constructor">G</span>) g entry</code> builds a dominators tree for a
+        given graph.
+<p>
+
+        Definition: a _walk_ is a sequence of alternating nodes and
+        edges, where each edge's endpoints are the preceding and
+        following nodes in the sequence.
+<p>
+
+        Definition: a node <code class="code">v</code> is _reachable_ if there exists a walk
+        starting from <code class="code">entry</code> and ending with <code class="code">v</code>.
+<p>
+
+        Definition: node <code class="code">u</code> _dominates_ <code class="code">v</code> if <code class="code">u = v</code> or if all walks
+        from <code class="code">entry</code> to <code class="code">v</code> contains <code class="code">u</code>.
+<p>
+
+        Definition: node <code class="code">u</code> _strictly dominates_ <code class="code">v</code> if it dominates
+        <code class="code">v</code> and <code class="code">u &lt;&gt; v</code>.
+<p>
+
+        Definition: node <code class="code">u</code> _immediately dominates_ <code class="code">v</code> if it
+        strictly dominates <code class="code">v</code> and there is no other node that
+        strictly dominates <code class="code">v</code> and is dominated by <code class="code">u</code>.
+<p>
+
+        Algorithm computes a dominator tree <code class="code">t</code> that has the following
+        properties:
+<p>
+
+        1) Sets of graph nodes and tree nodes are equal;
+        2) if node <code class="code">u</code> is a parent of node <code class="code">v</code>, then node <code class="code">u</code>
+           immediately dominates node <code class="code">v</code>;
+        3) if node <code class="code">u</code> is an ancestors of node <code class="code">v</code>, then node <code class="code">u</code>
+           strictly dominates node <code class="code">v</code>;
+        4) if node <code class="code">v</code> is a child of node <code class="code">u</code>, then node <code class="code">u</code>
+           immediately dominates node <code class="code">v</code>;
+        5) if node <code class="code">v</code> is a descendant of node <code class="code">u</code>, then node <code class="code">u</code>
+           strictly dominates node <code class="code">v</code>.
+<p>
+
+        If every node of graph <code class="code">g</code> is reachable from a provided
+        <code class="code">entry</code> node, then properties (2) - (5) are reversible, i.e.,
+        an <code class="code"><span class="keyword">if</span></code> statement can be read as <code class="code">iff</code>, and the tree is
+        unique.
+<p>
+
+        Lemma: Everything dominates unreachable block.
+        Proof: (by contradiction) suppose there exists a node <code class="code">u</code> that
+        doesn't dominate unreachable block <code class="code">v</code>. That means, that there
+        exists a path from <code class="code">entry</code> to <code class="code">v</code> that doesn't contain
+        <code class="code">u</code>. But that means, at least, that <code class="code">v</code> is reachable. Qed.
+<p>
+
+        If some nodes of graph <code class="code">g</code> are unreachable from the provided
+        <code class="code">entry</code> node, then they are be dominated by all other nodes of
+        a graph. It means that the provided system is under
+        constrained and has more then one solution (i.e., there exists
+        more than one tree, that satisfies properties (1) - (5). In
+        current implementation each unreachable node is immediately
+        dominated by the <code class="code">entry</code>, if the <code class="code">entry</code> is in graph.
+<p>
+
+        To get a post-dominator tree, reverse the graph by passing
+        <code class="code"><span class="keyword">true</span></code> to <code class="code">rev</code> and pass exit node as a starting node.
+<p>
+
+        Note: although it is not imposed by the algotihm, but it is a
+        good idea to have an entry node, that doesn't have any
+        predecessors. Usually, this is what is silently assumed in
+        many program analysis textbooks, but is not true in general
+        for control-flow graphs that are reconstructed from binaries<br>
+</div>
+
+<pre><span id="VALdom_frontier"><span class="keyword">val</span> dom_frontier</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n <a href="Bap.Std.html#TYPEtree">tree</a> -> 'n <a href="Bap.Std.html#TYPEfrontier">frontier</a></code></pre><div class="info ">
+<code class="code">dom_frontier (<span class="keyword">module</span> <span class="constructor">G</span>) g dom_tree</code> calculates dominance
+        frontiers for all nodes in a graph <code class="code">g</code>.<br>
+</div>
+
+<pre><span id="VALstrong_components"><span class="keyword">val</span> strong_components</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       'c -> 'n <a href="Bap.Std.html#TYPEpartition">partition</a></code></pre><div class="info ">
+<code class="code">strong_components (<span class="keyword">module</span> <span class="constructor">G</span>) g</code> partition graph into strongly
+        connected components. The top of each component is a root
+        node, i.e., a node that has the least pre-order number.<br>
+</div>
+
+<pre><span id="VALshortest_path"><span class="keyword">val</span> shortest_path</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?weight:('e -> int) -> ?rev:bool -> 'c -> 'n -> 'n -> 'e <a href="Bap.Std.html#TYPEpath">path</a> option</code></pre><div class="info ">
+<code class="code">shortest_path (<span class="keyword">module</span> <span class="constructor">G</span>) ?weight ?rev g u v</code>
+        Find a shortest path from node <code class="code">u</code> to node <code class="code">v</code>.<br>
+</div>
+<div class="param_info"><code class="code">weight</code> : defines a weight of each edge. It defaults to 1.</div>
+<div class="param_info"><code class="code">rev</code> : allows to reverse graph.</div>
+
+<pre><span id="VALis_reachable"><span class="keyword">val</span> is_reachable</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n -> 'n -> bool</code></pre><div class="info ">
+<code class="code">is_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ?rev g u v</code> is true if node <code class="code">v</code> is
+        reachable from node <code class="code">u</code> in graph <code class="code">g</code>. If rev is true, then it
+        will solve the same problem but on a reversed graph.<br>
+</div>
+
+<pre><span id="VALfold_reachable"><span class="keyword">val</span> fold_reachable</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> init:'a -> f:('a -> 'n -> 'a) -> 'c -> 'n -> 'a</code></pre><div class="info ">
+<code class="code">fold_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ?rev ~init ~f g n</code> applies function
+        <code class="code">f</code> to all nodes reachable from node <code class="code">g</code> in graph <code class="code">g</code>. If
+        <code class="code">rev</code> is true, then the graph is reversed.
+<p>
+
+        For example, the following will build a set of reachable nodes:
+        <code class="code">fold_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ~init:<span class="constructor">G</span>.<span class="constructor">Node</span>.<span class="constructor">Set</span>.empty ~f:<span class="constructor">Set</span>.add</code><br>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type node = 'n and type t = 'a) -><br>       (module Bap.Std.Graphlib.Graph with type node = 'n and type t = 'b) -><br>       'a -> 'b -> int</code></pre><div class="info ">
+<code class="code">compare (<span class="keyword">module</span> <span class="constructor">G1</span>) (<span class="keyword">module</span> <span class="constructor">G2</span>) g1 g2</code> compares two graphs,
+        with different implementation but the same node type.<br>
+</div>
+
+<pre><span id="VALfiltered"><span class="keyword">val</span> filtered</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?skip_node:('n -> bool) -><br>       ?skip_edge:('e -> bool) -><br>       unit -><br>       (module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c)</code></pre><div class="info ">
+<code class="code"><span class="keyword">let</span> <span class="keyword">module</span> <span class="constructor">G'</span> = filtered (<span class="keyword">module</span> <span class="constructor">G</span>) ?skip_node ?skip_edge ()</code>
+        creates a new module <code class="code"><span class="constructor">G'</span></code> that can be used at any place
+        instead of <code class="code"><span class="constructor">G</span></code>, but that will hide nodes and edges, for which
+        functions <code class="code">skip_node</code> and <code class="code">skip_edge</code> return true.
+<p>
+
+        Example:
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;killed_edges&nbsp;=&nbsp;<span class="constructor">G</span>.<span class="constructor">Edge</span>.<span class="constructor">Hash_set</span>.create&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.filtered&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~skip_edge:(<span class="constructor">Hash_set</span>.mem&nbsp;killed_edges)&nbsp;()&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">rec</span>&nbsp;loop&nbsp;g&nbsp;()&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;use&nbsp;(module&nbsp;G)&nbsp;as&nbsp;normal&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Hash_set</span>.add&nbsp;killed_edges&nbsp;some_edge;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;all&nbsp;edges&nbsp;added&nbsp;to&nbsp;[killed_edges]&nbsp;will&nbsp;no&nbsp;be&nbsp;visible&nbsp;*)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+
+<pre><span id="VALview"><span class="keyword">val</span> view</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c and type Edge.label = 'b and type Node.label = 'a) -><br>       node:('n -> 'f) * ('f -> 'n) -><br>       edge:('e -> 'd) * ('d -> 'e) -><br>       node_label:('a -> 'p) * ('p -> 'a) -><br>       edge_label:('b -> 'r) * ('r -> 'b) -><br>       (module Bap.Std.Graphlib.Graph with type edge = 'd and type node = 'f and type t = 'c and type Edge.label = 'r and type Node.label = 'p)</code></pre><div class="info ">
+<code class="code">view (<span class="keyword">module</span> <span class="constructor">G</span>) ~node ~edge ~node_label ~edge_label</code>
+        creates a proxy module, that will transform back and
+        forward elements of graph, using corresponding functions.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code>: <code class="type">Graph.Sig.P</code><code class="type">  with type t = G.t
+                   and type V.t = G.node
+                   and type E.t = G.edge
+                   and type V.label = G.Node.label
+                   and type E.label = G.Edge.label</code></pre><div class="info">
+<code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
+        OCamlGraph interface for a persistent graph.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Of_ocamlgraph.html">Of_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph.Sig.P</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+             and type node = G.V.t
+             and type edge = G.E.t
+             and type Node.label = G.V.label
+             and type Edge.label = G.E.label</code></pre><div class="info">
+<code class="code"><span class="constructor">Of_ocamlgraph</span>(<span class="constructor">O</span>)</code> creates an adapter module, that implements
+        <code class="code"><span class="constructor">Graphlib</span></code> interface on top of the module implementing
+        <code class="code"><span class="constructor">OCamlGraph</span></code> interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Filtered.html">Filtered</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
+                        and type edge = G.edge</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+             and type node = G.node
+             and type edge = G.edge
+             and module Node = G.Node
+             and module Edge = G.Edge</code></pre><div class="info">
+functorized version of a <code class="code"><span class="constructor">Graphlib</span>.filter</code> function.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Mapper.html">Mapper</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+             and type node = N.t
+             and type edge = E.t
+             and type Node.label = NL.t
+             and type Edge.label = EL.t</code></pre><div class="info">
+functorized version of <a href="Bap.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.view</code></a> function.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code>: <code class="type">Graph</code><code class="type"> 
+      with type node = Node.t
+       and type Node.label = Node.t
+       and type Edge.label = Edge.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Node</span>)(<span class="constructor">Edge</span>)</code> creates a module that implements <code class="code"><span class="constructor">Graph</span></code>
+        interface and has unlabeled nodes of type <code class="code"><span class="constructor">Node</span>.t</code> and edges
+        labeled with <code class="code"><span class="constructor">Edge</span>.t</code>
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Graphlib.Graphs.html">Graphs</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Graphs.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+a common interface for a regular graph.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Char.html">Char</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = char</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Int.html">Int</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = int</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Word.html">Word</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = word</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Type.html">Type</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = typ</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Value.html">Value</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = value</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.String.html">String</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = string</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Var.html">Var</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = var</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Exp.html">Exp</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = exp</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Stmt.html">Stmt</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = stmt</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Tid.html">Tid</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = tid</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.html">Ir</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+IR code as a graph.
+</div>
+</body></html>

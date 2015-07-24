@@ -56,24 +56,24 @@ Jmp is the only way to transfer control from block to block.
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?cond kind</code> creates a jump of given kind<br>
 </div>
 
-<pre><span id="VALcreate_call"><span class="keyword">val</span> create_call</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEcall">call</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate_call"><span class="keyword">val</span> create_call</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEcall">call</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create_call ?cond target</code> transfer control to subroutine
         <code class="code">target</code><br>
 </div>
 
-<pre><span id="VALcreate_goto"><span class="keyword">val</span> create_goto</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate_goto"><span class="keyword">val</span> create_goto</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create_goto ?cond label</code> local jump<br>
 </div>
 
-<pre><span id="VALcreate_ret"><span class="keyword">val</span> create_ret</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate_ret"><span class="keyword">val</span> create_ret</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create_ret ?cond label</code> return from a procedure<br>
 </div>
 
-<pre><span id="VALcreate_int"><span class="keyword">val</span> create_int</span> : <code class="type">?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> int -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate_int"><span class="keyword">val</span> create_int</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> int -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create_int ?cond int_number return</code> call interrupt subroutine<br>
 </div>
 

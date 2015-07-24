@@ -260,6 +260,12 @@ current position of the disassembler
         occur after a term with a given <code class="code">tid</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALancestors">ancestors</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">ancestors tree n</code> returns a sequence of all ancestors of node
+        <code class="code">n</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALappend">append</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">append t ~after:this p c</code> returns the <code class="code">p</code> term with <code class="code">c</code>
@@ -309,6 +315,8 @@ target-specific assembler string representing the instruction
 restarts last step.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Isomorphism.html#VALbackward">backward</a> [<a href="Bap.Std.Isomorphism.html">Bap.Std.Isomorphism</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALbase">base</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
 <code class="code">base var</code> returns an original variable.
@@ -397,6 +405,12 @@ updates the label
         with <code class="code"><span class="constructor">None</span></code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALchildren">children</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">children tree x</code> returns all immediate successors of node
+        <code class="code">x</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALclone">clone</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">clone term</code> creates an object with a fresh new identifier
@@ -421,6 +435,14 @@ A human readable comment
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALcompare">compare</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Op.Normalized.html#VALcompare">compare</a> [<a href="Bap.Std.Op.Normalized.html">Bap.Std.Op.Normalized</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALcompare">compare</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">compare (<span class="keyword">module</span> <span class="constructor">G1</span>) (<span class="keyword">module</span> <span class="constructor">G2</span>) g1 g2</code> compares two graphs,
+        with different implementation but the same node type.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Seq.html#VALcompare">compare</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Op.Normalized.html#VALcompare_ops">compare_ops</a> [<a href="Bap.Std.Op.Normalized.html">Bap.Std.Op.Normalized</a>]</td>
 <td></td></tr>
@@ -447,6 +469,12 @@ A human readable comment
 <code class="code">cond jmp</code> returns the jump guard condition
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html#VALcond">cond</a> [<a href="Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a>]</td>
+<td><div class="info">
+<code class="code">cond e g</code> computes a condition expression that is
+            asserted to be <code class="code"><span class="keyword">true</span></code> if this branch is taken.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Seq.html#VALcons">cons</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALcontains">contains</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
@@ -467,6 +495,14 @@ A human readable comment
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALcpsr">cpsr</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALcpuexn">cpuexn</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALcreate">create</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">create x y l</code> creates an edge connecting nodes <code class="code">x</code> and <code class="code">y</code>
+        labeled with a given label <code class="code">l</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALcreate">create</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Byteweight.S.html#VALcreate">create</a> [<a href="Bap.Std.Byteweight.S.html">Bap.Std.Byteweight.S</a>]</td>
 <td></td></tr>
@@ -514,7 +550,7 @@ A human readable comment
 </td></tr>
 <tr><td><a href="Bap.Std.Def.html#VALcreate">create</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
 <td><div class="info">
-<code class="code">create x exp</code> creates definition <code class="code">x := exp</code>
+<code class="code">create ?tid x exp</code> creates definition <code class="code">x := exp</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html#VALcreate">create</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
@@ -542,7 +578,7 @@ appends a block to a subroutine
 <td></td></tr>
 <tr><td><a href="Bap.Std.Program.html#VALcreate">create</a> [<a href="Bap.Std.Program.html">Bap.Std.Program</a>]</td>
 <td><div class="info">
-<code class="code">create ()</code> creates an empty program.
+<code class="code">create ?tid ()</code> creates an empty program.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Tid.html#VALcreate">create</a> [<a href="Bap.Std.Tid.html">Bap.Std.Tid</a>]</td>
@@ -586,6 +622,18 @@ lifts basic register to a ARM one
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALcreate">create</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.html#VALcreate">create</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td><div class="info">
+<code class="code">create ?tid ?name ()</code> creates an empty graph, that will
+          build a <code class="code">sub term</code>  with a give <code class="code">tid</code> and <code class="code">name</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALcreate">create</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">create (<span class="keyword">module</span> <span class="constructor">G</span>) ~nodes ~edges ()</code> creates a graph using
+        implementation provided by <code class="code"><span class="keyword">module</span> <span class="constructor">G</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Vector.html#VALcreate">create</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
 <code class="code">create ?capacity default</code> creates an empty vector with a given
@@ -667,6 +715,23 @@ def
 <code class="code">del_attr term attr</code> deletes attribute <code class="code">attr</code> from <code class="code">term</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALdepth_first_search">depth_first_search</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">depth_first_search (<span class="keyword">module</span> <span class="constructor">G</span>) ~init g</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALdepth_first_visit">depth_first_visit</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">depth_first_visit (<span class="keyword">module</span> <span class="constructor">G</span>) ~init visitor g</code> allows to
+        specify visiting functions using object.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALdescendants">descendants</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">descendants tree n</code> returns a set of all descendants of a
+        given node <code class="code">n</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Var.V1.html#VALdeserialize">deserialize</a> [<a href="Bap.Std.Var.V1.html">Bap.Std.Var.V1</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Block_traverse.html#VALdests">dests</a> [<a href="Bap.Std.Block_traverse.html">Bap.Std.Block_traverse</a>]</td>
@@ -715,6 +780,12 @@ def
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALdivide">divide</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALdom_frontier">dom_frontier</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">dom_frontier (<span class="keyword">module</span> <span class="constructor">G</span>) g dom_tree</code> calculates dominance
+        frontiers for all nodes in a graph <code class="code">g</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Blk.html#VALdominated">dominated</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
 <code class="code">dominated blk by:dom def</code> if <code class="code">def</code> is dominated by <code class="code">dom</code> in
@@ -732,7 +803,53 @@ def
         containing <code class="code">mem</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALdominators">dominators</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">dominators (<span class="keyword">module</span> <span class="constructor">G</span>) g entry</code> builds a dominators tree for a
+        given graph.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALdst">dst</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">dst e</code> returns a destination of an edge <code class="code">e</code>
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Bap.Std.Predicate.html#VALedge">edge</a> [<a href="Bap.Std.Predicate.html">Bap.Std.Predicate</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALedge">edge</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">edge x y g</code> if there is an edge in graph <code class="code">g</code> with source <code class="code">x</code>
+        and destination <code class="code">y</code>, then return it.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALedges">edges</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">edges g</code> returns all edges of graph <code class="code">g</code> in unspecified order
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALedges">edges</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">edges x y g</code> returns all edges in graph <code class="code">g</code> that have source
+        node <code class="code">x</code> and destination node <code class="code">y</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html#VALedges">edges</a> [<a href="Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a>]</td>
+<td><div class="info">
+<code class="code">edges dir e g</code> enumerates all edges occurring before of
+            after an edge <code class="code">e</code> in graph <code class="code">g</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALedges">edges</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">edges p</code> a sequence of edges from start to finish
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALedges_rev">edges_rev</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">edges_rev p</code> a reversed sequence from finish to start
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALelements">elements</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">regions table</code> returns in an ascending order of addresses all
@@ -742,6 +859,11 @@ def
 <tr><td><a href="Bap.Std.Blk.html#VALelts">elts</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
 <code class="code">elts ~rev blk</code> return all elements of the <code class="code">blk</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALempty">empty</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">empty</code> is an empty graph
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#VALempty">empty</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
@@ -789,8 +911,25 @@ returns the order of bytes in a word
         given term <code class="code">p</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Group.html#VALenum">enum</a> [<a href="Bap.Std.Group.html">Bap.Std.Group</a>]</td>
+<td><div class="info">
+<code class="code">enum group</code> enumerates all elements of a group, including the
+        designated one.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Frontier.html#VALenum">enum</a> [<a href="Bap.Std.Frontier.html">Bap.Std.Frontier</a>]</td>
+<td><div class="info">
+<code class="code">enum f x</code> enumerates frontier of <code class="code">x</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALeq">eq</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Partition.html#VALequiv">equiv</a> [<a href="Bap.Std.Partition.html">Bap.Std.Partition</a>]</td>
+<td><div class="info">
+<code class="code">equiv p x y</code> is true of <code class="code">x</code> and <code class="code">y</code> belongs to the same
+        equivalence class (i.e., to the same group).
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALerrors">errors</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALerrors">errors</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
@@ -885,6 +1024,14 @@ removes all mappings that do not satisfy the predicate
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfilter_mapi">filter_mapi</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALfiltered">filtered</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code"><span class="keyword">let</span> <span class="keyword">module</span> <span class="constructor">G'</span> = filtered (<span class="keyword">module</span> <span class="constructor">G</span>) ?skip_node ?skip_edge ()</code>
+        creates a new module <code class="code"><span class="constructor">G'</span></code> that can be used at any place
+        instead of <code class="code"><span class="constructor">G</span></code>, but that will hide nodes and edges, for which
+        functions <code class="code">skip_node</code> and <code class="code">skip_edge</code> return true.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfilteri">filteri</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Byteweight.Bytes.html#VALfind">find</a> [<a href="Bap.Std.Byteweight.Bytes.html">Bap.Std.Byteweight.Bytes</a>]</td>
@@ -937,6 +1084,12 @@ removes all mappings that do not satisfy the predicate
         a given address
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALfind_exn">find_exn</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">find_exn t p id</code> like <a href="Bap.Std.Term.html#VALfind"><code class="code"><span class="constructor">Term</span>.find</code></a> but raises <code class="code"><span class="constructor">Not_found</span></code> if nothing
+        is found.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfind_if">find_if</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfind_if">find_if</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
@@ -951,6 +1104,11 @@ removes all mappings that do not satisfy the predicate
 <td><div class="info">
 <code class="code">find_var blk var</code> finds a last definition of a variable <code class="code">var</code>
         in a block <code class="code">blk</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALfinish">finish</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">finish p</code> the last edge of a path <code class="code">p</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALfirst">first</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
@@ -1029,6 +1187,12 @@ removes all mappings that do not satisfy the predicate
         intersecting with <code class="code">mem</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALfold_reachable">fold_reachable</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">fold_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ?rev ~init ~f g n</code> applies function
+        <code class="code">f</code> to all nodes reachable from node <code class="code">g</code> in graph <code class="code">g</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfoldi">foldi</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfoldi">foldi</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
@@ -1036,6 +1200,8 @@ removes all mappings that do not satisfy the predicate
 <tr><td><a href="Bap.Std.Table.html#VALfor_all">for_all</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALfor_all">for_all</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Isomorphism.html#VALforward">forward</a> [<a href="Bap.Std.Isomorphism.html">Bap.Std.Isomorphism</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Elf.html#VALfrom_bigstring">from_bigstring</a> [<a href="Bap.Std.Elf.html">Bap.Std.Elf</a>]</td>
 <td><div class="info">
@@ -1124,6 +1290,16 @@ removes all mappings that do not satisfy the predicate
 A set of general purpose registers
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Partition.html#VALgroup">group</a> [<a href="Bap.Std.Partition.html">Bap.Std.Partition</a>]</td>
+<td><div class="info">
+<code class="code">group p x</code> returns a <code class="code">group</code> of an element <code class="code">x</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Partition.html#VALgroups">groups</a> [<a href="Bap.Std.Partition.html">Bap.Std.Partition</a>]</td>
+<td><div class="info">
+<code class="code">groups p</code> returns all partition cells of a partitioning <code class="code">p</code>
+</div>
+</td></tr>
 <tr><td align="left"><br>H</td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALhas">has</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
@@ -1133,6 +1309,12 @@ A set of general purpose registers
 <tr><td><a href="Bap.Std.Term.html#VALhas_attr">has_attr</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALhas_edge">has_edge</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">has_edge x y g</code> is true if there exists such edge in graph
+        <code class="code">g</code> that its destination is <code class="code">y</code> and source is <code class="code">x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALhas_intersections">has_intersections</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -1185,6 +1367,23 @@ The following lifter will check that their operand has a
 <td><div class="info">
 <code class="code">init blk</code> creates a builder based on an existing
           block.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALinputs">inputs</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">inputs node graph</code> is incomming edges of a <code class="code">node</code> in <code class="code">graph</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALinsert">insert</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">insert e g</code> returns a graph <code class="code">g'</code> that has the same structure
+        as <code class="code">g</code> plus a new edge <code class="code">e</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALinsert">insert</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">insert node graph</code> returns new graph that contains <code class="code">node</code> as
+        well as all other nodes of old <code class="code">graph</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALinsn">insn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
@@ -1282,6 +1481,12 @@ returns all instructions that was successfully decoded in an
         <code class="code">cons</code>, i.e., it is true only when <code class="code">is_cons t (create t x)</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALis_ancestor_of">is_ancestor_of</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">is_ancestor_of tree child x</code> returns true, if <code class="code">x</code> is one of
+        the ancestors of a <code class="code">child</code> node.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALis_assigned">is_assigned</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 <code class="code">is_assigned x p</code> is <code class="code"><span class="keyword">true</span></code> if there exists such <code class="code"><span class="constructor">Move</span></code>
@@ -1297,6 +1502,12 @@ returns all instructions that was successfully decoded in an
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_cf">is_cf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALis_child_of">is_child_of</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">is_child_of tree parent child</code> returns <code class="code"><span class="keyword">true</span></code> if child is one
+        of <code class="code">children tree root</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis_conditional_jump">is_conditional_jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
 <code class="code">is_conditional</code> <code class="code"><span class="keyword">true</span></code> for conditional jumps
@@ -1304,13 +1515,24 @@ returns all instructions that was successfully decoded in an
 </td></tr>
 <tr><td><a href="Bap.Std.Image.Symbol.html#VALis_debug">is_debug</a> [<a href="Bap.Std.Image.Symbol.html">Bap.Std.Image.Symbol</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Seq.html#VALis_empty">is_empty</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
-<td></td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALis_descendant_of">is_descendant_of</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">is_descendant_of ~parent tree x</code> is <code class="code"><span class="keyword">true</span></code> for all <code class="code">x</code> that
+        are descendants of a <code class="code">parent</code> node.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALis_directed">is_directed</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">is_directed</code> is true if graph is a directed graph
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Dict.html#VALis_empty">is_empty</a> [<a href="Bap.Std.Dict.html">Bap.Std.Dict</a>]</td>
 <td><div class="info">
 <code class="code">is_empty map</code> true if is empty.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Seq.html#VALis_empty">is_empty</a> [<a href="Bap.Std.Seq.html">Bap.Std.Seq</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Image.Segment.html#VALis_executable">is_executable</a> [<a href="Bap.Std.Image.Segment.html">Bap.Std.Image.Segment</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_flag">is_flag</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -1338,6 +1560,12 @@ returns all instructions that was successfully decoded in an
 </td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_pc">is_pc</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALis_reachable">is_reachable</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">is_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ?rev g u v</code> is true if node <code class="code">v</code> is
+        reachable from node <code class="code">u</code> in graph <code class="code">g</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.Segment.html#VALis_readable">is_readable</a> [<a href="Bap.Std.Image.Segment.html">Bap.Std.Image.Segment</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Stmt.html#VALis_referenced">is_referenced</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
@@ -1422,6 +1650,8 @@ Predicates
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALitstate">itstate</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>J</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html#VALjmp">jmp</a> [<a href="Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALjmp">jmp</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 <code class="code">jmp t</code> evaluate expression <code class="code">t</code> to absolute address and
@@ -1431,6 +1661,13 @@ Predicates
 <tr><td><a href="Bap.Std.html#VALjmp_t">jmp_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 jmp
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html#VALjmps">jmps</a> [<a href="Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a>]</td>
+<td><div class="info">
+<code class="code">jmps dir e g</code> enumerates all jumps (including calls,
+            interrupts, indirects, etc), that occurs before if
+            <code class="code">dir = <span class="keywordsign">`</span>before</code> or after if <code class="code">dir = <span class="keywordsign">`</span>after</code> an edge <code class="code">e</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALjump">jump</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -1460,6 +1697,16 @@ jump to the specified memory and continue disassembly in it.
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALkinds">kinds</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALlabel">label</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">label e</code> returns a label of an edge <code class="code">e</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALlabel">label</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">label node</code> returns a node's label
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALlast">last</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">last t p</code> returns a last subterm of type <code class="code">t</code> of a given
@@ -1485,7 +1732,7 @@ jump to the specified memory and continue disassembly in it.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALlength">length</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">length t p</code> returns the amount of terms of type <code class="code">t</code> in the
+<code class="code">length t p</code> returns an amount of terms of <code class="code">t</code> class in a
         parent term <code class="code">p</code>
 </div>
 </td></tr>
@@ -1497,6 +1744,11 @@ jump to the specified memory and continue disassembly in it.
 <tr><td><a href="Bap.Std.Memory.html#VALlength">length</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
 <code class="code">length</code> returns the length of the memory in bytes
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALlength">length</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+amount of edges in a path
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Trie.Key.html#VALlength">length</a> [<a href="Bap.Std.Trie.Key.html">Bap.Std.Trie.Key</a>]</td>
@@ -1537,8 +1789,8 @@ returns the left hand side of a definition
 </td></tr>
 <tr><td><a href="Bap.Std.Program.html#VALlift">lift</a> [<a href="Bap.Std.Program.html">Bap.Std.Program</a>]</td>
 <td><div class="info">
-<code class="code">lift roots cfg</code> takes a set of function starts and a whole
-        program cfg and returns a program term.
+<code class="code">lift symbols</code> takes a table of functions and return a whole
+        program lifted into IR
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.AMD64.html#VALlift">lift</a> [<a href="Bap.Std.AMD64.html">Bap.Std.AMD64</a>]</td>
@@ -1577,7 +1829,8 @@ returns the left hand side of a definition
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALlongest_match">longest_match</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
-<code class="code">longest_match trie key</code>
+<code class="code">longest_match trie k</code> find the longest key in a <code class="code">trie</code> that
+        is a substring of <code class="code">k</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Byteweight.Corpus.html#VALlook">look</a> [<a href="Bap.Std.Byteweight.Corpus.html">Bap.Std.Byteweight.Corpus</a>]</td>
@@ -1729,9 +1982,29 @@ Mark something as marked
 Memory
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALmem">mem</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">mem e g</code> is true if edge <code class="code">e</code> was inserted in graph <code class="code">g</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALmem">mem</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">mem node graph</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">node</code> is part of <code class="code">graph</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALmem">mem</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">mem table mem</code> is true if table contains mem region <code class="code">mem</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Group.html#VALmem">mem</a> [<a href="Bap.Std.Group.html">Bap.Std.Group</a>]</td>
+<td><div class="info">
+<code class="code">mem group x</code> checks membership of <code class="code">x</code> in a given group.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Frontier.html#VALmem">mem</a> [<a href="Bap.Std.Frontier.html">Bap.Std.Frontier</a>]</td>
+<td><div class="info">
+<code class="code">mem f x y</code> is true if <code class="code">y</code> is in a frontier of <code class="code">x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Dict.html#VALmem">mem</a> [<a href="Bap.Std.Dict.html">Bap.Std.Dict</a>]</td>
@@ -1850,7 +2123,7 @@ returns a sequence of memory regions occupied by the given
 </td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALname">name</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">name t</code> returns name of the term
+<code class="code">name t</code> returns a string representation of a term <code class="code">t</code> identity
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALname">name</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
@@ -1904,6 +2177,13 @@ name of a register
 <td></td></tr>
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALnf">nf</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Predicate.html#VALnode">node</a> [<a href="Bap.Std.Predicate.html">Bap.Std.Predicate</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALnodes">nodes</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">nodes g</code> returns all nodes of graph <code class="code">g</code> in unspecified order
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Trie.html#VALnormalize">normalize</a> [<a href="Bap.Std.Bil.Trie.html">Bap.Std.Bil.Trie</a>]</td>
 <td><div class="info">
 <code class="code">normalize ?subst bil</code> normalize BIL.
@@ -1934,14 +2214,41 @@ name of a register
         efficient.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALnth">nth</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">nth t p n</code> returns <code class="code">n</code>'th <code class="code">t</code>-term of parent <code class="code">p</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Vector.html#VALnth">nth</a> [<a href="Bap.Std.Vector.html">Bap.Std.Vector</a>]</td>
 <td><div class="info">
 <code class="code">nth vec n</code> returns <code class="code">n</code>'th element of vector <code class="code">vec</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALnth_exn">nth_exn</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">nth_exn t p n</code> same as <code class="code">nth</code>, but raises exception if <code class="code">n</code> is
+        not a valid position number.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.Key.html#VALnth_token">nth_token</a> [<a href="Bap.Std.Trie.Key.html">Bap.Std.Trie.Key</a>]</td>
 <td><div class="info">
 <code class="code">nth_token key n</code> the <code class="code">n</code>'th token of key.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALnumber_of_edges">number_of_edges</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">number_of_edges g</code> returns the amount of edges in a graph <code class="code">g</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Partition.html#VALnumber_of_groups">number_of_groups</a> [<a href="Bap.Std.Partition.html">Bap.Std.Partition</a>]</td>
+<td><div class="info">
+<code class="code">number_of_groups p</code> returns the amount of groups in a given
+        partitioning <code class="code">p</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graph.html#VALnumber_of_nodes">number_of_nodes</a> [<a href="Bap.Std.Graph.html">Bap.Std.Graph</a>]</td>
+<td><div class="info">
+<code class="code">number_of_nodes g</code> returns the amount of nodes in a graph <code class="code">g</code>
 </div>
 </td></tr>
 <tr><td align="left"><br>O</td></tr>
@@ -1968,6 +2275,12 @@ Creating
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_bool">of_bool</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Partition.html#VALof_equiv">of_equiv</a> [<a href="Bap.Std.Partition.html">Bap.Std.Partition</a>]</td>
+<td><div class="info">
+<code class="code">of_equiv p n</code> rebuilds a group from an equivalence class
+        ordinal number.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALof_file">of_file</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALof_int">of_int</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
@@ -2026,6 +2339,11 @@ Creating
 Constructors
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.html#VALof_sub">of_sub</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td><div class="info">
+<code class="code">of_sub sub</code> builds a graph from a give subroutine term.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALof_word_size">of_word_size</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
 <td><div class="info">
 <code class="code">of_word_size w</code> creates a lifter for a specified word size
@@ -2058,10 +2376,20 @@ instruction operands
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALops">ops</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALoutputs">outputs</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">outputs node graph</code> is outcomming edges of a <code class="code">node</code> in <code class="code">graph</code>
+</div>
+</td></tr>
 <tr><td align="left"><br>P</td></tr>
 <tr><td><a href="Bap.Std.Program.html#VALparent">parent</a> [<a href="Bap.Std.Program.html">Bap.Std.Program</a>]</td>
 <td><div class="info">
 <code class="code">parent t program id</code> is <code class="code"><span class="constructor">Some</span> p</code> iff <code class="code">find t p id &lt;&gt; <span class="constructor">None</span></code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALparent">parent</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">parent tree n</code> returns an immediate parent of a given node.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALpasses">passes</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
@@ -2101,8 +2429,31 @@ phi
 <code class="code">pos buf</code> starting position
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALpostorder_traverse">postorder_traverse</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+returns a sequence of nodes in post order
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Byteweight.S.html#VALpp">pp</a> [<a href="Bap.Std.Byteweight.S.html">Bap.Std.Byteweight.S</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALpp">pp</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">pp pp_elt</code> constructs a pretty based on element printer
+        <code class="code">pp_elt</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Frontier.html#VALpp">pp</a> [<a href="Bap.Std.Frontier.html">Bap.Std.Frontier</a>]</td>
+<td><div class="info">
+<code class="code">pp pp_elt</code> instantiates a pretty-printer for a given
+        element.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALpp">pp</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">pp pp_elt</code> creates a pretty-printer for a node, based on
+        element's pretty-printer <code class="code">pp_elt</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.S.html#VALpp">pp</a> [<a href="Bap.Std.Value.S.html">Bap.Std.Value.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALpp">pp</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
@@ -2146,6 +2497,12 @@ synonym for <code class="code">str</code>
 <code class="code">preds blk</code> block immediate predecessors in unspecified order.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALpreds">preds</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">preds node graph</code> returns a sequence of predecessors of a
+        <code class="code">node</code> in a given <code class="code">graph</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALpreds">preds</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 current set of predicates
@@ -2170,7 +2527,7 @@ current set of predicates
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALprogram">program</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
-<code class="code">program project</code> returns a program lifted into <a href="Bap.Std.html#sema">IR</a>
+<code class="code">program project</code> returns a program lifted into IR
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALprune_unreferenced">prune_unreferenced</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -2314,11 +2671,22 @@ A command in python language
         requires arguments for a side effect.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALremove">remove</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">remove e g</code> returns a graph <code class="code">g'</code> that doesn't contain edge <code class="code">e</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALremove">remove</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">remove n g</code> returns a new graph <code class="code">g'</code>, that is structurally
+        the same as <code class="code">g</code> but doesn't contain node <code class="code">n</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Phi.html#VALremove">remove</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALremove">remove</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">remove t p id</code> returns a block that doesn't contain element
+<code class="code">remove t p id</code> returns a term that doesn't contain element
         with the given <code class="code">id</code>
 </div>
 </td></tr>
@@ -2385,6 +2753,11 @@ returns call continuation
 <td><div class="info">
 <code class="code">rev_map arity t tab</code> creates a reverse mapping from values of
         typeclass <code class="code">t</code> stored in table <code class="code">tab</code> to memory regions.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALreverse_postorder_traverse">reverse_postorder_traverse</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+returns a sequence of nodes in reverse post order.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Def.html#VALrhs">rhs</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
@@ -2508,6 +2881,12 @@ Tags
 A command in shell language
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALshortest_path">shortest_path</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">shortest_path (<span class="keyword">module</span> <span class="constructor">G</span>) ?weight ?rev g u v</code>
+        Find a shortest path from node <code class="code">u</code> to node <code class="code">v</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsigned">signed</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALsigned">signed</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
@@ -2590,6 +2969,16 @@ returns a blocks of memory that was visited during the
 </td></tr>
 <tr><td><a href="Bap.Std.ARM.CPU.html#VALspsr">spsr</a> [<a href="Bap.Std.ARM.CPU.html">Bap.Std.ARM.CPU</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALsrc">src</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">src e</code> returns a source of an edge <code class="code">e</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALstart">start</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">start p</code> the starting edge of a path <code class="code">p</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALstep">step</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 continue disassembling from the current point.
@@ -2630,6 +3019,12 @@ enables storing instruction kinds information
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALstring_of_value">string_of_value</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALstrong_components">strong_components</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">strong_components (<span class="keyword">module</span> <span class="constructor">G</span>) g</code> partition graph into strongly
+        connected components.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALsub">sub</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALsub_t">sub_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -2678,6 +3073,12 @@ Name of a subroutine
 <td><div class="info">
 <code class="code">succs blk</code> block immediate successors in the order of
         execution, .
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALsuccs">succs</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">succs node graph</code> returns a sequence of successors of a
+        <code class="code">node</code> in a given <code class="code">graph</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbol">symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -2731,7 +3132,13 @@ Symbolic name of a target
 </td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALtid">tid</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
-<code class="code">tid entity</code> returns the unique tidentifier of the <code class="code">entity</code>
+<code class="code">tid entity</code> returns a unique identifier of the <code class="code">entity</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.Edge.html#VALtid">tid</a> [<a href="Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a>]</td>
+<td><div class="info">
+<code class="code">tid e</code> returns a tid of a jmp term that is associated
+            with an edge <code class="code">e</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALtimes">times</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -2762,6 +3169,18 @@ Symbolic name of a target
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_chars">to_chars</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALto_dot">to_dot</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">to_dot (<span class="keyword">module</span> <span class="constructor">G</span>) ~filename:<span class="string">"graph.dot"</span> g</code> dumps graph <code class="code">g</code>
+        using <code class="code">dot</code> format.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Group.html#VALto_equiv">to_equiv</a> [<a href="Bap.Std.Group.html">Bap.Std.Group</a>]</td>
+<td><div class="info">
+<code class="code">to_equiv g</code> returns the ordinal number representing the
+        particular group <code class="code">g</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Fmm.html#VALto_float">to_float</a> [<a href="Bap.Std.Fmm.html">Bap.Std.Fmm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALto_graph">to_graph</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
@@ -2776,6 +3195,8 @@ Symbolic name of a target
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALto_int">to_int</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Imm.html#VALto_int">to_int</a> [<a href="Bap.Std.Imm.html">Bap.Std.Imm</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Equiv.html#VALto_int">to_int</a> [<a href="Bap.Std.Equiv.html">Bap.Std.Equiv</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_int">to_int</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
@@ -2814,6 +3235,17 @@ Conversions to built-in integers
         sequence of key-value pairs.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Frontier.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Frontier.html">Bap.Std.Frontier</a>]</td>
+<td><div class="info">
+<code class="code">to_sequence frontier</code> enumerates all elements of a <code class="code">frontier</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Tree.html#VALto_sequence">to_sequence</a> [<a href="Bap.Std.Tree.html">Bap.Std.Tree</a>]</td>
+<td><div class="info">
+<code class="code">to_sequence tree</code> enumerates nodes of a <code class="code">tree</code> in an
+        unspecified order.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.ABI.html#VALto_string">to_string</a> [<a href="Bap.Std.ABI.html">Bap.Std.ABI</a>]</td>
 <td><div class="info">
 registers given ABI under the given target
@@ -2824,11 +3256,22 @@ registers given ABI under the given target
 <code class="code">to_string x</code> returns a human-readable representation of <code class="code">x</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.Ir.html#VALto_sub">to_sub</a> [<a href="Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a>]</td>
+<td><div class="info">
+<code class="code">to_sub g</code> projects a graph into a subroutine.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Imm.html#VALto_word">to_word</a> [<a href="Bap.Std.Imm.html">Bap.Std.Imm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.Key.html#VALtoken_hash">token_hash</a> [<a href="Bap.Std.Trie.Key.html">Bap.Std.Trie.Key</a>]</td>
 <td><div class="info">
 <code class="code">hash_token tok</code> efficient hash function for the <code class="code">token</code> type.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Group.html#VALtop">top</a> [<a href="Bap.Std.Group.html">Bap.Std.Group</a>]</td>
+<td><div class="info">
+<code class="code">top group</code> returns the top element of a group also known as a
+        representative element.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Byteweight.S.html#VALtrain">train</a> [<a href="Bap.Std.Byteweight.S.html">Bap.Std.Byteweight.S</a>]</td>
@@ -2846,6 +3289,18 @@ registers given ABI under the given target
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunsigned">unsigned</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Edge.html#VALupdate">update</a> [<a href="Bap.Std.Edge.html">Bap.Std.Edge</a>]</td>
+<td><div class="info">
+<code class="code">update e g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then update it
+        with a new value.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Node.html#VALupdate">update</a> [<a href="Bap.Std.Node.html">Bap.Std.Node</a>]</td>
+<td><div class="info">
+<code class="code">update n g</code> updates node <code class="code">n</code> in a graph <code class="code">g</code> if <code class="code">n</code> was
+        contained in <code class="code">g</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Phi.html#VALupdate">update</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
 <td><div class="info">
 <code class="code">update phi label exp</code> associates expression <code class="code">exp</code> with a
@@ -2889,7 +3344,19 @@ registers given ABI under the given target
         that represents the specified region of memory <code class="code">mem</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphlib.html#VALview">view</a> [<a href="Bap.Std.Graphlib.html">Bap.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code">view (<span class="keyword">module</span> <span class="constructor">G</span>) ~node ~edge ~node_label ~edge_label</code>
+        creates a proxy module, that will transform back and
+        forward elements of graph, using corresponding functions.
+</div>
+</td></tr>
 <tr><td align="left"><br>W</td></tr>
+<tr><td><a href="Bap.Std.Path.html#VALweight">weight</a> [<a href="Bap.Std.Path.html">Bap.Std.Path</a>]</td>
+<td><div class="info">
+<code class="code">weight p</code> total weight of a path
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALweight">weight</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Give a weight

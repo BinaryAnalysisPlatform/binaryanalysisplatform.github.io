@@ -58,7 +58,9 @@ a key type that is used to lookup data<br>
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> 'a option</code></pre>
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> unit</code></pre>
 <pre><span id="VALlongest_match"><span class="keyword">val</span> longest_match</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> (int * 'a) option</code></pre><div class="info ">
-<code class="code">longest_match trie key</code><br>
+<code class="code">longest_match trie k</code> find the longest key in a <code class="code">trie</code> that
+        is a substring of <code class="code">k</code>. Returns a pair - a length of matched
+        key and data, associated with that key<br>
 </div>
 
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> int</code></pre><div class="info ">

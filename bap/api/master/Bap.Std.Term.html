@@ -16,9 +16,7 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Example" rel="Section" href="#2_Example">
-<link title="Attributes" rel="Section" href="#2_Attributes">
-<title>Bap.Std.Term</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Term</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Tid.html" title="Bap.Std.Tid">Previous</a>
@@ -31,47 +29,6 @@
 IR language term.<br>
 </div>
 <hr width="100%">
-<br>
-Term is a building block of the
-        <a href="Bap.Std.html#sema">Intermediate Representation</a> of the binary program.
-<p>
-
-        This module provides functions that are overloaded for
-        different term classes. Term class is denoted with an explicit
-        instance of type <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>b)cls</code>, where <code class="code"><span class="keywordsign">'</span>a</code> stands for the parent
-        term and <code class="code"><span class="keywordsign">'</span>b</code> for the child term.
-<p>
-
-        <h2 id="2_Example">Example</h2>
-<p>
-
-        Give a block
-<p>
-
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Blk</span>.create&nbsp;();;</code></pre>
-        <pre class="verbatim">val b : Blk.t =
-        00000003:</pre>
-<p>
-
-        We can append a definition to it with an overloaded
-        <code class="code"><span class="constructor">Term</span>.append</code>
-<p>
-
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.append&nbsp;def_t&nbsp;b&nbsp;d_1;;</code></pre>
-        <pre class="verbatim">val b : blk term =
-        00000003:
-        00000001: x := y + z
-       </pre>
-<p>
-
-        Update a value of a definition in the block:
-<p>
-
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.update&nbsp;def_t&nbsp;b&nbsp;d_2;;</code></pre>
-        <pre class="verbatim">val b : blk term =
-        00000003:
-        00000001: x := true
-       </pre><br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 <div class="info ">
@@ -82,7 +39,8 @@ term type<br>
 <pre><span id="VALclone"><span class="keyword">val</span> clone</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">clone term</code> creates an object with a fresh new identifier
         that has the same contents as <code class="code">term</code>, i.e., that is
-        syntactically the same.<br>
+        syntactically the same. The clone operation is shallow, all
+        subterms of <code class="code">term</code> are unchanged.<br>
 </div>
 
 <pre><span id="VALsame"><span class="keyword">val</span> same</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
@@ -91,15 +49,15 @@ term type<br>
 </div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">name t</code> returns name of the term<br>
+<code class="code">name t</code> returns a string representation of a term <code class="code">t</code> identity<br>
 </div>
 
 <pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
-<code class="code">tid entity</code> returns the unique tidentifier of the <code class="code">entity</code><br>
+<code class="code">tid entity</code> returns a unique identifier of the <code class="code">entity</code><br>
 </div>
 
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">length t p</code> returns the amount of terms of type <code class="code">t</code> in the
+<code class="code">length t p</code> returns an amount of terms of <code class="code">t</code> class in a
         parent term <code class="code">p</code><br>
 </div>
 
@@ -108,8 +66,8 @@ term type<br>
         such that <code class="code">tid c = id</code>.<br>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
-<code class="code">find t p id</code> like <a href="Bap.Std.Term.html#VALfind"><code class="code"><span class="constructor">Term</span>.find</code></a> but raises <code class="code"><span class="constructor">Not_found</span></code> if nothing
+<pre><span id="VALfind_exn"><span class="keyword">val</span> find_exn</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">find_exn t p id</code> like <a href="Bap.Std.Term.html#VALfind"><code class="code"><span class="constructor">Term</span>.find</code></a> but raises <code class="code"><span class="constructor">Not_found</span></code> if nothing
         is found.<br>
 </div>
 
@@ -119,7 +77,7 @@ term type<br>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">remove t p id</code> returns a block that doesn't contain element
+<code class="code">remove t p id</code> returns a term that doesn't contain element
         with the given <code class="code">id</code><br>
 </div>
 
@@ -218,17 +176,15 @@ term type<br>
         doesn't occur in the <code class="code">p</code> then <code class="code">p</code> is returned as is.  In all
         cases, the returned term has the same <code class="code">tid</code> as <code class="code">p</code>.<br>
 </div>
-<br>
-<h2 id="2_Attributes">Attributes</h2>
-<p>
 
-        Terms attribute set can be extended, using <a href="Bap.Std.Value.html">universal
-        values</a>. A value of type <code class="code"><span class="keywordsign">'</span>a tag</code> is used to denote an
-        attribute of type <code class="code"><span class="keywordsign">'</span>a</code> with the name <code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span>.name tag</code>.
-<p>
+<pre><span id="VALnth"><span class="keyword">val</span> nth</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> int -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">nth t p n</code> returns <code class="code">n</code>'th <code class="code">t</code>-term of parent <code class="code">p</code>.<br>
+</div>
 
-        With the provided interface Term can be treated as an
-        extensible record.<br>
+<pre><span id="VALnth_exn"><span class="keyword">val</span> nth_exn</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> int -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">nth_exn t p n</code> same as <code class="code">nth</code>, but raises exception if <code class="code">n</code> is
+        not a valid position number.<br>
+</div>
 
 <pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set_attr term attr value</code> attaches an <code class="code">value</code> to attribute
