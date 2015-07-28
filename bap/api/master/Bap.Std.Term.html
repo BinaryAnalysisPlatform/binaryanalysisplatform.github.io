@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Tid.html">
 <link rel="next" href="Bap.Std.Program.html">
@@ -16,7 +16,9 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Term</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Example" rel="Section" href="#2_Example">
+<link title="Attributes" rel="Section" href="#2_Attributes">
+<title>Bap.Std.Term</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Tid.html" title="Bap.Std.Tid">Previous</a>
@@ -29,6 +31,47 @@
 IR language term.<br>
 </div>
 <hr width="100%">
+<br>
+Term is a building block of the
+        <a href="Bap.Std.html#sema">Intermediate Representation</a> of the binary program.
+<p>
+
+        This module provides functions that are overloaded for
+        different term classes. Term class is denoted with an explicit
+        instance of type <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>b)cls</code>, where <code class="code"><span class="keywordsign">'</span>a</code> stands for the parent
+        term and <code class="code"><span class="keywordsign">'</span>b</code> for the child term.
+<p>
+
+        <h2 id="2_Example">Example</h2>
+<p>
+
+        Give a block
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Blk</span>.create&nbsp;();;</code></pre>
+        <pre class="verbatim">val b : Blk.t =
+          00000003:</pre>
+<p>
+
+        We can append a definition to it with an overloaded
+        <code class="code"><span class="constructor">Term</span>.append</code>
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.append&nbsp;def_t&nbsp;b&nbsp;d_1;;</code></pre>
+        <pre class="verbatim">val b : blk term =
+          00000003:
+          00000001: x := y + z
+         </pre>
+<p>
+
+        Update a value of a definition in the block:
+<p>
+
+        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.update&nbsp;def_t&nbsp;b&nbsp;d_2;;</code></pre>
+        <pre class="verbatim">val b : blk term =
+          00000003:
+          00000001: x := true
+         </pre><br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 <div class="info ">
@@ -185,6 +228,17 @@ term type<br>
 <code class="code">nth_exn t p n</code> same as <code class="code">nth</code>, but raises exception if <code class="code">n</code> is
         not a valid position number.<br>
 </div>
+<br>
+<h2 id="2_Attributes">Attributes</h2>
+<p>
+
+        Terms attribute set can be extended, using <a href="Bap.Std.Value.html">universal
+        values</a>. A value of type <code class="code"><span class="keywordsign">'</span>a tag</code> is used to denote an
+        attribute of type <code class="code"><span class="keywordsign">'</span>a</code> with the name <code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span>.name tag</code>.
+<p>
+
+        With the provided interface Term can be treated as an
+        extensible record.<br>
 
 <pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set_attr term attr value</code> attaches an <code class="code">value</code> to attribute

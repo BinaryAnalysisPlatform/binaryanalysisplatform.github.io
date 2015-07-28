@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Graphlib.Mapper.html">
 <link rel="next" href="Bap.Std.Graphlib.Char.html">
@@ -25,7 +25,7 @@
 </div>
 <h1>Functor <a href="type_Bap.Std.Graphlib.Make.html">Bap.Std.Graphlib.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code>: <code class="type">Graph</code><code class="type"> 
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
       with type node = Node.t
        and type Node.label = Node.t
        and type Edge.label = Edge.t</code></pre><div class="info module top">
@@ -53,4 +53,128 @@
 </tr>
 </table>
 <hr width="100%">
+<br>
+Graph is mathematical data structure that is used to represent
+        relations between elements of a set. Usually, graph is defined
+        as an ordered pair of two sets - a set of vertices and a set
+        of edges that is a 2-subset of the set of nodes,
+<p>
+
+        <pre class="verbatim">G = (V,E).</pre>
+<p>
+
+        In Graphlib vertices (called nodes in our parlance) and edges
+        are labeled. That means that we can associate data with edges
+        and nodes. Thus graph should be considered as an associative
+        data structure. And from mathematics perspective graph is
+        represented as an ordered 6-tuple, consisting of a set of nodes,
+        edges, node labels, edge labels, and two functions that maps
+        nodes and edges to their corresponding labels:
+<p>
+
+        <pre class="verbatim">G = (N, E, N', E', ν : N -&gt; N', ε : E -&gt; E'),</pre>
+<p>
+
+        where set <code class="code"><span class="constructor">E</span></code> is a subset of <code class="code"> N × N </code>.
+<p>
+
+        With this general framework an unlabeled graph can be
+        represented as:
+<p>
+
+        <pre class="verbatim">G = (N, E, N, E, ν = λx.x, ε = λx.x)</pre>
+<p>
+
+        Another possible representation of an unlabeled graph would be:
+<p>
+
+        <pre class="verbatim">G = (N, E, {u}, {v}, ν = λx.u, ε = λx.v).</pre>
+<p>
+
+        Implementations are free to choose any suitable representation
+        of graph data structure, if it conforms to the graph signature
+        and all operations follows the described semantics and
+        properties of a graph structure are preserved.
+<p>
+
+        The axiomatic semantics of operations on a graph is described by
+        a set of postconditions. To describe the semantics of an
+        operation in terms of input and output arguments, we project
+        graphs to its fields with the following notation
+        <code class="code">&lt;field&gt;(&lt;graph&gt;)</code>, e.g., <code class="code"><span class="constructor">N</span>(g)</code> is a set of nodes of graph <code class="code">g</code>.
+<p>
+
+        Only the strongest postcondition is specified, e.g., if it
+        specified that <code class="code">νn = l</code>, than it also means that
+<p>
+
+        <code class="code">n ∈ N ∧ ∃u((u,v) ∈ E ∨ (v,u) ∈ E) ∧ l ∈ N' ∧ ...</code>
+<p>
+
+        In other words the structure <code class="code"><span class="constructor">G</span></code> of the graph G is an invariant
+        that is always preserved.<br>
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
+type of graph<br>
+</div>
+
+
+<pre><span id="TYPEnode"><span class="keyword">type</span> <code class="type"></code>node</span> </pre>
+<div class="info ">
+type of nodes<br>
+</div>
+
+
+<pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> </pre>
+<div class="info ">
+type of edges<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graph.Node.html">Node</a>: <code class="type"><a href="Bap.Std.Node.html">Node</a></code><code class="type">  with type graph = t
+                        and type t = node
+                        and type edge = edge</code></pre><div class="info">
+Graph nodes.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graph.Edge.html">Edge</a>: <code class="type"><a href="Bap.Std.Edge.html">Edge</a></code><code class="type">  with type graph = t
+                        and type t = edge
+                        and type node = node</code></pre><div class="info">
+Graph edges
+</div>
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Bap.Std.Graph.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">empty</code> is an empty graph<br>
+</div>
+
+<pre><span id="VALnodes"><span class="keyword">val</span> nodes</span> : <code class="type"><a href="Bap.Std.Graph.html#TYPEt">t</a> -> <a href="Bap.Std.Graph.html#TYPEnode">node</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">nodes g</code> returns all nodes of graph <code class="code">g</code> in an unspecified order<br>
+</div>
+
+<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type"><a href="Bap.Std.Graph.html#TYPEt">t</a> -> <a href="Bap.Std.Graph.html#TYPEedge">edge</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">edges g</code> returns all edges of graph <code class="code">g</code> in an unspecified order<br>
+</div>
+
+<pre><span id="VALis_directed"><span class="keyword">val</span> is_directed</span> : <code class="type">bool</code></pre><div class="info ">
+<code class="code">is_directed</code> is true if graph is a directed graph.<br>
+</div>
+
+<pre><span id="VALnumber_of_edges"><span class="keyword">val</span> number_of_edges</span> : <code class="type"><a href="Bap.Std.Graph.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">number_of_edges g</code> returns the size of a graph <code class="code">g</code>.<br>
+</div>
+
+<pre><span id="VALnumber_of_nodes"><span class="keyword">val</span> number_of_nodes</span> : <code class="type"><a href="Bap.Std.Graph.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">number_of_nodes g</code> returns the order of a graph <code class="code">g</code><br>
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Opaque.html">Bap.Std.Opaque</a></pre>
+<div class="info ">
+All graphs provides a common interface for any opaque data structure<br>
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Printable.html">Bap.Std.Printable</a></pre>
+<div class="info ">
+All graphs are printable.<br>
+</div>
 </body></html>

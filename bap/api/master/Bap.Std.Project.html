@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Label.html">
 <link rel="next" href="Bap.Std.Dwarf.html">
@@ -16,7 +16,9 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Project</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Extensible record" rel="Section" href="#3_Extensiblerecord">
+<link title="Registering and running passes" rel="Section" href="#3_Registeringandrunningpasses">
+<title>Bap.Std.Project</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Label.html" title="Bap.Std.Label">Previous</a>
@@ -29,6 +31,10 @@
 Target of analysis.<br>
 </div>
 <hr width="100%">
+<br>
+A project groups together all the information recovered from
+        the underlying binary. It is also used for exchanging
+        information between <a href="Bap.Std.html#project">passes</a>.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
@@ -79,7 +85,7 @@ Target of analysis.<br>
 </div>
 
 <pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
-<code class="code">program project</code> returns a program lifted into IR<br>
+<code class="code">program project</code> returns a program lifted into <a href="Bap.Std.html#sema">IR</a><br>
 </div>
 
 <pre><span id="VALwith_program"><span class="keyword">val</span> with_program</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
@@ -151,6 +157,15 @@ Target of analysis.<br>
         recommended to use <a href="Bap.Std.Project.html#VALtag_memory"><code class="code"><span class="constructor">Project</span>.tag_memory</code></a> and <a href="Bap.Std.Project.html#VALsubstitute"><code class="code"><span class="constructor">Project</span>.substitute</code></a> instead of this
         function, if possible.<br>
 </div>
+<br>
+<h3 id="3_Extensiblerecord">Extensible record</h3>
+<p>
+
+        Project can also be viewed as an extensible record, where one
+        can store arbitrary values. Example,
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;p&nbsp;=&nbsp;<span class="constructor">Project</span>.set&nbsp;project&nbsp;color&nbsp;<span class="keywordsign">`</span>green<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        This will set field <code class="code">color</code> to a value <code class="code"><span class="keywordsign">`</span>green</code>.<br>
 
 <pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.Project.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Project.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set project field value</code> sets a <code class="code">field</code> to a give value. If
@@ -168,6 +183,12 @@ Target of analysis.<br>
         for fields of type unit, that actually isomorphic to bool fields,
         e.g., <code class="code"><span class="keyword">if</span> <span class="constructor">Project</span>.has project mark</code><br>
 </div>
+<br>
+<h3 id="3_Registeringandrunningpasses">Registering and running passes</h3>
+<p>
+
+        To add new pass one of the following <code class="code">register_*</code> functions
+        should be called.<br>
 
 <pre><span id="TYPEregister"><span class="keyword">type</span> <code class="type">'a</code> register</span> = <code class="type">?deps:string list -> string -> 'a -> unit</code> </pre>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="next" href="Bap.Std.Graph.Edge.html">
 <link rel="Up" href="Bap.Std.Graph.html">
@@ -26,9 +26,12 @@
 <pre><span class="keyword">module</span> Node: <code class="type"><a href="Bap.Std.Node.html">Node</a></code><code class="type">  with type graph = t
                         and type t = node
                         and type edge = edge</code></pre><div class="info module top">
-Node interface.<br>
+Graph nodes.<br>
 </div>
 <hr width="100%">
+<br>
+Semantics of operations is denoted using mathematical model,
+        described in <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
@@ -45,13 +48,15 @@ node type is opaque<br>
 <pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.Node.html#TYPElabel">label</a> -> <a href="Bap.Std.Node.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlabel"><span class="keyword">val</span> label</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPElabel">label</a></code></pre><div class="info ">
-<code class="code">label node</code> returns a node's label<br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.Node.html#TYPElabel">label</a> -> <a href="Bap.Std.Node.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create label</code> creates a new node, and associates it with a
+        given <code class="code">label</code>.<br>
 </div>
 
+<pre><span id="VALlabel"><span class="keyword">val</span> label</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPElabel">label</a></code></pre>
 <pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">mem node graph</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">node</code> is part of <code class="code">graph</code><br>
+<code class="code">mem n g</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">n</code> is a member of nodes <code class="code"><span class="constructor">N</span></code> of graph
+        <code class="code">g</code>.<br>
 </div>
 
 <pre><span id="VALsuccs"><span class="keyword">val</span> succs</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
@@ -72,37 +77,53 @@ node type is opaque<br>
 <code class="code">outputs node graph</code> is outcomming edges of a <code class="code">node</code> in <code class="code">graph</code><br>
 </div>
 
-<pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">insert node graph</code> returns new graph that contains <code class="code">node</code> as
-        well as all other nodes of old <code class="code">graph</code>.<br>
+<pre><span id="VALdegree"><span class="keyword">val</span> degree</span> : <code class="type">?dir:[ `In | `Out ] -> <a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> int</code></pre><div class="info ">
+<code class="code">degree ?dir n</code> when <code class="code">in_or_out</code> is <code class="code"><span class="keywordsign">`</span><span class="constructor">In</span></code> then returns
+        the amount of incomming edges, otherwise returns the amount of
+        outcomming edges. If parameter <code class="code">dir</code> is left absent, then
+        return the amount of adjacent nodes (i.e., a sum of incomming
+        and outcomming edges).<br>
 </div>
 
-<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">update n g</code> updates node <code class="code">n</code> in a graph <code class="code">g</code> if <code class="code">n</code> was
-        contained in <code class="code">g</code>. Otherwise returns <code class="code">g</code> unchanged.
-        Note: this operation makes sense for nodes, that are not
-        structurally compared, and have some fields, that doesn't
-        affect the equality of a node.<br>
+<pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
+<code class="code">insert n g</code> returns new graph <code class="code">g'</code> that has a set of nodes
+        <code class="code"><span class="constructor">N</span></code> extended with node <code class="code">n</code>. If <code class="code"><span class="constructor">N</span></code> was contained <code class="code">n</code>, then
+        the <code class="code">g == g'</code>. Use <a href="Bap.Std.Node.html#VALupdate"><code class="code"><span class="constructor">Node</span>.update</code></a> to change existing nodes.
+<p>
+
+        Postconditions: <pre class="verbatim">          - N(g') = N(g) ∪ {n}.
+         </pre><br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Node.html#TYPElabel">label</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
+<code class="code">update n l g</code> if node <code class="code">n</code> is in <code class="code"><span class="constructor">N</span></code> then return a graph <code class="code">g</code>
+        in which node <code class="code">n</code> is associated with label <code class="code">l</code>. If wasn't in
+        the set <code class="code"><span class="constructor">N</span></code> then <code class="code">g</code> is returned unchanged.
+<p>
+
+        Postconditions: <pre class="verbatim">          - n ∉ N(g) -&gt; n ∉ N(g').
+          - n ∈ N(g) → ν(g')n = l.
+         </pre><br>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">remove n g</code> returns a new graph <code class="code">g'</code>, that is structurally
-        the same as <code class="code">g</code> but doesn't contain node <code class="code">n</code><br>
+<code class="code">remove n g</code> returns graph <code class="code">g'</code>, with a node <code class="code">n</code> removed from
+        a set of nodes <code class="code"><span class="constructor">N</span></code>.
+<p>
+
+        Postconditions: <pre class="verbatim">          - E(g) ⊆ E(g')
+          - N(g) ⊆ N(g')
+          - N(g') = N(g) \ {n}.
+         </pre><br>
 </div>
 
 <pre><span id="VALhas_edge"><span class="keyword">val</span> has_edge</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">has_edge x y g</code> is true if there exists such edge in graph
-        <code class="code">g</code> that its destination is <code class="code">y</code> and source is <code class="code">x</code><br>
+<code class="code">has_edge x y g</code> is true iff (x,y) ∈ E.<br>
 </div>
 
 <pre><span id="VALedge"><span class="keyword">val</span> edge</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEedge">edge</a> option</code></pre><div class="info ">
-<code class="code">edge x y g</code> if there is an edge in graph <code class="code">g</code> with source <code class="code">x</code>
-        and destination <code class="code">y</code>, then return it.  Otherwise return <code class="code"><span class="constructor">None</span></code><br>
-</div>
-
-<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type"><a href="Bap.Std.Node.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Node.html#TYPEt">t</a> -> <a href="Bap.Std.Node.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Node.html#TYPEedge">edge</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">edges x y g</code> returns all edges in graph <code class="code">g</code> that have source
-        node <code class="code">x</code> and destination node <code class="code">y</code><br>
+<code class="code">edge x y g</code> if graph <code class="code">g</code> has an edge between nodes <code class="code">x</code> and
+        <code class="code">y</code> then it is returned.<br>
 </div>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Opaque.html">Bap.Std.Opaque</a></pre>

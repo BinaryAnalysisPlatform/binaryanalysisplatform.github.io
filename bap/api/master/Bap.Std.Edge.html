@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Node.html">
 <link rel="next" href="Bap.Std.Graph.html">
@@ -29,6 +29,9 @@
 Interface that every Graph edge should provide<br>
 </div>
 <hr width="100%">
+<br>
+Semantics of operations is denoted using mathematical model,
+        described in <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
@@ -60,21 +63,40 @@ Interface that every Graph edge should provide<br>
 </div>
 
 <pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.Edge.html#TYPEt">t</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">mem e g</code> is true if edge <code class="code">e</code> was inserted in graph <code class="code">g</code><br>
+<code class="code">mem e g</code> is true if <code class="code">e</code> ∈ E.<br>
 </div>
 
 <pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Bap.Std.Edge.html#TYPEt">t</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">insert e g</code> returns a graph <code class="code">g'</code> that has the same structure
-        as <code class="code">g</code> plus a new edge <code class="code">e</code><br>
+<code class="code">insert e g</code> returns a graph <code class="code">g'</code> with a set of edges extended
+        with edge <code class="code">e</code>. If <code class="code">src e</code> or <code class="code">dst e</code> wasn't in the set of nodes
+        <code class="code"><span class="constructor">N</span></code>, then it is extended as well, so that axioms of graph are
+        preserved.
+<p>
+
+        Postconditions: <pre class="verbatim">          - E(g') = E(g) ∪ {e}.
+         </pre><br>
 </div>
 
-<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Edge.html#TYPEt">t</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">update e g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then update it
-        with a new value.<br>
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Edge.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Edge.html#TYPElabel">label</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
+<code class="code">update e l g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then return a
+        new graph <code class="code">g'</code> in which edge <code class="code">e</code> is associated with label <code class="code">l</code>.
+        Otherwise return <code class="code">g</code> unchanged.
+<p>
+
+        Postcondition: <pre class="verbatim">          - E(g) ⊆ E(g')
+          - N(g) ⊆ N(g')
+          - e ∉ E(g) → e ∉ E(g').
+          - e ∈ E(g) → ε(g')e = l.
+         </pre><br>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Edge.html#TYPEt">t</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">remove e g</code> returns a graph <code class="code">g'</code> that doesn't contain edge <code class="code">e</code><br>
+<code class="code">remove e g</code> returns a graph <code class="code">g'</code> that doesn't contain edge
+        <code class="code">e</code>.
+<p>
+
+        Postconditions: <pre class="verbatim">          - E(g') = E(g) \ {e}.
+         </pre><br>
 </div>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Opaque.html">Bap.Std.Opaque</a></pre>

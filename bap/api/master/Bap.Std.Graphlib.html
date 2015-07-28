@@ -2,7 +2,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css" type="text/css">
-<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Equiv.html">
 <link rel="next" href="Bap.Std.Memory.html">
@@ -16,7 +16,8 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Graphlib</title>
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Pre-instantiated graphs" rel="Section" href="#3_Preinstantiatedgraphs">
+<title>Bap.Std.Graphlib</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Equiv.html" title="Bap.Std.Equiv">Previous</a>
@@ -30,6 +31,7 @@ Generic Graph Library<br>
 </div>
 <hr width="100%">
 
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Graphlib.Graph.html">Graph</a> = <code class="type"><a href="Bap.Std.Graph.html">Graph</a></code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(module Bap.Std.Graphlib.Graph with type t = 'c and type Edge.label = 'b and type Node.label = 'a) -><br>       ?nodes:'a list -> ?edges:('a * 'a * 'b) list -> unit -> 'c</code></pre><div class="info ">
 <code class="code">create (<span class="keyword">module</span> <span class="constructor">G</span>) ~nodes ~edges ()</code> creates a graph using
         implementation provided by <code class="code"><span class="keyword">module</span> <span class="constructor">G</span></code>.
@@ -123,9 +125,7 @@ Generic Graph Library<br>
 <p>
 
         An edge in a spanning tree, produced by a depth first walk,
-        can belong to one of the following category (kind):
-<p>
-<ul>
+        can belong to one of the following category (kind):<ul>
 <li>Tree edges constitutes a spanning tree <code class="code"><span class="constructor">T</span></code> of a graph;</li>
 <li>Forward edges go from an ancestor to a descendants in
           a tree <code class="code"><span class="constructor">T</span></code>;</li>
@@ -143,13 +143,13 @@ Generic Graph Library<br>
         a given <code class="code">kind</code> satisfy to the following inequalities:
 <p>
 
-        <pre class="verbatim">          +---------+-----------------+---------------------+
-          | Tree    | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
-          | Forward | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
-          | Back    | pre[x] &gt;= pre[y] | rpost[x] &gt;= rpost[y] |
-          | Cross   | pre[x] &gt; pre[y] | rpost[x] &lt; rpost[y] |
-          +---------+-----------------+---------------------+
-       </pre>
+        <pre class="verbatim">            +---------+-----------------+---------------------+
+            | Tree    | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
+            | Forward | pre[x] &lt; pre[y] | rpost[x] &lt; rpost[y] |
+            | Back    | pre[x] ≥ pre[y] | rpost[x] ≥ rpost[y] |
+            | Cross   | pre[x] &gt; pre[y] | rpost[x] &lt; rpost[y] |
+            +---------+-----------------+---------------------+
+         </pre>
 <p>
 
         Note: since there can be more than one valid order of
@@ -160,7 +160,7 @@ Generic Graph Library<br>
         order.
 <p>
 
-        (** <h3 id="3_Complexity">Complexity</h3>  *)
+        <h3 id="3_Complexity">Complexity</h3>
         The algorithm is linear in time and space (including the stack
         space). In fact, for small graphs it uses stack, but for large
         graphs dynamically switches to a heap storage.</div>
@@ -185,42 +185,40 @@ returns a sequence of nodes in post order<br>
         given graph.
 <p>
 
-        Definition: a _walk_ is a sequence of alternating nodes and
+        Definition: a <b>walk</b> is a sequence of alternating nodes and
         edges, where each edge's endpoints are the preceding and
         following nodes in the sequence.
 <p>
 
-        Definition: a node <code class="code">v</code> is _reachable_ if there exists a walk
+        Definition: a node <code class="code">v</code> is <b>reachable</b> if there exists a walk
         starting from <code class="code">entry</code> and ending with <code class="code">v</code>.
 <p>
 
-        Definition: node <code class="code">u</code> _dominates_ <code class="code">v</code> if <code class="code">u = v</code> or if all walks
+        Definition: node <code class="code">u</code> <b>dominates</b> <code class="code">v</code> if <code class="code">u = v</code> or if all walks
         from <code class="code">entry</code> to <code class="code">v</code> contains <code class="code">u</code>.
 <p>
 
-        Definition: node <code class="code">u</code> _strictly dominates_ <code class="code">v</code> if it dominates
+        Definition: node <code class="code">u</code> <b>strictly dominates</b> <code class="code">v</code> if it dominates
         <code class="code">v</code> and <code class="code">u &lt;&gt; v</code>.
 <p>
 
-        Definition: node <code class="code">u</code> _immediately dominates_ <code class="code">v</code> if it
+        Definition: node <code class="code">u</code> <b>immediately dominates</b> <code class="code">v</code> if it
         strictly dominates <code class="code">v</code> and there is no other node that
         strictly dominates <code class="code">v</code> and is dominated by <code class="code">u</code>.
 <p>
 
         Algorithm computes a dominator tree <code class="code">t</code> that has the following
-        properties:
-<p>
-
-        1) Sets of graph nodes and tree nodes are equal;
-        2) if node <code class="code">u</code> is a parent of node <code class="code">v</code>, then node <code class="code">u</code>
-           immediately dominates node <code class="code">v</code>;
-        3) if node <code class="code">u</code> is an ancestors of node <code class="code">v</code>, then node <code class="code">u</code>
-           strictly dominates node <code class="code">v</code>;
-        4) if node <code class="code">v</code> is a child of node <code class="code">u</code>, then node <code class="code">u</code>
-           immediately dominates node <code class="code">v</code>;
-        5) if node <code class="code">v</code> is a descendant of node <code class="code">u</code>, then node <code class="code">u</code>
-           strictly dominates node <code class="code">v</code>.
-<p>
+        properties:<OL>
+<li>Sets of graph nodes and tree nodes are equal;</li>
+<li>if node <code class="code">u</code> is a parent of node <code class="code">v</code>, then node <code class="code">u</code>
+           immediately dominates node <code class="code">v</code>;</li>
+<li>if node <code class="code">u</code> is an ancestors of node <code class="code">v</code>, then node <code class="code">u</code>
+           strictly dominates node <code class="code">v</code>;</li>
+<li>if node <code class="code">v</code> is a child of node <code class="code">u</code>, then node <code class="code">u</code>
+           immediately dominates node <code class="code">v</code>;</li>
+<li>if node <code class="code">v</code> is a descendant of node <code class="code">u</code>, then node <code class="code">u</code>
+           strictly dominates node <code class="code">v</code>.</li>
+</OL>
 
         If every node of graph <code class="code">g</code> is reachable from a provided
         <code class="code">entry</code> node, then properties (2) - (5) are reversible, i.e.,
@@ -228,20 +226,24 @@ returns a sequence of nodes in post order<br>
         unique.
 <p>
 
-        Lemma: Everything dominates unreachable block.
-        Proof: (by contradiction) suppose there exists a node <code class="code">u</code> that
+        <b>Lemma</b>: Everything dominates unreachable block.
+<p>
+
+        <b>Proof</b>: (by contradiction) suppose there exists a node <code class="code">u</code> that
         doesn't dominate unreachable block <code class="code">v</code>. That means, that there
         exists a path from <code class="code">entry</code> to <code class="code">v</code> that doesn't contain
-        <code class="code">u</code>. But that means, at least, that <code class="code">v</code> is reachable. Qed.
+        <code class="code">u</code>. But that means, at least, that <code class="code">v</code> is reachable. This  is
+        a contradiction with the original statement that <code class="code">v</code> is
+        unreachable. <b>Qed.</b>
 <p>
 
         If some nodes of graph <code class="code">g</code> are unreachable from the provided
-        <code class="code">entry</code> node, then they are be dominated by all other nodes of
-        a graph. It means that the provided system is under
-        constrained and has more then one solution (i.e., there exists
-        more than one tree, that satisfies properties (1) - (5). In
-        current implementation each unreachable node is immediately
-        dominated by the <code class="code">entry</code>, if the <code class="code">entry</code> is in graph.
+        <code class="code">entry</code> node, then they are dominated by all other nodes of a
+        graph. It means that the provided system is under constrained
+        and has more then one solution (i.e., there exists more than
+        one tree, that satisfies properties (1) - (5). In a current
+        implementation each unreachable node is immediately dominated
+        by the <code class="code">entry</code>, if the <code class="code">entry</code> is in graph.
 <p>
 
         To get a post-dominator tree, reverse the graph by passing
@@ -318,7 +320,7 @@ returns a sequence of nodes in post order<br>
         forward elements of graph, using corresponding functions.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code>: <code class="type">Graph.Sig.P</code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code>: <code class="type">Graph.Sig.P</code><code class="type">  with type t = G.t
                    and type V.t = G.node
                    and type E.t = G.edge
                    and type V.label = G.Node.label
@@ -327,7 +329,7 @@ returns a sequence of nodes in post order<br>
         OCamlGraph interface for a persistent graph.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Of_ocamlgraph.html">Of_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph.Sig.P</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Of_ocamlgraph.html">Of_ocamlgraph</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph.Sig.P</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = G.V.t
              and type edge = G.E.t
              and type Node.label = G.V.label
@@ -337,16 +339,16 @@ returns a sequence of nodes in post order<br>
         <code class="code"><span class="constructor">OCamlGraph</span></code> interface.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Filtered.html">Filtered</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
-                        and type edge = G.edge</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Filtered.html">Filtered</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
+                        and type edge = G.edge</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = G.node
              and type edge = G.edge
              and module Node = G.Node
              and module Edge = G.Edge</code></pre><div class="info">
-functorized version of a <code class="code"><span class="constructor">Graphlib</span>.filter</code> function.
+functorized version of a <code class="code">filter</code> function.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Mapper.html">Mapper</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type">Graph</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type">Graph</code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Mapper.html">Mapper</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = N.t
              and type edge = E.t
              and type Node.label = NL.t
@@ -354,7 +356,7 @@ functorized version of a <code class="code"><span class="constructor">Graphlib</
 functorized version of <a href="Bap.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.view</code></a> function.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code>: <code class="type">Graph</code><code class="type"> 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
       with type node = Node.t
        and type Node.label = Node.t
        and type Edge.label = Edge.t</code></pre><div class="info">
@@ -366,6 +368,8 @@ functorized version of <a href="Bap.Std.Graphlib.html#VALview"><code class="code
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Graphlib.Graphs.html">Graphs</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Graphs.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 a common interface for a regular graph.
 </div>
+<br>
+<h3 id="3_Preinstantiatedgraphs">Pre-instantiated graphs</h3><br>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Char.html">Char</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = char</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Int.html">Int</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = int</code></pre>
@@ -378,6 +382,6 @@ a common interface for a regular graph.
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Stmt.html">Stmt</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = stmt</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Tid.html">Tid</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = tid</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.html">Ir</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-IR code as a graph.
+Graph view over IR.
 </div>
 </body></html>
