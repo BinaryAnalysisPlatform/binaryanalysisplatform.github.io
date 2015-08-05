@@ -38,12 +38,17 @@ In the IR model subroutines are not functions, that has a return
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?intent:<a href="Bap.Std.html#TYPEintent">intent</a> -> ?name:string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create ?intent ?name typ</code> creates an argument. If intent is
-        not specified it is left unkown.<br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?intent:<a href="Bap.Std.html#TYPEintent">intent</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ?intent var exp</code> creates an argument. If intent is
+        not specified it is left unknown.<br>
 </div>
 
-<pre><span id="VALvar"><span class="keyword">val</span> var</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
+<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
+<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<code class="code">rhs arg</code> returns an expression to which argument is
+        bound.<br>
+</div>
+
 <pre><span id="VALintent"><span class="keyword">val</span> intent</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEintent">intent</a> option</code></pre><div class="info ">
 <code class="code">intent arg</code> returns the argument intent. The <code class="code"><span class="constructor">None</span></code> value
         denontes unknown intent.<br>

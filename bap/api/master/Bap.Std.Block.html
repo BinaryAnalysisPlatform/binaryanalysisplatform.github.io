@@ -37,32 +37,19 @@ Basic block of machine instructions.<br>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Block_traverse.html">Bap.Std.Block_traverse</a></pre>
 
-<pre><span id="VALdfs"><span class="keyword">val</span> dfs</span> : <code class="type">?order:[ `post | `pre ] -><br>       ?next:(<a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a>) -><br>       ?bound:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> bool) -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">dfs ?next ?bound blk</code> searches from the <code class="code">blk</code> using DFS.
-<p>
-
-        Search can be bound with <code class="code">bound</code>, i.e., the search will not continue
-        on block that has no intersections with the specified bound. By
-        default the search is unbound. Search direction can be also
-        specified by the <code class="code">next</code> parameter. By default search is performed
-        in a forward direction, using <code class="code">succs</code> function. To search in a
-        reverse direction, use <code class="code">preds</code> function. The search result is
-        returned as a lazy sequence. Destinations of the block are visited
-        in the order of execution, e.g., taken branch is visited before
-        non taken. No such guarantee is made for the predecessors or any
-        other function provided as a <code class="code">next</code> arguments, since it is a
-        property of a <code class="code">next</code> function, not the algorithm itsef.<br>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Block.Graph.html">Graph</a>: <code class="type"><a href="Bap.Std.Graph.html">Graph</a></code><code class="type"> 
+      with type node = t
+       and type Node.label = t
+       and type Edge.label = edge</code></pre><div class="info">
+Graph of blocks.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Block.Cfg.html">Cfg</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.Cfg.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A classic control flow graph using OCamlgraph library.
-</div>
-
-<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type">?bound:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> bool) -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.t</code></pre><div class="info ">
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type">?bound:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> bool) -> <a href="Bap.Std.Block.html#TYPEt">t</a> -> Graph.t</code></pre><div class="info ">
 <code class="code">to_graph ?bound entry</code> builds a graph starting with <code class="code">entry</code> and
-        spanning all reachable blocks that are bounded by a memory region
-        <code class="code">bound</code>.<br>
+        spanning all reachable blocks.<br>
 </div>
-<div class="param_info"><code class="code">bound</code> : defaults to infinite memory region.</div>
-
-<pre><span id="VALto_imperative_graph"><span class="keyword">val</span> to_imperative_graph</span> : <code class="type">?bound:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> bool) -><br>       <a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.Cfg.Block.html#TYPEt">Cfg.Block.t</a> * Cfg.Imperative.t</code></pre></body></html>
+<div class="param_info"><code class="code">bound</code> : if specified, then the resulting graph will
+        contain only blocks <code class="code">b</code> for which <code class="code">bound (<span class="constructor">Block</span>.addr b)</code>
+        evaluated to <code class="code"><span class="keyword">true</span></code>. <a href="Bap.Std.Symtab.html#VALcreate_bound"><code class="code"><span class="constructor">Symtab</span>.create_bound</code></a> is an example of
+        such function.</div>
+</body></html>

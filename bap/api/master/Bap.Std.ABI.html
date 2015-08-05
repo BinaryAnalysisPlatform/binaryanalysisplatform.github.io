@@ -58,7 +58,7 @@ Application Binary Interface
 </div>
 <hr width="100%">
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?merge:(<a href="Bap.Std.abi-c.html">abi</a> list -> <a href="Bap.Std.abi-c.html">abi</a>) -><br>       <a href="Bap.Std.Symtab.html#TYPEt">Symtab.t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">Symtab.fn</a> -> <a href="Bap.Std.abi-c.html">abi</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?merge:(<a href="Bap.Std.abi-c.html">abi</a> list -> <a href="Bap.Std.abi-c.html">abi</a>) -><br>       <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.abi-c.html">abi</a></code></pre><div class="info ">
 creates a set of ABI for the provided symbol.
         Until <code class="code">all</code> parameter is set to true the ABI will be
         disambiguated, using <code class="code">choose</code> method. Only equally
@@ -76,8 +76,8 @@ creates a set of ABI for the provided symbol.
 ABI that understands nothing.
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> string list -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> string list -> string</code></pre>
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type"><a href="Bap.Std.html#TYPEabi_constructor">abi_constructor</a> -> unit</code></pre><div class="info ">
 registers given ABI under the given target<br>
 </div>
-
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type"><a href="Bap.Std.html#TYPEabi_constructor">abi_constructor</a> -> unit</code></pre></body></html>
+</body></html>

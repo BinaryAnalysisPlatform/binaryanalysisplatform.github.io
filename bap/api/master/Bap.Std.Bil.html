@@ -216,6 +216,12 @@ AST transformation.
         by expression <code class="code">y</code><br>
 </div>
 
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type">stmt list -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars bil</code> returns a set of free variables in program
+        <code class="code">bil</code>. Variable is considered free if it is not bound in a
+        preceding statement or is not bound with <code class="code"><span class="keyword">let</span></code> expression<br>
+</div>
+
 <pre><span id="VALfold_consts"><span class="keyword">val</span> fold_consts</span> : <code class="type">stmt list -> stmt list</code></pre><div class="info ">
 <code class="code">fold_consts</code> evaluate constant expressions.
         Note: this function performs only one step, and has no loops,

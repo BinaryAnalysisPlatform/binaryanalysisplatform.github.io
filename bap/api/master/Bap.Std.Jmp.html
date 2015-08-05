@@ -85,9 +85,25 @@ Jmp is the only way to transfer control from block to block.
 <code class="code">cond jmp</code> returns the jump guard condition<br>
 </div>
 
+<pre><span id="VALexps"><span class="keyword">val</span> exps</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">exps jmp</code> returns a sequence of expressions occurring in
+        different positions of a jump <code class="code">jmp</code>, e.g., in <code class="code">cond</code>,
+        <code class="code">target</code>, etc.<br>
+</div>
+
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars jmp</code> returns a set of all variables that are free
+        in some expression in the jump <code class="code">jmp</code>.<br>
+</div>
+
 <pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_exp jmp ~f</code> applies <code class="code">f</code> to each expression in a <code class="code">jmp</code>,
         e.g., conditions and indirect labels.<br>
+</div>
+
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute jmp x y</code> substitutes <code class="code">x</code> by <code class="code">y</code> in all expressions
+        that occur in jump <code class="code">jmp</code> expressions.<br>
 </div>
 
 <pre><span id="VALwith_cond"><span class="keyword">val</span> with_cond</span> : <code class="type"><a href="Bap.Std.Jmp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Jmp.html#TYPEt">t</a></code></pre><div class="info ">

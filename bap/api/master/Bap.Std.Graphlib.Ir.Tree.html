@@ -59,6 +59,10 @@ will print to a standard <code class="code">output_channel</code>, useful for us
         <code class="code">printf</code>, <code class="code">fprintf</code>, etc.<br>
 </div>
 
+<pre><span id="VALpp_seq"><span class="keyword">val</span> pp_seq</span> : <code class="type">Format.formatter -> <a href="Bap.Std.Printable.html#TYPEt">t</a> Sequence.t -> unit</code></pre><div class="info ">
+prints a sequence of values of type <code class="code">t</code><br>
+</div>
+
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 <div class="info ">
 this will include <code class="code">pp</code> function from <code class="code"><span class="constructor">Core</span></code> that has type

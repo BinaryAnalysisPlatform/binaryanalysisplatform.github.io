@@ -71,7 +71,11 @@ Union type for all element types<br>
         is the entry.<br>
 </div>
 
-<pre><span id="VALfrom_insn"><span class="keyword">val</span> from_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> list</code></pre>
+<pre><span id="VALfrom_insn"><span class="keyword">val</span> from_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> list</code></pre><div class="info ">
+<code class="code">from_insn insn</code> creates an IR representation of a single
+        machine instruction <code class="code">insn</code>.<br>
+</div>
+
 <pre><span id="VALsplit_while"><span class="keyword">val</span> split_while</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> bool) -> <a href="Bap.Std.Blk.html#TYPEt">t</a> * <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">split_while blk ~f</code> splits <code class="code">blk</code> into two block: the first
         block holds all definitions for which <code class="code">f p</code> is true and has
@@ -135,6 +139,13 @@ Union type for all element types<br>
         parameter allows to skip expressions from a given term kind.<br>
 </div>
 
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?skip:[ `def | `jmp | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute ?skip blk x y</code> substitutes each occurrence of
+        expression <code class="code">x</code> with expression <code class="code">y</code> in block <code class="code">blk</code>. See
+        <a href="Bap.Std.Blk.html#VALmap_exp"><code class="code"><span class="constructor">Blk</span>.map_exp</code></a> for <code class="code">skip</code> parameter. The substitution is performed
+        deeply.<br>
+</div>
+
 <pre><span id="VALmap_lhs"><span class="keyword">val</span> map_lhs</span> : <code class="type">?skip:[ `def | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEvar">var</a>) -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_lhs blk ~f</code> applies <code class="code">f</code> to every left hand side variable
         in def and phi subterms of <code class="code">blk</code>. Parameter <code class="code">skip</code> allows to
@@ -152,14 +163,23 @@ Union type for all element types<br>
         term with left hand side equal to <code class="code">x</code><br>
 </div>
 
-<pre><span id="VALuses_var"><span class="keyword">val</span> uses_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
-<code class="code">uses_var blk x</code> true if variable <code class="code">x</code> occurs on the right
-        hand side of any phi or def term.<br>
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars blk</code> returns a set of variables that occurs free
+        in block <code class="code">blk</code>. A variable is free, if it occurs unbound in the
+        expression and there is no preceding definition of this variable
+        in a block <code class="code">blk</code>.<br>
 </div>
 
-<pre><span id="VALdominated"><span class="keyword">val</span> dominated</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> by:<a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> bool</code></pre><div class="info ">
-<code class="code">dominated blk by:dom def</code> if <code class="code">def</code> is dominated by <code class="code">dom</code> in
-        <code class="code">blk</code>.<br>
+<pre><span id="VALuses_var"><span class="keyword">val</span> uses_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">uses_var blk x</code> true if variable <code class="code">x</code> is in <code class="code">free_vars blk</code>.
+        If you need to call this function on several variables it is
+        better to compute <code class="code">free_vars</code> explicitly and use <code class="code"><span class="constructor">Set</span>.mem</code>
+        function.<br>
+</div>
+
+<pre><span id="VALoccurs"><span class="keyword">val</span> occurs</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -> after:<a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> bool</code></pre><div class="info ">
+<code class="code">occurs blk after:x def</code> if <code class="code">def</code> is occurs after definition
+        <code class="code">def</code> in <code class="code">blk</code>.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Blk.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Blk.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

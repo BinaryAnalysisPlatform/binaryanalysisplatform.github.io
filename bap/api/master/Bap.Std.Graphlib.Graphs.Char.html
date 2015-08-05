@@ -28,66 +28,6 @@
 <pre><span class="keyword">module</span> Char: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graphlib.Graph</a></code><code class="type">  with type node = node
                            and type Node.label = node
                            and type Edge.label = char</code></pre><hr width="100%">
-<br>
-Graph is mathematical data structure that is used to represent
-        relations between elements of a set. Usually, graph is defined
-        as an ordered pair of two sets - a set of vertices and a set
-        of edges that is a 2-subset of the set of nodes,
-<p>
-
-        <pre class="verbatim">G = (V,E).</pre>
-<p>
-
-        In Graphlib vertices (called nodes in our parlance) and edges
-        are labeled. That means that we can associate data with edges
-        and nodes. Thus graph should be considered as an associative
-        data structure. And from mathematics perspective graph is
-        represented as an ordered 6-tuple, consisting of a set of nodes,
-        edges, node labels, edge labels, and two functions that maps
-        nodes and edges to their corresponding labels:
-<p>
-
-        <pre class="verbatim">G = (N, E, N', E', ν : N -&gt; N', ε : E -&gt; E'),</pre>
-<p>
-
-        where set <code class="code"><span class="constructor">E</span></code> is a subset of <code class="code"> N × N </code>.
-<p>
-
-        With this general framework an unlabeled graph can be
-        represented as:
-<p>
-
-        <pre class="verbatim">G = (N, E, N, E, ν = λx.x, ε = λx.x)</pre>
-<p>
-
-        Another possible representation of an unlabeled graph would be:
-<p>
-
-        <pre class="verbatim">G = (N, E, {u}, {v}, ν = λx.u, ε = λx.v).</pre>
-<p>
-
-        Implementations are free to choose any suitable representation
-        of graph data structure, if it conforms to the graph signature
-        and all operations follows the described semantics and
-        properties of a graph structure are preserved.
-<p>
-
-        The axiomatic semantics of operations on a graph is described by
-        a set of postconditions. To describe the semantics of an
-        operation in terms of input and output arguments, we project
-        graphs to its fields with the following notation
-        <code class="code">&lt;field&gt;(&lt;graph&gt;)</code>, e.g., <code class="code"><span class="constructor">N</span>(g)</code> is a set of nodes of graph <code class="code">g</code>.
-<p>
-
-        Only the strongest postcondition is specified, e.g., if it
-        specified that <code class="code">νn = l</code>, than it also means that
-<p>
-
-        <code class="code">n ∈ N ∧ ∃u((u,v) ∈ E ∨ (v,u) ∈ E) ∧ l ∈ N' ∧ ...</code>
-<p>
-
-        In other words the structure <code class="code"><span class="constructor">G</span></code> of the graph G is an invariant
-        that is always preserved.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">

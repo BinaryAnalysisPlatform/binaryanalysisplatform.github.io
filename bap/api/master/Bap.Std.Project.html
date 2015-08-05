@@ -42,7 +42,8 @@ A project groups together all the information recovered from
 <pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">?on_warning:(Error.t -> unit Or_error.t) -><br>       ?backend:string -><br>       ?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       string -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">from_file filename</code> creates a project from a binary file. The
         file must be in format, supportable by some of our loader plugins,
-        e.g., ELF, COFF, MACH-O, etc.<br>
+        e.g., ELF, COFF, MACH-O, etc. A provided <code class="code">filename</code> is stored
+        in a <a href="Bap.Std.html#VALfilename"><code class="code">filename</code></a> field of a project.<br>
 </div>
 <div class="param_info"><code class="code">on_warning</code> : is a function that will be called if some
         non-critical problem has occurred during loading file;</div>
@@ -57,7 +58,8 @@ A project groups together all the information recovered from
 
 <pre><span id="VALfrom_image"><span class="keyword">val</span> from_image</span> : <code class="type">?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">from_image image</code> is like <a href="Bap.Std.Project.html#VALfrom_file"><code class="code"><span class="constructor">Project</span>.from_file</code></a> but accepts already
-        loaded image of a binary file<br>
+        loaded image of a binary file. If <code class="code">image</code> was loaded from a
+        file, then <a href="Bap.Std.html#VALfilename"><code class="code">filename</code></a> field is set to the name of the file.<br>
 </div>
 
 <pre><span id="VALfrom_mem"><span class="keyword">val</span> from_mem</span> : <code class="type">?name:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -><br>       ?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Project.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">

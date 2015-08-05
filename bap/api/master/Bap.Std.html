@@ -434,10 +434,10 @@
       interconnected <a href="Bap.Std.Block.html">basic blocks</a>. You can navigate between
       blocks using <a href="Bap.Std.Block_traverse.html#VALsuccs">Block.succs</a> and
       <a href="Bap.Std.Block_traverse.html#VALpreds">Block.preds</a> functions, or you can
-      transform a set of blocks into a real <a href="Bap.Std.Block.Cfg.html">graph</a> using
+      transform a set of blocks into a real graph using
       the <a href="Bap.Std.Block.html#VALto_graph">Block.to_graph</a> function. Sometimes it
       is enough to traverse program using
-      <a href="Bap.Std.Block.html#VALdfs">depth-first search</a>.
+      depth-first search.
 <p>
 
       Each block is a container to a sequence of machine
@@ -1308,6 +1308,25 @@ A type of modules for filtering graphs.
 <pre><span id="TYPEgraph_attr"><span class="keyword">type</span> <code class="type"></code>graph_attr</span> = <code class="type">Graph.Graphviz.DotAttributes.graph</code> </pre>
 
 
+<pre><code><span id="TYPElabeled"><span class="keyword">type</span> <code class="type">('n, 'a)</code> labeled</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTlabeled.node">node</span>&nbsp;: <code class="type">'n</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTlabeled.node_label">node_label</span>&nbsp;: <code class="type">'a</code>;</code></td>
+
+</tr></table>
+}
+
+
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.html">Graphlib</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Generic Graph Library
 </div>
@@ -1495,7 +1514,7 @@ Reconstructed symbol table.
 ABI interface.
 </div>
 
-<pre><span id="TYPEabi_constructor"><span class="keyword">type</span> <code class="type"></code>abi_constructor</span> = <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">Symtab.t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">Symtab.fn</a> -> <a href="Bap.Std.abi-c.html">abi</a></code> </pre>
+<pre><span id="TYPEabi_constructor"><span class="keyword">type</span> <code class="type"></code>abi_constructor</span> = <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.abi-c.html">abi</a></code> </pre>
 <div class="info ">
 symbol name may be provided if known. Also an access
       to the whole binary image is provided if there is one.<br>

@@ -54,11 +54,18 @@ a key type that is used to lookup data<br>
 </div>
 
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> 'a option</code></pre>
+<pre><span id="VALwalk"><span class="keyword">val</span> walk</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> init:'b -> f:('b -> 'a option -> 'b) -> 'b</code></pre><div class="info ">
+<code class="code">walk trie key ~init ~f</code> walks down the tree starting from the
+        root and ending with the last token of the key. Function <code class="code">f</code>
+        is fold over values associated with all substrings of the key,
+        starting from a zero substring.<br>
+</div>
+
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> unit</code></pre>
 <pre><span id="VALlongest_match"><span class="keyword">val</span> longest_match</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> (int * 'a) option</code></pre><div class="info ">
-<code class="code">longest_match trie k</code> find the longest key in a <code class="code">trie</code> that
-        is a substring of <code class="code">k</code>. Returns a pair - a length of matched
-        key and data, associated with that key<br>
+<code class="code">longest_match trie k</code> find the value associated with a
+        longest substring of a key <code class="code">k</code>. Returns a pair - a length of
+        matched key and data, associated with that key.<br>
 </div>
 
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> int</code></pre><div class="info ">

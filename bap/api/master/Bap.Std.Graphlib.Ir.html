@@ -28,12 +28,28 @@ Graph view over IR.
 <p>
 
         This module implements a graph view on an intermediate
-        representation of a subroutine. Although it implements all
-        operations of <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface it is recommended to use
-        <a href="Bap.Std.Term.html"><code class="code"><span class="constructor">Term</span></code></a> interface to build and modify underlying terms. The
-        next few sections will clarify the behavior of a graph when it
-        is modified using <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface. If you do not want to read
-        the following sections, then better use <code class="code"><span class="constructor">Term</span></code> interface.
+        representation of a subroutine. To create an instance of a
+        graph, using existing subroutine use <a href="Bap.Std.Sub.html#VALto_cfg"><code class="code"><span class="constructor">Sub</span>.to_cfg</code></a>. At any
+        moment current sub term can be obtained using <a href="Bap.Std.Sub.html#VALof_cfg"><code class="code"><span class="constructor">Sub</span>.of_cfg</code></a>
+        function. This is a just a projection operation, so it doesn't
+        take any computing time.
+<p>
+
+        All <code class="code"><span class="constructor">Graph</span></code> modification operations, like <code class="code">insert</code>, <code class="code">remove</code>
+        and <code class="code">update</code> in <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">Edge</span></code> modules are mapped to
+        corresponding <code class="code"><span class="constructor">Term</span></code> operations. Also, for performance
+        reasons, graph is augmented with auxiliary data structures,
+        that allows to perform most of the operations in O(log(N))
+        time.
+<p>
+
+        Although this implements all operations of <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface
+        it is recommended to use <a href="Bap.Std.Term.html"><code class="code"><span class="constructor">Term</span></code></a> or <code class="code"><span class="constructor">Builder</span></code> interfaces to
+        build and modify underlying terms. The next few sections will
+        clarify the behavior of a graph when it is modified using
+        <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface. If you do not want to read the following
+        sections, then better do not use this module to build your
+        terms.
 <p>
 
         <h2 id="2_Insertingnodes">Inserting nodes</h2>
@@ -135,21 +151,6 @@ since in IR the order of edges defines semantics, we provide
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Graphlib.Graph.html">Bap.Std.Graphlib.Graph</a></pre>
-
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?name:string -> unit -> <a href="Bap.Std.Graphlib.Ir.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create ?tid ?name ()</code> creates an empty graph, that will
-          build a <code class="code">sub term</code>  with a give <code class="code">tid</code> and <code class="code">name</code><br>
-</div>
-
-<pre><span id="VALof_sub"><span class="keyword">val</span> of_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Graphlib.Ir.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">of_sub sub</code> builds a graph from a give subroutine term.<br>
-</div>
-
-<pre><span id="VALto_sub"><span class="keyword">val</span> to_sub</span> : <code class="type"><a href="Bap.Std.Graphlib.Ir.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
-<code class="code">to_sub g</code> projects a graph into a subroutine. (Note: this
-          is a no-op function, it just returns an underlying
-          subroutine.)<br>
-</div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Tree.html">Tree</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node tree</code></pre><div class="info">
 Printable interface for auxiliary data structures

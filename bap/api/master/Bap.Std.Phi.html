@@ -63,6 +63,12 @@ Phi nodes are used to represent a set of values, that can be
 <code class="code">values phi</code> enumerate all possible values.<br>
 </div>
 
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars t</code> returns a set of variables that occur free on
+        the right hand side of the phi-node. See  for
+        clarification on what variables are considered free.<br>
+</div>
+
 <pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
 <pre><span id="VALwith_lhs"><span class="keyword">val</span> with_lhs</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">with_lhs phi var</code> updates a left hand side of <code class="code">phi</code> with
@@ -72,6 +78,11 @@ Phi nodes are used to represent a set of values, that can be
 <pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_exp t ~f</code> applies <code class="code">f</code> to all expressions on the right
         hand side of a phi-node <code class="code">t</code><br>
+</div>
+
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute phi x y</code> substitutes <code class="code">x</code> by <code class="code">y</code> in all right
+        hand-side expressions of the <code class="code">phi</code> node.<br>
 </div>
 
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap.Std.Phi.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Phi.html#TYPEt">t</a></code></pre><div class="info ">

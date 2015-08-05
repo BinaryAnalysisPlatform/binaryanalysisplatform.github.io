@@ -86,24 +86,24 @@ unique identifier of the ABI.
         both abis claimed that they are preferrable.<br>
 </div>
 
-<pre><span id="METHODreturn_value"><span class="keyword">method</span> return_value</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> option</code></pre><div class="info ">
+<pre><span id="METHODreturn_value"><span class="keyword">method</span> return_value</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) option</code></pre><div class="info ">
 <code class="code">return_value</code> returns an expression, that can be used to return
         a value from a function. Use <code class="code"><span class="constructor">Bil</span>.concat</code> to represent return
         value that doesn't fit into one register<br>
 </div>
 
-<pre><span id="METHODargs"><span class="keyword">method</span> args</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
+<pre><span id="METHODargs"><span class="keyword">method</span> args</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
 <code class="code">args</code> returns a list of expressions that represents
         arguments of the given function. Each expression can be
         annotated with suggested name<br>
 </div>
 
-<pre><span id="METHODvars"><span class="keyword">method</span> vars</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
+<pre><span id="METHODvars"><span class="keyword">method</span> vars</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list</code></pre><div class="info ">
 <code class="code">vars</code> returns a list of expressions, that represents
         local variables of the function<br>
 </div>
 
-<pre><span id="METHODrecords"><span class="keyword">method</span> records</span> : <code class="type">(string option * <a href="Bap.Std.html#TYPEexp">exp</a>) list list</code></pre><div class="info ">
+<pre><span id="METHODrecords"><span class="keyword">method</span> records</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.html#TYPEexp">exp</a>) list list</code></pre><div class="info ">
 <code class="code">records</code> returns a list of records, found in the symbol.<br>
 </div>
 </body></html>

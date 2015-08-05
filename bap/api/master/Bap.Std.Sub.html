@@ -55,6 +55,57 @@ Subroutine is a set of blocks.  The first block of a function is
 updates subroutine name<br>
 </div>
 
+<pre><span id="VALssa"><span class="keyword">val</span> ssa</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">ssa sub</code> returns <code class="code">sub</code> in SSA form. The underlying algorithm
+        produces a semi-pruned SSA form. To represent different
+        versions of the same variable we use <a href="Bap.Std.Var.html">variable
+        versions</a>. Any definition of a variable increases its version
+        number. So, the zero version is reserved for variables that
+        weren't defined before the first use.<br>
+</div>
+
+<pre><span id="VALis_ssa"><span class="keyword">val</span> is_ssa</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">is_ssa sub</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">sub</code> was transformed into an SSA
+        form. This is O(1) predicate that doesn't really check, that
+        a subroutine is in an SSA form, so it is a responsibility of
+        a user to preserve the SSA form on any transformation.<br>
+</div>
+
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars sub</code> computes a set of variables that are free in a
+        given subroutine <code class="code">sub</code>. The variable is considered free if it
+        is used before defined or is not locally bound.  If <code class="code">sub</code> is in
+        an SSA form, then the set is computed trivially, thanks to a
+        naming scheme. If program is not in an SSA form, then a BFS on a
+        dominators tree is used.<br>
+</div>
+
+<pre><span id="VALinfer_args"><span class="keyword">val</span> infer_args</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">infer_args sub arch</code> uses <a href="Bap.Std.abi-c.html"><code class="code">abi</code></a> to infer and populate
+        arguments of subroutine <code class="code">sub</code>.<br>
+</div>
+
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Graphlib.Tid.Tid.t</code></pre><div class="info ">
+<code class="code">to_graph sub</code> builds a graph of subroutine <code class="code">sub</code>. Graph nodes
+        are block term identifiers, and edges are labeled with term
+        identifiers of the jmp terms, that corresponds to the edge.
+        This representation is useful, if you need to compute some
+        graph relation on a subroutine, that will be later used to
+        perform its incremental transformation.<br>
+</div>
+
+<pre><span id="VALto_cfg"><span class="keyword">val</span> to_cfg</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a></code></pre><div class="info ">
+<code class="code">to_cfg sub</code> builds a graph representation of a subroutine
+        <code class="code">sub</code>. All graph operations are mapped to corresponding
+        <code class="code"><span class="constructor">Term</span></code> operations. See <a href="Bap.Std.Graphlib.Ir.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code></a> for more information.<br>
+</div>
+
+<pre><span id="VALof_cfg"><span class="keyword">val</span> of_cfg</span> : <code class="type"><a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_cfg cfg</code> extracts a <code class="code">sub term</code> from a given graph <code class="code">cfg</code>.
+        Since <a href="Bap.Std.Graphlib.Ir.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code></a> module builds term incrementally this
+        operation is just a projection, i.e., it has O(0) complexity.<br>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Sub.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Sub.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Subroutine builder
 </div>

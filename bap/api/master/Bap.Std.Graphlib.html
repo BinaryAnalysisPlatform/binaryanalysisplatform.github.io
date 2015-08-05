@@ -365,16 +365,18 @@ functorized version of <a href="Bap.Std.Graphlib.html#VALview"><code class="code
         labeled with <code class="code"><span class="constructor">Edge</span>.t</code>
 </div>
 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Labeled.html">Labeled</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
+      with type node = (Node.t, NL.t) labeled
+       and type Node.label = (Node.t, NL.t) labeled
+       and type Edge.label = EL.t</code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Graphlib.Graphs.html">Graphs</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Graphs.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 a common interface for a regular graph.
 </div>
 <br>
 <h3 id="3_Preinstantiatedgraphs">Pre-instantiated graphs</h3><br>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Char.html">Char</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = char</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Int.html">Int</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = int</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Word.html">Word</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = word</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Type.html">Type</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = typ</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Value.html">Value</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = value</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.String.html">String</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = string</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Var.html">Var</a>: <code class="type"><a href="Bap.Std.Graphlib.Graphs.html">Graphs</a></code><code class="type">  with type node = var</code></pre>

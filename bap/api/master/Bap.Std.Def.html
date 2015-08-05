@@ -63,5 +63,16 @@ updates the right hand side of a definition<br>
         an updated definition.<br>
 </div>
 
+<pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">substitute def x y</code> substitutes <code class="code">x</code> by <code class="code">y</code> in the right hand
+        side of a definition <code class="code">def</code><br>
+</div>
+
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<code class="code">free_vars def</code> returns a set of free variables, that occurs
+        on the right hand side of definition <code class="code">def</code>. See <a href="Bap.Std.Exp.html#VALfree_vars"><code class="code"><span class="constructor">Exp</span>.free_vars</code></a>
+        for more information.<br>
+</div>
+
 <pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
 </body></html>
