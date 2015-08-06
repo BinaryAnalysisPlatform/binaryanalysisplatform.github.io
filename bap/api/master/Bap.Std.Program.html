@@ -44,6 +44,10 @@ Program is a collection of function terms.<br>
         program lifted into IR<br>
 </div>
 
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Program.html#TYPEt">t</a> -> Graphlib.Callgraph.t</code></pre><div class="info ">
+<code class="code">to_graph program</code> creates a callgraph of a <code class="code">program</code><br>
+</div>
+
 <pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">
 <code class="code">lookup t program id</code> is like find but performs deep
         lookup in the whole <code class="code">program</code> for a term with a given <code class="code">id</code>.

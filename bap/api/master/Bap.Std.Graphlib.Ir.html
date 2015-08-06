@@ -5,6 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Graphlib.Tid.html">
+<link rel="next" href="Bap.Std.Graphlib.Callgraph.html">
 <link rel="Up" href="Bap.Std.Graphlib.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -20,7 +21,8 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Graphlib.Tid.html" title="Bap.Std.Graphlib.Tid">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.Graphlib.html" title="Bap.Std.Graphlib">Up</a>
-&nbsp;</div>
+&nbsp;<a class="post" href="Bap.Std.Graphlib.Callgraph.html" title="Bap.Std.Graphlib.Callgraph">Next</a>
+</div>
 <h1>Module <a href="type_Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a></h1>
 
 <pre><span class="keyword">module</span> Ir: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
@@ -152,11 +154,8 @@ since in IR the order of edges defines semantics, we provide
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Graphlib.Graph.html">Bap.Std.Graphlib.Graph</a></pre>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Tree.html">Tree</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node tree</code></pre><div class="info">
-Printable interface for auxiliary data structures
+<pre><span class="keyword">include</span> <a href="Bap.Std.Aux.html">Bap.Std.Aux</a></pre>
+<div class="info ">
+<h4 id="4_Printableinterfaceforauxiliarydatastructures">Printable interface for auxiliary data structures</h4><br>
 </div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Frontier.html">Frontier</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node frontier</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Path.html">Path</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node path</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Partition.html">Partition</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node partition</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Group.html">Group</a>: <code class="type"><a href="Bap.Std.Printable.html">Printable</a></code><code class="type">  with type t = node group</code></pre></body></html>
+</body></html>
