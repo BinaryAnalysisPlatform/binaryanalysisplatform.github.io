@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Stmt.html">
+<link rel="next" href="Bap.Std.Value.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Arch</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Stmt.html" title="Bap.Std.Stmt">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Value.html" title="Bap.Std.Value">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Arch.html">Bap.Std.Arch</a></h1>
+
+<pre><span class="keyword">module</span> Arch: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Arch.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Architecture<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEx86"><span class="keyword">type</span> <code class="type"></code>x86</span> = <code class="type">[ `x86 | `x86_64 ]</code> </pre>
+
+
+<pre><span id="TYPEarm"><span class="keyword">type</span> <code class="type"></code>arm</span> = <code class="type">[ `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `thumb<br>       | `thumbeb ]</code> </pre>
+
+
+<pre><span id="TYPEaarch64"><span class="keyword">type</span> <code class="type"></code>aarch64</span> = <code class="type">[ `aarch64 | `aarch64_be ]</code> </pre>
+
+
+<pre><span id="TYPEppc"><span class="keyword">type</span> <code class="type"></code>ppc</span> = <code class="type">[ `ppc | `ppc64 | `ppc64le ]</code> </pre>
+
+
+<pre><span id="TYPEmips"><span class="keyword">type</span> <code class="type"></code>mips</span> = <code class="type">[ `mips | `mips64 | `mips64el | `mipsel ]</code> </pre>
+
+
+<pre><span id="TYPEsparc"><span class="keyword">type</span> <code class="type"></code>sparc</span> = <code class="type">[ `sparc | `sparcv9 ]</code> </pre>
+
+
+<pre><span id="TYPEnvptx"><span class="keyword">type</span> <code class="type"></code>nvptx</span> = <code class="type">[ `nvptx | `nvptx64 ]</code> </pre>
+
+
+<pre><span id="TYPEhexagon"><span class="keyword">type</span> <code class="type"></code>hexagon</span> = <code class="type">[ `hexagon ]</code> </pre>
+
+
+<pre><span id="TYPEr600"><span class="keyword">type</span> <code class="type"></code>r600</span> = <code class="type">[ `r600 ]</code> </pre>
+
+
+<pre><span id="TYPEsystemz"><span class="keyword">type</span> <code class="type"></code>systemz</span> = <code class="type">[ `systemz ]</code> </pre>
+
+
+<pre><span id="TYPExcore"><span class="keyword">type</span> <code class="type"></code>xcore</span> = <code class="type">[ `xcore ]</code> </pre>
+
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `aarch64<br>       | `aarch64_be<br>       | `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `hexagon<br>       | `mips<br>       | `mips64<br>       | `mips64el<br>       | `mipsel<br>       | `nvptx<br>       | `nvptx64<br>       | `ppc<br>       | `ppc64<br>       | `ppc64le<br>       | `r600<br>       | `sparc<br>       | `sparcv9<br>       | `systemz<br>       | `thumb<br>       | `thumbeb<br>       | `x86<br>       | `x86_64<br>       | `xcore ]</code> </pre>
+
+
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bap.Std.Arch.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">of_string s</code> will try to be clever and to capture all
+        commonly known synonyms, e.g., <code class="code">of_string <span class="string">"i686"</span></code> will
+        work<br>
+</div>
+
+<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre><div class="info ">
+<code class="code">addr_size arch</code> returns an address size for a given <code class="code">arch</code><br>
+</div>
+
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
+<code class="code">endian arch</code> returns a word endianness of the <code class="code">arch</code><br>
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+<div class="info ">
+<code class="code">arch</code> type implements <code class="code"><span class="constructor">Regular</span></code>  interface<br>
+</div>
+</body></html>

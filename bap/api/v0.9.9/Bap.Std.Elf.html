@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Dwarf.html">
+<link rel="next" href="Bap.Std.Signatures.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Elf</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Dwarf.html" title="Bap.Std.Dwarf">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Signatures.html" title="Bap.Std.Signatures">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Elf.html">Bap.Std.Elf</a></h1>
+
+<pre><span class="keyword">module</span> Elf: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Elf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Parse binary data in ELF format.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Elf.Types.html">Types</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Elf.Types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Elf.Types.html#TYPEelf">Types.elf</a></code> </pre>
+
+
+<pre><span id="VALfrom_bigstring"><span class="keyword">val</span> from_bigstring</span> : <code class="type">?pos:int -><br>       ?len:int -><br>       Bigstring.t -> <a href="Bap.Std.Elf.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">from_bigstring data</code> parses data with optional offset
+        provided as <code class="code">pos</code> and length as <code class="code">len</code><br>
+</div>
+
+<pre><span id="VALsection_name"><span class="keyword">val</span> section_name</span> : <code class="type">Bigstring.t -><br>       <a href="Bap.Std.Elf.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Elf.Types.html#TYPEsection">Types.section</a> -> string Or_error.t</code></pre><div class="info ">
+<code class="code">section_name data elf section</code> retrieves name of <code class="code">section</code>
+        from <code class="code">data</code><br>
+</div>
+
+<pre><span id="VALstring_of_section"><span class="keyword">val</span> string_of_section</span> : <code class="type">Bigstring.t -><br>       <a href="Bap.Std.Elf.Types.html#TYPEsection">Types.section</a> -> string Or_error.t</code></pre><div class="info ">
+<code class="code">string_of_section data section</code> extracts the section data as
+        string from the provided <code class="code">data</code><br>
+</div>
+</body></html>

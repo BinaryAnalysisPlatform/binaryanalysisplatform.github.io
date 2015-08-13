@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Insn.html">
+<link rel="next" href="Bap.Std.ARM.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Block</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Insn.html" title="Bap.Std.Insn">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.ARM.html" title="Bap.Std.ARM">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Block.html">Bap.Std.Block</a></h1>
+
+<pre><span class="keyword">module</span> Block: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Basic block of machine instructions.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblock">block</a></code> </pre>
+
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Block_accessors.html">Bap.Std.Block_accessors</a></pre>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Block_traverse.html">Bap.Std.Block_traverse</a></pre>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Block.Graph.html">Graph</a>: <code class="type"><a href="Bap.Std.Graph.html">Graph</a></code><code class="type"> 
+      with type node = t
+       and type Node.label = t
+       and type Edge.label = edge</code></pre><div class="info">
+Graph of blocks.
+</div>
+
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type">?bound:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> bool) -> <a href="Bap.Std.Block.html#TYPEt">t</a> -> Graph.t</code></pre><div class="info ">
+<code class="code">to_graph ?bound entry</code> builds a graph starting with <code class="code">entry</code> and
+        spanning all reachable blocks.<br>
+</div>
+<div class="param_info"><code class="code">bound</code> : if specified, then the resulting graph will
+        contain only blocks <code class="code">b</code> for which <code class="code">bound (<span class="constructor">Block</span>.addr b)</code>
+        evaluated to <code class="code"><span class="keyword">true</span></code>. <a href="Bap.Std.Symtab.html#VALcreate_bound"><code class="code"><span class="constructor">Symtab</span>.create_bound</code></a> is an example of
+        such function.</div>
+</body></html>

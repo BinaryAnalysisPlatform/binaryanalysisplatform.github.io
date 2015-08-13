@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Arch.html">
+<link rel="next" href="Bap.Std.Dict.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Value</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Arch.html" title="Bap.Std.Arch">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Dict.html" title="Bap.Std.Dict">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Value.html">Bap.Std.Value</a></h1>
+
+<pre><span class="keyword">module</span> Value: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Universal Values.
+<p>
+
+      This module creates an extensible variant type, that resembles
+      extensible variant types, introduced in 4.02, but even more safe
+      and more extensible, and, what really matters,
+      serializable. Basically you should think of <code class="code"><span class="constructor">Value</span>.t</code> as a union
+      type, aka sum type, that can be extended in any place, including
+      your plugin code. Where extending is adding new constructor. To
+      add new constructor, you need to register it, e.g.,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;function_signature&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">String</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"function_signature"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"2175c28c-08ca-4052-8385-3a01e1c6ab6f"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      This is merely equivalent to adding a branch
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Function_signature</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      to existing union type. The main difference is that the <code class="code">name</code>
+      shouldn't be unique (in fact <code class="code">name</code> doesn't bear any semantic
+      meaning, it basically for pretty-printing). On the other hand
+      the <code class="code">uuid</code> parameter must be unique across the universe, space
+      and time. To get the UUID with such properties, you can use
+      <code class="code">uuidgen</code> program that is usually available on Linux and Mac OS.
+<p>
+
+      <code class="code">name</code> and <code class="code">uuid</code> must be strings, known at compile time, in
+      other words it must be string literal, not just an arbitrary
+      string, created dynamically. This is made intentionally, in
+      order to prevent the abuse of the system.
+<p>
+
+      The <code class="code">(<span class="keyword">module</span> <span class="constructor">String</span>)</code> syntax creates a value from the module
+      <code class="code"><span class="constructor">String</span></code>, (so called first-class module). The module should
+      implement <code class="code"><span class="constructor">Value</span>.<span class="constructor">S</span></code> signature, that requires pretty-printing,
+      comparison function and serialization.
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">S</span>&nbsp;=&nbsp;<span class="keyword">sig</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pp&nbsp;:&nbsp;<span class="constructor">Format</span>.formatter&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      The good news is that, most of the types in <code class="code"><span class="constructor">Core</span></code> and <code class="code"><span class="constructor">Bap</span></code> do
+      conform with the requirements. Usually, one can implement the
+      requirements very easily by using type-driven syntax extensions
+      (although, you still need to implement pretty-printing function
+      yourself):
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>&nbsp;=&nbsp;<span class="keyword">struct</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;string&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pp&nbsp;ppf&nbsp;(file,line,col)&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Format</span>.fprintf&nbsp;ppf&nbsp;<span class="string">"%s:%d:%d"</span>&nbsp;file&nbsp;line&nbsp;col<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;loc&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"loc"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"400e190e-ce21-488d-87b1-c101709621a8"</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      The returned value, is a tag that can be used to constructed
+      values of that branch, and to deconstruct (extract) them. You
+      may think of it as a cipher key, that is used to package data
+      into the value container, and later to unpack it:
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_pos&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;loc&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2);;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_pos&nbsp;:&nbsp;value&nbsp;=&nbsp;test.c:20:2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      You may see, that OCaml pretty-prints the value. That's neat!
+      Also, you may see, that the returned expression has type
+      <code class="code">value</code>. That means that it can be used uniformly with other
+      values, for example, you can put them in one container, e.g.,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_t&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;function_signature<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])"</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_t&nbsp;:&nbsp;value&nbsp;=&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;=&nbsp;[main_pos;&nbsp;main_t];;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main&nbsp;:&nbsp;value&nbsp;list&nbsp;=&nbsp;[<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.c:20:2;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      To extract value you can use <code class="code"><span class="constructor">Value</span>.get</code> function:
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Value</span>.get&nbsp;loc&nbsp;main_pos;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;<span class="constructor">Loc</span>.t&nbsp;option&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      This will require an extra allocation of an <code class="code">option</code> container,
+      and in a performance critical context it may be unacceptable.
+      For this special case you can use a more efficient:
+<p>
+
+      <pre class="codepre"><code class="code"><span class="keyword">if</span>&nbsp;<span class="constructor">Value</span>.is&nbsp;loc&nbsp;<span class="keyword">then</span>&nbsp;<span class="constructor">Value</span>.get_exn&nbsp;loc&nbsp;main_pos</code></pre>.
+<p>
+
+      Underneath the hood, the values of type <code class="code">value</code> is just a pair
+      of an original value and runtime type information. For
+      performance reasons the RTTI is usually just an integer. But
+      for serialization we use persistent UUID for storing RTTI type.
+      To get it, one can use <code class="code"><span class="constructor">Value</span>.typeid</code> function.
+<p>
+
+      The comparison of two values of type <code class="code">value</code> is actually a
+      multi-method, as it has the following behavior:
+<p>
+
+      1. If both values has the same type, then use <code class="code">compare</code>
+         function, that was provided for this type.
+      2. If values are of different types, that are known to
+         the type system, then compare them using RTTI
+      3. If at least one of the values is of the unknown type,
+         (i.e., type wasn't registered in the type system), then
+         use polymorphic compare on a tuple of UUID and binary
+         representation of the values.
+<p>
+
+      This algorithm implies that ordering may change a little bit
+      between different compiler versions and different programs, as
+      RTTI is generated from scratch at every program start. If it
+      really matters (usually it doesn't), then you should use
+      <code class="code">typeid</code> as key. In that case the ordering would be stable
+      across space time. In any case it is not recommended to use data
+      structures where <code class="code">value</code>s are used as keys. For this case, we
+      provide <a href="Bap.Std.Dict.html">Dict</a> data structure, that is a heterogeneous
+      dictionary of values.
+<p>
+
+      <h2 id="2_Threadsafety">Thread safety</h2>
+<p>
+
+      The only thread unsafe function is <code class="code">register</code>, that should be
+      called in the module initialization time. In general programs
+      modules are initialized in a single thread, so this shouldn't be
+      an issue.  The implementation by itself doesn't call <code class="code">register</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
+a universal value<br>
+</div>
+
+
+<pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type">'a</code> tag</span> </pre>
+<div class="info ">
+Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</code><br>
+</div>
+
+
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Value.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A required interface for the type to be lifted to value.
+</div>
+
+<pre><span id="TYPEvoid"><span class="keyword">type</span> <code class="type"></code>void</span> </pre>
+<div class="info ">
+uninhabited type<br>
+</div>
+
+
+<pre><span id="TYPEliteral"><span class="keyword">type</span> <code class="type"></code>literal</span> = <code class="type">(<a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>)<br>       Pervasives.format</code> </pre>
+<div class="info ">
+literal string. Don't look at the right hand side of a type
+        equation, this is just a way to say that a string should be a
+        literal not a value. Compiler will automatically coerce your
+        string literals to this type.<br>
+</div>
+
+
+<pre><span id="TYPEtypeid"><span class="keyword">type</span> <code class="type"></code>typeid</span> </pre>
+<div class="info ">
+persistent type identifier<br>
+</div>
+
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Value.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create cons x</code> creates a value using constructor <code class="code">cons</code> and
+        argument <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> <a href="Bap.Std.Value.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">is cons v</code> true if value <code class="code">v</code> was constructed with constructor
+        <code class="code">cons</code>, i.e., it is true only when <code class="code">is_cons t (create t x)</code><br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> <a href="Bap.Std.Value.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
+<code class="code">get cons</code> extracts a value associated with a constructor <code class="code">cons</code>
+        (Essentially, performs a pattern match on the specified variant
+        branch)<br>
+</div>
+
+<pre><span id="VALget_exn"><span class="keyword">val</span> get_exn</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> <a href="Bap.Std.Value.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<code class="code">get_exn t v</code> extracts value created with <code class="code">t</code> from the
+        variant. Raises unspecified exception if variant <code class="code">v</code> wasn't
+        created with <code class="code">t</code>.<br>
+</div>
+
+<pre><span id="VALtagname"><span class="keyword">val</span> tagname</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">tagname value</code> returns a constructor name of the <code class="code">value</code><br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Tag.html">Tag</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Variants of values.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Typeid.html">Typeid</a>: <code class="type"><a href="Bap.Std.Regular.html">Regular</a></code><code class="type">  with type t = typeid</code></pre><div class="info">
+Persistent type identifiers.
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+<div class="info ">
+Although values of type <code class="code">value</code> implements regular interface
+        it is recommended to used <code class="code">dict</code> data structure instead of
+        those, that are provided by <code class="code"><span class="constructor">Regular</span></code> interface.x<br>
+</div>
+</body></html>
