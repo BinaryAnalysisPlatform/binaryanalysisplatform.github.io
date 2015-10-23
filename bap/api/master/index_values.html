@@ -322,6 +322,14 @@ restarts last step.
 </td></tr>
 <tr><td><a href="Bap.Std.Isomorphism.html#VALbackward">backward</a> [<a href="Bap.Std.Isomorphism.html">Bap.Std.Isomorphism</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Type_error.html#VALbad_cast">bad_cast</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Type_error.html#VALbad_imm">bad_imm</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Type_error.html#VALbad_mem">bad_mem</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Type_error.html#VALbad_type">bad_type</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALbase">base</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
 <code class="code">base var</code> returns an original variable.
@@ -374,6 +382,12 @@ one bit
 </div>
 </td></tr>
 <tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html#VALcase">case</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
+<td><div class="info">
+<code class="code">case tag action matcher</code> adds an <code class="code">action</code> to <code class="code">matcher</code> that
+          will be invoked for values with a given <code class="code">tag</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALcast">cast</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALcf">cf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
@@ -427,7 +441,7 @@ updates the label
 <td></td></tr>
 <tr><td><a href="Bap.Std.Reg.html#VALcode">code</a> [<a href="Bap.Std.Reg.html">Bap.Std.Reg</a>]</td>
 <td><div class="info">
-unique number representig a register
+unique number representing a register
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALcolor">color</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -713,6 +727,11 @@ creates a set of ABI for the provided symbol.
 def
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html#VALdefault">default</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
+<td><div class="info">
+<code class="code">default def</code> creates an empty matcher with default handler <code class="code">def</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Signatures.html#VALdefault_path">default_path</a> [<a href="Bap.Std.Signatures.html">Bap.Std.Signatures</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Blk.html#VALdefines_var">defines_var</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
@@ -942,6 +961,14 @@ returns a list of all errors and warnings that occurred during
         the disassembling
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Stmt.html#VALeval">eval</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Exp.html#VALeval">eval</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALeval">eval</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALexec">exec</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALexists">exists</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#VALexists">exists</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
@@ -1356,6 +1383,8 @@ for compatibility with Core &lt;= 111.28
         branch)
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALget">get</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALget_attr">get_attr</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">get_attr term attr</code> returns a value of the given <code class="code">attr</code> in
@@ -1368,6 +1397,8 @@ for compatibility with Core &lt;= 111.28
         variant.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALgets">gets</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALgpr">gpr</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td><div class="info">
 A set of general purpose registers
@@ -1439,6 +1470,11 @@ The following lifter will check that their operand has a
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi8">i8</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#VALid">id</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+returns result identifier
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALif_">if_</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Label.html#VALindirect">indirect</a> [<a href="Bap.Std.Label.html">Bap.Std.Label</a>]</td>
@@ -2215,6 +2251,8 @@ returns a sequence of memory regions occupied by the given
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALminus">minus</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALmodify">modify</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALmodulo">modulo</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALmodulo">modulo</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
@@ -2681,6 +2719,8 @@ current set of predicates
         are not used in the program <code class="code">p</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALput">put</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALpython">python</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 A command in python language
@@ -2923,8 +2963,6 @@ returns a sequence of nodes in reverse post order.
 </td></tr>
 <tr><td><a href="Bap.Std.Def.html#VALrhs">rhs</a> [<a href="Bap.Std.Def.html">Bap.Std.Def</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.IA32.CPU.html#VALrip">rip</a> [<a href="Bap.Std.IA32.CPU.html">Bap.Std.IA32.CPU</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALrshift">rshift</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALrshift">rshift</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
@@ -2941,6 +2979,8 @@ returns a sequence of nodes in reverse post order.
           performs recursive disassembly of specified memory <code class="code">mem</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#VALrun">run</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALrun_passes">run_passes</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
 <code class="code">run_passes ?library ?argv project</code> folds <code class="code">project</code> over all
@@ -3002,6 +3042,11 @@ Tags
 <td><div class="info">
 <code class="code">select phi label</code> takes the value corresponding to a control
         flow path marked with <code class="code">label</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html#VALselect">select</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
+<td><div class="info">
+<code class="code">select matcher x</code> applies <code class="code">matcher</code> to value <code class="code">x</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Phi.html#VALselect_or_unknown">select_or_unknown</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
@@ -3161,6 +3206,12 @@ continue disassembling from the current point.
 stop the disassembly and return the provided value.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#VALstorage">storage</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+<code class="code">storage s id</code> creates result with a given <code class="code">id</code> and
+          storage <code class="code">s</code> as a value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALstore">store</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALstore_asm">store_asm</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -3254,10 +3305,12 @@ Name of a subroutine
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsubstitute_var">substitute_var</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">substitute_var x y p</code> substitutes all occurences of variable <code class="code">x</code>
-        by expression <code class="code">y</code>
+<code class="code">substitute_var x y p</code> substitutes all free occurences of
+        variable <code class="code">x</code> in program <code class="code">p</code> by expression <code class="code">y</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.Id.html#VALsucc">succ</a> [<a href="Bap.Std.Bil.Result.Id.html">Bap.Std.Bil.Result.Id</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALsucc">succ</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALsucc">succ</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
@@ -3275,6 +3328,11 @@ Name of a subroutine
 <td><div class="info">
 <code class="code">succs node graph</code> returns a sequence of successors of a
         <code class="code">node</code> in a given <code class="code">graph</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html#VALswitch">switch</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
+<td><div class="info">
+<code class="code">switch x matcher</code> applies <code class="code">matcher</code> to value <code class="code">x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsymbol">symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -3487,6 +3545,12 @@ Conversions to built-in integers
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALuint8">uint8</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#VALundefined">undefined</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+<code class="code">undefined id</code> creates result with a given <code class="code">id</code> and
+          undefined value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunknown">unknown</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunop">unop</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -3523,6 +3587,11 @@ Conversions to built-in integers
 </div>
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#VALvalue">value</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+returns result value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Phi.html#VALvalues">values</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
 <td><div class="info">
 <code class="code">values phi</code> enumerate all possible values.
@@ -3655,6 +3724,12 @@ removes the intent from an argument
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALword">word</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#VALword">word</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+<code class="code">word w id</code> creates result with a given <code class="code">id</code> and
+          word <code class="code">w</code> as a value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALword_of_addr_size">word_of_addr_size</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALwords">words</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
@@ -3665,6 +3740,8 @@ Tables
 <tr><td><a href="Bap.Std.Dwarf.Leb128.html#VALwrite">write</a> [<a href="Bap.Std.Dwarf.Leb128.html">Bap.Std.Dwarf.Leb128</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>Z</td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.Id.html#VALzero">zero</a> [<a href="Bap.Std.Bil.Result.Id.html">Bap.Std.Bil.Result.Id</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALzero">zero</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALzero">zero</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>

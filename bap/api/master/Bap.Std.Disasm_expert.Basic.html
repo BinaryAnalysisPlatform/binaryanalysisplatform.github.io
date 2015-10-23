@@ -138,12 +138,15 @@ enables storing assembler information<br>
 enables storing instruction kinds information<br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?stop_on:<a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> list -><br>       ?invalid:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>                 <a href="Bap.Std.html#TYPEmem">mem</a> -> 's -> 'r) -><br>       ?stopped:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r) -><br>       ?hit:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>             <a href="Bap.Std.html#TYPEmem">mem</a> -><br>             (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>             <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> -> 's -> 'r) -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       return:('s -> 'r) -> init:'s -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'r</code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backlog:int -><br>       ?stop_on:<a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> list -><br>       ?invalid:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>                 <a href="Bap.Std.html#TYPEmem">mem</a> -> 's -> 'r) -><br>       ?stopped:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r) -><br>       ?hit:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>             <a href="Bap.Std.html#TYPEmem">mem</a> -><br>             (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>             <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> -> 's -> 'r) -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       return:('s -> 'r) -> init:'s -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'r</code></pre><div class="info ">
 <code class="code">run ?stop_on ?invalid ?stopped dis mem ~init ~return ~hit</code>
           performs recursive disassembly of specified memory <code class="code">mem</code>. The
           process of disassembly can be driven using <code class="code">stop</code>, <code class="code">step</code>, <code class="code">back</code>
           and <code class="code">jump</code> functions, described later.<br>
 </div>
+<div class="param_info"><code class="code">backlog</code> : defines a size of history of states, that can
+          be used for backtracking. Defaults to some positive natural
+          number.</div>
 <div class="param_info"><code class="code">stop_on</code> : defines a set of predicates that will be checked
           on each step to decide whether it should stop here and call a
           user-provided <code class="code">hit</code> function, or it should continue. The descision

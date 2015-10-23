@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Config.html">
+<link rel="next" href="Bap.Std.Regular.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Monad</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Config.html" title="Bap.Std.Config">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Regular.html" title="Bap.Std.Regular">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Monad.html">Bap.Std.Monad</a></h1>
+
+<pre><span class="keyword">module</span> Monad: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.Basic.html">Basic</a> = <code class="type">Monad.Basic</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.Basic2.html">Basic2</a> = <code class="type">Monad.Basic2</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.Infix.html">Infix</a> = <code class="type">Monad.Infix</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.Infix2.html">Infix2</a> = <code class="type">Monad.Infix2</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.S.html">S</a> = <code class="type">Monad.S</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.S2.html">S2</a> = <code class="type">Monad.S2</code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.State.html">State</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.Basic.html">Basic</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.Basic2.html">Basic2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'s) t := ('a,'s) M.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.State.html">State</a>: <code class="type"><a href="Bap.Std.Monad.State.html">State</a></code><code class="type"> </code></pre></body></html>

@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Expi.context-c.html">
+<link rel="Up" href="Bap.Std.Expi.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><link title="Interaction with environment" rel="Section" href="#2_Interactionwithenvironment">
+<link title="Error conditions" rel="Section" href="#2_Errorconditions">
+<title>Bap.Std.Expi.t</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Expi.context-c.html" title="Bap.Std.Expi.context">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Expi.html" title="Bap.Std.Expi">Up</a>
+&nbsp;</div>
+<h1>Class <a href="type_Bap.Std.Expi.t.html">Bap.Std.Expi.t</a></h1>
+
+<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">context</a>]</code> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Expi.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+Expression interpreter.
+<p>
+
+        Expi is a base class for all other interpreters (see <a href="Bap.Std.bili-c.html"><code class="code">bili</code></a>
+        and <a href="Bap.Std.biri-c.html"><code class="code">biri</code></a>, that do all the hard work. Expi recognizes a
+        language defined by <code class="code">exp</code> type. It evaluates arbitrary
+        expressions under provided <a href="Bap.Std.Context.html">context</a>.
+<p>
+
+        To create new interpreter use operator <code class="code"><span class="keyword">new</span></code>:
+<p>
+
+        <pre class="verbatim">        let expi = new expi;;
+        val expi : _#Expi.context expi = &lt;obj&gt;
+       </pre>
+<p>
+
+        Note: The type <code class="code">_<span class="keywordsign">#</span><span class="constructor">Expi</span>.context</code> is weakly polymorphic subtype of
+        <code class="code"><span class="constructor">Expi</span>.context</code><code class="code">1</code>. Basically, this means, that the type is not
+        generalized and will be instantiated when used and fixed
+        afterwards.
+<p>
+
+        <pre class="verbatim">        let r = expi#eval_exp Bil.(int Word.b0 lor int Word.b1);;
+        val r : _#Expi.context Bil.Result.r = &lt;abstr&gt;
+       </pre>
+<p>
+
+        The returned value is a state monad parametrized by a subtype
+        of class <code class="code"><span class="constructor">Expi</span>.context</code>. The state monad is a chain of
+        computations, where each computation is merely a function from
+        state to a state paired with the result of computation. The
+        state is accessible inside the computation and can be
+        changed.
+<p>
+
+        To run the computation use <code class="code"><span class="constructor">Monad</span>.<span class="constructor">State</span>.eval</code> function, that
+        accepts a state monad and an initial value. Here we can
+        provide any subtype of <code class="code"><span class="constructor">Expi</span>.context</code> as an initial
+        value. Let start with a <code class="code"><span class="constructor">Expi</span>.context</code> as first approximation:
+<p>
+
+        <pre class="verbatim">        let x = Monad.State.eval r (new Expi.context);;
+        val x : Bil.result = [0x3] true
+       </pre>
+<p>
+
+        The expression evaluates to <code class="code"><span class="keyword">true</span></code>, and the result is tagged
+        with an identifier <code class="code">[0x3]</code>. The <code class="code"><span class="constructor">Exp</span>.context</code> assigns a unique
+        identifier for each freshly created result. Tag <code class="code">[0x3]</code> means
+        that this was the third value created under provided context.
+<p>
+
+        If the only thing, that you need is just to evaluate an
+        expression, then you can just use <code class="code"><span class="constructor">Exp</span>.eval</code> function:
+<p>
+
+        <pre class="verbatim">        Exp.eval Bil.(int Word.b0 lor int Word.b1);;
+        - : Bil.value = true
+       </pre>
+<p>
+
+        The main strength of <code class="code">expi</code> is its extensibility. Let's write
+        a expression evaluator that will record a trace of evaluation:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">class</span>&nbsp;context&nbsp;=&nbsp;<span class="keyword">object</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;<span class="constructor">Expi</span>.context<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;events&nbsp;:&nbsp;(exp&nbsp;*&nbsp;<span class="constructor">Bil</span>.result)&nbsp;list&nbsp;=&nbsp;[]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;add_event&nbsp;exp&nbsp;res&nbsp;=&nbsp;{&lt;&nbsp;events&nbsp;=&nbsp;(exp,res)&nbsp;::&nbsp;events&nbsp;&gt;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;events&nbsp;=&nbsp;<span class="constructor">List</span>.rev&nbsp;events<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">class</span>&nbsp;[<span class="keywordsign">'</span>a]&nbsp;exp_tracer&nbsp;=&nbsp;<span class="keyword">object</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">constraint</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;=&nbsp;<span class="keywordsign">#</span>context<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[<span class="keywordsign">'</span>a]&nbsp;expi&nbsp;<span class="keyword">as</span>&nbsp;super<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;eval_exp&nbsp;e&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Monad</span>.<span class="constructor">State</span>&nbsp;<span class="keyword">in</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super<span class="keywordsign">#</span>eval_exp&nbsp;e&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;r&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get&nbsp;()&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;ctxt&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;put&nbsp;(ctxt<span class="keywordsign">#</span>add_event&nbsp;e&nbsp;r)&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;r<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>;;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        Note : We made our <code class="code">exp_tracer</code> class polymorphic as a
+        courtesy to our fellow programmer, that may want to reuse it.
+        We can define it by inheriting from <code class="code">expi</code> parametrized with
+        our context type, like this: <code class="code"><span class="keyword">inherit</span> [context] expi</code>
+<p>
+
+        Also, there is no need to write a <code class="code"><span class="keyword">constraint</span></code>, as it will be
+        inferred automatically.
+<p>
+
+        Now, let's try to use our tracer. We will use
+        <code class="code"><span class="constructor">Monad</span>.<span class="constructor">State</span>.run</code> function, that returns both, the evaluated
+        value and the context. (We can also use <code class="code"><span class="constructor">Monad</span>.<span class="constructor">State</span>.exec</code>, if
+        we're not interested in value at all):
+<p>
+
+        <pre class="verbatim">        let expi = new exp_tracer;;
+        val expi : _#context exp_tracer = &lt;obj&gt;
+        # let r = expi#eval_exp Bil.(int Word.b0 lor int Word.b1);;
+        val r : _#context Bil.Result.r = &lt;abstr&gt;
+        # let r,ctxt = Monad.State.run r (new context) ;;
+        val r : Bil.result = [0x3] true
+        val ctxt : context = &lt;obj&gt;
+        ctxt#events;;
+        - : (exp * Bil.result) list =
+        [(false, [0x1] false); (true, [0x2] true); (false | true, [0x3] true)]
+       </pre>
+<p>
+
+        <code class="code">1</code>: The weakness of the type variable is introduced by
+        a value restriction and can't be relaxed since it is invariant
+        in state monad.<br>
+</div>
+<hr width="100%">
+<h2 id="2_Interactionwithenvironment">Interaction with environment</h2>
+<pre><span id="METHODempty"><span class="keyword">method</span> empty</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a></code></pre><div class="info ">
+creates an empty storage. If you want to provide
+          your own implementation of storage, then it is definitely
+          the right place.<br>
+</div>
+
+<pre><span id="METHODlookup"><span class="keyword">method</span> lookup</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> (#<a href="Bap.Std.Expi.context-c.html">context</a> as 'a) <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+a variable is looked up in a context<br>
+</div>
+
+<pre><span id="METHODupdate"><span class="keyword">method</span> update</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEu">Bil.Result.u</a></code></pre><div class="info ">
+a variable is bind to a value.<br>
+</div>
+
+<pre><span id="METHODload"><span class="keyword">method</span> load</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+a byte is loaded from given address<br>
+</div>
+
+<pre><span id="METHODstore"><span class="keyword">method</span> store</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -><br>       <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+a byte is stored to a given address<br>
+</div>
+<h2 id="2_Errorconditions">Error conditions</h2>
+<pre><span id="METHODtype_error"><span class="keyword">method</span> type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+given typing error has occured<br>
+</div>
+
+<pre><span id="METHODdivision_by_zero"><span class="keyword">method</span> division_by_zero</span> : <code class="type">unit -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+we can't do this!<br>
+</div>
+
+<pre><span id="METHODundefined_addr"><span class="keyword">method</span> undefined_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+called when storage doesn't contain the addr<br>
+</div>
+
+<pre><span id="METHODundefined_var"><span class="keyword">method</span> undefined_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+called when context doesn't know the variable<br>
+</div>
+
+<pre><span id="METHODeval_exp"><span class="keyword">method</span> eval_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
+<h2 id="2_Evaluationmethods">Evaluation methods</h2><br>
+</div>
+
+<pre><span id="METHODeval_var"><span class="keyword">method</span> eval_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_int"><span class="keyword">method</span> eval_int</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_load"><span class="keyword">method</span> eval_load</span> : <code class="type">mem:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       addr:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_store"><span class="keyword">method</span> eval_store</span> : <code class="type">mem:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       addr:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_binop"><span class="keyword">method</span> eval_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_unop"><span class="keyword">method</span> eval_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_cast"><span class="keyword">method</span> eval_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_let"><span class="keyword">method</span> eval_let</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_ite"><span class="keyword">method</span> eval_ite</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.html#TYPEexp">exp</a> -> no:<a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_concat"><span class="keyword">method</span> eval_concat</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_extract"><span class="keyword">method</span> eval_extract</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_unknown"><span class="keyword">method</span> eval_unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre></body></html>

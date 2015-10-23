@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Value.Tag.html">
+<link rel="next" href="Bap.Std.Value.Typeid.html">
+<link rel="Up" href="Bap.Std.Value.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Value.Match</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Value.Tag.html" title="Bap.Std.Value.Tag">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Value.html" title="Bap.Std.Value">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Value.Typeid.html" title="Bap.Std.Value.Typeid">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Value.Match.html">Bap.Std.Value.Match</a></h1>
+
+<pre><span class="keyword">module</span> Match: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.Match.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Runtime parallel match.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+This module can be used to handle several cases in parallel
+          instead of using a sequence of nested matches or if/then/else
+          chains.
+<p>
+
+          The combinators in the module are designed to be used as follows:
+<p>
+
+          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;v&nbsp;=&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;v&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_load&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Load</span>&nbsp;x)&nbsp;&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_store&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Store</span>&nbsp;x)&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;register_read&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Read</span>&nbsp;x)&nbsp;&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unknown</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+          Note: in the example, the whole expression will build and
+          then match. In case when performance matter, and when there
+          is more then one match, it is recommended to evaluate a
+          matching object first, and return a function, that matches
+          values. For this there is a <code class="code">select</code> combinator:
+<p>
+
+          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_load&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Load</span>&nbsp;x)&nbsp;&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_store&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Store</span>&nbsp;x)&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;register_read&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Read</span>&nbsp;x)&nbsp;&nbsp;@@<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unknown</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+
+
+<pre><span id="VALswitch"><span class="keyword">val</span> switch</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's</code></pre><div class="info ">
+<code class="code">switch x matcher</code> applies <code class="code">matcher</code> to value <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'s <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> -> 's</code></pre><div class="info ">
+<code class="code">select matcher x</code> applies <code class="code">matcher</code> to value <code class="code">x</code>.
+          <code class="code">select</code> is the same as <code class="code"><span class="constructor">Fn</span>.flip switch</code>.<br>
+</div>
+
+<pre><span id="VALcase"><span class="keyword">val</span> case</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Value.tag</a> -><br>       ('a -> 's) -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">case tag action matcher</code> adds an <code class="code">action</code> to <code class="code">matcher</code> that
+          will be invoked for values with a given <code class="code">tag</code><br>
+</div>
+
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">(unit -> 's) -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">default def</code> creates an empty matcher with default handler <code class="code">def</code>.<br>
+</div>
+</body></html>

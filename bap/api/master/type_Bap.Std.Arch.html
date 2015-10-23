@@ -16,16 +16,10 @@
 <body>
 <code class="code"><span class="keyword">sig</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;x86&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>x86&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>x86_64&nbsp;]<br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;arm&nbsp;=<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span>arm<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armeb<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv4<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv4t<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv5<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv6<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv7<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumb<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbeb&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;arm&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>armv4&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv5&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv6&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv7&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;armeb&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>armv4eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv5eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv6eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv7eb&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;thumb&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>thumbv4&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv5&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv6&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv7&nbsp;]<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;thumbeb&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>thumbv4eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv5eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv6eb&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv7eb&nbsp;]<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;aarch64&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>aarch64&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>aarch64_be&nbsp;]<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;ppc&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>ppc&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>ppc64&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>ppc64le&nbsp;]<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;mips&nbsp;=&nbsp;[&nbsp;<span class="keywordsign">`</span>mips&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>mips64&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>mips64el&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>mipsel&nbsp;]<br>
@@ -38,13 +32,14 @@
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&nbsp;<span class="keywordsign">`</span>aarch64<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>aarch64_be<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>arm<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armeb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv4<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv4t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv4eb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv5eb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv6eb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv7<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>armv7eb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>hexagon<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>mips<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>mips64<br>
@@ -59,8 +54,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>sparc<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>sparcv9<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>systemz<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumb<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbeb<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv4eb<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv5<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv5eb<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv6<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv6eb<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv7<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>thumbv7eb<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>x86<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>x86_64<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span>xcore&nbsp;]<br>

@@ -54,6 +54,8 @@ architecture
 <td></td></tr>
 <tr><td><a href="Bap.Std.Arch.html#TYPEarm">arm</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Arch.html#TYPEarmeb">armeb</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 set when assembler information is stored
@@ -268,6 +270,11 @@ a partition <a href="Bap.Std.Group.html">Cell</a>
 <tr><td><a href="Bap.Std.Arch.html#TYPEhexagon">hexagon</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>I</td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#TYPEid">id</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+result identifier
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#TYPEimage">image</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 an image loaded into memory
@@ -476,6 +483,11 @@ predicate to drive the disassembler
 Relation multiplicity.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#TYPEr">r</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+State monad that evaluates to result
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Var.V1.html#TYPEr">r</a> [<a href="Bap.Std.Var.V1.html">Bap.Std.Var.V1</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Arch.html#TYPEr600">r600</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
@@ -508,6 +520,11 @@ abstract and opaque register
 constructing an image can result in actual image and a set
         (hopefully empty) of errors occured in a process of decoding an
         image, that do not prevent us from actually creating an image.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.html#TYPEresult">result</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+Result of a computation.
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
@@ -692,8 +709,6 @@ operand
 <td></td></tr>
 <tr><td><a href="Bap.Std.Kind.html#TYPEt">t</a> [<a href="Bap.Std.Kind.html">Bap.Std.Kind</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Printable.html#TYPEt">t</a> [<a href="Bap.Std.Printable.html">Bap.Std.Printable</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#TYPEt">t</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memmap.html#TYPEt">t</a> [<a href="Bap.Std.Memmap.html">Bap.Std.Memmap</a>]</td>
@@ -777,6 +792,13 @@ In order to construct a value with the given type you must
           comparison function and pretty-printing.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html#TYPEt">t</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
+<td><div class="info">
+This module can be used to handle several cases in parallel
+          instead of using a sequence of nested matches or if/then/else
+          chains.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#TYPEt">t</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
 <td><div class="info">
 <code class="code">register ~name ~uuid (<span class="keyword">module</span> <span class="constructor">T</span>)</code> creates a new variant
@@ -796,6 +818,12 @@ a universal value
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Exp.html#TYPEt">t</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Type_error.html#TYPEt">t</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Printable.html#TYPEt">t</a> [<a href="Bap.Std.Printable.html">Bap.Std.Printable</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#TYPEt">t</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
@@ -833,6 +861,8 @@ trie can store arbitrary data
 <td></td></tr>
 <tr><td><a href="Bap.Std.Regular.html#TYPEt">t</a> [<a href="Bap.Std.Regular.html">Bap.Std.Regular</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Monad.State.html#TYPEt">t</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtable">table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 a table from memory to <code class="code"><span class="keywordsign">'</span>a</code>
@@ -854,6 +884,10 @@ Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</
 BAP IR.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Arch.html#TYPEthumb">thumb</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Arch.html#TYPEthumbeb">thumbeb</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtid">tid</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Trie.Key.html#TYPEtoken">token</a> [<a href="Bap.Std.Trie.Key.html">Bap.Std.Trie.Key</a>]</td>
@@ -872,12 +906,22 @@ a <a href="Bap.Std.Tree.html"><code class="code"><span class="constructor">Tree<
 short abbreviation for a type
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.html#TYPEtype_error">type_error</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+A BIL type error
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 persistent type identifier
 </div>
 </td></tr>
 <tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.html#TYPEu">u</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+State monad that evaluates to unit
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
 <td><div class="info">
 Unary operations implemented in the IR
@@ -886,6 +930,11 @@ Unary operations implemented in the IR
 <tr><td><a href="Bap.Std.html#TYPEunop">unop</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap.Std.Bil.html#TYPEvalue">value</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+Value of a result.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#TYPEvalue">value</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEvar">var</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>

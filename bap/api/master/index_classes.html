@@ -19,10 +19,34 @@
 &nbsp;</div>
 <h1>Index of classes</h1>
 <table>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Bap.Std.bili-c.html">bili</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+BIL <a href="Bap.Std.Bili.html">interpreter</a>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.biri-c.html">biri</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+BIR <a href="Bap.Std.Biri.html">interpreter</a>
+</div>
+</td></tr>
 <tr><td align="left"><br>C</td></tr>
 <tr><td><a href="Bap.Std.Bil.constant_folder-c.html">constant_folder</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 <code class="code">constant_folder</code> is a class that implements the <code class="code">fold_consts</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html">context</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.context-c.html">context</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Bili</span>.context</code> extends <code class="code"><span class="constructor">Expi</span>.context</code> with PC (Program
+        Counter).
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.context-c.html">context</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
+<td><div class="info">
+Context for expression evaluation.
 </div>
 </td></tr>
 <tr><td align="left"><br>D</td></tr>
@@ -31,10 +55,25 @@
 base class with all methods defaults to nothing.
 </div>
 </td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Bap.Std.expi-c.html">expi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Expression <a href="Bap.Std.Expi.html">interpreter</a>
+</div>
+</td></tr>
 <tr><td align="left"><br>F</td></tr>
 <tr><td><a href="Bap.Std.Bil.finder-c.html">finder</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 A visitor with shortcut.
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Bap.Std.Bil.Storage.linear-c.html">linear</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
+<td><div class="info">
+linear storage literally implements operational
+          semantics, but has O(N) lookup and uses space
+          very ineffectively, as it is implemented as a list
+          of assignments.
 </div>
 </td></tr>
 <tr><td align="left"><br>M</td></tr>
@@ -44,6 +83,12 @@ AST transformation.
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Bap.Std.Bil.Storage.sparse-c.html">sparse</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
+<td><div class="info">
+sparse storage is slightly more efficient storage,
+          in comparison with linear.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.state-c.html">state</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 All visitors provides some information about the current
@@ -55,6 +100,24 @@ All visitors provides some information about the current
 ABI that understands nothing.
 </div>
 </td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html">t</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
+<td><div class="info">
+base class for BIR interpreters
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html">t</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
+<td><div class="info">
+Base class for BIL interpreters
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html">t</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
+<td><div class="info">
+Expression interpreter.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Context.t-c.html">t</a> [<a href="Bap.Std.Context.html">Bap.Std.Context</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html">visitor</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">

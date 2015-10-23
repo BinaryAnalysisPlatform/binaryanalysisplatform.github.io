@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Bil.Infix.html">
+<link rel="next" href="Bap.Std.Bil.Result.html">
+<link rel="Up" href="Bap.Std.Bil.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Bil.Storage</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Bil.Infix.html" title="Bap.Std.Bil.Infix">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Bil.html" title="Bap.Std.Bil">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Bil.Result.html" title="Bap.Std.Bil.Result">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a></h1>
+
+<pre><span class="keyword">module</span> Storage: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Storage.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Predefined storage classes<br>
+</div>
+<hr width="100%">
+
+<pre><span name="TYPElinear"><span class="keyword">class</span> <a href="Bap.Std.Bil.Storage.linear-c.html">linear</a></span> : <code class="type"></code><code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a></code></pre><div class="info">
+linear storage literally implements operational
+          semantics, but has O(N) lookup and uses space
+          very ineffectively, as it is implemented as a list
+          of assignments.
+</div>
+
+<pre><span name="TYPEsparse"><span class="keyword">class</span> <a href="Bap.Std.Bil.Storage.sparse-c.html">sparse</a></span> : <code class="type"></code><code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a></code></pre><div class="info">
+sparse storage is slightly more efficient storage,
+          in comparison with linear.
+</div>
+</body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Expi.html">
+<link rel="next" href="Bap.Std.Exp.html">
+<link rel="Up" href="Bap.Std.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Bili</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Expi.html" title="Bap.Std.Expi">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Exp.html" title="Bap.Std.Exp">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Bili.html">Bap.Std.Bili</a></h1>
+
+<pre><span class="keyword">module</span> Bili: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bili.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+BIL Interpreter.
+<p>
+
+      <code class="code">bili</code> extends <code class="code">expi</code> with methods for evaluating BIL
+      statements, thus allowing one to interpret BIL AST. To
+      interpret BIL in the intermediate representation use
+      <a href="Bap.Std.Biri.html">biri</a>.
+<p>
+
+      Also, if you don't need to change the default behavior
+      of the interpreter, then you may use <a href="Bap.Std.Stmt.html#VALeval"><code class="code"><span class="constructor">Stmt</span>.eval</code></a> that
+      exposes an easier interface for BIL evaluation. For example,
+<p>
+
+      <pre class="verbatim">      let x = Var.create "x" bool_t;;
+      val x : var = x
+      let ctxt = Stmt.eval [Bil.(x := int Word.b0)] (new Bili.context);;
+      val ctxt : Bili.context = &lt;obj&gt;
+      ctxt#bindings |&gt; Seq.to_list;;
+      - : (var * Bil.result) list = [(x, [0x1] false)]
+     </pre><br>
+</div>
+<hr width="100%">
+
+<pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Bap.Std.Bili.context-c.html">context</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bili.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">Bili</span>.context</code> extends <code class="code"><span class="constructor">Expi</span>.context</code> with PC (Program
+        Counter).
+</div>
+
+<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">context</a>]</code> <a href="Bap.Std.Bili.t-c.html">t</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bili.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Base class for BIL interpreters
+</div>
+</body></html>

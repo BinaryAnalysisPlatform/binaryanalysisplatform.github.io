@@ -26,13 +26,41 @@
         arguments of the given function.
 </div>
 </td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Bap.Std.Context.t-c.html#METHODbindings">bindings</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>C</td></tr>
 <tr><td><a href="Bap.Std.abi-c.html#METHODchoose">choose</a> [<a href="Bap.Std.abi-c.html">Bap.Std.abi</a>]</td>
 <td><div class="info">
 <code class="code">self<span class="keywordsign">#</span>choose other</code> used to sort a set of applicable ABI.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_storage">create_storage</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_undefined">create_undefined</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
+<td><div class="info">
+creates a fresh new result, containing an undefined value,
+          and returns it with a modified context.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_word">create_word</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
+<td><div class="info">
+creates a fresh new result, containing given storage,
+          and returns it with a modified context.
+</div>
+</td></tr>
+<tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODdivision_by_zero">division_by_zero</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+we can't do this!
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODempty">empty</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+creates an empty storage.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODenter_binop">enter_binop</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">BinOp</span> (op,e1,e2)</code>
@@ -117,6 +145,14 @@ Statements
 <code class="code"><span class="constructor">Store</span> (dst,addr,src,endian,size)</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODenter_term">enter_term</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+called for each term, just after the position is updated,
+          but before any side effect of term evaluation had occurred.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html#METHODenter_term">enter_term</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODenter_unknown">enter_unknown</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Unknown</span> (str,typ)</code>
@@ -137,6 +173,121 @@ Statements
 <code class="code"><span class="constructor">While</span> (cond,bil)</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval">eval</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_arg">eval_arg</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate argument by first evaluating its right hand side,
+          and then assigning the result to the left hand side.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_binop">eval_binop</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_blk">eval_blk</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate all terms in a given block, starting with phi
+          nodes, then proceeding to def nodes and finally evaluating
+          all jmp terms until either jump is taken or jump condition
+          is undefined.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_call">eval_call</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate target label, using <code class="code">eval_direct</code> or
+          <code class="code">eval_indirect</code>, based on the label variant.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_cast">eval_cast</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_concat">eval_concat</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_cpuexn">eval_cpuexn</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_def">eval_def</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate definition by assigning the result of the right
+          hand side to the definition variable
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_direct">eval_direct</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+set context#next to the given tid
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_exn">eval_exn</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+ignore arguments and set context#next to None
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_exp">eval_exp</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+Evaluation methods
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_extract">eval_extract</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_goto">eval_goto</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
+          on the label variant
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_if">eval_if</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_indirect">eval_indirect</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+ignore argument and set context#next to None
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_int">eval_int</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_ite">eval_ite</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_jmp">eval_jmp</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate condition, and if it is false, then do nothing,
+          otherwise evaluate jump target (see below)
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_jmp">eval_jmp</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_let">eval_let</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_load">eval_load</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_move">eval_move</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_phi">eval_phi</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+based on trace select an expression and assign its
+          value to the left hand side of phi node.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_ret">eval_ret</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
+          on the label variant
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_special">eval_special</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_stmt">eval_stmt</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_store">eval_store</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_sub">eval_sub</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+Evaluates a subroutine with the following algorithm:
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_unknown">eval_unknown</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_unop">eval_unop</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_var">eval_var</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.t-c.html#METHODeval_while">eval_while</a> [<a href="Bap.Std.Bili.t-c.html">Bap.Std.Bili.t</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>F</td></tr>
 <tr><td><a href="Bap.Std.Bil.finder-c.html#METHODfind_in_bil">find_in_bil</a> [<a href="Bap.Std.Bil.finder-c.html">Bap.Std.Bil.finder</a>]</td>
 <td></td></tr>
@@ -185,6 +336,11 @@ unique identifier of the ABI.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODleave_store">leave_store</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Biri.t-c.html#METHODleave_term">leave_term</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
+<td><div class="info">
+called after all side effects of the term has occurred
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODleave_unknown">leave_unknown</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODleave_unop">leave_unop</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
@@ -192,6 +348,23 @@ unique identifier of the ABI.
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODleave_var">leave_var</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODleave_while">leave_while</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODload">load</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+a byte is loaded from given address
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.storage-c.html#METHODload">load</a> [<a href="Bap.Std.Bil.storage-c.html">Bap.Std.Bil.storage</a>]</td>
+<td><div class="info">
+<code class="code">load a</code> loads a byte from a given address  <code class="code">a</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+a variable is looked up in a context
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Context.t-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap.Std.Bil.mapper-c.html#METHODmap_binop">map_binop</a> [<a href="Bap.Std.Bil.mapper-c.html">Bap.Std.Bil.mapper</a>]</td>
@@ -242,6 +415,14 @@ Statements
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.mapper-c.html#METHODmap_while">map_while</a> [<a href="Bap.Std.Bil.mapper-c.html">Bap.Std.Bil.mapper</a>]</td>
 <td></td></tr>
+<tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html#METHODnext">next</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Bap.Std.Bili.context-c.html#METHODpc">pc</a> [<a href="Bap.Std.Bili.context-c.html">Bap.Std.Bili.context</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html#METHODprogram">program</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>R</td></tr>
 <tr><td><a href="Bap.Std.abi-c.html#METHODrecords">records</a> [<a href="Bap.Std.abi-c.html">Bap.Std.abi</a>]</td>
 <td><div class="info">
@@ -262,6 +443,13 @@ Default entry point.
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODrun">run</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Bap.Std.Bil.storage-c.html#METHODsave">save</a> [<a href="Bap.Std.Bil.storage-c.html">Bap.Std.Bil.storage</a>]</td>
+<td><div class="info">
+<code class="code">save a w</code> stores byte <code class="code">w</code> at address <code class="code">a</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html#METHODset_next">set_next</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.abi-c.html#METHODspecific">specific</a> [<a href="Bap.Std.abi-c.html">Bap.Std.abi</a>]</td>
 <td><div class="info">
 <code class="code">self<span class="keywordsign">#</span>specific</code> is <code class="code"><span class="keyword">true</span></code> if this ABI is specific
@@ -269,6 +457,37 @@ Default entry point.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.dfs_visitor-c.html#METHODstart_tree">start_tree</a> [<a href="Bap.Std.dfs_visitor-c.html">Bap.Std.dfs_visitor</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODstore">store</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+a byte is stored to a given address
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html#METHODtrace">trace</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODtype_error">type_error</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+given typing error has occured
+</div>
+</td></tr>
+<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODundefined_addr">undefined_addr</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+called when storage doesn't contain the addr
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODundefined_var">undefined_var</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+called when context doesn't know the variable
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.t-c.html#METHODupdate">update</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
+<td><div class="info">
+a variable is bind to a value.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Context.t-c.html#METHODupdate">update</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap.Std.abi-c.html#METHODvars">vars</a> [<a href="Bap.Std.abi-c.html">Bap.Std.abi</a>]</td>
@@ -316,6 +535,9 @@ Default entry point.
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODvisit_var">visit_var</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.visitor-c.html#METHODvisit_while">visit_while</a> [<a href="Bap.Std.Bil.visitor-c.html">Bap.Std.Bil.visitor</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>W</td></tr>
+<tr><td><a href="Bap.Std.Bili.context-c.html#METHODwith_pc">with_pc</a> [<a href="Bap.Std.Bili.context-c.html">Bap.Std.Bili.context</a>]</td>
 <td></td></tr>
 </table>
 </body>

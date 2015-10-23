@@ -33,7 +33,16 @@ Architecture<br>
 <pre><span id="TYPEx86"><span class="keyword">type</span> <code class="type"></code>x86</span> = <code class="type">[ `x86 | `x86_64 ]</code> </pre>
 
 
-<pre><span id="TYPEarm"><span class="keyword">type</span> <code class="type"></code>arm</span> = <code class="type">[ `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `thumb<br>       | `thumbeb ]</code> </pre>
+<pre><span id="TYPEarm"><span class="keyword">type</span> <code class="type"></code>arm</span> = <code class="type">[ `armv4 | `armv5 | `armv6 | `armv7 ]</code> </pre>
+
+
+<pre><span id="TYPEarmeb"><span class="keyword">type</span> <code class="type"></code>armeb</span> = <code class="type">[ `armv4eb | `armv5eb | `armv6eb | `armv7eb ]</code> </pre>
+
+
+<pre><span id="TYPEthumb"><span class="keyword">type</span> <code class="type"></code>thumb</span> = <code class="type">[ `thumbv4 | `thumbv5 | `thumbv6 | `thumbv7 ]</code> </pre>
+
+
+<pre><span id="TYPEthumbeb"><span class="keyword">type</span> <code class="type"></code>thumbeb</span> = <code class="type">[ `thumbv4eb | `thumbv5eb | `thumbv6eb | `thumbv7eb ]</code> </pre>
 
 
 <pre><span id="TYPEaarch64"><span class="keyword">type</span> <code class="type"></code>aarch64</span> = <code class="type">[ `aarch64 | `aarch64_be ]</code> </pre>
@@ -63,7 +72,7 @@ Architecture<br>
 <pre><span id="TYPExcore"><span class="keyword">type</span> <code class="type"></code>xcore</span> = <code class="type">[ `xcore ]</code> </pre>
 
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `aarch64<br>       | `aarch64_be<br>       | `arm<br>       | `armeb<br>       | `armv4<br>       | `armv4t<br>       | `armv5<br>       | `armv6<br>       | `armv7<br>       | `hexagon<br>       | `mips<br>       | `mips64<br>       | `mips64el<br>       | `mipsel<br>       | `nvptx<br>       | `nvptx64<br>       | `ppc<br>       | `ppc64<br>       | `ppc64le<br>       | `r600<br>       | `sparc<br>       | `sparcv9<br>       | `systemz<br>       | `thumb<br>       | `thumbeb<br>       | `x86<br>       | `x86_64<br>       | `xcore ]</code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `aarch64<br>       | `aarch64_be<br>       | `armv4<br>       | `armv4eb<br>       | `armv5<br>       | `armv5eb<br>       | `armv6<br>       | `armv6eb<br>       | `armv7<br>       | `armv7eb<br>       | `hexagon<br>       | `mips<br>       | `mips64<br>       | `mips64el<br>       | `mipsel<br>       | `nvptx<br>       | `nvptx64<br>       | `ppc<br>       | `ppc64<br>       | `ppc64le<br>       | `r600<br>       | `sparc<br>       | `sparcv9<br>       | `systemz<br>       | `thumbv4<br>       | `thumbv4eb<br>       | `thumbv5<br>       | `thumbv5eb<br>       | `thumbv6<br>       | `thumbv6eb<br>       | `thumbv7<br>       | `thumbv7eb<br>       | `x86<br>       | `x86_64<br>       | `xcore ]</code> </pre>
 
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bap.Std.Arch.html#TYPEt">t</a> option</code></pre><div class="info ">

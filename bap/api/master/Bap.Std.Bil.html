@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Var.html">
-<link rel="next" href="Bap.Std.Exp.html">
+<link rel="next" href="Bap.Std.Context.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -25,7 +25,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Var.html" title="Bap.Std.Var">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Exp.html" title="Bap.Std.Exp">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Context.html" title="Bap.Std.Context">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Bil.html">Bap.Std.Bil</a></h1>
 
@@ -212,8 +212,10 @@ AST transformation.
 </div>
 
 <pre><span id="VALsubstitute_var"><span class="keyword">val</span> substitute_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt list -> stmt list</code></pre><div class="info ">
-<code class="code">substitute_var x y p</code> substitutes all occurences of variable <code class="code">x</code>
-        by expression <code class="code">y</code><br>
+<code class="code">substitute_var x y p</code> substitutes all free occurences of
+        variable <code class="code">x</code> in program <code class="code">p</code> by expression <code class="code">y</code>. A variable is
+        free if it is not bounded in a preceding statement or not bound
+        with let expression.<br>
 </div>
 
 <pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type">stmt list -> Var.Set.t</code></pre><div class="info ">
@@ -237,6 +239,87 @@ AST transformation.
         reached. If the transformation orbit contains non-trivial cycles,
         then the transformation will stop at an arbitrary point of a
         cycle.<br>
+</div>
+
+<pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type"></code>result</span> </pre>
+<div class="info ">
+Result of a computation.<br>
+</div>
+
+
+<pre><span id="TYPEstorage"><span class="keyword">class type</span> <a href="Bap.Std.Bil.storage-c.html">storage</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.storage-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+An interface to a memory storage.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Storage.html">Storage</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Storage.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Predefined storage classes
+</div>
+
+<pre><code><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEword">word</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+immediate value<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Mem"><span class="constructor">Mem</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.storage-c.html">storage</a></code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+memory storage<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvalue.Bot"><span class="constructor">Bot</span></span></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+undefined value<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr></table>
+
+<div class="info ">
+Value of a result.
+        We slightly diverge from an operational semantics by allowing
+        a user to provide its own storage implementation.
+<p>
+
+        In operational semantics a storage is represented
+        syntactically as
+        <pre class="verbatim">            v1 with [v2,ed] : nat &lt;- v3,
+       </pre>
+        where v1 may be either a <code class="code"><span class="constructor">Bot</span></code> value, representing an empty
+        memory (or an absence of knowledge), or another storage. So a
+        well typed memory object is defined inductively as:
+<p>
+
+        <pre class="verbatim">          Inductive memory :=
+           | bot : memory
+           | store : (mem : memory) (addr : value) (data : value).
+       </pre>
+<p>
+
+        That is equivalent to an assoc list. Although we provide an
+        assoc list as storage variant (see <a href="Bap.Std.Bil.Storage.linear-c.html"><code class="code"><span class="constructor">Bil</span>.<span class="constructor">Storage</span>.linear</code></a>), the
+        default storage is implemented slightly more effective, and
+        uses linear space and provides $log(N)$ lookup and update
+        methods. Users are encouraged to provide more efficient
+        storage implementations, for interpreters that rely heave on
+        memory throughput.<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Result.html">Result</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Result.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Result of computation.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

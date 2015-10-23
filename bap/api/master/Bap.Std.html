@@ -744,6 +744,7 @@ Opaque type is like regular type, except that we can print or
 Signature for integral type.
 </div>
 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Regular.html">Regular</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
       minimum implementation <code class="code"><span class="constructor">M</span></code>
@@ -908,6 +909,57 @@ BIL variable.
 Main BIL module
 </div>
 
+<pre><span id="TYPEbil"><span class="keyword">type</span> <code class="type"></code>bil</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEt">Bil.t</a></code> </pre>
+
+
+<pre><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = <code class="type">Bil.binop</code> </pre>
+
+
+<pre><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = <code class="type">Bil.cast</code> </pre>
+
+
+<pre><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = <code class="type">Bil.exp</code> </pre>
+
+
+<pre><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = <code class="type">Bil.stmt</code> </pre>
+
+
+<pre><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = <code class="type">Bil.unop</code> </pre>
+
+
+<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
+
+
+<pre><span id="TYPEdict"><span class="keyword">type</span> <code class="type"></code>dict</span> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Base class for evaluation contexts.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Type_error.html">Type_error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type_error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="TYPEtype_error"><span class="keyword">type</span> <code class="type"></code>type_error</span> = <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">Type_error.t</a></code> </pre>
+<div class="info ">
+A BIL type error<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Expi.html">Expi</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Expi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+BIL Interpreter.
+</div>
+
+<pre><span name="TYPEexpi"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a>]</code> <a href="Bap.Std.expi-c.html">expi</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Expi.t-c.html">Expi.t</a></code></pre><div class="info">
+Expression <a href="Bap.Std.Expi.html">interpreter</a>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bili.html">Bili</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bili.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+BIL Interpreter.
+</div>
+
+<pre><span name="TYPEbili"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a>]</code> <a href="Bap.Std.bili-c.html">bili</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Bili.t-c.html">Bili.t</a></code></pre><div class="info">
+BIL <a href="Bap.Std.Bili.html">interpreter</a>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Exp.html">Exp</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Exp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 <code class="code"><span class="constructor">Regular</span></code> interface for BIL expressions
 </div>
@@ -995,30 +1047,6 @@ Universal Heterogeneous Map.
 <pre><span class="keyword">module</span> <a href="Bap.Std.Vector.html">Vector</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Vector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Resizable Array.
 </div>
-
-<pre><span id="TYPEbil"><span class="keyword">type</span> <code class="type"></code>bil</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEt">Bil.t</a></code> </pre>
-
-
-<pre><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = <code class="type">Bil.binop</code> </pre>
-
-
-<pre><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = <code class="type">Bil.cast</code> </pre>
-
-
-<pre><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = <code class="type"><a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code> </pre>
-
-
-<pre><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">Stmt.t</a></code> </pre>
-
-
-<pre><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = <code class="type">Bil.unop</code> </pre>
-
-
-<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> = <code class="type"><a href="Bap.Std.Value.html#TYPEt">Value.t</a></code> </pre>
-
-
-<pre><span id="TYPEdict"><span class="keyword">type</span> <code class="type"></code>dict</span> = <code class="type"><a href="Bap.Std.Dict.html#TYPEt">Dict.t</a></code> </pre>
-
 
 <pre><span id="TYPEterm"><span class="keyword">type</span> <code class="type">'a</code> term</span> </pre>
 <div class="info ">
@@ -1202,6 +1230,14 @@ jmp<br>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Edge.html">Edge</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Interface that every Graph edge should provide
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Biri.html">Biri</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Biri.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+BIR Interpreter
+</div>
+
+<pre><span name="TYPEbiri"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a>]</code> <a href="Bap.Std.biri-c.html">biri</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Biri.t-c.html">Biri.t</a></code></pre><div class="info">
+BIR <a href="Bap.Std.Biri.html">interpreter</a>
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Graph.html">Graph</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graph.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

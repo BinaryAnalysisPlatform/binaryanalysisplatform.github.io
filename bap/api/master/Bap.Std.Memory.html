@@ -128,7 +128,7 @@ a set of iterators, with identity monad.<br>
 iterators lifter to the Or_error monad
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Memory.Make_iterators.html">Make_iterators</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type">Monad.S</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Memory_iterators.html">Memory_iterators</a></code><code class="type">  with type t := t
+<pre><span class="keyword">module</span> <a href="Bap.Std.Memory.Make_iterators.html">Make_iterators</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Memory_iterators.html">Memory_iterators</a></code><code class="type">  with type t := t
                           and type 'a m = 'a M.t</code></pre><div class="info">
 lifts iterators to monad <code class="code"><span class="constructor">M</span></code>
 </div>

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Bap.Std.Bil.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Bil.storage</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Bil.html" title="Bap.Std.Bil">Up</a>
+&nbsp;</div>
+<h1>Class type <a href="type_Bap.Std.Bil.storage.html">Bap.Std.Bil.storage</a></h1>
+
+<pre><span id="TYPEstorage"><span class="keyword">class type</span> storage</span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.storage-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info classtype top">
+An interface to a memory storage.
+<p>
+
+        A storage is a mapping from addresses to bytes. For
+        consistency and efficiency bytes are still reprented with
+        bitvectors.
+<p>
+
+        Storages should not take care of aliasing or endiannes, as they
+        are byte addressable. All memory operations are normalized by
+        Bili.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="METHODload"><span class="keyword">method</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> option</code></pre><div class="info ">
+<code class="code">load a</code> loads a byte from a given address  <code class="code">a</code><br>
+</div>
+
+<pre><span id="METHODsave"><span class="keyword">method</span> save</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       <a href="Bap.Std.html#TYPEword">word</a> -> < load : <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> option; save : 'a; .. ><br>       as 'a</code></pre><div class="info ">
+<code class="code">save a w</code> stores byte <code class="code">w</code> at address <code class="code">a</code><br>
+</div>
+</body></html>
