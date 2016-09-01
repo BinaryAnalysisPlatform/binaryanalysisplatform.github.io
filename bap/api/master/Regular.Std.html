@@ -66,17 +66,79 @@
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Regular.Std</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Type definitions" rel="Section" href="#3_Typedefinitions">
+<link title="Bytes" rel="Subsection" href="#4_Bytes">
+<link title="Reader and Writer type classes" rel="Subsection" href="#4_ReaderandWritertypeclasses">
+<link title="Digest" rel="Subsection" href="#4_Digest">
+<title>BAR: BAP Annotated Reference : Regular.Std</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Regular.html" title="Regular">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Regular.Std.html">Regular.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Interface that should support any regular data type.
+<p>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">Bytes.t</a></code> </pre>
+    <h2 id="2_Overview">Overview</h2>
+<p>
+
+    A regular type is catch all term for all data types that are
+    regular, like numbers, characters, strings and their algebraic
+    closure. A proper term for such types would be inductive types. A
+    regular type always has a concrete representation, it is
+    printable, comparable (with total order), hashable, etc.
+<p>
+
+    To contrast, functions, closures, proxies, descriptors, and any
+    co-inductive types are non-regular. The main difference, is that
+    regular type is self contained, where non-regular types, usually
+    represent something that can be only observed, but not really
+    represented with the data type.
+<p>
+
+    On the border line we have <code class="code"><span class="constructor">Opaque</span></code> data types. These are types,
+    that pretend to be <code class="code"><span class="constructor">Regular</span></code>, but we can't actually inspect their
+    representation.
+<p>
+
+    <h2 id="2_Features">Features</h2>
+<p>
+
+    So what the library actually provides. First of all it defines the
+    <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a> interface, that each regular data type is expected to
+    implement. This includes a full set of <code class="code"><span class="constructor">Io</span></code> functions, that allows
+    one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>
+    interface). It also provides an inteface for creating different
+    collections from the values of that type, including trees,
+    hashtables, maps, sets, etc. Also, it describes the whole algebra
+    of comparison functions. For the opaque data types an interface
+    called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
+    <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>. It doesn't provide printing and serialization, but has
+    everything that can be derived for a type with a total order
+    (e.g., containers, comparison function, etc).
+<p>
+
+    A functor is provided for each interface, that requires the
+    minimal implementation, and derives the rest.
+<p>
+
+    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Bytes</span></code></a> module is provided that facilitates the
+    transfer from mutable to immutable <code class="code"><span class="constructor">Strings</span></code>. It is the extension
+    of OCaml standard Bytes module, enhanced with the expected set of
+    functions.<br>
+</div>
+<hr width="100%">
+<br>
+<h3 id="3_Typedefinitions">Type definitions</h3><br>
+<br>
+<h4 id="4_Bytes">Bytes</h4><br>
+
+<pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type">Bytes.t</code> </pre>
+<div class="info ">
+bytes is a mutable sequence of bytes that has a fixed length.<br>
+</div>
 
 
 <pre><span id="VALbin_bytes"><span class="keyword">val</span> bin_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Type_class.t</code></pre>
@@ -88,14 +150,30 @@
 <pre><span id="VALbin_writer_bytes"><span class="keyword">val</span> bin_writer_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Type_class.writer</code></pre>
 <pre><span id="VALcompare_bytes"><span class="keyword">val</span> compare_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> -> <a href="Regular.Std.html#TYPEbytes">bytes</a> -> int</code></pre>
 <pre><span id="VALbytes_of_sexp"><span class="keyword">val</span> bytes_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Regular.Std.html#TYPEbytes">bytes</a></code></pre>
-<pre><span id="VALsexp_of_bytes"><span class="keyword">val</span> sexp_of_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALsexp_of_bytes"><span class="keyword">val</span> sexp_of_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> -> Sexplib.Sexp.t</code></pre><br>
+<h4 id="4_ReaderandWritertypeclasses">Reader and Writer type classes</h4>
+<p>
+
+      Each type class is an abstraction of a tuple of function.<br>
+
 <pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a</code> reader</span> </pre>
+<div class="info ">
+an interface for reading a value from the input.<br>
+</div>
 
 
 <pre><span id="TYPEwriter"><span class="keyword">type</span> <code class="type">'a</code> writer</span> </pre>
+<div class="info ">
+an interface for writing a value to the output.<br>
+</div>
 
+<br>
+<h4 id="4_Digest">Digest</h4><br>
 
 <pre><span id="TYPEdigest"><span class="keyword">type</span> <code class="type"></code>digest</span> </pre>
+<div class="info ">
+a string that digests data<br>
+</div>
 
 
 <pre><span id="VALbin_digest"><span class="keyword">val</span> bin_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Type_class.t</code></pre>
@@ -176,5 +254,9 @@ In order to implement <code class="code"><span class="constructor">Regular</span
 
 <pre><span class="keyword">module</span> <a href="Regular.Std.Opaque.html">Opaque</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Extension of the standard bytes module.
 </div>
 </body></html>
