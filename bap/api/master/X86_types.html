@@ -1,0 +1,976 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="X86_env.html">
+<link rel="next" href="X86_cpu.html">
+<link rel="Up" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : X86_types</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="X86_env.html" title="X86_env">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="X86_cpu.html" title="X86_cpu">Next</a>
+</div>
+<h1>Module <a href="type_X86_types.html">X86_types</a></h1>
+
+<pre><span class="keyword">module</span> X86_types: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Information about the type of pcmp instruction.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="X86_types.BV.html">BV</a>: <code class="type"><a href="Bap.Std.Bitvector.html">Bitvector</a></code></pre>
+<pre><span id="TYPEbinopf"><span class="keyword">type</span> <code class="type"></code>binopf</span> = <code class="type"><a href="Bap.Std.Exp.html#TYPEt">Exp.t</a> -> <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a> -> <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code> </pre>
+
+
+<pre><code><span id="TYPEmode"><span class="keyword">type</span> <code class="type"></code>mode</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmode.X86"><span class="constructor">X86</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTmode.X8664"><span class="constructor">X8664</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEorder"><span class="keyword">type</span> <code class="type"></code>order</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorder.Low"><span class="constructor">Low</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTorder.High"><span class="constructor">High</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEdirection"><span class="keyword">type</span> <code class="type"></code>direction</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.Forward"><span class="constructor">Forward</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTdirection.Backward"><span class="constructor">Backward</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEoperand"><span class="keyword">type</span> <code class="type"></code>operand</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperand.Oreg"><span class="constructor">Oreg</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperand.Ovec"><span class="constructor">Ovec</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperand.Oseg"><span class="constructor">Oseg</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperand.Oaddr"><span class="constructor">Oaddr</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToperand.Oimm"><span class="constructor">Oimm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPEjumptarget"><span class="keyword">type</span> <code class="type"></code>jumptarget</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTjumptarget.Jabs"><span class="constructor">Jabs</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTjumptarget.Jrel"><span class="constructor">Jrel</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEaddr">addr</a></code></code></td>
+
+</tr></table>
+
+
+
+<pre><span class="keyword">module</span> <a href="X86_types.Pcmpstr.html">Pcmpstr</a>: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.Pcmpstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><code><span id="TYPEoffsetinfo"><span class="keyword">type</span> <code class="type"></code>offsetinfo</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToffsetinfo.offlen">offlen</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToffsetinfo.offtyp">offtyp</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToffsetinfo.offop">offop</span>&nbsp;: <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToffsetinfo.offsrcoffset">offsrcoffset</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELToffsetinfo.offdstoffset">offdstoffset</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><span id="TYPEcast_type"><span class="keyword">type</span> <code class="type"></code>cast_type</span> = <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a></code> </pre>
+
+
+<pre><code><span id="TYPEopcode"><span class="keyword">type</span> <code class="type"></code>opcode</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Bswap"><span class="constructor">Bswap</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Retn"><span class="constructor">Retn</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) option * bool</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Nop"><span class="constructor">Nop</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Mov"><span class="constructor">Mov</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a> option</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Movs"><span class="constructor">Movs</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Movzx"><span class="constructor">Movzx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Movsx"><span class="constructor">Movsx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Movdq"><span class="constructor">Movdq</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Movoffset"><span class="constructor">Movoffset</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoffsetinfo">offsetinfo</a> list</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Lea"><span class="constructor">Lea</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Call"><span class="constructor">Call</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEaddr">addr</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Shift"><span class="constructor">Shift</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Shiftd"><span class="constructor">Shiftd</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Rotate"><span class="constructor">Rotate</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Bt"><span class="constructor">Bt</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Bs"><span class="constructor">Bs</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEdirection">direction</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Jump"><span class="constructor">Jump</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEjumptarget">jumptarget</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Jcc"><span class="constructor">Jcc</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEjumptarget">jumptarget</a> * <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Setcc"><span class="constructor">Setcc</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Hlt"><span class="constructor">Hlt</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cmps"><span class="constructor">Cmps</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Scas"><span class="constructor">Scas</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Stos"><span class="constructor">Stos</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Push"><span class="constructor">Push</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pop"><span class="constructor">Pop</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pushf"><span class="constructor">Pushf</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Popf"><span class="constructor">Popf</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Popcnt"><span class="constructor">Popcnt</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Sahf"><span class="constructor">Sahf</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Lahf"><span class="constructor">Lahf</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Add"><span class="constructor">Add</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Adc"><span class="constructor">Adc</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Inc"><span class="constructor">Inc</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Dec"><span class="constructor">Dec</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Sub"><span class="constructor">Sub</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Sbb"><span class="constructor">Sbb</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cmp"><span class="constructor">Cmp</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cmpxchg"><span class="constructor">Cmpxchg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cmpxchg8b"><span class="constructor">Cmpxchg8b</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Xadd"><span class="constructor">Xadd</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Xchg"><span class="constructor">Xchg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.And"><span class="constructor">And</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Or"><span class="constructor">Or</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Xor"><span class="constructor">Xor</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Test"><span class="constructor">Test</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Ptest"><span class="constructor">Ptest</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Not"><span class="constructor">Not</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Neg"><span class="constructor">Neg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Mul"><span class="constructor">Mul</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Imul"><span class="constructor">Imul</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * (bool * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Div"><span class="constructor">Div</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Idiv"><span class="constructor">Idiv</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cld"><span class="constructor">Cld</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Rdtsc"><span class="constructor">Rdtsc</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Cpuid"><span class="constructor">Cpuid</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Xgetbv"><span class="constructor">Xgetbv</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Stmxcsr"><span class="constructor">Stmxcsr</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Ldmxcsr"><span class="constructor">Ldmxcsr</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Fnstcw"><span class="constructor">Fnstcw</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Fldcw"><span class="constructor">Fldcw</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Fld"><span class="constructor">Fld</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Fst"><span class="constructor">Fst</span></span> <span class="keyword">of</span> <code class="type">(<a href="X86_types.html#TYPEoperand">operand</a> * bool)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Punpck"><span class="constructor">Punpck</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEorder">order</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Ppackedbinop"><span class="constructor">Ppackedbinop</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pbinop"><span class="constructor">Pbinop</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pmov"><span class="constructor">Pmov</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEcast_type">cast_type</a> * string)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pmovmskb"><span class="constructor">Pmovmskb</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pcmp"><span class="constructor">Pcmp</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEbinop">binop</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Palignr"><span class="constructor">Palignr</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pcmpstr"><span class="constructor">Pcmpstr</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.Pcmpstr.html#TYPEimm8cb">Pcmpstr.imm8cb</a> * <a href="X86_types.Pcmpstr.html#TYPEpcmpinfo">Pcmpstr.pcmpinfo</a>)</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pshufb"><span class="constructor">Pshufb</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option</code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Pshufd"><span class="constructor">Pshufd</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Leave"><span class="constructor">Leave</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Interrupt"><span class="constructor">Interrupt</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Interrupt3"><span class="constructor">Interrupt3</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Sysenter"><span class="constructor">Sysenter</span></span></code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTopcode.Syscall"><span class="constructor">Syscall</span></span></code></td>
+
+</tr></table>
+
+
+
+<pre><code><span id="TYPErex"><span class="keyword">type</span> <code class="type"></code>rex</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrex.rex_w">rex_w</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrex.rex_r">rex_r</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrex.rex_x">rex_x</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTrex.rex_b">rex_b</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEvex"><span class="keyword">type</span> <code class="type"></code>vex</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_nr">vex_nr</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_nx">vex_nx</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_nb">vex_nb</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_map_select">vex_map_select</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_we">vex_we</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_v">vex_v</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_l">vex_l</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTvex.vex_pp">vex_pp</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+
+<pre><code><span id="TYPEprefix"><span class="keyword">type</span> <code class="type"></code>prefix</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.addrsize">addrsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.opsize">opsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.bopsize">bopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.mopsize">mopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.repeat">repeat</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.nrepeat">nrepeat</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.addrsize_override">addrsize_override</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.opsize_override">opsize_override</span>&nbsp;: <code class="type">bool</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.rex">rex</span>&nbsp;: <code class="type"><a href="X86_types.html#TYPErex">rex</a> option</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.vex">vex</span>&nbsp;: <code class="type"><a href="X86_types.html#TYPEvex">vex</a> option</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.r_extend">r_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.rm_extend">rm_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTprefix.sib_extend">sib_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
+
+</tr></table>
+}
+
+
+</body></html>

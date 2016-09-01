@@ -8,6 +8,7 @@
 <link rel="next" href="Bap.Std.Context.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of class attributes" rel=Appendix href="index_attributes.html">
@@ -16,11 +17,60 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Functional constructors" rel="Section" href="#2_Functionalconstructors">
-<link title="AST Visitors" rel="Section" href="#bil_visitor">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Functional constructors" rel="Section" href="#2_Functionalconstructors">
 <link title="BIL Helper functions" rel="Section" href="#bil_helpers">
-<link title="General purpose iterators" rel="Subsection" href="#3_Generalpurposeiterators">
-<title>Bap.Std.Bil</title>
+<title>BAR: BAP Annotated Reference : Bap.Std.Bil</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Var.html" title="Bap.Std.Var">Previous</a>
@@ -38,17 +88,17 @@ Main BIL module
 <p>
 
       Example:
-      <pre class="codepre"><code class="code"><span class="constructor">Bil</span>.([<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;src&nbsp;<span class="keyword">lsr</span>&nbsp;i32&nbsp;1;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;src;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;i32&nbsp;31;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while_&nbsp;(var&nbsp;v&nbsp;&lt;&gt;&nbsp;i32&nbsp;0)&nbsp;[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;i32&nbsp;1;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lor</span>&nbsp;(var&nbsp;v&nbsp;<span class="keyword">land</span>&nbsp;i32&nbsp;1);<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;var&nbsp;v&nbsp;<span class="keyword">lsr</span>&nbsp;i32&nbsp;1;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;var&nbsp;s&nbsp;-&nbsp;i32&nbsp;1;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dst&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;var&nbsp;s;<br>
+      <pre class="codepre"><code class="code"><span class="constructor">Bil</span>.([
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;src&nbsp;<span class="keyword">lsr</span>&nbsp;i32&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;src;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;i32&nbsp;31;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while_&nbsp;(var&nbsp;v&nbsp;&lt;&gt;&nbsp;i32&nbsp;0)&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;i32&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lor</span>&nbsp;(var&nbsp;v&nbsp;<span class="keyword">land</span>&nbsp;i32&nbsp;1);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;var&nbsp;v&nbsp;<span class="keyword">lsr</span>&nbsp;i32&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s&nbsp;:=&nbsp;var&nbsp;s&nbsp;-&nbsp;i32&nbsp;1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dst&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;var&nbsp;s;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])</code></pre>
       where <code class="code">i32</code> is defined as
       <code class="code"><span class="keyword">let</span> i32 x = <span class="constructor">Bil</span>.int (<span class="constructor">Word</span>.of_int ~width:32 x)</code>
@@ -65,7 +115,19 @@ include all constructors into Bil namespace<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">stmt list</code> </pre>
 
 
-<pre><span class="keyword">include</span> <a href="Bap.Std.Printable.html">Bap.Std.Printable</a></pre>
+<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.html#TYPEt">t</a></code></pre>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span class="keyword">include</span> Printable</pre>
+
+<pre><span class="keyword">include</span> Data</pre>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Infix.html">Infix</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Infix.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Infix operators
@@ -125,60 +187,7 @@ Infix operators
 <pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">if_:exp -> then_:exp -> else_:exp -> exp</code></pre>
 <pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> exp -> exp</code></pre>
 <pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">exp -> exp -> exp</code></pre><br>
-<h2 id="bil_visitor">AST Visitors</h2>.
-<p>
-
-        <code class="code">visitor</code> folds arbitrary value over the AST, <code class="code">finder</code> is a
-        visitor, that can prematurely finish the traversal, <code class="code">mapper</code>
-        that maps AST, allowing limited transformation of its
-        structure.<br>
-
-<pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Bil.state-c.html">state</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.state-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-All visitors provides some information about the current
-        position of the visitor
-</div>
-
-<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Visitor.
-</div>
-
-<pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Bil.finder-c.html">finder</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.finder-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A visitor with shortcut.
-</div>
-
-<pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Bil.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bil.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-AST transformation.
-</div>
-<br>
 <h2 id="bil_helpers">BIL Helper functions</h2><br>
-<br>
-<h3 id="3_Generalpurposeiterators">General purpose iterators</h3><br>
-
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">'a #<a href="Bap.Std.Bil.visitor-c.html">visitor</a> -> init:'a -> stmt list -> 'a</code></pre><div class="info ">
-<code class="code">fold visitor ~init bil</code> folds visitor over BIL, passing init
-        value through the tree nodes. See also <a href="Bap.Std.Exp.html#VALfold"><code class="code"><span class="constructor">Exp</span>.fold</code></a> and
-        <a href="Bap.Std.Stmt.html#VALfold"><code class="code"><span class="constructor">Stmt</span>.fold</code></a>.<br>
-</div>
-
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">unit #<a href="Bap.Std.Bil.visitor-c.html">visitor</a> -> stmt list -> unit</code></pre><div class="info ">
-<code class="code">iter visitor bil</code> apply a visitor for each node of a BIL
-        forest. See also <a href="Bap.Std.Exp.html#VALiter"><code class="code"><span class="constructor">Exp</span>.iter</code></a> and <a href="Bap.Std.Stmt.html#VALiter"><code class="code"><span class="constructor">Stmt</span>.iter</code></a>.<br>
-</div>
-
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">#<a href="Bap.Std.Bil.mapper-c.html">mapper</a> -> stmt list -> stmt list</code></pre><div class="info ">
-<code class="code">map mapper bil</code> map or transform BIL program. See also
-        <a href="Bap.Std.Exp.html#VALmap"><code class="code"><span class="constructor">Exp</span>.map</code></a>.<br>
-</div>
-
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a #<a href="Bap.Std.Bil.finder-c.html">finder</a> -> stmt list -> 'a option</code></pre><div class="info ">
-<code class="code">find finder bil</code> search in <code class="code">bil</code> using provided <code class="code">finder</code>. See
-        also <a href="Bap.Std.Exp.html#VALfind"><code class="code"><span class="constructor">Exp</span>.find</code></a> and <a href="Bap.Std.Stmt.html#VALfind"><code class="code"><span class="constructor">Stmt</span>.find</code></a>.<br>
-</div>
-
-<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">unit #<a href="Bap.Std.Bil.finder-c.html">finder</a> -> stmt list -> bool</code></pre><div class="info ">
-<code class="code">exists finder bil</code> returns true if <code class="code">finder</code> finds
-        something. See also <a href="Bap.Std.Exp.html#VALexists"><code class="code"><span class="constructor">Exp</span>.exists</code></a> and <a href="Bap.Std.Stmt.html#VALexists"><code class="code"><span class="constructor">Stmt</span>.exists</code></a>.<br>
-</div>
 
 <pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> stmt list -> bool</code></pre><div class="info ">
 <code class="code">is_referenced x p</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">x</code> is referenced in some
@@ -193,12 +202,32 @@ AST transformation.
         accounted. By default, <code class="code">strict</code> is <code class="code"><span class="keyword">false</span></code><br>
 </div>
 
-<pre><span id="VALprune_unreferenced"><span class="keyword">val</span> prune_unreferenced</span> : <code class="type">stmt list -> stmt list</code></pre><div class="info ">
-<code class="code">prune_unreferenced p</code> remove all assignments to variables that
-        are not used in the program <code class="code">p</code>. This is a local optimization.
-        The variable is unreferenced if it is not referenced in its lexical
-        scope, or if it is referenced after the assignment. Only
-        temporary variables are pruned, as their scope is local.<br>
+<pre><span id="VALprune_unreferenced"><span class="keyword">val</span> prune_unreferenced</span> : <code class="type">?such_that:(<a href="Bap.Std.html#TYPEvar">var</a> -> bool) -><br>       ?physicals:bool -> ?virtuals:bool -> stmt list -> stmt list</code></pre><div class="info ">
+<code class="code">prune_unreferenced ?physicals ?virtuals ?such_that p</code> remove
+        all assignments to variables that are not used in the program
+        <code class="code">p</code>. This is a local optimization.  The variable is
+        unreferenced if it is not referenced in its lexical scope, or if
+        it is referenced after the assignment. A variable is pruned
+        only if it matches to one of the user specified kind,
+        described below (no variable matches the default values, so
+        by default nothing is pruned):
+<p>
+
+        <code class="code">such_that</code> matches a variable <code class="code">v</code> for which <code class="code">such_that v</code> is
+        <code class="code"><span class="keyword">true</span></code>;
+<p>
+
+        <code class="code">physicals</code> matches all physical variables (i.e., registers
+        and memory locations). See <a href="Bap.Std.Var.html#VALis_physical"><code class="code"><span class="constructor">Var</span>.is_physical</code></a> for more
+        information. Note: passing <code class="code"><span class="keyword">true</span></code> to this option is in general
+        unsound, unless you're absolutely sure, that physical
+        variables will not live out program <code class="code">p</code>;
+<p>
+
+        <code class="code">virtuals</code> matches all virtual variables (i.e., such variables
+        that were added to a program artificially and are not
+        represented physically in a program). See <a href="Bap.Std.Var.html#VALis_virtual"><code class="code"><span class="constructor">Var</span>.is_virtual</code></a>
+        for more information on virtual variables.<br>
 </div>
 
 <pre><span id="VALnormalize_negatives"><span class="keyword">val</span> normalize_negatives</span> : <code class="type">stmt list -> stmt list</code></pre><div class="info ">
@@ -228,10 +257,6 @@ AST transformation.
 <code class="code">fold_consts</code> evaluate constant expressions.
         Note: this function performs only one step, and has no loops,
         it is supposed to be run using a fixpoint combinator.<br>
-</div>
-
-<pre><span name="TYPEconstant_folder"><span class="keyword">class</span> <a href="Bap.Std.Bil.constant_folder-c.html">constant_folder</a></span> : <code class="type"></code><code class="type"><a href="Bap.Std.Bil.mapper-c.html">mapper</a></code></pre><div class="info">
-<code class="code">constant_folder</code> is a class that implements the <code class="code">fold_consts</code>
 </div>
 
 <pre><span id="VALfixpoint"><span class="keyword">val</span> fixpoint</span> : <code class="type">(stmt list -> stmt list) -> stmt list -> stmt list</code></pre><div class="info ">

@@ -5,6 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of class attributes" rel=Appendix href="index_attributes.html">
@@ -13,27 +14,129 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title></title>
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference</title>
 </head>
 <body>
-<h1></h1>
-<ul class="indexlist">
-<li><a href="index_types.html">Index of types</a></li>
-<li><a href="index_exceptions.html">Index of exceptions</a></li>
-<li><a href="index_values.html">Index of values</a></li>
-<li><a href="index_attributes.html">Index of class attributes</a></li>
-<li><a href="index_methods.html">Index of class methods</a></li>
-<li><a href="index_classes.html">Index of classes</a></li>
-<li><a href="index_class_types.html">Index of class types</a></li>
-<li><a href="index_modules.html">Index of modules</a></li>
-<li><a href="index_module_types.html">Index of module types</a></li>
+<h1>BAR: BAP Annotated Reference</h1>
+<h2 id="2_Libraries">Libraries</h2>
+<h3 id="3_Corelibraries">Core libraries</h3><ul>
+<li><a href="Bap.Std.html">bap</a> - BAP standard library</li>
+<li><a href="Regular.Std.html">regular</a> - regular inductive types</li>
+<li><a href="Bap_future.Std.html">future</a> - coinductive types</li>
+<li><a href="Graphlib.Std.html">graphlib</a> - graph library</li>
 </ul>
-<br/><br>
-<table class="indextable">
-<tr><td class="module"><a href="Bap.html">Bap</a></td><td><div class="info">
-Binary Analysis Platform Library
-</div>
-</td></tr>
-</table>
+
+<h3 id="3_HardwareArchitectures">Hardware Architectures</h3><ul>
+<li><a href="ARM.html">arm</a> - ARM architecture</li>
+<li><a href="X86_cpu.html">x86-cpu</a> - x86 family</li>
+</ul>
+
+<h3 id="3_ProgrammingLanguages">Programming Languages</h3><ul>
+<li><a href="Bap_api.html">api</a> - interface for adding new languages</li>
+<li><a href="Bap_abi.html">abi</a> - interface for adding new ABI</li>
+<li><a href="Bap_c.Std.html">c</a> - support library for C language</li>
+</ul>
+
+<h3 id="3_Auxiliarylibraries">Auxiliary libraries</h3><ul>
+<li><a href="Bap_traces.Std.html">traces</a> - loading execution traces</li>
+<li><a href="Bap_bml.html">bml</a> - an extensible DSL for term transformation</li>
+<li><a href="Bap_byteweight.html">byteweight</a> - an interface to byteweight implementation</li>
+<li><a href="Bap_demangle.Std.html">demangle</a> - custom name demanglers</li>
+<li><a href="Bap_ida.Std.html">ida</a> - call IDA from OCaml</li>
+<li><a href="Microx.Std.html">microx</a> - a library for code microexecution</li>
+<li><a href="Bap_build.Std.html">build</a> - BAP build system as an ocamlbuild plugin</li>
+</ul>
+
+<h2 id="2_Frontends">Frontends</h2><ul>
+<li><code class="code">bap</code> - bap main frontend</li>
+<li><code class="code">bap-mc</code> - machine code playground</li>
+<li><code class="code">bap-byteweight</code> - create, obtain and evaluate byteweight signatures</li>
+</ul>
+
+<h2 id="2_Plugins">Plugins</h2><ul>
+<li><code class="code">abi</code> - apply abi information to a project</li>
+<li><code class="code">api</code> - add parameters to subroutines based on known API</li>
+<li><code class="code">arm</code> - provide ARM lifter</li>
+<li><code class="code">byteweight</code> - find function starts using Byteweight algorithm</li>
+<li><code class="code">cache</code> - provide caching services</li>
+<li><code class="code">callsites</code> - annotate callsites with subroutine's arguments</li>
+<li><code class="code">cxxfilt</code> - provide c++filt based demangler</li>
+<li><code class="code">demangle</code> - demangle subroutine names</li>
+<li><code class="code">dump-symbols</code> - dump symbol information as a list of blocks</li>
+<li><code class="code">emit-ida-script</code> - extract a IDA python script from bap</li>
+<li><code class="code">frontc-<span class="keyword">parser</span></code> - parse c files with FrontC</li>
+<li><code class="code">ida</code> - use ida to provide rooter, symbolizer and reconstructor</li>
+<li><code class="code">llvm</code> - provide loader and disassembler using LLVM library</li>
+<li><code class="code">map-terms</code> - map terms using BML DSL</li>
+<li><code class="code">objdump</code> - use objdump to provide a symbolizer</li>
+<li><code class="code">phoenix</code> - output project information in a phoenix format</li>
+<li><code class="code">piqi-printers</code> - provides piqi serialization for main data types (BIL, IR)</li>
+<li><code class="code">print</code> - print project in various formats</li>
+<li><code class="code">propagate-taint</code> - propagate taints through a program</li>
+<li><code class="code">read-symbols</code> - read symbol information from file</li>
+<li><code class="code">taint</code> - taint specified terms</li>
+<li><code class="code">trace</code> - manage execution traces</li>
+<li><code class="code">warn-unused</code> - warn about unused results of certain functions</li>
+<li><code class="code">x86</code> - provide x86 lifter</li>
+</ul>
+
+<h2 id="2_Tools">Tools</h2><ul>
+<li><code class="code">baptop</code> - run BAP interactively</li>
+<li><code class="code">bapbuild</code> - build BAP plugins</li>
+<li><code class="code">bap-server</code> - call to BAP via JSON RPC</li>
+<li><code class="code">bapbundle</code> - bundle data with your code</li>
+</ul>
+<br>
 </body>
 </html>

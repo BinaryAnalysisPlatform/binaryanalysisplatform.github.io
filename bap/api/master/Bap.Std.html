@@ -6,6 +6,7 @@
 <link rel="Start" href="index.html">
 <link rel="Up" href="Bap.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of class attributes" rel=Appendix href="index_attributes.html">
@@ -14,7 +15,58 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Binary Analysis Platform Library" rel="Section" href="#1_BinaryAnalysisPlatformLibrary">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Binary Analysis Platform Library" rel="Section" href="#1_BinaryAnalysisPlatformLibrary">
 <link title="BAP API" rel="Section" href="#api">
 <link title="Overview" rel="Subsection" href="#2_Overview">
 <link title="Foundation Library" rel="Subsection" href="#bfl">
@@ -22,8 +74,7 @@
 <link title="Disassembler" rel="Subsection" href="#disasm">
 <link title="Semantic Analysis" rel="Subsection" href="#sema">
 <link title="Working with project" rel="Subsection" href="#project">
-<link title="Auxiliary libraries" rel="Subsection" href="#aux">
-<title>Bap.Std</title>
+<title>BAR: BAP Annotated Reference : Bap.Std</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap.html" title="Bap">Up</a>
@@ -77,7 +128,7 @@
 
       The <a href="Bap.Std.html#bfl">Foundation library</a> defines <a href="Bap.Std.Bil.html">BAP Instruction
       language</a> data types, as well as other useful data structures,
-      like <a href="Bap.Std.Value.html"><code class="code"><span class="constructor">Value</span></code></a>, <a href="Bap.Std.Trie.html"><code class="code"><span class="constructor">Trie</span></code></a>, <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Vector</span></code></a>, <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a>, etc. The
+      like <a href="Bap.Std.Value.html"><code class="code"><span class="constructor">Value</span></code></a>, <a href="Bap.Std.Trie.html"><code class="code"><span class="constructor">Trie</span></code></a>, <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Vector</span></code></a>, <code class="code"><span class="constructor">Graph</span></code>, etc. The
       <a href="Bap.Std.html#image">Memory model</a> layer is responsible for loading
       and parsing binary objects and representing them in computer
       memory. It also defines a few useful data structures that are
@@ -170,10 +221,10 @@
 <li><a href="Bap.Std.Seq.html">'a seq</a> - slightly extended Core <code class="code"><span class="constructor">Sequence</span></code>, aka lazy
         list;</li>
 <li><a href="Bap.Std.Trie.html">Trie</a> - prefix trees;</li>
-<li><a href="Bap.Std.Graph.html">Graph</a> - graph implementations and library.</li>
+<li>Graph - graph implementations and library.</li>
 </ul>
 
-      Most of the types implement the <a href="Bap.Std.Regular.html">Regular</a>
+      Most of the types implement the <a href="Regular.html">Regular</a>
       interface. This interface is very similar to Core's
       <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to represent a type that is as
       common as a built-in type. One should expect to find any
@@ -235,8 +286,8 @@
       <h3 id="vector">Vector</h3>
 <p>
 
-      Vector is an implementation of STL like vectors with logarithmic
-      push back.
+      Vector is an implementation of C++ STL like vectors with
+      logarithmic push back.
 <p>
 
       <h3 id="tries">Tries</h3>
@@ -254,81 +305,7 @@
       <a href="Bap.Std.Bitvector.Trie.html">tries</a> inside.
 <p>
 
-      For common strings, there's <a href="Bap.Std.Trie.String.html"><code class="code"><span class="constructor">Trie</span>.<span class="constructor">String</span></code></a>.
-<p>
-
-      <h3 id="3_Graphlibrary">Graph library</h3>
-<p>
-
-      <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is a generic library that extends a well known
-      OCamlGraph library. <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> uses its own, more reach,
-      <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface that is isomorphic to OCamlGraph's <code class="code"><span class="constructor">Sigs</span>.<span class="constructor">P</span></code>
-      signature for persistant graphs. Two functors witness the
-      isomorphism of the interfaces:
-      <a href="Bap.Std.Graphlib.To_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">To_ocamlgraph</span></code></a> and <a href="Bap.Std.Graphlib.Of_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Of_ocamlgraph</span></code></a>. Thanks
-      to this functors any algorithm written for OCamlGraph can be
-      used on <code class="code"><span class="constructor">Graphlibs</span></code> graph and vice verse.
-<p>
-
-      The <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface provides a richer interface in a Core
-      style. Nodes and Edges implements <a href="Bap.Std.Opaque.html"><code class="code"><span class="constructor">Opaque</span></code></a> data structure,
-      i.e., they come with Maps, Sets, Hashtbls, etc, preloaded (e.g.,
-      <code class="code"><span class="constructor">G</span>.<span class="constructor">Node</span>.<span class="constructor">Set</span></code> is a set of node for graph implementation, provided
-      by a module named <code class="code"><span class="constructor">G</span></code>). Graphs also implement <a href="Bap.Std.Printable.html"><code class="code"><span class="constructor">Printable</span></code></a>
-      interface, that makes them much easier to debug.
-<p>
-
-      Along with graphs, auxiliary data structures are provided, like
-      <a href="Bap.Std.Path.html">path</a> to represent paths in graph, <a href="Bap.Std.Tree.html">tree</a> for
-      representing different graph spannings, <a href="Bap.Std.Partition.html">partition</a>
-      for graph partitioning, and more.
-<p>
-
-      <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is a library that provides a set of generic
-      algorithms, as well as implementations of a <a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface,
-      and a suite of preinstantiated graphs.
-<p>
-
-      Contrary to OCamlGraph, each <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> interface is provided
-      as a function, not a functor. Thus making there use syntactically
-      easier. Also, <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> heavily uses optional and keyword
-      parameters. For die-hards, may algorithms are still have functor
-      interface.
-<p>
-
-      All <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> algorithms accept a first-class module with
-      graph implementation as a first argument. You can think of this
-      parameter as an explicit type class. Later, when modular
-      implicits will be accepted in OCaml, this parameter can be
-      omitted. But for now, we need to pass it.
-<p>
-
-      A recommended way to work with <a href="Bap.Std.Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is to bind the
-      chosen implementation with some short name, usually <code class="code"><span class="constructor">G</span></code> would be
-      a good choice:
-<p>
-
-      <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.<span class="constructor">String</span>.<span class="constructor">Bool</span></code></pre>
-<p>
-
-      This will bind name <code class="code"><span class="constructor">G</span></code> with a graph implementation that has
-      <code class="code">string</code> nodes, with edges marked by values of type <code class="code">bool</code>.
-<p>
-
-      To create a graph of type <code class="code"><span class="constructor">G</span>.t</code> one can use a generic
-      <a href="Bap.Std.Graphlib.html#VALcreate"><code class="code"><span class="constructor">Graphlib</span>.create</code></a> function:
-<p>
-
-      <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;g&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.create&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;~edges:[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"entry"</span>,&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="keyword">true</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="string">"exit"</span>,&nbsp;<span class="keyword">true</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="string">"loop"</span>,&nbsp;<span class="keyword">false</span>;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;()</code></pre>
-<p>
-
-      This will create an instance of type <code class="code"><span class="constructor">G</span>.t</code>. Of course, it is
-      still possible to use non-generic <code class="code"><span class="constructor">G</span>.empty</code>, <code class="code"><span class="constructor">G</span>.<span class="constructor">Node</span>.insert</code>,
-      <code class="code"><span class="constructor">G</span>.<span class="constructor">Edge</span>.insert</code>.<br>
+      For common strings, there's <a href="Bap.Std.Trie.String.html"><code class="code"><span class="constructor">Trie</span>.<span class="constructor">String</span></code></a>.<br>
 <br>
 <h2 id="image">Memory model</h2>
 <p>
@@ -382,12 +359,12 @@
       one of the following functions:
 <p>
 <ul>
-<li><a href="Bap.Std.html#VALdisassemble">disassemble</a> - to disassemble a region of
+<li>disassemble - to disassemble a region of
         memory;</li>
-<li><a href="Bap.Std.html#VALdisassemble_image">disassemble_image</a> - to disassemble a
+<li>disassemble_image - to disassemble a
         loaded binary object;</li>
-<li><a href="Bap.Std.html#VALdisassemble_file">disassemble_file</a> or
-        <a href="Bap.Std.html#VALdisassemble_file_exn">disassemble_file</a> - to disassemble
+<li>disassemble_file or
+        disassemble_file - to disassemble
         file.</li>
 </ul>
 
@@ -432,10 +409,10 @@
 
       A disassembled program is represented as a set of
       interconnected <a href="Bap.Std.Block.html">basic blocks</a>. You can navigate between
-      blocks using <a href="Bap.Std.Block_traverse.html#VALsuccs">Block.succs</a> and
-      <a href="Bap.Std.Block_traverse.html#VALpreds">Block.preds</a> functions, or you can
+      blocks using Block.succs and
+      Block.preds functions, or you can
       transform a set of blocks into a real graph using
-      the <a href="Bap.Std.Block.html#VALto_graph">Block.to_graph</a> function. Sometimes it
+      the Block.to_graph function. Sometimes it
       is enough to traverse program using
       depth-first search.
 <p>
@@ -443,8 +420,8 @@
       Each block is a container to a sequence of machine
       instructions. It is guaranteed that there's at least one
       instruction in the block, thus the
-      <a href="Bap.Std.Block_accessors.html#VALleader">Block.leader</a> and
-      <a href="Bap.Std.Block_accessors.html#VALterminator">Block.terminator</a> functions are
+      Block.leader and
+      Block.terminator functions are
       total.
 <p>
 
@@ -458,23 +435,21 @@
 
       Modules of type <a href="Bap.Std.CPU.html">CPU</a> provide a high level abstraction of
       the CPU and allow one to reason about instruction semantics
-      independently from the target platform. Modules of type
-      <a href="Bap.Std.ABI.html">ABI</a> provide even more information, e.g., it maps
-      registers to formals. The module type <a href="Bap.Std.Target.html">Target</a> brings
-      <code class="code"><span class="constructor">CPU</span></code> and <code class="code"><span class="constructor">ABI</span></code> together. To get an instance of this module,
-      you can use the <a href="Bap.Std.html#VALtarget_of_arch">target_of_arch</a> function. For
-      accessing all information about target platform, use the
-      following modules that expose low-level and platform-specific
-      details:
+      independently from the target platform. The module type
+      <a href="Bap.Std.Target.html">Target</a> brings <code class="code"><span class="constructor">CPU</span></code> and <code class="code"><span class="constructor">ABI</span></code> together. To get an
+      instance of this module, you can use the
+      <a href="Bap.Std.html#VALtarget_of_arch">target_of_arch</a> function. For accessing all
+      information about target platform, use the following modules
+      that expose low-level and platform-specific details:
 <p>
 <ul>
-<li><a href="Bap.Std.ARM.html">ARM</a></li>
-<li><a href="Bap.Std.IA32.html">IA32</a></li>
-<li><a href="Bap.Std.AMD64.html">AMD64</a></li>
+<li><a href="ARM.html">ARM</a></li>
+<li>IA32</li>
+<li>AMD64</li>
 </ul>
 
       If you do not need cfg reconstruction, you can use
-      <a href="Bap.Std.html#VALlinear_sweep">linear_sweep</a> function to disassemble a given
+      linear_sweep function to disassemble a given
       memory region. If you need more granularity, then you can use
       the expert interface accordingly:
 <p>
@@ -533,8 +508,8 @@
       an abstract expression. Suppose, that the definition was:
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;d_1&nbsp;=&nbsp;<span class="constructor">Def</span>.create&nbsp;x&nbsp;<span class="constructor">Bil</span>.(var&nbsp;y&nbsp;+&nbsp;var&nbsp;z);;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;d_1&nbsp;:&nbsp;<span class="constructor">Def</span>.t&nbsp;=&nbsp;00000001:&nbsp;x&nbsp;:=&nbsp;y&nbsp;+&nbsp;z<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;d_1&nbsp;=&nbsp;<span class="constructor">Def</span>.create&nbsp;x&nbsp;<span class="constructor">Bil</span>.(var&nbsp;y&nbsp;+&nbsp;var&nbsp;z);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;d_1&nbsp;:&nbsp;<span class="constructor">Def</span>.t&nbsp;=&nbsp;00000001:&nbsp;x&nbsp;:=&nbsp;y&nbsp;+&nbsp;z
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -543,18 +518,18 @@
       <em>different</em> value:
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;d_2&nbsp;=&nbsp;<span class="constructor">Def</span>.with_rhs&nbsp;d_1&nbsp;<span class="constructor">Bil</span>.(int&nbsp;<span class="constructor">Word</span>.b1);;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;d_2&nbsp;:&nbsp;<span class="constructor">Def</span>.t&nbsp;=&nbsp;00000001:&nbsp;x&nbsp;:=&nbsp;<span class="keyword">true</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;d_2&nbsp;=&nbsp;<span class="constructor">Def</span>.with_rhs&nbsp;d_1&nbsp;<span class="constructor">Bil</span>.(int&nbsp;<span class="constructor">Word</span>.b1);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;d_2&nbsp;:&nbsp;<span class="constructor">Def</span>.t&nbsp;=&nbsp;00000001:&nbsp;x&nbsp;:=&nbsp;<span class="keyword">true</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       <code class="code">d_1</code> and <code class="code">d_2</code> is different values
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Def</span>.equal&nbsp;d_1&nbsp;d_2;;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;bool&nbsp;=&nbsp;<span class="keyword">false</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>  of the same term <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Term</span>.same&nbsp;d_1&nbsp;d_2;;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;bool&nbsp;=&nbsp;<span class="keyword">true</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Def</span>.equal&nbsp;d_1&nbsp;d_2;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;bool&nbsp;=&nbsp;<span class="keyword">false</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>  of the same term <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Term</span>.same&nbsp;d_1&nbsp;d_2;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;bool&nbsp;=&nbsp;<span class="keyword">true</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -622,9 +597,9 @@
 <li><code class="code">project <span class="keywordsign">-&gt;</span> unit</code> and register it with
          <a href="Bap.Std.Project.html#VALregister_pass'">register_pass'</a>;</li>
 <li><code class="code">string array <span class="keywordsign">-&gt;</span> project <span class="keywordsign">-&gt;</span> project</code> and register it with
-        <a href="Bap.Std.Project.html#VALregister_pass_with_args">register_pass_with_args</a>;</li>
+        register_pass_with_args;</li>
 <li><code class="code">string array <span class="keywordsign">-&gt;</span> project <span class="keywordsign">-&gt;</span> unit</code> and register it with
-        <a href="Bap.Std.Project.html#VALregister_pass_with_args'">register_pass_with_args'</a>.</li>
+        register_pass_with_args'.</li>
 </ul>
 
       Once loaded from the <code class="code">bap</code> utility (see <code class="code">man bap</code>) this function
@@ -642,16 +617,16 @@
       The following plugin prints all sections in a file:
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Format</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;print_sections&nbsp;p&nbsp;=<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Project</span>.memory&nbsp;p&nbsp;|&gt;&nbsp;<span class="constructor">Memmap</span>.to_sequence&nbsp;|&gt;&nbsp;<span class="constructor">Seq</span>.iter&nbsp;~f:(<span class="keyword">fun</span>&nbsp;(mem,x)&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Option</span>.iter&nbsp;(<span class="constructor">Value</span>.get&nbsp;<span class="constructor">Image</span>.section&nbsp;x)&nbsp;~f:(<span class="keyword">fun</span>&nbsp;name&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;<span class="string">"Section:&nbsp;%s@.%a@."</span>&nbsp;name&nbsp;<span class="constructor">Memory</span>.pp&nbsp;mem))<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;()&nbsp;=&nbsp;<span class="constructor">Project</span>.register_pass'&nbsp;<span class="string">"print-sections"</span>&nbsp;print_sections<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Format</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;print_sections&nbsp;p&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Project</span>.memory&nbsp;p&nbsp;|&gt;&nbsp;<span class="constructor">Memmap</span>.to_sequence&nbsp;|&gt;&nbsp;<span class="constructor">Seq</span>.iter&nbsp;~f:(<span class="keyword">fun</span>&nbsp;(mem,x)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Option</span>.iter&nbsp;(<span class="constructor">Value</span>.get&nbsp;<span class="constructor">Image</span>.section&nbsp;x)&nbsp;~f:(<span class="keyword">fun</span>&nbsp;name&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf&nbsp;<span class="string">"Section:&nbsp;%s@.%a@."</span>&nbsp;name&nbsp;<span class="constructor">Memory</span>.pp&nbsp;mem))
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;()&nbsp;=&nbsp;<span class="constructor">Project</span>.register_pass'&nbsp;<span class="string">"print-sections"</span>&nbsp;print_sections
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -686,88 +661,46 @@
       access to permission information.</li>
 </ul>
 <br>
-<br>
-<h2 id="aux">Auxiliary libraries</h2>
-<p>
-
-      <h3 id="dwarf">DWARF library</h3>
-<p>
-
-      The Dwarf library provides an access to DWARF debugging
-      information. It implements parsing of some subset of DWARF
-      features, and a high-level interface <a href="Bap.Std.Dwarf.Fbi.html">Fbi</a> that
-      extracts function symbols from the given DWARF data.
-<p>
-
-      <h3 id="sigs">Byteweight</h3>
-<p>
-
-      This <a href="Bap.Std.Byteweight.html">library</a> implements a byteweight algorithm
-      that identifies functions in stripped binaries, as well as
-      being able to train itself on a provided training corpus.<br>
-<br>
-<h1 id="api">BAP API</h1><br>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Config.html">Config</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Config.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Access to BAP configuration variables
-</div>
 
 <pre><span id="TYPEprinter"><span class="keyword">type</span> <code class="type">'a</code> printer</span> = <code class="type">Format.formatter -> 'a -> unit</code> </pre>
 <div class="info ">
-<code class="code"><span class="keywordsign">'</span>a printer</code> defines a type for pretty-printers for a value of
-      type <code class="code"><span class="keywordsign">'</span>a</code>. This is the type, that is required by <code class="code">%a</code> specifier,
-      for <code class="code"><span class="constructor">Format</span>.printf</code>-family of functions. Also, this is the type,
-      that can be installed into OCaml toplevel or debugger.
-<p>
-
-      Note: `bap.top` library automatically installs all printers.<br>
+Converts an 'a to a string<br>
 </div>
 
+<br>
+<h1 id="api">BAP API</h1><br>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Printable.html">Printable</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Printable interface is implemented by a significant amount of
-      BAP types.
-</div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Regular.html">Regular</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Regular types models a general concept of value, i.e., something
-      that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
-      <code class="code">char</code> and other built in types.
-</div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Opaque.html">Opaque</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Opaque type is like regular type, except that we can print or
-      examine it in any way.
+<pre><span class="keyword">module</span> <a href="Bap.Std.Self.html">Self</a> <code class="code">(</code><code class="code">*</code><code class="code"> : </code><code class="code"><span class="keyword">sig</span></code><div class="sig_block"></div><code class="code"><span class="keyword">end</span></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Self.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+This module refers to an information bundled with an application.
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Integer.html">Integer</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Signature for integral type.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Regular.html">Regular</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
-      minimum implementation <code class="code"><span class="constructor">M</span></code>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Monad is an interface, that is pervasives through many data
+      types.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Opaque.html">Opaque</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Seq.html">Seq</a>: <code class="type">module type of Seq</code><code class="type"> 
+    with type 'a t = 'a Sequence.t</code></pre><div class="info">
 Lazy sequence
 </div>
 
-<pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a <a href="Bap.Std.Seq.html#TYPEt">Seq.t</a></code> </pre>
-<div class="info ">
-type abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code><br>
-</div>
+<pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a Seq.t</code> </pre>
 
 
-<pre><span id="VAL(^::)"><span class="keyword">val</span> (^::)</span> : <code class="type">'a -> 'a <a href="Bap.Std.html#TYPEseq">seq</a> -> 'a <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">x ^:: xs</code> is a consing operator for sequences<br>
-</div>
-
+<pre><span id="VALbin_seq"><span class="keyword">val</span> bin_seq</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_seq"><span class="keyword">val</span> bin_read_seq</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_seq__"><span class="keyword">val</span> __bin_read_seq__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Bap.Std.html#TYPEseq">seq</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_seq"><span class="keyword">val</span> bin_reader_seq</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_seq"><span class="keyword">val</span> bin_size_seq</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_seq"><span class="keyword">val</span> bin_write_seq</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_seq"><span class="keyword">val</span> bin_writer_seq</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Bap.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_seq"><span class="keyword">val</span> compare_seq</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Bap.Std.html#TYPEseq">seq</a> -> 'a <a href="Bap.Std.html#TYPEseq">seq</a> -> int</code></pre>
+<pre><span id="VALseq_of_sexp"><span class="keyword">val</span> seq_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
+<pre><span id="VALsexp_of_seq"><span class="keyword">val</span> sexp_of_seq</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.html#TYPEseq">seq</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Trie.html">Trie</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Prefix tries.
 </div>
@@ -782,6 +715,16 @@ Type to represent machine word<br>
 </div>
 
 
+<pre><span id="VALbin_word"><span class="keyword">val</span> bin_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_word"><span class="keyword">val</span> bin_read_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_word__"><span class="keyword">val</span> __bin_read_word__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEword">word</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_word"><span class="keyword">val</span> bin_reader_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_word"><span class="keyword">val</span> bin_size_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_word"><span class="keyword">val</span> bin_write_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_word"><span class="keyword">val</span> bin_writer_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_word"><span class="keyword">val</span> compare_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> int</code></pre>
+<pre><span id="VALword_of_sexp"><span class="keyword">val</span> word_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEword">word</a></code></pre>
+<pre><span id="VALsexp_of_word"><span class="keyword">val</span> sexp_of_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEaddr"><span class="keyword">type</span> <code class="type"></code>addr</span> = <code class="type"><a href="Bap.Std.html#TYPEword">word</a></code> </pre>
 <div class="info ">
 A synonym for <code class="code">word</code>, that should be used for words
@@ -789,6 +732,16 @@ A synonym for <code class="code">word</code>, that should be used for words
 </div>
 
 
+<pre><span id="VALbin_addr"><span class="keyword">val</span> bin_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_addr"><span class="keyword">val</span> bin_read_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_addr__"><span class="keyword">val</span> __bin_read_addr__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEaddr">addr</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_addr"><span class="keyword">val</span> bin_reader_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_addr"><span class="keyword">val</span> bin_size_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_addr"><span class="keyword">val</span> bin_write_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_addr"><span class="keyword">val</span> bin_writer_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_addr"><span class="keyword">val</span> compare_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> int</code></pre>
+<pre><span id="VALaddr_of_sexp"><span class="keyword">val</span> addr_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre>
+<pre><span id="VALsexp_of_addr"><span class="keyword">val</span> sexp_of_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Size.html">Size</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Size.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Type safe operand and register sizes.
 </div>
@@ -799,18 +752,48 @@ size of operand<br>
 </div>
 
 
+<pre><span id="VALbin_size"><span class="keyword">val</span> bin_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_size"><span class="keyword">val</span> bin_read_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_size__"><span class="keyword">val</span> __bin_read_size__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEsize">size</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_size"><span class="keyword">val</span> bin_reader_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_size"><span class="keyword">val</span> bin_size_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_size"><span class="keyword">val</span> bin_write_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_size"><span class="keyword">val</span> bin_writer_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_size"><span class="keyword">val</span> compare_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> int</code></pre>
+<pre><span id="VALsize_of_sexp"><span class="keyword">val</span> size_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
+<pre><span id="VALsexp_of_size"><span class="keyword">val</span> sexp_of_size</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEaddr_size"><span class="keyword">type</span> <code class="type"></code>addr_size</span> = <code class="type">[ `r32 | `r64 ] <a href="Bap.Std.Size.html#TYPEp">Size.p</a></code> </pre>
 <div class="info ">
 size of address<br>
 </div>
 
 
+<pre><span id="VALbin_addr_size"><span class="keyword">val</span> bin_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_addr_size"><span class="keyword">val</span> bin_read_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_addr_size__"><span class="keyword">val</span> __bin_read_addr_size__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_addr_size"><span class="keyword">val</span> bin_reader_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_addr_size"><span class="keyword">val</span> bin_size_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_addr_size"><span class="keyword">val</span> bin_write_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_addr_size"><span class="keyword">val</span> bin_writer_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_addr_size"><span class="keyword">val</span> compare_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a> -> int</code></pre>
+<pre><span id="VALaddr_size_of_sexp"><span class="keyword">val</span> addr_size_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre>
+<pre><span id="VALsexp_of_addr_size"><span class="keyword">val</span> sexp_of_addr_size</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEnat1"><span class="keyword">type</span> <code class="type"></code>nat1</span> = <code class="type">int</code> </pre>
 <div class="info ">
 just a fancy type abbreviation<br>
 </div>
 
 
+<pre><span id="VALbin_nat1"><span class="keyword">val</span> bin_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_nat1"><span class="keyword">val</span> bin_read_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_nat1__"><span class="keyword">val</span> __bin_read_nat1__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEnat1">nat1</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_nat1"><span class="keyword">val</span> bin_reader_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_nat1"><span class="keyword">val</span> bin_size_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_nat1"><span class="keyword">val</span> bin_write_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_nat1"><span class="keyword">val</span> bin_writer_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_nat1"><span class="keyword">val</span> compare_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> int</code></pre>
+<pre><span id="VALnat1_of_sexp"><span class="keyword">val</span> nat1_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEnat1">nat1</a></code></pre>
+<pre><span id="VALsexp_of_nat1"><span class="keyword">val</span> sexp_of_nat1</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.html">Bitvector</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Bitvector -- a type for representing binary values.
 </div>
@@ -836,6 +819,16 @@ Expose <code class="code">endian</code> constructors to <code class="code"><span
 </div>
 
 
+<pre><span id="VALendian_of_sexp"><span class="keyword">val</span> endian_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre>
+<pre><span id="VALsexp_of_endian"><span class="keyword">val</span> sexp_of_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALbin_endian"><span class="keyword">val</span> bin_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_endian"><span class="keyword">val</span> bin_read_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_endian__"><span class="keyword">val</span> __bin_read_endian__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEendian">endian</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_endian"><span class="keyword">val</span> bin_reader_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_endian"><span class="keyword">val</span> bin_size_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_endian"><span class="keyword">val</span> bin_write_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_endian"><span class="keyword">val</span> bin_writer_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_endian"><span class="keyword">val</span> compare_endian</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> int</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Word.html">Word</a>: <code class="type">module type of Bitvector</code><code class="type"> 
     with type t = word
      and type endian = endian
@@ -857,6 +850,16 @@ short abbreviation for a type<br>
 </div>
 
 
+<pre><span id="VALbin_typ"><span class="keyword">val</span> bin_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_typ"><span class="keyword">val</span> bin_read_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_typ__"><span class="keyword">val</span> __bin_read_typ__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEtyp">typ</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_typ"><span class="keyword">val</span> bin_reader_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_typ"><span class="keyword">val</span> bin_size_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_typ"><span class="keyword">val</span> bin_write_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_typ"><span class="keyword">val</span> bin_writer_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_typ"><span class="keyword">val</span> compare_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> int</code></pre>
+<pre><span id="VALtyp_of_sexp"><span class="keyword">val</span> typ_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEtyp">typ</a></code></pre>
+<pre><span id="VALsexp_of_typ"><span class="keyword">val</span> sexp_of_typ</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALbool_t"><span class="keyword">val</span> bool_t</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></pre><div class="info ">
 one bit<br>
 </div>
@@ -901,6 +904,16 @@ bil variable<br>
 </div>
 
 
+<pre><span id="VALbin_var"><span class="keyword">val</span> bin_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_var"><span class="keyword">val</span> bin_read_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_var__"><span class="keyword">val</span> __bin_read_var__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEvar">var</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_var"><span class="keyword">val</span> bin_reader_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_var"><span class="keyword">val</span> bin_size_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_var"><span class="keyword">val</span> bin_write_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_var"><span class="keyword">val</span> bin_writer_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_var"><span class="keyword">val</span> compare_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> int</code></pre>
+<pre><span id="VALvar_of_sexp"><span class="keyword">val</span> var_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
+<pre><span id="VALsexp_of_var"><span class="keyword">val</span> sexp_of_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Var.html">Var</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Var.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 BIL variable.
 </div>
@@ -912,27 +925,107 @@ Main BIL module
 <pre><span id="TYPEbil"><span class="keyword">type</span> <code class="type"></code>bil</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEt">Bil.t</a></code> </pre>
 
 
+<pre><span id="VALbin_bil"><span class="keyword">val</span> bin_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_bil"><span class="keyword">val</span> bin_read_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_bil__"><span class="keyword">val</span> __bin_read_bil__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEbil">bil</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_bil"><span class="keyword">val</span> bin_reader_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_bil"><span class="keyword">val</span> bin_size_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_bil"><span class="keyword">val</span> bin_write_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_bil"><span class="keyword">val</span> bin_writer_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_bil"><span class="keyword">val</span> compare_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> -> <a href="Bap.Std.html#TYPEbil">bil</a> -> int</code></pre>
+<pre><span id="VALbil_of_sexp"><span class="keyword">val</span> bil_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEbil">bil</a></code></pre>
+<pre><span id="VALsexp_of_bil"><span class="keyword">val</span> sexp_of_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEbil">bil</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = <code class="type">Bil.binop</code> </pre>
 
 
+<pre><span id="VALbin_binop"><span class="keyword">val</span> bin_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_binop"><span class="keyword">val</span> bin_read_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_binop__"><span class="keyword">val</span> __bin_read_binop__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEbinop">binop</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_binop"><span class="keyword">val</span> bin_reader_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_binop"><span class="keyword">val</span> bin_size_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_binop"><span class="keyword">val</span> bin_write_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_binop"><span class="keyword">val</span> bin_writer_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_binop"><span class="keyword">val</span> compare_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> -> <a href="Bap.Std.html#TYPEbinop">binop</a> -> int</code></pre>
+<pre><span id="VALbinop_of_sexp"><span class="keyword">val</span> binop_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEbinop">binop</a></code></pre>
+<pre><span id="VALsexp_of_binop"><span class="keyword">val</span> sexp_of_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = <code class="type">Bil.cast</code> </pre>
 
 
+<pre><span id="VALbin_cast"><span class="keyword">val</span> bin_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_cast"><span class="keyword">val</span> bin_read_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_cast__"><span class="keyword">val</span> __bin_read_cast__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEcast">cast</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_cast"><span class="keyword">val</span> bin_reader_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_cast"><span class="keyword">val</span> bin_size_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_cast"><span class="keyword">val</span> bin_write_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_cast"><span class="keyword">val</span> bin_writer_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_cast"><span class="keyword">val</span> compare_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEcast">cast</a> -> int</code></pre>
+<pre><span id="VALcast_of_sexp"><span class="keyword">val</span> cast_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEcast">cast</a></code></pre>
+<pre><span id="VALsexp_of_cast"><span class="keyword">val</span> sexp_of_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = <code class="type">Bil.exp</code> </pre>
 
 
+<pre><span id="VALbin_exp"><span class="keyword">val</span> bin_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_exp"><span class="keyword">val</span> bin_read_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_exp__"><span class="keyword">val</span> __bin_read_exp__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEexp">exp</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_exp"><span class="keyword">val</span> bin_reader_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_exp"><span class="keyword">val</span> bin_size_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_exp"><span class="keyword">val</span> bin_write_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_exp"><span class="keyword">val</span> bin_writer_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_exp"><span class="keyword">val</span> compare_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> int</code></pre>
+<pre><span id="VALexp_of_sexp"><span class="keyword">val</span> exp_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre>
+<pre><span id="VALsexp_of_exp"><span class="keyword">val</span> sexp_of_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = <code class="type">Bil.stmt</code> </pre>
 
 
+<pre><span id="VALbin_stmt"><span class="keyword">val</span> bin_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_stmt"><span class="keyword">val</span> bin_read_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_stmt__"><span class="keyword">val</span> __bin_read_stmt__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEstmt">stmt</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_stmt"><span class="keyword">val</span> bin_reader_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_stmt"><span class="keyword">val</span> bin_size_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_stmt"><span class="keyword">val</span> bin_write_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_stmt"><span class="keyword">val</span> bin_writer_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_stmt"><span class="keyword">val</span> compare_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> -> <a href="Bap.Std.html#TYPEstmt">stmt</a> -> int</code></pre>
+<pre><span id="VALstmt_of_sexp"><span class="keyword">val</span> stmt_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEstmt">stmt</a></code></pre>
+<pre><span id="VALsexp_of_stmt"><span class="keyword">val</span> sexp_of_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = <code class="type">Bil.unop</code> </pre>
 
 
+<pre><span id="VALbin_unop"><span class="keyword">val</span> bin_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_unop"><span class="keyword">val</span> bin_read_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_unop__"><span class="keyword">val</span> __bin_read_unop__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEunop">unop</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_unop"><span class="keyword">val</span> bin_reader_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_unop"><span class="keyword">val</span> bin_size_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_unop"><span class="keyword">val</span> bin_write_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_unop"><span class="keyword">val</span> bin_writer_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_unop"><span class="keyword">val</span> compare_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.html#TYPEunop">unop</a> -> int</code></pre>
+<pre><span id="VALunop_of_sexp"><span class="keyword">val</span> unop_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEunop">unop</a></code></pre>
+<pre><span id="VALsexp_of_unop"><span class="keyword">val</span> sexp_of_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
 
 
+<pre><span id="VALbin_value"><span class="keyword">val</span> bin_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_value"><span class="keyword">val</span> bin_read_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_value__"><span class="keyword">val</span> __bin_read_value__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEvalue">value</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_value"><span class="keyword">val</span> bin_reader_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_value"><span class="keyword">val</span> bin_size_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_value"><span class="keyword">val</span> bin_write_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_value"><span class="keyword">val</span> bin_writer_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_value"><span class="keyword">val</span> compare_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> -> int</code></pre>
+<pre><span id="VALvalue_of_sexp"><span class="keyword">val</span> value_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEvalue">value</a></code></pre>
+<pre><span id="VALsexp_of_value"><span class="keyword">val</span> sexp_of_value</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEdict"><span class="keyword">type</span> <code class="type"></code>dict</span> </pre>
 
 
+<pre><span id="VALbin_dict"><span class="keyword">val</span> bin_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_dict"><span class="keyword">val</span> bin_read_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_dict__"><span class="keyword">val</span> __bin_read_dict__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEdict">dict</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_dict"><span class="keyword">val</span> bin_reader_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_dict"><span class="keyword">val</span> bin_size_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_dict"><span class="keyword">val</span> bin_write_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_dict"><span class="keyword">val</span> bin_writer_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_dict"><span class="keyword">val</span> compare_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> -> <a href="Bap.Std.html#TYPEdict">dict</a> -> int</code></pre>
+<pre><span id="VALdict_of_sexp"><span class="keyword">val</span> dict_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEdict">dict</a></code></pre>
+<pre><span id="VALsexp_of_dict"><span class="keyword">val</span> sexp_of_dict</span> : <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Base class for evaluation contexts.
 </div>
@@ -944,6 +1037,16 @@ A BIL type error<br>
 </div>
 
 
+<pre><span id="VALbin_type_error"><span class="keyword">val</span> bin_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_type_error"><span class="keyword">val</span> bin_read_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_type_error__"><span class="keyword">val</span> __bin_read_type_error__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEtype_error">type_error</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_type_error"><span class="keyword">val</span> bin_reader_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_type_error"><span class="keyword">val</span> bin_size_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_type_error"><span class="keyword">val</span> bin_write_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_type_error"><span class="keyword">val</span> bin_writer_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_type_error"><span class="keyword">val</span> compare_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> -> <a href="Bap.Std.html#TYPEtype_error">type_error</a> -> int</code></pre>
+<pre><span id="VALtype_error_of_sexp"><span class="keyword">val</span> type_error_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEtype_error">type_error</a></code></pre>
+<pre><span id="VALsexp_of_type_error"><span class="keyword">val</span> sexp_of_type_error</span> : <code class="type"><a href="Bap.Std.html#TYPEtype_error">type_error</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Expi.html">Expi</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Expi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 BIL Interpreter.
 </div>
@@ -978,61 +1081,22 @@ architecture<br>
 </div>
 
 
+<pre><span id="VALbin_arch"><span class="keyword">val</span> bin_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_arch"><span class="keyword">val</span> bin_read_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_arch__"><span class="keyword">val</span> __bin_read_arch__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEarch">arch</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_arch"><span class="keyword">val</span> bin_reader_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_arch"><span class="keyword">val</span> bin_size_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_arch"><span class="keyword">val</span> bin_write_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_arch"><span class="keyword">val</span> bin_writer_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_arch"><span class="keyword">val</span> compare_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEarch">arch</a> -> int</code></pre>
+<pre><span id="VALarch_of_sexp"><span class="keyword">val</span> arch_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEarch">arch</a></code></pre>
+<pre><span id="VALsexp_of_arch"><span class="keyword">val</span> sexp_of_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Value.html">Value</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Universal Values.
 </div>
 
 <pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type">'a</code> tag</span> = <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Value.tag</a></code> </pre>
 
-<br>
-<h3 id="3_Somepredefinedtags">Some predefined tags</h3><br>
-
-<pre><span id="TYPEcolor"><span class="keyword">type</span> <code class="type"></code>color</span> = <code class="type">[ `black | `blue | `cyan | `green | `magenta | `red | `white | `yellow ]</code> </pre>
-
-
-<pre><span id="VALcolor"><span class="keyword">val</span> color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Color something with a color<br>
-</div>
-
-<pre><span id="VALcomment"><span class="keyword">val</span> comment</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-A human readable comment<br>
-</div>
-
-<pre><span id="VALpython"><span class="keyword">val</span> python</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-A command in python language<br>
-</div>
-
-<pre><span id="VALshell"><span class="keyword">val</span> shell</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-A command in shell language<br>
-</div>
-
-<pre><span id="VALmark"><span class="keyword">val</span> mark</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Mark something as marked<br>
-</div>
-
-<pre><span id="VALweight"><span class="keyword">val</span> weight</span> : <code class="type">float <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Give a weight<br>
-</div>
-
-<pre><span id="VALtarget_addr"><span class="keyword">val</span> target_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-The real virtual address of a target<br>
-</div>
-
-<pre><span id="VALtarget_name"><span class="keyword">val</span> target_name</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Symbolic name of a target<br>
-</div>
-
-<pre><span id="VALsubroutine_name"><span class="keyword">val</span> subroutine_name</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Name of a subroutine<br>
-</div>
-
-<pre><span id="VALsubroutine_addr"><span class="keyword">val</span> subroutine_addr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-Address of a subroutine entry point<br>
-</div>
-
-<pre><span id="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-A name of a file<br>
-</div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Dict.html">Dict</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Dict.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Universal Heterogeneous Map.
@@ -1057,33 +1121,146 @@ BAP IR.
 </div>
 
 
+<pre><span id="VALbin_term"><span class="keyword">val</span> bin_term</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_term"><span class="keyword">val</span> bin_read_term</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_term__"><span class="keyword">val</span> __bin_read_term__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Bap.Std.html#TYPEterm">term</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_term"><span class="keyword">val</span> bin_reader_term</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_term"><span class="keyword">val</span> bin_size_term</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_term"><span class="keyword">val</span> bin_write_term</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_term"><span class="keyword">val</span> bin_writer_term</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Bap.Std.html#TYPEterm">term</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_term"><span class="keyword">val</span> compare_term</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.html#TYPEterm">term</a> -> int</code></pre>
+<pre><span id="VALterm_of_sexp"><span class="keyword">val</span> term_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Bap.Std.html#TYPEterm">term</a></code></pre>
+<pre><span id="VALsexp_of_term"><span class="keyword">val</span> sexp_of_term</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.html#TYPEterm">term</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEprogram"><span class="keyword">type</span> <code class="type"></code>program</span> </pre>
 
 
+<pre><span id="VALbin_program"><span class="keyword">val</span> bin_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_program"><span class="keyword">val</span> bin_read_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_program__"><span class="keyword">val</span> __bin_read_program__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEprogram">program</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_program"><span class="keyword">val</span> bin_reader_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_program"><span class="keyword">val</span> bin_size_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_program"><span class="keyword">val</span> bin_write_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_program"><span class="keyword">val</span> bin_writer_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_program"><span class="keyword">val</span> compare_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> -> int</code></pre>
+<pre><span id="VALprogram_of_sexp"><span class="keyword">val</span> program_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEprogram">program</a></code></pre>
+<pre><span id="VALsexp_of_program"><span class="keyword">val</span> sexp_of_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEsub"><span class="keyword">type</span> <code class="type"></code>sub</span> </pre>
 
 
+<pre><span id="VALbin_sub"><span class="keyword">val</span> bin_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_sub"><span class="keyword">val</span> bin_read_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_sub__"><span class="keyword">val</span> __bin_read_sub__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEsub">sub</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_sub"><span class="keyword">val</span> bin_reader_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_sub"><span class="keyword">val</span> bin_size_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_sub"><span class="keyword">val</span> bin_write_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_sub"><span class="keyword">val</span> bin_writer_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_sub"><span class="keyword">val</span> compare_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> -> <a href="Bap.Std.html#TYPEsub">sub</a> -> int</code></pre>
+<pre><span id="VALsub_of_sexp"><span class="keyword">val</span> sub_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEsub">sub</a></code></pre>
+<pre><span id="VALsexp_of_sub"><span class="keyword">val</span> sexp_of_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEarg"><span class="keyword">type</span> <code class="type"></code>arg</span> </pre>
 
 
+<pre><span id="VALbin_arg"><span class="keyword">val</span> bin_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_arg"><span class="keyword">val</span> bin_read_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_arg__"><span class="keyword">val</span> __bin_read_arg__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEarg">arg</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_arg"><span class="keyword">val</span> bin_reader_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_arg"><span class="keyword">val</span> bin_size_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_arg"><span class="keyword">val</span> bin_write_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_arg"><span class="keyword">val</span> bin_writer_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_arg"><span class="keyword">val</span> compare_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> -> <a href="Bap.Std.html#TYPEarg">arg</a> -> int</code></pre>
+<pre><span id="VALarg_of_sexp"><span class="keyword">val</span> arg_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEarg">arg</a></code></pre>
+<pre><span id="VALsexp_of_arg"><span class="keyword">val</span> sexp_of_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEblk"><span class="keyword">type</span> <code class="type"></code>blk</span> </pre>
 
 
+<pre><span id="VALbin_blk"><span class="keyword">val</span> bin_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_blk"><span class="keyword">val</span> bin_read_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_blk__"><span class="keyword">val</span> __bin_read_blk__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEblk">blk</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_blk"><span class="keyword">val</span> bin_reader_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_blk"><span class="keyword">val</span> bin_size_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_blk"><span class="keyword">val</span> bin_write_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_blk"><span class="keyword">val</span> bin_writer_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_blk"><span class="keyword">val</span> compare_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> -> int</code></pre>
+<pre><span id="VALblk_of_sexp"><span class="keyword">val</span> blk_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEblk">blk</a></code></pre>
+<pre><span id="VALsexp_of_blk"><span class="keyword">val</span> sexp_of_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEphi"><span class="keyword">type</span> <code class="type"></code>phi</span> </pre>
 
 
+<pre><span id="VALbin_phi"><span class="keyword">val</span> bin_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_phi"><span class="keyword">val</span> bin_read_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_phi__"><span class="keyword">val</span> __bin_read_phi__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEphi">phi</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_phi"><span class="keyword">val</span> bin_reader_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_phi"><span class="keyword">val</span> bin_size_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_phi"><span class="keyword">val</span> bin_write_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_phi"><span class="keyword">val</span> bin_writer_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_phi"><span class="keyword">val</span> compare_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> -> <a href="Bap.Std.html#TYPEphi">phi</a> -> int</code></pre>
+<pre><span id="VALphi_of_sexp"><span class="keyword">val</span> phi_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEphi">phi</a></code></pre>
+<pre><span id="VALsexp_of_phi"><span class="keyword">val</span> sexp_of_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEdef"><span class="keyword">type</span> <code class="type"></code>def</span> </pre>
 
 
+<pre><span id="VALbin_def"><span class="keyword">val</span> bin_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_def"><span class="keyword">val</span> bin_read_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_def__"><span class="keyword">val</span> __bin_read_def__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEdef">def</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_def"><span class="keyword">val</span> bin_reader_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_def"><span class="keyword">val</span> bin_size_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_def"><span class="keyword">val</span> bin_write_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_def"><span class="keyword">val</span> bin_writer_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_def"><span class="keyword">val</span> compare_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> -> <a href="Bap.Std.html#TYPEdef">def</a> -> int</code></pre>
+<pre><span id="VALdef_of_sexp"><span class="keyword">val</span> def_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEdef">def</a></code></pre>
+<pre><span id="VALsexp_of_def"><span class="keyword">val</span> sexp_of_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEjmp"><span class="keyword">type</span> <code class="type"></code>jmp</span> </pre>
 
 
+<pre><span id="VALbin_jmp"><span class="keyword">val</span> bin_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_jmp"><span class="keyword">val</span> bin_read_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_jmp__"><span class="keyword">val</span> __bin_read_jmp__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEjmp">jmp</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_jmp"><span class="keyword">val</span> bin_reader_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_jmp"><span class="keyword">val</span> bin_size_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_jmp"><span class="keyword">val</span> bin_write_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_jmp"><span class="keyword">val</span> bin_writer_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_jmp"><span class="keyword">val</span> compare_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> -> int</code></pre>
+<pre><span id="VALjmp_of_sexp"><span class="keyword">val</span> jmp_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEjmp">jmp</a></code></pre>
+<pre><span id="VALsexp_of_jmp"><span class="keyword">val</span> sexp_of_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="TYPEnil"><span class="keyword">type</span> <code class="type"></code>nil</span> </pre>
+
+
+<pre><span id="VALbin_nil"><span class="keyword">val</span> bin_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_nil"><span class="keyword">val</span> bin_read_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_nil__"><span class="keyword">val</span> __bin_read_nil__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEnil">nil</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_nil"><span class="keyword">val</span> bin_reader_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_nil"><span class="keyword">val</span> bin_size_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_nil"><span class="keyword">val</span> bin_write_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_nil"><span class="keyword">val</span> bin_writer_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_nil"><span class="keyword">val</span> compare_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> -> <a href="Bap.Std.html#TYPEnil">nil</a> -> int</code></pre>
+<pre><span id="VALnil_of_sexp"><span class="keyword">val</span> nil_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEnil">nil</a></code></pre>
+<pre><span id="VALsexp_of_nil"><span class="keyword">val</span> sexp_of_nil</span> : <code class="type"><a href="Bap.Std.html#TYPEnil">nil</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEtid"><span class="keyword">type</span> <code class="type"></code>tid</span> </pre>
 
 
+<pre><span id="VALbin_tid"><span class="keyword">val</span> bin_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_tid"><span class="keyword">val</span> bin_read_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_tid__"><span class="keyword">val</span> __bin_read_tid__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEtid">tid</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_tid"><span class="keyword">val</span> bin_reader_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_tid"><span class="keyword">val</span> bin_size_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_tid"><span class="keyword">val</span> bin_write_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_tid"><span class="keyword">val</span> bin_writer_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_tid"><span class="keyword">val</span> compare_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> int</code></pre>
+<pre><span id="VALtid_of_sexp"><span class="keyword">val</span> tid_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre>
+<pre><span id="VALsexp_of_tid"><span class="keyword">val</span> sexp_of_tid</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEcall"><span class="keyword">type</span> <code class="type"></code>call</span> </pre>
 
 
+<pre><span id="VALbin_call"><span class="keyword">val</span> bin_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_call"><span class="keyword">val</span> bin_read_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_call__"><span class="keyword">val</span> __bin_read_call__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEcall">call</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_call"><span class="keyword">val</span> bin_reader_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_call"><span class="keyword">val</span> bin_size_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_call"><span class="keyword">val</span> bin_write_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_call"><span class="keyword">val</span> bin_writer_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_call"><span class="keyword">val</span> compare_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> -> <a href="Bap.Std.html#TYPEcall">call</a> -> int</code></pre>
+<pre><span id="VALcall_of_sexp"><span class="keyword">val</span> call_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEcall">call</a></code></pre>
+<pre><span id="VALsexp_of_call"><span class="keyword">val</span> sexp_of_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPElabel"><span class="keyword">type</span> <code class="type"></code>label</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -1100,10 +1277,7 @@ direct jump<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTlabel.Indirect"><span class="constructor">Indirect</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a></code></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-indirect jump<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+
 </tr></table>
 
 <div class="info ">
@@ -1111,6 +1285,16 @@ target of control transfer<br>
 </div>
 
 
+<pre><span id="VALbin_label"><span class="keyword">val</span> bin_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_label"><span class="keyword">val</span> bin_read_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_label__"><span class="keyword">val</span> __bin_read_label__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPElabel">label</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_label"><span class="keyword">val</span> bin_reader_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_label"><span class="keyword">val</span> bin_size_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_label"><span class="keyword">val</span> bin_write_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_label"><span class="keyword">val</span> bin_writer_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_label"><span class="keyword">val</span> compare_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> -> <a href="Bap.Std.html#TYPElabel">label</a> -> int</code></pre>
+<pre><span id="VALlabel_of_sexp"><span class="keyword">val</span> label_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPElabel">label</a></code></pre>
+<pre><span id="VALsexp_of_label"><span class="keyword">val</span> sexp_of_label</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEjmp_kind"><span class="keyword">type</span> <code class="type"></code>jmp_kind</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -1147,10 +1331,7 @@ return from call to label<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTjmp_kind.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">int * <a href="Bap.Std.html#TYPEtid">tid</a></code></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-interrupt and return to tid<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+
 </tr></table>
 
 <div class="info ">
@@ -1158,6 +1339,16 @@ control transfer variants<br>
 </div>
 
 
+<pre><span id="VALbin_jmp_kind"><span class="keyword">val</span> bin_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_jmp_kind"><span class="keyword">val</span> bin_read_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_jmp_kind__"><span class="keyword">val</span> __bin_read_jmp_kind__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_jmp_kind"><span class="keyword">val</span> bin_reader_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_jmp_kind"><span class="keyword">val</span> bin_size_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_jmp_kind"><span class="keyword">val</span> bin_write_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_jmp_kind"><span class="keyword">val</span> bin_writer_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_jmp_kind"><span class="keyword">val</span> compare_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> -> int</code></pre>
+<pre><span id="VALjmp_kind_of_sexp"><span class="keyword">val</span> jmp_kind_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a></code></pre>
+<pre><span id="VALsexp_of_jmp_kind"><span class="keyword">val</span> sexp_of_jmp_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp_kind">jmp_kind</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEintent"><span class="keyword">type</span> <code class="type"></code>intent</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -1184,10 +1375,7 @@ output argument<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTintent.Both"><span class="constructor">Both</span></span></code></td>
-<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-input/output<br>
-</div>
-</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+
 </tr></table>
 
 <div class="info ">
@@ -1195,10 +1383,24 @@ argument intention<br>
 </div>
 
 
+<pre><span id="VALbin_intent"><span class="keyword">val</span> bin_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_intent"><span class="keyword">val</span> bin_read_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_intent__"><span class="keyword">val</span> __bin_read_intent__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEintent">intent</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_intent"><span class="keyword">val</span> bin_reader_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_intent"><span class="keyword">val</span> bin_size_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_intent"><span class="keyword">val</span> bin_write_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_intent"><span class="keyword">val</span> bin_writer_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_intent"><span class="keyword">val</span> compare_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> -> <a href="Bap.Std.html#TYPEintent">intent</a> -> int</code></pre>
+<pre><span id="VALintent_of_sexp"><span class="keyword">val</span> intent_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEintent">intent</a></code></pre>
+<pre><span id="VALsexp_of_intent"><span class="keyword">val</span> sexp_of_intent</span> : <code class="type"><a href="Bap.Std.html#TYPEintent">intent</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEcls"><span class="keyword">type</span> <code class="type">('a, 'b)</code> cls</span> </pre>
 
 <br>
 <h4 id="4_Termtypeclasses">Term type classes</h4><br>
+
+<pre><span id="VALprogram_t"><span class="keyword">val</span> program_t</span> : <code class="type">(<a href="Bap.Std.html#TYPEnil">nil</a>, <a href="Bap.Std.html#TYPEprogram">program</a>) <a href="Bap.Std.html#TYPEcls">cls</a></code></pre><div class="info ">
+program<br>
+</div>
 
 <pre><span id="VALsub_t"><span class="keyword">val</span> sub_t</span> : <code class="type">(<a href="Bap.Std.html#TYPEprogram">program</a>, <a href="Bap.Std.html#TYPEsub">sub</a>) <a href="Bap.Std.html#TYPEcls">cls</a></code></pre><div class="info ">
 sub<br>
@@ -1224,14 +1426,6 @@ def<br>
 jmp<br>
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Node.html">Node</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<a href="Bap.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> nodes.
-</div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Edge.html">Edge</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Interface that every Graph edge should provide
-</div>
-
 <pre><span class="keyword">module</span> <a href="Bap.Std.Biri.html">Biri</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Biri.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 BIR Interpreter
 </div>
@@ -1239,139 +1433,63 @@ BIR Interpreter
 <pre><span name="TYPEbiri"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a>]</code> <a href="Bap.Std.biri-c.html">biri</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Biri.t-c.html">Biri.t</a></code></pre><div class="info">
 BIR <a href="Bap.Std.Biri.html">interpreter</a>
 </div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Graph.html">Graph</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graph.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Graph signature.
-</div>
-
-<pre><span id="TYPEgraph"><span class="keyword">type</span> <code class="type">('c, 'n, 'e)</code> graph</span> = <code class="type">(module Bap.Std.Graph with type edge = 'e and type node = 'n and type t = 'c)</code> </pre>
-<div class="info ">
-a type abbreviation for a packed module, implementing graph
-      interface.
-      Note: this type prenexes only 3 out of 8 type variables, so,
-      sometimes it is not enough.<br>
-</div>
-
-
-<pre><span id="TYPEedge_kind"><span class="keyword">type</span> <code class="type"></code>edge_kind</span> = <code class="type">[ `Back | `Cross | `Forward | `Tree ]</code> </pre>
-<div class="info ">
-Graph edges classification.
-      For explanations see <a href="Bap.Std.Graphlib.html#VALdepth_first_search">DFS</a>.<br>
-</div>
-
-
-<pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">'a</code> tree</span> </pre>
-<div class="info ">
-a <a href="Bap.Std.Tree.html"><code class="code"><span class="constructor">Tree</span></code></a> representation.<br>
-</div>
-
-
-<pre><span id="TYPEfrontier"><span class="keyword">type</span> <code class="type">'a</code> frontier</span> </pre>
-<div class="info ">
-a type representing <a href="Bap.Std.Frontier.html"><code class="code"><span class="constructor">Frontier</span></code></a>s<br>
-</div>
-
-
-<pre><span id="TYPEpartition"><span class="keyword">type</span> <code class="type">'a</code> partition</span> </pre>
-<div class="info ">
-a <a href="Bap.Std.Partition.html">result</a> of partitioning algorithms<br>
-</div>
-
-
-<pre><span id="TYPEgroup"><span class="keyword">type</span> <code class="type">'a</code> group</span> </pre>
-<div class="info ">
-a partition <a href="Bap.Std.Group.html">Cell</a><br>
-</div>
-
-
-<pre><span id="TYPEpath"><span class="keyword">type</span> <code class="type">'a</code> path</span> </pre>
-<div class="info ">
-walk without a repetition of edges and inner nodes<br>
-</div>
-
-
-<pre><span id="TYPEequiv"><span class="keyword">type</span> <code class="type"></code>equiv</span> </pre>
-<div class="info ">
-runtime witness of the <a href="Bap.Std.Equiv.html">equivalence class</a><br>
-</div>
-
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Tree.html">Tree</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Tree.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Tree is a particular subtype of a graph for which
-      each node has only one predecessor, and there is only
-      one path between tree root and any other node.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Frontier.html">Frontier</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Frontier.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Frontier maps each node into a possibly empty set of nodes.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Path.html">Path</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Path.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Path between two nodes.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Partition.html">Partition</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Partition.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Result of a set partitioning.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Group.html">Group</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Group.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Group is a non-empty set that is a result of partitioning of an
-      underlying set <code class="code"><span class="constructor">S</span></code> into a set of non-intersecting and non-empty
-      subsets that cover set <code class="code"><span class="constructor">S</span></code>.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Equiv.html">Equiv</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Equiv.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Ordinal for representing equivalence.
-</div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Aux.html">Aux</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Aux.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Printable auxiliary graph structures
-</div>
 <br>
-<h5 id="5_Auxiliarygraphdatastructures">Auxiliary graph data structures</h5><br>
+<h3 id="3_Somepredefinedtags">Some predefined tags</h3><br>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Predicate.html">Predicate</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Predicate.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A type of modules for filtering graphs.
+<pre><span id="TYPEcolor"><span class="keyword">type</span> <code class="type"></code>color</span> = <code class="type">[ `black<br>       | `blue<br>       | `cyan<br>       | `gray<br>       | `green<br>       | `magenta<br>       | `red<br>       | `white<br>       | `yellow ]</code> </pre>
+
+
+<pre><span id="VALbin_color"><span class="keyword">val</span> bin_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_color"><span class="keyword">val</span> bin_read_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_color__"><span class="keyword">val</span> __bin_read_color__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEcolor">color</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_color"><span class="keyword">val</span> bin_reader_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_color"><span class="keyword">val</span> bin_size_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_color"><span class="keyword">val</span> bin_write_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_color"><span class="keyword">val</span> bin_writer_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_color"><span class="keyword">val</span> compare_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> -> <a href="Bap.Std.html#TYPEcolor">color</a> -> int</code></pre>
+<pre><span id="VALcolor_of_sexp"><span class="keyword">val</span> color_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEcolor">color</a></code></pre>
+<pre><span id="VAL__color_of_sexp__"><span class="keyword">val</span> __color_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEcolor">color</a></code></pre>
+<pre><span id="VALsexp_of_color"><span class="keyword">val</span> sexp_of_color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="VALcolor"><span class="keyword">val</span> color</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+Color something with a color<br>
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Isomorphism.html">Isomorphism</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Isomorphism.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<code class="code"><span class="constructor">Isomorphism</span></code> is a bijection between type <code class="code">s</code> and <code class="code">t</code>.
+<pre><span id="VALforeground"><span class="keyword">val</span> foreground</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+print marked entity with the specified color.  (the same
+      as color, but pretty printing function will output ascii escape
+      sequence of corresponding color.<br>
 </div>
 
-<pre><span id="TYPEdfs_visitor"><span class="keyword">class type</span> <code class="type">[['n, 'e, 's]]</code> <a href="Bap.Std.dfs_visitor-c.html">dfs_visitor</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.dfs_visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><br>
-<h4 id="4_Visualattributesforgraphvizualization">Visual attributes for graphvizualization.</h4>
-      Consult OCamlGraph library for more information.<br>
+<pre><span id="VALbackground"><span class="keyword">val</span> background</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+print marked entity with specified color. See <code class="code">foreground</code>.<br>
+</div>
 
-<pre><span id="TYPEnode_attr"><span class="keyword">type</span> <code class="type"></code>node_attr</span> = <code class="type">Graph.Graphviz.DotAttributes.vertex</code> </pre>
+<pre><span id="VALcomment"><span class="keyword">val</span> comment</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+A human readable comment<br>
+</div>
 
+<pre><span id="VALpython"><span class="keyword">val</span> python</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+A command in python language<br>
+</div>
 
-<pre><span id="TYPEedge_attr"><span class="keyword">type</span> <code class="type"></code>edge_attr</span> = <code class="type">Graph.Graphviz.DotAttributes.edge</code> </pre>
+<pre><span id="VALshell"><span class="keyword">val</span> shell</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+A command in shell language<br>
+</div>
 
+<pre><span id="VALmark"><span class="keyword">val</span> mark</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+Mark something as marked<br>
+</div>
 
-<pre><span id="TYPEgraph_attr"><span class="keyword">type</span> <code class="type"></code>graph_attr</span> = <code class="type">Graph.Graphviz.DotAttributes.graph</code> </pre>
+<pre><span id="VALweight"><span class="keyword">val</span> weight</span> : <code class="type">float <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+Give a weight<br>
+</div>
 
+<pre><span id="VALaddress"><span class="keyword">val</span> address</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+A virtual address of an entity<br>
+</div>
 
-<pre><code><span id="TYPElabeled"><span class="keyword">type</span> <code class="type">('n, 'a)</code> labeled</span> = {</code></pre><table class="typetable">
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTlabeled.node">node</span>&nbsp;: <code class="type">'n</code>;</code></td>
-
-</tr>
-<tr>
-<td align="left" valign="top" >
-<code>&nbsp;&nbsp;</code></td>
-<td align="left" valign="top" >
-<code><span id="TYPEELTlabeled.node_label">node_label</span>&nbsp;: <code class="type">'a</code>;</code></td>
-
-</tr></table>
-}
-
-
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.html">Graphlib</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Generic Graph Library
+<pre><span id="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+A name of a file<br>
 </div>
 
 <pre><span id="TYPEimage"><span class="keyword">type</span> <code class="type"></code>image</span> </pre>
@@ -1386,18 +1504,21 @@ opaque memory<br>
 </div>
 
 
+<pre><span id="VALsexp_of_mem"><span class="keyword">val</span> sexp_of_mem</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEtable"><span class="keyword">type</span> <code class="type">'a</code> table</span> </pre>
 <div class="info ">
 a table from memory to <code class="code"><span class="keywordsign">'</span>a</code><br>
 </div>
 
 
+<pre><span id="VALsexp_of_table"><span class="keyword">val</span> sexp_of_table</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.html#TYPEtable">table</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEmemmap"><span class="keyword">type</span> <code class="type">'a</code> memmap</span> </pre>
 <div class="info ">
 interval trees from memory regions to <code class="code"><span class="keywordsign">'</span>a</code><br>
 </div>
 
 
+<pre><span id="VALsexp_of_memmap"><span class="keyword">val</span> sexp_of_memmap</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.html#TYPEmemmap">memmap</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Memory_iterators.html">Memory_iterators</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Memory_iterators.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Iterators lifted into monad
 </div>
@@ -1420,10 +1541,24 @@ memory location<br>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.html">Backend</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Backend.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span id="VALbin_location"><span class="keyword">val</span> bin_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_location"><span class="keyword">val</span> bin_read_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_location__"><span class="keyword">val</span> __bin_read_location__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPElocation">location</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_location"><span class="keyword">val</span> bin_reader_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_location"><span class="keyword">val</span> bin_size_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_location"><span class="keyword">val</span> bin_write_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_location"><span class="keyword">val</span> bin_writer_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_location"><span class="keyword">val</span> compare_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> -> <a href="Bap.Std.html#TYPElocation">location</a> -> int</code></pre>
+<pre><span id="VALlocation_of_sexp"><span class="keyword">val</span> location_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPElocation">location</a></code></pre>
+<pre><span id="VALsexp_of_location"><span class="keyword">val</span> sexp_of_location</span> : <code class="type"><a href="Bap.Std.html#TYPElocation">location</a> -> Sexplib.Sexp.t</code></pre><br>
 A backend interface.
-</div>
+<p>
 
+      This interface must be implemented by a backend plugin, and
+      registered with <code class="code"><span class="constructor">Image</span>.register</code> function in order to be
+      accessible for loading images.<br>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Backend.html">Backend</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Backend.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Image.html">Image</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Binary Image.
 </div>
@@ -1432,21 +1567,53 @@ Binary Image.
 Memory maps.
 </div>
 
+<pre><span id="TYPEsymbolizer"><span class="keyword">type</span> <code class="type"></code>symbolizer</span> </pre>
+<div class="info ">
+Symbolizer defines a method for assigning symbolic names to addresses<br>
+</div>
+
+
+<pre><span id="TYPErooter"><span class="keyword">type</span> <code class="type"></code>rooter</span> </pre>
+<div class="info ">
+Rooter defines a method for finding function starts in a program<br>
+</div>
+
+
+<pre><span id="TYPEbrancher"><span class="keyword">type</span> <code class="type"></code>brancher</span> </pre>
+<div class="info ">
+Brancher defines a method for resolving branch instruction<br>
+</div>
+
+
+<pre><span id="TYPEreconstructor"><span class="keyword">type</span> <code class="type"></code>reconstructor</span> </pre>
+<div class="info ">
+Reconstructor  defines a method for reconstructing symbol tables<br>
+</div>
+
+
 <pre><span id="TYPEdisasm"><span class="keyword">type</span> <code class="type"></code>disasm</span> </pre>
 <div class="info ">
 value of type <code class="code">disasm</code> is a result of the disassembling of a
-      memory region. To create values of this type use <code class="code">disassemble</code>
-      function<br>
+      memory region.<br>
 </div>
 
 
 <pre><span id="TYPEinsn"><span class="keyword">type</span> <code class="type"></code>insn</span> </pre>
 <div class="info ">
 values of type <code class="code">insn</code> represents machine instructions decoded
-      from the given piece of memory<br>
+      from the a given piece of memory<br>
 </div>
 
 
+<pre><span id="VALbin_insn"><span class="keyword">val</span> bin_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_insn"><span class="keyword">val</span> bin_read_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_insn__"><span class="keyword">val</span> __bin_read_insn__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEinsn">insn</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_insn"><span class="keyword">val</span> bin_reader_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_insn"><span class="keyword">val</span> bin_size_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_insn"><span class="keyword">val</span> bin_write_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_insn"><span class="keyword">val</span> bin_writer_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_insn"><span class="keyword">val</span> compare_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Bap.Std.html#TYPEinsn">insn</a> -> int</code></pre>
+<pre><span id="VALsexp_of_insn"><span class="keyword">val</span> sexp_of_insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEblock"><span class="keyword">type</span> <code class="type"></code>block</span> </pre>
 <div class="info ">
 <code class="code">block</code> is a region of memory that is believed to be a basic block
@@ -1454,51 +1621,33 @@ values of type <code class="code">insn</code> represents machine instructions de
 </div>
 
 
-<pre><span id="VALdisassemble"><span class="keyword">val</span> disassemble</span> : <code class="type">?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -> <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.html#TYPEdisasm">disasm</a></code></pre><div class="info ">
-<code class="code">disassemble ?roots arch mem</code> disassemble provided memory region
-      <code class="code">mem</code> using best available algorithm and backend for the specified
-      <code class="code">arch</code>. Roots, if provided, should point to memory regions, that
-      are believed to contain code. At best, this should be a list of
-      function starts. If no roots are provided, then the starting
-      address of the provided memory <code class="code">mem</code> will be used as a root.
-<p>
+<pre><span id="VALcompare_block"><span class="keyword">val</span> compare_block</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">block</a> -> <a href="Bap.Std.html#TYPEblock">block</a> -> int</code></pre>
+<pre><span id="VALsexp_of_block"><span class="keyword">val</span> sexp_of_block</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">block</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="TYPEcfg"><span class="keyword">type</span> <code class="type"></code>cfg</span> </pre>
 
-      The returned value will contain all memory reachable from the
-      given set of roots, at our best knowledge.<br>
+
+<pre><span id="VALcompare_cfg"><span class="keyword">val</span> compare_cfg</span> : <code class="type"><a href="Bap.Std.html#TYPEcfg">cfg</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a> -> int</code></pre>
+<pre><span id="TYPEjump"><span class="keyword">type</span> <code class="type"></code>jump</span> = <code class="type">[ `Cond | `Jump ]</code> </pre>
+<div class="info ">
+a jump kind.
+      A jump to another block can be conditional or unconditional.<br>
 </div>
 
-<pre><span id="VALdisassemble_image"><span class="keyword">val</span> disassemble_image</span> : <code class="type">?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -> <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.html#TYPEdisasm">disasm</a></code></pre><div class="info ">
-<code class="code">disassemble_image image</code> disassemble given image.
-      Will take executable segments of the image and disassemble it,
-      applying <code class="code">disassemble</code> function. If no roots are specified, then
-      symbol table will be used as a source of roots. If file doesn't
-      contain one, then entry point will be used.<br>
+
+<pre><span id="VALcompare_jump"><span class="keyword">val</span> compare_jump</span> : <code class="type"><a href="Bap.Std.html#TYPEjump">jump</a> -> <a href="Bap.Std.html#TYPEjump">jump</a> -> int</code></pre>
+<pre><span id="VALjump_of_sexp"><span class="keyword">val</span> jump_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEjump">jump</a></code></pre>
+<pre><span id="VAL__jump_of_sexp__"><span class="keyword">val</span> __jump_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEjump">jump</a></code></pre>
+<pre><span id="VALsexp_of_jump"><span class="keyword">val</span> sexp_of_jump</span> : <code class="type"><a href="Bap.Std.html#TYPEjump">jump</a> -> Sexplib.Sexp.t</code></pre><div class="info ">
+This type defines a relation between two basic blocks.<br>
 </div>
 
-<pre><span id="VALdisassemble_file"><span class="keyword">val</span> disassemble_file</span> : <code class="type">?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -><br>       string -> <a href="Bap.Std.html#TYPEdisasm">disasm</a> Or_error.t</code></pre><div class="info ">
-<code class="code">disassemble_file ?roots path</code> takes a path to a binary and
-      disassembles it<br>
-</div>
+<pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> = <code class="type">[ `Cond | `Fall | `Jump ]</code> </pre>
 
-<pre><span id="VALdisassemble_file_exn"><span class="keyword">val</span> disassemble_file_exn</span> : <code class="type">?roots:<a href="Bap.Std.html#TYPEaddr">addr</a> list -> string -> <a href="Bap.Std.html#TYPEdisasm">disasm</a></code></pre><div class="info ">
-<code class="code">disassemble_file ?roots path</code> takes a path to a binary and
-      disassembles it<br>
-</div>
 
-<pre><span id="VALlinear_sweep"><span class="keyword">val</span> linear_sweep</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -><br>       (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a> option) list Or_error.t</code></pre><div class="info ">
-<code class="code">linear_sweep arch mem</code> will perform a linear sweep disassembly on
-      the specified memory <code class="code">mem</code><br>
-</div>
-
-<pre><span id="VALlinear_sweep_exn"><span class="keyword">val</span> linear_sweep_exn</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a> option) list</code></pre><div class="info ">
-<code class="code">linear_sweep_exn</code> same as <code class="code">linear_sweep</code>, but raises an
-      exception, instead of returning <code class="code"><span class="constructor">Or_error</span></code> monad<br>
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.html">Disasm</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Disassembled program.
-</div>
-
+<pre><span id="VALcompare_edge"><span class="keyword">val</span> compare_edge</span> : <code class="type"><a href="Bap.Std.html#TYPEedge">edge</a> -> <a href="Bap.Std.html#TYPEedge">edge</a> -> int</code></pre>
+<pre><span id="VALedge_of_sexp"><span class="keyword">val</span> edge_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEedge">edge</a></code></pre>
+<pre><span id="VAL__edge_of_sexp__"><span class="keyword">val</span> __edge_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEedge">edge</a></code></pre>
+<pre><span id="VALsexp_of_edge"><span class="keyword">val</span> sexp_of_edge</span> : <code class="type"><a href="Bap.Std.html#TYPEedge">edge</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Kind.html">Kind</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Kind.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Kinds of instructions
 </div>
@@ -1509,24 +1658,64 @@ abstract and opaque register<br>
 </div>
 
 
+<pre><span id="VALbin_reg"><span class="keyword">val</span> bin_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_reg"><span class="keyword">val</span> bin_read_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_reg__"><span class="keyword">val</span> __bin_read_reg__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEreg">reg</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_reg"><span class="keyword">val</span> bin_reader_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_reg"><span class="keyword">val</span> bin_size_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_reg"><span class="keyword">val</span> bin_write_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_reg"><span class="keyword">val</span> bin_writer_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_reg"><span class="keyword">val</span> compare_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> -> <a href="Bap.Std.html#TYPEreg">reg</a> -> int</code></pre>
+<pre><span id="VALreg_of_sexp"><span class="keyword">val</span> reg_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEreg">reg</a></code></pre>
+<pre><span id="VALsexp_of_reg"><span class="keyword">val</span> sexp_of_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEreg">reg</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEimm"><span class="keyword">type</span> <code class="type"></code>imm</span> </pre>
 <div class="info ">
 opaque immediate value<br>
 </div>
 
 
+<pre><span id="VALbin_imm"><span class="keyword">val</span> bin_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_imm"><span class="keyword">val</span> bin_read_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_imm__"><span class="keyword">val</span> __bin_read_imm__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEimm">imm</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_imm"><span class="keyword">val</span> bin_reader_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_imm"><span class="keyword">val</span> bin_size_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_imm"><span class="keyword">val</span> bin_write_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_imm"><span class="keyword">val</span> bin_writer_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_imm"><span class="keyword">val</span> compare_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> -> <a href="Bap.Std.html#TYPEimm">imm</a> -> int</code></pre>
+<pre><span id="VALimm_of_sexp"><span class="keyword">val</span> imm_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEimm">imm</a></code></pre>
+<pre><span id="VALsexp_of_imm"><span class="keyword">val</span> sexp_of_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEfmm"><span class="keyword">type</span> <code class="type"></code>fmm</span> </pre>
 <div class="info ">
 floating point value<br>
 </div>
 
 
+<pre><span id="VALbin_fmm"><span class="keyword">val</span> bin_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_fmm"><span class="keyword">val</span> bin_read_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_fmm__"><span class="keyword">val</span> __bin_read_fmm__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEfmm">fmm</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_fmm"><span class="keyword">val</span> bin_reader_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_fmm"><span class="keyword">val</span> bin_size_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_fmm"><span class="keyword">val</span> bin_write_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_fmm"><span class="keyword">val</span> bin_writer_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_fmm"><span class="keyword">val</span> compare_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> -> <a href="Bap.Std.html#TYPEfmm">fmm</a> -> int</code></pre>
+<pre><span id="VALfmm_of_sexp"><span class="keyword">val</span> fmm_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEfmm">fmm</a></code></pre>
+<pre><span id="VALsexp_of_fmm"><span class="keyword">val</span> sexp_of_fmm</span> : <code class="type"><a href="Bap.Std.html#TYPEfmm">fmm</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEkind"><span class="keyword">type</span> <code class="type"></code>kind</span> = <code class="type"><a href="Bap.Std.Kind.html#TYPEt">Kind.t</a></code> </pre>
 <div class="info ">
 kind of instruction<br>
 </div>
 
 
+<pre><span id="VALbin_kind"><span class="keyword">val</span> bin_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_kind"><span class="keyword">val</span> bin_read_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_kind__"><span class="keyword">val</span> __bin_read_kind__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEkind">kind</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_kind"><span class="keyword">val</span> bin_reader_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_kind"><span class="keyword">val</span> bin_size_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_kind"><span class="keyword">val</span> bin_write_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_kind"><span class="keyword">val</span> bin_writer_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_kind"><span class="keyword">val</span> compare_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> -> <a href="Bap.Std.html#TYPEkind">kind</a> -> int</code></pre>
+<pre><span id="VALkind_of_sexp"><span class="keyword">val</span> kind_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.html#TYPEkind">kind</a></code></pre>
+<pre><span id="VALsexp_of_kind"><span class="keyword">val</span> sexp_of_kind</span> : <code class="type"><a href="Bap.Std.html#TYPEkind">kind</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Reg.html">Reg</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Reg.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Register.
 </div>
@@ -1546,6 +1735,32 @@ Operand
 <pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type"><a href="Bap.Std.Op.html#TYPEt">Op.t</a></code> </pre>
 
 
+<pre><span id="VALbin_op"><span class="keyword">val</span> bin_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_op"><span class="keyword">val</span> bin_read_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_op__"><span class="keyword">val</span> __bin_read_op__</span> : <code class="type">(int -> <a href="Bap.Std.html#TYPEop">op</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_op"><span class="keyword">val</span> bin_reader_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_op"><span class="keyword">val</span> bin_size_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_op"><span class="keyword">val</span> bin_write_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_op"><span class="keyword">val</span> bin_writer_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_op"><span class="keyword">val</span> compare_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> -> <a href="Bap.Std.html#TYPEop">op</a> -> int</code></pre>
+<pre><span id="VALsexp_of_op"><span class="keyword">val</span> sexp_of_op</span> : <code class="type"><a href="Bap.Std.html#TYPEop">op</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.html">Disasm_expert</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Expert interface to disassembler.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.html">Insn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Assembly instruction.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Block.html">Block</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Access to block attributes.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.html">Graphs</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.html">Disasm</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Disassembled program.
+</div>
+
 <pre><span id="TYPEsymtab"><span class="keyword">type</span> <code class="type"></code>symtab</span> </pre>
 
 
@@ -1553,15 +1768,7 @@ Operand
 Reconstructed symbol table.
 </div>
 
-<pre><span id="TYPEabi"><span class="keyword">class type</span> <a href="Bap.Std.abi-c.html">abi</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.abi-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-ABI interface.
-</div>
-
-<pre><span id="TYPEabi_constructor"><span class="keyword">type</span> <code class="type"></code>abi_constructor</span> = <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.abi-c.html">abi</a></code> </pre>
-<div class="info ">
-symbol name may be provided if known. Also an access
-      to the whole binary image is provided if there is one.<br>
-</div>
+<pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Or_error.t</code> </pre>
 
 <br>
 A BIL model of CPU
@@ -1574,42 +1781,6 @@ A BIL model of CPU
 Abstract interface to CPU
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.ABI.html">ABI</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ABI.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Application Binary Interface
-</div>
-
-<pre><span id="TYPEjump"><span class="keyword">type</span> <code class="type"></code>jump</span> = <code class="type">[ `Cond | `Jump ]</code> </pre>
-<div class="info ">
-a jump kind.
-      A jump to another block can be conditional or unconditional.
-<p>
-This type defines a relation between two basic blocks.<br>
-</div>
-
-
-<pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> = <code class="type">[ `Cond | `Fall | `Jump ]</code> </pre>
-
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Block_accessors.html">Block_accessors</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block_accessors.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Access to block attributes.
-</div>
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Block_traverse.html">Block_traverse</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block_traverse.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Navigate to neighborhood blocks.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.html">Disasm_expert</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Expert interface to disassembler.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.html">Insn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Assembly instruction.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Block.html">Block</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Basic block of machine instructions.
-</div>
-
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Target.html">Target</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Target.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Abstract interface for all targets.
 </div>
@@ -1618,20 +1789,14 @@ Abstract interface for all targets.
 <code class="code">target_of_arch arch</code> returns a module packed into value, that
       abstracts target architecture. The returned module has type
       <a href="Bap.Std.Target.html"><code class="code"><span class="constructor">Target</span></code></a> and can be unpacked locally with:
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Target</span>&nbsp;=&nbsp;(<span class="keyword">val</span>&nbsp;target_of_arch&nbsp;arch)&nbsp;<span class="keyword">in</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Target</span>&nbsp;=&nbsp;(<span class="keyword">val</span>&nbsp;target_of_arch&nbsp;arch)&nbsp;<span class="keyword">in</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.ARM.html">ARM</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.ARM.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-ARM architecture.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.IA32.html">IA32</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.IA32.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<code class="code">x86</code> architecture
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.AMD64.html">AMD64</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.AMD64.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<code class="code">x86-64</code> architecture
+<pre><span id="VALregister_target"><span class="keyword">val</span> register_target</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> (module Bap.Std.Target) -> unit</code></pre><div class="info ">
+Register new target architecture. If target for the given arch
+      already exists, then it will be superseeded by the new
+      target.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Tid.html">Tid</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Tid.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1643,7 +1808,7 @@ IR language term.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Program.html">Program</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Program.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Program.
+Program in Intermediate representation.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Sub.html">Sub</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Sub.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1678,28 +1843,44 @@ A control transfer to another subroutine.
 Target of a control flow transfer.
 </div>
 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Source.html">Source</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Source.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Source of information.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Taint.html">Taint</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Taint.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Abstract taint.
+</div>
+
+<pre><span id="TYPEsource"><span class="keyword">type</span> <code class="type">'a</code> source</span> = <code class="type">'a <a href="Bap.Std.Source.html#TYPEt">Source.t</a></code> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Symbolizer.html">Symbolizer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Symbolizer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Symbolizer maps addresses to function names
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Rooter.html">Rooter</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Rooter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Rooter find start of functions in the binary.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Brancher.html">Brancher</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Brancher.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Brancher is responsible for resolving destinations of branch
+      instructions.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Reconstructor.html">Reconstructor</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Reconstructor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Reconstructor is responsible for reconstructing symbol table
+      from a CFG.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Event.html">Event</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type"><a href="Bap.Std.Event.html#TYPEt">Event.t</a></code> = ..</pre>
+
+
+<pre><span id="TYPEproject"><span class="keyword">type</span> <code class="type"></code>project</span> </pre>
+
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Project.html">Project</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Target of analysis.
 </div>
 
-<pre><span id="TYPEproject"><span class="keyword">type</span> <code class="type"></code>project</span> = <code class="type"><a href="Bap.Std.Project.html#TYPEt">Project.t</a></code> </pre>
-
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Dwarf.html">Dwarf</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Dwarf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Dwarf library
-      This library gives an access to debugging information stored
-      in a binary program.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Elf.html">Elf</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Elf.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Parse binary data in ELF format.
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Signatures.html">Signatures</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Signatures.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Binary signatures storage
-</div>
-
-<pre><span class="keyword">module</span> <a href="Bap.Std.Byteweight.html">Byteweight</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Byteweight.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Byteweight Algorithm implementation
-</div>
-</body></html>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Log.html">Log</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Arm_types.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Arm_types.Basic</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Arm_types.html" title="Arm_types">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Arm_types.Basic.html">Arm_types.Basic</a></h1>
+
+<pre><span class="keyword">module</span> Basic: <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html">Disasm_expert.Basic</a></code></pre><hr width="100%">
+
+<pre><span id="TYPEpred"><span class="keyword">type</span> <code class="type"></code>pred</span> = <code class="type">[ `Barrier<br>       | `Call<br>       | `Conditional_branch<br>       | `Indirect_branch<br>       | `May_affect_control_flow<br>       | `May_load<br>       | `May_store<br>       | `Return<br>       | `Terminator<br>       | `Unconditional_branch<br>       | `Valid ]</code> </pre>
+<div class="info ">
+predicate to drive the disassembler<br>
+</div>
+
+
+<pre><span id="VALpred_of_sexp"><span class="keyword">val</span> pred_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a></code></pre>
+<pre><span id="VAL__pred_of_sexp__"><span class="keyword">val</span> __pred_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a></code></pre>
+<pre><span id="VALsexp_of_pred"><span class="keyword">val</span> sexp_of_pred</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="TYPEinsn"><span class="keyword">type</span> <code class="type">(+'a, +'k)</code> insn</span> </pre>
+<div class="info ">
+<h2 id="2_Basictypes">Basic types </h2><br>
+</div>
+
+
+<pre><span id="TYPEinsns"><span class="keyword">type</span> <code class="type">('a, 'k)</code> insns</span> = <code class="type">(<a href="Bap.Std.html#TYPEmem">mem</a> * ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> option) list</code> </pre>
+
+
+<pre><span id="TYPEempty"><span class="keyword">type</span> <code class="type"></code>empty</span> </pre>
+<div class="info ">
+set when information is not stored<br>
+</div>
+
+
+<pre><span id="TYPEasm"><span class="keyword">type</span> <code class="type"></code>asm</span> </pre>
+<div class="info ">
+set when assembler information is stored<br>
+</div>
+
+
+<pre><span id="TYPEkinds"><span class="keyword">type</span> <code class="type"></code>kinds</span> </pre>
+<div class="info ">
+set when instruction kind information is stored<br>
+</div>
+
+
+<pre><span id="TYPEfull_insn"><span class="keyword">type</span> <code class="type"></code>full_insn</span> = <code class="type">(<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a></code> </pre>
+
+
+<pre><span id="VALcompare_full_insn"><span class="keyword">val</span> compare_full_insn</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -> int</code></pre>
+<pre><span id="VALsexp_of_full_insn"><span class="keyword">val</span> sexp_of_full_insn</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -> Sexplib.Sexp.t</code></pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'k)</code> t</span> </pre>
+<div class="info ">
+Disassembler.
+<p>
+
+          <code class="code"><span class="keywordsign">'</span>a</code> and <code class="code"><span class="keywordsign">'</span>k</code> type variables specify disassembler modes of
+          operation. In a process of disassembly it can store extra
+          information that might be useful. Although, since storing it
+          takes extra time and space, it is disabled by default.
+<p>
+
+          The first type variable specifies whether storing assembly strings
+          is enabled. It can be switched using <code class="code">store_asm</code>, <code class="code">drop_asm</code>
+          functions. When it is enabled, then this type variable will be set
+          to <code class="code">asm</code>, and it will give an access to functions that returns
+          this information. Otherwise, this type variable will be set to
+          <code class="code">empty</code>, thus stopping you from accessing assembler information.
+<p>
+
+          The second type variable stands for <code class="code">kinds</code>, i.e. to store or not to
+          store extra information about instruction kind.
+<p>
+
+          Note: at some points you can have an access to this information
+          even if you don't enable it explicitly.<br>
+</div>
+
+
+<pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type">(+'a, +'k, 's, 'r)</code> state</span> </pre>
+<div class="info ">
+Disassembler state.
+<p>
+
+          Words of precautions: this state is valid only inside handlers
+          functions of the <code class="code">run</code> function. It shouldn't be stored
+          anywhere.
+          First two type variables are bound correspondingly to two
+          variables of the disassmbler <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>k) t</code> type. Third type variable,
+          is for user data type, that can be used to pass extra information<br>
+</div>
+
+
+<pre><span id="VALwith_disasm"><span class="keyword">val</span> with_disasm</span> : <code class="type">?debug_level:int -><br>       ?cpu:string -><br>       backend:string -><br>       string -><br>       f:((<a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>)<br>          <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -> 'a Or_error.t) -><br>       'a Or_error.t</code></pre><div class="info ">
+<code class="code">with_disasm ?debug_level ?cpu ~backend ~f target</code> creates a
+          disassembler passing all options to <code class="code">create</code> function and
+          applies function <code class="code">f</code> to it. Once <code class="code">f</code> is evaluated the
+          disassembler is closed with <code class="code">close</code> function.<br>
+</div>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?debug_level:int -><br>       ?cpu:string -><br>       backend:string -><br>       string -><br>       (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>)<br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">create ?debug_level ?cpu ~backend target</code> creates a
+          disassembler for the specified <code class="code">target</code>. All parameters are
+          backend specific, consult the concrete backend for more
+          information. In general, the greater <code class="code">debug_level</code> is, the
+          more debug information will be outputed by a backend. To
+          silent backend set it <code class="code">0</code>. This is a default value. Example:
+<p>
+
+          <code class="code">create ~debug_level:3 ~backend:<span class="string">"llvm"</span> <span class="string">"x86_64"</span> ~f:process</code><br>
+</div>
+
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type">('a, 'b) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">close d</code> closes a disassembler <code class="code">d</code>.<br>
+</div>
+
+<pre><span id="VALstore_asm"><span class="keyword">val</span> store_asm</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a></code></pre><div class="info ">
+enables storing assembler information<br>
+</div>
+
+<pre><span id="VALstore_kinds"><span class="keyword">val</span> store_kinds</span> : <code class="type">('a, 'b) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       ('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a></code></pre><div class="info ">
+enables storing instruction kinds information<br>
+</div>
+
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backlog:int -><br>       ?stop_on:<a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> list -><br>       ?invalid:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>                 <a href="Bap.Std.html#TYPEmem">mem</a> -> 's -> 'r) -><br>       ?stopped:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r) -><br>       ?hit:(('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>             <a href="Bap.Std.html#TYPEmem">mem</a> -><br>             (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>             <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> -> 's -> 'r) -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       return:('s -> 'r) -> init:'s -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'r</code></pre><div class="info ">
+<code class="code">run ?stop_on ?invalid ?stopped dis mem ~init ~return ~hit</code>
+          performs recursive disassembly of specified memory <code class="code">mem</code>. The
+          process of disassembly can be driven using <code class="code">stop</code>, <code class="code">step</code>, <code class="code">back</code>
+          and <code class="code">jump</code> functions, described later.<br>
+</div>
+<div class="param_info"><code class="code">backlog</code> : defines a size of history of states, that can
+          be used for backtracking. Defaults to some positive natural
+          number.</div>
+<div class="param_info"><code class="code">stop_on</code> : defines a set of predicates that will be checked
+          on each step to decide whether it should stop here and call a
+          user-provided <code class="code">hit</code> function, or it should continue. The descision
+          is made acording to the rule: <code class="code"><span class="keyword">if</span> exists stop_on <span class="keyword">then</span> stop</code>, i.e.,
+          it there exists such predicate in a set of predicates, that
+          evaluates to true, then stop the disassembly and pass the control
+          to the user function <code class="code">hit</code>.  A few notes: only valid instructions
+          can match predicates, and if the set is empty, then it always
+          evaluates to false.</div>
+<div class="param_info"><code class="code">return</code> : a function that lifts user data type <code class="code"><span class="keywordsign">'</span>s</code> to type
+          <code class="code"><span class="keywordsign">'</span>r</code>. It is useful when you need to perform disassembly in some
+          monad, like <code class="code"><span class="constructor">Or_error</span></code>, or <code class="code"><span class="constructor">Lwt</span></code>. Otherwise, just use <code class="code">ident</code>
+          function and assume that <code class="code"><span class="keywordsign">'</span>s == <span class="keywordsign">'</span>r</code>.
+<p>
+
+          In a process of disassembly user provided callbacks are invoked by
+          the engine. To each callback at least two parameters are passed:
+          <code class="code">state</code> and <code class="code">user_data</code>. <code class="code">user_data</code> is arbitrary data of type <code class="code"><span class="keywordsign">'</span>s</code>
+          with which the folding over the memory is actually
+          performed. <code class="code">state</code> incapsulates the current state of the
+          disassembler, and provides continuation functions, namely <code class="code">stop</code>,
+          <code class="code">next</code> and <code class="code">back</code>, that drives the process of disassembly. This
+          functions are used to pass control back to the disassembler.
+<p>
+
+          <code class="code">stopped state user_data</code> is called when there is no more data to
+          disassemble. This handler is optional and defaults to <code class="code">stop</code>.
+<p>
+
+          <code class="code">invalid state user_data</code> is an optional handler that is called on
+          each invalid instruction (i.e., a portion of data that is not a
+          valid instruction), it defaults to <code class="code">step</code>, i.e., to skipping.
+<p>
+
+          <code class="code">hit state mem insn data</code> is called when one of the predicates
+          specifed by a user was hit. <code class="code">insn</code> is actually the instruction
+          that satisfies the predicate. <code class="code">mem</code> is a memory region spanned by
+          the instruction. <code class="code">data</code> is a user data. <code class="code">insn</code> can be queried for
+          assembly string and kinds even if the corresponding modes are
+          disabled.</div>
+<div class="param_info"><code class="code">init</code> : initial value of user data, that can be passed
+          through handlers (cf., <code class="code">fold</code>)</div>
+
+<pre><span id="VALinsn_of_mem"><span class="keyword">val</span> insn_of_mem</span> : <code class="type">('a, 'b) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -><br>       (<a href="Bap.Std.html#TYPEmem">mem</a> *<br>        (<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>        <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> option *<br>        [ `finished | `left of <a href="Bap.Std.html#TYPEmem">mem</a> ])<br>       Or_error.t</code></pre><div class="info ">
+<code class="code">insn_of_mem dis mem</code> performes a disassembly of one instruction
+          from the a given memory region <code class="code">mem</code>. Returns a tuple
+          <code class="code">imem,insn,<span class="keywordsign">`</span>left over</code> where <code class="code">imem</code> stands for a piece of memory
+          consumed in a process of disassembly, <code class="code">insn</code> can be <code class="code"><span class="constructor">Some</span> ins</code> if
+          disassembly was successful, and <code class="code"><span class="constructor">None</span></code> otherwise. <code class="code"><span class="keywordsign">`</span>left over</code>
+          complements <code class="code">imem</code> to original <code class="code">mem</code>.<br>
+</div>
+
+<pre><span id="VALaddr"><span class="keyword">val</span> addr</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
+current position of the disassembler<br>
+</div>
+
+<pre><span id="VALpreds"><span class="keyword">val</span> preds</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> list</code></pre><div class="info ">
+current set of predicates<br>
+</div>
+
+<pre><span id="VALwith_preds"><span class="keyword">val</span> with_preds</span> : <code class="type">('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> list -><br>       ('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a></code></pre><div class="info ">
+updates the set of predicates, that rules the stop condition.<br>
+</div>
+
+<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type">('a, 'k, 'b, 'c) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsns">insns</a></code></pre><div class="info ">
+a queue of instructions disassembled in this step<br>
+</div>
+
+<pre><span id="VALlast"><span class="keyword">val</span> last</span> : <code class="type">('a, 'k, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -><br>       int -> ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsns">insns</a></code></pre><div class="info ">
+<code class="code">last s n</code> returns last <code class="code">n</code> instructions disassembled in this
+          step. If there are less then <code class="code">n</code> instructions, then returns a
+          smaller list<br>
+</div>
+
+<pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type">('a, 'b, 'c, 'd) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> <a href="Bap.Std.html#TYPEmem">mem</a></code></pre><div class="info ">
+the memory region we're currently working on<br>
+</div>
+
+<pre><span id="VALstop"><span class="keyword">val</span> stop</span> : <code class="type">('a, 'b, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r</code></pre><div class="info ">
+stop the disassembly and return the provided value.<br>
+</div>
+
+<pre><span id="VALstep"><span class="keyword">val</span> step</span> : <code class="type">('a, 'b, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r</code></pre><div class="info ">
+continue disassembling from the current point. You can change a
+          a set of predicates, before stepping next. If you want to continue
+          from a different address, use <code class="code">jump</code><br>
+</div>
+
+<pre><span id="VALjump"><span class="keyword">val</span> jump</span> : <code class="type">('a, 'b, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 's -> 'r</code></pre><div class="info ">
+jump to the specified memory and continue disassembly in it.
+<p>
+
+          For example, if you want to jump to a specified address, and
+          you're working in a <code class="code"><span class="constructor">Or_error</span></code> monad, then you can:
+<p>
+
+          <code class="code">view ~from:addr (mem state) &gt;&gt;= <span class="keyword">fun</span> mem <span class="keywordsign">-&gt;</span> jump mem data</code><br>
+</div>
+
+<pre><span id="VALback"><span class="keyword">val</span> back</span> : <code class="type">('a, 'b, 's, 'r) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEstate">state</a> -> 's -> 'r</code></pre><div class="info ">
+restarts last step.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Basic.Insn.html">Insn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Basic.Insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Basic instruction.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Basic.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Basic.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Trie maps over instructions
+</div>
+
+<pre><span id="VALavailable_backends"><span class="keyword">val</span> available_backends</span> : <code class="type">unit -> string list</code></pre></body></html>

@@ -8,6 +8,7 @@
 <link rel="next" href="Bap.Std.Program.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of class attributes" rel=Appendix href="index_attributes.html">
@@ -16,9 +17,61 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><link title="Example" rel="Section" href="#2_Example">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Example" rel="Section" href="#2_Example">
 <link title="Attributes" rel="Section" href="#2_Attributes">
-<title>Bap.Std.Term</title>
+<link title="Higher order mapping" rel="Section" href="#2_Higherordermapping">
+<title>BAR: BAP Annotated Reference : Bap.Std.Term</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Tid.html" title="Bap.Std.Tid">Previous</a>
@@ -121,20 +174,20 @@ term type<br>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">remove t p id</code> returns a term that doesn't contain element
-        with the given <code class="code">id</code><br>
+        with the a given <code class="code">id</code><br>
 </div>
 
 <pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ('b <a href="Bap.Std.Term.html#TYPEt">t</a> option -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> option) -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">change t p id f</code> if <code class="code">p</code> contains subterm with of a given kind
         <code class="code">t</code> and identifier <code class="code">id</code>, then apply <code class="code">f</code> to this
         subterm. Otherwise, apply <code class="code">f</code> to <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> return <code class="code"><span class="constructor">None</span></code>,
-        then remove this subterm (given it did exist), otherwise,
+        then remove this subterm (a given it did exist), otherwise,
         update parent with a new subterm.<br>
 </div>
 
 <pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">enum ?rev t p</code> enumerate all subterms of type <code class="code">t</code> of the
-        given term <code class="code">p</code><br>
+        a given term <code class="code">p</code><br>
 </div>
 
 <pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">?rev:bool -><br>       ('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
@@ -191,13 +244,13 @@ term type<br>
 <code class="code">after t ?rev p tid</code> returns all subterms in term <code class="code">p</code> that
         occur after a term with a given <code class="code">tid</code>. if <code class="code">rev</code> is <code class="code"><span class="keyword">true</span></code> or
         omitted then terms are returned in the evaluation
-        order. Otherwise they're reversed. If there is no term with a
-        given <code class="code">tid</code>, then an empty sequence is returned.<br>
+        order. Otherwise they're reversed. If there is no term with
+        a given <code class="code">tid</code>, then an empty sequence is returned.<br>
 </div>
 
 <pre><span id="VALbefore"><span class="keyword">val</span> before</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?rev:bool -><br>       'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.Term.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">before t ?rev p tid</code> returns all term that occurs before
-        defintion with given <code class="code">tid</code> in blk. If there is no such
+        defintion with a given <code class="code">tid</code> in blk. If there is no such
         definition, then the sequence will be empty.<br>
 </div>
 <div class="param_info"><code class="code">rev</code> : has
@@ -242,19 +295,85 @@ term type<br>
 
 <pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set_attr term attr value</code> attaches an <code class="code">value</code> to attribute
-        <code class="code">attr</code> in <code class="code">term</code><br>
+        <code class="code">attr</code> in <code class="code">term</code>
+<p>
+<code class="code">attrs term attrs</code> returns the set of <code class="code">attributes</code> associated
+        with a <code class="code">term</code><br>
 </div>
 
-<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b option</code></pre><div class="info ">
-<code class="code">get_attr term attr</code> returns a value of the given <code class="code">attr</code> in
+<pre><span id="VALattrs"><span class="keyword">val</span> attrs</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> <a href="Bap.Std.Dict.html#TYPEt">Dict.t</a></code></pre><div class="info ">
+<code class="code">get_attr term attr</code> returns a value of the a given <code class="code">attr</code> in
         <code class="code">term</code><br>
 </div>
 
+<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b option</code></pre>
 <pre><span id="VALhas_attr"><span class="keyword">val</span> has_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> bool</code></pre><div class="info ">
 <code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code><br>
 </div>
 
 <pre><span id="VALdel_attr"><span class="keyword">val</span> del_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a <a href="Bap.Std.Term.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">del_attr term attr</code> deletes attribute <code class="code">attr</code> from <code class="code">term</code><br>
+</div>
+<br>
+<br>
+
+<pre><span id="VALorigin"><span class="keyword">val</span> origin</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+a term was artificially produced from a term with a given tid.<br>
+</div>
+
+<pre><span id="VALsynthetic"><span class="keyword">val</span> synthetic</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+a term was introduced artificially by an analysis.<br>
+</div>
+
+<pre><span id="VALlive"><span class="keyword">val</span> live</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+a term is identified as always non dead<br>
+</div>
+
+<pre><span id="VALdead"><span class="keyword">val</span> dead</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+a term is identified as dead<br>
+</div>
+
+<pre><span id="VALvisited"><span class="keyword">val</span> visited</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+to mark a term as visited by some algorithm<br>
+</div>
+
+<pre><span id="VALprecondition"><span class="keyword">val</span> precondition</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+precondition must on the entrance to the subroutine<br>
+</div>
+
+<pre><span id="VALinvariant"><span class="keyword">val</span> invariant</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+invariant must be always true while the term is evaluated<br>
+</div>
+
+<pre><span id="VALpostcondition"><span class="keyword">val</span> postcondition</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+must hold just after the term is left<br>
+</div>
+<br>
+<h2 id="2_Higherordermapping">Higher order mapping</h2><br>
+
+<pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Term.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Term.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Mapper perfoms deep identity term mapping.
+</div>
+
+<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Term.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Term.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Visitor performs deep visiting.
+</div>
+
+<pre><span id="VALswitch"><span class="keyword">val</span> switch</span> : <code class="type">('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       program:(<a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       sub:(<a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       arg:(<a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       blk:(<a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       phi:(<a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       def:(<a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       jmp:(<a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a</code></pre><div class="info ">
+<code class="code">switch cls t ~program ~sub .. ~jmp</code> performs a pattern
+        matching over a term <code class="code">t</code> based on its type class <code class="code">cls</code>.
+        It is guaranteed that only one function will be called for a
+        term.<br>
+</div>
+
+<pre><span id="VALproj"><span class="keyword">val</span> proj</span> : <code class="type">('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       ?program:(<a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?sub:(<a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?arg:(<a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?blk:(<a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?phi:(<a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?def:(<a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -><br>       ?jmp:(<a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option) -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a option</code></pre><div class="info ">
+<code class="code">proj cls t ?case</code> a special case of pattern matching,
+        where all cases by default returns <code class="code"><span class="constructor">None</span></code><br>
+</div>
+
+<pre><span id="VALcata"><span class="keyword">val</span> cata</span> : <code class="type">('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       init:'a -><br>       ?program:(<a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?sub:(<a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?arg:(<a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?blk:(<a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?phi:(<a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?def:(<a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -><br>       ?jmp:(<a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a) -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a</code></pre><div class="info ">
+<code class="code">cata cls ~init t ?case</code> performs a pattern matching. All
+        methods by default returns <code class="code">init</code>.
+        Note: <code class="code">cata</code> stands for <code class="code">catamorphism</code><br>
 </div>
 </body></html>

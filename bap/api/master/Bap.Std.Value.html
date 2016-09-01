@@ -8,6 +8,7 @@
 <link rel="next" href="Bap.Std.Dict.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of class attributes" rel=Appendix href="index_attributes.html">
@@ -16,7 +17,58 @@
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
-<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Value</title>
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Microx" rel="Chapter" href="Microx.html">
+<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
+<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Value</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Arch.html" title="Bap.Std.Arch">Previous</a>
@@ -38,16 +90,16 @@ Universal Values.
       add new constructor, you need to register it, e.g.,
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;function_signature&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">String</span>)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"function_signature"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"2175c28c-08ca-4052-8385-3a01e1c6ab6f"</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;function_signature&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">String</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"function_signature"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"2175c28c-08ca-4052-8385-3a01e1c6ab6f"</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       This is merely equivalent to adding a branch
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Function_signature</span>&nbsp;<span class="keyword">of</span>&nbsp;string<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Function_signature</span>&nbsp;<span class="keyword">of</span>&nbsp;string
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -71,11 +123,11 @@ Universal Values.
       comparison function and serialization.
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">S</span>&nbsp;=&nbsp;<span class="keyword">sig</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pp&nbsp;:&nbsp;<span class="constructor">Format</span>.formatter&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">S</span>&nbsp;=&nbsp;<span class="keyword">sig</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pp&nbsp;:&nbsp;<span class="constructor">Format</span>.formatter&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -86,17 +138,17 @@ Universal Values.
       yourself):
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>&nbsp;=&nbsp;<span class="keyword">struct</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;string&nbsp;*&nbsp;int&nbsp;*&nbsp;int<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pp&nbsp;ppf&nbsp;(file,line,col)&nbsp;=<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Format</span>.fprintf&nbsp;ppf&nbsp;<span class="string">"%s:%d:%d"</span>&nbsp;file&nbsp;line&nbsp;col<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;loc&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"loc"</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"400e190e-ce21-488d-87b1-c101709621a8"</span><br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>&nbsp;=&nbsp;<span class="keyword">struct</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;string&nbsp;*&nbsp;int&nbsp;*&nbsp;int
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">with</span>&nbsp;bin_io,&nbsp;compare,&nbsp;sexp
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;pp&nbsp;ppf&nbsp;(file,line,col)&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Format</span>.fprintf&nbsp;ppf&nbsp;<span class="string">"%s:%d:%d"</span>&nbsp;file&nbsp;line&nbsp;col
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;loc&nbsp;=&nbsp;<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">Loc</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~name:<span class="string">"loc"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~uuid:<span class="string">"400e190e-ce21-488d-87b1-c101709621a8"</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -106,8 +158,8 @@ Universal Values.
       into the value container, and later to unpack it:
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_pos&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;loc&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2);;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_pos&nbsp;:&nbsp;value&nbsp;=&nbsp;test.c:20:2<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_pos&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;loc&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_pos&nbsp;:&nbsp;value&nbsp;=&nbsp;test.c:20:2
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -117,25 +169,25 @@ Universal Values.
       values, for example, you can put them in one container, e.g.,
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_t&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;function_signature<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])"</span>;;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_t&nbsp;:&nbsp;value&nbsp;=&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main_t&nbsp;=&nbsp;<span class="constructor">Value</span>.create&nbsp;function_signature
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])"</span>;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main_t&nbsp;:&nbsp;value&nbsp;=&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;=&nbsp;[main_pos;&nbsp;main_t];;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main&nbsp;:&nbsp;value&nbsp;list&nbsp;=&nbsp;[<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.c:20:2;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;=&nbsp;[main_pos;&nbsp;main_t];;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;main&nbsp;:&nbsp;value&nbsp;list&nbsp;=&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;test.c:20:2;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;void&nbsp;main(int&nbsp;argc,&nbsp;const&nbsp;char&nbsp;*argv[])
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
       To extract value you can use <code class="code"><span class="constructor">Value</span>.get</code> function:
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Value</span>.get&nbsp;loc&nbsp;main_pos;;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;<span class="constructor">Loc</span>.t&nbsp;option&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2)<br>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;<span class="constructor">Value</span>.get&nbsp;loc&nbsp;main_pos;;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;:&nbsp;<span class="constructor">Loc</span>.t&nbsp;option&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;(<span class="string">"test.c"</span>,&nbsp;20,&nbsp;2)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -195,6 +247,16 @@ a universal value<br>
 </div>
 
 
+<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Value.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> <a href="Bap.Std.Value.html#TYPEt">t</a> -> int</code></pre>
+<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Value.html#TYPEt">t</a></code></pre>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type">'a</code> tag</span> </pre>
 <div class="info ">
 Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</code><br>
@@ -211,7 +273,7 @@ uninhabited type<br>
 </div>
 
 
-<pre><span id="TYPEliteral"><span class="keyword">type</span> <code class="type"></code>literal</span> = <code class="type">(<a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>)<br>       Pervasives.format</code> </pre>
+<pre><span id="TYPEliteral"><span class="keyword">type</span> <code class="type"></code>literal</span> = <code class="type">(<a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>, <a href="Bap.Std.Value.html#TYPEvoid">void</a>)<br>       format</code> </pre>
 <div class="info ">
 literal string. Don't look at the right hand side of a type
         equation, this is just a way to say that a string should be a
@@ -226,6 +288,16 @@ persistent type identifier<br>
 </div>
 
 
+<pre><span id="VALbin_typeid"><span class="keyword">val</span> bin_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.t</code></pre>
+<pre><span id="VALbin_read_typeid"><span class="keyword">val</span> bin_read_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Read.reader</code></pre>
+<pre><span id="VAL__bin_read_typeid__"><span class="keyword">val</span> __bin_read_typeid__</span> : <code class="type">(int -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a>) Bin_prot.Read.reader</code></pre>
+<pre><span id="VALbin_reader_typeid"><span class="keyword">val</span> bin_reader_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.reader</code></pre>
+<pre><span id="VALbin_size_typeid"><span class="keyword">val</span> bin_size_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Size.sizer</code></pre>
+<pre><span id="VALbin_write_typeid"><span class="keyword">val</span> bin_write_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Write.writer</code></pre>
+<pre><span id="VALbin_writer_typeid"><span class="keyword">val</span> bin_writer_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.writer</code></pre>
+<pre><span id="VALcompare_typeid"><span class="keyword">val</span> compare_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> int</code></pre>
+<pre><span id="VALtypeid_of_sexp"><span class="keyword">val</span> typeid_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a></code></pre>
+<pre><span id="VALsexp_of_typeid"><span class="keyword">val</span> sexp_of_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Value.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create cons x</code> creates a value using constructor <code class="code">cons</code> and
         argument <code class="code">x</code><br>
@@ -252,6 +324,10 @@ persistent type identifier<br>
 <code class="code">tagname value</code> returns a constructor name of the <code class="code">value</code><br>
 </div>
 
+<pre><span id="VALtypeid"><span class="keyword">val</span> typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a></code></pre><div class="info ">
+<code class="code">typeid value</code> returns a type identifier of the <code class="code">value</code><br>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Value.Tag.html">Tag</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Value.Tag.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Variants of values.
 </div>
@@ -260,11 +336,11 @@ Variants of values.
 Runtime parallel match.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Typeid.html">Typeid</a>: <code class="type"><a href="Bap.Std.Regular.html">Regular</a></code><code class="type">  with type t = typeid</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Value.Typeid.html">Typeid</a>: <code class="type">Identifiable</code><code class="type">  with type t = typeid</code></pre><div class="info">
 Persistent type identifiers.
 </div>
 
-<pre><span class="keyword">include</span> <a href="Bap.Std.Regular.html">Bap.Std.Regular</a></pre>
+<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
 <div class="info ">
 Although values of type <code class="code">value</code> implements regular interface
         it is recommended to used <code class="code">dict</code> data structure instead of

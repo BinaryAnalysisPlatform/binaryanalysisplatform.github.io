@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Search</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="argot_types.js"></script>
+    <script type="text/javascript" src="argot_parser.js"></script>
+    <script type="text/javascript" src="argot_search.js"></script>
+    <script type="text/javascript" src="argot_data.js"></script>
+  </head>
+  <body onload="document.form.query.focus();">
+    <form name="form" action="javascript:exec_query('frame');">
+      <input type="text" name="query" value="" size="42"/>
+      <input type="submit" value="search"/>
+      <br/>
+      <input type="radio" name="mode" value="name" checked="checked"/>&nbsp;by name<br/>
+      <input type="radio" name="mode" value="regexp"/>&nbsp;by regexp<br/>
+      <input type="radio" name="mode" value="type"/>&nbsp;by type&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="mode" value="typewithmanifest"/>&nbsp;by type, using manifest<br/>
+      <input type="radio" name="mode" value="fulltext"/>&nbsp;by full text<br/>
+    </form>
+    <hr width="80%" style="border-color: black; border-width: 1px; border-style: solid;"/>
+    <br/>
+    <div id="results"">
+    </div>
+  </body>
+</html>
