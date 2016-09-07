@@ -84,13 +84,4 @@
 creates new bundle or opens existing<br>
 </div>
 
-<pre><span id="VALmanifest"><span class="keyword">val</span> manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a></code></pre>
-<pre><span id="VALget_file"><span class="keyword">val</span> get_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> Uri.t -> Uri.t option</code></pre>
-<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> string -> string option</code></pre>
-<pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> string list</code></pre>
-<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -><br>       f:(string -><br>          [ `Copy | `Drop | `Map of string -> string | `Proc of string -> unit ]) -><br>       unit</code></pre>
-<pre><span id="VALupdate_manifest"><span class="keyword">val</span> update_manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -><br>       f:(<a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a>) -> unit</code></pre>
-<pre><span id="VALinsert_files"><span class="keyword">val</span> insert_files</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> (string option * Uri.t) list -> unit</code></pre>
-<pre><span id="VALinsert_file"><span class="keyword">val</span> insert_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> Uri.t -> unit</code></pre>
-<pre><span id="VALinsert_data"><span class="keyword">val</span> insert_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> name:string -> data:string -> unit</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Bundle.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

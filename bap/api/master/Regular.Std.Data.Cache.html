@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Regular.Std.Data.Io.html">
+<link rel="previous" href="Regular.Std.Data.Write.html">
 <link rel="Up" href="Regular.Std.Data.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -70,68 +70,89 @@
 <link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Regular.Std.Data.Cache</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Regular.Std.Data.Io.html" title="Regular.Std.Data.Io">Previous</a>
+<div class="navbar"><a class="pre" href="Regular.Std.Data.Write.html" title="Regular.Std.Data.Write">Previous</a>
 &nbsp;<a class="up" href="Regular.Std.Data.html" title="Regular.Std.Data">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a></h1>
 
 <pre><span class="keyword">module</span> Cache: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Cache.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Data cache.
+Generic caching.
 <p>
 
-        Store and retrieve data from cache. The cache can seen as a
-        persistant weak key-value storage. Data stored here can
-        disappear at any time, but can survive for a long time. The
-        library by itself doesn't provide a caching service for any
-        type, only the interface. The caching service can be added
-        externally (e.g., via plugin system).
+        Use <code class="code"><span class="constructor">T</span>.<span class="constructor">Cache</span></code> module if you want to cache values of type
+        <code class="code"><span class="constructor">T</span>.t</code>.
 <p>
 
-        The caching infrastructure provides only facilities for
-        storing and loading data. In fact this is just a weak
-        key-value storage. A weak, because storage is allowed to
-        to loose data.
-<p>
-
-        As a key, we use <code class="code">digest</code> that is underneath the hood is and
-        md5 sum of arguments used to build the cached data.
-<p>
-
-        Let's take for example a function that builds some control
-        flow graphs. It has three parameters, one is an optional
-        <code class="code">debug</code>, that doesn't affect the algorithm, and the rest two
-        has type <code class="code">string</code> and <code class="code">int</code> correspondingly. The following
-        code will try to load result from a cache, using a digest of
-        the arguments, and if is not available, the the graph will be
-        computed and stored in the cache. This function will work even
-        if there is no caching service. Of course, there will be no
-        benefits, since the <code class="code">save</code> function will just immediately
-        forget its argument.
-<p>
-
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;compute_graph&nbsp;?(debug=<span class="keyword">false</span>)&nbsp;x&nbsp;y&nbsp;:&nbsp;<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.t&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;digest&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Data</span>.<span class="constructor">Cache</span>.digest&nbsp;~namespace:<span class="string">"example"</span>&nbsp;<span class="string">"%s%d"</span>&nbsp;x&nbsp;y&nbsp;<span class="keyword">in</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">match</span>&nbsp;<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.<span class="constructor">Cache</span>.load&nbsp;digest&nbsp;<span class="keyword">with</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Some</span>&nbsp;g&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;g
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">None</span>&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;g&nbsp;=&nbsp;build_graph&nbsp;?debug&nbsp;x&nbsp;y&nbsp;<span class="keyword">in</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.<span class="constructor">Cache</span>.save&nbsp;digest&nbsp;g;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
-<p>
-
-        Note: it is only reasonable to use caching for data types,
-        that take reasonable amount of time to create.<br>
+        Use <a href="Regular.Std.Data.Cache.html#VALdigest"><code class="code"><span class="constructor">Data</span>.<span class="constructor">Cache</span>.digest</code></a> to build digests of the data for
+        caching.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">Regular.Std.digest</a> -> <a href="Regular.Std.Data.html#TYPEt">Regular.Std.Data.t</a> option</code></pre><div class="info ">
-<code class="code">load id</code> load data previously stored under give <code class="code">id</code><br>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+cacher type class<br>
 </div>
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">Regular.Std.digest</a> -> <a href="Regular.Std.Data.html#TYPEt">Regular.Std.Data.t</a> -> unit</code></pre><div class="info ">
-<code class="code">save id data</code> store data under given <code class="code">id</code>. If something is
-          already stored, then it will be overwritten.<br>
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">load:(<a href="Regular.Std.html#TYPEdigest">digest</a> -> 'a option) -><br>       save:(<a href="Regular.Std.html#TYPEdigest">digest</a> -> 'a -> unit) -> 'a <a href="Regular.Std.Data.Cache.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ~load ~save</code> creates a cache provider.<br>
+</div>
+
+<pre><span id="VALdigest"><span class="keyword">val</span> digest</span> : <code class="type">namespace:string -><br>       ('a, Format.formatter, unit, <a href="Regular.Std.html#TYPEdigest">digest</a>) format4 -><br>       'a</code></pre><div class="info ">
+<code class="code">digest ~namespace fmt x y z ...</code> a variadic function to
+          create data digests. Use it like a printf, e.g.,
+          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{name&nbsp;:&nbsp;string;&nbsp;parent&nbsp;:&nbsp;string;&nbsp;lang&nbsp;:&nbsp;string}
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;digest&nbsp;t&nbsp;=&nbsp;<span class="constructor">Data</span>.<span class="constructor">Cache</span>.digest&nbsp;~namespace:<span class="string">"student"</span>&nbsp;<span class="string">"%s%s"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;t.name&nbsp;t.parent
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+          In the example, we created a digest that will ignore <code class="code">lang</code>
+          field of the data type (that is assumed to be transparent to
+          the cached computation).
+<p>
+
+          Note: <code class="code">digest</code> function will first eagerly build the whole
+          string and then convert it to the digest. So it has O(N)
+          complexity in space and time, where N is the total size of
+          all constituting elements. If N is too big (hundreds of
+          megabytes) then use <code class="code"><span class="constructor">Digest</span></code> module for building digests
+          incrementally.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Data.Cache.Digest.html">Digest</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Cache.Digest.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Data digesting for caching.
+</div>
+
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">'a <a href="Regular.Std.Data.Cache.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEdigest">digest</a> -> 'a option</code></pre><div class="info ">
+<code class="code">load cls digest</code> loads entry with a given <code class="code">digest</code> from the
+          cache. Note, this is a generic function, if you want to load
+          a value of type <code class="code"><span class="constructor">T</span>.t</code> use <code class="code"><span class="constructor">T</span>.<span class="constructor">Cache</span>.load</code> function.<br>
+</div>
+
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">'a <a href="Regular.Std.Data.Cache.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEdigest">digest</a> -> 'a -> unit</code></pre><div class="info ">
+<code class="code">save cls digest x</code> stores entry <code class="code">x</code> with a given <code class="code">digest</code>
+          to the cache. Note, this is a generic function, if you want
+          to store a value of type <code class="code"><span class="constructor">T</span>.t</code> use <code class="code"><span class="constructor">T</span>.<span class="constructor">Cache</span>.save</code> function.<br>
+</div>
+
+<pre><code><span id="TYPEservice"><span class="keyword">type</span> <code class="type"></code>service</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTservice.create">create</span>&nbsp;: <code class="type">'a.<br>         'a <a href="Regular.Std.html#TYPEreader">reader</a> -><br>         'a <a href="Regular.Std.html#TYPEwriter">writer</a> -> 'a <a href="Regular.Std.Data.Cache.html#TYPEt">t</a></code>;</code></td>
+
+</tr></table>
+}
+
+<div class="info ">
+service signature<br>
+</div>
+
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Data.Cache.Service.html">Service</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Cache.Service.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Service injection point.
 </div>
 </body></html>

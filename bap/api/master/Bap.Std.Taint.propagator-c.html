@@ -75,7 +75,7 @@
 &nbsp;</div>
 <h1>Class <a href="type_Bap.Std.Taint.propagator.html">Bap.Std.Taint.propagator</a></h1>
 
-<pre><span name="TYPEpropagator"><span class="keyword">class</span> <code class="type">[< all_taints : set; bindings : (var * Bil.result) Sequence.t;<br>       create_storage : Bil.storage -> 'a * Bil.result;<br>       create_undefined : 'a * Bil.result; create_word : word -> 'a * Bil.result;<br>       lookup : var -> Bil.result option; ptr_taints : addr -> set;<br>       reg_taints : Bil.result -> set; taint_ptr : addr -> size -> set -> 'a;<br>       taint_reg : Bil.result -> set -> 'a; update : var -> Bil.result -> 'a; .. ><br>     as 'a]</code> propagator</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.propagator-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+<pre><span name="TYPEpropagator"><span class="keyword">class</span> <code class="type">[< all_taints : set; bindings : (var * Bil.result) seq;<br>       create_storage : Bil.storage -> 'a * Bil.result;<br>       create_undefined : 'a * Bil.result; create_word : word -> 'a * Bil.result;<br>       lookup : var -> Bil.result option; ptr_taints : addr -> set;<br>       reg_taints : Bil.result -> set; taint_ptr : addr -> size -> set -> 'a;<br>       taint_reg : Bil.result -> set -> 'a; update : var -> Bil.result -> 'a; .. ><br>     as 'a]</code> propagator</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.propagator-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 Propagate taint through expressions.
 <p>
 

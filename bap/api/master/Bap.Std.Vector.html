@@ -93,16 +93,6 @@ a type of vector holding elements of type <code class="code"><span class="keywor
 </div>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Bap.Std.Vector.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?capacity:int -> 'a -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?capacity default</code> creates an empty vector with a a given
         <code class="code">capacity</code>. It is guaranteed that the default value will never
@@ -134,16 +124,9 @@ a type of vector holding elements of type <code class="code"><span class="keywor
         <code class="code"><span class="constructor">Container</span>.<span class="constructor">S1</span></code> interface<br>
 </div>
 
-<pre><span id="VALfindi"><span class="keyword">val</span> findi</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:(int -> 'a -> bool) -> (int * 'a) option</code></pre>
-<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:(int -> 'a -> unit) -> unit</code></pre>
-<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> init:'b -> f:(int -> 'b -> 'a -> 'b) -> 'b</code></pre>
-<pre><span id="VALindex"><span class="keyword">val</span> index</span> : <code class="type">?equal:('a -> 'a -> bool) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int option</code></pre>
-<pre><span id="VALindex_exn"><span class="keyword">val</span> index_exn</span> : <code class="type">?equal:('a -> 'a -> bool) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int</code></pre>
-<pre><span id="VALindex_with"><span class="keyword">val</span> index_with</span> : <code class="type">?equal:('a -> 'a -> bool) -> default:int -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int</code></pre>
 <pre><span class="keyword">include</span> Container.S1</pre>
 <div class="info ">
 implements common accessors for the array, like <code class="code">find</code>, <code class="code">fold</code>,
         <code class="code">iter</code>, etc<br>
 </div>
-
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre></body></html>
+</body></html>

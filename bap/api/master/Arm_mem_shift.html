@@ -84,9 +84,6 @@ Combine Mem and Shift<br>
 <br>
 Combine Mem and Shift<br>
 
-<pre><span id="VALlift_r_exp"><span class="keyword">val</span> lift_r_exp</span> : <code class="type">dest1:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       ?dest2:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       base:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       offset:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       <a href="Arm_types.html#TYPEmode_r">Arm_types.mode_r</a> -><br>       <a href="Arm_types.html#TYPEsign">Arm_types.sign</a> -> <a href="Arm_types.html#TYPEsize">Arm_types.size</a> -> <a href="Arm_types.html#TYPEoperation">Arm_types.operation</a> -> <a href="Bap.Std.html#TYPEstmt">stmt</a> list</code></pre>
-<pre><span id="VALlift_r_op"><span class="keyword">val</span> lift_r_op</span> : <code class="type">dest1:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       ?dest2:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       ?shift:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       base:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       offset:<a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       <a href="Arm_types.html#TYPEmode_r">Arm_types.mode_r</a> -><br>       <a href="Arm_types.html#TYPEsign">Arm_types.sign</a> -> <a href="Arm_types.html#TYPEsize">Arm_types.size</a> -> <a href="Arm_types.html#TYPEoperation">Arm_types.operation</a> -> <a href="Bap.Std.html#TYPEstmt">stmt</a> list</code></pre>
-<pre><span id="VALlift_m"><span class="keyword">val</span> lift_m</span> : <code class="type"><a href="Arm_types.html#TYPEop">Arm_types.op</a> list -><br>       <a href="Arm_types.html#TYPEop">Arm_types.op</a> -><br>       <a href="Arm_types.html#TYPEmode_m">Arm_types.mode_m</a> -><br>       <a href="Arm_types.html#TYPEupdate_m">Arm_types.update_m</a> -> <a href="Arm_types.html#TYPEoperation">Arm_types.operation</a> -> <a href="Bap.Std.html#TYPEstmt">stmt</a> list</code></pre>
 <pre><span id="VALrepair_imm"><span class="keyword">val</span> repair_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -><br>       sign_mask:int -> imm_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
 takes a word and converts it to an exp that is the offset for some
     memory instructions sign_mask - a bitmask that determines the bit
@@ -99,13 +96,10 @@ takes a word and a register and converts it to an exp that is the
     offset for some memory instructions sign_mask - a bitmask that
     determines the bit in src that is the negative bit rtype - whether
     a set mask indicates a positive or negative operand.<br>
-
-<pre><span id="VALrepair_reg"><span class="keyword">val</span> repair_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -><br>       <a href="Bap.Std.html#TYPEword">word</a> -> sign_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><br>
+<br>
 Decides whether to use the register or immediate as the offset
     value Also performs conversion to remove the negative bit and the<br>
 <br>
 Decides whether to use the register or immediate as the offset
     value Also performs conversion to remove the negative bit and the<br>
-
-<pre><span id="VALmem_offset_reg_or_imm_neg"><span class="keyword">val</span> mem_offset_reg_or_imm_neg</span> : <code class="type"><a href="Arm_types.html#TYPEop">Arm_types.op</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre>
-<pre><span id="VALmem_offset_reg_or_imm_pos"><span class="keyword">val</span> mem_offset_reg_or_imm_pos</span> : <code class="type"><a href="Arm_types.html#TYPEop">Arm_types.op</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre></body></html>
+</body></html>

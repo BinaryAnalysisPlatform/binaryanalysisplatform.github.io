@@ -122,32 +122,32 @@ State monad that evaluates to unit<br>
 
 
 <pre><span id="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">undefined id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">undefined id</code> creates a result with the given <code class="code">id</code> and
           undefined value<br>
 </div>
 
 <pre><span id="VALstorage"><span class="keyword">val</span> storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">storage s id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">storage s id</code> creates a result with the given <code class="code">id</code> and
           storage <code class="code">s</code> as a value<br>
 </div>
 
 <pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">word w id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">word w id</code> creates a result with the given <code class="code">id</code> and
           word <code class="code">w</code> as a value<br>
 </div>
 
 <pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a></code></pre><div class="info ">
-returns result identifier<br>
+returns result's identifier<br>
 </div>
 
 <pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.html#TYPEvalue">Bil.value</a></code></pre><div class="info ">
-returns result value<br>
+returns result's value<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Result.Id.html">Id</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Result.Id.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Result identifier.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Result.Value.html">Value</a>: <code class="type">Printable</code><code class="type">  with type t = value</code></pre>
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Result.Value.html">Value</a>: <code class="type">Printable.S</code><code class="type">  with type t = value</code></pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 </body></html>

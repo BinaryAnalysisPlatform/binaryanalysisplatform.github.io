@@ -75,6 +75,18 @@
 
 <pre><span name="TYPEt"><span class="keyword">class</span> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Context.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-<pre><span id="METHODlookup"><span class="keyword">method</span> lookup</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option</code></pre>
-<pre><span id="METHODupdate"><span class="keyword">method</span> update</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -><br>       <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -><br>       < bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) Sequence.t;<br>         lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option; update : 'a; .. ><br>       as 'a</code></pre>
-<pre><span id="METHODbindings"><span class="keyword">method</span> bindings</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) Sequence.t</code></pre></body></html>
+<pre><span id="METHODlookup"><span class="keyword">method</span> lookup</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option</code></pre><div class="info ">
+<code class="code">self<span class="keywordsign">#</span>lokup var</code> evaluate variable <code class="code">var</code> to a value that was
+          previously bound to it. Returns <code class="code"><span class="constructor">None</span></code> if it is unbound.<br>
+</div>
+
+<pre><span id="METHODupdate"><span class="keyword">method</span> update</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -><br>       <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -><br>       < bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a>;<br>         lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option; update : 'a; .. ><br>       as 'a</code></pre><div class="info ">
+<code class="code">self<span class="keywordsign">#</span>update var x</code> bind variable <code class="code">var</code> to value <code class="code">x</code>. Returns a a
+          context updated with the new binding.<br>
+</div>
+
+<pre><span id="METHODbindings"><span class="keyword">method</span> bindings</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">self<span class="keywordsign">#</span>bindings</code> returns a current list of bindings. Useful,
+          for debugging and introspection.<br>
+</div>
+</body></html>

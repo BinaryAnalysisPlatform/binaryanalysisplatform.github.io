@@ -78,31 +78,20 @@
 <h1>Module <a href="type_Regular.Std.Seq.html">Regular.Std.Seq</a></h1>
 
 <pre><span class="keyword">module</span> Seq: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Lazy sequence<br>
+Lazy sequence.
+<p>
+
+      This is the extension of Core_kernel's <code class="code"><span class="constructor">Sequence</span></code> module<br>
+<b>See also</b> <a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Sequence.mod/"><code class="code"><span class="constructor">Sequence</span></code></a><br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a Sequence.t</code> </pre>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Regular.Std.Seq.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'b -> int) -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> 'b <a href="Regular.Std.Seq.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">include</span> Sequence</pre>
 
 <pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a></code></pre><div class="info ">
 for compatibility with Core &lt;= 111.28<br>
 </div>
-
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'b -> int) -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> 'b <a href="Regular.Std.Seq.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALof_array"><span class="keyword">val</span> of_array</span> : <code class="type">'a array -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a></code></pre>
-<pre><span id="VALcons"><span class="keyword">val</span> cons</span> : <code class="type">'a -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a></code></pre>
-<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Regular.Std.Seq.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -> 'a <a href="Regular.Std.Seq.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a></code></pre></body></html>
+</body></html>

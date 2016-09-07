@@ -102,14 +102,12 @@ returns the left hand side of a definition
 returns the right hand side of a definition<br>
 </div>
 
-<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre>
 <pre><span id="VALwith_lhs"><span class="keyword">val</span> with_lhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
 updates the lhs of definition
 <p>
 updates the right hand side of a definition<br>
 </div>
 
-<pre><span id="VALwith_rhs"><span class="keyword">val</span> with_rhs</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre>
 <pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type"><a href="Bap.Std.Def.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Def.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_exp def f</code> applies <code class="code">f</code> to a <code class="code">rhs</code> of <code class="code">def</code> and returns
         an updated definition.<br>
@@ -126,5 +124,5 @@ updates the right hand side of a definition<br>
         for more information.<br>
 </div>
 
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

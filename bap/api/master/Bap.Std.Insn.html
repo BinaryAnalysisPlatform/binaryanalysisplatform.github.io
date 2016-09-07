@@ -79,23 +79,30 @@
 <h1>Module <a href="type_Bap.Std.Insn.html">Bap.Std.Insn</a></h1>
 
 <pre><span class="keyword">module</span> Insn: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Assembly instruction.<br>
+Assembly instruction.
+<p>
+
+      On a high level, the instruction is a pair of the opcode and
+      operands. A BIL code, that describes semantics of the
+      instruction may be attached to it. Also, semantic tags (or flags)
+      may add further information about the instruction.
+<p>
+
+      The instruction are usually created by a low level machinery,
+      and analyzed on the later stages. So, usually, there is no need
+      to create one manually.
+<p>
+
+      For example, each block is a sequence of instructions (see
+      <a href="Bap.Std.Block.html#VALinsns"><code class="code"><span class="constructor">Block</span>.insns</code></a>), also with each non-synthetic term there is an
+      an <a href="Bap.Std.Disasm.html#VALinsn"><code class="code"><span class="constructor">Disasm</span>.insn</code></a> field, that stores an instruction from which
+      the term was born.<br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a></code> </pre>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Insn.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">?bil:<a href="Bap.Std.html#TYPEbil">bil</a> -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
 <h3 id="3_Creating">Creating</h3>
         The following functions will create <code class="code">insn</code> instances from a lower
@@ -118,7 +125,23 @@ returns BIL program specifying instruction semantics<br>
 instruction operands<br>
 </div>
 <br>
-<h3 id="3_Instructionproperties">Instruction properties</h3><br>
+<h3 id="3_Instructionproperties">Instruction properties</h3>
+<p>
+
+        A property or a semantic tag is some kind of attribute
+        associated with an instruction. Usually a property is a
+        boolean, it either holds or not. In our case we employ modular
+        logic, and a property can have an intermediate state between
+        true and false. That means, that we have two kinds of
+        relations, strong "must" and weaker "may".  The <code class="code">must</code>
+        property is known to be a property associated with the
+        instruction. It is a strong knowledge. For example, if an
+        instruction has <code class="code">jump</code> property, then it is guaranteed to be a
+        jump instruction. On the other hand, the <code class="code">may</code> property
+        represent some uncertain knowledge. For example, the <code class="code">load</code>
+        property is <code class="code">may</code> as it designates that an instruction may
+        access the main memory, or may not access, as it depends on some
+        information, that cannot be deduced statically.<br>
 
 <pre><code><span id="TYPEmust"><span class="keyword">type</span> <code class="type"></code>must</span> = </code></pre><table class="typetable">
 <tr>
@@ -145,22 +168,64 @@ instruction operands<br>
 <pre><span id="TYPEproperty"><span class="keyword">type</span> <code class="type">'a</code> property</span> </pre>
 
 
-<pre><span id="VALnew_property"><span class="keyword">val</span> new_property</span> : <code class="type">'a -> string -> 'a <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALjump"><span class="keyword">val</span> jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALconditional"><span class="keyword">val</span> conditional</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALcall"><span class="keyword">val</span> call</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALaffect_control_flow"><span class="keyword">val</span> affect_control_flow</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre>
-<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALmay"><span class="keyword">val</span> may</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALmust"><span class="keyword">val</span> must</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre>
-<pre><span id="VALmustn't"><span class="keyword">val</span> mustn't</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre>
-<pre><span id="VALshould"><span class="keyword">val</span> should</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre>
-<pre><span id="VALshouldn't"><span class="keyword">val</span> shouldn't</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre>
-<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALjump"><span class="keyword">val</span> jump</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction performs a non-regular control flow<br>
+</div>
+
+<pre><span id="VALconditional"><span class="keyword">val</span> conditional</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+under some dynamic condition the instruction may perform a
+        non-regular control flow<br>
+</div>
+
+<pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction is jump with a target that is not a constant<br>
+</div>
+
+<pre><span id="VALcall"><span class="keyword">val</span> call</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction is a call to subroutine.<br>
+</div>
+
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+instruction is a return from a call<br>
+</div>
+
+<pre><span id="VALaffect_control_flow"><span class="keyword">val</span> affect_control_flow</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction may perform a non-regular control flow<br>
+</div>
+
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction may load from memory<br>
+</div>
+
+<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
+the instruction may store to memory<br>
+</div>
+
+<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">is property insn</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">insn</code> has <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALmay"><span class="keyword">val</span> may</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<code class="code">may propery insn</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">insn</code> has <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALmust"><span class="keyword">val</span> must</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> must have the <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALmustn't"><span class="keyword">val</span> mustn't</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> must not have the <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALshould"><span class="keyword">val</span> should</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> may have the <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALshouldn't"><span class="keyword">val</span> shouldn't</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmay">may</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> shouldn't have the <code class="code">property</code><br>
+</div>
+
+<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp_adt</code> prints instruction in ADT format, suitable for reading
         by evaluating in many languages, e.g. Python, Js, etc<br>
 </div>
@@ -172,5 +237,5 @@ Prefix Tree
         as a token).
 </div>
 
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

@@ -83,8 +83,6 @@ Applicable is an abstraction lying between Arrow, Monad and
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.Basic2.html">Basic2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.Binable.html">Binable</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
 <tr><td align="left"><br>C</td></tr>
 <tr><td><a href="Bap.Std.CPU.html">CPU</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
@@ -95,10 +93,7 @@ Abstract interface to CPU
 <td></td></tr>
 <tr><td align="left"><br>D</td></tr>
 <tr><td><a href="Regular.Std.Data.html">Data</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td><div class="info">
-Data type interface.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Graphlib.Std.Edge.html">Edge</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
@@ -151,14 +146,13 @@ Iterators lifted into monad
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Graphlib.Std.Node.html">Node</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.
+<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> nodes.
 </div>
 </td></tr>
 <tr><td align="left"><br>O</td></tr>
 <tr><td><a href="Regular.Std.Opaque.html">Opaque</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Opaque type is like regular type, except that we can print or
-      examine it in any way.
+an alias
 </div>
 </td></tr>
 <tr><td><a href="Bap_bml.Ops.html">Ops</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
@@ -173,8 +167,6 @@ A type of modules for filtering graphs.
 </td></tr>
 <tr><td><a href="Regular.Std.Printable.html">Printable</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Printable interface is implemented by a significant amount of
-      BAP types.
 </div>
 </td></tr>
 <tr><td align="left"><br>R</td></tr>
@@ -185,9 +177,7 @@ Interface to a registry.
 </td></tr>
 <tr><td><a href="Regular.Std.Regular.html">Regular</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Regular types models a general concept of value, i.e., something
-      that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
-      <code class="code">char</code> and other built in types.
+module type alias for <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code>
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
@@ -205,8 +195,32 @@ Type mapper, visitor, iterator, finder all in one.
 Language processor interface.
 </div>
 </td></tr>
+<tr><td><a href="Regular.Std.Opaque.S.html">S</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
+<td><div class="info">
+Opaque type is like regular type, except that we can print or
+      examine it in any way.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Regular.S.html">S</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<td><div class="info">
+Regular interface.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.S.html">S</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Data type interface.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.Versioned.S.html">S</a> [<a href="Regular.Std.Data.Versioned.html">Regular.Std.Data.Versioned</a>]</td>
+<td><div class="info">
+a data type with a version
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Printable.S.html">S</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<td><div class="info">
+Interface for printing data.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.S.html">S</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 A required interface for the type to be lifted to value.
@@ -215,8 +229,6 @@ A required interface for the type to be lifted to value.
 <tr><td><a href="Bap.Std.Monad.S.html">S</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.S2.html">S2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Sexpable.html">Sexpable</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.State.html">State</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td><div class="info">
@@ -241,8 +253,6 @@ Prefix tries.
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap_future.Std.Variadic.html">Variadic</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Versioned.html">Versioned</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td></td></tr>
 </table>
 </body>

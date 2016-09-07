@@ -67,9 +67,7 @@
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Type definitions" rel="Section" href="#3_Typedefinitions">
-<link title="Bytes" rel="Subsection" href="#4_Bytes">
 <link title="Reader and Writer type classes" rel="Subsection" href="#4_ReaderandWritertypeclasses">
-<link title="Digest" rel="Subsection" href="#4_Digest">
 <title>BAR: BAP Annotated Reference : Regular.Std</title>
 </head>
 <body>
@@ -109,12 +107,12 @@ Interface that should support any regular data type.
     So what the library actually provides. First of all it defines the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a> interface, that each regular data type is expected to
     implement. This includes a full set of <code class="code"><span class="constructor">Io</span></code> functions, that allows
-    one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>
+    one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Data</span></code></a>
     interface). It also provides an inteface for creating different
     collections from the values of that type, including trees,
     hashtables, maps, sets, etc. Also, it describes the whole algebra
     of comparison functions. For the opaque data types an interface
-    called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
+    called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>. It doesn't provide printing and serialization, but has
     everything that can be derived for a type with a total order
     (e.g., containers, comparison function, etc).
@@ -124,7 +122,7 @@ Interface that should support any regular data type.
     minimal implementation, and derives the rest.
 <p>
 
-    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Bytes</span></code></a> module is provided that facilitates the
+    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Bytes</span></code></a> module is provided that facilitates the
     transfer from mutable to immutable <code class="code"><span class="constructor">Strings</span></code>. It is the extension
     of OCaml standard Bytes module, enhanced with the expected set of
     functions.<br>
@@ -132,25 +130,13 @@ Interface that should support any regular data type.
 <hr width="100%">
 <br>
 <h3 id="3_Typedefinitions">Type definitions</h3><br>
-<br>
-<h4 id="4_Bytes">Bytes</h4><br>
 
 <pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type">Bytes.t</code> </pre>
 <div class="info ">
 bytes is a mutable sequence of bytes that has a fixed length.<br>
 </div>
 
-
-<pre><span id="VALbin_bytes"><span class="keyword">val</span> bin_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_bytes"><span class="keyword">val</span> bin_read_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_bytes__"><span class="keyword">val</span> __bin_read_bytes__</span> : <code class="type">(int -> <a href="Regular.Std.html#TYPEbytes">bytes</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_bytes"><span class="keyword">val</span> bin_reader_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_bytes"><span class="keyword">val</span> bin_size_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_bytes"><span class="keyword">val</span> bin_write_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_bytes"><span class="keyword">val</span> bin_writer_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_bytes"><span class="keyword">val</span> compare_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> -> <a href="Regular.Std.html#TYPEbytes">bytes</a> -> int</code></pre>
-<pre><span id="VALbytes_of_sexp"><span class="keyword">val</span> bytes_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Regular.Std.html#TYPEbytes">bytes</a></code></pre>
-<pre><span id="VALsexp_of_bytes"><span class="keyword">val</span> sexp_of_bytes</span> : <code class="type"><a href="Regular.Std.html#TYPEbytes">bytes</a> -> Sexplib.Sexp.t</code></pre><br>
+<br>
 <h4 id="4_ReaderandWritertypeclasses">Reader and Writer type classes</h4>
 <p>
 
@@ -167,8 +153,6 @@ an interface for reading a value from the input.<br>
 an interface for writing a value to the output.<br>
 </div>
 
-<br>
-<h4 id="4_Digest">Digest</h4><br>
 
 <pre><span id="TYPEdigest"><span class="keyword">type</span> <code class="type"></code>digest</span> </pre>
 <div class="info ">
@@ -176,84 +160,59 @@ a string that digests data<br>
 </div>
 
 
-<pre><span id="VALbin_digest"><span class="keyword">val</span> bin_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_digest"><span class="keyword">val</span> bin_read_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_digest__"><span class="keyword">val</span> __bin_read_digest__</span> : <code class="type">(int -> <a href="Regular.Std.html#TYPEdigest">digest</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_digest"><span class="keyword">val</span> bin_reader_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_digest"><span class="keyword">val</span> bin_size_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_digest"><span class="keyword">val</span> bin_write_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_digest"><span class="keyword">val</span> bin_writer_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_digest"><span class="keyword">val</span> compare_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> -> <a href="Regular.Std.html#TYPEdigest">digest</a> -> int</code></pre>
-<pre><span id="VALdigest_of_sexp"><span class="keyword">val</span> digest_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Regular.Std.html#TYPEdigest">digest</a></code></pre>
-<pre><span id="VALsexp_of_digest"><span class="keyword">val</span> sexp_of_digest</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">digest</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEprinter"><span class="keyword">type</span> <code class="type">'a</code> printer</span> = <code class="type">Format.formatter -> 'a -> unit</code> </pre>
 <div class="info ">
-<code class="code"><span class="keywordsign">'</span>a printer</code> defines a type for pretty-printers for a value of
-      type <code class="code"><span class="keywordsign">'</span>a</code>. This is the type, that is required by <code class="code">%a</code> specifier,
-      for <code class="code"><span class="constructor">Format</span>.printf</code>-family of functions. Also, this is the type,
-      that can be installed into OCaml toplevel or debugger.
+<code class="code"><span class="keywordsign">'</span>a printer</code> constructs a printer type for arbitrary type <code class="code"><span class="keywordsign">'</span>a</code>.
 <p>
 
-      Note: `bap.top` library automatically installs all printers.<br>
+      A value of type <code class="code"><span class="keywordsign">'</span>a printer</code> is a function that is expected by
+      the <code class="code">%a</code> specifier of the <code class="code"><span class="constructor">Format</span>.printf</code> family of functions.<br>
 </div>
 
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Data.html">Data</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Data type interface.
+<pre><span class="keyword">module</span> <a href="Regular.Std.Printable.html">Printable</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Printable data structures.
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Printable.html">Printable</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Printable interface is implemented by a significant amount of
-      BAP types.
+<pre><span class="keyword">module type</span> <a href="Regular.Std.Printable.html">Printable</a> = <code class="type"><a href="Regular.Std.Printable.S.html">Printable.S</a></code></pre><div class="info">
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Printable.html">Printable</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="code"><span class="keyword">sig</span></code><div class="sig_block">
-<pre><span class="keyword">include</span> Pretty_printer.S</pre>
+<pre><span class="keyword">module</span> <a href="Regular.Std.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Lazy sequence.
+</div>
 
-<pre><span id="VALmodule_name"><span class="keyword">val</span> module_name</span> : <code class="type">string option</code></pre></div><code class="code"><span class="keyword">end</span></code><code class="code">) </code>: <code class="type"><a href="Regular.Std.Printable.html">Printable</a></code><code class="type">  with type t := M.t</code></pre>
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Regular.html">Regular</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a <a href="Regular.Std.Seq.html#TYPEt">Seq.t</a></code> </pre>
+<div class="info ">
+Abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code><br>
+</div>
+
+
+<pre><span id="VAL(^::)"><span class="keyword">val</span> (^::)</span> : <code class="type">'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">x ^:: xs</code> is a consing operator for sequences<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Data.html">Data</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Data types support module.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Regular.Std.Data.html">Data</a> = <code class="type"><a href="Regular.Std.Data.S.html">Data.S</a></code></pre>
+<pre><span class="keyword">module</span> <a href="Regular.Std.Regular.html">Regular</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Regular types models a general concept of value, i.e., something
       that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
       <code class="code">char</code> and other built in types.
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Opaque.html">Opaque</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module type</span> <a href="Regular.Std.Regular.html">Regular</a> = <code class="type"><a href="Regular.Std.Regular.S.html">Regular.S</a></code></pre><div class="info">
+module type alias for <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Opaque.html">Opaque</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Opaque type is like regular type, except that we can print or
       examine it in any way.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lazy sequence
-</div>
-
-<pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a <a href="Regular.Std.Seq.html#TYPEt">Seq.t</a></code> </pre>
-<div class="info ">
-type abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code><br>
-</div>
-
-
-<pre><span id="VALbin_seq"><span class="keyword">val</span> bin_seq</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_seq"><span class="keyword">val</span> bin_read_seq</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_seq__"><span class="keyword">val</span> __bin_read_seq__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Regular.Std.html#TYPEseq">seq</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_seq"><span class="keyword">val</span> bin_reader_seq</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_seq"><span class="keyword">val</span> bin_size_seq</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_seq"><span class="keyword">val</span> bin_write_seq</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_seq"><span class="keyword">val</span> bin_writer_seq</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Regular.Std.html#TYPEseq">seq</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_seq"><span class="keyword">val</span> compare_seq</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> int</code></pre>
-<pre><span id="VALseq_of_sexp"><span class="keyword">val</span> seq_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre>
-<pre><span id="VALsexp_of_seq"><span class="keyword">val</span> sexp_of_seq</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VAL(^::)"><span class="keyword">val</span> (^::)</span> : <code class="type">'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">x ^:: xs</code> is a consing operator for sequences<br>
-</div>
-
-<pre><span class="keyword">module</span> <a href="Regular.Std.Data.html">Data</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Regular.Std.Regular.html">Regular</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
-      minimum implementation <code class="code"><span class="constructor">M</span></code>
-</div>
-
-<pre><span class="keyword">module</span> <a href="Regular.Std.Opaque.html">Opaque</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+<pre><span class="keyword">module type</span> <a href="Regular.Std.Opaque.html">Opaque</a> = <code class="type"><a href="Regular.Std.Opaque.S.html">Opaque.S</a></code></pre><div class="info">
+an alias
 </div>
 
 <pre><span class="keyword">module</span> <a href="Regular.Std.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

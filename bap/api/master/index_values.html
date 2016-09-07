@@ -73,9 +73,15 @@
 <table>
 <tr><td align="left"><br></td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL( * )">( * )</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x * y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">TIMES</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL( * )">( * )</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x * y = mul x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VAL(!$)">(!$)</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
 <td><div class="info">
 <code class="code">!$v</code> lifts <code class="code">v</code> to an Or_error monad.
@@ -92,61 +98,112 @@ infix notation for <code class="code">from_string_exn</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(%$)">(%$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x %$ y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">SMOD</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(+)">(+)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
 <td><div class="info">
-Arithmetic operations
+<code class="code">x + y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">PLUS</span>,x,y)</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(+)">(+)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x + y = add x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VAL(++)">(++)</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">a ++ n</code> is <code class="code">nsucc a n</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(-)">(-)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x - y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">MINUS</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(-)">(-)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x - y = sub x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VAL(--)">(--)</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">a -- n</code> is <code class="code">npred a n</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(/$)">(/$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x /$ y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">SDIVIDE</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_config.html#VAL(/)">(/)</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(/)">(/)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x / y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">DIVIDE</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(/)">(/)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x / y = div x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(:=)">(:=)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x := y <span class="keywordsign">-&gt;</span> <span class="constructor">Move</span> (x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(<$)">(&lt;$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &lt;$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLT</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(<)">(&lt;)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &lt; y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">LT</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(<=$)">(&lt;=$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &lt;=$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLE</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(<=)">(&lt;=)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &lt;= y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LE</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(<>)">(&lt;&gt;)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x = y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">NEQ</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(=)">(=)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
 <td><div class="info">
-Equality tests
+<code class="code">x = y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">EQ</span>,x,y)</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(>$)">(&gt;$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &gt;$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLT</span>,y,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(>)">(&gt;)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &gt; y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LT</span>,y,x) </code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(>=$)">(&gt;=$)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &gt;=$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLE</span>,y,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(>=)">(&gt;=)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x &lt;= y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LE</span>,y,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VAL(@.)">(@.)</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">b1 @. b2</code> is <code class="code">concat b1 b2</code>
@@ -164,7 +221,7 @@ Equality tests
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(^)">(^)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
 <td><div class="info">
-<code class="code">a ^ b</code> contatenate <code class="code">a</code> and <code class="code">b</code>
+<code class="code">a ^ b <span class="keywordsign">-&gt;</span> <span class="constructor">Concat</span> (a,b)</code>
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.html#VAL(^::)">(^::)</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
@@ -173,39 +230,78 @@ Equality tests
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(asr)">(asr)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">asr</span> y = <span class="constructor">BinOp</span> (<span class="constructor">ARSHIFT</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(asr)">(asr)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">asr</span> y = arshift x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(land)">(land)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">land</span> y = <span class="constructor">BinOp</span> (<span class="constructor">AND</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(land)">(land)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">land</span> y = logand x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(lor)">(lor)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lor</span> y = <span class="constructor">BinOp</span> (<span class="constructor">OR</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(lor)">(lor)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lor</span> y = logor x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(lsl)">(lsl)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
 <td><div class="info">
-Bit operations
+<code class="code">x <span class="keyword">lsl</span> y = <span class="constructor">BinOp</span> (<span class="constructor">LSHIFT</span>,x,y)</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(lsl)">(lsl)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lsl</span> y = lshift x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(lsr)">(lsr)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lsr</span> y = <span class="constructor">BinOp</span> (<span class="constructor">RSHIFT</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(lsr)">(lsr)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lsr</span> y</code> = rshift x y
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(lxor)">(lxor)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">lxor</span> y = <span class="constructor">BinOp</span> (<span class="constructor">XOR</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(lxor)">(lxor)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="keyword">lxor</span> x y = logxor x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VAL(mod)">(mod)</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">mod</span> y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">MOD</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(mod)">(mod)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x <span class="keyword">mod</span> y = modulo x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VAL(~-)">(~-)</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
-A common set of infix operators
+<code class="code"><span class="keywordsign">~-</span>x = neg x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VAL__aarch64_of_sexp__">__aarch64_of_sexp__</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
@@ -368,8 +464,6 @@ A common set of infix operators
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VAL__bin_read_mult_insn__">__bin_read_mult_insn__</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VAL__bin_read_nat1__">__bin_read_nat1__</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VAL__bin_read_nil__">__bin_read_nil__</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VAL__bin_read_nil_reg__">__bin_read_nil_reg__</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -494,7 +588,7 @@ A common set of infix operators
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VAL__bin_read_t__">__bin_read_t__</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VAL__bin_read_t__">__bin_read_t__</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VAL__bin_read_t__">__bin_read_t__</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VAL__bin_read_t__">__bin_read_t__</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -682,7 +776,10 @@ A common set of infix operators
 <tr><td><a href="Bap.Std.Arch.html#VALaarch64_of_sexp">aarch64_of_sexp</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALabs">abs</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">abs x</code> absolute value of <code class="code">x</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Traces.html#VALadd">add</a> [<a href="Bap_traces.Std.Traces.html">Bap_traces.Std.Traces</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.Digest.html#VALadd">add</a> [<a href="Regular.Std.Data.Cache.Digest.html">Regular.Std.Data.Cache.Digest</a>]</td>
@@ -710,7 +807,10 @@ A common set of infix operators
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALadd">add</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add x y</code> is <code class="code">x + y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.html#VALadd">add</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 <code class="code">add trie ~key ~data</code> adds <code class="code">data</code> associated with <code class="code">key</code>, if
@@ -719,10 +819,13 @@ A common set of infix operators
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.Builder.html#VALadd_arg">add_arg</a> [<a href="Bap.Std.Sub.Builder.html">Bap.Std.Sub.Builder</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Sub.Builder.html#VALadd_blk">add_blk</a> [<a href="Bap.Std.Sub.Builder.html">Bap.Std.Sub.Builder</a>]</td>
 <td><div class="info">
 appends an argument
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Sub.Builder.html#VALadd_blk">add_blk</a> [<a href="Bap.Std.Sub.Builder.html">Bap.Std.Sub.Builder</a>]</td>
+<td><div class="info">
+appends a block to a subroutine
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html#VALadd_def">add_def</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
@@ -745,11 +848,11 @@ appends a phi node
 appends generic element
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALadd_reader">add_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALadd_reader">add_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">add_reader ?desc ~ver name reader</code> registers a new <code class="code">reader</code>
-        with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
-        <code class="code">desc</code>
+          with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
+          <code class="code">desc</code>
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.Digest.html#VALadd_sexp">add_sexp</a> [<a href="Regular.Std.Data.Cache.Digest.html">Regular.Std.Data.Cache.Digest</a>]</td>
@@ -770,11 +873,11 @@ appends generic element
         <code class="code">blocks</code>.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALadd_writer">add_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALadd_writer">add_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">add_writer ?desc ~ver name writer</code> registers a new <code class="code">writer</code>
-        with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
-        <code class="code">desc</code>
+          with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
+          <code class="code">desc</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Location.Fields.html#VALaddr">addr</a> [<a href="Bap_traces.Std.Location.Fields.html">Bap_traces.Std.Location.Fields</a>]</td>
@@ -787,7 +890,7 @@ appends generic element
 <td></td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALaddr">addr</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
-<code class="code">addr block</code> address of the first instruction
+<code class="code">addr block = <span class="constructor">Memory</span>.min_addr (memory block)</code> address of the first instruction
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALaddr">addr</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -838,7 +941,10 @@ A virtual address of an entity
 <tr><td><a href="X86_env.html#VALaf">af</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALaffect_control_flow">affect_control_flow</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction may perform a non-regular control flow
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Kind.html#VALaffecting_control_of_sexp">affecting_control_of_sexp</a> [<a href="Bap.Std.Kind.html">Bap.Std.Kind</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALafter">after</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
@@ -1056,16 +1162,26 @@ arg
 <tr><td><a href="Bap_c_type.html#VALarray_of_sexp">array_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALarshift">arshift</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">arshift <span class="keywordsign">-&gt;</span> <span class="constructor">ARSHIFT</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALarshift">arshift</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">arshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right and fill with
+        the sign bit.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALasm">asm</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td><div class="info">
 target-specific assembler string representing the instruction
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALasm">asm</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">asm insn</code> returns assembly representation of the instruction
+</div>
+</td></tr>
 <tr><td><a href="Arm_utils.html#VALassert_cond">assert_cond</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_utils.html#VALassert_imm">assert_imm</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
@@ -1090,27 +1206,33 @@ target-specific assembler string representing the instruction
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.Pass.html#VALautorun">autorun</a> [<a href="Bap.Std.Project.Pass.html">Bap.Std.Project.Pass</a>]</td>
 <td><div class="info">
-<code class="code">autorun plugin</code> is <code class="code"><span class="keyword">true</span></code> if a <code class="code">plugin</code> was created with
+<code class="code">autorun pass</code> is <code class="code"><span class="keyword">true</span></code> if a <code class="code">pass</code> was created with
           autorun option
 </div>
 </td></tr>
 <tr><td><a href="Bap_demangle.Std.Demanglers.html#VALavailable">available</a> [<a href="Bap_demangle.Std.Demanglers.html">Bap_demangle.Std.Demanglers</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALavailable_backends">available_backends</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
-<td></td></tr>
+<td><div class="info">
+enumerates names of available disassembler backends.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALavailable_backends">available_backends</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 lists all registered backends
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html#VALavailable_loaders">available_loaders</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALavailable_readers">available_readers</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+<code class="code">available_loaders ()</code> returns a list of names of currently known loaders.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALavailable_readers">available_readers</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">available_reader ()</code> lists available readers for the data type
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALavailable_writers">available_writers</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALavailable_writers">available_writers</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">available_writer ()</code> lists available writers for the data type
 </div>
@@ -1122,7 +1244,10 @@ lists all registered backends
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALb1">b1</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">b1 = of_bool <span class="keyword">true</span></code> is a one bit
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALback">back</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 restarts last step.
@@ -1136,13 +1261,27 @@ print marked entity with specified color.
 <tr><td><a href="Graphlib.Std.Isomorphism.html#VALbackward">backward</a> [<a href="Graphlib.Std.Isomorphism.html">Graphlib.Std.Isomorphism</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Type_error.html#VALbad_cast">bad_cast</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bad_cast</code> error occurs when parameters to the cast operation
+        are not valid.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Type_error.html#VALbad_imm">bad_imm</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bad_imm</code> error occurs when a value of type <code class="code">imm</code> was expected
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Type_error.html#VALbad_mem">bad_mem</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bad_mem</code> error occurs when a value of type <code class="code">mem</code> was expected
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Type_error.html#VALbad_type">bad_type</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bad_type ~exp ~got</code> error happens when we expect a value of
+        type <code class="code">exp</code> but got a value of type <code class="code">got</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Var.html#VALbase">base</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
 <code class="code">base var</code> returns an original variable.
@@ -1316,8 +1455,6 @@ returns BIL program specifying instruction semantics
 <tr><td><a href="Arm_types.html#VALbin_move_insn">bin_move_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_mult_insn">bin_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_nat1">bin_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_nil">bin_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
@@ -1497,8 +1634,6 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_read_mult_insn">bin_read_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_read_nat1">bin_read_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_read_nil">bin_read_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_read_nil_reg">bin_read_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -1623,7 +1758,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_read_t">bin_read_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_read_t">bin_read_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_read_t">bin_read_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_read_t">bin_read_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -1706,7 +1841,10 @@ returns BIL program specifying instruction semantics
 <tr><td><a href="Bap.Std.Arch.html#VALbin_read_xcore">bin_read_xcore</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALbin_reader">bin_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bin_reader (<span class="keyword">module</span> <span class="constructor">T</span>)</code> returns a reader in  binprot format.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VALbin_reader_aarch64">bin_reader_aarch64</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_reader_addr">bin_reader_addr</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1855,8 +1993,6 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_reader_mult_insn">bin_reader_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_reader_nat1">bin_reader_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_reader_nil">bin_reader_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_reader_nil_reg">bin_reader_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -1981,7 +2117,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_reader_t">bin_reader_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_reader_t">bin_reader_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_reader_t">bin_reader_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_reader_t">bin_reader_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -2235,8 +2371,6 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_size_mult_insn">bin_size_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_size_nat1">bin_size_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_size_nil">bin_size_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_size_nil_reg">bin_size_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -2361,7 +2495,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_size_t">bin_size_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_size_t">bin_size_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_size_t">bin_size_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_size_t">bin_size_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -2513,7 +2647,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_t">bin_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_t">bin_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_t">bin_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_t">bin_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -2739,8 +2873,6 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_write_mult_insn">bin_write_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_write_nat1">bin_write_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_write_nil">bin_write_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_write_nil_reg">bin_write_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -2865,7 +2997,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_write_t">bin_write_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_write_t">bin_write_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_write_t">bin_write_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_write_t">bin_write_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -2948,7 +3080,10 @@ returns BIL program specifying instruction semantics
 <tr><td><a href="Bap.Std.Arch.html#VALbin_write_xcore">bin_write_xcore</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALbin_writer">bin_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bin_writer (<span class="keyword">module</span> <span class="constructor">T</span>)</code> returns a writer in  binprot format.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VALbin_writer_aarch64">bin_writer_aarch64</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_writer_addr">bin_writer_addr</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -3097,8 +3232,6 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_writer_mult_insn">bin_writer_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALbin_writer_nat1">bin_writer_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbin_writer_nil">bin_writer_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbin_writer_nil_reg">bin_writer_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -3223,7 +3356,7 @@ returns BIL program specifying instruction semantics
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALbin_writer_t">bin_writer_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALbin_writer_t">bin_writer_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALbin_writer_t">bin_writer_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALbin_writer_t">bin_writer_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -3315,7 +3448,11 @@ description of a target binary (executable) that was traced.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html#VALbinary">binary</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">binary ?base arch ~filename</code> create an input from a binary
+          file, that is a pure code.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Meta.html#VALbinary_file_stats">binary_file_stats</a> [<a href="Bap_traces.Std.Meta.html">Bap_traces.Std.Meta</a>]</td>
 <td><div class="info">
 file stats of the traced binary
@@ -3326,21 +3463,33 @@ file stats of the traced binary
 <tr><td><a href="Bap_config.html#VALbindir">bindir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALbinop">binop</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">binop op x y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(op,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#VALbinop_of_sexp">binop_of_sexp</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALbinop_of_sexp">binop_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALbit_and">bit_and</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bit_and <span class="keywordsign">-&gt;</span> <span class="constructor">AND</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Arm_bit.html#VALbit_extract">bit_extract</a> [<a href="Arm_bit.html">Arm_bit</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_bit.html#VALbit_field_insert">bit_field_insert</a> [<a href="Arm_bit.html">Arm_bit</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALbit_or">bit_or</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bit_or <span class="keywordsign">-&gt;</span> <span class="constructor">OR</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALbit_xor">bit_xor</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">bit_xor <span class="keywordsign">-&gt;</span> <span class="constructor">XOR</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Arm_utils.html#VALbitlen">bitlen</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALbits_insn_of_sexp">bits_insn_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -3351,23 +3500,33 @@ file stats of the traced binary
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALblit_to_bigstring">blit_to_bigstring</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALblit_to_bigstring">blit_to_bigstring</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-<code class="code">blit_to_bigstring ?ver ?fmt buffer datum offset</code> copies a
-        serialized representation of datum into a <code class="code">buffer</code>, starting from
-        <code class="code">offset</code>.
+<code class="code">blit_to_bigstring writeable buf value pos</code> copies a
+          serialized representation of the <code class="code">value</code> into existing
+          bigstring <code class="code">buf</code>, starting from the given position.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALblit_to_bytes">blit_to_bytes</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALblit_to_bigstring">blit_to_bigstring</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
+<td><div class="info">
+<code class="code">blit_to_bigstring ?ver ?fmt buffer datum offset</code> copies a
+          serialized representation of datum into a <code class="code">buffer</code>, starting from
+          <code class="code">offset</code>.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALblit_to_bytes">blit_to_bytes</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">blit_to_bytes ?ver ?fmt buffer datum offset</code> copies a
-        serialized representation of datum into a <code class="code">buffer</code>, starting from
-        <code class="code">offset</code>.
+          serialized representation of datum into a <code class="code">buffer</code>, starting from
+          the <code class="code">offset</code>.
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALblit_to_string">blit_to_string</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">blit_to_string writeable buf value pos</code> copies a serialized
+          representation of the <code class="code">value</code> into existing string <code class="code">buf</code>,
+          starting from the given position.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALblk_of_sexp">blk_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALblk_t">blk_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -3407,7 +3566,10 @@ a control flow transfer from one procedure to another has occured
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALcall">call</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction is a call to subroutine.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.html#VALcall_of_sexp">call_of_sexp</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALcall_of_sexp">call_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -3441,7 +3603,10 @@ a control flow transfer from one procedure to another has occured
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALcast">cast</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">cast t w x <span class="keywordsign">-&gt;</span> <span class="constructor">Cast</span> (t,w,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#VALcast_of_sexp">cast_of_sexp</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALcast_of_sexp">cast_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -3487,7 +3652,11 @@ A whole program CFG.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALcfg">cfg</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">cfg t</code> returns a control flow graph, representing the code
+          in the input region of memory.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Symbolizer.html#VALchain">chain</a> [<a href="Bap.Std.Symbolizer.html">Bap.Std.Symbolizer</a>]</td>
 <td><div class="info">
 <code class="code">chain ss</code> creates a symbolizer, that will try to resolve
@@ -3564,7 +3733,11 @@ occurs once code segment is discovered
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALcode">code</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">code insn</code> returns an integer code, that is bijective
+            with instruction opcode.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Reg.html#VALcode">code</a> [<a href="Bap.Std.Reg.html">Bap.Std.Reg</a>]</td>
 <td><div class="info">
 unique number representing a register
@@ -3643,7 +3816,7 @@ A human readable comment
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALcompare">compare</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALcompare">compare</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALcompare">compare</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALcompare">compare</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -3654,7 +3827,10 @@ A human readable comment
 <tr><td><a href="Bap.Std.Insn.html#VALcompare">compare</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALcompare">compare</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">compare i1 i2</code> compares instruction <code class="code">i1</code> and <code class="code">i2</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Op.Normalized.html#VALcompare">compare</a> [<a href="Bap.Std.Op.Normalized.html">Bap.Std.Op.Normalized</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Op.html#VALcompare">compare</a> [<a href="Bap.Std.Op.html">Bap.Std.Op</a>]</td>
@@ -3847,8 +4023,6 @@ A human readable comment
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALcompare_mult_insn">compare_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALcompare_nat1">compare_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALcompare_nil">compare_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALcompare_nil_reg">compare_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -3994,7 +4168,10 @@ A human readable comment
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALconcat">concat</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">concat x y <span class="keywordsign">-&gt;</span> <span class="constructor">Concat</span> (x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALconcat">concat</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">concat b1 b2</code> concatenates two bitvectors
@@ -4020,7 +4197,11 @@ A human readable comment
 <tr><td><a href="Arm_types.html#VALcond_of_sexp">cond_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALconditional">conditional</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+under some dynamic condition the instruction may perform a
+        non-regular control flow
+</div>
+</td></tr>
 <tr><td><a href="Bap_config.html#VALconfdir">confdir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALconfdir">confdir</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
@@ -4083,7 +4264,10 @@ operating system has performed context switching to a provided
 <tr><td><a href="Arm_env.html#VALcpsr">cpsr</a> [<a href="Arm_env.html">Arm_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALcpuexn">cpuexn</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">cpuexn number <span class="keywordsign">-&gt;</span> <span class="constructor">CpuExn</span> number</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_ida.Std.Command.html#VALcreate">create</a> [<a href="Bap_ida.Std.Command.html">Bap_ida.Std.Command</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_ida.Std.Ida.html#VALcreate">create</a> [<a href="Bap_ida.Std.Ida.html">Bap_ida.Std.Ida</a>]</td>
@@ -4188,11 +4372,15 @@ lifts basic register to a ARM one
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALcreate">create</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create &lt;minimal-implementation&gt;</code> creates a writable
+          instance from a provided minimal implementation.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html#VALcreate">create</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
 <td><div class="info">
 A minimal complete definition is any method except
-          <code class="code">from_channel</code>.
+          <code class="code">of_channel</code> (that is not sufficient).
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.Builder.html#VALcreate">create</a> [<a href="Bap_bundle.Std.Bundle.Builder.html">Bap_bundle.Std.Bundle.Builder</a>]</td>
@@ -4202,7 +4390,11 @@ A minimal complete definition is any method except
 <tr><td><a href="Bap_bundle.Std.Manifest.html#VALcreate">create</a> [<a href="Bap_bundle.Std.Manifest.html">Bap_bundle.Std.Manifest</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html#VALcreate">create</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create arch filename ~code ~data</code> creates an input from a
+          file, using two memory maps.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALcreate">create</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
 <td><div class="info">
 <code class="code">from_file filename</code> creates a project from a provided input
@@ -4215,7 +4407,12 @@ A minimal complete definition is any method except
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#VALcreate">create</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create resolve</code> creates a brancher from <code class="code">resolve</code> function,
+    that accepts a memory region, occupied by an instruction, the
+    instruction itself and returns a list of destination.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Rooter.html#VALcreate">create</a> [<a href="Bap.Std.Rooter.html">Bap.Std.Rooter</a>]</td>
 <td><div class="info">
 <code class="code">create seq</code> creates a rooter from a given sequence of addresses
@@ -4271,7 +4468,7 @@ A minimal complete definition is any method except
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.Builder.html#VALcreate">create</a> [<a href="Bap.Std.Sub.Builder.html">Bap.Std.Sub.Builder</a>]</td>
 <td><div class="info">
-appends a block to a subroutine
+initializes empty subroutine builder.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALcreate">create</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -4300,6 +4497,7 @@ appends a block to a subroutine
 <tr><td><a href="Bap.Std.Block.html#VALcreate">create</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
 <code class="code">create mem insn</code> creates a block
+        Preconditions: <code class="code">insns &lt;&gt; []</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALcreate">create</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -4441,7 +4639,10 @@ a term is identified as dead
 <tr><td><a href="Bap_config.html#VALdebug">debug</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Self.html#VALdebug">debug</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">debug fmt ...</code> send a debug message
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALdef_of_sexp">def_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALdef_t">def_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -4463,20 +4664,20 @@ def
 </td></tr>
 <tr><td><a href="Bap_byteweight_signatures.html#VALdefault_path">default_path</a> [<a href="Bap_byteweight_signatures.html">Bap_byteweight_signatures</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALdefault_printer">default_printer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALdefault_printer">default_printer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">default_writer</code> optionally returns an information about
-        default printer
+          default printer
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALdefault_reader">default_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALdefault_reader">default_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">default_reader</code> returns information about default reader
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALdefault_writer">default_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALdefault_writer">default_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
-<code class="code">default_writer</code> returns information about default writer
+<code class="code">default_writer</code> returns information about the default writer
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.html#VALdefines_var">defines_var</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
@@ -4572,9 +4773,15 @@ Provides a future determined on when the config can be read
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALdiv">div</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">div x y</code> is <code class="code">x / y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALdivide">divide</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">divide <span class="keywordsign">-&gt;</span> <span class="constructor">DIVIDE</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Self.html#VALdoc">doc</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
 <td><div class="info">
 A short, one-line description
@@ -4628,10 +4835,10 @@ A short, one-line description
 <code class="code">dst e</code> returns a destination of an edge <code class="code">e</code>
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALdump">dump</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALdump">dump</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">dump ?ver ?fmt chan stream</code> dumps a <code class="code">stream</code> (represented
-          by a <code class="code">next</code> function) into channel.
+            by a <code class="code">next</code> function) into channel.
 </div>
 </td></tr>
 <tr><td><a href="Bap_config.html#VALdvidir">dvidir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
@@ -4758,16 +4965,16 @@ returns the order of bytes in a word
 </td></tr>
 <tr><td><a href="Core_printers.html#VALenum">enum</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Term.html#VALenum">enum</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
-<td><div class="info">
-<code class="code">enum ?rev t p</code> enumerate all subterms of type <code class="code">t</code> of the
-        a given term <code class="code">p</code>
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALenum">enum</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">enum l</code> converts values such that unambiguous prefixes of
           string names in <code class="code">l</code> map to the corresponding value of type <code class="code"><span class="keywordsign">'</span>a</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Term.html#VALenum">enum</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+<code class="code">enum ?rev t p</code> enumerate all subterms of type <code class="code">t</code> of the
+        a given term <code class="code">p</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALenum_bits">enum_bits</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
@@ -4790,7 +4997,10 @@ returns the order of bytes in a word
 <tr><td><a href="Bap_c_type.html#VALenum_of_sexp">enum_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALeq">eq</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">eq <span class="keywordsign">-&gt;</span> <span class="constructor">EQ</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Partition.html#VALequiv">equiv</a> [<a href="Graphlib.Std.Partition.html">Graphlib.Std.Partition</a>]</td>
 <td><div class="info">
 <code class="code">equiv p x y</code> is true of <code class="code">x</code> and <code class="code">y</code> belongs to the same
@@ -4798,9 +5008,17 @@ returns the order of bytes in a word
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Self.html#VALerror">error</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">error fmt ...</code> send an error message
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALerrors">errors</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">errors disasm</code> returns a list of non-critical errors, that
+          happened during the disassembly (e.g., unknown opcodes and
+          unlifted instructions.
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALes">es</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALescaped">escaped</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
@@ -4811,9 +5029,15 @@ returns the order of bytes in a word
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Stmt.html#VALeval">eval</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">eval prog</code> eval BIL program under given context.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Exp.html#VALeval">eval</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">eval x</code> evaluate expression <code class="code">x</code> to a value.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Monad.State.html#VALeval">eval</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
 <td><div class="info">
 <code class="code">eval c init</code> contains a value computed by computation <code class="code">c</code>
@@ -4947,7 +5171,10 @@ A subroutine is visible outside of the compilation unit
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALextract">extract</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">extract ~hi ~lo x <span class="keywordsign">-&gt;</span> <span class="constructor">Extract</span> (hi,lo,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALextract">extract</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">extract bv ~hi ~lo</code> extracts a subvector from <code class="code">bv</code>, starting
@@ -4968,17 +5195,21 @@ A subroutine is visible outside of the compilation unit
 <code class="code">fail_on_error</code> will fail with an <code class="code">error</code> <code class="code"><span class="constructor">Error</span>.raise error</code>
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Project.Input.html#VALfile">file</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Project.Info.html#VALfile">file</a> [<a href="Bap.Std.Project.Info.html">Bap.Std.Project.Info</a>]</td>
-<td><div class="info">
-occurs everytime a new file is opened.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALfile">file</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">file</code> converts a value with the identity function and
           checks with <code class="code"><span class="constructor">Sys</span>.file_exists</code> that a file with that name exists.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.Input.html#VALfile">file</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
+<td><div class="info">
+<code class="code">file ?loader ~filename</code> input data from a file, using the
+          specified loader.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.Info.html#VALfile">file</a> [<a href="Bap.Std.Project.Info.html">Bap.Std.Project.Info</a>]</td>
+<td><div class="info">
+occurs everytime a new file is opened.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.html#VALfile_stats_of_sexp">file_stats_of_sexp</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
@@ -5162,8 +5393,11 @@ removes all mappings that do not satisfy the predicate
 <tr><td><a href="Bap.Std.Table.html#VALfind_mapi">find_mapi</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALfind_pass">find_pass</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALfind_reader">find_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+<code class="code">find_pass name</code> returns a pass with the given name.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALfind_reader">find_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">find_reader ?ver name</code> lookups a reader with a given name.
 </div>
@@ -5174,7 +5408,7 @@ removes all mappings that do not satisfy the predicate
         in a block <code class="code">blk</code>.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALfind_writer">find_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALfind_writer">find_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">find_writer ?ver name</code> lookups a writer with a given name.
 </div>
@@ -5654,7 +5888,10 @@ A set of general purpose registers
 <tr><td><a href="Bap_traces.Std.Modload.html#VALhigh">high</a> [<a href="Bap_traces.Std.Modload.html">Bap_traces.Std.Modload</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALhigh">high</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">high <span class="keywordsign">-&gt;</span> <span class="constructor">HIGH</span></code>
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALhint_bnt">hint_bnt</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.html#VALhint_bt">hint_bt</a> [<a href="X86_env.html">X86_env</a>]</td>
@@ -5664,20 +5901,34 @@ A set of general purpose registers
 <tr><td align="left"><br>I</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi1">i1</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
 <td><div class="info">
-The following lifter will check that their operand has a
-          corresponding width.
+<code class="code">i1 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 1</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi16">i16</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">i16 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 16</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi32">i32</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">i32 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 32</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi4">i4</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">i4 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 4</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi64">i64</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">i64 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 64</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALi8">i8</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">i8 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 8</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#VALid">id</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
 Trace global unique identifier.
@@ -5685,11 +5936,14 @@ Trace global unique identifier.
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALid">id</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
-returns result identifier
+returns result's identifier
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALif_">if_</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">if_ cond s1 s2 <span class="keywordsign">-&gt;</span> <span class="constructor">If</span>(cond,s1,s2)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Monitor.html#VALignore_errors">ignore_errors</a> [<a href="Bap_traces.Std.Trace.Monitor.html">Bap_traces.Std.Trace.Monitor</a>]</td>
 <td><div class="info">
 <code class="code">ignore_errors</code> filters good events and silently drops error events
@@ -5741,9 +5995,15 @@ returns result identifier
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALindirect">indirect</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction is jump with a target that is not a constant
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Self.html#VALinfo">info</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">info fmt ...</code> send an info message
+</div>
+</td></tr>
 <tr><td><a href="Bap_config.html#VALinfodir">infodir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALinit">init</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
@@ -5784,7 +6044,7 @@ returns result identifier
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALinsn">insn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td><div class="info">
-machine instruction
+machine instruction.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALinsn_of_mem">insn_of_mem</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -5803,7 +6063,7 @@ returns all instructions that was successfully decoded in an
 </td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALinsns">insns</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
-<code class="code">insns blk</code> returns a list of block instructions
+<code class="code">insns blk</code> returns a list of block instructions.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALinsns">insns</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -5815,34 +6075,37 @@ a queue of instructions disassembled in this step
 <td></td></tr>
 <tr><td><a href="Core_printers.html#VALinstall">install</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Bil.html#VALint">int</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALint">int</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
-<td><div class="info">
-<code class="code">int w v</code> will be <code class="code"><span class="constructor">Ok</span></code> if <code class="code">v</code> has width <code class="code">w</code>
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALint">int</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">int</code> converts values with <code class="code">int_of_string</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bil.html#VALint">int</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<code class="code">int w <span class="keywordsign">-&gt;</span> <span class="constructor">Int</span> w</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Int_err.html#VALint">int</a> [<a href="Bap.Std.Bitvector.Int_err.html">Bap.Std.Bitvector.Int_err</a>]</td>
+<td><div class="info">
+<code class="code">int w v</code> will be <code class="code"><span class="constructor">Ok</span></code> if <code class="code">v</code> has width <code class="code">w</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALint16">int16</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Memory.Input.html#VALint32">int32</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALint32">int32</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">int32</code> converts values with <code class="code"><span class="constructor">Int32</span>.of_string</code>.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Memory.Input.html#VALint64">int64</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
+<tr><td><a href="Bap.Std.Memory.Input.html#VALint32">int32</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALint64">int64</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">int64</code> converts values with <code class="code"><span class="constructor">Int64</span>.of_string</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Memory.Input.html#VALint64">int64</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALint8">int8</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.html#VALinteger_of_sexp">integer_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -5890,9 +6153,16 @@ invariant must be always true while the term is evaluated
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALis">is</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is property insn</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">insn</code> has <code class="code">property</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALis">is</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is insn kind</code> checks whether instruction <code class="code">insn</code> belongs
+            to the semantic <code class="code">kind</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.html#VALis">is</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 <code class="code">is cons v</code> true if value <code class="code">v</code> was constructed with constructor
@@ -5969,13 +6239,23 @@ invariant must be always true while the term is evaluated
 <tr><td><a href="Bap.Std.CPU.html#VALis_mem">is_mem</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALis_negative">is_negative</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_negative x</code> is true if <code class="code">x</code> is strictly less than zero.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_nf">is_nf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALis_non_negative">is_non_negative</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_non_negative x</code> is true if <code class="code">x</code> is greater than or equal to
+        zero.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALis_non_positive">is_non_positive</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_non_positive x</code> is true if <code class="code">x</code> is less than zero.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALis_one">is_one</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">is_ones bv</code> is true if the least significant bit is equal to one
@@ -5990,7 +6270,10 @@ invariant must be always true while the term is evaluated
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALis_positive">is_positive</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_positive x</code> is true if <code class="code">x</code> is greater than zero.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.html#VALis_reachable">is_reachable</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 <code class="code">is_reachable (<span class="keyword">module</span> <span class="constructor">G</span>) ?rev g u v</code> is true if node <code class="code">v</code> is
@@ -6048,7 +6331,10 @@ Predicates
 <tr><td><a href="Bap.Std.CPU.html#VALis_zf">is_zf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALite">ite</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">ite ~if_:cond ~then_:e1 ~else_:e2 <span class="keywordsign">-&gt;</span> <span class="constructor">Ite</span> (cond,e1,e2)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.Direct.html#VALiter">iter</a> [<a href="Bap_traces.Std.Modload.Fields.Direct.html">Bap_traces.Std.Modload.Fields.Direct</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.html#VALiter">iter</a> [<a href="Bap_traces.Std.Modload.Fields.html">Bap_traces.Std.Modload.Fields</a>]</td>
@@ -6147,8 +6433,7 @@ Predicates
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALjmp">jmp</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">jmp t</code> evaluate expression <code class="code">t</code> to absolute address and
-        transfer control to that address
+<code class="code">jmp x <span class="keywordsign">-&gt;</span> <span class="constructor">Jmp</span> x</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALjmp_kind_of_sexp">jmp_kind_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -6168,7 +6453,10 @@ jmp
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALjump">jump</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction performs a non-regular control flow
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALjump">jump</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 jump to the specified memory and continue disassembly in it.
@@ -6198,7 +6486,11 @@ jump to the specified memory and continue disassembly in it.
 <tr><td><a href="Bap.Std.html#VALkind_of_sexp">kind_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALkinds">kinds</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">kinds insn</code> returns a high-level semantic information
+            about the instruction.
+</div>
+</td></tr>
 <tr><td align="left"><br>L</td></tr>
 <tr><td><a href="Graphlib.Std.Edge.html#VALlabel">label</a> [<a href="Graphlib.Std.Edge.html">Graphlib.Std.Edge</a>]</td>
 <td><div class="info">
@@ -6243,7 +6535,10 @@ jump to the specified memory and continue disassembly in it.
 <tr><td><a href="X86_env.ModeVars.html#VALldt">ldt</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALle">le</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">le <span class="keywordsign">-&gt;</span> <span class="constructor">LE</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALleader">leader</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
 <code class="code">leader blk</code> the first instruction
@@ -6298,7 +6593,10 @@ amount of edges in a path
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALlet_">let_</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">let_ var value expr <span class="keywordsign">-&gt;</span> <span class="constructor">Let</span>(var,value,expr)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arg.html#VALlhs">lhs</a> [<a href="Bap.Std.Arg.html">Bap.Std.Arg</a>]</td>
 <td><div class="info">
 <code class="code">lhs arg</code> returns a variable associated with the argument.
@@ -6336,7 +6634,10 @@ A directory for bap specific object files, libraries, and
 <tr><td><a href="Arm_mov.html#VALlift">lift</a> [<a href="Arm_mov.html">Arm_mov</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Target.html#VALlift">lift</a> [<a href="Bap.Std.Target.html">Bap.Std.Target</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lift mem insn</code> lifts provided instruction to BIL.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Blk.html#VALlift">lift</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
 <code class="code">lift block</code> takes a basic block of assembly instructions and
@@ -6414,15 +6715,15 @@ decodes a shifted operand for a memory operation
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.html#VALlist">list</a> [<a href="Bap_bundle.Std.Bundle.html">Bap_bundle.Std.Bundle</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Source.Factory.html#VALlist">list</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
-<td><div class="info">
-<code class="code">list source</code> is a list of names of source providers
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALlist">list</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">list sep c</code> splits the argument at each <code class="code">sep</code> (defaults to <code class="code"><span class="string">','</span></code>)
           character and converts each substrings with <code class="code">c</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Source.Factory.html#VALlist">list</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
+<td><div class="info">
+<code class="code">list source</code> is a list of names of source providers
 </div>
 </td></tr>
 <tr><td><a href="Bap_plugins.Std.html#VALlist_loaded_units">list_loaded_units</a> [<a href="Bap_plugins.Std.html">Bap_plugins.Std</a>]</td>
@@ -6433,9 +6734,15 @@ a term is identified as always non dead
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Infix.html#VALlnot">lnot</a> [<a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lnot x = <span class="constructor">UnOp</span> (<span class="constructor">NOT</span>,x,y)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALlnot">lnot</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lnot x</code> is a logical negation of <code class="code">x</code> (1-complement)
+</div>
+</td></tr>
 <tr><td><a href="Bap_byteweight_signatures.html#VALload">load</a> [<a href="Bap_byteweight_signatures.html">Bap_byteweight_signatures</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#VALload">load</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
@@ -6445,10 +6752,16 @@ a term is identified as always non dead
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html#VALload">load</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
 <td><div class="info">
+<code class="code">load cls digest</code> loads entry with a given <code class="code">digest</code> from the
+          cache.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.Cache.html#VALload">load</a> [<a href="Regular.Std.Data.S.Cache.html">Regular.Std.Data.S.Cache</a>]</td>
+<td><div class="info">
 <code class="code">load id</code> load data previously stored under give <code class="code">id</code>
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALload">load</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALload">load</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">load ?ver ?fmt channel</code> loads datum from the input channel
 </div>
@@ -6465,14 +6778,20 @@ a term is identified as always non dead
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALload">load</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction may load from memory
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALload">load</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALload_all">load_all</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<td><div class="info">
+<code class="code">load ~mem ~addr endian size <span class="keywordsign">-&gt;</span> <span class="constructor">Load</span> (mem,addr,endian,size)</code>
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALload_all">load_all</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">read_all ?ver ?fmt ?rev channel</code> reads a sequence of datums
-          stored in the storage accessed via <code class="code">channel</code> and returns it as a
-          list.
+            stored in the storage accessed via <code class="code">channel</code> and returns it as a
+            list.
 </div>
 </td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugins.html#VALloaded">loaded</a> [<a href="Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a>]</td>
@@ -6508,9 +6827,15 @@ loaded event happens when a pass is succesfully loaded
 <tr><td><a href="Bap.Std.Integer.html#VALlogand">logand</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALlogor">logor</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">logor x y</code> is a disjunction of <code class="code">x</code> and <code class="code">y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALlogxor">logxor</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">logxor x y</code> is exclusive or between <code class="code">x</code> and <code class="code">y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type.html#VALlong_long_of_sexp">long_long_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.html#VALlong_of_sexp">long_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -6540,7 +6865,10 @@ loaded event happens when a pass is succesfully loaded
 <tr><td><a href="Bap_traces.Std.Modload.html#VALlow">low</a> [<a href="Bap_traces.Std.Modload.html">Bap_traces.Std.Modload</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALlow">low</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">low <span class="keywordsign">-&gt;</span> <span class="constructor">LOW</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALlowercase">lowercase</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 <code class="code">lowercase t</code> returns a copy of <code class="code">t</code>, with all uppercase letters
@@ -6551,11 +6879,20 @@ loaded event happens when a pass is succesfully loaded
 <tr><td><a href="Arm_env.html#VALlr">lr</a> [<a href="Arm_env.html">Arm_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALlshift">lshift</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lshift <span class="keywordsign">-&gt;</span> <span class="constructor">LSHIFT</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALlshift">lshift</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits left
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALlt">lt</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lt <span class="keywordsign">-&gt;</span> <span class="constructor">LT</span></code>
+</div>
+</td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap_bundle.Std.Manifest.Fields.html#VALmain">main</a> [<a href="Bap_bundle.Std.Manifest.Fields.html">Bap_bundle.Std.Manifest.Fields</a>]</td>
 <td></td></tr>
@@ -6823,9 +7160,17 @@ Mark something as marked
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALmarshal_reader">marshal_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">marshal_reader (<span class="keyword">module</span> <span class="constructor">T</span>)</code> returns a reader in OCaml
+        <code class="code"><span class="constructor">Marshal</span></code> format.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALmarshal_writer">marshal_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">marshal_writer (<span class="keyword">module</span> <span class="constructor">T</span>)</code> returns a writer in OCaml
+        <code class="code"><span class="constructor">Marshal</span></code> format.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALmax">max</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">max tab</code> return the highest binding
@@ -6847,7 +7192,10 @@ Mark something as marked
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALmay">may</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">may propery insn</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">insn</code> has <code class="code">property</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALmaybe_one">maybe_one</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">0..1</code>
@@ -6925,7 +7273,7 @@ Memory
 </td></tr>
 <tr><td><a href="Bap.Std.Block.html#VALmemory">memory</a> [<a href="Bap.Std.Block.html">Bap.Std.Block</a>]</td>
 <td><div class="info">
-<code class="code">memory blk</code> memory region, occupied by a block
+<code class="code">memory blk</code> a memory region, occupied by a block
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALmemory">memory</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -6987,7 +7335,11 @@ a write access to a memory cell
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.Log.html#VALmessage">message</a> [<a href="Bap.Std.Event.Log.html">Bap.Std.Event.Log</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">message level ~section fmt ...</code> send a message of the
+          specified <code class="code">level</code> and <code class="code">section</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#VALmeta">meta</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
 <code class="code">meta trace</code> returns all <code class="code">trace</code> attributes as a dictionary
@@ -7011,7 +7363,10 @@ a write access to a memory cell
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALminus">minus</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">minus <span class="keywordsign">-&gt;</span> <span class="constructor">MINUS</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VALmips_of_sexp">mips_of_sexp</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.State.html#VALmodify">modify</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
@@ -7028,12 +7383,18 @@ represent an executable module being loaded
 <tr><td><a href="Bap_traces.Std.html#VALmodload_of_sexp">modload_of_sexp</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALmodulo">modulo</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">modulo <span class="keywordsign">-&gt;</span> <span class="constructor">MOD</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALmodulo">modulo</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">modulo  x y</code> is <code class="code">x <span class="keyword">mod</span> y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALmove">move</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">move v x</code> evaluate <code class="code">x</code> and assign its value to <code class="code">v</code>
+<code class="code">move v x <span class="keywordsign">-&gt;</span> <span class="constructor">Move</span> (v,x)</code>
 </div>
 </td></tr>
 <tr><td><a href="Arm_types.html#VALmove_insn_of_sexp">move_insn_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -7043,13 +7404,22 @@ represent an executable module being loaded
 <tr><td><a href="Arm_utils.html#VALmsb">msb</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALmul">mul</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">mul x y</code> is <code class="code">x * y</code>
+</div>
+</td></tr>
 <tr><td><a href="Arm_types.html#VALmult_insn_of_sexp">mult_insn_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALmust">must</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> must have the <code class="code">property</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALmustn't">mustn't</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> must not have the <code class="code">property</code>
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALmxcsr">mxcsr</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>N</td></tr>
@@ -7076,9 +7446,14 @@ represent an executable module being loaded
 <td></td></tr>
 <tr><td><a href="Bap_bundle.Std.Manifest.html#VALname">name</a> [<a href="Bap_bundle.Std.Manifest.html">Bap_bundle.Std.Manifest</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Self.html#VALname">name</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
+<td><div class="info">
+<code class="code">name <span class="keyword">of</span> a plugin</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Project.Pass.html#VALname">name</a> [<a href="Bap.Std.Project.Pass.html">Bap.Std.Project.Pass</a>]</td>
 <td><div class="info">
-<code class="code">name plugin</code> is a plugin name
+<code class="code">name pass</code> is a pass name
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALname">name</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -7103,7 +7478,11 @@ returns backend specific name of instruction
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALname">name</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">name insn</code> returns a textual representation of the
+            instruction name.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Reg.html#VALname">name</a> [<a href="Bap.Std.Reg.html">Bap.Std.Reg</a>]</td>
 <td><div class="info">
 name of a register
@@ -7133,11 +7512,6 @@ name of a register
 <tr><td><a href="Bap.Std.Var.html#VALname">name</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td><div class="info">
 <code class="code">name var</code> returns a name assosiated with variable
-</div>
-</td></tr>
-<tr><td><a href="Bap.Std.Self.html#VALname">name</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
-<td><div class="info">
-<code class="code">name <span class="keyword">of</span> a plugin</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.html#VALnames">names</a> [<a href="Bap_traces.Std.Modload.Fields.html">Bap_traces.Std.Modload.Fields</a>]</td>
@@ -7171,19 +7545,26 @@ segment's permissions
 </td></tr>
 <tr><td><a href="Bap.Std.Location.Fields.html#VALnames">names</a> [<a href="Bap.Std.Location.Fields.html">Bap.Std.Location.Fields</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALnat1_of_sexp">nat1_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALnativeint">nativeint</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">nativeint</code> converts values with <code class="code"><span class="constructor">Nativeint</span>.of_string</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALneg">neg</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">neg <span class="keywordsign">-&gt;</span> <span class="constructor">NEG</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALneg">neg</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">neg x</code> = <code class="code">-x</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALneq">neq</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">neq <span class="keywordsign">-&gt;</span> <span class="constructor">NEQ</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALnew_property">new_property</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_env.html#VALnew_var">new_var</a> [<a href="Arm_env.html">Arm_env</a>]</td>
@@ -7272,7 +7653,10 @@ A subroutine will not return (either loop infinitely or abort
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALnot">not</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">not <span class="keywordsign">-&gt;</span> <span class="constructor">NOT</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.html#VALnothing">nothing</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALnothrow">nothrow</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -7405,8 +7789,12 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html#VALof_bigstring">of_bigstring</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALof_bigstring">of_bigstring</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+<code class="code">of_bigstring readable buf</code> deserializes a <code class="code">readable</code> value
+          from the bigstring.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALof_bigstring">of_bigstring</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">of_bigstring ?ver ?fmt buf</code> deserializes a datum from bigstring
 </div>
@@ -7418,7 +7806,11 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#VALof_bil">of_bil</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_bil arch</code> creates a brancher that will use a BIL code to
+        statically deduce the instruction destinations.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_binary">of_binary</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">of_binary ?width endian num</code> creates a bitvector from a string
@@ -7444,12 +7836,19 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_bool">of_bool</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Read.html#VALof_bytes">of_bytes</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALof_bytes">of_bytes</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-<code class="code">of_bytes ?ver ?fmt bytes</code> deserializes a datum from bytes
+<code class="code">of_bool x</code> is a bitvector with length <code class="code">1</code> and value <code class="code">b0</code> if
+        <code class="code">x</code> is false and <code class="code">b1</code> otherwise.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.Read.html#VALof_bytes">of_bytes</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
+<td><div class="info">
+<code class="code">of_bytes readable bytes</code> reads a value from <code class="code">bytes</code>
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALof_bytes">of_bytes</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
+<td><div class="info">
+<code class="code">of_bytes ?ver ?fmt bytes</code> deserializes a value from bytes.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALof_cfg">of_cfg</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -7458,7 +7857,11 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html#VALof_channel">of_channel</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_channel readable channel</code> inputs a value from a
+          channel.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Partition.html#VALof_equiv">of_equiv</a> [<a href="Graphlib.Std.Partition.html">Graphlib.Std.Partition</a>]</td>
 <td><div class="info">
 <code class="code">of_equiv p n</code> rebuilds a group from an equivalence class
@@ -7466,7 +7869,10 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.With_exn.html#VALof_file">of_file</a> [<a href="Bap.Std.Disasm.With_exn.html">Bap.Std.Disasm.With_exn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+see <a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="constructor">Disasm</span>.of_file</code></a>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALof_file">of_file</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td><div class="info">
 <code class="code">disassemble_file ?roots path</code> takes a path to a binary and
@@ -7489,7 +7895,11 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_int">of_int</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_int ~width n</code> creates a bitvector of the specified
+        bit-<code class="code">width</code> with the value equal to <code class="code">n</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALof_int">of_int</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
@@ -7497,9 +7907,17 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_int32">of_int32</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_int32 ?width n</code> creates a bitvector of the specified
+        bit-<code class="code">width</code> with the value equal to <code class="code">n</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_int64">of_int64</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_int32 ?width n</code> creates a bitvector of the specified
+        bit-<code class="code">width</code> with the value equal to <code class="code">n</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Size.html#VALof_int_exn">of_int_exn</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td><div class="info">
 <code class="code">of_int_exn n</code> the same as <code class="code">of_int</code>, but raises exception
@@ -7527,7 +7945,10 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.With_exn.html#VALof_mem">of_mem</a> [<a href="Bap.Std.Disasm.With_exn.html">Bap.Std.Disasm.With_exn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+see <a href="Bap.Std.Disasm.html#VALof_mem"><code class="code"><span class="constructor">Disasm</span>.of_mem</code></a>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm.html#VALof_mem">of_mem</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
 <td><div class="info">
 <code class="code">disassemble ?roots arch mem</code> disassemble provided memory region
@@ -7575,7 +7996,8 @@ Creating
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALof_string">of_string</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-Constructors
+<code class="code">of_string s</code> parses a bitvector from a string representation
+    defined in section <code class="code">bv_string</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.html#VALof_uri">of_uri</a> [<a href="Bap_bundle.Std.Bundle.html">Bap_bundle.Std.Bundle</a>]</td>
@@ -7619,7 +8041,10 @@ creates new bundle or opens existing
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALone">one</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+element neutral to the multiplication
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALone">one</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">one width</code> number one with a specified <code class="code">width</code>, is a shortcut for
@@ -7640,7 +8065,10 @@ instruction operands
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALops">ops</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">ops insn</code> gives an access to <code class="code">insn</code>'s operands.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALorigin">origin</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 a term was artificially produced from a term with a given tid.
@@ -7767,7 +8195,10 @@ phi
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALplus">plus</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">plus <span class="keywordsign">-&gt;</span> <span class="constructor">PLUS</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALpostcondition">postcondition</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 must hold just after the term is left
@@ -7867,12 +8298,15 @@ returns a sequence of nodes in post order
 <tr><td><a href="Core_printers.html#VALpp_map">pp_map</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Taint.html#VALpp_map">pp_map</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
-<td></td></tr>
+<td><div class="info">
+print a taint map
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type_printer.html#VALpp_proto">pp_proto</a> [<a href="Bap_c_type_printer.html">Bap_c_type_printer</a>]</td>
 <td></td></tr>
 <tr><td><a href="Core_printers.html#VALpp_queue">pp_queue</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Printable.html#VALpp_seq">pp_seq</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<tr><td><a href="Regular.Std.Printable.S.html#VALpp_seq">pp_seq</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
 <td><div class="info">
 prints a sequence of values of type <code class="code">t</code>
 </div>
@@ -7880,18 +8314,21 @@ prints a sequence of values of type <code class="code">t</code>
 <tr><td><a href="Core_printers.html#VALpp_set">pp_set</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Taint.html#VALpp_set">pp_set</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
-<td></td></tr>
+<td><div class="info">
+print a set of taints
+</div>
+</td></tr>
 <tr><td><a href="Core_printers.html#VALpp_stack">pp_stack</a> [<a href="Core_printers.html">Core_printers</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VALppc_of_sexp">ppc_of_sexp</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Printable.html#VALppo">ppo</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<tr><td><a href="Regular.Std.Printable.S.html#VALppo">ppo</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
 <td><div class="info">
 will print to a standard <code class="code">output_channel</code>, useful for using in
-        <code class="code">printf</code>, <code class="code">fprintf</code>, etc.
+          <code class="code">printf</code>, <code class="code">fprintf</code>, etc.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Printable.html#VALpps">pps</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<tr><td><a href="Regular.Std.Printable.S.html#VALpps">pps</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
 <td><div class="info">
 synonym for <code class="code">str</code>
 </div>
@@ -7902,10 +8339,13 @@ precondition must on the entrance to the subroutine
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALpred">pred</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">pred n</code> is a predecessor of <code class="code">n</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALpred">pred</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-<code class="code">pred n</code> returns a value preceding <code class="code">n</code>
+<code class="code">pred n</code> returns a value preceding <code class="code">n</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALpred_of_sexp">pred_of_sexp</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -7951,7 +8391,11 @@ prefix names
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALpretty_writer">pretty_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">pretty_printer (<span class="keyword">module</span> <span class="constructor">T</span></code> creates a writer that uses <code class="code"><span class="constructor">T</span>.pp</code>
+        function for outputting.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALprev">prev</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">next t p id</code> returns a term that is after a term with a given
@@ -7963,10 +8407,10 @@ prefix names
 <code class="code">next table elt</code> returns element preceding to <code class="code">elt</code>, if any
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALprint">print</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALprint">print</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">print ?ver ?fmt ppf</code> prints datum to a given formatter, using
-          a <code class="code">default_printer</code> if <code class="code">fmt</code> is left unspecified.
+            a <code class="code">default_printer</code> if <code class="code">fmt</code> is left unspecified.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.P.html#VALprobe">probe</a> [<a href="Bap_traces.Std.Trace.P.html">Bap_traces.Std.Trace.P</a>]</td>
@@ -8177,7 +8621,7 @@ registers
 <td></td></tr>
 <tr><td><a href="X86_env.ModeVars.html#VALrdx">rdx</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALread">read</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALread">read</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">read ?ver ?fmt file</code> reads datum from a <code class="code">file</code>
 </div>
@@ -8272,7 +8716,11 @@ register an action
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html#VALregister_loader">register_loader</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">register_loader name load</code> register a loader under provided
+          <code class="code">name</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_abi.html#VALregister_pass">register_pass</a> [<a href="Bap_abi.html">Bap_abi</a>]</td>
 <td><div class="info">
 <code class="code">register_pass pass</code> registers a pass for the later execution.
@@ -8423,7 +8871,11 @@ takes a word and converts it to an exp that is the offset for some
 <tr><td><a href="Bap_bundle.Std.Manifest.html#VALrequires">requires</a> [<a href="Bap_bundle.Std.Manifest.html">Bap_bundle.Std.Manifest</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#VALresolve">resolve</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">resolve brancher mem insn</code> returns a list of destinations of
+    the instruction <code class="code">insn</code>, that occupies memory region <code class="code">mem</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Symbolizer.html#VALresolve">resolve</a> [<a href="Bap.Std.Symbolizer.html">Bap.Std.Symbolizer</a>]</td>
 <td><div class="info">
 <code class="code">resolve symbolizer addr</code> returns a name of function,
@@ -8455,7 +8907,10 @@ returns call continuation
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALreturn">return</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+instruction is a return from a call
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.html#VALreturn_of_sexp">return_of_sexp</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALreturns_twice">returns_twice</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -8506,9 +8961,15 @@ returns a sequence of nodes in reverse post order.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALrshift">rshift</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">rshift <span class="keywordsign">-&gt;</span> <span class="constructor">RSHIFT</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALrshift">rshift</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">rshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right
+</div>
+</td></tr>
 <tr><td><a href="X86_cpu.IA32.html#VALrsi">rsi</a> [<a href="X86_cpu.IA32.html">X86_cpu.IA32</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.ModeVars.html#VALrsi">rsi</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
@@ -8544,7 +9005,12 @@ returns a sequence of nodes in reverse post order.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#VALrun">run</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">run ?backend ?brancher ?rooter arch mem</code> disassemble and
+          reconstruct a CFG of the code in <code class="code">mem</code>, assuming
+          architecture <code class="code">arch</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALrun">run</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 <code class="code">run ?stop_on ?invalid ?stopped dis mem ~init ~return ~hit</code>
@@ -8602,34 +9068,43 @@ returns a sequence of nodes in reverse post order.
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html#VALsave">save</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
 <td><div class="info">
+<code class="code">save cls digest x</code> stores entry <code class="code">x</code> with a given <code class="code">digest</code>
+          to the cache.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.Cache.html#VALsave">save</a> [<a href="Regular.Std.Data.S.Cache.html">Regular.Std.Data.S.Cache</a>]</td>
+<td><div class="info">
 <code class="code">save id data</code> store data under given <code class="code">id</code>.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALsave">save</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALsave">save</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
-<code class="code">save ?ver ?fmt channel datum</code> saves <code class="code">datum</code> to a <code class="code">channel</code>
+<code class="code">save ?ver ?fmt channel datum</code> saves the <code class="code">datum</code> to the <code class="code">channel</code>
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALsave_all">save_all</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALsave_all">save_all</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">save_all ?ver ?fmt data channel</code> saves a list of data into
-          a <code class="code">channel</code>
+            a <code class="code">channel</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_config.html#VALsbindir">sbindir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.html#VALscalar_of_sexp">scalar_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALscan">scan</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALscan">scan</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
-<code class="code">scan ?ver ?fmt channel</code> creates a stream of datums, that
-          are loaded consequently from the channel
+<code class="code">scan ?ver ?fmt channel</code> creates a stream of data, that
+            are loaded consequently from the channel
 </div>
 </td></tr>
 <tr><td><a href="Bap_ida.Std.Command.html#VALscript">script</a> [<a href="Bap_ida.Std.Command.html">Bap_ida.Std.Command</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsdivide">sdivide</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">sdivide <span class="keywordsign">-&gt;</span> <span class="constructor">SDIVIDE</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsection">section</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Backend.Img.Fields.html#VALsections">sections</a> [<a href="Bap.Std.Backend.Img.Fields.html">Bap.Std.Backend.Img.Fields</a>]</td>
@@ -8687,7 +9162,10 @@ Tags
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.html#VALsend">send</a> [<a href="Bap.Std.Event.html">Bap.Std.Event</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">send event</code> to the <a href="Bap.Std.Event.html#VALstream"><code class="code"><span class="constructor">Event</span>.stream</code></a>
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.html#VALseq_of_sexp">seq_of_sexp</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALseq_of_sexp">seq_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -8762,17 +9240,17 @@ Tags
 </td></tr>
 <tr><td><a href="Arm_flags.html#VALset_cf_data">set_cf_data</a> [<a href="Arm_flags.html">Arm_flags</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALset_default_printer">set_default_printer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALset_default_printer">set_default_printer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">set_default_printer ?ver name</code> sets new default printer.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALset_default_reader">set_default_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALset_default_reader">set_default_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">set_default_reader ?ver name</code> sets new default reader.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALset_default_writer">set_default_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALset_default_writer">set_default_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">set_default_writer ?ver name</code> sets new default writer.
 </div>
@@ -8978,8 +9456,6 @@ This type defines a relation between two basic blocks.
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALsexp_of_mult_insn">sexp_of_mult_insn</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.html#VALsexp_of_nat1">sexp_of_nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.html#VALsexp_of_nil">sexp_of_nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALsexp_of_nil_reg">sexp_of_nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -9114,7 +9590,7 @@ decodes condition value from a word
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALsexp_of_t">sexp_of_t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALsexp_of_t">sexp_of_t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALsexp_of_t">sexp_of_t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALsexp_of_t">sexp_of_t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -9127,7 +9603,10 @@ decodes condition value from a word
 <tr><td><a href="Bap.Std.Insn.html#VALsexp_of_t">sexp_of_t</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#VALsexp_of_t">sexp_of_t</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">sexp_of_t insn</code> returns a sexp representation of <code class="code">insn</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Op.html#VALsexp_of_t">sexp_of_t</a> [<a href="Bap.Std.Op.html">Bap.Std.Op</a>]</td>
 <td><div class="info">
 Normalized comparison.
@@ -9219,7 +9698,10 @@ image
 <tr><td><a href="Bap.Std.Arch.html#VALsexp_of_xcore">sexp_of_xcore</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALsexp_reader">sexp_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">sexp_reader (<span class="keyword">module</span> <span class="constructor">T</span>)</code> returns a reader in  sexp format.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.html#VALsexp_writer">sexp_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_helpers.html#VALsexpable_of_string">sexpable_of_string</a> [<a href="Arm_helpers.html">Arm_helpers</a>]</td>
@@ -9242,18 +9724,27 @@ A command in shell language
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALshould">should</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> may have the <code class="code">property</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALshouldn't">shouldn't</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALshow">show</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<td><div class="info">
+<code class="code">must property insn</code> postulate that <code class="code">insn</code> shouldn't have the <code class="code">property</code>
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALshow">show</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
 <code class="code">show ?ver ?fmt datum</code> saves datum to standard output
-          channel, using a <code class="code">default_printer</code> if <code class="code">fmt</code> is not
-          specified.
+            channel, using a <code class="code">default_printer</code> if <code class="code">fmt</code> is not
+            specified.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsigned">signed</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">signed <span class="keywordsign">-&gt;</span> <span class="constructor">SIGNED</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALsigned">signed</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">signed t</code> casts t to a signed type, so that any operations
@@ -9273,22 +9764,35 @@ creates a table containing one bindins
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALsize">size</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALsize_in_bytes">size_in_bytes</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+<code class="code">size writebale value</code> returns a size in bytes that
+          <code class="code">writeable</code> will use to write <code class="code">value</code>
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALsize_in_bytes">size_in_bytes</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">size_in_bytes ?ver ?fmt datum</code> returns the amount of bytes
-        that is needed to represent <code class="code">datum</code> in the a given format and
-        version
+          that is needed to represent <code class="code">datum</code> in the given format
+          and version
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#VALsize_of_sexp">size_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsle">sle</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">sle <span class="keywordsign">-&gt;</span> <span class="constructor">SLE</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALslt">slt</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">slt <span class="keywordsign">-&gt;</span> <span class="constructor">SLT</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALsmodulo">smodulo</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">smodulo <span class="keywordsign">-&gt;</span> <span class="constructor">SMOD</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALsome">some</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">some none c</code> is like the converter <code class="code">c</code> except it returns
@@ -9303,13 +9807,20 @@ Stack pointer
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Symtab.html#VALspan">span</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">span fn</code> returns a memory map of a region occupied by a
+        function <code class="code">fn</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Arch.html#VALsparc_of_sexp">sparc_of_sexp</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.html#VALspec_of_sexp">spec_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALspecial">special</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">special msg <span class="keywordsign">-&gt;</span> <span class="constructor">Special</span> msg</code>
+</div>
+</td></tr>
 <tr><td><a href="Arm_types.html#VALspecial_insn_of_sexp">special_insn_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALsplit">split</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
@@ -9410,14 +9921,20 @@ returns an attribute storage of the project
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALstorage">storage</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
-<code class="code">storage s id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">storage s id</code> creates a result with the given <code class="code">id</code> and
           storage <code class="code">s</code> as a value
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Insn.html#VALstore">store</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the instruction may store to memory
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALstore">store</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">store ~mem ~addr exp endian size <span class="keywordsign">-&gt;</span> <span class="constructor">Store</span>(mem,addr,endian,size)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#VALstore_asm">store_asm</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 enables storing assembler information
@@ -9428,18 +9945,21 @@ enables storing assembler information
 enables storing instruction kinds information
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Printable.html#VALstr">str</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<tr><td><a href="Regular.Std.Printable.S.html#VALstr">str</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
 <td><div class="info">
 <code class="code">str () t</code> is formatted output function that matches "%a"
-        conversion format specifier in functions, that prints to string,
-        e.g., <code class="code">sprintf</code>, <code class="code">failwithf</code>, <code class="code">errorf</code> and, suprisingly all
-        <code class="code"><span class="constructor">Lwt</span></code> printing function, including <code class="code"><span class="constructor">Lwt_io</span>.printf</code> and logging
-        (or any other function with type ('a,unit,string,...)
-        formatN`.
+          conversion format specifier in functions, that prints to string,
+          e.g., <code class="code">sprintf</code>, <code class="code">failwithf</code>, <code class="code">errorf</code> and, suprisingly all
+          <code class="code"><span class="constructor">Lwt</span></code> printing function, including <code class="code"><span class="constructor">Lwt_io</span>.printf</code> and logging
+          (or any other function with type ('a,unit,string,...)
+          formatN`.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.html#VALstream">stream</a> [<a href="Bap.Std.Event.html">Bap.Std.Event</a>]</td>
-<td></td></tr>
+<td><div class="info">
+global <code class="code">stream</code> of events
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Self.Config.html#VALstring">string</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
 <td><div class="info">
 <code class="code">string</code> converts values with the identity function.
@@ -9448,7 +9968,11 @@ enables storing instruction kinds information
 <tr><td><a href="Bap_byteweight_signatures.html#VALstring_of_error">string_of_error</a> [<a href="Bap_byteweight_signatures.html">Bap_byteweight_signatures</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALstring_of_value">string_of_value</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">string_of_value ?hex x</code> returns a textual representation of
+        <code class="code">x</code> value.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.html#VALstrong_components">strong_components</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 <code class="code">strong_components (<span class="keyword">module</span> <span class="constructor">G</span>) g</code> partition graph into strongly
@@ -9461,7 +9985,10 @@ A subroutine is a stub
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALsub">sub</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">sub x y</code> is <code class="code">x - y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALsub_of_sexp">sub_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALsub_t">sub_t</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -9520,9 +10047,15 @@ sub
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.Id.html#VALsucc">succ</a> [<a href="Bap.Std.Bil.Result.Id.html">Bap.Std.Bil.Result.Id</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">succ x</code> successor
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALsucc">succ</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">succ n</code> successor of <code class="code">n</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALsucc">succ</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">succ n</code> returns next value after <code class="code">n</code>.
@@ -9689,7 +10222,7 @@ A c type associated with a term.
 <td></td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALt_of_sexp">t_of_sexp</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#VALt_of_sexp">t_of_sexp</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<tr><td><a href="Regular.Std.Regular.S.html#VALt_of_sexp">t_of_sexp</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Seq.html#VALt_of_sexp">t_of_sexp</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
@@ -9785,7 +10318,10 @@ returns the target of the call
 <tr><td><a href="Bap.Std.html#VALtid_of_sexp">tid_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALtimes">times</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">times <span class="keywordsign">-&gt;</span> <span class="constructor">TIMES</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Event.html#VALtimestamp">timestamp</a> [<a href="Bap_traces.Std.Event.html">Bap_traces.Std.Event</a>]</td>
 <td><div class="info">
 this event can used to synchronize traces
@@ -9801,11 +10337,15 @@ this event can used to synchronize traces
 <tr><td><a href="Bap.Std.Size.html#VALto_addr_size">to_addr_size</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALto_bigstring">to_bigstring</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALto_bigstring">to_bigstring</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+<code class="code">to_bigstring writeable value</code> serializes the <code class="code">value</code> into
+          <code class="code">bigstring</code> data type.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALto_bigstring">to_bigstring</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">of_bigstring ?ver ?fmt datum</code> serializes a datum to a sequence of
-        bytes represented as bigstring
+          bytes represented as bigstring
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VALto_buffer">to_buffer</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
@@ -9814,11 +10354,15 @@ this event can used to synchronize traces
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALto_bytes">to_bytes</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALto_bytes">to_bytes</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-<code class="code">to_bytes ?ver ?fmt datum</code> serializes a datum to a sequence of
-        bytes
+<code class="code">to_bytes writeable value</code> serializes the <code class="code">value</code> into
+          <code class="code">bytes</code> data type.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#VALto_bytes">to_bytes</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
+<td><div class="info">
+<code class="code">to_bytes ?ver ?fmt datum</code> serializes a <code class="code">datum</code> to a sequence of
+          bytes.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALto_cfg">to_cfg</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
@@ -9828,7 +10372,11 @@ this event can used to synchronize traces
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALto_channel">to_channel</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_channel writeable out value</code> writes the <code class="code">writable</code>
+          <code class="code">value</code> into the channel <code class="code">chan</code>
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.html#VALto_dot">to_dot</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 <code class="code">to_dot (<span class="keyword">module</span> <span class="constructor">G</span>) ~filename:<span class="string">"graph.dot"</span> g</code> dumps graph <code class="code">g</code>
@@ -9844,7 +10392,11 @@ this event can used to synchronize traces
 <tr><td><a href="Bap.Std.Fmm.html#VALto_float">to_float</a> [<a href="Bap.Std.Fmm.html">Bap.Std.Fmm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#VALto_formatter">to_formatter</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_formatter writeable ppf value</code> outputs the value
+          into the formatter <code class="code">ppf</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALto_graph">to_graph</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
 <td><div class="info">
 <code class="code">to_graph sub</code> builds a graph of subroutine <code class="code">sub</code>.
@@ -9861,15 +10413,21 @@ this event can used to synchronize traces
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_int">to_int</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
-Conversions to built-in integers 
+<code class="code">to_int x</code> projects <code class="code">x</code> in to OCaml <code class="code">int</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_int32">to_int32</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_int32 x</code> projects <code class="code">x</code> in to <code class="code">int32</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Imm.html#VALto_int64">to_int64</a> [<a href="Bap.Std.Imm.html">Bap.Std.Imm</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALto_int64">to_int64</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_int64 x</code> projects <code class="code">x</code> in to <code class="code">int64</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Traces.html#VALto_list">to_list</a> [<a href="Bap_traces.Std.Traces.html">Bap_traces.Std.Traces</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.Direct.html#VALto_list">to_list</a> [<a href="Bap_traces.Std.Modload.Fields.Direct.html">Bap_traces.Std.Modload.Fields.Direct</a>]</td>
@@ -9978,7 +10536,7 @@ Conversions to built-in integers
         bytes as the given byte sequence.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Printable.html#VALto_string">to_string</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<tr><td><a href="Regular.Std.Printable.S.html#VALto_string">to_string</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
 <td><div class="info">
 <code class="code">to_string x</code> returns a human-readable representation of <code class="code">x</code>
 </div>
@@ -10056,7 +10614,7 @@ description of a tracer that was used to create the trace
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALundefined">undefined</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
-<code class="code">undefined id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">undefined id</code> creates a result with the given <code class="code">id</code> and
           undefined value
 </div>
 </td></tr>
@@ -10093,15 +10651,24 @@ description of a tracer that was used to create the trace
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunknown">unknown</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unknown msg typ <span class="keywordsign">-&gt;</span> <span class="constructor">Unknown</span>(msg,typ)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunop">unop</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unop op x <span class="keywordsign">-&gt;</span> <span class="constructor">UnOp</span>(op,x)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Types.html#VALunop_of_sexp">unop_of_sexp</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#VALunop_of_sexp">unop_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALunsigned">unsigned</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unsigned <span class="keywordsign">-&gt;</span> <span class="constructor">UNSIGNED</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type.html#VALunsigned_of_sexp">unsigned_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALunsubscribe">unsubscribe</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
@@ -10172,16 +10739,28 @@ description of a tracer that was used to create the trace
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALvalidate_negative">validate_negative</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">validate_negative</code> validates that a value is negative.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALvalidate_non_negative">validate_non_negative</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">validate_non_negative</code> validates that a value is non negative.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALvalidate_non_positive">validate_non_positive</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">validate_non_positive</code> validates that a value is not positive.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALvalidate_positive">validate_positive</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">validate_positive</code> validates that a value is positive.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALvalue">value</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
-returns result value
+returns result's value
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_data.html#VALvalue_of_sexp">value_of_sexp</a> [<a href="Bap_c_data.html">Bap_c_data</a>]</td>
@@ -10194,19 +10773,22 @@ returns result value
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALvar">var</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">var v <span class="keywordsign">-&gt;</span> <span class="constructor">Var</span> v</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.html#VALvar_of_sexp">var_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.html#VALvars_of_mode">vars_of_mode</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.Versioned.html#VALversion">version</a> [<a href="Regular.Std.Data.Versioned.html">Regular.Std.Data.Versioned</a>]</td>
-<td><div class="info">
-version of data representation
-</div>
-</td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALversion">version</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALversion">version</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 Data representation version.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.Versioned.S.html#VALversion">version</a> [<a href="Regular.Std.Data.Versioned.S.html">Regular.Std.Data.Versioned.S</a>]</td>
+<td><div class="info">
+version of data representation
 </div>
 </td></tr>
 <tr><td><a href="Bap_config.html#VALversion">version</a> [<a href="Bap_config.html">Bap_config</a>]</td>
@@ -10268,7 +10850,10 @@ a caller of the subroutine must use an argument tagged with
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Self.html#VALwarning">warning</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">warning fmt ...</code> send a warning message
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALwatch">watch</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td><div class="info">
 <code class="code">watch s f</code> watches a stream <code class="code">s</code> with a function <code class="code">f</code>.
@@ -10291,7 +10876,10 @@ Give a weight
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALwhile_">while_</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">while_ cond stmts <span class="keywordsign">-&gt;</span> <span class="constructor">While</span> (cond,stmts)</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALwith_cond">with_cond</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
 <td><div class="info">
 updated jump's guard condition
@@ -10354,10 +10942,10 @@ marks call as a "noreturn"
 updates the set of predicates, that rules the stop condition.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALwith_printer">with_printer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALwith_printer">with_printer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">with_printer ?ver name operation</code> temporary sets a default
-        printer to a printer with a specified name and version.
+          printer to a printer with a specified name and version.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html#VALwith_program">with_program</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
@@ -10365,10 +10953,10 @@ updates the set of predicates, that rules the stop condition.
 <code class="code">with_program project program</code> updates a project program
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALwith_reader">with_reader</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALwith_reader">with_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">with_reader ?ver name operation</code> temporary sets a default
-        reader to a reader with a specified name and version.
+          reader to a reader with a specified name and version.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Call.html#VALwith_return">with_return</a> [<a href="Bap.Std.Call.html">Bap.Std.Call</a>]</td>
@@ -10398,17 +10986,17 @@ updates target
 removes the intent from an argument
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.html#VALwith_writer">with_writer</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#VALwith_writer">with_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">with_writer ?ver name operation</code> temporary sets a default
-        writer to a writer with a specified name and version.
+          writer to a writer with a specified name and version.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#VALword">word</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALword">word</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
-<code class="code">word w id</code> creates result with a a given <code class="code">id</code> and
+<code class="code">word w id</code> creates a result with the given <code class="code">id</code> and
           word <code class="code">w</code> as a value
 </div>
 </td></tr>
@@ -10421,9 +11009,9 @@ removes the intent from an argument
 Tables 
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html#VALwrite">write</a> [<a href="Regular.Std.Data.Io.html">Regular.Std.Data.Io</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html#VALwrite">write</a> [<a href="Regular.Std.Data.S.Io.html">Regular.Std.Data.S.Io</a>]</td>
 <td><div class="info">
-<code class="code">write ?ver ?fmt file datum</code> writes <code class="code">datum</code> to a <code class="code">file</code>
+<code class="code">write ?ver ?fmt file datum</code> writes the <code class="code">datum</code> to the <code class="code">file</code>
 </div>
 </td></tr>
 <tr><td align="left"><br>X</td></tr>
@@ -10438,11 +11026,21 @@ Tables
 <tr><td><a href="Arm_utils.html#VALzero">zero</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.Id.html#VALzero">zero</a> [<a href="Bap.Std.Bil.Result.Id.html">Bap.Std.Bil.Result.Id</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero</code> identifier
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.html#VALzero">zero</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
-<td></td></tr>
+<td><div class="info">
+element neutral to the addition
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#VALzero">zero</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero width</code> zero with a specified <code class="code">width</code>, is a shortcut for
+        <code class="code">of_int 0 ~width</code>
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALzf">zf</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_env.html#VALzf">zf</a> [<a href="Arm_env.html">Arm_env</a>]</td>

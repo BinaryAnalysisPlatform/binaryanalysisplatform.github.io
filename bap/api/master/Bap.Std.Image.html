@@ -101,15 +101,6 @@ segment<br>
 </div>
 
 
-<pre><span id="VALbin_segment"><span class="keyword">val</span> bin_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_segment"><span class="keyword">val</span> bin_read_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_segment__"><span class="keyword">val</span> __bin_read_segment__</span> : <code class="type">(int -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_segment"><span class="keyword">val</span> bin_reader_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_segment"><span class="keyword">val</span> bin_size_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_segment"><span class="keyword">val</span> bin_write_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_segment"><span class="keyword">val</span> bin_writer_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_segment"><span class="keyword">val</span> compare_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> int</code></pre>
-<pre><span id="VALsegment_of_sexp"><span class="keyword">val</span> segment_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a></code></pre>
 <pre><span id="VALsexp_of_segment"><span class="keyword">val</span> sexp_of_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> Sexplib.Sexp.t</code></pre><div class="info ">
 symbol<br>
 </div>
@@ -117,16 +108,6 @@ symbol<br>
 <pre><span id="TYPEsymbol"><span class="keyword">type</span> <code class="type"></code>symbol</span> </pre>
 
 
-<pre><span id="VALbin_symbol"><span class="keyword">val</span> bin_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_symbol"><span class="keyword">val</span> bin_read_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_symbol__"><span class="keyword">val</span> __bin_read_symbol__</span> : <code class="type">(int -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_symbol"><span class="keyword">val</span> bin_reader_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_symbol"><span class="keyword">val</span> bin_size_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_symbol"><span class="keyword">val</span> bin_write_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_symbol"><span class="keyword">val</span> bin_writer_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_symbol"><span class="keyword">val</span> compare_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> int</code></pre>
-<pre><span id="VALsymbol_of_sexp"><span class="keyword">val</span> symbol_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a></code></pre>
-<pre><span id="VALsexp_of_symbol"><span class="keyword">val</span> sexp_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEpath"><span class="keyword">type</span> <code class="type"></code>path</span> = <code class="type">string</code> </pre>
 
 <br>
@@ -161,24 +142,14 @@ constructing an image can result in actual image and a set
 <br>
 <h2 id="2_Attributes">Attributes</h2><br>
 
-<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre>
-<pre><span id="VALfilename"><span class="keyword">val</span> filename</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> string option</code></pre>
-<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">arch</a></code></pre>
-<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre>
-<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre>
-<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> Bigstring.t</code></pre>
 <pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
 <h2 id="2_Tables">Tables </h2><br>
 </div>
 
-<pre><span id="VALsegments"><span class="keyword">val</span> segments</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre>
-<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre>
 <pre><span id="VALsegment"><span class="keyword">val</span> segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
 <h2 id="2_Tags">Tags</h2><br>
 </div>
 
-<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
-<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
 <pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre><div class="info ">
 returns memory, annotated with tags<br>
 </div>
@@ -189,9 +160,6 @@ returns memory, annotated with tags<br>
 <code class="code">memory_of_symbol sym</code>: returns the memory of symbol in acending order.<br>
 </div>
 
-<pre><span id="VALmemory_of_symbol"><span class="keyword">val</span> memory_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEmem">mem</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
-<pre><span id="VALsymbols_of_segment"><span class="keyword">val</span> symbols_of_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre>
-<pre><span id="VALsegment_of_symbol"><span class="keyword">val</span> segment_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Image.Segment.html">Segment</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Segment.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Image Segments.
 </div>

@@ -84,13 +84,18 @@ Abstract interface for all targets.
       <a href="Bap.Std.html#VALtarget_of_arch">target_of_arch</a> function. Code written using
       this interface is cross-platform, i.e., target agnostic. If you
       want to write target-specific code, then use directly
-      corresponding modules: <a href="ARM.html">ARM</a>, IA32,
+      corresponding libraries: <a href="ARM.html">ARM</a>, IA32,
       AMD64.<br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Target.CPU.html">CPU</a>: <code class="type"><a href="Bap.Std.CPU.html">CPU</a></code><code class="type"> </code></pre><div class="info">
-<code class="code">lift mem insn</code> lifts provided instruction to BIL.
+access to the CPU variables.
 </div>
 
-<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPElifter">lifter</a></code></pre></body></html>
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPElifter">lifter</a></code></pre><div class="info ">
+<code class="code">lift mem insn</code> lifts provided instruction to BIL.
+        Usually you do not need to call this function directly, as
+        <code class="code">disassemble</code> function will do the lifting.<br>
+</div>
+</body></html>

@@ -86,11 +86,14 @@
 
 
 <pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Exp.state-c.html">state</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.state-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-All visitors provides some information about the current
+All visitors provide some information about the current
         position of the visitor
 </div>
 
-<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Exp.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Exp.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+expression visitor.
+</div>
+
 <pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Exp.finder-c.html">finder</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.finder-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 A visitor with shortcut.
 </div>
@@ -177,7 +180,9 @@ Exp mapper.
         occurs in the expression <code class="code">exp</code>.<br>
 </div>
 
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Bil.html#TYPEvalue">Bil.value</a></code></pre>
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Bil.html#TYPEvalue">Bil.value</a></code></pre><div class="info ">
+<code class="code">eval x</code> evaluate expression <code class="code">x</code> to a value.<br>
+</div>
 
-<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Exp.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre></body></html>
+<pre><span class="keyword">include</span> Regular.S</pre>
+</body></html>

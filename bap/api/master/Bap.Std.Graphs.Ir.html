@@ -93,8 +93,7 @@ Graph view over IR.
         and <code class="code">update</code> in <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">Edge</span></code> modules are mapped to
         corresponding <code class="code"><span class="constructor">Term</span></code> operations. Also, for performance
         reasons, graph is augmented with auxiliary data structures,
-        that allows to perform most of the operations in O(log(N))
-        time.
+        that performs most of the operations in O(log(N)) time.
 <p>
 
         Although this implements all operations of <code class="code"><span class="constructor">Graph</span></code> interface
@@ -203,6 +202,9 @@ since in IR the order of edges defines semantics, we provide
           extra functions
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+IR Graph node.
+</div>
+
 <pre><span class="keyword">include</span> Graph</pre>
 </body></html>

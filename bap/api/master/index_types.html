@@ -135,7 +135,7 @@ Types for data movement operations
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
-set when assembler information is stored
+witnesses a presence of the assembly string
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEattr">attr</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -253,7 +253,10 @@ Type for converting <code class="code">string</code> &lt;-&gt; <code class="code
 <tr><td><a href="Bap_demangle.Std.html#TYPEdemangler">demangler</a> [<a href="Bap_demangle.Std.html">Bap_demangle.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#TYPEdest">dest</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
-<td></td></tr>
+<td><div class="info">
+destination target (if known) and edge classification (see <a href="Bap.Std.html#TYPEedge"><code class="code">edge</code></a>)
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#TYPEdests">dests</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEdict">dict</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -272,7 +275,11 @@ value of type <code class="code">disasm</code> is a result of the disassembling 
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.html#TYPEdump">dump</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">dump out obj</code> a type of functions that outputs a value <code class="code">obj</code>
+        into output <code class="code">out</code>
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Graphlib.Std.Predicate.html#TYPEedge">edge</a> [<a href="Graphlib.Std.Predicate.html">Graphlib.Std.Predicate</a>]</td>
 <td></td></tr>
@@ -301,7 +308,7 @@ Union type for all element types
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
-set when information is not stored
+witnesses the absence of the information
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#TYPEendian">endian</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
@@ -329,9 +336,15 @@ Error conditions
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEerror">error</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.Pass.html#TYPEerror">error</a> [<a href="Bap.Std.Project.Pass.html">Bap.Std.Project.Pass</a>]</td>
-<td></td></tr>
+<td><div class="info">
+An error that can occur when loading or running pass.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">error</code> domain of errors.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugins.html#TYPEevent">event</a> [<a href="Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a>]</td>
@@ -362,14 +375,20 @@ floating point value
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">(name,entry,graph)</code> a simple representation of a function
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.html#TYPEfrontier">frontier</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Frontier</span></code></a>s
+a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Frontier</span></code></a>s
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
-<td></td></tr>
+<td><div class="info">
+abbreviate an instruction with full information.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.html#TYPEfuture">future</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>G</td></tr>
@@ -428,10 +447,10 @@ opaque immediate value
 </td></tr>
 <tr><td><a href="X86_types.Pcmpstr.html#TYPEimm8cb">imm8cb</a> [<a href="X86_types.Pcmpstr.html">X86_types.Pcmpstr</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#TYPEinfo">info</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.html#TYPEinfo">info</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">name,<span class="constructor">Ver</span> v,desc</code> information attached to a particular
-        reader or writer.
+          reader or writer.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.Log.html#TYPEinfo">info</a> [<a href="Bap.Std.Event.Log.html">Bap.Std.Event.Log</a>]</td>
@@ -442,7 +461,7 @@ opaque immediate value
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
-Basic types 
+<code class="code">insn</code> basic instruction.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEinsn">insn</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -452,7 +471,12 @@ values of type <code class="code">insn</code> represents machine instructions de
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsns">insns</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">insns</code> is a list of pairs, where each pair consists of a
+          memory region occupied by an instruction, and the instruction
+          itself.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEinteger">integer</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEintent">intent</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -501,7 +525,7 @@ kind of instruction
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
-set when instruction kind information is stored
+witnesses a presence of the semantic kinds
 </div>
 </td></tr>
 <tr><td align="left"><br>L</td></tr>
@@ -617,11 +641,6 @@ models for 64 bit systems
 <tr><td><a href="Bap.Std.Insn.html#TYPEmust">must</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>N</td></tr>
-<tr><td><a href="Bap.Std.html#TYPEnat1">nat1</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-just a fancy type abbreviation
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.html#TYPEnil">nil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#TYPEnil_reg">nil_reg</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -736,13 +755,7 @@ predicate to drive the disassembler
 <td></td></tr>
 <tr><td><a href="Regular.Std.html#TYPEprinter">printer</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-<code class="code"><span class="keywordsign">'</span>a printer</code> defines a type for pretty-printers for a value of
-      type <code class="code"><span class="keywordsign">'</span>a</code>.
-</div>
-</td></tr>
-<tr><td><a href="Bap.Std.html#TYPEprinter">printer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-Converts an 'a to a string
+<code class="code"><span class="keywordsign">'</span>a printer</code> constructs a printer type for arbitrary type <code class="code"><span class="keywordsign">'</span>a</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEprogram">program</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -785,15 +798,15 @@ Iterators
 an interface for reading a value from the input.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Self.Config.html#TYPEreader">reader</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
+<td><div class="info">
+A witness that can read configured params
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td><div class="info">
 <code class="code">reader mem ~pos_ref</code> defines a set of functions with a
           common interface.
-</div>
-</td></tr>
-<tr><td><a href="Bap.Std.Self.Config.html#TYPEreader">reader</a> [<a href="Bap.Std.Self.Config.html">Bap.Std.Self.Config</a>]</td>
-<td><div class="info">
-A witness that can read configured params
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEreal">real</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -859,7 +872,7 @@ segment
 </td></tr>
 <tr><td><a href="Regular.Std.html#TYPEseq">seq</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-type abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code>
+Abbreviation for <code class="code"><span class="keywordsign">'</span>a <span class="constructor">Sequence</span>.t</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEseq">seq</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1069,31 +1082,46 @@ representation type
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#TYPEt">t</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Opaque.html#TYPEt">t</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Regular.html#TYPEt">t</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.Versioned.html#TYPEt">t</a> [<a href="Regular.Std.Data.Versioned.html">Regular.Std.Data.Versioned</a>]</td>
 <td><div class="info">
-type of data
+bytes
 </div>
 </td></tr>
+<tr><td><a href="Regular.Std.Opaque.S.html#TYPEt">t</a> [<a href="Regular.Std.Opaque.S.html">Regular.Std.Opaque.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Regular.Std.Regular.S.html#TYPEt">t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
+<td></td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html#TYPEt">t</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
 <td><div class="info">
 cacher type class
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html#TYPEt">t</a> [<a href="Regular.Std.Data.Write.html">Regular.Std.Data.Write</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a writer type class
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html#TYPEt">t</a> [<a href="Regular.Std.Data.Read.html">Regular.Std.Data.Read</a>]</td>
-<td></td></tr>
-<tr><td><a href="Regular.Std.Data.html#TYPEt">t</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+readable
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html#TYPEt">t</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
+<td><div class="info">
+type constructor
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.Versioned.S.html#TYPEt">t</a> [<a href="Regular.Std.Data.Versioned.S.html">Regular.Std.Data.Versioned.S</a>]</td>
+<td><div class="info">
+type of data
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Seq.html#TYPEt">t</a> [<a href="Regular.Std.Seq.html">Regular.Std.Seq</a>]</td>
 <td></td></tr>
-<tr><td><a href="Regular.Std.Printable.html#TYPEt">t</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
-<td></td></tr>
+<tr><td><a href="Regular.Std.Printable.S.html#TYPEt">t</a> [<a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a>]</td>
+<td><div class="info">
+type of printable
+</div>
+</td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> [<a href="Bap_plugins.Std.Plugin.html">Bap_plugins.Std.Plugin</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> [<a href="Bap_bundle.Std.Bundle.Builder.html">Bap_bundle.Std.Bundle.Builder</a>]</td>
@@ -1103,10 +1131,7 @@ cacher type class
 <tr><td><a href="Bap_bundle.Std.Manifest.html#TYPEt">t</a> [<a href="Bap_bundle.Std.Manifest.html">Bap_bundle.Std.Manifest</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> [<a href="Bap.Std.Project.Pass.html">Bap.Std.Project.Pass</a>]</td>
-<td><div class="info">
-An error that can occur when loading or running pass.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html#TYPEt">t</a> [<a href="Bap.Std.Project.Input.html">Bap.Std.Project.Input</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Project.html#TYPEt">t</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
@@ -1159,10 +1184,7 @@ This interface provides an efficient way to build new
 <tr><td><a href="Bap.Std.Blk.html#TYPEt">t</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Sub.Builder.html#TYPEt">t</a> [<a href="Bap.Std.Sub.Builder.html">Bap.Std.Sub.Builder</a>]</td>
-<td><div class="info">
-initializes empty subroutine builder.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Sub.html#TYPEt">t</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
 <td><div class="info">
 Subroutine is a set of blocks.
@@ -1198,7 +1220,10 @@ symbol table
 <tr><td><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> [<a href="Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Linear.html#TYPEt">t</a> [<a href="Bap.Std.Disasm_expert.Linear.html">Bap.Std.Disasm_expert.Linear</a>]</td>
-<td></td></tr>
+<td><div class="info">
+output type of a disassembler.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> [<a href="Bap.Std.Disasm_expert.Basic.Insn.html">Bap.Std.Disasm_expert.Basic.Insn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEt">t</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -1370,7 +1395,7 @@ type of token must implement bin_prot, be comparable and
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.html#TYPEtree">tree</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Tree</span></code></a> representation.
+a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Tree</span></code></a> representation.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtyp">typ</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>

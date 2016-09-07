@@ -84,11 +84,11 @@
         used improperly, they can break the immutability invariant on
         strings provided by the <code class="code">-safe-string</code> option. They are available for
         expert library authors, but for most purposes you should use the
-        always-correct <a href="Regular.Std.Bytes.html#VALto_string"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Bytes</span>.to_string</code></a> and <a href="Regular.Std.Bytes.html#VALof_string"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Bytes</span>.of_string</code></a> instead.<br>
+        always-correct <a href="Regular.Std.Bytes.html#VALto_string"><code class="code"><span class="constructor">Bytes</span>.to_string</code></a> and <a href="Regular.Std.Bytes.html#VALof_string"><code class="code"><span class="constructor">Bytes</span>.of_string</code></a> instead.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">Regular.Std.Bytes.t</a> -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">Bytes.t</a> -> string</code></pre><div class="info ">
 <code class="code">to_string b</code> - unsafely converts a byte sequence into a string.
 <p>
 
@@ -175,7 +175,7 @@
           closure is fully applied and returns ownership.<br>
 </div>
 
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Regular.Std.Bytes.html#TYPEt">Regular.Std.Bytes.t</a></code></pre><div class="info ">
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Regular.Std.Bytes.html#TYPEt">Bytes.t</a></code></pre><div class="info ">
 <code class="code">of_string s</code> - unsafely converts a shared string to a byte
           sequence that should not be mutated.
 <p>

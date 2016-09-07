@@ -69,6 +69,7 @@
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Interaction with environment" rel="Section" href="#2_Interactionwithenvironment">
 <link title="Error conditions" rel="Section" href="#2_Errorconditions">
+<link title="Evaluation methods" rel="Section" href="#2_Evaluationmethods">
 <title>BAR: BAP Annotated Reference : Bap.Std.Expi.t</title>
 </head>
 <body>
@@ -117,7 +118,7 @@ Expression interpreter.
         To run the computation use <code class="code"><span class="constructor">Monad</span>.<span class="constructor">State</span>.eval</code> function, that
         accepts a state monad and an initial value. Here we can
         provide any subtype of <code class="code"><span class="constructor">Expi</span>.context</code> as an initial
-        value. Let start with a <code class="code"><span class="constructor">Expi</span>.context</code> as first approximation:
+        value. Let start with a <code class="code"><span class="constructor">Expi</span>.context</code> as a first approximation:
 <p>
 
         <pre class="verbatim">        let x = Monad.State.eval r (new Expi.context);;
@@ -148,7 +149,7 @@ Expression interpreter.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;<span class="constructor">Expi</span>.context
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;events&nbsp;:&nbsp;(exp&nbsp;*&nbsp;<span class="constructor">Bil</span>.result)&nbsp;list&nbsp;=&nbsp;[]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;add_event&nbsp;exp&nbsp;res&nbsp;=&nbsp;{&lt;&nbsp;events&nbsp;=&nbsp;(exp,res)&nbsp;::&nbsp;events&nbsp;&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;events&nbsp;=&nbsp;<span class="constructor">List</span>.rev&nbsp;events
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;show_events&nbsp;=&nbsp;<span class="constructor">List</span>.rev&nbsp;events
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
@@ -238,20 +239,17 @@ called when storage doesn't contain the addr<br>
 <pre><span id="METHODundefined_var"><span class="keyword">method</span> undefined_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
 called when context doesn't know the variable<br>
 </div>
-
-<pre><span id="METHODeval_exp"><span class="keyword">method</span> eval_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre><div class="info ">
-<h2 id="2_Evaluationmethods">Evaluation methods</h2><br>
-</div>
-
+<h2 id="2_Evaluationmethods">Evaluation methods</h2>
+<pre><span id="METHODeval_exp"><span class="keyword">method</span> eval_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_var"><span class="keyword">method</span> eval_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_int"><span class="keyword">method</span> eval_int</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_load"><span class="keyword">method</span> eval_load</span> : <code class="type">mem:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       addr:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_store"><span class="keyword">method</span> eval_store</span> : <code class="type">mem:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       addr:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_binop"><span class="keyword">method</span> eval_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_unop"><span class="keyword">method</span> eval_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
-<pre><span id="METHODeval_cast"><span class="keyword">method</span> eval_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_cast"><span class="keyword">method</span> eval_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> int -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_let"><span class="keyword">method</span> eval_let</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_ite"><span class="keyword">method</span> eval_ite</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.html#TYPEexp">exp</a> -> no:<a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_concat"><span class="keyword">method</span> eval_concat</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
-<pre><span id="METHODeval_extract"><span class="keyword">method</span> eval_extract</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
+<pre><span id="METHODeval_extract"><span class="keyword">method</span> eval_extract</span> : <code class="type">int -> int -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre>
 <pre><span id="METHODeval_unknown"><span class="keyword">method</span> eval_unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> 'a <a href="Bap.Std.Bil.Result.html#TYPEr">Bil.Result.r</a></code></pre></body></html>

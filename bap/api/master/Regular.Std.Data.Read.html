@@ -77,14 +77,26 @@
 </div>
 <h1>Module <a href="type_Regular.Std.Data.Read.html">Regular.Std.Data.Read</a></h1>
 
-<pre><span class="keyword">module</span> Read: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Read.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Read: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Read.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<code class="code"><span class="constructor">Read</span></code> typeclass.
+<p>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEreader">Regular.Std.reader</a></code> </pre>
+        A class of readable values. It is rarely needed to use this
+        module directly, as it is used for implementing new readers,
+        i.e., new protocols. If you are looking for the IO functions
+        available for a type, then look at the <a href="Regular.Std.Data.S.html"><code class="code"><span class="constructor">Data</span>.<span class="constructor">S</span></code></a> interface.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEreader">reader</a></code> </pre>
+<div class="info ">
+readable<br>
+</div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?of_channel:(in_channel -> 'a) -><br>       ?of_lexbuf:(<a href="Regular.Std.Data.html#TYPElexbuf">Regular.Std.Data.lexbuf</a> -> 'a) -><br>       ?of_scanbuf:(<a href="Regular.Std.Data.html#TYPEscanbuf">Regular.Std.Data.scanbuf</a> -> 'a) -><br>       ?of_bigstring:(bigstring -> 'a) -><br>       ?of_bytes:(<a href="Regular.Std.html#TYPEbytes">Regular.Std.bytes</a> -> 'a) -> unit -> 'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?of_channel:(in_channel -> 'a) -><br>       ?of_lexbuf:(<a href="Regular.Std.Data.html#TYPElexbuf">Data.lexbuf</a> -> 'a) -><br>       ?of_scanbuf:(<a href="Regular.Std.Data.html#TYPEscanbuf">Data.scanbuf</a> -> 'a) -><br>       ?of_bigstring:(bigstring -> 'a) -><br>       ?of_bytes:(<a href="Regular.Std.html#TYPEbytes">bytes</a> -> 'a) -> unit -> 'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a></code></pre><div class="info ">
 A minimal complete definition is any method except
-          <code class="code">from_channel</code>.
+          <code class="code">of_channel</code> (that is not sufficient).
 <p>
 
           If a class is defined only with <code class="code">from_bigstring</code> or <code class="code">from_bytes</code>
@@ -92,6 +104,20 @@ A minimal complete definition is any method except
           to the correspondings function.<br>
 </div>
 
-<pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">Regular.Std.bytes</a> -> 'a</code></pre>
-<pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> in_channel -> 'a</code></pre>
-<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> bigstring -> 'a</code></pre></body></html>
+<pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">bytes</a> -> 'a</code></pre><div class="info ">
+<code class="code">of_bytes readable bytes</code> reads a value from <code class="code">bytes</code><br>
+</div>
+
+<pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> in_channel -> 'a</code></pre><div class="info ">
+<code class="code">of_channel readable channel</code> inputs a value from a
+          channel. If <code class="code">of_channel</code> function wasn't provided when
+          <code class="code">readable</code> was created, then the whole content of the
+          <code class="code">in_channel</code> is read into an intermediate buffer, that is later
+          read. Any leftover bytes are discarded.<br>
+</div>
+
+<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> bigstring -> 'a</code></pre><div class="info ">
+<code class="code">of_bigstring readable buf</code> deserializes a <code class="code">readable</code> value
+          from the bigstring.<br>
+</div>
+</body></html>

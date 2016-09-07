@@ -80,7 +80,6 @@
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type">[ `Errored of string * Error.t<br>       | `Linking of string<br>       | `Loaded of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Loading of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Opening of string ]</code> </pre>
 
 
-<pre><span id="VALsexp_of_event"><span class="keyword">val</span> sexp_of_event</span> : <code class="type"><a href="Bap_plugins.Std.Plugins.html#TYPEevent">event</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">?library:string list -> unit -> <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a> list</code></pre><div class="info ">
 <code class="code">list ?library ()</code> scans a list of directories, provided by a
         <code class="code">library</code> parameter, and, finally, <code class="code"><span class="constructor">Config</span>.libdir</code> for files with

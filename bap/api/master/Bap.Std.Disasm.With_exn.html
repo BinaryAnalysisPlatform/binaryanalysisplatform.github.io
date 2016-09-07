@@ -73,8 +73,19 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Disasm.With_exn.html">Bap.Std.Disasm.With_exn</a></h1>
 
-<pre><span class="keyword">module</span> With_exn: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> With_exn: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<code class="code"><span class="constructor">With_exn</span>.f</code> is the same as <code class="code">f</code> except that it throws an
+        exception instead of returning <code class="code"><span class="constructor">Error</span></code>.<br>
+</div>
+<hr width="100%">
 
-<pre><span id="VALof_mem"><span class="keyword">val</span> of_mem</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -> <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm.html#TYPEt">Disasm.t</a></code></pre>
-<pre><span id="VALof_image"><span class="keyword">val</span> of_image</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -> <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.Disasm.html#TYPEt">Disasm.t</a></code></pre>
-<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -> ?loader:string -> string -> <a href="Bap.Std.Disasm.html#TYPEt">Disasm.t</a></code></pre></body></html>
+<pre><span id="VALof_mem"><span class="keyword">val</span> of_mem</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -> <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm.html#TYPEt">Disasm.t</a></code></pre><div class="info ">
+see <a href="Bap.Std.Disasm.html#VALof_mem"><code class="code"><span class="constructor">Disasm</span>.of_mem</code></a>
+<p>
+see <a href="Bap.Std.Disasm.html#VALof_image"><code class="code"><span class="constructor">Disasm</span>.of_image</code></a><br>
+</div>
+
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -> ?loader:string -> string -> <a href="Bap.Std.Disasm.html#TYPEt">Disasm.t</a></code></pre><div class="info ">
+see <a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="constructor">Disasm</span>.of_file</code></a><br>
+</div>
+</body></html>

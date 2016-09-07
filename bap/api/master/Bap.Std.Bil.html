@@ -80,14 +80,20 @@
 <h1>Module <a href="type_Bap.Std.Bil.html">Bap.Std.Bil</a></h1>
 
 <pre><span class="keyword">module</span> Bil: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Main BIL module
+Main BIL module.
 <p>
 
-      This module defines BIL language and is useful to write BIL
-      programs and expressions.
+      The module specifies Binary Instruction Language (BIL). A language to
+      define a semantics of instructions. The semantics of the BIL
+      language is defined at <code class="code">[1]</code>.
 <p>
 
-      Example:
+      The language is defined using algebraic types. For each BIL
+      constructor a smart constructor is defined with the same (if
+      syntax allows) name. This allows to use BIL as a DSL embedded
+      into OCaml:
+<p>
+
       <pre class="codepre"><code class="code"><span class="constructor">Bil</span>.([
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v&nbsp;:=&nbsp;src&nbsp;<span class="keyword">lsr</span>&nbsp;i32&nbsp;1;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r&nbsp;:=&nbsp;src;
@@ -100,10 +106,13 @@ Main BIL module
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;];
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dst&nbsp;:=&nbsp;var&nbsp;r&nbsp;<span class="keyword">lsl</span>&nbsp;var&nbsp;s;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;])</code></pre>
+<p>
+
       where <code class="code">i32</code> is defined as
       <code class="code"><span class="keyword">let</span> i32 x = <span class="constructor">Bil</span>.int (<span class="constructor">Word</span>.of_int ~width:32 x)</code>
       and <code class="code">v,r,s</code> are some variables of type <code class="code">var</code>; and
       <code class="code">src, dst</code> are expressions of type <code class="code">exp</code>.<br>
+<b>See also</b> <a href="https://github.com/BinaryAnalysisPlatform/bil/releases/download/v0.1/bil.pdf"><code class="code">[1]</code>: BIL Semantics.</a><br>
 </div>
 <hr width="100%">
 
@@ -115,78 +124,193 @@ include all constructors into Bil namespace<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">stmt list</code> </pre>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 
-<pre><span class="keyword">include</span> Data</pre>
+<pre><span class="keyword">include</span> Data.S</pre>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bil.Infix.html">Infix</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Infix.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Infix operators
 </div>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bil.Infix.html">Bap.Std.Bil.Infix</a></pre>
+<div class="info ">
+Bring infix operations into scope of the <code class="code"><span class="constructor">Bil</span></code> module.<br>
+</div>
 <br>
 <h2 id="2_Functionalconstructors">Functional constructors</h2><br>
 
 <pre><span id="VALmove"><span class="keyword">val</span> move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt</code></pre><div class="info ">
-<code class="code">move v x</code> evaluate <code class="code">x</code> and assign its value to <code class="code">v</code><br>
+<code class="code">move v x <span class="keywordsign">-&gt;</span> <span class="constructor">Move</span> (v,x)</code><br>
 </div>
 
 <pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type">exp -> stmt</code></pre><div class="info ">
-<code class="code">jmp t</code> evaluate expression <code class="code">t</code> to absolute address and
-        transfer control to that address<br>
+<code class="code">jmp x <span class="keywordsign">-&gt;</span> <span class="constructor">Jmp</span> x</code><br>
 </div>
 
-<pre><span id="VALspecial"><span class="keyword">val</span> special</span> : <code class="type">string -> stmt</code></pre>
-<pre><span id="VALwhile_"><span class="keyword">val</span> while_</span> : <code class="type">exp -> stmt list -> stmt</code></pre>
-<pre><span id="VALif_"><span class="keyword">val</span> if_</span> : <code class="type">exp -> stmt list -> stmt list -> stmt</code></pre>
-<pre><span id="VALcpuexn"><span class="keyword">val</span> cpuexn</span> : <code class="type">int -> stmt</code></pre>
-<pre><span id="VALunsigned"><span class="keyword">val</span> unsigned</span> : <code class="type">cast</code></pre>
-<pre><span id="VALsigned"><span class="keyword">val</span> signed</span> : <code class="type">cast</code></pre>
-<pre><span id="VALhigh"><span class="keyword">val</span> high</span> : <code class="type">cast</code></pre>
-<pre><span id="VALlow"><span class="keyword">val</span> low</span> : <code class="type">cast</code></pre>
-<pre><span id="VALplus"><span class="keyword">val</span> plus</span> : <code class="type">binop</code></pre>
-<pre><span id="VALminus"><span class="keyword">val</span> minus</span> : <code class="type">binop</code></pre>
-<pre><span id="VALtimes"><span class="keyword">val</span> times</span> : <code class="type">binop</code></pre>
-<pre><span id="VALdivide"><span class="keyword">val</span> divide</span> : <code class="type">binop</code></pre>
-<pre><span id="VALsdivide"><span class="keyword">val</span> sdivide</span> : <code class="type">binop</code></pre>
-<pre><span id="VALmodulo"><span class="keyword">val</span> modulo</span> : <code class="type">binop</code></pre>
-<pre><span id="VALsmodulo"><span class="keyword">val</span> smodulo</span> : <code class="type">binop</code></pre>
-<pre><span id="VALlshift"><span class="keyword">val</span> lshift</span> : <code class="type">binop</code></pre>
-<pre><span id="VALrshift"><span class="keyword">val</span> rshift</span> : <code class="type">binop</code></pre>
-<pre><span id="VALarshift"><span class="keyword">val</span> arshift</span> : <code class="type">binop</code></pre>
-<pre><span id="VALbit_and"><span class="keyword">val</span> bit_and</span> : <code class="type">binop</code></pre>
-<pre><span id="VALbit_or"><span class="keyword">val</span> bit_or</span> : <code class="type">binop</code></pre>
-<pre><span id="VALbit_xor"><span class="keyword">val</span> bit_xor</span> : <code class="type">binop</code></pre>
-<pre><span id="VALeq"><span class="keyword">val</span> eq</span> : <code class="type">binop</code></pre>
-<pre><span id="VALneq"><span class="keyword">val</span> neq</span> : <code class="type">binop</code></pre>
-<pre><span id="VALlt"><span class="keyword">val</span> lt</span> : <code class="type">binop</code></pre>
-<pre><span id="VALle"><span class="keyword">val</span> le</span> : <code class="type">binop</code></pre>
-<pre><span id="VALslt"><span class="keyword">val</span> slt</span> : <code class="type">binop</code></pre>
-<pre><span id="VALsle"><span class="keyword">val</span> sle</span> : <code class="type">binop</code></pre>
-<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">unop</code></pre>
-<pre><span id="VALnot"><span class="keyword">val</span> not</span> : <code class="type">unop</code></pre>
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">mem:exp -> addr:exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre>
-<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type">mem:exp -> addr:exp -> exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre>
-<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">binop -> exp -> exp -> exp</code></pre>
-<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">unop -> exp -> exp</code></pre>
-<pre><span id="VALvar"><span class="keyword">val</span> var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp</code></pre>
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> exp</code></pre>
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">cast -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> exp -> exp</code></pre>
-<pre><span id="VALlet_"><span class="keyword">val</span> let_</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> exp -> exp</code></pre>
-<pre><span id="VALunknown"><span class="keyword">val</span> unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> exp</code></pre>
-<pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">if_:exp -> then_:exp -> else_:exp -> exp</code></pre>
-<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> exp -> exp</code></pre>
-<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">exp -> exp -> exp</code></pre><br>
+<pre><span id="VALspecial"><span class="keyword">val</span> special</span> : <code class="type">string -> stmt</code></pre><div class="info ">
+<code class="code">special msg <span class="keywordsign">-&gt;</span> <span class="constructor">Special</span> msg</code><br>
+</div>
+
+<pre><span id="VALwhile_"><span class="keyword">val</span> while_</span> : <code class="type">exp -> stmt list -> stmt</code></pre><div class="info ">
+<code class="code">while_ cond stmts <span class="keywordsign">-&gt;</span> <span class="constructor">While</span> (cond,stmts)</code><br>
+</div>
+
+<pre><span id="VALif_"><span class="keyword">val</span> if_</span> : <code class="type">exp -> stmt list -> stmt list -> stmt</code></pre><div class="info ">
+<code class="code">if_ cond s1 s2 <span class="keywordsign">-&gt;</span> <span class="constructor">If</span>(cond,s1,s2)</code><br>
+</div>
+
+<pre><span id="VALcpuexn"><span class="keyword">val</span> cpuexn</span> : <code class="type">int -> stmt</code></pre><div class="info ">
+<code class="code">cpuexn number <span class="keywordsign">-&gt;</span> <span class="constructor">CpuExn</span> number</code><br>
+</div>
+
+<pre><span id="VALunsigned"><span class="keyword">val</span> unsigned</span> : <code class="type">cast</code></pre><div class="info ">
+<code class="code">unsigned <span class="keywordsign">-&gt;</span> <span class="constructor">UNSIGNED</span></code><br>
+</div>
+
+<pre><span id="VALsigned"><span class="keyword">val</span> signed</span> : <code class="type">cast</code></pre><div class="info ">
+<code class="code">signed <span class="keywordsign">-&gt;</span> <span class="constructor">SIGNED</span></code><br>
+</div>
+
+<pre><span id="VALhigh"><span class="keyword">val</span> high</span> : <code class="type">cast</code></pre><div class="info ">
+<code class="code">high <span class="keywordsign">-&gt;</span> <span class="constructor">HIGH</span></code><br>
+</div>
+
+<pre><span id="VALlow"><span class="keyword">val</span> low</span> : <code class="type">cast</code></pre><div class="info ">
+<code class="code">low <span class="keywordsign">-&gt;</span> <span class="constructor">LOW</span></code><br>
+</div>
+
+<pre><span id="VALplus"><span class="keyword">val</span> plus</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">plus <span class="keywordsign">-&gt;</span> <span class="constructor">PLUS</span></code><br>
+</div>
+
+<pre><span id="VALminus"><span class="keyword">val</span> minus</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">minus <span class="keywordsign">-&gt;</span> <span class="constructor">MINUS</span></code><br>
+</div>
+
+<pre><span id="VALtimes"><span class="keyword">val</span> times</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">times <span class="keywordsign">-&gt;</span> <span class="constructor">TIMES</span></code><br>
+</div>
+
+<pre><span id="VALdivide"><span class="keyword">val</span> divide</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">divide <span class="keywordsign">-&gt;</span> <span class="constructor">DIVIDE</span></code><br>
+</div>
+
+<pre><span id="VALsdivide"><span class="keyword">val</span> sdivide</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">sdivide <span class="keywordsign">-&gt;</span> <span class="constructor">SDIVIDE</span></code><br>
+</div>
+
+<pre><span id="VALmodulo"><span class="keyword">val</span> modulo</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">modulo <span class="keywordsign">-&gt;</span> <span class="constructor">MOD</span></code><br>
+</div>
+
+<pre><span id="VALsmodulo"><span class="keyword">val</span> smodulo</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">smodulo <span class="keywordsign">-&gt;</span> <span class="constructor">SMOD</span></code><br>
+</div>
+
+<pre><span id="VALlshift"><span class="keyword">val</span> lshift</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">lshift <span class="keywordsign">-&gt;</span> <span class="constructor">LSHIFT</span></code><br>
+</div>
+
+<pre><span id="VALrshift"><span class="keyword">val</span> rshift</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">rshift <span class="keywordsign">-&gt;</span> <span class="constructor">RSHIFT</span></code><br>
+</div>
+
+<pre><span id="VALarshift"><span class="keyword">val</span> arshift</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">arshift <span class="keywordsign">-&gt;</span> <span class="constructor">ARSHIFT</span></code><br>
+</div>
+
+<pre><span id="VALbit_and"><span class="keyword">val</span> bit_and</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">bit_and <span class="keywordsign">-&gt;</span> <span class="constructor">AND</span></code><br>
+</div>
+
+<pre><span id="VALbit_or"><span class="keyword">val</span> bit_or</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">bit_or <span class="keywordsign">-&gt;</span> <span class="constructor">OR</span></code><br>
+</div>
+
+<pre><span id="VALbit_xor"><span class="keyword">val</span> bit_xor</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">bit_xor <span class="keywordsign">-&gt;</span> <span class="constructor">XOR</span></code><br>
+</div>
+
+<pre><span id="VALeq"><span class="keyword">val</span> eq</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">eq <span class="keywordsign">-&gt;</span> <span class="constructor">EQ</span></code><br>
+</div>
+
+<pre><span id="VALneq"><span class="keyword">val</span> neq</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">neq <span class="keywordsign">-&gt;</span> <span class="constructor">NEQ</span></code><br>
+</div>
+
+<pre><span id="VALlt"><span class="keyword">val</span> lt</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">lt <span class="keywordsign">-&gt;</span> <span class="constructor">LT</span></code><br>
+</div>
+
+<pre><span id="VALle"><span class="keyword">val</span> le</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">le <span class="keywordsign">-&gt;</span> <span class="constructor">LE</span></code><br>
+</div>
+
+<pre><span id="VALslt"><span class="keyword">val</span> slt</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">slt <span class="keywordsign">-&gt;</span> <span class="constructor">SLT</span></code><br>
+</div>
+
+<pre><span id="VALsle"><span class="keyword">val</span> sle</span> : <code class="type">binop</code></pre><div class="info ">
+<code class="code">sle <span class="keywordsign">-&gt;</span> <span class="constructor">SLE</span></code><br>
+</div>
+
+<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">unop</code></pre><div class="info ">
+<code class="code">neg <span class="keywordsign">-&gt;</span> <span class="constructor">NEG</span></code><br>
+</div>
+
+<pre><span id="VALnot"><span class="keyword">val</span> not</span> : <code class="type">unop</code></pre><div class="info ">
+<code class="code">not <span class="keywordsign">-&gt;</span> <span class="constructor">NOT</span></code><br>
+</div>
+
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">mem:exp -> addr:exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre><div class="info ">
+<code class="code">load ~mem ~addr endian size <span class="keywordsign">-&gt;</span> <span class="constructor">Load</span> (mem,addr,endian,size)</code><br>
+</div>
+
+<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type">mem:exp -> addr:exp -> exp -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> exp</code></pre><div class="info ">
+<code class="code">store ~mem ~addr exp endian size <span class="keywordsign">-&gt;</span> <span class="constructor">Store</span>(mem,addr,endian,size)</code><br>
+</div>
+
+<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">binop -> exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">binop op x y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(op,x,y)</code><br>
+</div>
+
+<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">unop -> exp -> exp</code></pre><div class="info ">
+<code class="code">unop op x <span class="keywordsign">-&gt;</span> <span class="constructor">UnOp</span>(op,x)</code><br>
+</div>
+
+<pre><span id="VALvar"><span class="keyword">val</span> var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp</code></pre><div class="info ">
+<code class="code">var v <span class="keywordsign">-&gt;</span> <span class="constructor">Var</span> v</code><br>
+</div>
+
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> exp</code></pre><div class="info ">
+<code class="code">int w <span class="keywordsign">-&gt;</span> <span class="constructor">Int</span> w</code><br>
+</div>
+
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">cast -> int -> exp -> exp</code></pre><div class="info ">
+<code class="code">cast t w x <span class="keywordsign">-&gt;</span> <span class="constructor">Cast</span> (t,w,x)</code><br>
+</div>
+
+<pre><span id="VALlet_"><span class="keyword">val</span> let_</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">let_ var value expr <span class="keywordsign">-&gt;</span> <span class="constructor">Let</span>(var,value,expr)</code><br>
+</div>
+
+<pre><span id="VALunknown"><span class="keyword">val</span> unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> exp</code></pre><div class="info ">
+<code class="code">unknown msg typ <span class="keywordsign">-&gt;</span> <span class="constructor">Unknown</span>(msg,typ)</code><br>
+</div>
+
+<pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">if_:exp -> then_:exp -> else_:exp -> exp</code></pre><div class="info ">
+<code class="code">ite ~if_:cond ~then_:e1 ~else_:e2 <span class="keywordsign">-&gt;</span> <span class="constructor">Ite</span> (cond,e1,e2)</code><br>
+</div>
+
+<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:int -> lo:int -> exp -> exp</code></pre><div class="info ">
+<code class="code">extract ~hi ~lo x <span class="keywordsign">-&gt;</span> <span class="constructor">Extract</span> (hi,lo,x)</code><br>
+</div>
+
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">concat x y <span class="keywordsign">-&gt;</span> <span class="constructor">Concat</span> (x,y)</code><br>
+</div>
+<br>
 <h2 id="bil_helpers">BIL Helper functions</h2><br>
 
 <pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> stmt list -> bool</code></pre><div class="info ">

@@ -105,9 +105,9 @@ The type of a BIL expression.
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a></code></code></td>
+<code><span id="TYPEELTt.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<code class="code"><span class="constructor">Mem</span> (a,t)</code> memory with a specifed addr_size<br>
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immediate<br>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -124,10 +124,8 @@ type is either an immediate value of memory reference<br>
 </div>
 
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.Type.html#TYPEt">t</a></code></pre>
-<pre><span id="VALimm"><span class="keyword">val</span> imm</span> : <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Type.html#TYPEt">t</a></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Type.Variants.html">Variants</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type.Variants.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span class="keyword">include</span> Regular.S</pre>
 <div class="info ">
 BIL type is regular<br>
 </div>

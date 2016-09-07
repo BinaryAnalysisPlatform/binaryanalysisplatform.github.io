@@ -86,7 +86,7 @@
 
 
 <pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Stmt.state-c.html">state</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.state-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-All visitors provides some information about the current
+All visitors provide some information about the current
         position of the visitor
 </div>
 
@@ -95,7 +95,7 @@ Visitor.
 </div>
 
 <pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Stmt.finder-c.html">finder</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.finder-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A visitor with shortcut.
+A visitor with a shortcut.
 </div>
 
 <pre><span name="TYPEmapper"><span class="keyword">class</span> <a href="Bap.Std.Stmt.mapper-c.html">mapper</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -148,7 +148,10 @@ AST transformation.
         occurs in the <code class="code">stmt</code>.<br>
 </div>
 
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a) -> 'a</code></pre>
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a) -> 'a</code></pre><div class="info ">
+<code class="code">eval prog</code> eval BIL program under given context. Returns the
+        context which contains all effects of computations.<br>
+</div>
 
-<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre></body></html>
+<pre><span class="keyword">include</span> Regular.S</pre>
+</body></html>

@@ -78,22 +78,4 @@
 <h1>Module <a href="type_Core_printers.html">Core_printers</a></h1>
 
 <pre><span class="keyword">module</span> Core_printers: <code class="code"><span class="keyword">sig</span></code> <a href="Core_printers.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
-
-<pre><span id="VALpp_comma"><span class="keyword">val</span> pp_comma</span> : <code class="type">Format.formatter -> unit -> unit</code></pre>
-<pre><span id="VALpair"><span class="keyword">val</span> pair</span> : <code class="type">(Format.formatter -> 'a -> unit) -><br>       (Format.formatter -> 'b -> unit) -> Format.formatter -> 'a * 'b -> unit</code></pre>
-<pre><span id="VALpp_map"><span class="keyword">val</span> pp_map</span> : <code class="type">(Format.formatter -> 'a -> unit) -><br>       (Format.formatter -> 'b -> unit) -><br>       'c -> Format.formatter -> ('a, 'b, 'd) Map.t -> unit</code></pre>
-<pre><span id="VALpp_set"><span class="keyword">val</span> pp_set</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       'b -> Format.formatter -> ('a, 'c) Set.t -> unit</code></pre>
-<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">('a -> 'b list) -> 'a -> 'b Seq.t</code></pre>
-<pre><span id="VALpp_doubly_linked"><span class="keyword">val</span> pp_doubly_linked</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Doubly_linked.t -> unit</code></pre>
-<pre><span id="VALpp_stack"><span class="keyword">val</span> pp_stack</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Stack.t -> unit</code></pre>
-<pre><span id="VALpp_heap"><span class="keyword">val</span> pp_heap</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Heap.t -> unit</code></pre>
-<pre><span id="VALpp_fheap"><span class="keyword">val</span> pp_fheap</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Fheap.t -> unit</code></pre>
-<pre><span id="VALpp_bag"><span class="keyword">val</span> pp_bag</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Bag.t -> unit</code></pre>
-<pre><span id="VALpp_queue"><span class="keyword">val</span> pp_queue</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Queue.t -> unit</code></pre>
-<pre><span id="VALpp_fqueue"><span class="keyword">val</span> pp_fqueue</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Fqueue.t -> unit</code></pre>
-<pre><span id="VALpp_deque"><span class="keyword">val</span> pp_deque</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Deque.t -> unit</code></pre>
-<pre><span id="VALpp_fdeque"><span class="keyword">val</span> pp_fdeque</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Fdeque.t -> unit</code></pre>
-<pre><span id="VALpp_hashset"><span class="keyword">val</span> pp_hashset</span> : <code class="type">'a Hash_set.elt <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -><br>       Format.formatter -> 'a Hash_set.t -> unit</code></pre>
-<pre><span id="VALpp_hashtbl"><span class="keyword">val</span> pp_hashtbl</span> : <code class="type">(Format.formatter -> 'a Hashtbl.key -> unit) -><br>       (Format.formatter -> 'b -> unit) -><br>       Format.formatter -> ('a, 'b) Hashtbl.t -> unit</code></pre>
-<pre><span id="VALpp_blang"><span class="keyword">val</span> pp_blang</span> : <code class="type">(Format.formatter -> 'a -> unit) -><br>       Format.formatter -> 'a Blang.t -> unit</code></pre>
-<pre><span id="VALinstall"><span class="keyword">val</span> install</span> : <code class="type">string -> unit</code></pre></body></html>
+</body></html>

@@ -134,7 +134,6 @@
 <code class="code">update f</code> is <code class="code">get () &gt;&gt;= <span class="keyword">fun</span> s <span class="keywordsign">-&gt;</span> put (f s)</code><br>
 </div>
 
-<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">('s -> 's) -> (unit, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre>
 <pre><span id="VALmodify"><span class="keyword">val</span> modify</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -><br>       ('s -> 's) -> ('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">modify c f</code> is a computation with state <code class="code">f</code>, where
           <code class="code">s</code> is <code class="code">c &gt;&gt;= get ()</code>, i.e., an effect of computation <code class="code">c</code>.<br>

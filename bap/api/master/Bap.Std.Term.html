@@ -68,8 +68,7 @@
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Example" rel="Section" href="#2_Example">
-<link title="Attributes" rel="Section" href="#2_Attributes">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Attributes" rel="Section" href="#2_Attributes">
 <link title="Higher order mapping" rel="Section" href="#2_Higherordermapping">
 <title>BAR: BAP Annotated Reference : Bap.Std.Term</title>
 </head>
@@ -81,11 +80,10 @@
 <h1>Module <a href="type_Bap.Std.Term.html">Bap.Std.Term</a></h1>
 
 <pre><span class="keyword">module</span> Term: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Term.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-IR language term.<br>
-</div>
-<hr width="100%">
-<br>
-Term is a building block of the
+IR language term.
+<p>
+
+      Term is a building block of the
         <a href="Bap.Std.html#sema">Intermediate Representation</a> of the binary program.
 <p>
 
@@ -101,8 +99,8 @@ Term is a building block of the
         Give a block
 <p>
 
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Blk</span>.create&nbsp;();;</code></pre>
-        <pre class="verbatim">val b : Blk.t =
+      <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Blk</span>.create&nbsp;();;</code></pre>
+      <pre class="verbatim">val b : Blk.t =
           00000003:</pre>
 <p>
 
@@ -110,8 +108,8 @@ Term is a building block of the
         <code class="code"><span class="constructor">Term</span>.append</code>
 <p>
 
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.append&nbsp;def_t&nbsp;b&nbsp;d_1;;</code></pre>
-        <pre class="verbatim">val b : blk term =
+      <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.append&nbsp;def_t&nbsp;b&nbsp;d_1;;</code></pre>
+      <pre class="verbatim">val b : blk term =
           00000003:
           00000001: x := y + z
          </pre>
@@ -120,11 +118,13 @@ Term is a building block of the
         Update a value of a definition in the block:
 <p>
 
-        <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.update&nbsp;def_t&nbsp;b&nbsp;d_2;;</code></pre>
-        <pre class="verbatim">val b : blk term =
+      <pre class="codepre"><code class="code"><span class="keywordsign">#</span>&nbsp;<span class="keyword">let</span>&nbsp;b&nbsp;=&nbsp;<span class="constructor">Term</span>.update&nbsp;def_t&nbsp;b&nbsp;d_2;;</code></pre>
+      <pre class="verbatim">val b : blk term =
           00000003:
           00000001: x := true
          </pre><br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 <div class="info ">
@@ -306,7 +306,6 @@ term type<br>
         <code class="code">term</code><br>
 </div>
 
-<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> 'b option</code></pre>
 <pre><span id="VALhas_attr"><span class="keyword">val</span> has_attr</span> : <code class="type">'a <a href="Bap.Std.Term.html#TYPEt">t</a> -> 'b <a href="Bap.Std.html#TYPEtag">tag</a> -> bool</code></pre><div class="info ">
 <code class="code">has_attr term attr</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">term</code> has attribute <code class="code">attr</code><br>
 </div>

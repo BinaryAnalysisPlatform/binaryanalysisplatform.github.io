@@ -114,110 +114,30 @@ Trace is a stream of events plus meta information.
 <pre><span id="TYPElocation"><span class="keyword">type</span> <code class="type"></code>location</span> = <code class="type"><a href="Bap_traces.Std.Location.html#TYPEt">Location.t</a></code> </pre>
 
 
-<pre><span id="VALbin_location"><span class="keyword">val</span> bin_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_location"><span class="keyword">val</span> bin_read_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_location__"><span class="keyword">val</span> __bin_read_location__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPElocation">location</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_location"><span class="keyword">val</span> bin_reader_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_location"><span class="keyword">val</span> bin_size_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_location"><span class="keyword">val</span> bin_write_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_location"><span class="keyword">val</span> bin_writer_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_location"><span class="keyword">val</span> compare_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> -> <a href="Bap_traces.Std.html#TYPElocation">location</a> -> int</code></pre>
-<pre><span id="VALlocation_of_sexp"><span class="keyword">val</span> location_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPElocation">location</a></code></pre>
-<pre><span id="VALsexp_of_location"><span class="keyword">val</span> sexp_of_location</span> : <code class="type"><a href="Bap_traces.Std.html#TYPElocation">location</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Call.html">Call</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Call.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Return.html">Return</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Return.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Modload.html">Modload</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Modload.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="TYPEmove"><span class="keyword">type</span> <code class="type">'a</code> move</span> = <code class="type">'a <a href="Bap_traces.Std.Move.html#TYPEt">Move.t</a></code> </pre>
 
 
-<pre><span id="VALbin_move"><span class="keyword">val</span> bin_move</span> : <code class="type">'a Bin_prot.Type_class.t -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_move"><span class="keyword">val</span> bin_read_move</span> : <code class="type">'a Bin_prot.Read.reader -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_move__"><span class="keyword">val</span> __bin_read_move__</span> : <code class="type">'a Bin_prot.Read.reader -><br>       (int -> 'a <a href="Bap_traces.Std.html#TYPEmove">move</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_move"><span class="keyword">val</span> bin_reader_move</span> : <code class="type">'a Bin_prot.Type_class.reader -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_move"><span class="keyword">val</span> bin_size_move</span> : <code class="type">'a Bin_prot.Size.sizer -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_move"><span class="keyword">val</span> bin_write_move</span> : <code class="type">'a Bin_prot.Write.writer -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_move"><span class="keyword">val</span> bin_writer_move</span> : <code class="type">'a Bin_prot.Type_class.writer -><br>       'a <a href="Bap_traces.Std.html#TYPEmove">move</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_move"><span class="keyword">val</span> compare_move</span> : <code class="type">('a -> 'a -> int) -> 'a <a href="Bap_traces.Std.html#TYPEmove">move</a> -> 'a <a href="Bap_traces.Std.html#TYPEmove">move</a> -> int</code></pre>
-<pre><span id="VALmove_of_sexp"><span class="keyword">val</span> move_of_sexp</span> : <code class="type">(Sexplib.Sexp.t -> 'a) -> Sexplib.Sexp.t -> 'a <a href="Bap_traces.Std.html#TYPEmove">move</a></code></pre>
-<pre><span id="VALsexp_of_move"><span class="keyword">val</span> sexp_of_move</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap_traces.Std.html#TYPEmove">move</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEchunk"><span class="keyword">type</span> <code class="type"></code>chunk</span> = <code class="type"><a href="Bap_traces.Std.Chunk.html#TYPEt">Chunk.t</a></code> </pre>
 
 
-<pre><span id="VALbin_chunk"><span class="keyword">val</span> bin_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_chunk"><span class="keyword">val</span> bin_read_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_chunk__"><span class="keyword">val</span> __bin_read_chunk__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEchunk">chunk</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_chunk"><span class="keyword">val</span> bin_reader_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_chunk"><span class="keyword">val</span> bin_size_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_chunk"><span class="keyword">val</span> bin_write_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_chunk"><span class="keyword">val</span> bin_writer_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_chunk"><span class="keyword">val</span> compare_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> -> <a href="Bap_traces.Std.html#TYPEchunk">chunk</a> -> int</code></pre>
-<pre><span id="VALchunk_of_sexp"><span class="keyword">val</span> chunk_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEchunk">chunk</a></code></pre>
-<pre><span id="VALsexp_of_chunk"><span class="keyword">val</span> sexp_of_chunk</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">chunk</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEsyscall"><span class="keyword">type</span> <code class="type"></code>syscall</span> = <code class="type"><a href="Bap_traces.Std.Syscall.html#TYPEt">Syscall.t</a></code> </pre>
 
 
-<pre><span id="VALbin_syscall"><span class="keyword">val</span> bin_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_syscall"><span class="keyword">val</span> bin_read_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_syscall__"><span class="keyword">val</span> __bin_read_syscall__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEsyscall">syscall</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_syscall"><span class="keyword">val</span> bin_reader_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_syscall"><span class="keyword">val</span> bin_size_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_syscall"><span class="keyword">val</span> bin_write_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_syscall"><span class="keyword">val</span> bin_writer_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_syscall"><span class="keyword">val</span> compare_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> -> <a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> -> int</code></pre>
-<pre><span id="VALsyscall_of_sexp"><span class="keyword">val</span> syscall_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEsyscall">syscall</a></code></pre>
-<pre><span id="VALsexp_of_syscall"><span class="keyword">val</span> sexp_of_syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">syscall</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEexn"><span class="keyword">type</span> <code class="type"></code>exn</span> = <code class="type"><a href="Bap_traces.Std.Exn.html#TYPEt">Exn.t</a></code> </pre>
 
 
-<pre><span id="VALbin_exn"><span class="keyword">val</span> bin_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_exn"><span class="keyword">val</span> bin_read_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_exn__"><span class="keyword">val</span> __bin_read_exn__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEexn">exn</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_exn"><span class="keyword">val</span> bin_reader_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_exn"><span class="keyword">val</span> bin_size_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_exn"><span class="keyword">val</span> bin_write_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_exn"><span class="keyword">val</span> bin_writer_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_exn"><span class="keyword">val</span> compare_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> -> <a href="Bap_traces.Std.html#TYPEexn">exn</a> -> int</code></pre>
-<pre><span id="VALexn_of_sexp"><span class="keyword">val</span> exn_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEexn">exn</a></code></pre>
-<pre><span id="VALsexp_of_exn"><span class="keyword">val</span> sexp_of_exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">exn</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEcall"><span class="keyword">type</span> <code class="type"></code>call</span> = <code class="type"><a href="Bap_traces.Std.Call.html#TYPEt">Call.t</a></code> </pre>
 
 
-<pre><span id="VALbin_call"><span class="keyword">val</span> bin_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_call"><span class="keyword">val</span> bin_read_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_call__"><span class="keyword">val</span> __bin_read_call__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEcall">call</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_call"><span class="keyword">val</span> bin_reader_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_call"><span class="keyword">val</span> bin_size_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_call"><span class="keyword">val</span> bin_write_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_call"><span class="keyword">val</span> bin_writer_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_call"><span class="keyword">val</span> compare_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> -> <a href="Bap_traces.Std.html#TYPEcall">call</a> -> int</code></pre>
-<pre><span id="VALcall_of_sexp"><span class="keyword">val</span> call_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEcall">call</a></code></pre>
-<pre><span id="VALsexp_of_call"><span class="keyword">val</span> sexp_of_call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">call</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEreturn"><span class="keyword">type</span> <code class="type"></code>return</span> = <code class="type"><a href="Bap_traces.Std.Return.html#TYPEt">Return.t</a></code> </pre>
 
 
-<pre><span id="VALbin_return"><span class="keyword">val</span> bin_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_return"><span class="keyword">val</span> bin_read_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_return__"><span class="keyword">val</span> __bin_read_return__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEreturn">return</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_return"><span class="keyword">val</span> bin_reader_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_return"><span class="keyword">val</span> bin_size_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_return"><span class="keyword">val</span> bin_write_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_return"><span class="keyword">val</span> bin_writer_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_return"><span class="keyword">val</span> compare_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> -> <a href="Bap_traces.Std.html#TYPEreturn">return</a> -> int</code></pre>
-<pre><span id="VALreturn_of_sexp"><span class="keyword">val</span> return_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEreturn">return</a></code></pre>
-<pre><span id="VALsexp_of_return"><span class="keyword">val</span> sexp_of_return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">return</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEmodload"><span class="keyword">type</span> <code class="type"></code>modload</span> = <code class="type"><a href="Bap_traces.Std.Modload.html#TYPEt">Modload.t</a></code> </pre>
 
 
-<pre><span id="VALbin_modload"><span class="keyword">val</span> bin_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_modload"><span class="keyword">val</span> bin_read_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_modload__"><span class="keyword">val</span> __bin_read_modload__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEmodload">modload</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_modload"><span class="keyword">val</span> bin_reader_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_modload"><span class="keyword">val</span> bin_size_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_modload"><span class="keyword">val</span> bin_write_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_modload"><span class="keyword">val</span> bin_writer_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_modload"><span class="keyword">val</span> compare_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> -> <a href="Bap_traces.Std.html#TYPEmodload">modload</a> -> int</code></pre>
-<pre><span id="VALmodload_of_sexp"><span class="keyword">val</span> modload_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEmodload">modload</a></code></pre>
-<pre><span id="VALsexp_of_modload"><span class="keyword">val</span> sexp_of_modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">modload</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Event.html">Event</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Tracer.html">Tracer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Tracer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Binary.html">Binary</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Binary.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
@@ -229,55 +149,15 @@ Trace is a stream of events plus meta information.
 <pre><span id="TYPEtracer"><span class="keyword">type</span> <code class="type"></code>tracer</span> = <code class="type"><a href="Bap_traces.Std.Tracer.html#TYPEt">Tracer.t</a></code> </pre>
 
 
-<pre><span id="VALbin_tracer"><span class="keyword">val</span> bin_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_tracer"><span class="keyword">val</span> bin_read_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_tracer__"><span class="keyword">val</span> __bin_read_tracer__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEtracer">tracer</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_tracer"><span class="keyword">val</span> bin_reader_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_tracer"><span class="keyword">val</span> bin_size_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_tracer"><span class="keyword">val</span> bin_write_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_tracer"><span class="keyword">val</span> bin_writer_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_tracer"><span class="keyword">val</span> compare_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> -> <a href="Bap_traces.Std.html#TYPEtracer">tracer</a> -> int</code></pre>
-<pre><span id="VALtracer_of_sexp"><span class="keyword">val</span> tracer_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEtracer">tracer</a></code></pre>
-<pre><span id="VALsexp_of_tracer"><span class="keyword">val</span> sexp_of_tracer</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtracer">tracer</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEbinary"><span class="keyword">type</span> <code class="type"></code>binary</span> = <code class="type"><a href="Bap_traces.Std.Binary.html#TYPEt">Binary.t</a></code> </pre>
 
 
-<pre><span id="VALbin_binary"><span class="keyword">val</span> bin_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_binary"><span class="keyword">val</span> bin_read_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_binary__"><span class="keyword">val</span> __bin_read_binary__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEbinary">binary</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_binary"><span class="keyword">val</span> bin_reader_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_binary"><span class="keyword">val</span> bin_size_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_binary"><span class="keyword">val</span> bin_write_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_binary"><span class="keyword">val</span> bin_writer_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_binary"><span class="keyword">val</span> compare_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> -> <a href="Bap_traces.Std.html#TYPEbinary">binary</a> -> int</code></pre>
-<pre><span id="VALbinary_of_sexp"><span class="keyword">val</span> binary_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEbinary">binary</a></code></pre>
-<pre><span id="VALsexp_of_binary"><span class="keyword">val</span> sexp_of_binary</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEbinary">binary</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEfile_stats"><span class="keyword">type</span> <code class="type"></code>file_stats</span> = <code class="type"><a href="Bap_traces.Std.File_stats.html#TYPEt">File_stats.t</a></code> </pre>
 
 
-<pre><span id="VALbin_file_stats"><span class="keyword">val</span> bin_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_file_stats"><span class="keyword">val</span> bin_read_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_file_stats__"><span class="keyword">val</span> __bin_read_file_stats__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_file_stats"><span class="keyword">val</span> bin_reader_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_file_stats"><span class="keyword">val</span> bin_size_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_file_stats"><span class="keyword">val</span> bin_write_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_file_stats"><span class="keyword">val</span> bin_writer_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_file_stats"><span class="keyword">val</span> compare_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> -> <a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> -> int</code></pre>
-<pre><span id="VALfile_stats_of_sexp"><span class="keyword">val</span> file_stats_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a></code></pre>
-<pre><span id="VALsexp_of_file_stats"><span class="keyword">val</span> sexp_of_file_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEfile_stats">file_stats</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEtrace_stats"><span class="keyword">type</span> <code class="type"></code>trace_stats</span> = <code class="type"><a href="Bap_traces.Std.Trace_stats.html#TYPEt">Trace_stats.t</a></code> </pre>
 
 
-<pre><span id="VALbin_trace_stats"><span class="keyword">val</span> bin_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_trace_stats"><span class="keyword">val</span> bin_read_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_trace_stats__"><span class="keyword">val</span> __bin_read_trace_stats__</span> : <code class="type">(int -> <a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_trace_stats"><span class="keyword">val</span> bin_reader_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_trace_stats"><span class="keyword">val</span> bin_size_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_trace_stats"><span class="keyword">val</span> bin_write_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_trace_stats"><span class="keyword">val</span> bin_writer_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_trace_stats"><span class="keyword">val</span> compare_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> -> <a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> -> int</code></pre>
-<pre><span id="VALtrace_stats_of_sexp"><span class="keyword">val</span> trace_stats_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a></code></pre>
-<pre><span id="VALsexp_of_trace_stats"><span class="keyword">val</span> sexp_of_trace_stats</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEtrace_stats">trace_stats</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Meta.html">Meta</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Meta.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Trace.html">Trace</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Traces.html">Traces</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Traces.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

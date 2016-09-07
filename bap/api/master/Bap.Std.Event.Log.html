@@ -73,7 +73,10 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Event.Log.html">Bap.Std.Event.Log</a></h1>
 
-<pre><span class="keyword">module</span> Log: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Log: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Logging event.<br>
+</div>
+<hr width="100%">
 
 <pre><code><span id="TYPElevel"><span class="keyword">type</span> <code class="type"></code>level</span> = </code></pre><table class="typetable">
 <tr>
@@ -143,4 +146,19 @@
 
 
 
-<pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap.Std.Event.Log.html#TYPElevel">level</a> -><br>       section:string -> ('a, Format.formatter, unit) format -> 'a</code></pre></body></html>
+<pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap.Std.Event.Log.html#TYPElevel">level</a> -><br>       section:string -> ('a, Format.formatter, unit) format -> 'a</code></pre><div class="info ">
+<code class="code">message level ~section fmt ...</code> send a message of the
+          specified <code class="code">level</code> and <code class="code">section</code>.
+<p>
+
+          Do not use this function directly, instead include the
+          instantiation of a <code class="code"><span class="constructor">Self</span></code> functor, and use corresponding
+          logging functions, e.g.,
+<p>
+
+          <pre class="verbatim">            include Self()
+            (* ... *)
+            info "created some %s" "thing"
+         </pre><br>
+</div>
+</body></html>

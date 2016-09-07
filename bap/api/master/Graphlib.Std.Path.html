@@ -84,7 +84,7 @@ Path between two nodes.<br>
 <br>
 path is a walk without repetitions<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'e</code> t</span> = <code class="type">'e <a href="Graphlib.Std.html#TYPEpath">Graphlib.Std.path</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'e</code> t</span> = <code class="type">'e <a href="Graphlib.Std.html#TYPEpath">path</a></code> </pre>
 <div class="info ">
 representation type<br>
 </div>
@@ -98,11 +98,11 @@ representation type<br>
 <code class="code">finish p</code> the last edge of a path <code class="code">p</code><br>
 </div>
 
-<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type">'e <a href="Graphlib.Std.Path.html#TYPEt">t</a> -> 'e <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type">'e <a href="Graphlib.Std.Path.html#TYPEt">t</a> -> 'e <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">edges p</code> a sequence of edges from start to finish<br>
 </div>
 
-<pre><span id="VALedges_rev"><span class="keyword">val</span> edges_rev</span> : <code class="type">'e <a href="Graphlib.Std.Path.html#TYPEt">t</a> -> 'e <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALedges_rev"><span class="keyword">val</span> edges_rev</span> : <code class="type">'e <a href="Graphlib.Std.Path.html#TYPEt">t</a> -> 'e <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">edges_rev p</code> a reversed sequence from finish to start<br>
 </div>
 
@@ -114,7 +114,7 @@ representation type<br>
 amount of edges in a path<br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -> 'a <a href="Graphlib.Std.Path.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Graphlib.Std.Path.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_elt</code> constructs a pretty based on element printer
         <code class="code">pp_elt</code><br>
 </div>

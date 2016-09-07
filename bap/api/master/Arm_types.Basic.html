@@ -66,7 +66,8 @@
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Arm_types.Basic</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Basic types " rel="Section" href="#2_Basictypes">
+<title>BAR: BAP Annotated Reference : Arm_types.Basic</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Arm_types.html" title="Arm_types">Up</a>
@@ -80,42 +81,54 @@
 predicate to drive the disassembler<br>
 </div>
 
+<br>
+<h2 id="2_Basictypes">Basic types </h2><br>
 
-<pre><span id="VALpred_of_sexp"><span class="keyword">val</span> pred_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a></code></pre>
-<pre><span id="VAL__pred_of_sexp__"><span class="keyword">val</span> __pred_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a></code></pre>
-<pre><span id="VALsexp_of_pred"><span class="keyword">val</span> sexp_of_pred</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEinsn"><span class="keyword">type</span> <code class="type">(+'a, +'k)</code> insn</span> </pre>
 <div class="info ">
-<h2 id="2_Basictypes">Basic types </h2><br>
+<code class="code">insn</code> basic instruction.
+<p>
+
+          See <a href="Bap.Std.Disasm_expert.Basic.Insn.html"><code class="code"><span class="constructor">Disasm_expert</span>.<span class="constructor">Basic</span>.<span class="constructor">Insn</span></code></a> module for a more detailed description.<br>
+<code class="code">'a</code>&nbsp;: = <a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a> | <a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>, denotes whether assembly
+          representation is available for the given instruction.<br>
+<code class="code">'k</code>&nbsp;: = <a href="Bap.Std.html#TYPEkind">kind</a> | <a href="Bap.Std.Disasm_expert.Basic.html#TYPEempty">empty</a>, denotes whether semantics
+          kinds are available for the given instruction.<br>
 </div>
 
 
 <pre><span id="TYPEinsns"><span class="keyword">type</span> <code class="type">('a, 'k)</code> insns</span> = <code class="type">(<a href="Bap.Std.html#TYPEmem">mem</a> * ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a> option) list</code> </pre>
+<div class="info ">
+<code class="code">insns</code> is a list of pairs, where each pair consists of a
+          memory region occupied by an instruction, and the instruction
+          itself.<br>
+</div>
 
 
 <pre><span id="TYPEempty"><span class="keyword">type</span> <code class="type"></code>empty</span> </pre>
 <div class="info ">
-set when information is not stored<br>
+witnesses the absence of the information<br>
 </div>
 
 
 <pre><span id="TYPEasm"><span class="keyword">type</span> <code class="type"></code>asm</span> </pre>
 <div class="info ">
-set when assembler information is stored<br>
+witnesses a presence of the assembly string<br>
 </div>
 
 
 <pre><span id="TYPEkinds"><span class="keyword">type</span> <code class="type"></code>kinds</span> </pre>
 <div class="info ">
-set when instruction kind information is stored<br>
+witnesses a presence of the semantic kinds<br>
 </div>
 
 
 <pre><span id="TYPEfull_insn"><span class="keyword">type</span> <code class="type"></code>full_insn</span> = <code class="type">(<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">asm</a>, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">kinds</a>)<br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">insn</a></code> </pre>
+<div class="info ">
+abbreviate an instruction with full information.<br>
+</div>
 
 
-<pre><span id="VALcompare_full_insn"><span class="keyword">val</span> compare_full_insn</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -> int</code></pre>
-<pre><span id="VALsexp_of_full_insn"><span class="keyword">val</span> sexp_of_full_insn</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'k)</code> t</span> </pre>
 <div class="info ">
 Disassembler.
@@ -153,8 +166,11 @@ Disassembler state.
           functions of the <code class="code">run</code> function. It shouldn't be stored
           anywhere.
           First two type variables are bound correspondingly to two
-          variables of the disassmbler <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>k) t</code> type. Third type variable,
-          is for user data type, that can be used to pass extra information<br>
+          variables of the disassmbler <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>k) t</code> type. The last pair
+          of type variables are bounded to input and output types of
+          user functions. They are made different, so that a function
+          can be run in an arbitrary monad. For simple cases, the can
+          be made the same.<br>
 </div>
 
 
@@ -309,4 +325,7 @@ Basic instruction.
 Trie maps over instructions
 </div>
 
-<pre><span id="VALavailable_backends"><span class="keyword">val</span> available_backends</span> : <code class="type">unit -> string list</code></pre></body></html>
+<pre><span id="VALavailable_backends"><span class="keyword">val</span> available_backends</span> : <code class="type">unit -> string list</code></pre><div class="info ">
+enumerates names of available disassembler backends.<br>
+</div>
+</body></html>

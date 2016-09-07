@@ -78,7 +78,34 @@
 </div>
 <h1>Class <a href="type_Bap.Std.Exp.visitor.html">Bap.Std.Exp.visitor</a></h1>
 
-<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> visitor</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><b>Inherits</b><ul>
+<pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> visitor</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+expression visitor.
+<p>
+
+        A class for observing expression trees.
+<p>
+
+        Visits AST providing lots of hooks.
+<p>
+
+        For each AST constructor <code class="code"><span class="constructor">C</span></code> the visitor provides three methods:
+        <code class="code">enter_C</code>, <code class="code">visit_C</code>, <code class="code">leave_C</code>. The default implementation for
+        <code class="code">enter_C</code> and <code class="code">leave_C</code> is to return its argument. The default
+        implementation for <code class="code">visit_C</code> is the following:
+        1. call <code class="code">enter_C</code>
+        2. visit all children
+        3. call <code class="code">leave_C</code>.
+<p>
+
+        It is recommended to override <code class="code">enter_C</code> method if you only need
+        to visit <code class="code"><span class="constructor">C</span></code> constructor without changing a way you're visiting
+        the tree.
+<p>
+
+        See also <code class="code"><span class="constructor">Bil</span>.visitor</code> and <a href="Bap.Std.Term.visitor-c.html"><code class="code"><span class="constructor">Term</span>.visitor</code></a> for visiting a
+        program in AST and Graph representation, respectively.<br>
+</div>
+<b>Inherits</b><ul>
 <li><a href="Bap.Std.Exp.state-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span>.state</code></a></li>
 </ul>
 <hr width="100%">
@@ -110,12 +137,12 @@
 
 <pre><span id="METHODvisit_unop"><span class="keyword">method</span> visit_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
 <pre><span id="METHODleave_unop"><span class="keyword">method</span> leave_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_cast"><span class="keyword">method</span> enter_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODenter_cast"><span class="keyword">method</span> enter_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Cast</span>(kind,size,e)</code><br>
 </div>
 
-<pre><span id="METHODvisit_cast"><span class="keyword">method</span> visit_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_cast"><span class="keyword">method</span> leave_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> <a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_cast"><span class="keyword">method</span> visit_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_cast"><span class="keyword">method</span> leave_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
 <pre><span id="METHODenter_let"><span class="keyword">method</span> enter_let</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> body:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Let</span> (v,t,body)</code><br>
 </div>
@@ -128,12 +155,12 @@
 
 <pre><span id="METHODvisit_ite"><span class="keyword">method</span> visit_ite</span> : <code class="type">cond:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> yes:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> no:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
 <pre><span id="METHODleave_ite"><span class="keyword">method</span> leave_ite</span> : <code class="type">cond:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> yes:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> no:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_extract"><span class="keyword">method</span> enter_extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODenter_extract"><span class="keyword">method</span> enter_extract</span> : <code class="type">hi:int -> lo:int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Extract</span> (hi,lo,e)</code><br>
 </div>
 
-<pre><span id="METHODvisit_extract"><span class="keyword">method</span> visit_extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_extract"><span class="keyword">method</span> leave_extract</span> : <code class="type">hi:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> lo:<a href="Bap.Std.html#TYPEnat1">nat1</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_extract"><span class="keyword">method</span> visit_extract</span> : <code class="type">hi:int -> lo:int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_extract"><span class="keyword">method</span> leave_extract</span> : <code class="type">hi:int -> lo:int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
 <pre><span id="METHODenter_concat"><span class="keyword">method</span> enter_concat</span> : <code class="type"><a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Concat</span>(e1,e2)</code><br>
 </div>

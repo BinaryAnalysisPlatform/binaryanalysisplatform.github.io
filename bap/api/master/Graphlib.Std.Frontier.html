@@ -84,10 +84,10 @@ Frontier maps each node into a possibly empty set of nodes.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEfrontier">Graphlib.Std.frontier</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEfrontier">frontier</a></code> </pre>
 
 
-<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">enum f x</code> enumerates frontier of <code class="code">x</code><br>
 </div>
 
@@ -95,12 +95,12 @@ Frontier maps each node into a possibly empty set of nodes.
 <code class="code">mem f x y</code> is true if <code class="code">y</code> is in a frontier of <code class="code">x</code><br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">to_sequence frontier</code> enumerates all elements of a <code class="code">frontier</code><br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -> 'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Graphlib.Std.Frontier.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_elt</code> instantiates a pretty-printer for a given
-        element. See <a href="Graphlib.Std.Tree.html#VALpp"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Tree</span>.pp</code></a> for more information.<br>
+        element. See <a href="Graphlib.Std.Tree.html#VALpp"><code class="code"><span class="constructor">Tree</span>.pp</code></a> for more information.<br>
 </div>
 </body></html>

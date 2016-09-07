@@ -87,17 +87,18 @@ Context for expression evaluation.
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODcreate_undefined"><span class="keyword">method</span> create_undefined</span> : <code class="type">(< bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) Sequence.t;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_undefined : 'a;<br>          create_word : <a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option;<br>          update : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'b; .. ><br>        as 'b) *<br>       <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> as 'a</code></pre><div class="info ">
+<pre><span id="METHODcreate_undefined"><span class="keyword">method</span> create_undefined</span> : <code class="type">(< bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a>;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_undefined : 'a;<br>          create_word : <a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option;<br>          update : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'b; .. ><br>        as 'b) *<br>       <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> as 'a</code></pre><div class="info ">
 creates a fresh new result, containing an undefined value,
-          and returns it with a modified context.
-<p>
-creates a fresh new result, containing a given word,
           and returns it with a modified context.<br>
 </div>
 
 <pre><span id="METHODcreate_word"><span class="keyword">method</span> create_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code></pre><div class="info ">
-creates a fresh new result, containing a given storage,
+creates a fresh new result, containing a given word,
           and returns it with a modified context.<br>
 </div>
 
-<pre><span id="METHODcreate_storage"><span class="keyword">method</span> create_storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code></pre></body></html>
+<pre><span id="METHODcreate_storage"><span class="keyword">method</span> create_storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code></pre><div class="info ">
+creates a fresh new result, containing a given storage,
+          and returns it with a modified context.<br>
+</div>
+</body></html>

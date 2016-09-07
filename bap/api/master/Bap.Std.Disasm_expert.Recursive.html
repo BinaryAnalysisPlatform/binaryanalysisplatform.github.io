@@ -76,10 +76,10 @@
 <h1>Module <a href="type_Bap.Std.Disasm_expert.Recursive.html">Bap.Std.Disasm_expert.Recursive</a></h1>
 
 <pre><span class="keyword">module</span> Recursive: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Recursive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Recursive Descent Disassembler.
-        This disassembler is built on top of <code class="code"><span class="constructor">Basic</span></code> disassembler. It
-        uses work list algorithm to implement recursive descent
-        disassembly and lazily reconstructs the whole program CFG.
+Recursive Descent Disassembler.  This disassembler is built on
+        top of <code class="code"><span class="constructor">Basic</span></code> disassembler. It uses the work list algorithm
+        to implement recursive descent disassembly and reconstructs
+        the whole program CFG.
 <p>
 
         This is an expert-level module, and it is suggested to use
@@ -92,9 +92,31 @@ Recursive Descent Disassembler.
 
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Failed_to_disasm of <a href="Bap.Std.html#TYPEmem">mem</a><br>       | `Failed_to_lift of<br>           <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> *<br>           Error.t ]</code> </pre>
+<div class="info ">
+<code class="code">error</code> domain of errors.<br>
+</div>
 
 
-<pre><span id="VALsexp_of_error"><span class="keyword">val</span> sexp_of_error</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> Or_error.t</code></pre>
-<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a></code></pre>
-<pre><span id="VALerrors"><span class="keyword">val</span> errors</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> list</code></pre></body></html>
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<code class="code">run ?backend ?brancher ?rooter arch mem</code> disassemble and
+          reconstruct a CFG of the code in <code class="code">mem</code>, assuming
+          architecture <code class="code">arch</code>.<br>
+</div>
+<div class="param_info"><code class="code">backend</code> : a backend name (default is implementation defined).</div>
+<div class="param_info"><code class="code">brancher</code> : what <a href="Bap.Std.Brancher.html">brancher</a> to use
+          (defaults to <a href="Bap.Std.Brancher.html#VALof_bil"><code class="code"><span class="constructor">Brancher</span>.of_bil</code></a>.</div>
+<div class="param_info"><code class="code">rooter</code> : what <a href="Bap.Std.Rooter.html">rooter</a> to use (defaults to
+          <code class="code"><span class="constructor">Rooter</span>.empty</code>).</div>
+
+<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a></code></pre><div class="info ">
+<code class="code">cfg t</code> returns a control flow graph, representing the code
+          in the input region of memory. Note, this is not a subroutine CFG,
+          is is a whole segment graph.<br>
+</div>
+
+<pre><span id="VALerrors"><span class="keyword">val</span> errors</span> : <code class="type"><a href="Bap.Std.Disasm_expert.Recursive.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Disasm_expert.Recursive.html#TYPEerror">error</a> list</code></pre><div class="info ">
+<code class="code">errors disasm</code> returns a list of non-critical errors, that
+          happened during the disassembly (e.g., unknown opcodes and
+          unlifted instructions.<br>
+</div>
+</body></html>

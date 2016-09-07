@@ -77,9 +77,15 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Disasm_expert.Linear.html">Bap.Std.Disasm_expert.Linear</a></h1>
 
-<pre><span class="keyword">module</span> Linear: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Linear.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Linear: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Linear.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+A simple linear sweep disassembler.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">(<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a> option) list</code> </pre>
+<div class="info ">
+output type of a disassembler.<br>
+</div>
 
 
 <pre><span id="VALsweep"><span class="keyword">val</span> sweep</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm_expert.Linear.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">

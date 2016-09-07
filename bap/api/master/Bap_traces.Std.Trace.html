@@ -111,16 +111,6 @@ Trace is a stream of events plus meta data. It can be viewed as
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a></code> </pre>
 
 
-<pre><span id="VALbin_event"><span class="keyword">val</span> bin_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_event"><span class="keyword">val</span> bin_read_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_event__"><span class="keyword">val</span> __bin_read_event__</span> : <code class="type">(int -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_event"><span class="keyword">val</span> bin_reader_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_event"><span class="keyword">val</span> bin_size_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_event"><span class="keyword">val</span> bin_write_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_event"><span class="keyword">val</span> bin_writer_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALevent_of_sexp"><span class="keyword">val</span> event_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a></code></pre>
-<pre><span id="VALsexp_of_event"><span class="keyword">val</span> sexp_of_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VALcompare_event"><span class="keyword">val</span> compare_event</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> -> int</code></pre>
 <pre><span id="TYPEmonitor"><span class="keyword">type</span> <code class="type"></code>monitor</span> </pre>
 
 
@@ -130,15 +120,6 @@ Trace is a stream of events plus meta data. It can be viewed as
 <pre><span id="TYPEtool"><span class="keyword">type</span> <code class="type"></code>tool</span> </pre>
 
 
-<pre><span id="VALbin_tool"><span class="keyword">val</span> bin_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_tool"><span class="keyword">val</span> bin_read_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_tool__"><span class="keyword">val</span> __bin_read_tool__</span> : <code class="type">(int -> <a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_tool"><span class="keyword">val</span> bin_reader_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_tool"><span class="keyword">val</span> bin_size_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_tool"><span class="keyword">val</span> bin_write_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_tool"><span class="keyword">val</span> bin_writer_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALtool_of_sexp"><span class="keyword">val</span> tool_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a></code></pre>
-<pre><span id="VALsexp_of_tool"><span class="keyword">val</span> sexp_of_tool</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEid"><span class="keyword">type</span> <code class="type"></code>id</span> </pre>
 
 
@@ -293,8 +274,6 @@ Trace global unique identifier.<br>
 
 <pre><span class="keyword">module type</span> <a href="Bap_traces.Std.Trace.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap_traces.Std.Trace.P.html">P</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.P.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span id="VALregister_tool"><span class="keyword">val</span> register_tool</span> : <code class="type">(module Bap_traces.Std.Trace.S) -> <a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a></code></pre>
-<pre><span id="VALregister_proto"><span class="keyword">val</span> register_proto</span> : <code class="type">(module Bap_traces.Std.Trace.P) -> <a href="Bap_traces.Std.Trace.html#TYPEproto">proto</a></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Trace.Reader.html">Reader</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Reader interface.
 </div>
@@ -302,8 +281,6 @@ Reader interface.
 <pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type"></code>reader</span> = <code class="type"><a href="Bap_traces.Std.Trace.Reader.html#TYPEt">Reader.t</a></code> </pre>
 
 
-<pre><span id="VALregister_reader"><span class="keyword">val</span> register_reader</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEproto">proto</a> -><br>       (Uri.t -><br>        <a href="Bap_traces.Std.Trace.html#TYPEid">id</a> -><br>        (<a href="Bap_traces.Std.Trace.html#TYPEreader">reader</a>, <a href="Bap_traces.Std.Trace.html#TYPEio_error">io_error</a>)<br>        Result.t) -><br>       unit</code></pre>
-<pre><span id="VALregister_writer"><span class="keyword">val</span> register_writer</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEproto">proto</a> -><br>       (Uri.t -><br>        <a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -><br>        (unit, <a href="Bap_traces.Std.Trace.html#TYPEio_error">io_error</a>) Result.t) -><br>       unit</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.Trace.Id.html">Id</a>: <code class="type"><a href="Regular.html">Regular</a></code><code class="type">  with type t = id</code></pre>
 <pre><span id="TYPEstep"><span class="keyword">type</span> <code class="type"></code>step</span> = <code class="type">[ `Fail | `Make of <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> | `Skip | `Stop ]</code> </pre>
 

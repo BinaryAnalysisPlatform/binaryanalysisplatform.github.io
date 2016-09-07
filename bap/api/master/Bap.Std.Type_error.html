@@ -77,24 +77,35 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Type_error.html">Bap.Std.Type_error</a></h1>
 
-<pre><span class="keyword">module</span> Type_error: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type_error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Type_error: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type_error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+BIL type errors.
+<p>
+
+      A type error will occur during the evaluation of a BIL program
+      that is not well typed.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Type_error.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> -> <a href="Bap.Std.Type_error.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VALbad_mem"><span class="keyword">val</span> bad_mem</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre>
-<pre><span id="VALbad_imm"><span class="keyword">val</span> bad_imm</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre>
-<pre><span id="VALbad_cast"><span class="keyword">val</span> bad_cast</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre>
-<pre><span id="VALbad_type"><span class="keyword">val</span> bad_type</span> : <code class="type">exp:<a href="Bap.Std.html#TYPEtyp">typ</a> -> got:<a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre>
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span id="VALbad_mem"><span class="keyword">val</span> bad_mem</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">bad_mem</code> error occurs when a value of type <code class="code">mem</code> was expected<br>
+</div>
+
+<pre><span id="VALbad_imm"><span class="keyword">val</span> bad_imm</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">bad_imm</code> error occurs when a value of type <code class="code">imm</code> was expected<br>
+</div>
+
+<pre><span id="VALbad_cast"><span class="keyword">val</span> bad_cast</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">bad_cast</code> error occurs when parameters to the cast operation
+        are not valid.<br>
+</div>
+
+<pre><span id="VALbad_type"><span class="keyword">val</span> bad_type</span> : <code class="type">exp:<a href="Bap.Std.html#TYPEtyp">typ</a> -> got:<a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">bad_type ~exp ~got</code> error happens when we expect a value of
+        type <code class="code">exp</code> but got a value of type <code class="code">got</code>.<br>
+</div>
+
+<pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

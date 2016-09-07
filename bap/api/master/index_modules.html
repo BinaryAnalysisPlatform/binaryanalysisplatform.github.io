@@ -167,7 +167,7 @@ Prefix and suffix tries for specified token types.
 <td></td></tr>
 <tr><td><a href="Bap.html">Bap</a> </td>
 <td><div class="info">
-Binary Analysis Platform Library
+BAP Standard Library
 </div>
 </td></tr>
 <tr><td><a href="Bap_abi.html">Bap_abi</a> </td>
@@ -285,7 +285,7 @@ Basic disassembler.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html">Bil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Main BIL module
+Main BIL module.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bili.html">Bili</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -311,12 +311,12 @@ Bitvector -- a type for representing binary values.
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.html">Blk</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Block.
+Basic block.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Block.html">Block</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Access to block attributes.
+Basic block.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Brancher.html">Brancher</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -362,10 +362,15 @@ Extension of the standard bytes module.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Target.CPU.html">CPU</a> [<a href="Bap.Std.Target.html">Bap.Std.Target</a>]</td>
 <td><div class="info">
-<code class="code">lift mem insn</code> lifts provided instruction to BIL.
+access to the CPU variables.
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html">Cache</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+Generic caching.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.Cache.html">Cache</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 Data cache.
 </div>
@@ -383,7 +388,10 @@ A call graph representation.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Graphs.Cfg.html">Cfg</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Control Flow Graph with a machine basic block as a node.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Chunk.html">Chunk</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_ida.Std.Command.html">Command</a> [<a href="Bap_ida.Std.html">Bap_ida.Std</a>]</td>
@@ -415,7 +423,10 @@ Base class for evaluation contexts.
 <tr><td><a href="Bap_c.Std.C.Data.html">Data</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html">Data</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Data types support module.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Def.html">Def</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Definition.
@@ -495,7 +506,10 @@ Ordinal for representing equivalence.
 <tr><td><a href="Bap_traces.Std.Event.html">Event</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Event.html">Event</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Event subsystem.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Exn.html">Exn</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Exp.html">Exp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -505,7 +519,7 @@ Ordinal for representing equivalence.
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.html">Expi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-BIL Interpreter.
+Expression Language Interpreter.
 </div>
 </td></tr>
 <tr><td align="left"><br>F</td></tr>
@@ -595,7 +609,10 @@ Graph library
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Graphs.html">Graphs</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+BAP Common Graphs.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Group.html">Group</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Group is a non-empty set that is a result of partitioning of an
@@ -644,7 +661,10 @@ Information obtained during project reconstruction.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.Input.html">Input</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Input information.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.Input.html">Input</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
 A set of low level input operations.
@@ -672,9 +692,9 @@ Arithmetic raised into <code class="code"><span class="constructor">Or_error</sp
 Arithmetic that raises exceptions.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Data.Io.html">Io</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<tr><td><a href="Regular.Std.Data.S.Io.html">Io</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
-Input/Output functions for the a given datum.
+Input/Output functions for the given datum.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Graphs.Ir.html">Ir</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
@@ -703,7 +723,10 @@ Target of a control flow transfer.
 <tr><td><a href="Graphlib.Std.Graphlib.Labeled.html">Labeled</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Linear.html">Linear</a> [<a href="Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A simple linear sweep disassembler.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Trie.Little.html">Little</a> [<a href="Bap.Std.Bitvector.Trie.html">Bap.Std.Bitvector.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Location.html">Location</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
@@ -714,9 +737,15 @@ A locations of a chunk of memory
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Log.html">Log</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Default Logger.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Event.Log.html">Log</a> [<a href="Bap.Std.Event.html">Bap.Std.Event</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Logging event.
+</div>
+</td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap_byteweight.Make.html">Make</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
 <td></td></tr>
@@ -732,11 +761,26 @@ A locations of a chunk of memory
 <tr><td><a href="Bap_future.Std.Variadic.Make.html">Make</a> [<a href="Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Opaque.Make.html">Make</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
-<td></td></tr>
+<td><div class="info">
+creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Regular.Make.html">Make</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
-<td></td></tr>
+<td><div class="info">
+In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
+        minimum implementation <code class="code"><span class="constructor">M</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Make.html">Make</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Implements <code class="code"><span class="constructor">Data</span>.<span class="constructor">S</span></code> interface from the provided minimal implementation.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Printable.Make.html">Make</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<td><div class="info">
+Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.Make.html">Make</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Create a trie for a given <code class="code"><span class="constructor">Key</span></code>
@@ -771,7 +815,7 @@ lifts iterators to monad <code class="code"><span class="constructor">M</span></
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Mapper.html">Mapper</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.view</code></a> function.
+functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.view</code></a> function.
 </div>
 </td></tr>
 <tr><td><a href="Bap_bml.Mappers.html">Mappers</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
@@ -826,7 +870,10 @@ Graph nodes.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Graphs.Ir.Node.html">Node</a> [<a href="Bap.Std.Graphs.Ir.html">Bap.Std.Graphs.Ir</a>]</td>
-<td></td></tr>
+<td><div class="info">
+IR Graph node.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Insn.Trie.html">Bap.Std.Insn.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Disasm_expert.Basic.Trie.html">Bap.Std.Disasm_expert.Basic.Trie</a>]</td>
@@ -854,7 +901,8 @@ Operand
 </td></tr>
 <tr><td><a href="Regular.Std.Opaque.html">Opaque</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+Opaque type is like regular type, except that we can print or
+      examine it in any way.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Monad.T.Option.html">Option</a> [<a href="Bap.Std.Monad.T.html">Bap.Std.Monad.T</a>]</td>
@@ -876,7 +924,10 @@ Result of a set partitioning.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Project.Pass.html">Pass</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A program analysis pass.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Path.html">Path</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Path between two nodes.
@@ -904,7 +955,10 @@ PHI-node
 <tr><td><a href="Bap.Std.Trie.Array.Prefix.html">Prefix</a> [<a href="Bap.Std.Trie.Array.html">Bap.Std.Trie.Array</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Printable.html">Printable</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Printable data structures.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Program.html">Program</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Program in Intermediate representation.
@@ -912,7 +966,7 @@ Program in Intermediate representation.
 </td></tr>
 <tr><td><a href="Bap.Std.Project.html">Project</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Target of analysis.
+Disassembled program.
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Promise.html">Promise</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
@@ -939,7 +993,10 @@ An promise to provide a value in a future.
 <tr><td><a href="Bap.Std.Memory.Trie.R8.html">R8</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html">Read</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">Read</span></code> typeclass.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Reader.html">Reader</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
 Reader interface.
@@ -965,8 +1022,9 @@ Register.
 </td></tr>
 <tr><td><a href="Regular.Std.Regular.html">Regular</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
-      minimum implementation <code class="code"><span class="constructor">M</span></code>
+Regular types models a general concept of value, i.e., something
+      that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
+      <code class="code">char</code> and other built in types.
 </div>
 </td></tr>
 <tr><td><a href="Regular.html">Regular</a> </td>
@@ -988,7 +1046,7 @@ Result Monad Transformer.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Rooter.html">Rooter</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Rooter find start of functions in the binary.
+Rooter finds starts of functions in the binary.
 </div>
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
@@ -1011,12 +1069,12 @@ A named contiguous part of file with permissions.
 </td></tr>
 <tr><td><a href="Bap.Std.Self.html">Self</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-This module refers to an information bundled with an application.
+A self reflection.
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Seq.html">Seq</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Lazy sequence
+Lazy sequence.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Seq.html">Seq</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1160,7 +1218,10 @@ Reconstructed symbol table.
 <td></td></tr>
 <tr><td align="left"><br>T</td></tr>
 <tr><td><a href="Bap.Std.Monad.T.html">T</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Monad transformers.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html">Table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Table.
@@ -1187,7 +1248,10 @@ Term identifier
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Graphs.Tid.html">Tid</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Graph of Term identifiers.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
@@ -1252,7 +1316,10 @@ The type of a BIL expression.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Type_error.html">Type_error</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+BIL type errors.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.Typeid.html">Typeid</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 Persistent type identifiers.
@@ -1299,6 +1366,11 @@ Variadic arguments.
 Resizable Array.
 </div>
 </td></tr>
+<tr><td><a href="Regular.Std.Data.Versioned.html">Versioned</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+Versioned interfaces
+</div>
+</td></tr>
 <tr><td align="left"><br>W</td></tr>
 <tr><td><a href="Bap.Std.Memory.With_error.html">With_error</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
@@ -1306,7 +1378,11 @@ iterators lifter to the Or_error monad
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm.With_exn.html">With_exn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">With_exn</span>.f</code> is the same as <code class="code">f</code> except that it throws an
+        exception instead of returning <code class="code"><span class="constructor">Error</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Linear.With_exn.html">With_exn</a> [<a href="Bap.Std.Disasm_expert.Linear.html">Bap.Std.Disasm_expert.Linear</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Word.html">Word</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1315,7 +1391,10 @@ Shortcut for bitvectors that represent words
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html">Write</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Write typeclass.
+</div>
+</td></tr>
 <tr><td align="left"><br>X</td></tr>
 <tr><td><a href="X86_cpu.html">X86_cpu</a> </td>
 <td><div class="info">

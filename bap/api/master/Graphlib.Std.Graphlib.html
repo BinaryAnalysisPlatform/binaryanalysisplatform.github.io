@@ -80,7 +80,7 @@ Generic Graph Library<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Graphlib.Std.Graphlib.Graph.html">Graph</a> = <code class="type"><a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a></code></pre>
+<pre><span class="keyword">module type</span> <a href="Graphlib.Std.Graphlib.Graph.html">Graph</a> = <code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type t = 'c and type Edge.label = 'b and type Node.label = 'a) -><br>       ?nodes:'a list -> ?edges:('a * 'a * 'b) list -> unit -> 'c</code></pre><div class="info ">
 <code class="code">create (<span class="keyword">module</span> <span class="constructor">G</span>) ~nodes ~edges ()</code> creates a graph using
         implementation provided by <code class="code"><span class="keyword">module</span> <span class="constructor">G</span></code>.
@@ -115,7 +115,7 @@ Generic Graph Library<br>
        </pre><br>
 </div>
 
-<pre><span id="VALto_dot"><span class="keyword">val</span> to_dot</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?graph_attrs:('c -> <a href="Graphlib.Std.html#TYPEgraph_attr">Graphlib.Std.graph_attr</a> list) -><br>       ?node_attrs:('n -> <a href="Graphlib.Std.html#TYPEnode_attr">Graphlib.Std.node_attr</a> list) -><br>       ?edge_attrs:('e -> <a href="Graphlib.Std.html#TYPEedge_attr">Graphlib.Std.edge_attr</a> list) -><br>       ?string_of_node:('n -> string) -><br>       ?string_of_edge:('e -> string) -><br>       ?channel:out_channel -><br>       ?formatter:Format.formatter -> ?filename:string -> 'c -> unit</code></pre><div class="info ">
+<pre><span id="VALto_dot"><span class="keyword">val</span> to_dot</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?graph_attrs:('c -> <a href="Graphlib.Std.html#TYPEgraph_attr">graph_attr</a> list) -><br>       ?node_attrs:('n -> <a href="Graphlib.Std.html#TYPEnode_attr">node_attr</a> list) -><br>       ?edge_attrs:('e -> <a href="Graphlib.Std.html#TYPEedge_attr">edge_attr</a> list) -><br>       ?string_of_node:('n -> string) -><br>       ?string_of_edge:('e -> string) -><br>       ?channel:out_channel -><br>       ?formatter:Format.formatter -> ?filename:string -> 'c -> unit</code></pre><div class="info ">
 <code class="code">to_dot (<span class="keyword">module</span> <span class="constructor">G</span>) ~filename:<span class="string">"graph.dot"</span> g</code> dumps graph <code class="code">g</code>
         using <code class="code">dot</code> format. This is a customizable version of printing
         function. For most cases it will be enough to use <code class="code"><span class="constructor">G</span>.pp</code> or
@@ -142,7 +142,7 @@ Generic Graph Library<br>
         Note: if <code class="code">string_of_node</code> function is not provided, then graph
         nodes will be labeled with the reverse post order number.</div>
 
-<pre><span id="VALdepth_first_search"><span class="keyword">val</span> depth_first_search</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -><br>       ?start_tree:('n -> 's -> 's) -><br>       ?enter_node:(int -> 'n -> 's -> 's) -><br>       ?leave_node:(int -> 'n -> 's -> 's) -><br>       ?enter_edge:(<a href="Graphlib.Std.html#TYPEedge_kind">Graphlib.Std.edge_kind</a> -> 'e -> 's -> 's) -><br>       ?leave_edge:(<a href="Graphlib.Std.html#TYPEedge_kind">Graphlib.Std.edge_kind</a> -> 'e -> 's -> 's) -> 'c -> init:'s -> 's</code></pre><div class="info ">
+<pre><span id="VALdepth_first_search"><span class="keyword">val</span> depth_first_search</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -><br>       ?start_tree:('n -> 's -> 's) -><br>       ?enter_node:(int -> 'n -> 's -> 's) -><br>       ?leave_node:(int -> 'n -> 's -> 's) -><br>       ?enter_edge:(<a href="Graphlib.Std.html#TYPEedge_kind">edge_kind</a> -> 'e -> 's -> 's) -><br>       ?leave_edge:(<a href="Graphlib.Std.html#TYPEedge_kind">edge_kind</a> -> 'e -> 's -> 's) -> 'c -> init:'s -> 's</code></pre><div class="info ">
 <code class="code">depth_first_search (<span class="keyword">module</span> <span class="constructor">G</span>) ~init g</code>.  It is the most
         important algorithm of the Graphlib. It builds a forest of
         spanning trees of a graph, classifies graph edges and numbers
@@ -156,7 +156,7 @@ Generic Graph Library<br>
 <p>
 
         Although <code class="code">depth_first_search</code> doesn't allow you to drive the
-        walk itself, there're still ways to do this, using <a href="Graphlib.Std.Graphlib.html#VALfiltered"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.filtered</code></a>
+        walk itself, there're still ways to do this, using <a href="Graphlib.Std.Graphlib.html#VALfiltered"><code class="code"><span class="constructor">Graphlib</span>.filtered</code></a>
         function. That allows you to hide nodes or edges from the
         walker, thus effectively erasing them from a graph, without
         even touching it.<br>
@@ -236,25 +236,25 @@ Generic Graph Library<br>
         space). In fact, for small graphs it uses stack, but for large
         graphs dynamically switches to a heap storage.</div>
 
-<pre><span id="VALdepth_first_visit"><span class="keyword">val</span> depth_first_visit</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -> 'c -> init:'s -> ('n, 'e, 's) <a href="Graphlib.Std.dfs_visitor-c.html">Graphlib.Std.dfs_visitor</a> -> 's</code></pre><div class="info ">
+<pre><span id="VALdepth_first_visit"><span class="keyword">val</span> depth_first_visit</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -><br>       ?start:'n -> 'c -> init:'s -> ('n, 'e, 's) <a href="Graphlib.Std.dfs_visitor-c.html">dfs_visitor</a> -> 's</code></pre><div class="info ">
 <code class="code">depth_first_visit (<span class="keyword">module</span> <span class="constructor">G</span>) ~init visitor g</code> allows to
         specify visiting functions using object. That opens space for
         re-usability and using open recursion.<br>
 </div>
 
-<pre><span name="TYPEdfs_identity_visitor"><span class="keyword">class</span> <code class="type">[['n, 'e, 's]]</code> <a href="Graphlib.Std.Graphlib.dfs_identity_visitor-c.html">dfs_identity_visitor</a></span> : <code class="type"></code><code class="type">[['n, 'e, 's]]</code> <code class="type"><a href="Graphlib.Std.dfs_visitor-c.html">Graphlib.Std.dfs_visitor</a></code></pre><div class="info">
+<pre><span name="TYPEdfs_identity_visitor"><span class="keyword">class</span> <code class="type">[['n, 'e, 's]]</code> <a href="Graphlib.Std.Graphlib.dfs_identity_visitor-c.html">dfs_identity_visitor</a></span> : <code class="type"></code><code class="type">[['n, 'e, 's]]</code> <code class="type"><a href="Graphlib.Std.dfs_visitor-c.html">dfs_visitor</a></code></pre><div class="info">
 base class with all methods defaults to nothing.
 </div>
 
-<pre><span id="VALreverse_postorder_traverse"><span class="keyword">val</span> reverse_postorder_traverse</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALreverse_postorder_traverse"><span class="keyword">val</span> reverse_postorder_traverse</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 returns a sequence of nodes in reverse post order.<br>
 </div>
 
-<pre><span id="VALpostorder_traverse"><span class="keyword">val</span> postorder_traverse</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALpostorder_traverse"><span class="keyword">val</span> postorder_traverse</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> ?start:'n -> 'c -> 'n <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 returns a sequence of nodes in post order<br>
 </div>
 
-<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n -> 'n <a href="Graphlib.Std.html#TYPEtree">Graphlib.Std.tree</a></code></pre><div class="info ">
+<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n -> 'n <a href="Graphlib.Std.html#TYPEtree">tree</a></code></pre><div class="info ">
 <code class="code">dominators (<span class="keyword">module</span> <span class="constructor">G</span>) g entry</code> builds a dominators tree for
         a given graph.
 <p>
@@ -331,18 +331,18 @@ returns a sequence of nodes in post order<br>
         for control-flow graphs that are reconstructed from binaries<br>
 </div>
 
-<pre><span id="VALdom_frontier"><span class="keyword">val</span> dom_frontier</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n <a href="Graphlib.Std.html#TYPEtree">Graphlib.Std.tree</a> -> 'n <a href="Graphlib.Std.html#TYPEfrontier">Graphlib.Std.frontier</a></code></pre><div class="info ">
+<pre><span id="VALdom_frontier"><span class="keyword">val</span> dom_frontier</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n <a href="Graphlib.Std.html#TYPEtree">tree</a> -> 'n <a href="Graphlib.Std.html#TYPEfrontier">frontier</a></code></pre><div class="info ">
 <code class="code">dom_frontier (<span class="keyword">module</span> <span class="constructor">G</span>) g dom_tree</code> calculates dominance
         frontiers for all nodes in a graph <code class="code">g</code>.<br>
 </div>
 
-<pre><span id="VALstrong_components"><span class="keyword">val</span> strong_components</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       'c -> 'n <a href="Graphlib.Std.html#TYPEpartition">Graphlib.Std.partition</a></code></pre><div class="info ">
+<pre><span id="VALstrong_components"><span class="keyword">val</span> strong_components</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       'c -> 'n <a href="Graphlib.Std.html#TYPEpartition">partition</a></code></pre><div class="info ">
 <code class="code">strong_components (<span class="keyword">module</span> <span class="constructor">G</span>) g</code> partition graph into strongly
         connected components. The top of each component is a root
         node, i.e., a node that has the least pre-order number.<br>
 </div>
 
-<pre><span id="VALshortest_path"><span class="keyword">val</span> shortest_path</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?weight:('e -> int) -><br>       ?rev:bool -> 'c -> 'n -> 'n -> 'e <a href="Graphlib.Std.html#TYPEpath">Graphlib.Std.path</a> option</code></pre><div class="info ">
+<pre><span id="VALshortest_path"><span class="keyword">val</span> shortest_path</span> : <code class="type">(module Graphlib.Std.Graphlib.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?weight:('e -> int) -><br>       ?rev:bool -> 'c -> 'n -> 'n -> 'e <a href="Graphlib.Std.html#TYPEpath">path</a> option</code></pre><div class="info ">
 <code class="code">shortest_path (<span class="keyword">module</span> <span class="constructor">G</span>) ?weight ?rev g u v</code>
         Find a shortest path from node <code class="code">u</code> to node <code class="code">v</code>.<br>
 </div>
@@ -413,7 +413,7 @@ returns a sequence of nodes in post order<br>
         <code class="code"><span class="constructor">OCamlGraph</span></code> interface.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Filtered.html">Filtered</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Predicate.html">Graphlib.Std.Predicate</a></code><code class="type">  with type node = G.node
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Filtered.html">Filtered</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
                         and type edge = G.edge</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = G.node
              and type edge = G.edge
@@ -422,15 +422,15 @@ returns a sequence of nodes in post order<br>
 functorized version of a <code class="code">filter</code> function.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Mapper.html">Mapper</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Graphlib.Std.Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Graphlib.Std.Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Graphlib.Std.Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Graphlib.Std.Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Mapper.html">Mapper</a> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = N.t
              and type edge = E.t
              and type Node.label = NL.t
              and type Edge.label = EL.t</code></pre><div class="info">
-functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.view</code></a> function.
+functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Graphlib</span>.view</code></a> function.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
       with type node = Node.t
        and type Node.label = Node.t
        and type Edge.label = Edge.t</code></pre><div class="info">
@@ -439,7 +439,7 @@ functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class=
         labeled with <code class="code"><span class="constructor">Edge</span>.t</code>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Labeled.html">Labeled</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Labeled.html">Labeled</a> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.html">Opaque</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type"> 
       with type node = (Node.t, NL.t) labeled
        and type Node.label = (Node.t, NL.t) labeled
        and type Edge.label = EL.t</code></pre>
@@ -466,7 +466,4 @@ numbers from zero to inifinity (<code class="code"><span class="constructor">Sys
 empty string<br>
 </div>
 
-<pre><span id="VALnothing"><span class="keyword">val</span> nothing</span> : <code class="type"><a href="Graphlib.Std.Graphlib.html#TYPEscheme">scheme</a></code></pre>
-<pre><span id="VALby_given_order"><span class="keyword">val</span> by_given_order</span> : <code class="type"><a href="Graphlib.Std.Graphlib.html#TYPEscheme">scheme</a> -><br>       ('a -> 'a -> int) -><br>       'a Sequence.t -> 'a <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">symbolizer</a></code></pre>
-<pre><span id="VALby_natural_order"><span class="keyword">val</span> by_natural_order</span> : <code class="type"><a href="Graphlib.Std.Graphlib.html#TYPEscheme">scheme</a> -><br>       ('a -> 'a -> int) -><br>       'a Sequence.t -> 'a <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">symbolizer</a></code></pre>
 <pre><span class="keyword">module</span> <a href="Graphlib.Std.Graphlib.Dot.html">Dot</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Graphlib.Dot.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

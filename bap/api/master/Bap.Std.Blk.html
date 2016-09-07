@@ -78,31 +78,32 @@
 <h1>Module <a href="type_Bap.Std.Blk.html">Bap.Std.Blk</a></h1>
 
 <pre><span class="keyword">module</span> Blk: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Blk.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Block.<br>
-</div>
-<hr width="100%">
-<br>
-Logically block consists of a set of <a href="Bap.Std.Phi.html">phi nodes</a>, a
-        sequence of <a href="Bap.Std.Def.html">definitions</a> and a sequence of out-coming
-        edges, aka <a href="Bap.Std.Jmp.html">jumps</a>. A colloquial term for this three
-        entities is a <em>block element</em>.
+Basic block.
 <p>
 
-        The order of Phi-nodes can be specified in any order, as
-        they execute simultaneously . Definitions are stored in the
-        order of execution. Jumps are specified in the order in which
-        they should be taken, i.e., jmp_n is taken only after
-        jmp_n-1 and if and only if the latter was not taken. For
-        example, if block ends with N jumps, where each n-th jump
-        have destination named t_n and condition c_n then it
-        would have the semantics as per the following OCaml program:
+      Logically block consists of a set of <a href="Bap.Std.Phi.html">phi nodes</a>, a
+      sequence of <a href="Bap.Std.Def.html">definitions</a> and a sequence of out-coming
+      edges, aka <a href="Bap.Std.Jmp.html">jumps</a>. A colloquial term for this three
+      entities is a <em>block element</em>.
 <p>
 
-        <pre class="verbatim">            if c_1 then jump t_1 else
+      The order of Phi-nodes can be specified in any order, as
+      they execute simultaneously . Definitions are stored in the
+      order of execution. Jumps are specified in the order in which
+      they should be taken, i.e., jmp_n is taken only after
+      jmp_n-1 and if and only if the latter was not taken. For
+      example, if block ends with N jumps, where each n-th jump
+      have destination named t_n and condition c_n then it
+      would have the semantics as per the following OCaml program:
+<p>
+
+      <pre class="verbatim">            if c_1 then jump t_1 else
             if c_2 then jump t_2 else
             if c_N then jump t_N else
             stop
-         </pre><br>
+     </pre><br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
 
@@ -186,23 +187,27 @@ Union type for all element types<br>
 <pre><span id="VALmap_exp"><span class="keyword">val</span> map_exp</span> : <code class="type">?skip:[ `def | `jmp | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_exp b ~f</code> applies function <code class="code">f</code> for each expression in
         block <code class="code">b</code>. By default function <code class="code">f</code> will be applied to all
-        values of type <code class="code">exp</code>, including right hand sides of
-        phi-nodes, definitions, jump conditions and targets. <code class="code">skip</code>
-        parameter allows to skip expressions from a given term kind.<br>
+        values of type <code class="code">exp</code>, including right hand sides of phi-nodes,
+        definitions, jump conditions and targets.  If <code class="code">skip</code> parameter
+        is specified, then terms of corresponding kind will be
+        skipped, i.e., function <code class="code">f</code> will not be applied to them.<br>
 </div>
 
 <pre><span id="VALsubstitute"><span class="keyword">val</span> substitute</span> : <code class="type">?skip:[ `def | `jmp | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">substitute ?skip blk x y</code> substitutes each occurrence of
-        expression <code class="code">x</code> with expression <code class="code">y</code> in block <code class="code">blk</code>. See
-        <a href="Bap.Std.Blk.html#VALmap_exp"><code class="code"><span class="constructor">Blk</span>.map_exp</code></a> for <code class="code">skip</code> parameter. The substitution is performed
-        deeply.<br>
+        expression <code class="code">x</code> with expression <code class="code">y</code> in block <code class="code">blk</code>. The
+        substitution is performed deeply. If <code class="code">skip</code> parameter is
+        specified, then terms of corresponding kind will be left
+        untouched.<br>
 </div>
 
 <pre><span id="VALmap_lhs"><span class="keyword">val</span> map_lhs</span> : <code class="type">?skip:[ `def | `phi ] list -><br>       <a href="Bap.Std.Blk.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEvar">var</a>) -> <a href="Bap.Std.Blk.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map_lhs blk ~f</code> applies <code class="code">f</code> to every left hand side variable
-        in def and phi subterms of <code class="code">blk</code>. Parameter <code class="code">skip</code> allows to
-        ignore particular terms.  E.g.,
-        <code class="code">map_lhs ~skip:[<span class="keywordsign">`</span>phi] ~f:(substitute vars)</code>.<br>
+        in def and phi subterms of <code class="code">blk</code>. If <code class="code">skip</code> parameter is
+        specified, then terms of corresponding kind will be left
+        untouched. E.g., <code class="code">map_lhs ~skip:[<span class="keywordsign">`</span>phi] ~f:(substitute vars)</code>
+        will perform a substitution only on definitions (and will
+        ignore phi-nodes)<br>
 </div>
 
 <pre><span id="VALfind_var"><span class="keyword">val</span> find_var</span> : <code class="type"><a href="Bap.Std.Blk.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEvar">var</a> -><br>       [ `Def of <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> | `Phi of <a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> ]<br>       option</code></pre><div class="info ">
@@ -238,5 +243,5 @@ Union type for all element types<br>
 Builder interface.
 </div>
 
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

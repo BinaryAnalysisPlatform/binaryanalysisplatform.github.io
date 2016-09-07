@@ -98,7 +98,10 @@ returns all known taints.
 <tr><td><a href="Bap_c_size.base-c.html#METHODbasic">basic</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html#METHODbindings">bindings</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">self<span class="keywordsign">#</span>bindings</code> returns a current list of bindings.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODbits">bits</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td><div class="info">
 returns a size of the data type representation if type
@@ -113,7 +116,11 @@ returns a size of the data type representation if type
 <tr><td><a href="Bap_c_size.base-c.html#METHODcomplex">complex</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_storage">create_storage</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+creates a fresh new result, containing a given storage,
+          and returns it with a modified context.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_undefined">create_undefined</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
 <td><div class="info">
 creates a fresh new result, containing an undefined value,
@@ -122,7 +129,7 @@ creates a fresh new result, containing an undefined value,
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_word">create_word</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
 <td><div class="info">
-creates a fresh new result, containing a given storage,
+creates a fresh new result, containing a given word,
           and returns it with a modified context.
 </div>
 </td></tr>
@@ -363,10 +370,7 @@ ignore arguments and set context#next to None
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_exp">eval_exp</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
-<td><div class="info">
-Evaluation methods
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Expi.t-c.html#METHODeval_extract">eval_extract</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.t-c.html#METHODeval_goto">eval_goto</a> [<a href="Bap.Std.Biri.t-c.html">Bap.Std.Biri.t</a>]</td>
@@ -567,7 +571,11 @@ a variable is looked up in a context
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">self<span class="keywordsign">#</span>lokup var</code> evaluate variable <code class="code">var</code> to a value that was
+          previously bound to it.
+</div>
+</td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODmain">main</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
 <td></td></tr>
@@ -804,7 +812,10 @@ a variable is bind to a value.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html#METHODupdate">update</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">self<span class="keywordsign">#</span>update var x</code> bind variable <code class="code">var</code> to value <code class="code">x</code>.
+</div>
+</td></tr>
 <tr><td align="left"><br>V</td></tr>
 <tr><td><a href="Bap.Std.Term.visitor-c.html#METHODvisit_arg">visit_arg</a> [<a href="Bap.Std.Term.visitor-c.html">Bap.Std.Term.visitor</a>]</td>
 <td></td></tr>

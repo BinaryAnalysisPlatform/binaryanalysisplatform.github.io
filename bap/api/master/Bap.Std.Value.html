@@ -200,10 +200,7 @@ Universal Values.
 <p>
 
       Underneath the hood, the values of type <code class="code">value</code> is just a pair
-      of an original value and runtime type information. For
-      performance reasons the RTTI is usually just an integer. But
-      for serialization we use persistent UUID for storing RTTI type.
-      To get it, one can use <code class="code"><span class="constructor">Value</span>.typeid</code> function.
+      of an original value and runtime type information.
 <p>
 
       The comparison of two values of type <code class="code">value</code> is actually a
@@ -213,22 +210,18 @@ Universal Values.
       1. If both values has the same type, then use <code class="code">compare</code>
          function, that was provided for this type.
       2. If values are of different types, that are known to
-         the type system, then compare them using RTTI
+         the type system, then compare them using RTTI, and ignore the
+         value.
       3. If at least one of the values is of the unknown type,
          (i.e., type wasn't registered in the type system), then
          use polymorphic compare on a tuple of UUID and binary
          representation of the values.
 <p>
 
-      This algorithm implies that ordering may change a little bit
-      between different compiler versions and different programs, as
-      RTTI is generated from scratch at every program start. If it
-      really matters (usually it doesn't), then you should use
-      <code class="code">typeid</code> as key. In that case the ordering would be stable
-      across space time. In any case it is not recommended to use data
-      structures where <code class="code">value</code>s are used as keys. For this case, we
-      provide <a href="Bap.Std.Dict.html">Dict</a> data structure, that is a heterogeneous
-      dictionary of values.
+      The rules above guarantee, that values with different RTTI id
+      are never equal. It also guarantees that the ordering will be
+      preserved between different builds of a program, and even
+      between different versions of the compiler.
 <p>
 
       <h2 id="2_Threadsafety">Thread safety</h2>
@@ -247,16 +240,6 @@ a universal value<br>
 </div>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Value.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> <a href="Bap.Std.Value.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Value.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEtag"><span class="keyword">type</span> <code class="type">'a</code> tag</span> </pre>
 <div class="info ">
 Tag constructor of type <code class="code"><span class="keywordsign">'</span>a</code><br>
@@ -288,16 +271,6 @@ persistent type identifier<br>
 </div>
 
 
-<pre><span id="VALbin_typeid"><span class="keyword">val</span> bin_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_typeid"><span class="keyword">val</span> bin_read_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_typeid__"><span class="keyword">val</span> __bin_read_typeid__</span> : <code class="type">(int -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_typeid"><span class="keyword">val</span> bin_reader_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_typeid"><span class="keyword">val</span> bin_size_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_typeid"><span class="keyword">val</span> bin_write_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_typeid"><span class="keyword">val</span> bin_writer_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_typeid"><span class="keyword">val</span> compare_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> int</code></pre>
-<pre><span id="VALtypeid_of_sexp"><span class="keyword">val</span> typeid_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Value.html#TYPEtypeid">typeid</a></code></pre>
-<pre><span id="VALsexp_of_typeid"><span class="keyword">val</span> sexp_of_typeid</span> : <code class="type"><a href="Bap.Std.Value.html#TYPEtypeid">typeid</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Value.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create cons x</code> creates a value using constructor <code class="code">cons</code> and
         argument <code class="code">x</code><br>
@@ -340,7 +313,7 @@ Runtime parallel match.
 Persistent type identifiers.
 </div>
 
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span class="keyword">include</span> Regular.S</pre>
 <div class="info ">
 Although values of type <code class="code">value</code> implements regular interface
         it is recommended to used <code class="code">dict</code> data structure instead of

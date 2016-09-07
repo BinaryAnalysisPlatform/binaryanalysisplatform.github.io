@@ -95,10 +95,10 @@ Tree is a particular subtype of a graph for which
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEtree">Graphlib.Std.tree</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEtree">tree</a></code> </pre>
 
 
-<pre><span id="VALchildren"><span class="keyword">val</span> children</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALchildren"><span class="keyword">val</span> children</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">children tree x</code> returns all immediate successors of node
         <code class="code">x</code>. For example, children of node <code class="code"><span class="constructor">A</span></code> is a sequence of
         <code class="code"><span class="constructor">B</span>,<span class="constructor">C</span>,<span class="constructor">D</span></code>. But node <code class="code"><span class="constructor">B</span></code> doesn't have any children at all.<br>
@@ -110,7 +110,7 @@ Tree is a particular subtype of a graph for which
         of <code class="code"><span class="constructor">F</span></code> is <code class="code"><span class="constructor">C</span></code>. And <code class="code"><span class="constructor">A</span></code> doesn't have a parent.<br>
 </div>
 
-<pre><span id="VALancestors"><span class="keyword">val</span> ancestors</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALancestors"><span class="keyword">val</span> ancestors</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">ancestors tree n</code> returns a sequence of all ancestors of node
         <code class="code">n</code>. An ancestor of a node is either a parent or an ancestor of
         the parent. For example, ancestors of <code class="code"><span class="constructor">G</span></code> are <code class="code"><span class="constructor">C</span></code> and <code class="code"><span class="constructor">D</span></code>. The
@@ -118,7 +118,7 @@ Tree is a particular subtype of a graph for which
         ancestors.<br>
 </div>
 
-<pre><span id="VALdescendants"><span class="keyword">val</span> descendants</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALdescendants"><span class="keyword">val</span> descendants</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">descendants tree n</code> returns a set of all descendants of a given
         node <code class="code">n</code>. Descendant is either a child or a descendant of a
         child. For example, all nodes in the example <code class="code">tree</code> (except
@@ -141,12 +141,12 @@ Tree is a particular subtype of a graph for which
         are descendants of a <code class="code">parent</code> node.<br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">to_sequence tree</code> enumerates nodes of a <code class="code">tree</code> in an
         unspecified order.<br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -> 'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_elt</code> creates a pretty-printer for a node, based on
         element's pretty-printer <code class="code">pp_elt</code>. The tree is printed in a dot
         format, for the ease of visualization. Example:

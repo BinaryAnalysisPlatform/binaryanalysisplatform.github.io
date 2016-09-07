@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Regular.Std.Printable.html">
+<link rel="previous" href="Regular.Std.Data.html">
 <link rel="next" href="Regular.Std.Opaque.html">
 <link rel="Up" href="Regular.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -71,47 +71,25 @@
 <link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Regular.Std.Regular</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Regular.Std.Printable.html" title="Regular.Std.Printable">Previous</a>
+<div class="navbar"><a class="pre" href="Regular.Std.Data.html" title="Regular.Std.Data">Previous</a>
 &nbsp;<a class="up" href="Regular.Std.html" title="Regular.Std">Up</a>
 &nbsp;<a class="post" href="Regular.Std.Opaque.html" title="Regular.Std.Opaque">Next</a>
 </div>
 <h1>Module type <a href="type_Regular.Std.Regular.html">Regular.Std.Regular</a></h1>
 
-<pre><span class="keyword">module type</span> Regular = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-Regular types models a general concept of value, i.e., something
-      that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
-      <code class="code">char</code> and other built in types. So that it can be compared, used
-      in maps, sets, hashtables, printer, etc.
-<p>
-
-      Note: this signature is pretty similar to core's <code class="code"><span class="constructor">Identifiable</span></code>,
-      but doesn't require <code class="code">of_string</code> function, that is usually much
-      harder to implement in comparison with <code class="code">to_string</code> function. Also,
-      instead of <code class="code">to_string</code> it requires <code class="code">pp</code> function that can be
-      implemented much more efficiently and elegantly. From the <code class="code">pp</code>
-      function the whole plethora of printing functions are derived:
-      <code class="code">str</code>, <code class="code">pps</code>, <code class="code">ppo</code>.<br>
+<pre><span class="keyword">module type</span> Regular = <code class="type"><a href="Regular.Std.Regular.S.html">Regular.S</a></code></pre><div class="info modtype top">
+module type alias for <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code><br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Regular.Std.Regular.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Regular.Std.Regular.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Regular.Std.Regular.html#TYPEt">t</a> -> <a href="Regular.Std.Regular.html#TYPEt">t</a> -> int</code></pre>
-<pre><span class="keyword">include</span> <a href="Regular.Std.Printable.html">Regular.Std.Printable</a></pre>
+<pre><span class="keyword">include</span> <a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a></pre>
 
 <pre><span class="keyword">include</span> Comparable.S_binable</pre>
 
 <pre><span class="keyword">include</span> Hashable.S_binable</pre>
 
-<pre><span class="keyword">include</span> <a href="Regular.Std.Data.html">Regular.Std.Data</a></pre>
+<pre><span class="keyword">include</span> <a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a></pre>
 </body></html>

@@ -91,11 +91,12 @@ symbol table<br>
 </div>
 
 
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEfn"><span class="keyword">type</span> <code class="type"></code>fn</span> = <code class="type">string * <a href="Bap.Std.html#TYPEblock">block</a> * <a href="Bap.Std.html#TYPEcfg">cfg</a></code> </pre>
+<div class="info ">
+<code class="code">(name,entry,graph)</code> a simple representation of a function<br>
+</div>
 
 
-<pre><span id="VALsexp_of_fn"><span class="keyword">val</span> sexp_of_fn</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a></code></pre><div class="info ">
 empty symbol table<br>
 </div>
@@ -137,4 +138,8 @@ empty symbol table<br>
 <code class="code">to_sequence symtab</code> returns a sequence of functions<br>
 </div>
 
-<pre><span id="VALspan"><span class="keyword">val</span> span</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> unit <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre></body></html>
+<pre><span id="VALspan"><span class="keyword">val</span> span</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> unit <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre><div class="info ">
+<code class="code">span fn</code> returns a memory map of a region occupied by a
+        function <code class="code">fn</code><br>
+</div>
+</body></html>

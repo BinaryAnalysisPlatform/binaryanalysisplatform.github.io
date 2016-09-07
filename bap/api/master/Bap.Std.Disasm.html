@@ -80,9 +80,7 @@
 
 <pre><span class="keyword">module</span> Disasm: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Disassembled program.
-<p>
-
-      This module provides an interface for values of type <code class="code">disasm</code>.<br>
+      An interface for diassembling things.<br>
 </div>
 <hr width="100%">
 
@@ -119,7 +117,11 @@ Disassembled program.
         disassembles it<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.With_exn.html">With_exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.With_exn.html">With_exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">With_exn</span>.f</code> is the same as <code class="code">f</code> except that it throws an
+        exception instead of returning <code class="code"><span class="constructor">Error</span></code>.
+</div>
+
 <pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">merge d1 d2</code> is a union of control flow graphs and erros of
         the two disassemblers.<br>
@@ -138,6 +140,6 @@ A whole program CFG.<br>
 <h2 id="2_Tags">Tags</h2><br>
 
 <pre><span id="VALinsn"><span class="keyword">val</span> insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
-machine instruction<br>
+machine instruction.<br>
 </div>
 </body></html>

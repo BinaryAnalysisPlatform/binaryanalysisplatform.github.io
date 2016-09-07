@@ -68,7 +68,8 @@
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Bitvector.Int_exn</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="A common set of infix operators" rel="Section" href="#3_Acommonsetofinfixoperators">
+<title>BAR: BAP Annotated Reference : Bap.Std.Bitvector.Int_exn</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Bitvector.Int_err.html" title="Bap.Std.Bitvector.Int_err">Previous</a>
@@ -90,36 +91,124 @@ Arithmetic that raises exceptions.
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALzero"><span class="keyword">val</span> zero</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALmodulo"><span class="keyword">val</span> modulo</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlnot"><span class="keyword">val</span> lnot</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlogand"><span class="keyword">val</span> logand</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALlshift"><span class="keyword">val</span> lshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALrshift"><span class="keyword">val</span> rshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VALarshift"><span class="keyword">val</span> arshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(~-)"><span class="keyword">val</span> (~-)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
-A common set of infix operators<br>
+<pre><span id="VALzero"><span class="keyword">val</span> zero</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+element neutral to the addition<br>
 </div>
 
-<pre><span id="VAL(+)"><span class="keyword">val</span> (+)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(-)"><span class="keyword">val</span> (-)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL( * )"><span class="keyword">val</span> ( * )</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(/)"><span class="keyword">val</span> (/)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(mod)"><span class="keyword">val</span> (mod)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(land)"><span class="keyword">val</span> (land)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(lor)"><span class="keyword">val</span> (lor)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(lxor)"><span class="keyword">val</span> (lxor)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(lsl)"><span class="keyword">val</span> (lsl)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(lsr)"><span class="keyword">val</span> (lsr)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL(asr)"><span class="keyword">val</span> (asr)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre></body></html>
+<pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+element neutral to the multiplication<br>
+</div>
+
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">succ n</code> successor of <code class="code">n</code><br>
+</div>
+
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">pred n</code> is a predecessor of <code class="code">n</code><br>
+</div>
+
+<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">abs x</code> absolute value of <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">neg x</code> = <code class="code">-x</code><br>
+</div>
+
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add x y</code> is <code class="code">x + y</code><br>
+</div>
+
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">sub x y</code> is <code class="code">x - y</code><br>
+</div>
+
+<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">mul x y</code> is <code class="code">x * y</code><br>
+</div>
+
+<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">div x y</code> is <code class="code">x / y</code><br>
+</div>
+
+<pre><span id="VALmodulo"><span class="keyword">val</span> modulo</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">modulo  x y</code> is <code class="code">x <span class="keyword">mod</span> y</code><br>
+</div>
+
+<pre><span id="VALlnot"><span class="keyword">val</span> lnot</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">lnot x</code> is a logical negation of <code class="code">x</code> (1-complement)
+<p>
+<code class="code">logand x y</code> is a conjunction of <code class="code">x</code> and <code class="code">y</code><br>
+</div>
+
+<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">logor x y</code> is a disjunction of <code class="code">x</code> and <code class="code">y</code><br>
+</div>
+
+<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">logxor x y</code> is exclusive or between <code class="code">x</code> and <code class="code">y</code><br>
+</div>
+
+<pre><span id="VALlshift"><span class="keyword">val</span> lshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">lshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits left<br>
+</div>
+
+<pre><span id="VALrshift"><span class="keyword">val</span> rshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">rshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right<br>
+</div>
+
+<pre><span id="VALarshift"><span class="keyword">val</span> arshift</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">arshift x y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right and fill with
+        the sign bit.<br>
+</div>
+<br>
+<h3 id="3_Acommonsetofinfixoperators">A common set of infix operators</h3><br>
+
+<pre><span id="VAL(~-)"><span class="keyword">val</span> (~-)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code"><span class="keywordsign">~-</span>x = neg x</code><br>
+</div>
+
+<pre><span id="VAL(+)"><span class="keyword">val</span> (+)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x + y = add x y</code><br>
+</div>
+
+<pre><span id="VAL(-)"><span class="keyword">val</span> (-)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x - y = sub x y</code><br>
+</div>
+
+<pre><span id="VAL( * )"><span class="keyword">val</span> ( * )</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x * y = mul x y</code><br>
+</div>
+
+<pre><span id="VAL(/)"><span class="keyword">val</span> (/)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x / y = div x y</code><br>
+</div>
+
+<pre><span id="VAL(mod)"><span class="keyword">val</span> (mod)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">mod</span> y = modulo x y</code><br>
+</div>
+
+<pre><span id="VAL(land)"><span class="keyword">val</span> (land)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">land</span> y = logand x y</code><br>
+</div>
+
+<pre><span id="VAL(lor)"><span class="keyword">val</span> (lor)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">lor</span> y = logor x y</code><br>
+</div>
+
+<pre><span id="VAL(lxor)"><span class="keyword">val</span> (lxor)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code"><span class="keyword">lxor</span> x y = logxor x y</code><br>
+</div>
+
+<pre><span id="VAL(lsl)"><span class="keyword">val</span> (lsl)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">lsl</span> y = lshift x y</code><br>
+</div>
+
+<pre><span id="VAL(lsr)"><span class="keyword">val</span> (lsr)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">lsr</span> y</code> = rshift x y<br>
+</div>
+
+<pre><span id="VAL(asr)"><span class="keyword">val</span> (asr)</span> : <code class="type"><a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">x <span class="keyword">asr</span> y = arshift x y</code><br>
+</div>
+</body></html>

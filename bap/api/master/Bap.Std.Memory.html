@@ -87,9 +87,6 @@ Memory region<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a></code> </pre>
 
 
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?pos:int -><br>       ?len:int -><br>       <a href="Bap.Std.html#TYPEendian">endian</a> -><br>       <a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       Bigstring.t -> <a href="Bap.Std.Memory.html#TYPEt">t</a> Or_error.t</code></pre>
-<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> -><br>       <a href="Bap.Std.html#TYPEaddr">addr</a> -> string -> <a href="Bap.Std.Memory.html#TYPEt">t</a> Or_error.t</code></pre>
 <pre><span id="VALview"><span class="keyword">val</span> view</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       ?from:<a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       ?words:int -> <a href="Bap.Std.Memory.html#TYPEt">t</a> -> <a href="Bap.Std.Memory.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
 <code class="code">view word_size ~from ~words mem</code> returns a new memory
         that represents the specified region of memory <code class="code">mem</code>. <code class="code">copy</code>
@@ -123,7 +120,6 @@ Memory region<br>
 <code class="code">last_byte m</code> returns last byte of <code class="code">m</code> as a memory<br>
 </div>
 
-<pre><span id="VALlast_byte"><span class="keyword">val</span> last_byte</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> <a href="Bap.Std.Memory.html#TYPEt">t</a></code></pre>
 <pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
 returns the order of bytes in a word<br>
 </div>
@@ -145,7 +141,6 @@ returns the order of bytes in a word<br>
 <code class="code">{max,min}_addr</code> function specify upper and lower bounds of the memory<br>
 </div>
 
-<pre><span id="VALmin_addr"><span class="keyword">val</span> min_addr</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre>
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> int</code></pre><div class="info ">
 <code class="code">length</code> returns the length of the memory in bytes<br>
 </div>
@@ -164,7 +159,7 @@ A set of low level input operations.
 <br>
 <h2 id="2_Printingandoutputing">Printing and outputing</h2><br>
 
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 
 <pre><span id="VALhexdump"><span class="keyword">val</span> hexdump</span> : <code class="type"><a href="Bap.Std.Memory.html#TYPEt">t</a> -> string</code></pre><div class="info ">
 <code class="code">hexdump t out</code> outputs hexdump (as per <code class="code">hexdump -<span class="constructor">C</span></code>) of the

@@ -121,16 +121,6 @@ Different forms of casting<br>
 </div>
 
 
-<pre><span id="VALbin_cast"><span class="keyword">val</span> bin_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_cast"><span class="keyword">val</span> bin_read_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_cast__"><span class="keyword">val</span> __bin_read_cast__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_cast"><span class="keyword">val</span> bin_reader_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_cast"><span class="keyword">val</span> bin_size_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_cast"><span class="keyword">val</span> bin_write_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_cast"><span class="keyword">val</span> bin_writer_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_cast"><span class="keyword">val</span> compare_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> -> <a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> -> int</code></pre>
-<pre><span id="VALcast_of_sexp"><span class="keyword">val</span> cast_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a></code></pre>
-<pre><span id="VALsexp_of_cast"><span class="keyword">val</span> sexp_of_cast</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -325,16 +315,6 @@ Binary operations implemented in the BIL<br>
 </div>
 
 
-<pre><span id="VALbin_binop"><span class="keyword">val</span> bin_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_binop"><span class="keyword">val</span> bin_read_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_binop__"><span class="keyword">val</span> __bin_read_binop__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_binop"><span class="keyword">val</span> bin_reader_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_binop"><span class="keyword">val</span> bin_size_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_binop"><span class="keyword">val</span> bin_write_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_binop"><span class="keyword">val</span> bin_writer_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_binop"><span class="keyword">val</span> compare_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> -> <a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> -> int</code></pre>
-<pre><span id="VALbinop_of_sexp"><span class="keyword">val</span> binop_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a></code></pre>
-<pre><span id="VALsexp_of_binop"><span class="keyword">val</span> sexp_of_binop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEbinop">binop</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -342,7 +322,7 @@ Binary operations implemented in the BIL<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTunop.NEG"><span class="constructor">NEG</span></span></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-Negate. (2's complement)<br>
+Negate.   (2's complement)<br>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -359,16 +339,6 @@ Unary operations implemented in the IR<br>
 </div>
 
 
-<pre><span id="VALbin_unop"><span class="keyword">val</span> bin_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_unop"><span class="keyword">val</span> bin_read_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_unop__"><span class="keyword">val</span> __bin_read_unop__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_unop"><span class="keyword">val</span> bin_reader_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_unop"><span class="keyword">val</span> bin_size_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_unop"><span class="keyword">val</span> bin_write_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_unop"><span class="keyword">val</span> bin_writer_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_unop"><span class="keyword">val</span> compare_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> -> <a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> -> int</code></pre>
-<pre><span id="VALunop_of_sexp"><span class="keyword">val</span> unop_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a></code></pre>
-<pre><span id="VALsexp_of_unop"><span class="keyword">val</span> sexp_of_unop</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEunop">unop</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -434,7 +404,7 @@ immediate value<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Cast"><span class="constructor">Cast</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> * <a href="Bap.Std.html#TYPEnat1">nat1</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
+<code><span id="TYPEELTexp.Cast"><span class="constructor">Cast</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEcast">cast</a> * int * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 casting<br>
 </div>
@@ -474,7 +444,7 @@ if-then-else expression<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Extract"><span class="constructor">Extract</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEnat1">nat1</a> * <a href="Bap.Std.html#TYPEnat1">nat1</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
+<code><span id="TYPEELTexp.Extract"><span class="constructor">Extract</span></span> <span class="keyword">of</span> <code class="type">int * int * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 extract portion of word<br>
 </div>
@@ -493,16 +463,6 @@ BIL expression variants<br>
 </div>
 
 
-<pre><span id="VALbin_exp"><span class="keyword">val</span> bin_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_exp"><span class="keyword">val</span> bin_read_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_exp__"><span class="keyword">val</span> __bin_read_exp__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_exp"><span class="keyword">val</span> bin_reader_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_exp"><span class="keyword">val</span> bin_size_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_exp"><span class="keyword">val</span> bin_write_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_exp"><span class="keyword">val</span> bin_writer_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_exp"><span class="keyword">val</span> compare_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> -> <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> -> int</code></pre>
-<pre><span id="VALexp_of_sexp"><span class="keyword">val</span> exp_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></pre>
-<pre><span id="VALsexp_of_exp"><span class="keyword">val</span> sexp_of_exp</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> -> Sexplib.Sexp.t</code></pre>
 <pre><code><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -563,14 +523,4 @@ if/then/else statement<br>
 </tr></table>
 
 
-
-<pre><span id="VALbin_stmt"><span class="keyword">val</span> bin_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_stmt"><span class="keyword">val</span> bin_read_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_stmt__"><span class="keyword">val</span> __bin_read_stmt__</span> : <code class="type">(int -> <a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_stmt"><span class="keyword">val</span> bin_reader_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_stmt"><span class="keyword">val</span> bin_size_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_stmt"><span class="keyword">val</span> bin_write_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_stmt"><span class="keyword">val</span> bin_writer_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_stmt"><span class="keyword">val</span> compare_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> -> <a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> -> int</code></pre>
-<pre><span id="VALstmt_of_sexp"><span class="keyword">val</span> stmt_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a></code></pre>
-<pre><span id="VALsexp_of_stmt"><span class="keyword">val</span> sexp_of_stmt</span> : <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEstmt">stmt</a> -> Sexplib.Sexp.t</code></pre></body></html>
+</body></html>

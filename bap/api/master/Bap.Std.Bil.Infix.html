@@ -68,7 +68,11 @@
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Misc operations" rel="Section" href="#2_Miscoperations">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Arithmetic operations" rel="Section" href="#2_Arithmeticoperations">
+<link title="Bit operations" rel="Section" href="#2_Bitoperations">
+<link title="Equality tests" rel="Section" href="#2_Equalitytests">
+<link title="Misc operations" rel="Section" href="#2_Miscoperations">
+<link title="Signed comparison" rel="Subsection" href="#3_Signedcomparison">
 <title>BAR: BAP Annotated Reference : Bap.Std.Bil.Infix</title>
 </head>
 <body>
@@ -83,43 +87,117 @@ Infix operators<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VAL(:=)"><span class="keyword">val</span> (:=)</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt</code></pre>
-<pre><span id="VAL(+)"><span class="keyword">val</span> (+)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<pre><span id="VAL(:=)"><span class="keyword">val</span> (:=)</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp -> stmt</code></pre><div class="info ">
+<code class="code">x := y <span class="keywordsign">-&gt;</span> <span class="constructor">Move</span> (x,y)</code><br>
+</div>
+<br>
 <h2 id="2_Arithmeticoperations">Arithmetic operations</h2><br>
+
+<pre><span id="VAL(+)"><span class="keyword">val</span> (+)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x + y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">PLUS</span>,x,y)</code><br>
 </div>
 
-<pre><span id="VAL(-)"><span class="keyword">val</span> (-)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL( * )"><span class="keyword">val</span> ( * )</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(/)"><span class="keyword">val</span> (/)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(/$)"><span class="keyword">val</span> (/$)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(mod)"><span class="keyword">val</span> (mod)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(%$)"><span class="keyword">val</span> (%$)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(lsl)"><span class="keyword">val</span> (lsl)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<pre><span id="VAL(-)"><span class="keyword">val</span> (-)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x - y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">MINUS</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL( * )"><span class="keyword">val</span> ( * )</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x * y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">TIMES</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(/)"><span class="keyword">val</span> (/)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x / y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">DIVIDE</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(/$)"><span class="keyword">val</span> (/$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x /$ y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">SDIVIDE</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(mod)"><span class="keyword">val</span> (mod)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">mod</span> y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">MOD</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(%$)"><span class="keyword">val</span> (%$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x %$ y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span> (<span class="constructor">SMOD</span>,x,y)</code><br>
+</div>
+<br>
 <h2 id="2_Bitoperations">Bit operations</h2><br>
+
+<pre><span id="VAL(lsl)"><span class="keyword">val</span> (lsl)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">lsl</span> y = <span class="constructor">BinOp</span> (<span class="constructor">LSHIFT</span>,x,y)</code><br>
 </div>
 
-<pre><span id="VAL(lsr)"><span class="keyword">val</span> (lsr)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(asr)"><span class="keyword">val</span> (asr)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(land)"><span class="keyword">val</span> (land)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(lor)"><span class="keyword">val</span> (lor)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(lxor)"><span class="keyword">val</span> (lxor)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VALlnot"><span class="keyword">val</span> lnot</span> : <code class="type">exp -> exp</code></pre>
-<pre><span id="VAL(=)"><span class="keyword">val</span> (=)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<pre><span id="VAL(lsr)"><span class="keyword">val</span> (lsr)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">lsr</span> y = <span class="constructor">BinOp</span> (<span class="constructor">RSHIFT</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(asr)"><span class="keyword">val</span> (asr)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">asr</span> y = <span class="constructor">BinOp</span> (<span class="constructor">ARSHIFT</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(land)"><span class="keyword">val</span> (land)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">land</span> y = <span class="constructor">BinOp</span> (<span class="constructor">AND</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(lor)"><span class="keyword">val</span> (lor)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">lor</span> y = <span class="constructor">BinOp</span> (<span class="constructor">OR</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(lxor)"><span class="keyword">val</span> (lxor)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x <span class="keyword">lxor</span> y = <span class="constructor">BinOp</span> (<span class="constructor">XOR</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VALlnot"><span class="keyword">val</span> lnot</span> : <code class="type">exp -> exp</code></pre><div class="info ">
+<code class="code">lnot x = <span class="constructor">UnOp</span> (<span class="constructor">NOT</span>,x,y)</code><br>
+</div>
+<br>
 <h2 id="2_Equalitytests">Equality tests</h2><br>
+
+<pre><span id="VAL(=)"><span class="keyword">val</span> (=)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x = y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">EQ</span>,x,y)</code><br>
 </div>
 
-<pre><span id="VAL(<>)"><span class="keyword">val</span> (&lt;&gt;)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(<)"><span class="keyword">val</span> (&lt;)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(>)"><span class="keyword">val</span> (&gt;)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(<=)"><span class="keyword">val</span> (&lt;=)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(>=)"><span class="keyword">val</span> (&gt;=)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(<$)"><span class="keyword">val</span> (&lt;$)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(>$)"><span class="keyword">val</span> (&gt;$)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(<=$)"><span class="keyword">val</span> (&lt;=$)</span> : <code class="type">exp -> exp -> exp</code></pre>
-<pre><span id="VAL(>=$)"><span class="keyword">val</span> (&gt;=$)</span> : <code class="type">exp -> exp -> exp</code></pre><br>
+<pre><span id="VAL(<>)"><span class="keyword">val</span> (&lt;&gt;)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x = y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">NEQ</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(<)"><span class="keyword">val</span> (&lt;)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &lt; y <span class="keywordsign">-&gt;</span> <span class="constructor">BinOp</span>(<span class="constructor">LT</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(>)"><span class="keyword">val</span> (&gt;)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &gt; y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LT</span>,y,x) </code><br>
+</div>
+
+<pre><span id="VAL(<=)"><span class="keyword">val</span> (&lt;=)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &lt;= y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LE</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(>=)"><span class="keyword">val</span> (&gt;=)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &lt;= y <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">LE</span>,y,x)</code><br>
+</div>
+<br>
+<h3 id="3_Signedcomparison">Signed comparison</h3><br>
+
+<pre><span id="VAL(<$)"><span class="keyword">val</span> (&lt;$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &lt;$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLT</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(>$)"><span class="keyword">val</span> (&gt;$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &gt;$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLT</span>,y,x)</code><br>
+</div>
+
+<pre><span id="VAL(<=$)"><span class="keyword">val</span> (&lt;=$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &lt;=$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLE</span>,x,y)</code><br>
+</div>
+
+<pre><span id="VAL(>=$)"><span class="keyword">val</span> (&gt;=$)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
+<code class="code">x &gt;=$ x <span class="keywordsign">-&gt;</span> <span class="constructor">Binop</span>(<span class="constructor">SLE</span>,y,x)</code><br>
+</div>
+<br>
 <h2 id="2_Miscoperations">Misc operations</h2><br>
 
 <pre><span id="VAL(^)"><span class="keyword">val</span> (^)</span> : <code class="type">exp -> exp -> exp</code></pre><div class="info ">
-<code class="code">a ^ b</code> contatenate <code class="code">a</code> and <code class="code">b</code><br>
+<code class="code">a ^ b <span class="keywordsign">-&gt;</span> <span class="constructor">Concat</span> (a,b)</code><br>
 </div>
 </body></html>

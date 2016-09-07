@@ -81,10 +81,9 @@ Builder interface.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
 This interface provides an efficient way to build new
-          blocks. It is also useful, when rebuilding existing block,
-          as it allows to specify the <code class="code">tid</code> of the block. It is a user
-          responsibility to preserve the uniqueness of tidentifiers
-          throughout the program instance.<br>
+          blocks. It is also useful, when rebuilding existing block.
+          It is the user responsibility to preserve the uniqueness of
+          identifiers throughout the program instance.<br>
 </div>
 
 
@@ -124,5 +123,4 @@ appends generic element<br>
 <pre><span id="VALadd_elt"><span class="keyword">val</span> add_elt</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.Blk.html#TYPEelt">Blk.elt</a> -> unit</code></pre><div class="info ">
 returns current result<br>
 </div>
-
-<pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre></body></html>
+</body></html>

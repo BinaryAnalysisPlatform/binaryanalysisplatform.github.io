@@ -75,7 +75,36 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Monad.T.html">Bap.Std.Monad.T</a></h1>
 
-<pre><span class="keyword">module</span> T: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.T.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> T: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.T.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Monad transformers.
+<p>
+
+        <code class="code"><span class="keyword">module</span> <span class="constructor">IO</span> = <span class="constructor">Monad</span>.<span class="constructor">T</span>.<span class="constructor">Inner</span>(<span class="constructor">Outer</span>)</code> is a monad
+        <code class="code"><span class="constructor">Inner</span></code> wrapped into monad <code class="code"><span class="constructor">Outer</span></code>. For example, monad
+        <code class="code"><span class="keyword">module</span> <span class="constructor">OLwt</span> = <span class="constructor">Monad</span>.<span class="constructor">T</span>.<span class="constructor">Option</span>(<span class="constructor">Lwt</span>)</code> will
+        allow to work with optional values in the <code class="code"><span class="constructor">Lwt</span></code> IO monad,
+        e.g.,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">OLwt</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;require&nbsp;p&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;p&nbsp;<span class="keyword">then</span>&nbsp;return&nbsp;(<span class="constructor">Some</span>&nbsp;())&nbsp;<span class="keyword">else</span>&nbsp;return&nbsp;<span class="constructor">None</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;authenticate&nbsp;user&nbsp;passwd&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;read_credentials&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;(u,p)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require&nbsp;(user&nbsp;=&nbsp;u)&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;require&nbsp;(passwd&nbsp;=&nbsp;p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        Not all monands are transformable into anothers. For example,
+        in general it is not possible to wrap IO monad into other monad
+        (but it is possible to in the opposite direction). State monad
+        here is a special case, although it is very similiar to the IO
+        monad it still can be wrapped into some other monad. However,
+        this wrapping is more like intersection, as the returned monad
+        actually behaves like an intersection of the outer and inner
+        monad.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Monad.T.Option.html">Option</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.T.Option.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Option Monad Transformer

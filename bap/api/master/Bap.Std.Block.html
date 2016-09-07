@@ -78,27 +78,41 @@
 <h1>Module <a href="type_Bap.Std.Block.html">Bap.Std.Block</a></h1>
 
 <pre><span class="keyword">module</span> Block: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Block.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Access to block attributes.
-      This interface provides only access to block attributes, but
-      doesn't allow to navigate to other blocks.<br>
+Basic block.
+<p>
+
+      Basic block is piece of code, that has single entry and single
+      exit. It can be seen as a container for instructions. Also,
+      basic blocks are nodes of control flow graphs.
+<p>
+
+      The following invariants must be preserved:<ul>
+<li>there is no known jump in the program, that points to an
+        instruction that is not a leader of a basic block;</li>
+<li>any jump instruction is a terminator of some basic block;</li>
+<li>each basic block consists of at least one instruction.</li>
+</ul>
+<br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEblock">block</a></code> </pre>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.Block.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) list -> <a href="Bap.Std.Block.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create mem insn</code> creates a block<br>
+<code class="code">create mem insn</code> creates a block
+        Preconditions:<ul>
+<li><code class="code">insns &lt;&gt; []</code></li>
+</ul>
+<br>
 </div>
 
 <pre><span id="VALaddr"><span class="keyword">val</span> addr</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
-<code class="code">addr block</code> address of the first instruction<br>
+<code class="code">addr block = <span class="constructor">Memory</span>.min_addr (memory block)</code> address of the first instruction<br>
 </div>
 
 <pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a></code></pre><div class="info ">
-<code class="code">memory blk</code> memory region, occupied by a block<br>
+<code class="code">memory blk</code> a memory region, occupied by a block<br>
 </div>
 
 <pre><span id="VALleader"><span class="keyword">val</span> leader</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEinsn">insn</a></code></pre><div class="info ">
@@ -110,12 +124,17 @@ Access to block attributes.
 </div>
 
 <pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Block.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) list</code></pre><div class="info ">
-<code class="code">insns blk</code> returns a list of block instructions<br>
+<code class="code">insns blk</code> returns a list of block instructions.<br>
 </div>
 
-<pre><span class="keyword">include</span> Opaque</pre>
+<pre><span class="keyword">include</span> Opaque.S</pre>
+<div class="info ">
+Since <code class="code">block</code> contains a region of memory, that is not regular,
+        the block itself is also non-regular. But it is, at least,
+        printable.<br>
+</div>
 
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 <div class="info ">
 all the printing stuff, including <code class="code">to_string</code> function<br>
 </div>

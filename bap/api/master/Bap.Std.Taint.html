@@ -95,29 +95,9 @@ Abstract taint.
 <pre><span id="TYPEset"><span class="keyword">type</span> <code class="type"></code>set</span> = <code class="type">Tid.Set.t</code> </pre>
 
 
-<pre><span id="VALbin_set"><span class="keyword">val</span> bin_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_set"><span class="keyword">val</span> bin_read_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_set__"><span class="keyword">val</span> __bin_read_set__</span> : <code class="type">(int -> <a href="Bap.Std.Taint.html#TYPEset">set</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_set"><span class="keyword">val</span> bin_reader_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_set"><span class="keyword">val</span> bin_size_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_set"><span class="keyword">val</span> bin_write_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_set"><span class="keyword">val</span> bin_writer_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_set"><span class="keyword">val</span> compare_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a> -> int</code></pre>
-<pre><span id="VALset_of_sexp"><span class="keyword">val</span> set_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Taint.html#TYPEset">set</a></code></pre>
-<pre><span id="VALsexp_of_set"><span class="keyword">val</span> sexp_of_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEmap"><span class="keyword">type</span> <code class="type"></code>map</span> = <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Var.Map.t</code> </pre>
 
 
-<pre><span id="VALbin_map"><span class="keyword">val</span> bin_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_map"><span class="keyword">val</span> bin_read_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_map__"><span class="keyword">val</span> __bin_read_map__</span> : <code class="type">(int -> <a href="Bap.Std.Taint.html#TYPEmap">map</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_map"><span class="keyword">val</span> bin_reader_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_map"><span class="keyword">val</span> bin_size_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_map"><span class="keyword">val</span> bin_write_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_map"><span class="keyword">val</span> bin_writer_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_map"><span class="keyword">val</span> compare_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> -> <a href="Bap.Std.Taint.html#TYPEmap">map</a> -> int</code></pre>
-<pre><span id="VALmap_of_sexp"><span class="keyword">val</span> map_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Taint.html#TYPEmap">map</a></code></pre>
-<pre><span id="VALsexp_of_map"><span class="keyword">val</span> sexp_of_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="VALreg"><span class="keyword">val</span> reg</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
 value stored in register is source of taint<br>
 </div>
@@ -127,14 +107,17 @@ value stored at memory location, that is stored
         in the register is tainted.<br>
 </div>
 
-<pre><span id="VALregs"><span class="keyword">val</span> regs</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
-<pre><span id="VALptrs"><span class="keyword">val</span> ptrs</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre>
-<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> -> <a href="Bap.Std.Taint.html#TYPEmap">map</a> -> <a href="Bap.Std.Taint.html#TYPEmap">map</a></code></pre>
 <pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Bap.Std.Taint.context-c.html">context</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span name="TYPEpropagator"><span class="keyword">class</span> <code class="type">[< all_taints : set; bindings : (var * Bil.result) Sequence.t;<br>       create_storage : Bil.storage -> 'a * Bil.result;<br>       create_undefined : 'a * Bil.result; create_word : word -> 'a * Bil.result;<br>       lookup : var -> Bil.result option; ptr_taints : addr -> set;<br>       reg_taints : Bil.result -> set; taint_ptr : addr -> size -> set -> 'a;<br>       taint_reg : Bil.result -> set -> 'a; update : var -> Bil.result -> 'a; .. ><br>     as 'a]</code> <a href="Bap.Std.Taint.propagator-c.html">propagator</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.propagator-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span name="TYPEpropagator"><span class="keyword">class</span> <code class="type">[< all_taints : set; bindings : (var * Bil.result) seq;<br>       create_storage : Bil.storage -> 'a * Bil.result;<br>       create_undefined : 'a * Bil.result; create_word : word -> 'a * Bil.result;<br>       lookup : var -> Bil.result option; ptr_taints : addr -> set;<br>       reg_taints : Bil.result -> set; taint_ptr : addr -> size -> set -> 'a;<br>       taint_reg : Bil.result -> set -> 'a; update : var -> Bil.result -> 'a; .. ><br>     as 'a]</code> <a href="Bap.Std.Taint.propagator-c.html">propagator</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.propagator-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Propagate taint through expressions.
 </div>
 
-<pre><span id="VALpp_set"><span class="keyword">val</span> pp_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre>
-<pre><span id="VALpp_map"><span class="keyword">val</span> pp_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre>
+<pre><span id="VALpp_set"><span class="keyword">val</span> pp_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+print a set of taints<br>
+</div>
+
+<pre><span id="VALpp_map"><span class="keyword">val</span> pp_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+print a taint map<br>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Taint.Map.html">Map</a>: <code class="type"><a href="Regular.html">Regular</a></code><code class="type">  with type t = map</code></pre></body></html>

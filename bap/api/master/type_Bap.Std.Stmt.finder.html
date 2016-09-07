@@ -82,7 +82,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;enter_cast&nbsp;:
 &nbsp;&nbsp;&nbsp;&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;enter_concat&nbsp;:
@@ -96,8 +96,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;enter_extract&nbsp;:
-&nbsp;&nbsp;&nbsp;&nbsp;hi:nat1&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;lo:nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;hi:int&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;lo:int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;enter_if&nbsp;:
@@ -166,7 +166,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;leave_cast&nbsp;:
 &nbsp;&nbsp;&nbsp;&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;leave_concat&nbsp;:
@@ -180,8 +180,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;leave_extract&nbsp;:
-&nbsp;&nbsp;&nbsp;&nbsp;hi:nat1&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;lo:nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;hi:int&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;lo:int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;leave_if&nbsp;:
@@ -252,7 +252,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;visit_cast&nbsp;:
 &nbsp;&nbsp;&nbsp;&nbsp;cast&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;visit_concat&nbsp;:
@@ -266,8 +266,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;visit_extract&nbsp;:
-&nbsp;&nbsp;&nbsp;&nbsp;hi:nat1&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;lo:nat1&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;hi:int&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;lo:int&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Exp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.return
 &nbsp;&nbsp;<span class="keyword">method</span>&nbsp;visit_if&nbsp;:

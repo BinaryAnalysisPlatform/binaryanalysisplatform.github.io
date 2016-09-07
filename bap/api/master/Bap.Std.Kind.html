@@ -85,60 +85,12 @@ Kinds of instructions<br>
 <pre><span id="TYPEbranch"><span class="keyword">type</span> <code class="type"></code>branch</span> = <code class="type">[ `Conditional_branch | `Indirect_branch | `Unconditional_branch ]</code> </pre>
 
 
-<pre><span id="VALbin_branch"><span class="keyword">val</span> bin_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_branch"><span class="keyword">val</span> bin_read_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_branch__"><span class="keyword">val</span> __bin_read_branch__</span> : <code class="type">(int -> <a href="Bap.Std.Kind.html#TYPEbranch">branch</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_branch"><span class="keyword">val</span> bin_reader_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_branch"><span class="keyword">val</span> bin_size_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_branch"><span class="keyword">val</span> bin_write_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_branch"><span class="keyword">val</span> bin_writer_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_branch"><span class="keyword">val</span> compare_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> -> <a href="Bap.Std.Kind.html#TYPEbranch">branch</a> -> int</code></pre>
-<pre><span id="VALall_of_branch"><span class="keyword">val</span> all_of_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> list</code></pre>
-<pre><span id="VALbranch_of_sexp"><span class="keyword">val</span> branch_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEbranch">branch</a></code></pre>
-<pre><span id="VAL__branch_of_sexp__"><span class="keyword">val</span> __branch_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEbranch">branch</a></code></pre>
-<pre><span id="VALsexp_of_branch"><span class="keyword">val</span> sexp_of_branch</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEaffecting_control"><span class="keyword">type</span> <code class="type"></code>affecting_control</span> = <code class="type">[ `Barrier<br>       | `Call<br>       | `Conditional_branch<br>       | `Indirect_branch<br>       | `May_affect_control_flow<br>       | `Return<br>       | `Terminator<br>       | `Unconditional_branch ]</code> </pre>
 
 
-<pre><span id="VALbin_affecting_control"><span class="keyword">val</span> bin_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_affecting_control"><span class="keyword">val</span> bin_read_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_affecting_control__"><span class="keyword">val</span> __bin_read_affecting_control__</span> : <code class="type">(int -> <a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_affecting_control"><span class="keyword">val</span> bin_reader_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_affecting_control"><span class="keyword">val</span> bin_size_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_affecting_control"><span class="keyword">val</span> bin_write_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_affecting_control"><span class="keyword">val</span> bin_writer_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_affecting_control"><span class="keyword">val</span> compare_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> -> <a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> -> int</code></pre>
-<pre><span id="VALall_of_affecting_control"><span class="keyword">val</span> all_of_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> list</code></pre>
-<pre><span id="VALaffecting_control_of_sexp"><span class="keyword">val</span> affecting_control_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a></code></pre>
-<pre><span id="VAL__affecting_control_of_sexp__"><span class="keyword">val</span> __affecting_control_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a></code></pre>
-<pre><span id="VALsexp_of_affecting_control"><span class="keyword">val</span> sexp_of_affecting_control</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEaffecting_control">affecting_control</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEhaving_side_effect"><span class="keyword">type</span> <code class="type"></code>having_side_effect</span> = <code class="type">[ `May_load | `May_store ]</code> </pre>
 
 
-<pre><span id="VALbin_having_side_effect"><span class="keyword">val</span> bin_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_having_side_effect"><span class="keyword">val</span> bin_read_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_having_side_effect__"><span class="keyword">val</span> __bin_read_having_side_effect__</span> : <code class="type">(int -> <a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_having_side_effect"><span class="keyword">val</span> bin_reader_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_having_side_effect"><span class="keyword">val</span> bin_size_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_having_side_effect"><span class="keyword">val</span> bin_write_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_having_side_effect"><span class="keyword">val</span> bin_writer_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare_having_side_effect"><span class="keyword">val</span> compare_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> -> <a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> -> int</code></pre>
-<pre><span id="VALall_of_having_side_effect"><span class="keyword">val</span> all_of_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> list</code></pre>
-<pre><span id="VALhaving_side_effect_of_sexp"><span class="keyword">val</span> having_side_effect_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a></code></pre>
-<pre><span id="VAL__having_side_effect_of_sexp__"><span class="keyword">val</span> __having_side_effect_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a></code></pre>
-<pre><span id="VALsexp_of_having_side_effect"><span class="keyword">val</span> sexp_of_having_side_effect</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEhaving_side_effect">having_side_effect</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">[ `Barrier<br>       | `Call<br>       | `Conditional_branch<br>       | `Indirect_branch<br>       | `May_affect_control_flow<br>       | `May_load<br>       | `May_store<br>       | `Return<br>       | `Terminator<br>       | `Unconditional_branch ]</code> </pre>
 
-
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Bap.Std.Kind.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> -> <a href="Bap.Std.Kind.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALall"><span class="keyword">val</span> all</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> list</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEt">t</a></code></pre>
-<pre><span id="VAL__t_of_sexp__"><span class="keyword">val</span> __t_of_sexp__</span> : <code class="type">Sexplib.Sexp.t -> <a href="Bap.Std.Kind.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Bap.Std.Kind.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre></body></html>
+</body></html>

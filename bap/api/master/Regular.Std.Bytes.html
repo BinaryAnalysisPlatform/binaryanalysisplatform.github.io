@@ -82,24 +82,17 @@ Extension of the standard bytes module.
       We enhanced OCaml standard <code class="code"><span class="constructor">Bytes</span></code> module with the expected set
       of functions. <code class="code"><span class="constructor">Bytes</span></code> are not <code class="code"><span class="constructor">Regular</span></code>, as <code class="code"><span class="constructor">Regular</span></code> interface
       itself refers to bytes. However it includes a pretty big subset
-      of regular (excluding <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Data</span></code></a> module, but bytes indeed do not need
+      of regular (excluding <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Data</span></code></a> module, but bytes indeed do not need
       any specific support for the serialization).<br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">Bytes.t</code> </pre>
+<div class="info ">
+bytes<br>
+</div>
 
 
-<pre><span id="VALbin_t"><span class="keyword">val</span> bin_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Type_class.t</code></pre>
-<pre><span id="VALbin_read_t"><span class="keyword">val</span> bin_read_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Read.reader</code></pre>
-<pre><span id="VAL__bin_read_t__"><span class="keyword">val</span> __bin_read_t__</span> : <code class="type">(int -> <a href="Regular.Std.Bytes.html#TYPEt">t</a>) Bin_prot.Read.reader</code></pre>
-<pre><span id="VALbin_reader_t"><span class="keyword">val</span> bin_reader_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Type_class.reader</code></pre>
-<pre><span id="VALbin_size_t"><span class="keyword">val</span> bin_size_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Size.sizer</code></pre>
-<pre><span id="VALbin_write_t"><span class="keyword">val</span> bin_write_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Write.writer</code></pre>
-<pre><span id="VALbin_writer_t"><span class="keyword">val</span> bin_writer_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> Bin_prot.Type_class.writer</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> -> <a href="Regular.Std.Bytes.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALt_of_sexp"><span class="keyword">val</span> t_of_sexp</span> : <code class="type">Sexplib.Sexp.t -> <a href="Regular.Std.Bytes.html#TYPEt">t</a></code></pre>
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type"><a href="Regular.Std.Bytes.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span class="keyword">include</span> Container.S0</pre>
 
 <pre><span class="keyword">include</span> Blit.S</pre>

@@ -104,7 +104,6 @@ Table.
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEtable">table</a></code> </pre>
 
 
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a -> Sexplib.Sexp.t) -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> Sexplib.Sexp.t</code></pre>
 <pre><span id="TYPEhashable"><span class="keyword">type</span> <code class="type">'a</code> hashable</span> = <code class="type">'a Hashtbl.Hashable.t</code> </pre>
 
 
@@ -198,7 +197,6 @@ Relation multiplicity.
 <code class="code">0..*</code><br>
 </div>
 
-<pre><span id="VALat_least_one"><span class="keyword">val</span> at_least_one</span> : <code class="type">('a, 'a * 'a <a href="Bap.Std.html#TYPEseq">seq</a>) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre>
 <pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type">('a, 'a) <a href="Bap.Std.Table.html#TYPEr">r</a></code></pre><div class="info ">
 <code class="code">1..1</code><br>
 </div>
@@ -250,7 +248,6 @@ Relation multiplicity.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;syms_of_sec&nbsp;=&nbsp;link&nbsp;one_to:many&nbsp;<span class="constructor">Sec</span>.hashable&nbsp;&nbsp;secs&nbsp;syms
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 
-<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">one_to:('b, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a> -> 'a -> 'r</code></pre>
 <pre><span id="VALrev_map"><span class="keyword">val</span> rev_map</span> : <code class="type">one_to:(<a href="Bap.Std.html#TYPEmem">mem</a>, 'r) <a href="Bap.Std.Table.html#TYPEr">r</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEhashable">hashable</a> -><br>       'a <a href="Bap.Std.Table.html#TYPEt">t</a> -> ('a -> 'r) Or_error.t</code></pre><div class="info ">
 <code class="code">rev_map arity t tab</code> creates a reverse mapping from values of
         typeclass <code class="code">t</code> stored in table <code class="code">tab</code> to memory regions.
@@ -300,37 +297,20 @@ Relation multiplicity.
         type).
 <p>
 
-        <code class="code">start</code> and <code class="code">until</code> parameters allows to narrow iteration to some
-        subset of table. If they are unspecified then iteration would be
-        performed on all table entries in an ascending order of
-        addresses. If they are specified, then if <code class="code">start &lt;= until</code>, then
-        iteration will be performed in the same order but on a specified
-        subset. In the case, when <code class="code">start &gt; until</code>, iteration will be
-        performed in a decreasing order.<br>
+        <code class="code">start</code> and <code class="code">until</code> parameters narrows iteration to some
+        subset of table. If they are unspecified then iteration would
+        be performed on all table entries in an ascending order of
+        addresses. If they are specified, then if <code class="code">start &lt;= until</code>,
+        then iteration will be performed in the same order but on a
+        specified subset. In the case, when <code class="code">start &gt; until</code>, iteration
+        will be performed in a decreasing order.<br>
 </div>
 
 
-<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> bool) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> int) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfind_if"><span class="keyword">val</span> find_if</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> 'a option) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b option) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> init:'b -> f:('a -> 'b -> 'b) -> 'b)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> unit) -> unit) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfind_mapi"><span class="keyword">val</span> find_mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b option) -> 'b option)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> init:'b -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b -> 'b) -> 'b)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> unit) -> unit)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
 <pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
 removes all mappings that do not satisfy the predicate<br>
 </div>
 
-<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfilteri"><span class="keyword">val</span> filteri</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> bool) -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
-<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -><br>        f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b option) -> 'b <a href="Bap.Std.Table.html#TYPEt">t</a>)<br>       <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre>
 <pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">('a <a href="Bap.Std.Table.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">seq</a>) <a href="Bap.Std.Table.html#TYPEranged">ranged</a></code></pre><div class="info ">
 <code class="code">to_sequence tab</code> converts the table <code class="code">t</code> to a
         sequence of key-value pairs.<br>
@@ -345,5 +325,4 @@ removes all mappings that do not satisfy the predicate<br>
 <code class="code">regions table</code> returns in an ascending order of addresses all
         elements mapped in a <code class="code">table</code><br>
 </div>
-
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Bap.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Table.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEprinter">printer</a></code></pre></body></html>
+</body></html>

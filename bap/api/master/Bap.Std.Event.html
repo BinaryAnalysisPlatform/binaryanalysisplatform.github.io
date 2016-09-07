@@ -77,7 +77,14 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Event.html">Bap.Std.Event</a></h1>
 
-<pre><span class="keyword">module</span> Event: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Event: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Event subsystem.
+<p>
+
+      The event subsystem is a way of communicating between different
+      subsystems of BAP.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = ..</pre>
 
@@ -85,8 +92,14 @@
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a></code> = ..</pre>
 
 
-<pre><span id="VALstream"><span class="keyword">val</span> stream</span> : <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre>
-<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a> -> unit</code></pre>
+<pre><span id="VALstream"><span class="keyword">val</span> stream</span> : <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+global <code class="code">stream</code> of events<br>
+</div>
+
+<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<code class="code">send event</code> to the <a href="Bap.Std.Event.html#VALstream"><code class="code"><span class="constructor">Event</span>.stream</code></a><br>
+</div>
+
 <pre><span id="VALregister_printer"><span class="keyword">val</span> register_printer</span> : <code class="type">(<a href="Bap.Std.Event.html#TYPEt">t</a> -> string option) -> unit</code></pre><div class="info ">
 <code class="code">register_printer f</code> when event <code class="code">e</code> is printed, <code class="code">f e</code> must be
         <code class="code"><span class="constructor">None</span></code> if <code class="code">f</code> is not a subset of events, that is intended to be
@@ -98,6 +111,9 @@
         then the last registered has the precedence.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Event.Log.html">Log</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Event.Log.html">Log</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Logging event.
+</div>
+
+<pre><span class="keyword">include</span> Printable.S</pre>
 </body></html>

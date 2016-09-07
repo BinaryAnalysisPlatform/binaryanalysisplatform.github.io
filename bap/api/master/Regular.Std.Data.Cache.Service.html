@@ -90,19 +90,19 @@ Service injection point.
 
           Note: this interface is for implementing caching for data
           type. If you're using data type whose module <code class="code"><span class="constructor">T</span></code> implements
-          interface <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>, then you can just use <code class="code"><span class="constructor">T</span>.<span class="constructor">Data</span>.<span class="constructor">Cache</span></code>
+          interface <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Data</span></code></a>, then you can just use <code class="code"><span class="constructor">T</span>.<span class="constructor">Data</span>.<span class="constructor">Cache</span></code>
           module. If you need to add caching to your custom data type,
-          then use <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>, <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> or <a href="Regular.Std.Data.Make.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">Make</span></code></a> functors (in
+          then use <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>, <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Opaque</span></code></a> or <a href="Regular.Std.Data.Make.html"><code class="code"><span class="constructor">Data</span>.<span class="constructor">Make</span></code></a> functors (in
           the order of preference).<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type"><a href="Regular.Std.Data.Cache.html#TYPEservice">Regular.Std.Data.Cache.service</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type"><a href="Regular.Std.Data.Cache.html#TYPEservice">Data.Cache.service</a> -> unit</code></pre><div class="info ">
 <code class="code">provide service</code> will substitute current caching service
             with a new <code class="code">service</code>.<br>
 </div>
 
-<pre><span id="VALrequest"><span class="keyword">val</span> request</span> : <code class="type">'a <a href="Regular.Std.html#TYPEreader">Regular.Std.reader</a> -> 'a <a href="Regular.Std.html#TYPEwriter">Regular.Std.writer</a> -> 'a <a href="Regular.Std.Data.Cache.html#TYPEt">Regular.Std.Data.Cache.t</a></code></pre><div class="info ">
+<pre><span id="VALrequest"><span class="keyword">val</span> request</span> : <code class="type">'a <a href="Regular.Std.html#TYPEreader">reader</a> -> 'a <a href="Regular.Std.html#TYPEwriter">writer</a> -> 'a <a href="Regular.Std.Data.Cache.html#TYPEt">Data.Cache.t</a></code></pre><div class="info ">
 <code class="code">request reader writer</code> returns a caching service for
             type <code class="code"><span class="keywordsign">'</span>a</code>.<br>
 </div>

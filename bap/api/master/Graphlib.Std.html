@@ -81,15 +81,15 @@
 
       <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is a generic library that extends a well known
       OCamlGraph library. <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> uses its own, more reach,
-      <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface that is isomorphic to OCamlGraph's <code class="code"><span class="constructor">Sigs</span>.<span class="constructor">P</span></code>
+      <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface that is isomorphic to OCamlGraph's <code class="code"><span class="constructor">Sigs</span>.<span class="constructor">P</span></code>
       signature for persistant graphs. Two functors witness the
       isomorphism of the interfaces:
-      <a href="Graphlib.Std.Graphlib.To_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.<span class="constructor">To_ocamlgraph</span></code></a> and <a href="Graphlib.Std.Graphlib.Of_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.<span class="constructor">Of_ocamlgraph</span></code></a>. Thanks
+      <a href="Graphlib.Std.Graphlib.To_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">To_ocamlgraph</span></code></a> and <a href="Graphlib.Std.Graphlib.Of_ocamlgraph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Of_ocamlgraph</span></code></a>. Thanks
       to these functors, any algorithm written for OCamlGraph can be
       used on <code class="code"><span class="constructor">Graphlibs</span></code> graph and vice verse.
 <p>
 
-      The <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface provides a richer interface in a Core
+      The <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface provides a richer interface in a Core
       style. Nodes and Edges implements <code class="code"><span class="constructor">Opaque</span></code> data structure,
       i.e., they come with Maps, Sets, Hashtbls, etc, preloaded (e.g.,
       <code class="code"><span class="constructor">G</span>.<span class="constructor">Node</span>.<span class="constructor">Set</span></code> is a set of node for graph implementation, provided
@@ -104,7 +104,7 @@
 <p>
 
       <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is a library that provides a set of generic
-      algorithms, as well as implementations of a <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface,
+      algorithms, as well as implementations of a <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface,
       and a suite of preinstantiated graphs.
 <p>
 
@@ -135,7 +135,7 @@
 <p>
 
       To create a graph of type <code class="code"><span class="constructor">G</span>.t</code> one can use a generic
-      <a href="Graphlib.Std.Graphlib.html#VALcreate"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.create</code></a> function:
+      <a href="Graphlib.Std.Graphlib.html#VALcreate"><code class="code"><span class="constructor">Graphlib</span>.create</code></a> function:
 <p>
 
    <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;g&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.create&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;~edges:[
@@ -152,7 +152,7 @@
 <hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Graphlib.Std.Node.html">Node</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.
+<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> nodes.
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Graphlib.Std.Edge.html">Edge</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -181,13 +181,13 @@ Graph edges classification.
 
 <pre><span id="TYPEtree"><span class="keyword">type</span> <code class="type">'a</code> tree</span> </pre>
 <div class="info ">
-a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Tree</span></code></a> representation.<br>
+a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Tree</span></code></a> representation.<br>
 </div>
 
 
 <pre><span id="TYPEfrontier"><span class="keyword">type</span> <code class="type">'a</code> frontier</span> </pre>
 <div class="info ">
-a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Frontier</span></code></a>s<br>
+a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Frontier</span></code></a>s<br>
 </div>
 
 

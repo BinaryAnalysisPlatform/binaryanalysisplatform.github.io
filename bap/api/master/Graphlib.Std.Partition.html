@@ -90,7 +90,7 @@ Result of a set partitioning.
       parlance) represents the equivalence class. The equivalence side
       can be represented by a particular ordinal number or
       representative, that can be thought about as an ordinary
-      number. See <a href="Graphlib.Std.Equiv.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Std</span>.<span class="constructor">Equiv</span></code></a> for the representation of this ordinal
+      number. See <a href="Graphlib.Std.Equiv.html"><code class="code"><span class="constructor">Equiv</span></code></a> for the representation of this ordinal
       numbers. A particular element of an equivalence class plays a
       role of «representative element». Depending on the nature of
       partitioning, this role can have different semantics.
@@ -102,14 +102,14 @@ Result of a set partitioning.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEpartition">Graphlib.Std.partition</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEpartition">partition</a></code> </pre>
 
 
-<pre><span id="VALgroups"><span class="keyword">val</span> groups</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a <a href="Graphlib.Std.html#TYPEgroup">Graphlib.Std.group</a> <a href="Regular.Std.html#TYPEseq">Regular.Std.seq</a></code></pre><div class="info ">
+<pre><span id="VALgroups"><span class="keyword">val</span> groups</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a <a href="Graphlib.Std.html#TYPEgroup">group</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
 <code class="code">groups p</code> returns all partition cells of a partitioning <code class="code">p</code><br>
 </div>
 
-<pre><span id="VALgroup"><span class="keyword">val</span> group</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a -> 'a <a href="Graphlib.Std.html#TYPEgroup">Graphlib.Std.group</a> option</code></pre><div class="info ">
+<pre><span id="VALgroup"><span class="keyword">val</span> group</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a -> 'a <a href="Graphlib.Std.html#TYPEgroup">group</a> option</code></pre><div class="info ">
 <code class="code">group p x</code> returns a <code class="code">group</code> of an element <code class="code">x</code>. Note, this
         function is not total since the set of all values of type <code class="code"><span class="keywordsign">'</span>a</code> is
         usually larger than the underlying set that was partitioned.<br>
@@ -125,12 +125,12 @@ Result of a set partitioning.
         partitioning <code class="code">p</code>.<br>
 </div>
 
-<pre><span id="VALof_equiv"><span class="keyword">val</span> of_equiv</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.html#TYPEequiv">Graphlib.Std.equiv</a> -> 'a <a href="Graphlib.Std.html#TYPEgroup">Graphlib.Std.group</a> option</code></pre><div class="info ">
+<pre><span id="VALof_equiv"><span class="keyword">val</span> of_equiv</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.html#TYPEequiv">equiv</a> -> 'a <a href="Graphlib.Std.html#TYPEgroup">group</a> option</code></pre><div class="info ">
 <code class="code">of_equiv p n</code> rebuilds a group from an equivalence class
         ordinal number.<br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a> -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Regular.Std.printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_elem p</code> prints partition <code class="code">p</code> using element printer <code class="code">pp_elem</code><br>
 </div>
 </body></html>

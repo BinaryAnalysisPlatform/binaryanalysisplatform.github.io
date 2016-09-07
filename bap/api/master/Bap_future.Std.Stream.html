@@ -306,10 +306,6 @@ A stream of elements.
         values xs, producing a stream of results.<br>
 </div>
 
-<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       f:('a -> 'b * 'c) -> 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * 'c <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre>
-<pre><span id="VALzip"><span class="keyword">val</span> zip</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -> ('a * 'b) <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre>
-<pre><span id="VALunzip"><span class="keyword">val</span> unzip</span> : <code class="type">('a * 'b) <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre>
-<pre><span id="VALonce"><span class="keyword">val</span> once</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -> 'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre>
 <pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       init:'b -> f:('b -> 'a -> 'c option * 'b) -> 'c <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">parse ss ~init ~f</code> parses stream <code class="code">ss</code> and builds new stream
         <code class="code">ss'</code>. Function <code class="code">f</code> is applied to each consecutive element of

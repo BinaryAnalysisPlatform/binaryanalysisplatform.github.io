@@ -85,11 +85,44 @@ Basic instruction.
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'k)</code> t</span> = <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">Disasm_expert.Basic.insn</a></code> </pre>
 
 
-<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> Sexp.t</code></pre>
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> string</code></pre>
-<pre><span id="VALkinds"><span class="keyword">val</span> kinds</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Kind.t</a> list</code></pre>
-<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Kind.t</a> -> bool</code></pre>
-<pre><span id="VALasm"><span class="keyword">val</span> asm</span> : <code class="type">(<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">Disasm_expert.Basic.asm</a>, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       string</code></pre>
-<pre><span id="VALops"><span class="keyword">val</span> ops</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEop">op</a> array</code></pre></body></html>
+<pre><span id="VALsexp_of_t"><span class="keyword">val</span> sexp_of_t</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> Sexp.t</code></pre><div class="info ">
+<code class="code">sexp_of_t insn</code> returns a sexp representation of <code class="code">insn</code><br>
+</div>
+
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       ('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">compare i1 i2</code> compares instruction <code class="code">i1</code> and <code class="code">i2</code><br>
+</div>
+
+<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">code insn</code> returns an integer code, that is bijective
+            with instruction opcode. It might not be the actual opcode, it
+            may also change between different backends, and different
+            versions of the same backend.<br>
+</div>
+
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">name insn</code> returns a textual representation of the
+            instruction name. It might be the mnemonics, or a name,
+            specific to a backend. The name is guaranteed to biject with
+            the opcode (and thus to <code class="code">code</code>).<br>
+</div>
+
+<pre><span id="VALkinds"><span class="keyword">val</span> kinds</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Kind.t</a> list</code></pre><div class="info ">
+<code class="code">kinds insn</code> returns a high-level semantic information
+            about the instruction. See <a href="Bap.Std.Kind.html"><code class="code"><span class="constructor">Kind</span></code></a> for the description of
+            semantic codes.<br>
+</div>
+
+<pre><span id="VALis"><span class="keyword">val</span> is</span> : <code class="type">('a, <a href="Bap.Std.Disasm_expert.Basic.html#TYPEkinds">Disasm_expert.Basic.kinds</a>) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Kind.html#TYPEt">Kind.t</a> -> bool</code></pre><div class="info ">
+<code class="code">is insn kind</code> checks whether instruction <code class="code">insn</code> belongs
+            to the semantic <code class="code">kind</code><br>
+</div>
+
+<pre><span id="VALasm"><span class="keyword">val</span> asm</span> : <code class="type">(<a href="Bap.Std.Disasm_expert.Basic.html#TYPEasm">Disasm_expert.Basic.asm</a>, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -><br>       string</code></pre><div class="info ">
+<code class="code">asm insn</code> returns assembly representation of the instruction<br>
+</div>
+
+<pre><span id="VALops"><span class="keyword">val</span> ops</span> : <code class="type">('a, 'k) <a href="Bap.Std.Disasm_expert.Basic.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEop">op</a> array</code></pre><div class="info ">
+<code class="code">ops insn</code> gives an access to <code class="code">insn</code>'s operands.<br>
+</div>
+</body></html>

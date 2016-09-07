@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Event.html">
-<link rel="next" href="Bap.Std.Log.html">
+<link rel="next" href="Bap.Std.Self.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -75,18 +75,30 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Event.html" title="Bap.Std.Event">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Log.html" title="Bap.Std.Log">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Self.html" title="Bap.Std.Self">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Project.html">Bap.Std.Project</a></h1>
 
 <pre><span class="keyword">module</span> Project: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Target of analysis.<br>
+Disassembled program.
+<p>
+
+      Project contains data that we were able to reconstruct during
+      the disassembly, semantic analysis, and other arbitrary amount of
+      analyses.
+<p>
+
+      Actually, project allows to associate arbitrary data with memory
+      regions, program terms, and even attach them globally to
+      itself. So it can be seen as a knowledge base of deeply
+      interconnected facts.
+<p>
+
+      Other than delivering information, from the bap to a passes, it
+      can be also used as a communication media between different
+      passes, (see <a href="Bap.Std.html#project"><i>Working with project</i></a>).<br>
 </div>
 <hr width="100%">
-<br>
-A project groups together all the information recovered from
-        the underlying binary. It is also used for exchanging
-        information between <a href="Bap.Std.html#project">passes</a>.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEproject">project</a></code> </pre>
 
@@ -94,7 +106,7 @@ A project groups together all the information recovered from
 <pre><span id="TYPEinput"><span class="keyword">type</span> <code class="type"></code>input</span> </pre>
 
 
-<pre><span class="keyword">include</span> Data</pre>
+<pre><span class="keyword">include</span> Data.S</pre>
 <div class="info ">
 IO interface to a project data structure.<br>
 </div>
@@ -359,7 +371,10 @@ updates the attribute storage<br>
 Information obtained during project reconstruction.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Project.Input.html">Input</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.Input.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><br>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Project.Input.html">Input</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.Input.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Input information.
+</div>
+<br>
 <h3 id="3_Registeringpasses">Registering passes</h3>
 <p>
 
@@ -401,11 +416,17 @@ Information obtained during project reconstruction.
 <code class="code">passes ()</code> returns all currently registered passes.<br>
 </div>
 
-<pre><span id="VALfind_pass"><span class="keyword">val</span> find_pass</span> : <code class="type">string -> <a href="Bap.Std.Project.html#TYPEpass">pass</a> option</code></pre>
+<pre><span id="VALfind_pass"><span class="keyword">val</span> find_pass</span> : <code class="type">string -> <a href="Bap.Std.Project.html#TYPEpass">pass</a> option</code></pre><div class="info ">
+<code class="code">find_pass name</code> returns a pass with the given name.<br>
+</div>
+
 <pre><span id="TYPEsecond"><span class="keyword">type</span> <code class="type"></code>second</span> = <code class="type">float</code> </pre>
 <div class="info ">
 time duration in seconds<br>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Project.Pass.html">Pass</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.Pass.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Project.Pass.html">Pass</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Project.Pass.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A program analysis pass.
+</div>
+</body></html>
