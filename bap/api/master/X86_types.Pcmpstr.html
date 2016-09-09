@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : X86_types.Pcmpstr</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : X86_types.Pcmpstr</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="X86_types.BV.html" title="X86_types.BV">Previous</a>
@@ -75,7 +78,12 @@
 &nbsp;</div>
 <h1>Module <a href="type_X86_types.Pcmpstr.html">X86_types.Pcmpstr</a></h1>
 
-<pre><span class="keyword">module</span> Pcmpstr: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.Pcmpstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Pcmpstr: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.Pcmpstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
+   (order numbers 253666 and 253667)<br>
+</div>
+<hr width="100%">
 
 <pre><code><span id="TYPEssize"><span class="keyword">type</span> <code class="type"></code>ssize</span> = </code></pre><table class="typetable">
 <tr>
@@ -233,6 +241,33 @@
 </tr></table>
 }
 
+<div class="info ">
+See Section 4.1 of Intel manual for more
+     information on the immediate control byte.
+<p>
+
+     i<code class="code">0</code>:
+     0 = 16 packed bytes
+     1 =  8 packed words
+     i<code class="code">1</code>:
+     0 = packed elements are unsigned
+     1 = packed elements are signed
+     i<code class="code">3:2</code>:
+     00 = "equal any"
+     01 = "ranges"
+     10 = "each each"
+     11 = "equal ordered"
+     i<code class="code">4</code>:
+     0 = IntRes1 unmodified
+     1 = IntRes1 is negated (1's complement)
+     i<code class="code">5</code>:
+     0 = Negation of IntRes1 is for all 16 (8) bits
+     1 = Negation of IntRes1 is masked by reg/mem validity
+     i<code class="code">6</code>:
+     0 = Use least significant bit for IntRes2
+     1 = Use most significant bit for IntRes2
+     i<code class="code">7</code>: Undefined, set to 0.<br>
+</div>
 
 
 <pre><code><span id="TYPEout"><span class="keyword">type</span> <code class="type"></code>out</span> = </code></pre><table class="typetable">

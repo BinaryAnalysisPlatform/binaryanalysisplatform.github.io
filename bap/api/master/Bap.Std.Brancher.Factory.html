@@ -63,17 +63,20 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Brancher.Factory</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Brancher.Factory</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap.Std.Brancher.html" title="Bap.Std.Brancher">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Brancher.Factory.html">Bap.Std.Brancher.Factory</a></h1>
 
-<pre><span class="keyword">module</span> Factory: <code class="type"><a href="Bap.Std.Source.Factory.html">Source.Factory</a></code><code class="type">  with type t = t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Factory: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
@@ -82,14 +85,14 @@
 <code class="code">list source</code> is a list of names of source providers<br>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> option</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> option</code></pre><div class="info ">
 <code class="code">create name args</code> finds a source provider with the
-          given name and creates it<br>
+            given name and creates it<br>
 </div>
 
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> -> unit</code></pre><div class="info ">
 <code class="code">register name cons</code> registers a method that creates a given
-          source of information. If a method with the given name already
-          exists, then it will be superceeded by a new one.<br>
+            source of information. If a method with the given name already
+            exists, then it will be superceeded by a new one.<br>
 </div>
 </body></html>

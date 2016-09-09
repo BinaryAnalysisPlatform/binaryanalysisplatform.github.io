@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : X86_types</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : X86_types</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="X86_env.html" title="X86_env">Previous</a>
@@ -78,7 +81,9 @@
 <h1>Module <a href="type_X86_types.html">X86_types</a></h1>
 
 <pre><span class="keyword">module</span> X86_types: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Information about the type of pcmp instruction.<br>
+See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
+   (order numbers 253666 and 253667)<br>
 </div>
 <hr width="100%">
 
@@ -197,7 +202,12 @@ Information about the type of pcmp instruction.<br>
 
 
 
-<pre><span class="keyword">module</span> <a href="X86_types.Pcmpstr.html">Pcmpstr</a>: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.Pcmpstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="X86_types.Pcmpstr.html">Pcmpstr</a>: <code class="code"><span class="keyword">sig</span></code> <a href="X86_types.Pcmpstr.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
+   (order numbers 253666 and 253667)
+</div>
+
 <pre><code><span id="TYPEoffsetinfo"><span class="keyword">type</span> <code class="type"></code>offsetinfo</span> = {</code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -254,7 +264,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Retn"><span class="constructor">Retn</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) option * bool</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+bytes to release, far/near ret<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -268,7 +281,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Mov"><span class="constructor">Mov</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Exp.t</a> option</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dst, src, condition<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -282,28 +298,40 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Movzx"><span class="constructor">Movzx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dsttyp, dst, srctyp, src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Movsx"><span class="constructor">Movsx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dsttyp, dst, srctyp, src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Movdq"><span class="constructor">Movdq</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dst type, dst op, src type, src op, aligned<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Movoffset"><span class="constructor">Movoffset</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoffsetinfo">offsetinfo</a> list</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dest type, dest, (src copy length, src type, src, src src offset, src dest offset)*<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -317,7 +345,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Call"><span class="constructor">Call</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEaddr">addr</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+addr is RA<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -338,7 +369,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Rotate"><span class="constructor">Rotate</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+left or right, type, src/dest op, shift op, use carry flag<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -436,7 +470,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Popcnt"><span class="constructor">Popcnt</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+size, src, dest<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -583,28 +620,40 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Mul"><span class="constructor">Mul</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+typ, src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Imul"><span class="constructor">Imul</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * (bool * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+typ, (true if one operand form, dst operand), src1, src2<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Div"><span class="constructor">Div</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+typ, src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Idiv"><span class="constructor">Idiv</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+typ, src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -681,14 +730,20 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Punpck"><span class="constructor">Punpck</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEorder">order</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+dest size, element size, low/high elements, dest, src, optional VEX src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Ppackedbinop"><span class="constructor">Ppackedbinop</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Perform a generic packed binary operation. dest size, element size, binop, assembly string, dest, src, optional VEX src<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -702,7 +757,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Pmov"><span class="constructor">Pmov</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="Bap.Std.html#TYPEtyp">typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEcast_type">cast_type</a> * string)</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Packed move. dest size, dest elt size, src elt size, dest, src, ext(signed/zero), name<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -765,7 +823,10 @@ Information about the type of pcmp instruction.<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTopcode.Interrupt3"><span class="constructor">Interrupt3</span></span></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Trap to debugger<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -790,31 +851,47 @@ Information about the type of pcmp instruction.<br>
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTrex.rex_w">rex_w</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Bit 3: 1 = 64-bit operand size<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTrex.rex_r">rex_r</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Bit 2: Extension of ModR/M reg field<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTrex.rex_x">rex_x</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Bit 1: Extension of SIB index field<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTrex.rex_b">rex_b</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Bit 0: Extension of ModR/M r/m field, SIB base
+                   field, or opcode reg field<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
+<div class="info ">
+See Table 2-4: REX Prefix Fields.<br>
+</div>
 
 
 <pre><code><span id="TYPEvex"><span class="keyword">type</span> <code class="type"></code>vex</span> = {</code></pre><table class="typetable">
@@ -823,56 +900,80 @@ Information about the type of pcmp instruction.<br>
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_nr">vex_nr</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+inverted rex_r bit<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_nx">vex_nx</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+inverted rex_x bit<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_nb">vex_nb</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+inverted rex_b bit<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_map_select">vex_map_select</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Specifies the opcode map to use<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_we">vex_we</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+For int instructions, equivalent to rex.w. For non-int instructions, opcode extension bit.<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_v">vex_v</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+additional instruction operand (XMM or YMM register)<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_l">vex_l</span>&nbsp;: <code class="type">bool</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+0 = 128-bit operands (xmm), 1 = 256-bit vector operands (ymm)<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTvex.vex_pp">vex_pp</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Specifies mandatory prefix (0=none, 1=pref_opsize 2=repz 3=repnz)<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
@@ -891,21 +992,31 @@ Information about the type of pcmp instruction.<br>
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.opsize">opsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+General operand size<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.bopsize">bopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Operand size that defaults to machine size
+                     (e.g. for pop)<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.mopsize">mopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+Multi-scalar operand size<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
@@ -954,21 +1065,30 @@ Information about the type of pcmp instruction.<br>
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.r_extend">r_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+extended r bit<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.rm_extend">rm_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+extended rm bit or sib base<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTprefix.sib_extend">sib_extend</span>&nbsp;: <code class="type">int</code>;</code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+extended sib index bit<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 

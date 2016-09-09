@@ -63,18 +63,55 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_bundle.Std.Bundle.Builder</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_bundle.Std.Bundle.Builder</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_bundle.Std.Bundle.html" title="Bap_bundle.Std.Bundle">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Bap_bundle.Std.Bundle.Builder.html">Bap_bundle.Std.Bundle.Builder</a></h1>
 
-<pre><span class="keyword">module</span> Builder: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Builder: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Incremental bundle builder.
+<p>
+
+        Using this module it is possible to build bundle
+        recipe incrementally. The data, that was added to
+        the bundle will not be copied until the <code class="code">flush</code> method is
+        called.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ()</code> creates a builder.<br>
+</div>
+
+<pre><span id="VALput_file"><span class="keyword">val</span> put_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> Uri.t -> unit</code></pre><div class="info ">
+<code class="code">put_file ?name builder uri</code> insert a file specified by the
+          <code class="code">uri</code>. If <code class="code">name</code> is specified, then the file will be stored
+          under the specified <code class="code">name</code> in the bundle.<br>
+</div>
+
+<pre><span id="VALput_data"><span class="keyword">val</span> put_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> name:string -> data:string -> unit</code></pre><div class="info ">
+<code class="code">put_data builder ~name ~data</code> insert <code class="code">data</code> at path
+          <code class="code">name</code>.<br>
+</div>
+
+<pre><span id="VALembed_manifest"><span class="keyword">val</span> embed_manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a> -> unit</code></pre><div class="info ">
+<code class="code">embed_manifest builder manifest</code> embeds a manifest. If it
+          was already embedded, then old one will be overwritten.<br>
+</div>
+
+<pre><span id="VALflush"><span class="keyword">val</span> flush</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> Uri.t -> unit</code></pre><div class="info ">
+<code class="code">flush builder output</code> finish the building and output the
+          resulting bundle into the file <code class="code">output</code>.<br>
+</div>
 </body></html>

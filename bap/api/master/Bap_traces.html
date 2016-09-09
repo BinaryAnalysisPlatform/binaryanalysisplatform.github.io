@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_traces</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_traces</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_c_type_mapper_intf.html" title="Bap_c_type_mapper_intf">Previous</a>
@@ -78,39 +81,11 @@
 <h1>Module <a href="type_Bap_traces.html">Bap_traces</a></h1>
 
 <pre><span class="keyword">module</span> Bap_traces: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Trace is a stream of events plus meta information.
-<p>
-
-    The event is a value of type <code class="code">value</code>. Event type is reified with
-    <code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span></code>. A set of event types in a given trace is an
-    intersection of the following three sets:
-<p>
-<ul>
-<li>Event types supported by a trace tool;</li>
-</ul>
-<ul>
-<li>Event types that are supported by an event transport (i.e.,
-    protocol)</li>
-</ul>
-<ul>
-<li>Types of events that has occurred in the course of the a given
-    trace.</li>
-</ul>
-
-    Since it is worthwhile to know whether a particular event is not the
-    trace because it didn't occur during program execution, but not
-    because it wasn't detected by a trace tool or dropped by a given
-    transport, we provide <code class="code">supports</code> function, to query whether the
-    a given event type is really supported (and thus might occur) by a given trace.
-<p>
-
-    The meta information is also represented using <code class="code">value</code> type, and
-    thus can contain virtually any data. Meta information is indexed
-    with <code class="code">tag</code> value.<br>
+Traces of execution.<br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap_traces.Std.html">Std</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Trace is a stream of events plus meta information.
+Traces of execution.
 </div>
 </body></html>

@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_bundle.Std.Bundle</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_bundle.Std.Bundle</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_bundle.Std.Manifest.html" title="Bap_bundle.Std.Manifest">Previous</a>
@@ -75,7 +78,20 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_bundle.Std.Bundle.html">Bap_bundle.Std.Bundle</a></h1>
 
-<pre><span class="keyword">module</span> Bundle: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Bundle: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Program Bundle.
+<p>
+
+      Bundle is a collection of data associated with a program. To
+      access the bundle, use the <a href="Bap_bundle.Std.html#VALmain_bundle"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.main_bundle</code></a> function, e.g.,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;bundle&nbsp;=&nbsp;main_bundle&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_bundle.Std.html#TYPEbundle">Bap_bundle.Std.bundle</a></code> </pre>
 
@@ -84,4 +100,88 @@
 creates new bundle or opens existing<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Bundle.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="VALmanifest"><span class="keyword">val</span> manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a></code></pre><div class="info ">
+<code class="code">manifest bundle</code> extracts program manifest from the <code class="code">bundle</code><br>
+</div>
+
+<pre><span id="VALget_file"><span class="keyword">val</span> get_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> Uri.t -> Uri.t option</code></pre><div class="info ">
+<code class="code">get_file ?name bundle uri</code> extracts a file.
+<p>
+
+        Extracts a file specified by a <code class="code">uri</code> from a <code class="code">bundle</code> and returns
+        a uri pointing to the extracted file, if was found. The
+        optional parameter <code class="code">name</code> allows to specify the desired
+        filename for the extraction.<br>
+</div>
+
+<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> string -> string option</code></pre><div class="info ">
+<code class="code">get_data bundle path</code> extracts data specified by a <code class="code">path</code> as
+        a string.<br>
+</div>
+
+<pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> string list</code></pre><div class="info ">
+<code class="code">list bundle</code> returns a list of paths, that are accessible in
+        the <code class="code">bundle</code>.<br>
+</div>
+
+<pre><span id="VALupdate_manifest"><span class="keyword">val</span> update_manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -><br>       f:(<a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a>) -> unit</code></pre><div class="info ">
+<code class="code">update_manifest bundle ~f</code> update program manifest with
+        function <code class="code">f</code>.<br>
+</div>
+
+<pre><span id="VALinsert_files"><span class="keyword">val</span> insert_files</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> (string option * Uri.t) list -> unit</code></pre><div class="info ">
+<code class="code">insert_files bundle spec</code> bundle files.
+<p>
+
+        The <code class="code">spec</code> is a list of pairs, where the first constituent of
+        a pair is a desired path of the file in the bundle, and the
+        second constituent is the uri of the file, that should be
+        inserted. If the first element of the pair is <code class="code"><span class="constructor">None</span></code>, then the
+        file will be inserted under the same path, as it was in the
+        file system.<br>
+</div>
+
+<pre><span id="VALinsert_file"><span class="keyword">val</span> insert_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> Uri.t -> unit</code></pre><div class="info ">
+<code class="code">insert_file ?name bundle uri</code> insert a file specified by the
+        <code class="code">uri</code>. If <code class="code">name</code> is specified, then the file will be stored
+        under the specified <code class="code">name</code> in the bundle.<br>
+</div>
+
+<pre><span id="VALinsert_data"><span class="keyword">val</span> insert_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -> name:string -> data:string -> unit</code></pre><div class="info ">
+<code class="code">insert_data bundle ~name ~data</code> insert <code class="code">data</code> at path <code class="code">name</code>.<br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.html#TYPEt">t</a> -><br>       f:(string -><br>          [ `Copy | `Drop | `Map of string -> string | `Proc of string -> unit ]) -><br>       unit</code></pre><div class="info ">
+<code class="code">update bundle ~f:action</code> add, remove or update data in the
+        bundle.
+<p>
+
+        This is a swiss-knife function, that can do arbitrary bundle
+        modification. See <a href="Bap_bundle.Std.Bundle.html#VALget_file"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.<span class="constructor">Bundle</span>.get_file</code></a>, <a href="Bap_bundle.Std.Bundle.html#VALget_data"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.<span class="constructor">Bundle</span>.get_data</code></a>, <a href="Bap_bundle.Std.Bundle.html#VALinsert_files"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.<span class="constructor">Bundle</span>.insert_files</code></a>,
+        <a href="Bap_bundle.Std.Bundle.html#VALinsert_file"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.<span class="constructor">Bundle</span>.insert_file</code></a> and <a href="Bap_bundle.Std.Bundle.html#VALinsert_data"><code class="code"><span class="constructor">Bap_bundle</span>.<span class="constructor">Std</span>.<span class="constructor">Bundle</span>.insert_data</code></a> for an easier to use
+        interface.
+<p>
+
+        The <code class="code">action</code> function is called on each path,
+        and must return one of the following:
+<p>
+<ul>
+<li><code class="code"><span class="keywordsign">`</span><span class="constructor">Drop</span></code> - to remove the path from the bundle;</li>
+<li><code class="code"><span class="keywordsign">`</span><span class="constructor">Copy</span></code> - to keep it untouched;</li>
+<li><code class="code"><span class="keywordsign">`</span><span class="constructor">Proc</span> f</code> - extract it, process the file with a function
+                      <code class="code">f</code>, and put back, where function <code class="code">f</code> accepts
+                      a temporary name of extracted file;</li>
+<li><code class="code"><span class="keywordsign">`</span><span class="constructor">Map</span> f</code> - map the contents of the file with function <code class="code">f</code>.</li>
+</ul>
+
+        Warning. Modification of a bundle, associated with an
+        installed plugin or application will lead to an undefined
+        behavior. The function is intended for building a new
+        bundle. Once it is created it may be sealed and made
+        readonly.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Bundle.Builder.html">Builder</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Incremental bundle builder.
+</div>
+</body></html>

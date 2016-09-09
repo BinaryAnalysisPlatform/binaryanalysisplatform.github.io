@@ -63,10 +63,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Regular.Std.Opaque.S</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Regular.Std.Opaque.S</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Regular.Std.Opaque.html" title="Regular.Std.Opaque">Up</a>
@@ -77,13 +80,16 @@
 Opaque type is like regular type, except that we can print or
       examine it in any way. So it can't be serialized or
       pretty-printed.<br>
+<b>See also</b><ul><li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Comparable.mod/S.modt/"><code class="code"><span class="constructor">Comparable</span>.<span class="constructor">S</span></code></a></li>
+<li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Hashable.mod/S.modt/"><code class="code"><span class="constructor">Hashable</span>.<span class="constructor">S</span></code></a></li>
+</ul>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span class="keyword">include</span> Comparable</pre>
+<pre><span class="keyword">include</span> Comparable.S</pre>
 
-<pre><span class="keyword">include</span> Hashable</pre>
+<pre><span class="keyword">include</span> Hashable.S</pre>
 </body></html>

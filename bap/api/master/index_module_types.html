@@ -61,24 +61,25 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Index of module types</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Index of module types</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;</div>
 <h1>Index of module types</h1>
 <table>
-<tr><td align="left"><br>A</td></tr>
-<tr><td><a href="Bap_future.Std.Applicable.html">Applicable</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Bap.Std.Integer.Base.html">Base</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
-Applicable is an abstraction lying between Arrow, Monad and
-      Applicative.
+The minimal interface of the machine integer.
 </div>
 </td></tr>
-<tr><td align="left"><br>B</td></tr>
 <tr><td><a href="Bap.Std.Monad.Basic.html">Basic</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.Basic2.html">Basic2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
@@ -86,24 +87,18 @@ Applicable is an abstraction lying between Arrow, Monad and
 <tr><td align="left"><br>C</td></tr>
 <tr><td><a href="Bap.Std.CPU.html">CPU</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Abstract interface to CPU
+A BIL model of CPU
 </div>
 </td></tr>
 <tr><td><a href="Bap_byteweight.Corpus.html">Corpus</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
-<td></td></tr>
-<tr><td align="left"><br>D</td></tr>
-<tr><td><a href="Regular.Std.Data.html">Data</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Data interface.
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Graphlib.Std.Edge.html">Edge</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Interface that every Graph edge should provide
-</div>
-</td></tr>
-<tr><td align="left"><br>F</td></tr>
-<tr><td><a href="Bap.Std.Source.Factory.html">Factory</a> [<a href="Bap.Std.Source.html">Bap.Std.Source</a>]</td>
-<td><div class="info">
-Factory of data processors.
 </div>
 </td></tr>
 <tr><td align="left"><br>G</td></tr>
@@ -112,18 +107,11 @@ Factory of data processors.
 Graph signature.
 </div>
 </td></tr>
-<tr><td><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
-<td></td></tr>
 <tr><td align="left"><br>I</td></tr>
 <tr><td><a href="Bap.Std.Monad.Infix.html">Infix</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.Infix2.html">Infix2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Integer.html">Integer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-Signature for integral type.
-</div>
-</td></tr>
 <tr><td><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Isomorphism</span></code> is a bijection between type <code class="code">s</code> and <code class="code">t</code>.
@@ -142,7 +130,10 @@ Iterators lifted into monad
 </div>
 </td></tr>
 <tr><td><a href="X86_env.ModeVars.html">ModeVars</a> [<a href="X86_env.html">X86_env</a>]</td>
-<td></td></tr>
+<td><div class="info">
+CPU BIL variables.
+</div>
+</td></tr>
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Graphlib.Std.Node.html">Node</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
@@ -150,11 +141,6 @@ Iterators lifted into monad
 </div>
 </td></tr>
 <tr><td align="left"><br>O</td></tr>
-<tr><td><a href="Regular.Std.Opaque.html">Opaque</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td><div class="info">
-an alias
-</div>
-</td></tr>
 <tr><td><a href="Bap_bml.Ops.html">Ops</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>P</td></tr>
@@ -165,24 +151,18 @@ an alias
 A type of modules for filtering graphs.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Printable.html">Printable</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td><div class="info">
-</div>
-</td></tr>
 <tr><td align="left"><br>R</td></tr>
 <tr><td><a href="Bap_bml.Registry.html">Registry</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
 <td><div class="info">
 Interface to a registry.
 </div>
 </td></tr>
-<tr><td><a href="Regular.Std.Regular.html">Regular</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
-<td><div class="info">
-module type alias for <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code>
-</div>
-</td></tr>
 <tr><td align="left"><br>S</td></tr>
 <tr><td><a href="Bap_byteweight.S.html">S</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Byteweight algorithm interface.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.S.html">S</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.S.html">S</a> [<a href="Bap_c_type_mapper_intf.html">Bap_c_type_mapper_intf</a>]</td>
@@ -193,6 +173,17 @@ Type mapper, visitor, iterator, finder all in one.
 <tr><td><a href="Bap_api.S.html">S</a> [<a href="Bap_api.html">Bap_api</a>]</td>
 <td><div class="info">
 Language processor interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap_future.Std.Variadic.S.html">S</a> [<a href="Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a>]</td>
+<td><div class="info">
+Variadic argument list.
+</div>
+</td></tr>
+<tr><td><a href="Bap_future.Std.Applicable.S.html">S</a> [<a href="Bap_future.Std.Applicable.html">Bap_future.Std.Applicable</a>]</td>
+<td><div class="info">
+Applicable is an abstraction lying between Arrow, Monad and
+        Applicative.
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Opaque.S.html">S</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
@@ -221,20 +212,35 @@ a data type with a version
 Interface for printing data.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Source.Factory.S.html">S</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
+<td><div class="info">
+Factory interface
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.S.html">S</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 A required interface for the type to be lifted to value.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Trie.S.html">S</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+Prefix trie interface.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Monad.S.html">S</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Monad.S2.html">S2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Monad.State.html">State</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
+<tr><td><a href="Bap.Std.Monad.State.S.html">S</a> [<a href="Bap.Std.Monad.State.html">Bap.Std.Monad.State</a>]</td>
 <td><div class="info">
 State monad interface.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Integer.S.html">S</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
+<td><div class="info">
+Signature for integral type.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Monad.S2.html">S2</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>T</td></tr>
 <tr><td><a href="Bap.Std.Target.html">Target</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
@@ -246,14 +252,6 @@ Abstract interface for all targets.
 Minimum required interface for a token data type
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Trie.html">Trie</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-Prefix tries.
-</div>
-</td></tr>
-<tr><td align="left"><br>V</td></tr>
-<tr><td><a href="Bap_future.Std.Variadic.html">Variadic</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
-<td></td></tr>
 </table>
 </body>
 </html>

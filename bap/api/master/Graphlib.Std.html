@@ -63,10 +63,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Visual attributes for graphvizualization." rel="Section" href="#4_Visualattributesforgraphvizualization">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="Visual attributes for graph vizualization." rel="Section" href="#4_Visualattributesforgraphvizualization">
 <link title="Auxiliary graph data structures" rel="Subsection" href="#5_Auxiliarygraphdatastructures">
 <title>BAR: BAP Annotated Reference : Graphlib.Std</title>
 </head>
@@ -112,14 +115,14 @@
       as a function, not a functor. Thus making there use syntactically
       easier. Also, <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> heavily uses optional and keyword
       parameters. For die-hards, many algorithms still have functor
-      interface.
+      a interface.
 <p>
 
       All <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> algorithms accept a first-class module with
       graph implementation as a first argument. You can think of this
       parameter as an explicit type class. Later, when modular
       implicits will be accepted in OCaml, this parameter can be
-      omitted. But for now, we need to pass it.
+      omitted. But for now, we need to pass them.
 <p>
 
       A recommended way to work with <a href="Graphlib.html"><code class="code"><span class="constructor">Graphlib</span></code></a> is to bind the
@@ -127,11 +130,11 @@
       a good choice:
 <p>
 
-   <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.<span class="constructor">String</span>.<span class="constructor">Bool</span></code></pre>
+      <pre class="codepre"><code class="code"><span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphlib</span>.<span class="constructor">Make</span>(<span class="constructor">String</span>)(<span class="constructor">Bool</span>)</code></pre>
 <p>
 
       This will bind name <code class="code"><span class="constructor">G</span></code> with a graph implementation that has
-      <code class="code">string</code> nodes, with edges marked by values of type <code class="code">bool</code>.
+      <code class="code">string</code> nodes, with edges labeled by values of type <code class="code">bool</code>.
 <p>
 
       To create a graph of type <code class="code"><span class="constructor">G</span>.t</code> one can use a generic
@@ -254,7 +257,7 @@ A type of modules for filtering graphs.
 </div>
 
 <pre><span id="TYPEdfs_visitor"><span class="keyword">class type</span> <code class="type">[['n, 'e, 's]]</code> <a href="Graphlib.Std.dfs_visitor-c.html">dfs_visitor</a></span> = <code class="code"><span class="keyword">object</span></code> <a href="Graphlib.Std.dfs_visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><br>
-<h4 id="4_Visualattributesforgraphvizualization">Visual attributes for graphvizualization.</h4>
+<h4 id="4_Visualattributesforgraphvizualization">Visual attributes for graph vizualization.</h4>
       Consult OCamlGraph library for more information.<br>
 
 <pre><span id="TYPEnode_attr"><span class="keyword">type</span> <code class="type"></code>node_attr</span> = <code class="type">Graph.Graphviz.DotAttributes.vertex</code> </pre>

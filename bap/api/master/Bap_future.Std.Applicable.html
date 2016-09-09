@@ -64,26 +64,24 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Applicable</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Applicable</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_future.Std.html" title="Bap_future.Std">Up</a>
 &nbsp;<a class="post" href="Bap_future.Std.Variadic.html" title="Bap_future.Std.Variadic">Next</a>
 </div>
-<h1>Module type <a href="type_Bap_future.Std.Applicable.html">Bap_future.Std.Applicable</a></h1>
+<h1>Module <a href="type_Bap_future.Std.Applicable.html">Bap_future.Std.Applicable</a></h1>
 
-<pre><span class="keyword">module type</span> Applicable = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Applicable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<pre><span class="keyword">module</span> Applicable: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Applicable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Bap_future.Std.Applicable.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Applicable.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Applicable is an abstraction lying between Arrow, Monad and
-      Applicative. It can be seen as a more general form of
-      <code class="code"><span class="constructor">Applicative</span></code> that lacks <code class="code">return</code> (or <code class="code">pure</code>) operation. Since
-      return operation is not available for co-inductive type, we cannot
-      use the <code class="code"><span class="constructor">Applicative</span></code> functor for <code class="code"><span class="constructor">Streams</span></code>.<br>
+        Applicative.
 </div>
-<hr width="100%">
-
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
-
 </body></html>

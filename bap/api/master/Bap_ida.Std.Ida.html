@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Ida</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Ida</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_ida.Std.html" title="Bap_ida.Std">Up</a>
@@ -97,6 +100,10 @@ IDA instance<br>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string -> <a href="Bap_ida.Std.Ida.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create target</code> create an IDA instance that will work with
         <code class="code">target</code> executable.<br>
+</div>
+
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type"><a href="Bap_ida.Std.Ida.html#TYPEt">t</a> -> 'a <a href="Bap_ida.Std.html#TYPEcommand">Bap_ida.Std.command</a> -> 'a</code></pre><div class="info ">
+<code class="code">exec ida command</code> execute the given <code class="code">command</code>.<br>
 </div>
 
 <pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Bap_ida.Std.Ida.html#TYPEt">t</a> -> unit</code></pre><div class="info ">

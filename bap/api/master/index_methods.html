@@ -61,10 +61,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Index of class methods</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Index of class methods</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
@@ -771,7 +774,11 @@ a byte is stored to a a given address
 <tr><td><a href="Microx_conqueror.context-c.html#METHODstore_return">store_return</a> [<a href="Microx_conqueror.context-c.html">Microx_conqueror.context</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODstructure">structure</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+if spec is complete then returns a total size of the
+    structure, including padding.
+</div>
+</td></tr>
 <tr><td align="left"><br>T</td></tr>
 <tr><td><a href="Bap.Std.Taint.context-c.html#METHODtaint_ptr">taint_ptr</a> [<a href="Bap.Std.Taint.context-c.html">Bap.Std.Taint.context</a>]</td>
 <td><div class="info">
@@ -803,7 +810,8 @@ called when context doesn't know the variable
 </td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODunion">union</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td><div class="info">
-returns
+if spec is complete then returns a size of the biggest
+        element, including padding
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.t-c.html#METHODupdate">update</a> [<a href="Bap.Std.Expi.t-c.html">Bap.Std.Expi.t</a>]</td>

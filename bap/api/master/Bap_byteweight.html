@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_byteweight</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_byteweight</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_byteweight_signatures.html" title="Bap_byteweight_signatures">Previous</a>
@@ -77,10 +80,38 @@
 </div>
 <h1>Module <a href="type_Bap_byteweight.html">Bap_byteweight</a></h1>
 
-<pre><span class="keyword">module</span> Bap_byteweight: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Bap_byteweight: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Byteweight library.
+<p>
 
-<pre><span class="keyword">module type</span> <a href="Bap_byteweight.Corpus.html">Corpus</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.Corpus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap_byteweight.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_byteweight.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Corpus</span></code><code class="code"> : </code><code class="type"><a href="Bap_byteweight.Corpus.html">Corpus</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Trie</span></code><code class="code"> : </code><code class="type">Trie</code><code class="type">  with type key = Corpus.key</code><code class="code">) </code>: <code class="type"><a href="Bap_byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
-     and type corpus = Corpus.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_byteweight.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+    Byteweight is a function start identification mechanism <code class="code">[1]</code>. This
+    library provides a functorized implementation.
+<p>
+
+    An auxiliary <a href="Bap_byteweight_signatures.html"><code class="code"><span class="constructor">Bap_byteweight_signatures</span></code></a> library provides an
+    access to the repository of binary signatures.<br>
+<b>See also</b> <a href="https://www.usenix.org/system/files/conference/usenixsecurity14/sec14-paper-bao.pdf"><pre class="verbatim">    [1]: Bao, Tiffany, et al. "Byteweight: Learning to recognize functions in binary code."
+         23rd USENIX Security Symposium (USENIX Security 14). 2014.
+   </pre></a><br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Bap_byteweight.Corpus.html">Corpus</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.Corpus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Data interface.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap_byteweight.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Byteweight algorithm interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_byteweight.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Corpus</span></code><code class="code"> : </code><code class="type"><a href="Bap_byteweight.Corpus.html">Corpus</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Trie</span></code><code class="code"> : </code><code class="type">Trie.S</code><code class="type">  with type key = Corpus.key</code><code class="code">) </code>: <code class="type"><a href="Bap_byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
+     and type corpus = Corpus.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
+    that works in the <code class="code"><span class="constructor">Corpus</span></code> domain and uses <code class="code"><span class="constructor">Trie</span></code> for its
+    implementation.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_byteweight.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Default implementation that uses memory chunk as the domain.
+</div>
+</body></html>

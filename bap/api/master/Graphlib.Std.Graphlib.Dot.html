@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Graphlib.Std.Graphlib.Labeled.html">
+<link rel="previous" href="Graphlib.Std.Graphlib.Mapper.html">
 <link rel="Up" href="Graphlib.Std.Graphlib.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -64,16 +64,52 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Dot</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Dot</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Graphlib.Std.Graphlib.Labeled.html" title="Graphlib.Std.Graphlib.Labeled">Previous</a>
+<div class="navbar"><a class="pre" href="Graphlib.Std.Graphlib.Mapper.html" title="Graphlib.Std.Graphlib.Mapper">Previous</a>
 &nbsp;<a class="up" href="Graphlib.Std.Graphlib.html" title="Graphlib.Std.Graphlib">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Graphlib.Std.Graphlib.Dot.html">Graphlib.Std.Graphlib.Dot</a></h1>
 
-<pre><span class="keyword">module</span> Dot: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Graphlib.Dot.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Dot: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Graphlib.Dot.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Generic dot printer.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Sequence.t -><br>       edges:'e Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
+<code class="code">pp_graph ~nodes_of_edge ~nodes ~edges ppf</code> - generic dot
+          printer.
+<p>
+
+          This function is useful for implementing custom dot
+          printers. Use it if the default dot printer <code class="code"><span class="constructor">Graph</span>.pp</code>
+          doesn't suit your needs.
+<p>
+
+          For the purpose of this function a graph can be represented
+          with three values:<ul>
+<li><code class="code">nodes_of_edge</code> returns the source and destination nodes
+              of an edge;</li>
+<li><code class="code">nodes</code> is a sequence of nodes;</li>
+<li><code class="code">edges</code> is a sequence of edges;</li>
+</ul>
+<br>
+</div>
+<div class="param_info"><code class="code">name</code> : the name of the graph.</div>
+<div class="param_info"><code class="code">attrs</code> : graphviz attributes of the graph.</div>
+<div class="param_info"><code class="code">string_of_node</code> : name of a node.</div>
+<div class="param_info"><code class="code">node_label</code> : text representation of the node label.</div>
+<div class="param_info"><code class="code">edge_label</code> : text representation of the edge label.
+<p>
+
+          All optional parameters default to a null value, so that
+          if a parameter is not specified, then a corresponding entry
+          will not be printed.</div>
 </body></html>

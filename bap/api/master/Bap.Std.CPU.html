@@ -65,10 +65,14 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="Minimum set of required definitions" rel="Section" href="#3_Minimumsetofrequireddefinitions">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="Predicates" rel="Section" href="#3_Predicates">
+<link title="Flag registers" rel="Subsection" href="#4_Flagregisters">
 <title>BAR: BAP Annotated Reference : Bap.Std.CPU</title>
 </head>
 <body>
@@ -79,11 +83,17 @@
 <h1>Module type <a href="type_Bap.Std.CPU.html">Bap.Std.CPU</a></h1>
 
 <pre><span class="keyword">module type</span> CPU = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.CPU.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-Abstract interface to CPU<br>
+A BIL model of CPU
+<p>
+
+      In general this is a model of a processor architecture, involving
+      ALU, processing unit, registers and memory.
+<p>
+
+      The definitions in this module are so generic, that they
+      present on all processors.<br>
 </div>
 <hr width="100%">
-<br>
-<h3 id="3_Minimumsetofrequireddefinitions">Minimum set of required definitions</h3><br>
 
 <pre><span id="VALgpr"><span class="keyword">val</span> gpr</span> : <code class="type">Var.Set.t</code></pre><div class="info ">
 A set of general purpose registers<br>
@@ -96,12 +106,61 @@ Memory<br>
 <pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
 Stack pointer<br>
 </div>
+<br>
+<h4 id="4_Flagregisters">Flag registers</h4><br>
 
 <pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
-<h4 id="4_Flagregisters">Flag registers</h4><br>
+zero flag<br>
 </div>
 
-<pre><span id="VALis_reg"><span class="keyword">val</span> is_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+carry flag<br>
+</div>
+
+<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+overflow flag<br>
+</div>
+
+<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+negative flag<br>
+</div>
+<br>
 <h3 id="3_Predicates">Predicates</h3><br>
+
+<pre><span id="VALis_reg"><span class="keyword">val</span> is_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_reg var</code> true if <code class="code">var</code> is a processor register<br>
+</div>
+
+<pre><span id="VALis_flag"><span class="keyword">val</span> is_flag</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_flag reg</code> is true if <code class="code">reg</code> is a flag register<br>
+</div>
+
+<pre><span id="VALis_sp"><span class="keyword">val</span> is_sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_sp x = <span class="constructor">Var</span>.same x sp</code><br>
+</div>
+
+<pre><span id="VALis_bp"><span class="keyword">val</span> is_bp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_bp x</code> is true if <code class="code">x</code> can be possibly used as a base
+        pointer register.<br>
+</div>
+
+<pre><span id="VALis_zf"><span class="keyword">val</span> is_zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_zf x = <span class="constructor">Var</span>.same x zf</code><br>
+</div>
+
+<pre><span id="VALis_cf"><span class="keyword">val</span> is_cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_cf x = <span class="constructor">Var</span>.same x cf</code><br>
+</div>
+
+<pre><span id="VALis_vf"><span class="keyword">val</span> is_vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_vf x = <span class="constructor">Var</span>.same x vf</code><br>
+</div>
+
+<pre><span id="VALis_nf"><span class="keyword">val</span> is_nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_nf x = <span class="constructor">Var</span>.same x nf</code><br>
+</div>
+
+<pre><span id="VALis_mem"><span class="keyword">val</span> is_mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<code class="code">is_mem x = <span class="constructor">Var</span>.same x mem</code><br>
 </div>
 </body></html>

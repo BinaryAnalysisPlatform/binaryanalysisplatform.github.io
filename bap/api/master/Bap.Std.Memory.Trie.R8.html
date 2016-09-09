@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Memory.Trie.R8</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Memory.Trie.R8</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap.Std.Memory.Trie.html" title="Bap.Std.Memory.Trie">Up</a>
@@ -75,7 +78,7 @@
 </div>
 <h1>Module <a href="type_Bap.Std.Memory.Trie.R8.html">Bap.Std.Memory.Trie.R8</a></h1>
 
-<pre><span class="keyword">module</span> R8: <code class="type"><a href="Bap.Std.Trie.html">Trie</a></code><code class="type">  with type key = t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> R8: <code class="type"><a href="Bap.Std.Trie.S.html">Trie.S</a></code><code class="type">  with type key = t</code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
@@ -89,58 +92,58 @@ a key type that is used to lookup data<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ()</code> creates new empty trie<br>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> key:<a href="Bap.Std.Trie.html#TYPEkey">key</a> -> data:'a -> unit</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> key:<a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> data:'a -> unit</code></pre><div class="info ">
 <code class="code">add trie ~key ~data</code> adds <code class="code">data</code> associated with <code class="code">key</code>, if
-        <code class="code">trie</code> already has some data associated with the <code class="code">key</code>, then
-        it will be overwritten<br>
+          <code class="code">trie</code> already has some data associated with the <code class="code">key</code>, then
+          it will be overwritten<br>
 </div>
 
-<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> ('a option -> 'a option) -> unit</code></pre><div class="info ">
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> ('a option -> 'a option) -> unit</code></pre><div class="info ">
 <code class="code">change trie key f</code> if trie has <code class="code">data</code> associated with <code class="code">key</code> then
-        <code class="code">f</code> will be called with <code class="code"><span class="constructor">Some</span> data</code>, otherwise it will be called
-        with <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> returns <code class="code"><span class="constructor">None</span></code> then there will be no data
-        associated with <code class="code">key</code>, if <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> thing</code>, then <code class="code">thing</code>
-        will be bound to <code class="code">key</code><br>
+          <code class="code">f</code> will be called with <code class="code"><span class="constructor">Some</span> data</code>, otherwise it will be called
+          with <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> returns <code class="code"><span class="constructor">None</span></code> then there will be no data
+          associated with <code class="code">key</code>, if <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> thing</code>, then <code class="code">thing</code>
+          will be bound to <code class="code">key</code><br>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> 'a option</code></pre><div class="info ">
 <code class="code">find trie key</code> finds data associated with <code class="code">key</code><br>
 </div>
 
-<pre><span id="VALwalk"><span class="keyword">val</span> walk</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> init:'b -> f:('b -> 'a option -> 'b) -> 'b</code></pre><div class="info ">
+<pre><span id="VALwalk"><span class="keyword">val</span> walk</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> init:'b -> f:('b -> 'a option -> 'b) -> 'b</code></pre><div class="info ">
 <code class="code">walk trie key ~init ~f</code> walks down the tree starting from the
-        root and ending with the last token of the key. Function <code class="code">f</code>
-        is fold over values associated with all substrings of the key,
-        starting from a zero substring.<br>
+          root and ending with the last token of the key. Function <code class="code">f</code>
+          is fold over values associated with all substrings of the key,
+          starting from a zero substring.<br>
 </div>
 
-<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> unit</code></pre><div class="info ">
 <code class="code">remove trie key</code> removes value bound with <code class="code">key</code> if any.<br>
 </div>
 
-<pre><span id="VALlongest_match"><span class="keyword">val</span> longest_match</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.html#TYPEkey">key</a> -> (int * 'a) option</code></pre><div class="info ">
+<pre><span id="VALlongest_match"><span class="keyword">val</span> longest_match</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> (int * 'a) option</code></pre><div class="info ">
 <code class="code">longest_match trie k</code> find the value associated with a
-        longest substring of a key <code class="code">k</code>. Returns a pair - a length of
-        matched key and data, associated with that key.<br>
+          longest substring of a key <code class="code">k</code>. Returns a pair - a length of
+          matched key and data, associated with that key.<br>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
 <code class="code">length trie</code> returns the amount of entries in the <code class="code">trie</code><br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Trie.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
 <code class="code">pp pp_val</code> creates a printer for a given value printer
-        <code class="code">pp_val</code>. Example:
+          <code class="code">pp_val</code>. Example:
 <p>
 
-        <code class="code"><span class="keyword">let</span> int_trie = <span class="constructor">String</span>.<span class="constructor">Trie</span>.pp pp_int</code>
+          <code class="code"><span class="keyword">let</span> int_trie = <span class="constructor">String</span>.<span class="constructor">Trie</span>.pp pp_int</code>
 <p>
 
-        will create a printer for a <code class="code"><span class="constructor">String</span>.<span class="constructor">Trie</span></code> that is populated by
-        integers.<br>
+          will create a printer for a <code class="code"><span class="constructor">String</span>.<span class="constructor">Trie</span></code> that is populated by
+          integers.<br>
 </div>
 </body></html>

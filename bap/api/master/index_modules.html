@@ -61,10 +61,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Index of modules</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Index of modules</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
@@ -74,7 +77,7 @@
 <tr><td align="left"><br>A</td></tr>
 <tr><td><a href="X86_cpu.AMD64.html">AMD64</a> [<a href="X86_cpu.html">X86_cpu</a>]</td>
 <td><div class="info">
-<code class="code">x86-64</code> architecture
+AMD64 registers
 </div>
 </td></tr>
 <tr><td><a href="ARM.html">ARM</a> </td>
@@ -86,6 +89,8 @@
 Shortcut for bitvectors that represent addresses
 </div>
 </td></tr>
+<tr><td><a href="Bap_future.Std.Applicable.html">Applicable</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Arch.html">Arch</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Architecture
@@ -108,15 +113,24 @@ decodes condition value from a word
 </div>
 </td></tr>
 <tr><td><a href="Arm_env.html">Arm_env</a> </td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">spsr</code>  Saved Processor Status Register
+</div>
+</td></tr>
 <tr><td><a href="Arm_flags.html">Arm_flags</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_helpers.html">Arm_helpers</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_insn.html">Arm_insn</a> </td>
-<td></td></tr>
+<td><div class="info">
+insn opcode.
+</div>
+</td></tr>
 <tr><td><a href="Arm_lifter.html">Arm_lifter</a> </td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lift mem insn</code> lifts instruction.
+</div>
+</td></tr>
 <tr><td><a href="Arm_mem.html">Arm_mem</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_mem_shift.html">Arm_mem_shift</a> </td>
@@ -129,7 +143,10 @@ Combine Mem and Shift
 <tr><td><a href="Arm_mul.html">Arm_mul</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_op.html">Arm_op</a> </td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create op</code> projects bap generic operand into arm specific.
+</div>
+</td></tr>
 <tr><td><a href="Arm_reg.html">Arm_reg</a> </td>
 <td><div class="info">
 lifts basic register to a ARM one
@@ -154,6 +171,16 @@ General purpose registers
 <tr><td><a href="Bap.Std.Trie.Array.html">Array</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Prefix and suffix tries for specified token types.
+</div>
+</td></tr>
+<tr><td><a href="Text_tags.Attr.html">Attr</a> [<a href="Text_tags.html">Text_tags</a>]</td>
+<td><div class="info">
+Attributes mode.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Attr.html">Attr</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Attribute
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.C.Attr.html">Attr</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
@@ -186,7 +213,10 @@ BML - Bap Mapping Language.
 </div>
 </td></tr>
 <tr><td><a href="Bap_build.html">Bap_build</a> </td>
-<td></td></tr>
+<td><div class="info">
+bapbuild implentation library
+</div>
+</td></tr>
 <tr><td><a href="Bap_bundle.html">Bap_bundle</a> </td>
 <td><div class="info">
 <code class="code">main_bundle ()</code> returns a program's bundle if the program is
@@ -195,7 +225,10 @@ BML - Bap Mapping Language.
 </div>
 </td></tr>
 <tr><td><a href="Bap_byteweight.html">Bap_byteweight</a> </td>
-<td></td></tr>
+<td><div class="info">
+Byteweight library.
+</div>
+</td></tr>
 <tr><td><a href="Bap_byteweight_signatures.html">Bap_byteweight_signatures</a> </td>
 <td><div class="info">
 Provides signatures storage
@@ -242,7 +275,10 @@ C Type System.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a> </td>
-<td></td></tr>
+<td><div class="info">
+include visitor/mapper with the monad stripped away.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.html">Bap_c_type_mapper_intf</a> </td>
 <td><div class="info">
 Type mapper, visitor, iterator, finder all in one.
@@ -253,7 +289,21 @@ Type mapper, visitor, iterator, finder all in one.
 <tr><td><a href="Bap_config.html">Bap_config</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_demangle.html">Bap_demangle</a> </td>
-<td></td></tr>
+<td><div class="info">
+Name demangling.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.html">Bap_dwarf</a> </td>
+<td><div class="info">
+an encoded value
+</div>
+</td></tr>
+<tr><td><a href="Bap_elf.html">Bap_elf</a> </td>
+<td><div class="info">
+<code class="code">from_bigstring data</code> parses data with optional offset
+        provided as <code class="code">pos</code> and length as <code class="code">len</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.html">Bap_future</a> </td>
 <td><div class="info">
 Future library.
@@ -271,7 +321,7 @@ Bap Plugin Library
 </td></tr>
 <tr><td><a href="Bap_traces.html">Bap_traces</a> </td>
 <td><div class="info">
-Trace is a stream of events plus meta information.
+Traces of execution.
 </div>
 </td></tr>
 <tr><td><a href="Arm_types.Basic.html">Basic</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -294,7 +344,10 @@ BIL Interpreter.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Binary.html">Binary</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Information about a traced binary.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Biri.html">Biri</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 BIR Interpreter
@@ -325,8 +378,18 @@ Brancher is responsible for resolving destinations of branch
       instructions.
 </div>
 </td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Buffer.html">Buffer</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
+        that can allow one to share the same string for different sections
+        without explicit copying.
+</div>
+</td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.Builder.html">Builder</a> [<a href="Bap_bundle.Std.Bundle.html">Bap_bundle.Std.Bundle</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Incremental bundle builder.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html">Builder</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
 Builder interface.
@@ -343,9 +406,15 @@ Program builder.
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.html">Bundle</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Program Bundle.
+</div>
+</td></tr>
 <tr><td><a href="Bap_byteweight.Bytes.html">Bytes</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Default implementation that uses memory chunk as the domain.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html">Bytes</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
 Extension of the standard bytes module.
@@ -376,7 +445,10 @@ Data cache.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Call.html">Call</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A subroutine call.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Call.html">Call</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 A control transfer to another subroutine.
@@ -393,7 +465,10 @@ Control Flow Graph with a machine basic block as a node.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Chunk.html">Chunk</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Represent a memory chunk.
+</div>
+</td></tr>
 <tr><td><a href="Bap_ida.Std.Command.html">Command</a> [<a href="Bap_ida.Std.html">Bap_ida.Std</a>]</td>
 <td><div class="info">
 Commands that can be passed into an IDA session
@@ -420,6 +495,8 @@ Base class for evaluation contexts.
 <tr><td><a href="Core_printers.html">Core_printers</a> </td>
 <td></td></tr>
 <tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Data.html">Data</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_c.Std.C.Data.html">Data</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html">Data</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
@@ -433,9 +510,15 @@ Definition.
 </div>
 </td></tr>
 <tr><td><a href="Bap_demangle.Std.Demangler.html">Demangler</a> [<a href="Bap_demangle.Std.html">Bap_demangle.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Demangler is a named string transformation.
+</div>
+</td></tr>
 <tr><td><a href="Bap_demangle.Std.Demanglers.html">Demanglers</a> [<a href="Bap_demangle.Std.html">Bap_demangle.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Registry of demanglers.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Dict.html">Dict</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Universal Heterogeneous Map.
@@ -446,6 +529,14 @@ Universal Heterogeneous Map.
 Data digesting for caching.
 </div>
 </td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_table_info.Direct.html">Direct</a> [<a href="Bap_elf.Std.Elf.Fields_of_table_info.html">Bap_elf.Std.Elf.Fields_of_table_info</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_elf.Direct.html">Direct</a> [<a href="Bap_elf.Std.Elf.Fields_of_elf.html">Bap_elf.Std.Elf.Fields_of_elf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_section.Direct.html">Direct</a> [<a href="Bap_elf.Std.Elf.Fields_of_section.html">Bap_elf.Std.Elf.Fields_of_section</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_segment.Direct.html">Direct</a> [<a href="Bap_elf.Std.Elf.Fields_of_segment.html">Bap_elf.Std.Elf.Fields_of_segment</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.Direct.html">Direct</a> [<a href="Bap_traces.Std.Modload.Fields.html">Bap_traces.Std.Modload.Fields</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Return.Fields.Direct.html">Direct</a> [<a href="Bap_traces.Std.Return.Fields.html">Bap_traces.Std.Return.Fields</a>]</td>
@@ -485,7 +576,17 @@ Expert interface to disassembler.
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Dot.html">Dot</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Generic dot printer.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.html">Dwarf</a> [<a href="Bap_dwarf.Std.html">Bap_dwarf.Std</a>]</td>
+<td><div class="info">
+Dwarf library
+      This library gives an access to debugging information stored
+      in a binary program.
+</div>
+</td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Graphlib.Std.Graph.Edge.html">Edge</a> [<a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a>]</td>
 <td><div class="info">
@@ -498,20 +599,28 @@ since in IR the order of edges defines semantics, we provide
           extra functions
 </div>
 </td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.html">Elf</a> [<a href="Bap_elf.Std.html">Bap_elf.Std</a>]</td>
+<td></td></tr>
 <tr><td><a href="Graphlib.Std.Equiv.html">Equiv</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Ordinal for representing equivalence.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Event.html">Event</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Types of events.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Event.html">Event</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Event subsystem.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Exn.html">Exn</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+hardware exception
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Exp.html">Exp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Regular</span></code> interface for BIL expressions
@@ -541,7 +650,15 @@ A factory of symbolizers.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Source.Factory.html">Factory</a> [<a href="Bap.Std.Source.html">Bap.Std.Source</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Factory of data processors.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Fbi.html">Fbi</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Function boundary identification.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.Fields.html">Fields</a> [<a href="Bap_traces.Std.Modload.html">Bap_traces.Std.Modload</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Return.Fields.html">Fields</a> [<a href="Bap_traces.Std.Return.html">Bap_traces.Std.Return</a>]</td>
@@ -570,18 +687,42 @@ A factory of symbolizers.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Location.Fields.html">Fields</a> [<a href="Bap.Std.Location.html">Bap.Std.Location</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_traces.Std.File_stats.html">File_stats</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_elf.html">Fields_of_elf</a> [<a href="Bap_elf.Std.Elf.html">Bap_elf.Std.Elf</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_section.html">Fields_of_section</a> [<a href="Bap_elf.Std.Elf.html">Bap_elf.Std.Elf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_segment.html">Fields_of_segment</a> [<a href="Bap_elf.Std.Elf.html">Bap_elf.Std.Elf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.Elf.Fields_of_table_info.html">Fields_of_table_info</a> [<a href="Bap_elf.Std.Elf.html">Bap_elf.Std.Elf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_traces.Std.File_stats.html">File_stats</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
+<td><div class="info">
+File information.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Filtered.html">Filtered</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 functorized version of a <code class="code">filter</code> function.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.Finder.html">Finder</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the visitor lifted into the search monad.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Fmm.html">Fmm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Floating point immediate operand
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Fn.html">Fn</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Current function representation.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Form.html">Form</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Attribute form
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.From_string.html">From_string</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
@@ -622,7 +763,10 @@ Group is a non-empty set that is a result of partitioning of an
 </td></tr>
 <tr><td align="left"><br>I</td></tr>
 <tr><td><a href="X86_cpu.IA32.html">IA32</a> [<a href="X86_cpu.html">X86_cpu</a>]</td>
-<td></td></tr>
+<td><div class="info">
+IA32 Architecture Registers.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Id.html">Id</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.Id.html">Id</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
@@ -692,6 +836,11 @@ Arithmetic raised into <code class="code"><span class="constructor">Or_error</sp
 Arithmetic that raises exceptions.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Integer.html">Integer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Machine integer as a sequence of bits.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.S.Io.html">Io</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 Input/Output functions for the given datum.
@@ -721,6 +870,13 @@ Target of a control flow transfer.
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Labeled.html">Labeled</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Labeled</span>(<span class="constructor">Node</span>)(<span class="constructor">Node_label</span>)(<span class="constructor">Edge_label</span>)</code> creates a graph
+        structure with both nodes and edges labeled with abitrary
+        types.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Leb128.html">Leb128</a> [<a href="Bap_dwarf.Std.html">Bap_dwarf.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Linear.html">Linear</a> [<a href="Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a>]</td>
 <td><div class="info">
@@ -730,7 +886,10 @@ A simple linear sweep disassembler.
 <tr><td><a href="Bap.Std.Bitvector.Trie.Little.html">Little</a> [<a href="Bap.Std.Bitvector.Trie.html">Bap.Std.Bitvector.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Location.html">Location</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A code location
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Location.html">Location</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 A locations of a chunk of memory
@@ -748,9 +907,17 @@ Logging event.
 </td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap_byteweight.Make.html">Make</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
+    that works in the <code class="code"><span class="constructor">Corpus</span></code> domain and uses <code class="code"><span class="constructor">Trie</span></code> for its
+    implementation.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type_mapper.Make.html">Make</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> lifts the visitor into monad <code class="code"><span class="constructor">M</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Make.html">Make</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">Node</span>)(<span class="constructor">Edge</span>)</code> creates a module that implements <code class="code"><span class="constructor">Graph</span></code>
@@ -781,6 +948,8 @@ Implements <code class="code"><span class="constructor">Data</span>.<span class=
 Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Source.Factory.Make.html">Make</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Trie.Make.html">Make</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Create a trie for a given <code class="code"><span class="constructor">Key</span></code>
@@ -796,6 +965,11 @@ Create a trie for a given <code class="code"><span class="constructor">Key</span
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.Make.html">Make</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Integer.Make.html">Make</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
+<td><div class="info">
+Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="constructor">Integer</span>.<span class="constructor">S</span></code></a> from the minimal implementation.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Monad.T.Or_error.Make2.html">Make2</a> [<a href="Bap.Std.Monad.T.Or_error.html">Bap.Std.Monad.T.Or_error</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Monad.T.Option.Make2.html">Make2</a> [<a href="Bap.Std.Monad.T.Option.html">Bap.Std.Monad.T.Option</a>]</td>
@@ -808,7 +982,10 @@ lifts iterators to monad <code class="code"><span class="constructor">M</span></
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Manifest.html">Manifest</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Program meta infromation.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Taint.Map.html">Map</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c.Std.C.Type.Mapper.html">Mapper</a> [<a href="Bap_c.Std.C.Type.html">Bap_c.Std.C.Type</a>]</td>
@@ -836,15 +1013,30 @@ Memory region
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Meta.html">Meta</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Types of meta information.
+</div>
+</td></tr>
 <tr><td><a href="Microx.html">Microx</a> </td>
-<td></td></tr>
+<td><div class="info">
+Microexecution library.
+</div>
+</td></tr>
 <tr><td><a href="Microx_concretizer.html">Microx_concretizer</a> </td>
-<td></td></tr>
+<td><div class="info">
+expression interpreter that never halts due to an unknown value.
+</div>
+</td></tr>
 <tr><td><a href="Microx_conqueror.html">Microx_conqueror</a> </td>
-<td></td></tr>
+<td><div class="info">
+execution context.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.html">Modload</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+linking event
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Monad.html">Monad</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Monad is an interface, that is pervasives through many data
@@ -862,7 +1054,10 @@ A comparable interface with size-monomorphic comparison.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Move.html">Move</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Represent a movement of data
+</div>
+</td></tr>
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Graphlib.Std.Graph.Node.html">Node</a> [<a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a>]</td>
 <td><div class="info">
@@ -934,7 +1129,12 @@ Path between two nodes.
 </div>
 </td></tr>
 <tr><td><a href="X86_types.Pcmpstr.html">Pcmpstr</a> [<a href="X86_types.html">X86_types</a>]</td>
-<td></td></tr>
+<td><div class="info">
+See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
+   (order numbers 253666 and 253667)
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Phi.html">Phi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 PHI-node
@@ -983,11 +1183,17 @@ An promise to provide a value in a future.
 <tr><td><a href="Bap.Std.Memory.Trie.R16.html">R16</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.R32.html">R32</a> [<a href="X86_env.html">X86_env</a>]</td>
-<td></td></tr>
+<td><div class="info">
+32-bit mode registers
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.Trie.R32.html">R32</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.R64.html">R64</a> [<a href="X86_env.html">X86_env</a>]</td>
-<td></td></tr>
+<td><div class="info">
+64-bit mode registers
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.Trie.R64.html">R64</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory.Trie.R8.html">R8</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
@@ -1043,7 +1249,10 @@ Result Monad Transformer.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Return.html">Return</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A return from a call.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Rooter.html">Rooter</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Rooter finds starts of functions in the binary.
@@ -1051,7 +1260,15 @@ Rooter finds starts of functions in the binary.
 </td></tr>
 <tr><td align="left"><br>S</td></tr>
 <tr><td><a href="Bap_c_type_mapper.Search.html">Search</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Search Monad.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Section.html">Section</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+File sections
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Backend.Section.html">Section</a> [<a href="Bap.Std.Backend.html">Bap.Std.Backend</a>]</td>
 <td><div class="info">
 Just a named region of memory.
@@ -1117,7 +1334,10 @@ An abstraction of a stack, commonly used in C compilers.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.State.html">State</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the mapper lifted into a regular state monad.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Monad.T.State.html">State</a> [<a href="Bap.Std.Monad.T.html">Bap.Std.Monad.T</a>]</td>
 <td><div class="info">
 Result Monad Transformer.
@@ -1129,8 +1349,15 @@ State monad.
 </div>
 </td></tr>
 <tr><td><a href="Bap_build.Std.html">Std</a> [<a href="Bap_build.html">Bap_build</a>]</td>
-<td></td></tr>
+<td><div class="info">
+bapbuild support library.
+</div>
+</td></tr>
 <tr><td><a href="Microx.Std.html">Std</a> [<a href="Microx.html">Microx</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_dwarf.Std.html">Std</a> [<a href="Bap_dwarf.html">Bap_dwarf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_elf.Std.html">Std</a> [<a href="Bap_elf.html">Bap_elf</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_ida.Std.html">Std</a> [<a href="Bap_ida.html">Bap_ida</a>]</td>
 <td></td></tr>
@@ -1138,7 +1365,7 @@ State monad.
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.html">Std</a> [<a href="Bap_traces.html">Bap_traces</a>]</td>
 <td><div class="info">
-Trace is a stream of events plus meta information.
+Traces of execution.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.html">Std</a> [<a href="Bap_c.html">Bap_c</a>]</td>
@@ -1215,7 +1442,10 @@ Reconstructed symbol table.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Syscall.html">Syscall</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a system call
+</div>
+</td></tr>
 <tr><td align="left"><br>T</td></tr>
 <tr><td><a href="Bap.Std.Monad.T.html">T</a> [<a href="Bap.Std.Monad.html">Bap.Std.Monad</a>]</td>
 <td><div class="info">
@@ -1225,6 +1455,11 @@ Monad transformers.
 <tr><td><a href="Bap.Std.Table.html">Table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Table.
+</div>
+</td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Tag.html">Tag</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
+<td><div class="info">
+Debug Entry Tag
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html">Tag</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
@@ -1240,6 +1475,11 @@ Abstract taint.
 <tr><td><a href="Bap.Std.Term.html">Term</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 IR language term.
+</div>
+</td></tr>
+<tr><td><a href="Text_tags.html">Text_tags</a> </td>
+<td><div class="info">
+Controls tags in format strings.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Tid.html">Tid</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1261,13 +1501,25 @@ Graph of Term identifiers.
 <tr><td><a href="Regular.Std.Bytes.To_string.html">To_string</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html">Trace</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Trace is a stream of events plus meta data.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace_stats.html">Trace_stats</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Information about the trace itself
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Tracer.html">Tracer</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Information about a tracer tool.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Traces.html">Traces</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Loaded traces.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Tree.html">Tree</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Tree is a particular subtype of a graph for which
@@ -1357,6 +1609,14 @@ BIL variable.
 Variadic arguments.
 </div>
 </td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Form.Variants.html">Variants</a> [<a href="Bap_dwarf.Std.Dwarf.Form.html">Bap_dwarf.Std.Dwarf.Form</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Attr.Variants.html">Variants</a> [<a href="Bap_dwarf.Std.Dwarf.Attr.html">Bap_dwarf.Std.Dwarf.Attr</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Tag.Variants.html">Variants</a> [<a href="Bap_dwarf.Std.Dwarf.Tag.html">Bap_dwarf.Std.Dwarf.Tag</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_dwarf.Std.Dwarf.Section.Variants.html">Variants</a> [<a href="Bap_dwarf.Std.Dwarf.Section.html">Bap_dwarf.Std.Dwarf.Section</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Type.Variants.html">Variants</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Size.Variants_of_all.html">Variants_of_all</a> [<a href="Bap.Std.Size.html">Bap.Std.Size</a>]</td>
@@ -1398,7 +1658,7 @@ Write typeclass.
 <tr><td align="left"><br>X</td></tr>
 <tr><td><a href="X86_cpu.html">X86_cpu</a> </td>
 <td><div class="info">
-<code class="code">x86-64</code> architecture
+IA32 Architecture Registers.
 </div>
 </td></tr>
 <tr><td><a href="X86_env.html">X86_env</a> </td>
@@ -1408,7 +1668,9 @@ condition flag bits
 </td></tr>
 <tr><td><a href="X86_types.html">X86_types</a> </td>
 <td><div class="info">
-Information about the type of pcmp instruction.
+See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
+   (order numbers 253666 and 253667)
 </div>
 </td></tr>
 </table>

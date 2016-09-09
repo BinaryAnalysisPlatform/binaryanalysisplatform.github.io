@@ -63,10 +63,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><link title="BAP API" rel="Section" href="#api">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="BAP API" rel="Section" href="#api">
 <link title="Overview" rel="Subsection" href="#2_Overview">
 <link title="Foundation Library" rel="Subsection" href="#bfl">
 <link title="Memory model" rel="Subsection" href="#image">
@@ -640,8 +643,8 @@
 <br>
 <h1 id="api">BAP API</h1><br>
 
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Integer.html">Integer</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Signature for integral type.
+<pre><span class="keyword">module</span> <a href="Bap.Std.Integer.html">Integer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Machine integer as a sequence of bits.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -656,10 +659,6 @@ Lazy sequence
 
 <pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a Seq.t</code> </pre>
 
-
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Trie.html">Trie</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Prefix tries.
-</div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Constructs a trie
@@ -1314,15 +1313,9 @@ Reconstructed symbol table.
 
 <pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Or_error.t</code> </pre>
 
-<br>
-A BIL model of CPU
-<p>
-
-      In general this is a model of a processor architecture, involving
-      ALU, processing unit, registers and memory.<br>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.CPU.html">CPU</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.CPU.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Abstract interface to CPU
+A BIL model of CPU
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Target.html">Target</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Target.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

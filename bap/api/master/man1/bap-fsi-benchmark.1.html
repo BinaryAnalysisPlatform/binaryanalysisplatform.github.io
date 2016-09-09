@@ -1,0 +1,85 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of BAP-FSI-BENCHMARK</TITLE>
+</HEAD><BODY>
+<H1>BAP-FSI-BENCHMARK</H1>
+Section: Bap-fsi-benchmark Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+bap-fsi-benchmark - function start identification benchmark game
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>bap-fsi-benchmark</B> [<I>OPTION</I>]... <I>binary</I> <I>tool</I> <I>ground-truth</I>
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Compares function start identification algorithms to the ground truth. The latter should be provided by a user.
+<A NAME="lbAE">&nbsp;</A>
+<H2>ARGUMENTS</H2>
+
+<DL COMPACT>
+<DT><I>binary</I><DD>
+The testing stripped binary.
+<DT><I>ground-truth</I><DD>
+The ground truth. The ground truth can be an unstripped binary, or a .scm file with symbol information. In .scm file, each symbol should be in format of: (&lt;symbol name&gt; &lt;symbol start address&gt; &lt;symbol end address&gt;), e.g. (malloc@@GLIBC_2.4 0x11034 0x11038)
+<DT><I>tool</I><DD>
+The tool of the function start result that we are going to evaluate. Possible values: one of `ida', `byteweight' or `internal'.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-c</B> <I>VAL</I>, <B>--with-metrics</B>=<I>VAL</I><DD>
+Print metrics. User can choose to print -cprecision, -crecall, -cF_measure, -cTP, -cFP and -cFN.
+<DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
+Show this help in format <I>FMT</I> (pager, plain or groff).
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>PLUGIN OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-l</B> <I>PATH</I><DD>
+Dynamically loads file <I>PATH</I>.plugin. A plugin must be compiled with <B>bapbuild</B> tool using <B>bapbuild PATH.plugin</B> command.
+<DT><B>-L</B><I>PATH</I><DD>
+Add <I>PATH</I> to a set of search paths. Plugins found in the search paths will be loaded automatically.
+<DT><B>--list-plugins</B><DD>
+List available plugins
+<DT><B>--disable-plugin</B><DD>
+Don't load <I>PLUGIN</I> automatically
+<DT><B>--disable-autoload</B><DD>
+Disable auto loading of plugins
+<DT><B>--no-</B><I>PLUGIN</I><DD>
+Don't load <I>PLUGIN</I> automatically
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">ARGUMENTS</A><DD>
+<DT><A HREF="#lbAF">OPTIONS</A><DD>
+<DT><A HREF="#lbAG">PLUGIN OPTIONS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:49:11 GMT, September 09, 2016
+</BODY>
+</HTML>

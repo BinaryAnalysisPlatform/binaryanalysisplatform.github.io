@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Arm_insn</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Arm_insn</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Arm_shift.html" title="Arm_shift">Previous</a>
@@ -77,10 +80,34 @@
 </div>
 <h1>Module <a href="type_Arm_insn.html">Arm_insn</a></h1>
 
-<pre><span class="keyword">module</span> Arm_insn: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Arm_insn: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_insn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+insn opcode.
+<p>
+
+    In contradicition with BAP insn, the ARM one is just an opcode,
+    without operands. (Possibly, opcode would be a much better
+    name).<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Arm_types.html#TYPEinsn">Arm_types.insn</a></code> </pre>
+<div class="info ">
+insn opcode.
+<p>
+
+    In contradicition with BAP insn, the ARM one is just an opcode,
+    without operands. (Possibly, opcode would be a much better
+    name).<br>
+</div>
 
 
-<pre><span class="keyword">include</span> <a href="Regular.html">Regular</a></pre>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> -> <a href="Arm_insn.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">create insn</code> translate from BAP <code class="code">insn</code><br>
+</div>
+
+<pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">('a, 'b) <a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsn">Disasm_expert.Basic.insn</a> -> <a href="Arm_insn.html#TYPEt">t</a> option</code></pre><div class="info ">
+<code class="code">of_basic insn</code> translate from BAP basic <code class="code">insn</code><br>
+</div>
+
+<pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_c.Std.C.Data</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_c.Std.C.Data</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_c.Std.C.Attr.html" title="Bap_c.Std.C.Attr">Previous</a>
@@ -97,14 +100,13 @@ The following table summarize all models of integer
     representation.
 <p>
 
-    <code class="code">{v
-       <span class="constructor">LP32</span>	 <span class="constructor">ILP32</span>	 <span class="constructor">ILP64</span>	 <span class="constructor">LLP64</span>	 <span class="constructor">LP64</span>
+    <pre class="verbatim">       LP32	 ILP32	 ILP64	 LLP64	 LP64
  char	  8	    8	     8	     8	    8
  short	 16	   16	    16	    16	   16
  int	 16	   32	    64	    32	   32
  long	 32	   32	    64	    32	   64
  addr    32	   32	    64	    64	   64
- v}</code><br>
+</pre><br>
 </div>
 
 
@@ -140,7 +142,7 @@ Abstract value lattice. The lattice is complete, and
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Size.html#TYPEt">Size.t</a> * <a href="Bap_c_data.html#TYPEvalue">value</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<br>
+<code class="code"><span class="constructor">Imm</span> (size,value)</code><br>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -149,7 +151,10 @@ Abstract value lattice. The lattice is complete, and
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.Seq"><span class="constructor">Seq</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap_c_data.html#TYPEt">t</a> list</code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<code class="code"><span class="constructor">Seq</span> (t1,..,tN)</code><br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
 <tr>
 <td align="left" valign="top" >

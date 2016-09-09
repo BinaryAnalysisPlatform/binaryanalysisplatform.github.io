@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper.Finder</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper.Finder</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_c_type_mapper.State.html" title="Bap_c_type_mapper.State">Previous</a>
@@ -77,5 +80,20 @@
 </div>
 <h1>Module <a href="type_Bap_c_type_mapper.Finder.html">Bap_c_type_mapper.Finder</a></h1>
 
-<pre><span class="keyword">module</span> Finder: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Search.t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Finder: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Search.t</code></pre><div class="info module top">
+the visitor lifted into the search monad.
+<p>
+
+    For example, the following code will find the first pointer:
+<p>
+
+    <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Search</span>&nbsp;=&nbsp;<span class="constructor">C</span>.<span class="constructor">Type</span>.<span class="constructor">Mapper</span>.<span class="constructor">Search</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;find_pointer&nbsp;t&nbsp;=&nbsp;<span class="constructor">Search</span>.result&nbsp;@@&nbsp;(<span class="keyword">object</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[<span class="constructor">C</span>.<span class="constructor">Type</span>.t]&nbsp;<span class="constructor">C</span>.<span class="constructor">Type</span>.<span class="constructor">Mapper</span>.<span class="constructor">Finder</span>.base
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;enter_pointer&nbsp;=&nbsp;<span class="constructor">Search</span>.finished
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)<span class="keywordsign">#</span>run&nbsp;t
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+<hr width="100%">
 </body></html>

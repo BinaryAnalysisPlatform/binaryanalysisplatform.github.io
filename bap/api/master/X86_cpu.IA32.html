@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : X86_cpu.IA32</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : X86_cpu.IA32</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="X86_cpu.html" title="X86_cpu">Up</a>
@@ -75,7 +78,52 @@
 </div>
 <h1>Module <a href="type_X86_cpu.IA32.html">X86_cpu.IA32</a></h1>
 
-<pre><span class="keyword">module</span> IA32: <code class="code"><span class="keyword">sig</span></code> <a href="X86_cpu.IA32.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> IA32: <code class="code"><span class="keyword">sig</span></code> <a href="X86_cpu.IA32.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+IA32 Architecture Registers.
+<p>
 
-<pre><span class="keyword">include</span> CPU</pre>
+    For simplicity we're using the same names for registers in
+    32 and 64 mode. For example, the A register, has a name <code class="code">rax</code> on
+    both 32-bit and 64-bit processors. However, on the former it is
+    32-bit (contrary to the name), and on the latter it is 64-bit.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.CPU.html">Bap.Std.CPU</a></pre>
+
+<pre><span id="VALrbp"><span class="keyword">val</span> rbp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+base pointer<br>
+</div>
+
+<pre><span id="VALrsp"><span class="keyword">val</span> rsp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+stack pointer<br>
+</div>
+
+<pre><span id="VALrsi"><span class="keyword">val</span> rsi</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+source index<br>
+</div>
+
+<pre><span id="VALrdi"><span class="keyword">val</span> rdi</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+destination index<br>
+</div>
+
+<pre><span id="VALrip"><span class="keyword">val</span> rip</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+instruction pointer<br>
+</div>
+
+<pre><span id="VALrax"><span class="keyword">val</span> rax</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+accumulator register<br>
+</div>
+
+<pre><span id="VALrbx"><span class="keyword">val</span> rbx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+base register<br>
+</div>
+
+<pre><span id="VALrcx"><span class="keyword">val</span> rcx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+counter register<br>
+</div>
+
+<pre><span id="VALrdx"><span class="keyword">val</span> rdx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+data register<br>
+</div>
 </body></html>

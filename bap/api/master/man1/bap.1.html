@@ -1,0 +1,187 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of BAP</TITLE>
+</HEAD><BODY>
+<H1>BAP</H1>
+Section: Bap Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+bap - Binary Analysis Platform
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<PRE>
+
+      <B>bap</B> [PLUGIN OPTION]... --list-formats
+      <B>bap</B> [PLUGIN OPTION]... [--source-type=<I>SOURCE</I>] --list-plugins
+      <B>bap</B> [PLUGIN OPTION]... --<I>PLUGIN</I>-help
+      <B>bap</B> <I>FILE</I> [PLUGIN OPTION]... [OPTION]...
+</PRE>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+A frontend to the Binary Analysis Platfrom library. The tool allows you to inspect binary programs by printing them in different representations including assembly, BIL, BIR, XML, HTML, JSON, Graphviz dot graphs and so on.
+<P>
+
+The tool is extensible via a plugin system. There're several extension points, that allows you:
+<P>
+
+<PRE>
+
+      - write your own analysis;
+      - add new serialization formats;
+      - adjust printing formats;
+      - add new program loaders (i.e. to handle new file formats);
+      - add your own symbolizer, rooter or reconstructor;
+      - provide ABI information;
+      - tackle with disassembler, lifter and even architecture;
+      - provide your own disassembler.
+</PRE>
+
+<P>
+
+The following example shows how to write a simple analysis plugin (called a pass in our parlance)
+<P>
+
+<PRE>
+
+      <B>$ cat</B> mycode.ml
+      open Bap.Std
+      let main project = print_endline &quot;Hello, World&quot;
+      let () = Project.register_pass' main
+</PRE>
+
+<P>
+
+Building is easy with our <B>bapbuild</B> tool:
+<P>
+
+<PRE>
+
+      <B> $ bapbuild</B> mycode.plugin
+</PRE>
+
+<P>
+
+And to load into bap:
+<P>
+
+<PRE>
+
+      <B> $ bap</B> /bin/ls -lmycode --mycode
+</PRE>
+
+<P>
+
+User plugins have access to all the program state, and can change it and communicate with other plugins, or just store their results in whatever place you like.
+<DL COMPACT>
+<DT>Note:<DD>
+The <B>bapbuild</B> tool is just an <B>ocamlbuild</B> extended with our rules. It is not needed (but still can be used) to build your standalone applications, or to build BAP itself.
+</DL>
+<A NAME="lbAE">&nbsp;</A>
+<H2>ARGUMENTS</H2>
+
+<DL COMPACT>
+<DT><I>FILE</I><DD>
+Input filename.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--list-formats</B><DD>
+Print detailed information about available project printers
+<DT><B>-d</B> [<I>VAL</I>], <B>--dump</B>[=<I>VAL</I>] (default=bir)<DD>
+Print a project using the designated format to a specified destination. If format and destination is not specified, then a program will be printed in the IR form to the standard output. The argument consists of format specification, and an optional destination, separated from the format by a colon (:) symbol. The format specification, consists of format name and optional version number, separated from the name by a dash symbol, e.g., `&lt;fmt&gt;` or `&lt;fmt&gt;-&lt;ver&gt;`. Acceptable format names are one of `callgraph', `cfg', `symbols', `asm.adt', `marshal', `bil', `asm.sexp', `asm.decoded', `adt', `bil.sexp', `asm', `bir' or `bil.adt'. If version is omitted then the latest version of the given format will be used. If destination is not omitted, then data will to the specified destination, otherwise it will be printed to the standard output. The full argument grammar is `fmt ::= &lt;fmt&gt;[-&lt;ver&gt;][:&lt;dst&gt;]'. Examples: `bir', `bir-0.1`, `sexp-0.9:data.sexp`, etc. Use `--list-formats' command line option to get the detailed information about available formats and corresponding versions. This option can be specified several times, to dump the project is several formats (and possibly destinations) simultaneously.
+<DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
+Show this help in format <I>FMT</I> (pager, plain or groff).
+<DT><B>--loader</B>=<I>VAL</I> (absent=llvm)<DD>
+Backend name for an image loader, should be one of `ida', `llvm' or `bap-elf'
+<DT><B>-p</B> <I>PASS</I>, <B>--passes</B>=<I>PASS</I>, <B>--pass</B>=<I>PASS</I><DD>
+Runs passes (comma separated). This option replaces the previously existing <B>--</B><I>PASS</I> options which are now deprecated and will soon be removed.
+<DT><B>--reconstructor</B>=<I>VAL</I><DD>
+Use a specified reconstructor
+<DT><B>--rooter</B>=<I>NAME</I><DD>
+Use a rooter with a given <I>NAME</I> . If an option is specified several times, then rooters are merged. If not specified, then all available rooters will be merged together. Possible values: one of `ida', `byteweight' or `internal'.
+<DT><B>--source-type</B>=<I>NAME</I> (absent=binary)<DD>
+Defines a format of the input file. It can be either a `binary' that denotes a structured binary file in a a format that is supported by a loader. It can also be a `&lt;arch&gt;-code' (e.g., `arm-code', `x86-code') if the binary is a raw code for the given &lt;arch&gt;. If the <I>NAME</I> is `project`, then the input file must be project data serialized with some format available for project data type. The format can be encoded in the extension. If needed, then a version number can be specifed, separated from the format by a dash, e.g., `myproj.marshal`, `myproj.sexp-1.0', etc. If the format is not specified, then the default reader will be used. The name can be also of the form `&lt;name&gt;-custom', where &lt;name&gt; should be a name of factory method registered for a file source in project factory.
+<DT><B>--symbolizer</B>=<I>VAL</I><DD>
+Use a specified symbolizer. If an option is specified several times, then symbolizers are merged. Possible values are: one of `objdump', `ida' or `internal'
+<DT><B>--verbose</B><DD>
+Print verbose output
+<DT><B>--version</B><DD>
+Show version information.
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>PLUGIN OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-l</B> <I>PATH</I><DD>
+Dynamically loads file <I>PATH</I>.plugin. A plugin must be compiled with <B>bapbuild</B> tool using <B>bapbuild PATH.plugin</B> command.
+<DT><B>-L</B><I>PATH</I><DD>
+Add <I>PATH</I> to a set of search paths. Plugins found in the search paths will be loaded automatically.
+<DT><B>--list-plugins</B><DD>
+List available plugins
+<DT><B>--disable-plugin</B><DD>
+Don't load <I>PLUGIN</I> automatically
+<DT><B>--disable-autoload</B><DD>
+Disable auto loading of plugins
+<DT><B>--no-</B><I>PLUGIN</I><DD>
+Don't load <I>PLUGIN</I> automatically
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>OPTIONS FOR PASSES</H2>
+
+<DL COMPACT>
+<DT><B>--</B><I>PASS</I><DD>
+Runs a program <I>PASS</I>. The <I>PASS</I> should be registered in the system, usually by loading or installing corresponding plugin. DEPRECATED. This option will be removed in the near future. Instead, it is advisable to use the <B>-p</B> option to specify passes.
+<DT><B>--</B><I>PASS</I>-<I>OPTION</I><DD>
+Passes <I>OPTION</I> to a <I>PASS</I>. The option will be passed as <B>--OPTION</B>. If <I>OPTION</I> is followed by an argument (i.e., a token that doesn't start with a dash), then it will be also passed to the <I>PASS</I>. Note: it is assumed that all options to passes consumes and optional argument. Make sure, that your flags are followed by some option, otherwise the argument that follows the flag might be consumed by a <I>PASS</I>
+</DL>
+<A NAME="lbAI">&nbsp;</A>
+<H2>BUGS</H2>
+
+<P>
+
+Report bugs to <A HREF="https://github.com/BinaryAnalysisPlatform/bap/issues">https://github.com/BinaryAnalysisPlatform/bap/issues</A>
+<A NAME="lbAJ">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-mc.1.html">bap-mc</A></B>(1), <B><A HREF="../man1/bap-byteweight.1.html">bap-byteweight</A></B>(1), <B><A HREF="../man3/bap.3.html">bap</A></B>(3)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">ARGUMENTS</A><DD>
+<DT><A HREF="#lbAF">OPTIONS</A><DD>
+<DT><A HREF="#lbAG">PLUGIN OPTIONS</A><DD>
+<DT><A HREF="#lbAH">OPTIONS FOR PASSES</A><DD>
+<DT><A HREF="#lbAI">BUGS</A><DD>
+<DT><A HREF="#lbAJ">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:49:10 GMT, September 09, 2016
+</BODY>
+</HTML>

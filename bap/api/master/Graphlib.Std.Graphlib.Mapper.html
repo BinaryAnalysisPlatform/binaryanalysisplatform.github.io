@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Graphlib.Std.Graphlib.Filtered.html">
-<link rel="next" href="Graphlib.Std.Graphlib.Make.html">
+<link rel="next" href="Graphlib.Std.Graphlib.Dot.html">
 <link rel="Up" href="Graphlib.Std.Graphlib.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -65,19 +65,22 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Mapper</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Mapper</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Graphlib.Std.Graphlib.Filtered.html" title="Graphlib.Std.Graphlib.Filtered">Previous</a>
 &nbsp;<a class="up" href="Graphlib.Std.Graphlib.html" title="Graphlib.Std.Graphlib">Up</a>
-&nbsp;<a class="post" href="Graphlib.Std.Graphlib.Make.html" title="Graphlib.Std.Graphlib.Make">Next</a>
+&nbsp;<a class="post" href="Graphlib.Std.Graphlib.Dot.html" title="Graphlib.Std.Graphlib.Dot">Next</a>
 </div>
 <h1>Functor <a href="type_Graphlib.Std.Graphlib.Mapper.html">Graphlib.Std.Graphlib.Mapper</a></h1>
 
-<pre><span class="keyword">module</span> Mapper <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> Mapper <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">N</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.node</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">E</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.edge</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Node.label</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a></code><code class="type">  with type s = G.Edge.label</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = N.t
              and type edge = E.t
              and type Node.label = NL.t
@@ -93,7 +96,7 @@ functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class=
 <td align="center" valign="top" width="15%">
 <code>G</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code>
+<td><code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code>
 <tr>
 <td align="center" valign="top" width="15%">
 <code>N</code></td>
@@ -234,12 +237,12 @@ Graph edges
 <code class="code">number_of_nodes g</code> returns the order of a graph <code class="code">g</code><br>
 </div>
 
-<pre><span class="keyword">include</span> Opaque</pre>
+<pre><span class="keyword">include</span> Opaque.S</pre>
 <div class="info ">
 All graphs provides a common interface for any opaque data structure<br>
 </div>
 
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 <div class="info ">
 All graphs are printable.<br>
 </div>

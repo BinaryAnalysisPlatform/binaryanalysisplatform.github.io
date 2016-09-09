@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_byteweight.S</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_byteweight.S</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_byteweight.Corpus.html" title="Bap_byteweight.Corpus">Previous</a>
@@ -75,7 +78,21 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Bap_byteweight.S.html">Bap_byteweight.S</a></h1>
 
-<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_byteweight.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Byteweight algorithm interface.
+<p>
+
+    Byteweight is a supervised machine learning algorithm. Based on
+    the input string, where each substrings is labeled by true of
+    false, a function is inferred that can map substrings into boolean
+    domain.
+<p>
+
+    For example, if the label function teaches whether the given
+    substring is a start of a function, we can infer an algorithm for
+    finding function starts.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
@@ -85,4 +102,27 @@
 
 <pre><span id="TYPEcorpus"><span class="keyword">type</span> <code class="type"></code>corpus</span> </pre>
 
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap_byteweight.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ()</code> creates an empty instance of the byteweigth decider.<br>
+</div>
+
+<pre><span id="VALtrain"><span class="keyword">val</span> train</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -><br>       max_length:int -><br>       (<a href="Bap_byteweight.S.html#TYPEkey">key</a> -> bool) -> <a href="Bap_byteweight.S.html#TYPEcorpus">corpus</a> -> unit</code></pre><div class="info ">
+<code class="code">train decider ~max_length test corpus</code> train the <code class="code">decider</code> on
+      the specified <code class="code">corpus</code>. The <code class="code">test</code> function classifies extracted
+      substrings.  The <code class="code">max_length</code> parameter binds the maximum
+      length of substrings.<br>
+</div>
+
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<code class="code">length decider</code> total amount of different substrings known to a
+      decider.<br>
+</div>
+
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -><br>       length:int -> threshold:float -> <a href="Bap_byteweight.S.html#TYPEcorpus">corpus</a> -> int -> int option</code></pre><div class="info ">
+<code class="code">next decider ~length ~threshold data <span class="keyword">begin</span></code> returns an offset
+      greater then <code class="code"><span class="keyword">begin</span></code> of the next substring of the given
+      <code class="code">length</code>, that is positively classified, with the given
+      <code class="code">thresold</code>.<br>
+</div>
 </body></html>

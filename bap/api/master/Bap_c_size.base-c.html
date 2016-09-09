@@ -63,10 +63,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_c_size.base</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_c_size.base</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_c_size.html" title="Bap_c_size">Up</a>
@@ -120,10 +123,15 @@ returns a size of the data type representation if type
 </div>
 
 <pre><span id="METHODunion"><span class="keyword">method</span> union</span> : <code class="type">(<a href="Bap_c_type.html#TYPEno_qualifier">Bap_c_type.no_qualifier</a>, <a href="Bap_c_type.html#TYPEcompound">Bap_c_type.compound</a>) <a href="Bap_c_type.html#TYPEspec">Bap_c_type.spec</a> -><br>       <a href="Bap_c_size.html#TYPEbits">bits</a> option</code></pre><div class="info ">
-returns<br>
+if spec is complete then returns a size of the biggest
+        element, including padding<br>
 </div>
 
-<pre><span id="METHODstructure"><span class="keyword">method</span> structure</span> : <code class="type">(<a href="Bap_c_type.html#TYPEno_qualifier">Bap_c_type.no_qualifier</a>, <a href="Bap_c_type.html#TYPEcompound">Bap_c_type.compound</a>) <a href="Bap_c_type.html#TYPEspec">Bap_c_type.spec</a> -><br>       <a href="Bap_c_size.html#TYPEbits">bits</a> option</code></pre>
+<pre><span id="METHODstructure"><span class="keyword">method</span> structure</span> : <code class="type">(<a href="Bap_c_type.html#TYPEno_qualifier">Bap_c_type.no_qualifier</a>, <a href="Bap_c_type.html#TYPEcompound">Bap_c_type.compound</a>) <a href="Bap_c_type.html#TYPEspec">Bap_c_type.spec</a> -><br>       <a href="Bap_c_size.html#TYPEbits">bits</a> option</code></pre><div class="info ">
+if spec is complete then returns a total size of the
+    structure, including padding.<br>
+</div>
+
 <pre><span id="METHODinteger"><span class="keyword">method</span> integer</span> : <code class="type"><a href="Bap_c_type.html#TYPEinteger">Bap_c_type.integer</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
 <pre><span id="METHODpointer"><span class="keyword">method</span> pointer</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre>
 <pre><span id="METHODenum"><span class="keyword">method</span> enum</span> : <code class="type">(string * int64 option) list -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>

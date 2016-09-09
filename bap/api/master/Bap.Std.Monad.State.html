@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Bap.Std.Monad.S2.html">
+<link rel="previous" href="Bap.Std.Monad.Make2.html">
+<link rel="next" href="Bap.Std.Monad.T.html">
 <link rel="Up" href="Bap.Std.Monad.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -64,105 +65,30 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad.State</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad.State</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Bap.Std.Monad.S2.html" title="Bap.Std.Monad.S2">Previous</a>
+<div class="navbar"><a class="pre" href="Bap.Std.Monad.Make2.html" title="Bap.Std.Monad.Make2">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.Monad.html" title="Bap.Std.Monad">Up</a>
-&nbsp;</div>
-<h1>Module type <a href="type_Bap.Std.Monad.State.html">Bap.Std.Monad.State</a></h1>
+&nbsp;<a class="post" href="Bap.Std.Monad.T.html" title="Bap.Std.Monad.T">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Monad.State.html">Bap.Std.Monad.State</a></h1>
 
-<pre><span class="keyword">module type</span> State = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-State monad interface.
-<p>
-
-        State monad is an interface to a computation that has a
-        limited side effect. The side effect is defined by the
-        following two functions:<ul>
-<li><code class="code">put s</code>  -- that will store value <code class="code">s</code></li>
-<li><code class="code">get ()</code> -- that will extract the value.</li>
-</ul>
-
-        There're few functions derived on <code class="code">get</code> and <code class="code">put</code>, like
-        <code class="code">gets</code>, <code class="code">update</code>, <code class="code">modify</code>, but the minimal algebra is
-        <code class="code">put</code> and <code class="code">set</code>.
-<p>
-
-        The value of type <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>s) t</code> bears a computation that
-        has an access to the state of type <code class="code"><span class="keywordsign">'</span>s</code>, and evaluates
-        to a value of type <code class="code"><span class="keywordsign">'</span>a</code>. It can be said, that <code class="code"><span class="keywordsign">'</span>s</code> reifies
-        effect of computation of value <code class="code"><span class="keywordsign">'</span>a</code>.<br>
+<pre><span class="keyword">module</span> State: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+State monad.
+        See <a href="Bap.Std.Monad.State.html"><code class="code"><span class="constructor">Monad</span>.<span class="constructor">State</span></code></a> for more info.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 's)</code> t</span> </pre>
-<div class="info ">
-<code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>s) t</code> computation that evaluates to <code class="code"><span class="keywordsign">'</span>a</code> and state <code class="code"><span class="keywordsign">'</span>s</code><br>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.State.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+State monad interface.
 </div>
 
-
-<pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type">'a</code> result</span> </pre>
-<div class="info ">
-<code class="code"><span class="keywordsign">'</span>a result</code> is a type that represents result of computation.<br>
-</div>
-
-
-<pre><span class="keyword">include</span> Monad.S2</pre>
-
-<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'s -> (unit, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">put s</code> creates a computation that has effect <code class="code">s</code> and unit
-          value.  This operation effectively updates the state by
-          overriding the existent one with the new one. An imperative
-          counterpart of this operation is a statement that performs
-          side effect, e.g., <pre class="codepre"><code class="code">put&nbsp;x</code></pre> is somewhat equivalent to
-          <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;put&nbsp;x&nbsp;=&nbsp;state&nbsp;:=&nbsp;x
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
-<p>
-
-          except that <code class="code">state</code> is not hidden in the language heap, but is
-          reified into a value of type <code class="code"><span class="keywordsign">'</span>s</code>.<br>
-</div>
-
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> ('s, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">get ()</code> creates a computation that evalates to a value,
-          that holds the state. This operation extracts the state, and
-          gives an access for it. The <code class="code">get ()</code> is somewhat equivalent
-          to the imperative operator <code class="code">(!)</code>, i.e.,
-          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;get&nbsp;()&nbsp;=&nbsp;!state
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
-</div>
-
-<pre><span id="VALgets"><span class="keyword">val</span> gets</span> : <code class="type">('s -> 'r) -> ('r, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">gets f</code> is a computation whose value is <code class="code">f state</code>)
-<p>
-<code class="code">update f</code> is <code class="code">get () &gt;&gt;= <span class="keyword">fun</span> s <span class="keywordsign">-&gt;</span> put (f s)</code><br>
-</div>
-
-<pre><span id="VALmodify"><span class="keyword">val</span> modify</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -><br>       ('s -> 's) -> ('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">modify c f</code> is a computation with state <code class="code">f</code>, where
-          <code class="code">s</code> is <code class="code">c &gt;&gt;= get ()</code>, i.e., an effect of computation <code class="code">c</code>.<br>
-</div>
-<br>
-Running state computations.<br>
-
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> ('a * 's) <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
-<code class="code">run c init</code> runs computation <code class="code">c</code> with initial state
-          <code class="code">init</code>. Result contains a pair of the computation result
-          and total effect.<br>
-</div>
-
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> 'a <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
-<code class="code">eval c init</code> contains a value computed by computation <code class="code">c</code>
-          under initial state <code class="code">init</code>.<br>
-</div>
-
-<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> 's <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
-<code class="code">exec c init</code> contains an final effect produced by a
-          computation <code class="code">c</code> under initial state <code class="code">init</code>.<br>
-</div>
+<pre><span class="keyword">include</span> <a href="Bap.Std.Monad.State.S.html">Bap.Std.Monad.State.S</a></pre>
 </body></html>

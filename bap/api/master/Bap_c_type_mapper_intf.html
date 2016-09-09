@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper_intf</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper_intf</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_c.html" title="Bap_c">Previous</a>
@@ -82,7 +85,9 @@ Type mapper, visitor, iterator, finder all in one.
 <p>
 
     The interface is wrapped into a monad, that allows, by choosing a
-    proper monad implement all the above morphisms and iterators.
+    proper monad implement all the above morphisms and iterators. If
+    you're afraid of the monads, then calm down and continue reading,
+    there is a way to use this interface without any monads.
 <p>
 
     Each syntactical element <code class="code">t:<span class="constructor">T</span></code> of the type system is represented
@@ -112,7 +117,28 @@ Type mapper, visitor, iterator, finder all in one.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;<span class="keyword">private</span>&nbsp;my_transformation&nbsp;t&nbsp;=&nbsp;t
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
-&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+    All method calls are bound with monadic operations. This makes it
+    possible to parametrize visitor with different computation strategies
+    (depending on a binding strategy of a monad).
+<p>
+
+    If the monad is a null monad, where bind is a reverse application,
+    and returns is an identity, then we have a normal execution and
+    the whole visitor degrade to a regular visitor/mapper without any
+    monads. Such visitor is instantiated as <code class="code"><span class="constructor">C</span>.<span class="constructor">Type</span>.<span class="constructor">Mapper</span>.base</code>.
+<p>
+
+    The other two useful monads, are <code class="code"><span class="constructor">State</span></code> and <code class="code"><span class="constructor">Search</span></code>. The visitor
+    in these monads is instantiated as <code class="code"><span class="constructor">C</span>.<span class="constructor">Type</span>.<span class="constructor">Mapper</span>.<span class="constructor">State</span>.base</code> and
+    <code class="code"><span class="constructor">C</span>.<span class="constructor">Type</span>.<span class="constructor">Mapper</span>.<span class="constructor">Finder</span>.base</code> correspondingly. The former is useful
+    to implement a regular visitor, that will fold an abitrary value
+    over the type structure, or to implement a mapper, that can also
+    have a state. The latter, is useful for implementing a search with
+    a shortcut, i.e., when the searching is terminated as soon as the
+    target is found.<br>
 </div>
 <hr width="100%">
 

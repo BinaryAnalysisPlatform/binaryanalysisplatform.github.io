@@ -63,17 +63,42 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_build.Std</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_build.Std</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_build.html" title="Bap_build">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Bap_build.Std.html">Bap_build.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+bapbuild support library.
+<p>
+
+    Underneath the hood <code class="code">bapbuild</code> is just a plugin to
+    <code class="code"><span class="constructor">Ocamlbuild</span></code>. Instead of using the <code class="code">bapbuild</code> utility, it is
+    possible to use custom <code class="code">myocamlbuild.ml</code>. In that case to activate
+    the bapbuild behavior it is needed to call <code class="code"><span class="constructor">Plugin_options</span>.set ()</code>
+    function, and and install plugin rules in the <code class="code"><span class="constructor">Before_rules</span></code>
+    phases, e.g.,
+<p>
+
+    <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">open</span>&nbsp;<span class="constructor">Bap_build</span>.<span class="constructor">Std</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;()&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Plugin_options</span>.set&nbsp;();
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ocamlbuild_plugin</span>.dispatch&nbsp;(<span class="keyword">function</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Before_rules</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Plugin_rules</span>.install&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;_&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;());
+
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_rules.html">Plugin_rules</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_rules.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_options.html">Plugin_options</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_options.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

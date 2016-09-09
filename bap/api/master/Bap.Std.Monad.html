@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Integer.html">
 <link rel="next" href="Bap.Std.Seq.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -64,13 +65,17 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
+<div class="navbar"><a class="pre" href="Bap.Std.Integer.html" title="Bap.Std.Integer">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
 &nbsp;<a class="post" href="Bap.Std.Seq.html" title="Bap.Std.Seq">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Monad.html">Bap.Std.Monad</a></h1>
@@ -116,13 +121,9 @@ Monad is an interface, that is pervasives through many data
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.Infix2.html">Infix2</a> = <code class="type">Monad.Infix2</code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.S.html">S</a> = <code class="type">Monad.S</code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.S2.html">S2</a> = <code class="type">Monad.S2</code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap.Std.Monad.State.html">State</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-State monad interface.
-</div>
-
 <pre><span class="keyword">module</span> <a href="Bap.Std.Monad.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.Basic.html">Basic</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Monad.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.Basic2.html">Basic2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'s) t := ('a,'s) M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.State.html">State</a>: <code class="type"><a href="Bap.Std.Monad.State.html">State</a></code><code class="type">  with type 'a result = 'a</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.State.html">State</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 State monad.
 </div>
 

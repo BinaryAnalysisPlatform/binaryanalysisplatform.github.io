@@ -65,31 +65,57 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Regular.Std.Regular</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Regular.Std.Regular</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Regular.Std.Data.html" title="Regular.Std.Data">Previous</a>
 &nbsp;<a class="up" href="Regular.Std.html" title="Regular.Std">Up</a>
 &nbsp;<a class="post" href="Regular.Std.Opaque.html" title="Regular.Std.Opaque">Next</a>
 </div>
-<h1>Module type <a href="type_Regular.Std.Regular.html">Regular.Std.Regular</a></h1>
+<h1>Module <a href="type_Regular.Std.Regular.html">Regular.Std.Regular</a></h1>
 
-<pre><span class="keyword">module type</span> Regular = <code class="type"><a href="Regular.Std.Regular.S.html">Regular.S</a></code></pre><div class="info modtype top">
-module type alias for <code class="code"><span class="constructor">Regular</span>.<span class="constructor">S</span></code><br>
+<pre><span class="keyword">module</span> Regular: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Regular types models a general concept of value, i.e., something
+      that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
+      <code class="code">char</code> and other built in types. So that it can be compared, used
+      in maps, sets, hashtables, printer, etc.
+<p>
+
+      Note: this signature is pretty similar to core's <code class="code"><span class="constructor">Identifiable</span></code>,
+      but doesn't require <code class="code">of_string</code> function, that is usually much
+      harder to implement in comparison with <code class="code">to_string</code> function. Also,
+      instead of <code class="code">to_string</code> it requires <code class="code">pp</code> function that can be
+      implemented much more efficiently and elegantly. From the <code class="code">pp</code>
+      function the whole plethora of printing functions are derived:
+      <code class="code">str</code>, <code class="code">pps</code>, <code class="code">ppo</code>.<br>
+<b>See also</b><ul><li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Comparable.mod/S_binable.modt/"><code class="code"><span class="constructor">Comparable</span>.<span class="constructor">S_binable</span></code></a></li>
+<li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Hashable/S_binable.modt/"><code class="code"><span class="constructor">Hashable</span>.<span class="constructor">S_binable</span></code></a></li>
+</ul>
 </div>
 <hr width="100%">
 
+<pre><span class="keyword">module type</span> <a href="Regular.Std.Regular.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Regular interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Regular.Std.Regular.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="code"><span class="keyword">sig</span></code><div class="sig_block">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+<div class="info ">
+type t should be binable, sexpable and provide compare function<br>
+</div>
 
 
-<pre><span class="keyword">include</span> <a href="Regular.Std.Printable.S.html">Regular.Std.Printable.S</a></pre>
+<pre><span class="keyword">include</span> Pretty_printer.S</pre>
 
-<pre><span class="keyword">include</span> Comparable.S_binable</pre>
-
-<pre><span class="keyword">include</span> Hashable.S_binable</pre>
-
-<pre><span class="keyword">include</span> <a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a></pre>
+<pre><span class="keyword">include</span> Regular.Std.Data.Versioned.S</pre>
+</div><code class="code"><span class="keyword">end</span></code><code class="code">) </code>: <code class="type"><a href="Regular.Std.Regular.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info">
+In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
+        minimum implementation <code class="code"><span class="constructor">M</span></code>
+</div>
 </body></html>

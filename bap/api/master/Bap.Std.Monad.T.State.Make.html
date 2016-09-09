@@ -63,17 +63,20 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad.T.State.Make</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Monad.T.State.Make</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap.Std.Monad.T.State.html" title="Bap.Std.Monad.T.State">Up</a>
 &nbsp;</div>
 <h1>Functor <a href="type_Bap.Std.Monad.T.State.Make.html">Bap.Std.Monad.T.State.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.State.html">Monad.State</a></code><code class="type">  with type 'a result = 'a M.t</code></pre><table border="0" cellpadding="3" width="100%">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Monad.State.S.html">Monad.State.S</a></code><code class="type">  with type 'a result = 'a M.t</code></pre><table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -103,57 +106,57 @@
 
 <pre><span class="keyword">include</span> Monad.S2</pre>
 
-<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'s -> (unit, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'s -> (unit, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">put s</code> creates a computation that has effect <code class="code">s</code> and unit
-          value.  This operation effectively updates the state by
-          overriding the existent one with the new one. An imperative
-          counterpart of this operation is a statement that performs
-          side effect, e.g., <pre class="codepre"><code class="code">put&nbsp;x</code></pre> is somewhat equivalent to
-          <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;put&nbsp;x&nbsp;=&nbsp;state&nbsp;:=&nbsp;x
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+            value.  This operation effectively updates the state by
+            overriding the existent one with the new one. An imperative
+            counterpart of this operation is a statement that performs
+            side effect, e.g., <pre class="codepre"><code class="code">put&nbsp;x</code></pre> is somewhat equivalent to
+            <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;put&nbsp;x&nbsp;=&nbsp;state&nbsp;:=&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-          except that <code class="code">state</code> is not hidden in the language heap, but is
-          reified into a value of type <code class="code"><span class="keywordsign">'</span>s</code>.<br>
+            except that <code class="code">state</code> is not hidden in the language heap, but is
+            reified into a value of type <code class="code"><span class="keywordsign">'</span>s</code>.<br>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> ('s, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> ('s, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">get ()</code> creates a computation that evalates to a value,
-          that holds the state. This operation extracts the state, and
-          gives an access for it. The <code class="code">get ()</code> is somewhat equivalent
-          to the imperative operator <code class="code">(!)</code>, i.e.,
-          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;get&nbsp;()&nbsp;=&nbsp;!state
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+            that holds the state. This operation extracts the state, and
+            gives an access for it. The <code class="code">get ()</code> is somewhat equivalent
+            to the imperative operator <code class="code">(!)</code>, i.e.,
+            <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;state&nbsp;=&nbsp;ref&nbsp;init
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;get&nbsp;()&nbsp;=&nbsp;!state
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
-<pre><span id="VALgets"><span class="keyword">val</span> gets</span> : <code class="type">('s -> 'r) -> ('r, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALgets"><span class="keyword">val</span> gets</span> : <code class="type">('s -> 'r) -> ('r, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">gets f</code> is a computation whose value is <code class="code">f state</code>)
 <p>
 <code class="code">update f</code> is <code class="code">get () &gt;&gt;= <span class="keyword">fun</span> s <span class="keywordsign">-&gt;</span> put (f s)</code><br>
 </div>
 
-<pre><span id="VALmodify"><span class="keyword">val</span> modify</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -><br>       ('s -> 's) -> ('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmodify"><span class="keyword">val</span> modify</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a> -><br>       ('s -> 's) -> ('a, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">modify c f</code> is a computation with state <code class="code">f</code>, where
-          <code class="code">s</code> is <code class="code">c &gt;&gt;= get ()</code>, i.e., an effect of computation <code class="code">c</code>.<br>
+            <code class="code">s</code> is <code class="code">c &gt;&gt;= get ()</code>, i.e., an effect of computation <code class="code">c</code>.<br>
 </div>
 <br>
 Running state computations.<br>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> ('a * 's) <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a> -><br>       's -> ('a * 's) <a href="Bap.Std.Monad.State.S.html#TYPEresult">result</a></code></pre><div class="info ">
 <code class="code">run c init</code> runs computation <code class="code">c</code> with initial state
-          <code class="code">init</code>. Result contains a pair of the computation result
-          and total effect.<br>
+            <code class="code">init</code>. Result contains a pair of the computation result
+            and total effect.<br>
 </div>
 
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> 'a <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a> -> 's -> 'a <a href="Bap.Std.Monad.State.S.html#TYPEresult">result</a></code></pre><div class="info ">
 <code class="code">eval c init</code> contains a value computed by computation <code class="code">c</code>
-          under initial state <code class="code">init</code>.<br>
+            under initial state <code class="code">init</code>.<br>
 </div>
 
-<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.html#TYPEt">t</a> -> 's -> 's <a href="Bap.Std.Monad.State.html#TYPEresult">result</a></code></pre><div class="info ">
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">('a, 's) <a href="Bap.Std.Monad.State.S.html#TYPEt">t</a> -> 's -> 's <a href="Bap.Std.Monad.State.S.html#TYPEresult">result</a></code></pre><div class="info ">
 <code class="code">exec c init</code> contains an final effect produced by a
-          computation <code class="code">c</code> under initial state <code class="code">init</code>.<br>
+            computation <code class="code">c</code> under initial state <code class="code">init</code>.<br>
 </div>
 </body></html>

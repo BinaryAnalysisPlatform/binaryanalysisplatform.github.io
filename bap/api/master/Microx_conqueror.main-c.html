@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Microx_conqueror.main</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Microx_conqueror.main</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Microx_conqueror.context-c.html" title="Microx_conqueror.context">Previous</a>
@@ -75,7 +78,13 @@
 &nbsp;</div>
 <h1>Class <a href="type_Microx_conqueror.main.html">Microx_conqueror.main</a></h1>
 
-<pre><span name="TYPEmain"><span class="keyword">class</span> <code class="type">[#context]</code> main</span> : <code class="type">?deterministic:bool -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.main-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><b>Inherits</b><ul>
+<pre><span name="TYPEmain"><span class="keyword">class</span> <code class="type">[#context]</code> main</span> : <code class="type">?deterministic:bool -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.main-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+BIR interpreter, that executes a program in a given context.<br>
+</div>
+<div class="param_info"><code class="code">deterministic</code> : if is <code class="code"><span class="keyword">true</span></code> then only feasible execution
+    path is taken, otherwise, the interpreter, will execute all
+    linearly independent paths.</div>
+<b>Inherits</b><ul>
 <li><code class="code">biri</code></li>
 </ul>
 <hr width="100%">

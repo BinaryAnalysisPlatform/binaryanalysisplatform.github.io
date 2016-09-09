@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Filtered</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Graphlib.Std.Graphlib.Filtered</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Graphlib.Std.Graphlib.Of_ocamlgraph.html" title="Graphlib.Std.Graphlib.Of_ocamlgraph">Previous</a>
@@ -77,8 +80,8 @@
 </div>
 <h1>Functor <a href="type_Graphlib.Std.Graphlib.Filtered.html">Graphlib.Std.Graphlib.Filtered</a></h1>
 
-<pre><span class="keyword">module</span> Filtered <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
-                        and type edge = G.edge</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code><code class="type">  with type t = G.t
+<pre><span class="keyword">module</span> Filtered <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">P</span></code><code class="code"> : </code><code class="type"><a href="Graphlib.Std.Predicate.html">Predicate</a></code><code class="type">  with type node = G.node
+                        and type edge = G.edge</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code><code class="type">  with type t = G.t
              and type node = G.node
              and type edge = G.edge
              and module Node = G.Node
@@ -94,7 +97,7 @@ functorized version of a <code class="code">filter</code> function.<br>
 <td align="center" valign="top" width="15%">
 <code>G</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Graphlib.Std.Graphlib.Graph.html">Graph</a></code>
+<td><code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code>
 <tr>
 <td align="center" valign="top" width="15%">
 <code>P</code></td>
@@ -221,12 +224,12 @@ Graph edges
 <code class="code">number_of_nodes g</code> returns the order of a graph <code class="code">g</code><br>
 </div>
 
-<pre><span class="keyword">include</span> Opaque</pre>
+<pre><span class="keyword">include</span> Opaque.S</pre>
 <div class="info ">
 All graphs provides a common interface for any opaque data structure<br>
 </div>
 
-<pre><span class="keyword">include</span> Printable</pre>
+<pre><span class="keyword">include</span> Printable.S</pre>
 <div class="info ">
 All graphs are printable.<br>
 </div>

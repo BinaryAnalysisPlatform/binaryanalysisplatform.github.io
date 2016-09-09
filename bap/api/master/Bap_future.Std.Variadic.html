@@ -5,6 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap_future.Std.Applicable.html">
+<link rel="next" href="Bap_future.Std.Future.html">
 <link rel="Up" href="Bap_future.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -64,45 +65,144 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Variadic</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Variadic</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_future.Std.Applicable.html" title="Bap_future.Std.Applicable">Previous</a>
 &nbsp;<a class="up" href="Bap_future.Std.html" title="Bap_future.Std">Up</a>
-&nbsp;</div>
-<h1>Module type <a href="type_Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a></h1>
+&nbsp;<a class="post" href="Bap_future.Std.Future.html" title="Bap_future.Std.Future">Next</a>
+</div>
+<h1>Module <a href="type_Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a></h1>
 
-<pre><span class="keyword">module type</span> Variadic = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Variadic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Variadic: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Variadic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Variadic arguments.
+<p>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('f, 'r)</code> t</span> </pre>
-<div class="info ">
-<code class="code">(<span class="keywordsign">'</span>f,<span class="keywordsign">'</span>r) t</code> is a list of arguments, where <code class="code"><span class="keywordsign">'</span>f</code> defines the
-        arrow type of the arguments, and <code class="code"><span class="keywordsign">'</span>r</code> is the return type.
-        C.f., <code class="code"><span class="keywordsign">'</span>f</code> and <code class="code"><span class="keywordsign">'</span>r</code> with the first and last parameter of
-        the <code class="code">format</code> type constuctor.<br>
+      <code class="code"><span class="constructor">Variadic</span></code>, abstracts a common idiom of a function applied to a
+      variable number of arguments. A common examples of such function
+      would be OCaml's standard <code class="code">printf</code> and <code class="code">scanf</code> functions. A more
+      general examples, are monadic parsers, such as <code class="code"><span class="constructor">MParser</span></code>,
+      command line parsers such as <code class="code"><span class="constructor">Cmdliner</span></code> and <code class="code"><span class="constructor">Core</span></code>'s
+      <code class="code"><span class="constructor">Command</span></code>. They all are using the same trick to collect
+      arguments of different type and pass it to a function, s.t.
+      the function type actually defines the type of collected
+      arguments. Both <code class="code"><span class="constructor">Cmdliner</span></code> and <code class="code"><span class="constructor">Command</span></code> relies on <code class="code"><span class="constructor">Applicative</span></code>
+      functor defined in <code class="code">1</code>. However, it requires a <code class="code">return</code>
+      function, that is not possible to provide in general for
+      co-inductive types, that can only be observed or mapped. It is
+      still possible to implement a variadic interface using the
+      restricted <code class="code"><span class="constructor">Applicable</span></code> interface given only one restriction: it
+      is not possible to create an empty variadic list of arguments
+      (that can be considered as a benefit).
+<p>
+
+      Here are some examples, that highlights common use cases of the
+      variadic structure. Suppose, we have several future values of
+      different types, that we would like to merge with some function
+      <code class="code">f</code>, to be concrete let's assume, that we're waiting for:
+<p>
+
+      <code class="code">arch : arch future</code> - program architecture to be defined;
+      <code class="code">lang : lang future</code> - a programming language;
+      <code class="code">abi  : abi future</code>  - an ABI;
+      <code class="code">api  : api future</code>  - an api specification
+<p>
+
+      And we have a function <code class="code">typecheck</code> of type
+<p>
+
+      <pre class="codepre"><code class="code">arch&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;lang&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;abi&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;api&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;pass&nbsp;future</code></pre>,
+<p>
+
+      that will typecheck a binary program, according to the typing
+      rules of the specified programming <code class="code">lang</code>uage, binary interface,
+      and type environment <code class="code">api</code>. Given the <code class="code"><span class="constructor">Variadic</span></code> interface we
+      can write it as
+<p>
+
+      <code class="code"><span class="constructor">Future</span>.<span class="constructor">Variadic</span>.(apply (args arch $lang $abi $api) ~f:typecheck</code>
+<p>
+
+      Note, since future implements a more powerful Monad interface,
+      it is still possible to apply a <code class="code">typecheck</code> function without
+      using the variadic interface, e.g.,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arch&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;arch&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lang&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;lang&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;abi&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;abi&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;api&nbsp;&gt;&gt;=&nbsp;<span class="keyword">fun</span>&nbsp;api&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;typecheck&nbsp;arch&nbsp;lang&nbsp;abi&nbsp;api
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      However, this is less general, as it specifies a concrete order
+      of argument bindings, it is also requires a much less general
+      monad interface with bind and return operations, that are in
+      general not available for coinductive types, for example for
+      <code class="code">stream</code> type. If we substitute <code class="code">future</code> type constructor in the
+      above example with a <code class="code">stream</code> constructor we will no be able to
+      implement the latter solution, as we lack the monad  interface.
+<p>
+
+      Using a stream for this particular example, makes sense, since,
+      the specified properties, can be defined on a module level, so
+      they can be defined multiple times for each project. In that
+      case function typecheck will be applied for each quartet of the
+      arguments.
+<p>
+
+      When used with collections, such as list, sequences, sets, etc,
+      the pattern can be used to generalize cartesian product from a
+      function taking a pair of arguments, to a function taking
+      arbitrary amount of arguments.
+<p>
+
+      For collection, the Variadic can be used to generalize cartesian
+      product to <code class="code"><span class="constructor">N</span></code> arguments:
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">AList</span>&nbsp;=&nbsp;<span class="keyword">struct</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">include</span>&nbsp;<span class="constructor">List</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;apply&nbsp;fs&nbsp;xs&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cartesian_product&nbsp;fs&nbsp;xs&nbsp;&gt;&gt;|&nbsp;<span class="keyword">fun</span>&nbsp;(f,x)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Varags</span>&nbsp;=&nbsp;<span class="constructor">Variadic</span>.<span class="constructor">Make</span>(<span class="constructor">AList</span>)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;cartesian_product&nbsp;=&nbsp;<span class="constructor">Varags</span>.apply
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      For option and error monad, with the following definition of
+      <code class="code">apply</code>,
+<p>
+
+      <pre class="codepre"><code class="code"><span class="keyword">let</span>&nbsp;apply&nbsp;f&nbsp;x&nbsp;=&nbsp;<span class="keyword">match</span>&nbsp;f,x&nbsp;<span class="keyword">with</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">Some</span>&nbsp;f,&nbsp;<span class="constructor">Some</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Some</span>&nbsp;(f&nbsp;x)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="constructor">None</span>&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">None</span></code></pre>
+<p>
+
+      The produced <code class="code"><span class="constructor">Varargs</span>.apply</code> will be a generalization of
+      <code class="code"><span class="constructor">Option</span>.merge</code>, i.e., it will apply function <code class="code">f</code> to <code class="code"><span class="constructor">N</span></code>
+      arguments of different types, if all of them are not zero (i.e.,
+      <code class="code"><span class="constructor">None</span></code>, <code class="code"><span class="constructor">Error</span></code>.<br>
+<b>See also</b> <a href="http://staff.city.ac.uk/~ross/papers/Applicative.pdf"><pre class="verbatim">      [1]: Applicative Programming with Effects.
+           Conor McBride and Ross Paterson.
+           Journal of Functional Programming 18:1 (2008), pages 1-13.
+   </pre></a><br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Bap_future.Std.Variadic.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Variadic.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Variadic argument list.
 </div>
 
-
-<pre><span id="TYPEarg"><span class="keyword">type</span> <code class="type">'a</code> arg</span> </pre>
-<div class="info ">
-<code class="code"><span class="keywordsign">'</span>a arg</code> is an Applicable value<br>
-</div>
-
-
-<pre><span id="VALargs"><span class="keyword">val</span> args</span> : <code class="type">'a <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a> -> ('a -> 'b, 'b) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">args x</code> creates a singleton list of arguments that can be
-        applied to a function that takes <code class="code">x</code> argument, and returns a value
-        of type <code class="code"><span class="keywordsign">'</span>b</code>.<br>
-</div>
-
-<pre><span id="VAL($)"><span class="keyword">val</span> ($)</span> : <code class="type">('a, 'b -> 'c) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a> -> ('a, 'c) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">args $x</code> appends argument <code class="code">x</code> to a list of arguments <code class="code">args</code>.<br>
-</div>
-
-<pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type">f:'f -> ('f, 'r) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a> -> 'r <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a></code></pre><div class="info ">
-<code class="code">apply args ~f</code> applies function <code class="code">f</code> to arguments <code class="code">args</code>.<br>
-</div>
+<pre><span class="keyword">module</span> <a href="Bap_future.Std.Variadic.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type"><a href="Bap_future.Std.Applicable.S.html">Bap_future.Std.Applicable.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap_future.Std.Variadic.S.html">S</a></code><code class="type">  with type 'a arg = 'a T.t</code></pre>
+<pre><span class="keyword">include</span> <a href="Bap_future.Std.Variadic.S.html">Bap_future.Std.Variadic.S</a></pre>
 </body></html>

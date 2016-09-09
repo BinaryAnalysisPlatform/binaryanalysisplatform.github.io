@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Future.Variadic</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_future.Std.Future.Variadic</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_future.Std.Future.html" title="Bap_future.Std.Future">Up</a>
@@ -75,14 +78,14 @@
 </div>
 <h1>Module <a href="type_Bap_future.Std.Future.Variadic.html">Bap_future.Std.Future.Variadic</a></h1>
 
-<pre><span class="keyword">module</span> Variadic: <code class="type"><a href="Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a></code><code class="type">  with type 'a arg = 'a t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Variadic: <code class="type"><a href="Bap_future.Std.Variadic.S.html">Bap_future.Std.Variadic.S</a></code><code class="type">  with type 'a arg = 'a t</code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('f, 'r)</code> t</span> </pre>
 <div class="info ">
 <code class="code">(<span class="keywordsign">'</span>f,<span class="keywordsign">'</span>r) t</code> is a list of arguments, where <code class="code"><span class="keywordsign">'</span>f</code> defines the
-        arrow type of the arguments, and <code class="code"><span class="keywordsign">'</span>r</code> is the return type.
-        C.f., <code class="code"><span class="keywordsign">'</span>f</code> and <code class="code"><span class="keywordsign">'</span>r</code> with the first and last parameter of
-        the <code class="code">format</code> type constuctor.<br>
+          arrow type of the arguments, and <code class="code"><span class="keywordsign">'</span>r</code> is the return type.
+          C.f., <code class="code"><span class="keywordsign">'</span>f</code> and <code class="code"><span class="keywordsign">'</span>r</code> with the first and last parameter of
+          the <code class="code">format</code> type constuctor.<br>
 </div>
 
 
@@ -92,17 +95,17 @@
 </div>
 
 
-<pre><span id="VALargs"><span class="keyword">val</span> args</span> : <code class="type">'a <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a> -> ('a -> 'b, 'b) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALargs"><span class="keyword">val</span> args</span> : <code class="type">'a <a href="Bap_future.Std.Variadic.S.html#TYPEarg">arg</a> -><br>       ('a -> 'b, 'b) <a href="Bap_future.Std.Variadic.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">args x</code> creates a singleton list of arguments that can be
-        applied to a function that takes <code class="code">x</code> argument, and returns a value
-        of type <code class="code"><span class="keywordsign">'</span>b</code>.<br>
+          applied to a function that takes <code class="code">x</code> argument, and returns a value
+          of type <code class="code"><span class="keywordsign">'</span>b</code>.<br>
 </div>
 
-<pre><span id="VAL($)"><span class="keyword">val</span> ($)</span> : <code class="type">('a, 'b -> 'c) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a> -> ('a, 'c) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VAL($)"><span class="keyword">val</span> ($)</span> : <code class="type">('a, 'b -> 'c) <a href="Bap_future.Std.Variadic.S.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Variadic.S.html#TYPEarg">arg</a> -> ('a, 'c) <a href="Bap_future.Std.Variadic.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">args $x</code> appends argument <code class="code">x</code> to a list of arguments <code class="code">args</code>.<br>
 </div>
 
-<pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type">f:'f -> ('f, 'r) <a href="Bap_future.Std.Variadic.html#TYPEt">t</a> -> 'r <a href="Bap_future.Std.Variadic.html#TYPEarg">arg</a></code></pre><div class="info ">
+<pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type">f:'f -><br>       ('f, 'r) <a href="Bap_future.Std.Variadic.S.html#TYPEt">t</a> -> 'r <a href="Bap_future.Std.Variadic.S.html#TYPEarg">arg</a></code></pre><div class="info ">
 <code class="code">apply args ~f</code> applies function <code class="code">f</code> to arguments <code class="code">args</code>.<br>
 </div>
 </body></html>

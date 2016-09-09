@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Command</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Command</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_ida.Std.Ida.html" title="Bap_ida.Std.Ida">Previous</a>
@@ -87,4 +90,31 @@ Commands that can be passed into an IDA session<br>
 
 <pre><span id="TYPElanguage"><span class="keyword">type</span> <code class="type"></code>language</span> = <code class="type">[ `idc | `python ]</code> </pre>
 
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap_ida.Std.Command.html#TYPElanguage">language</a> -><br>       script:string -> parser:(string -> 'a) -> 'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create lang ~script ~<span class="keyword">parser</span></code> create a command that will
+        execute a <code class="code">script</code>, written in a given language, at then
+        parse the output using the specified parser function.
+<p>
+
+        If a script needs to output information, it must use a
+        filename <code class="code">$output</code> (that will be substituted with the real
+        file name).
+<p>
+
+        The parse name will get the name of the output file, so that
+        it can read and parse it.<br>
+</div>
+
+<pre><span id="VALlanguage"><span class="keyword">val</span> language</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> <a href="Bap_ida.Std.Command.html#TYPElanguage">language</a></code></pre><div class="info ">
+<code class="code">language command</code> is a script language<br>
+</div>
+
+<pre><span id="VALscript"><span class="keyword">val</span> script</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<code class="code">script command</code> the script text<br>
+</div>
+
+<pre><span id="VALparser"><span class="keyword">val</span> parser</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> string -> 'a</code></pre><div class="info ">
+<code class="code"><span class="keyword">parser</span> command</code> the associated parser function.<br>
+</div>
 </body></html>

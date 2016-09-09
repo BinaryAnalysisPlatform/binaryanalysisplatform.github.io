@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Microx_conqueror</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Microx_conqueror</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Microx.html" title="Microx">Previous</a>
@@ -77,7 +80,19 @@
 </div>
 <h1>Module <a href="type_Microx_conqueror.html">Microx_conqueror</a></h1>
 
-<pre><span class="keyword">module</span> Microx_conqueror: <code class="code"><span class="keyword">sig</span></code> <a href="Microx_conqueror.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Microx_conqueror: <code class="code"><span class="keyword">sig</span></code> <a href="Microx_conqueror.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+execution context.
+<p>
 
-<pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Microx_conqueror.context-c.html">context</a></span> : <code class="type">?max_steps:int -> ?max_loop:int -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span name="TYPEmain"><span class="keyword">class</span> <code class="type">[#context]</code> <a href="Microx_conqueror.main-c.html">main</a></span> : <code class="type">?deterministic:bool -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.main-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+    The context defines the state of execution.<br>
+</div>
+<hr width="100%">
+
+<pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Microx_conqueror.context-c.html">context</a></span> : <code class="type">?max_steps:int -> ?max_loop:int -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+execution context.
+</div>
+
+<pre><span name="TYPEmain"><span class="keyword">class</span> <code class="type">[#context]</code> <a href="Microx_conqueror.main-c.html">main</a></span> : <code class="type">?deterministic:bool -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Microx_conqueror.main-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+BIR interpreter, that executes a program in a given context.
+</div>
+</body></html>

@@ -65,10 +65,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_c_type_mapper</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_abi.html" title="Bap_abi">Previous</a>
@@ -77,11 +80,29 @@
 </div>
 <h1>Module <a href="type_Bap_c_type_mapper.html">Bap_c_type_mapper</a></h1>
 
-<pre><span class="keyword">module</span> Bap_c_type_mapper: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Bap_c_type_mapper: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+include visitor/mapper with the monad stripped away.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">include</span> S</pre>
+<div class="info ">
+include visitor/mapper with the monad stripped away.<br>
+</div>
 
-<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Search.html">Search</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.Search.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.State.html">State</a>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Monad.State.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Finder.html">Finder</a>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Search.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S2.html">Monad.S2</a></code><code class="code">) </code>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) M.t</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Search.html">Search</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.Search.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Search Monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.State.html">State</a>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Monad.State.t</code></pre><div class="info">
+the mapper lifted into a regular state monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Finder.html">Finder</a>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) Search.t</code></pre><div class="info">
+the visitor lifted into the search monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S2.html">Monad.S2</a></code><code class="code">) </code>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> lifts the visitor into monad <code class="code"><span class="constructor">M</span></code>.
+</div>
+</body></html>

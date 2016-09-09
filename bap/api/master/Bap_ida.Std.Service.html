@@ -64,10 +64,13 @@
 <link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
 <link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Microx" rel="Chapter" href="Microx.html">
 <link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
 <link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
-<link title="Bap_build" rel="Chapter" href="Bap_build.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Service</title>
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap_ida.Std.Service</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Bap_ida.Std.Command.html" title="Bap_ida.Std.Command">Previous</a>
@@ -101,6 +104,10 @@ Allow plugins to specify that they can provide IDA service<br>
 
 <pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">(string -> <a href="Bap_ida.Std.Service.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
 <code class="code">provide creator</code> provides for a service that can perform the
-        roles of <code class="code"><span class="constructor">Ida</span>.create</code>, <code class="code"><span class="constructor">Ida</span>.exec</code>, <code class="code"><span class="constructor">Ida</span>.close</code><br>
+        roles of <code class="code"><span class="constructor">Ida</span>.create</code>, <code class="code"><span class="constructor">Ida</span>.exec</code>, <code class="code"><span class="constructor">Ida</span>.close</code>.
+<p>
+
+        The <code class="code">creator</code> function accepts a path to a target file and
+        returns an instance of ida service.<br>
 </div>
 </body></html>
