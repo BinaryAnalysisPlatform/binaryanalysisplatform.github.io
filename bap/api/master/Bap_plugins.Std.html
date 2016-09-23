@@ -76,10 +76,33 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_plugins.Std.html">Bap_plugins.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Interface to the plugin subsystem.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEplugin"><span class="keyword">type</span> <code class="type"></code>plugin</span> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugin.html">Plugin</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugins.html">Plugins</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugin.html">Plugin</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Plugin - a loadable self-contained piece of code.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugins.html">Plugins</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Plugin loader.
+</div>
+
+<pre><span id="VALlist_loaded_units"><span class="keyword">val</span> list_loaded_units</span> : <code class="type">unit -> string list</code></pre><div class="info ">
+<code class="code">list_loaded_units ()</code> evaluates to a list of compilation unit
+      names currently loaded into the system. The list includes both,
+      units loaded dynamically, and those that were statically linked
+      into the host program.<br>
+</div>
+
+<pre><span id="VALsetup_dynamic_loader"><span class="keyword">val</span> setup_dynamic_loader</span> : <code class="type">(string -> unit) -> unit</code></pre><div class="info ">
+<code class="code">setup_dynamic_loader loader</code> installs <code class="code">loader</code> program. The
+      <code class="code">loader</code> takes a filename and loads it.
+      This function is used internally, for different modes of
+      execution (native, byte, topleve)<br>
+</div>
+</body></html>

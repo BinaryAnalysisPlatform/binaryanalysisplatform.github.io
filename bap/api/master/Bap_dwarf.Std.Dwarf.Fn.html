@@ -81,12 +81,20 @@
 <h1>Module <a href="type_Bap_dwarf.Std.Dwarf.Fn.html">Bap_dwarf.Std.Dwarf.Fn</a></h1>
 
 <pre><span class="keyword">module</span> Fn: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Dwarf.Fn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Current function representation.<br>
+Function representation.<br>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_dwarf.Std.Dwarf.html#TYPEfn">Bap_dwarf.Std.Dwarf.fn</a></code> </pre>
 
+
+<pre><span id="VALpc_lo"><span class="keyword">val</span> pc_lo</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
+<code class="code">pc_lo fn</code> the lowest address of a function (the entry point)<br>
+</div>
+
+<pre><span id="VALpc_hi"><span class="keyword">val</span> pc_hi</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> option</code></pre><div class="info ">
+<code class="code">pc_hi fn</code> the highest address (if known)<br>
+</div>
 
 <pre><span class="keyword">include</span> Identifiable.S</pre>
 </body></html>

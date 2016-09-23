@@ -78,7 +78,35 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a></h1>
 
-<pre><span class="keyword">module</span> Plugins: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Plugins: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Plugin loader.
+<p>
+
+      This module handles the set of plugins, visible to the
+      platform.
+<p>
+
+      Plugins are looked at the following locations:<ul>
+<li>paths explicitly specified by a user (via <code class="code">library</code>
+        parameter);</li>
+<li>paths specified by the <code class="code"><span class="constructor">BAP_PLUGIN_PATH</span></code> environment
+        variable (same syntax as PATH variable);</li>
+<li>$prefix/lib/bap, where $prefix is the installation prefix,
+        specified during the installation.</li>
+</ul>
+
+      The latter destination is used by the <code class="code">bapbundle install</code>
+      command, so this is the default repository of plugins.
+<p>
+
+      The plugin loader is an event driven system. Once, <code class="code"><span class="constructor">Plugins</span>.run</code>
+      function is called, events of type <code class="code"><span class="constructor">Plugins</span>.events</code> will start
+      to fire. By default they are intercepted by a logger, and by the
+      default handler (see <a href="Bap_plugins.Std.Plugins.html#VALrun"><code class="code"><span class="constructor">Bap_plugins</span>.<span class="constructor">Std</span>.<span class="constructor">Plugins</span>.run</code></a> function description about
+      the default handler). The logger will write the infromation
+      about events, that is useful for debugging issues with plugins.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type">[ `Errored of string * Error.t<br>       | `Linking of string<br>       | `Loaded of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Loading of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Opening of string ]</code> </pre>
 

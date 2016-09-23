@@ -78,7 +78,14 @@
 </div>
 <h1>Module <a href="type_Bap_plugins.Std.Plugin.html">Bap_plugins.Std.Plugin</a></h1>
 
-<pre><span class="keyword">module</span> Plugin: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Plugin: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Plugin - a loadable self-contained piece of code.
+<p>
+
+      Plugin is a bundle, that contains code, data and meta
+      information.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a></code> </pre>
 
@@ -104,8 +111,16 @@
 </div>
 
 <pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit Or_error.t</code></pre><div class="info ">
-<code class="code">load plugin</code> loads given <code class="code">plugin</code>. If it is already
-        loaded, then do nothing.<br>
+<code class="code">load plugin</code> load all unsatisfied dependencies of a <code class="code">plugin</code>,
+        and then load the <code class="code">plugin</code> itself. If it is already
+        loaded, then do nothing.
+<p>
+
+        Returns an error if some dependency can't be satisfied, or if
+        there is a name conflict with already loaded or linked
+        compilation unit. Can return error if the underlying loader
+        raised an error, or package is malformed, or if there is some
+        other system error.<br>
 </div>
 
 <pre><span id="VALloaded"><span class="keyword">val</span> loaded</span> : <code class="type"><a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit <a href="Bap_future.Std.html#TYPEfuture">Bap_future.Std.future</a></code></pre><div class="info ">
