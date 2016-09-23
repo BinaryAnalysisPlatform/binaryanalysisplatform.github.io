@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Graphlib.Tid.html">
+<link rel="next" href="Bap.Std.Graphlib.Callgraph.html">
+<link rel="Up" href="Bap.Std.Graphlib.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Graphlib.Ir</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Bap.Std.Graphlib.Tid.html" title="Bap.Std.Graphlib.Tid">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Graphlib.html" title="Bap.Std.Graphlib">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Graphlib.Callgraph.html" title="Bap.Std.Graphlib.Callgraph">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Graphlib.Ir.html">Bap.Std.Graphlib.Ir</a></h1>
+
+<pre><span class="keyword">module</span> Ir: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Graph view over IR.
+<p>
+
+        This module implements a graph view on an intermediate
+        representation of a subroutine. To create an instance of a
+        graph, using existing subroutine use <a href="Bap.Std.Sub.html#VALto_cfg"><code class="code"><span class="constructor">Sub</span>.to_cfg</code></a>. At any
+        moment current sub term can be obtained using <a href="Bap.Std.Sub.html#VALof_cfg"><code class="code"><span class="constructor">Sub</span>.of_cfg</code></a>
+        function. This is a just a projection operation, so it doesn't
+        take any computing time.
+<p>
+
+        All <code class="code"><span class="constructor">Graph</span></code> modification operations, like <code class="code">insert</code>, <code class="code">remove</code>
+        and <code class="code">update</code> in <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">Edge</span></code> modules are mapped to
+        corresponding <code class="code"><span class="constructor">Term</span></code> operations. Also, for performance
+        reasons, graph is augmented with auxiliary data structures,
+        that allows to perform most of the operations in O(log(N))
+        time.
+<p>
+
+        Although this implements all operations of <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface
+        it is recommended to use <a href="Bap.Std.Term.html"><code class="code"><span class="constructor">Term</span></code></a> or <code class="code"><span class="constructor">Builder</span></code> interfaces to
+        build and modify underlying terms. The next few sections will
+        clarify the behavior of a graph when it is modified using
+        <a href="Bap.Std.Graphlib.Graph.html"><code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Graph</span></code></a> interface. If you do not want to read the following
+        sections, then better do not use this module to build your
+        terms.
+<p>
+
+        <h2 id="2_Insertingnodes">Inserting nodes</h2>
+<p>
+
+        When node is inserted into a graph <code class="code">g</code> all jumps of a node,
+        that lead to blocks that are already in a graph will be
+        represented as edges. Also, all jumps from other nodes to the
+        inserted node, will be added as edges (assuming that this
+        other nodes are also in the graph g). Thus inserting node can
+        create an arbitrary number of edges, from zero to N. If jump
+        target is not yet in the graph, then jump is not removed from a
+        sequence of jumps of the inserted node, but just ignored.
+<p>
+
+        <h2 id="2_Updatingnodes">Updating nodes</h2>
+<p>
+
+        When node is updated with the same node (but possibly with
+        different set of terms, see <a href="Bap.Std.html#sema">description of sameness</a>)
+        then all changes that affects control flow will be
+        applied. For example, if jump is absent in a new version of a
+        block, and this jump corresponds to an edge in the graph, then
+        this edge will be removed.
+<p>
+
+        <h2 id="2_Removingnodes">Removing nodes</h2>
+<p>
+
+        The node will be removed from the underlying <code class="code">sub term</code>, and
+        all edges incident to the removed node will be also removed.
+        This will not affect jmp terms of blk terms.
+<p>
+
+        <h2 id="2_Insertingedges">Inserting edges</h2>
+<p>
+
+        Edges in IR graph represents a transfer of a control flow
+        between basic blocks. The basic block in IR is more reach,
+        rather then a node in a graph. For example, in blk term the
+        order of jumps matters. Jump <code class="code">n</code> is taken, only if guard
+        conditions of jumps <code class="code">0</code> to <code class="code">n-1</code> evaluated to <code class="code"><span class="keyword">false</span></code> (like
+        switch statement in C language). The order of edges in a graph
+        is unspecified. So, some precaution should be taken, to handle
+        edge removing and inserting correctly. Each edge is labeled
+        with abstract label, that represents the jump position in a
+        graph.
+<p>
+
+        When an edge is created it will look for corresponding jumps
+        in source node. If there exists such jump, and it points to
+        the destination, then it will be left untouched. If it points
+        to a different node, then it will be fixed to point at the
+        given destination. If there is no position in a slot,
+        represented by the given label, then it will be
+        inserted. Dummy jumps will be prepended before the inserted
+        jump, if needed.
+<p>
+
+        When an edge is inserted into the graph, then source and
+        destination nodes are inserted or updated (depending on whether
+        they were already present in the graph). As a result, the
+        graph must contain at least nodes, incident to the edge, and
+        the edge itself.
+<p>
+
+        <h2 id="2_Updatingedge">Updating edge</h2>
+<p>
+
+        Updating an edge is basically the same, as updating incident
+        nodes, given that the edge exists in the graph.
+<p>
+
+        <h2 id="2_Removingedge">Removing edge</h2>
+<p>
+
+        Removing an edge is not symmetric with edge insertion. It
+        doesn't remove the incident nodes, but instead removes jumps
+        from the source node to destination. The jumps are removed
+        accurately, so that the order (and semantics) is preserved. If
+        the removed jump was in the middle of the sequence then it is
+        substituted by a dummy jump with <code class="code"><span class="keyword">false</span></code> guard.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
+
+
+<pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> </pre>
+
+
+<pre><span id="TYPEnode"><span class="keyword">type</span> <code class="type"></code>node</span> </pre>
+
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Edge.html">Edge</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+since in IR the order of edges defines semantics, we provide
+          extra functions
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Graphlib.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">include</span> <a href="Bap.Std.Graphlib.Graph.html">Bap.Std.Graphlib.Graph</a></pre>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Aux.html">Bap.Std.Aux</a></pre>
+<div class="info ">
+<h4 id="4_Printableinterfaceforauxiliarydatastructures">Printable interface for auxiliary data structures</h4><br>
+</div>
+</body></html>

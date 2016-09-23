@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="next" href="Bap.Std.Graphlib.Ir.Node.html">
+<link rel="Up" href="Bap.Std.Graphlib.Ir.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html"><title>Bap.Std.Graphlib.Ir.Edge</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Graphlib.Ir.html" title="Bap.Std.Graphlib.Ir">Up</a>
+&nbsp;<a class="post" href="Bap.Std.Graphlib.Ir.Node.html" title="Bap.Std.Graphlib.Ir.Node">Next</a>
+</div>
+<h1>Module <a href="type_Bap.Std.Graphlib.Ir.Edge.html">Bap.Std.Graphlib.Ir.Edge</a></h1>
+
+<pre><span class="keyword">module</span> Edge: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphlib.Ir.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+since in IR the order of edges defines semantics, we provide
+          extra functions<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Edge.html">Bap.Std.Edge</a></pre>
+
+<pre><span id="VALjmps"><span class="keyword">val</span> jmps</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -><br>       <a href="Bap.Std.html#TYPEgraph">graph</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">jmps dir e g</code> enumerates all jumps (including calls,
+            interrupts, indirects, etc), that occurs before if
+            <code class="code">dir = <span class="keywordsign">`</span>before</code> or after if <code class="code">dir = <span class="keywordsign">`</span>after</code> an edge <code class="code">e</code><br>
+</div>
+
+<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -> <a href="Bap.Std.html#TYPEgraph">graph</a> -> <a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">edges dir e g</code> enumerates all edges occurring before of
+            after an edge <code class="code">e</code> in graph <code class="code">g</code><br>
+</div>
+
+<pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type"><a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
+<code class="code">jmp e</code> returns a jmp term associated with edge <code class="code">e</code><br>
+</div>
+
+<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type"><a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<code class="code">tid e</code> returns a tid of a jmp term that is associated
+            with an edge <code class="code">e</code><br>
+</div>
+
+<pre><span id="VALcond"><span class="keyword">val</span> cond</span> : <code class="type"><a href="Bap.Std.Graphlib.Ir.html#TYPEt">Graphlib.Ir.t</a> -> <a href="Bap.Std.html#TYPEgraph">graph</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<code class="code">cond e g</code> computes a condition expression that is
+            asserted to be <code class="code"><span class="keyword">true</span></code> if this branch is taken.
+<p>
+
+            Note: this is not the same as a condition associated with
+            the jmp term itself, it takes into account all conditions
+            preceding the edge.<br>
+</div>
+
+<pre><span class="keyword">include</span> <a href="Bap.Std.Printable.html">Bap.Std.Printable</a></pre>
+</body></html>
