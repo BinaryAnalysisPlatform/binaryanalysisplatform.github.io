@@ -1,0 +1,69 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of BEAGLE</TITLE>
+</HEAD><BODY>
+<H1>BEAGLE</H1>
+Section: Beagle Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+beagle - microx powered obfuscated string solver
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>beagle</B> [<I>OPTION</I>]... 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Beagle is an obfuscated string solver that uses CPU emulation for discovering and decoding strings. Beagle can also be used as an advanced data cross-referrence tool. Beagle combines Microexecution with digital signal processing techniques and efficient dictionary search. Data that pass through a CPU emulator is processed with a low-pass filter and string-like patterns are detected. At the final step, words are recovered from a detected shuffled sequence of characters. For this we employ a scrabble-like algorithm, that will detect all possible words, that can be built from a given sequence of characters. The algorithm is parameterized by a dictionary. It can be just an English dictionary, but it can be also a dictionary built from signatures obtained from a known compromised software. The dictionary search algorithm uses a special trie data structure with a search procedure that doesn't depend on the size of a dictionary or the size of a character sequence. 
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--alphabet</B>=<I>VAL</I> (absent=printable)<DD>
+Build words from the specified alphabet
+<DT><B>--dictionary</B>=<I>VAL</I><DD>
+Add dictionary file(s).
+<DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
+Show this help in format <I>FMT</I> (pager, plain or groff).
+<DT><B>--ignore-strings</B><DD>
+don't put static strings into the initial dictionary
+<DT><B>--no-words</B><DD>
+Don't try to build words from a dictionary
+<DT><B>--print-chars</B><DD>
+Print all observed letters.
+<DT><B>--print-strings</B><DD>
+Print static strings
+<DT><B>--print-words</B><DD>
+Print all buildable words.
+<DT><B>--words</B>=<I>VAL</I><DD>
+Add specified words to the dictionary.
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 20:04:39 GMT, February 09, 2017
+</BODY>
+</HTML>
