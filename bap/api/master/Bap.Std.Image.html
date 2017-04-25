@@ -23,6 +23,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -59,6 +61,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -67,14 +70,15 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="Type definitions" rel="Section" href="#2_Typedefinitions">
 <link title="Constructing" rel="Section" href="#2_Constructing">
 <link title="Attributes" rel="Section" href="#2_Attributes">
+<link title="Tables " rel="Section" href="#2_Tables">
+<link title="Tags" rel="Section" href="#2_Tags">
+<link title="Mappings " rel="Section" href="#2_Mappings">
 <link title="Backend Interface" rel="Section" href="#2_BackendInterface">
+<link title="Internals" rel="Section" href="#2_Internals">
 <title>BAR: BAP Annotated Reference : Bap.Std.Image</title>
 </head>
 <body>
@@ -145,22 +149,86 @@ constructing an image can result in actual image and a set
 <br>
 <h2 id="2_Attributes">Attributes</h2><br>
 
-<pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
-<h2 id="2_Tables">Tables </h2><br>
+<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
+<code class="code">entry_point addr</code> is an address from which a kernel should start
+<p>
+<code class="code">filename image</code> a name of file from which an image was
+        loaded (if any)<br>
 </div>
 
-<pre><span id="VALsegment"><span class="keyword">val</span> segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEarch">arch</a></code></pre><div class="info ">
+<code class="code">arch image</code> code architecture<br>
+</div>
+
+<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre><div class="info ">
+<code class="code">addr_size image</code> same as <code class="code"><span class="constructor">Arch</span>.addr_size (<span class="constructor">Image</span>.arch image)</code><br>
+</div>
+
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
+<code class="code">endian image</code> same as <code class="code"><span class="constructor">Arch</span>.endian (<span class="constructor">Image</span>.arch image)</code><br>
+</div>
+<br>
+<h2 id="2_Tables">Tables </h2><br>
+
+<pre><span id="VALwords"><span class="keyword">val</span> words</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEword">word</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
+<code class="code">words image size</code> returns a mapping from addresses to words
+        of the specified <code class="code">size</code>. For example, <code class="code"><span class="constructor">Image</span>.words img <span class="keywordsign">`</span>r8</code>
+        returns all bytes.<br>
+</div>
+
+<pre><span id="VALsegments"><span class="keyword">val</span> segments</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
+<code class="code">segments image</code> returns a mapping from addresses to segments<br>
+</div>
+
+<pre><span id="VALsymbols"><span class="keyword">val</span> symbols</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> <a href="Bap.Std.html#TYPEtable">table</a></code></pre><div class="info ">
+<code class="code">symbols image</code> returns a mapping from addresses to symbols<br>
+</div>
+<br>
 <h2 id="2_Tags">Tags</h2><br>
+
+<pre><span id="VALsegment"><span class="keyword">val</span> segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+tags a segment<br>
+</div>
+
+<pre><span id="VALsymbol"><span class="keyword">val</span> symbol</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+tags a symbol<br>
+</div>
+
+<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+tags a section<br>
+</div>
+
+<pre><span id="VALspecification"><span class="keyword">val</span> specification</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+an image specification in OGRE<br>
 </div>
 
 <pre><span id="VALmemory"><span class="keyword">val</span> memory</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre><div class="info ">
 returns memory, annotated with tags<br>
 </div>
+<br>
+<h2 id="2_Mappings">Mappings </h2><br>
 
 <pre><span id="VALmemory_of_segment"><span class="keyword">val</span> memory_of_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> <a href="Bap.Std.html#TYPEmem">mem</a></code></pre><div class="info ">
-<h2 id="2_Mappings">Mappings </h2>
-<p>
-<code class="code">memory_of_symbol sym</code>: returns the memory of symbol in acending order.<br>
+<code class="code">memory_of_segment img seg</code> returns a memory region occupied
+        by the segment <code class="code">seg</code>.<br>
+</div>
+
+<pre><span id="VALmemory_of_symbol"><span class="keyword">val</span> memory_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEmem">mem</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">memory_of_symbol sym</code> returns a sequence of memory regions
+        that belong to the <code class="code">sym</code> symbol. The sequence is represented
+        as a pair, where the first element is the starting memory
+        region, and the second elemnt is (a possible empty) sequence
+        of the rest memory regions (in case if a symbol occupies a
+        non-contigious region of memory).<br>
+</div>
+
+<pre><span id="VALsymbols_of_segment"><span class="keyword">val</span> symbols_of_segment</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<code class="code">symbols_of_segment img seg</code> all symbols that belong to the
+        <code class="code">seg</code> segment.<br>
+</div>
+
+<pre><span id="VALsegment_of_symbol"><span class="keyword">val</span> segment_of_symbol</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> <a href="Bap.Std.Image.html#TYPEsymbol">symbol</a> -> <a href="Bap.Std.Image.html#TYPEsegment">segment</a></code></pre><div class="info ">
+<code class="code">segment_of_symbol image sym</code> a segment to which <code class="code">sym</code> belongs.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Image.Segment.html">Segment</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Segment.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -173,12 +241,31 @@ Symbol.
 <br>
 <h2 id="2_BackendInterface">Backend Interface</h2><br>
 
-<pre><span id="VALregister_backend"><span class="keyword">val</span> register_backend</span> : <code class="type">name:string -> <a href="Bap.Std.Backend.html#TYPEt">Backend.t</a> -> [ `Duplicate | `Ok ]</code></pre><div class="info ">
-<code class="code">register_backend ~name backend</code> tries to register backend under
-        the specified <code class="code">name</code>.<br>
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Image.Loader.html">Loader</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Loader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+An interface that a backend shall implement.
+</div>
+
+<pre><span id="VALregister_loader"><span class="keyword">val</span> register_loader</span> : <code class="type">name:string -> (module Bap.Std.Image.Loader) -> unit</code></pre><div class="info ">
+<code class="code">register_loader ~name backend</code> registers new loader.<br>
 </div>
 
 <pre><span id="VALavailable_backends"><span class="keyword">val</span> available_backends</span> : <code class="type">unit -> string list</code></pre><div class="info ">
 lists all registered backends<br>
 </div>
-</body></html>
+
+<pre><span id="VALregister_backend"><span class="keyword">val</span> register_backend</span> : <code class="type">name:string -> <a href="Bap.Std.Backend.html#TYPEt">Backend.t</a> -> [ `Duplicate | `Ok ]</code></pre><div class="info ">
+<code class="code">register_backend ~name backend</code> tries to register backend under
+        the specified <code class="code">name</code>.<br>
+</div>
+<br>
+<h2 id="2_Internals">Internals</h2>
+<p>
+
+        Access to the low-level internals.<br>
+
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Image.html#TYPEt">t</a> -> Bigstring.t</code></pre><div class="info ">
+<code class="code">data image</code> returns image data. Usually it is a memory mapped
+        input file, or it is whatever was passed to <code class="code">of_[big]string</code>.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Image.Scheme.html">Scheme</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Scheme.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

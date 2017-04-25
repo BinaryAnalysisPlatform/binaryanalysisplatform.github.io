@@ -18,6 +18,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -54,6 +56,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -62,9 +65,6 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Image</title>
 </head>
@@ -120,13 +120,13 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;arch&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.arch
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;addr_size&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr_size
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;endian&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.endian
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;data&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;words&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.word&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.table
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;segments&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.segment&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.table
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;symbols&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.symbol&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.table
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;segment&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.segment&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.tag
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;symbol&nbsp;:&nbsp;string&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.tag
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;section&nbsp;:&nbsp;string&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.tag
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;specification&nbsp;:&nbsp;<span class="constructor">Ogre</span>.doc&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.tag
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;memory&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.value&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.memmap
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;memory_of_segment&nbsp;:
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.segment&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.mem
@@ -1925,7 +1925,72 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;is_function&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Symbol</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;is_debug&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Symbol</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="keyword">type</span>&nbsp;<span class="constructor">Loader</span>&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;from_file&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ogre</span>.doc&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;from_data&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.doc&nbsp;option&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Or_error</span>.t
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;register_loader&nbsp;:&nbsp;name:string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Loader</span>)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;available_backends&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;register_backend&nbsp;:
 &nbsp;&nbsp;&nbsp;&nbsp;name:string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Backend</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;[&nbsp;<span class="keywordsign">`</span><span class="constructor">Duplicate</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Ok</span>&nbsp;]
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;available_backends&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;data&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bigstring</span>.t
+&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Scheme</span>&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;addr&nbsp;=&nbsp;int64
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;region&nbsp;=&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addr&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;:&nbsp;int64;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;info&nbsp;:&nbsp;<span class="keywordsign">'</span>a;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;off&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;size&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;addr&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;name&nbsp;:&nbsp;string&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;root&nbsp;:&nbsp;int64&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;readable&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;writable&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;executable&nbsp;:&nbsp;bool&nbsp;<span class="constructor">Ogre</span>.field
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;arch&nbsp;:&nbsp;(string,&nbsp;(string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;segment&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;((bool&nbsp;*&nbsp;bool&nbsp;*&nbsp;bool)&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.region,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;bool&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;section&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(unit&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.region,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;code_start&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr,&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;entry_point&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr,&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;symbol_chunk&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.region,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;named_region&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(string&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.region,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;named_symbol&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;*&nbsp;string,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;mapped&nbsp;:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(int64&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.region,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Image</span>.<span class="constructor">Scheme</span>.addr&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Ogre</span>.attribute
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
 <span class="keyword">end</span></code></body></html>

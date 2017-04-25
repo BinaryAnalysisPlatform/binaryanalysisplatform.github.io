@@ -32,8 +32,12 @@ Beagle is an obfuscated string solver that uses CPU emulation for discovering an
 <H2>OPTIONS</H2>
 
 <DL COMPACT>
+<DT><B>--alpha</B>=<I>VAL</I> (absent=0.05)<DD>
+desired probability of a false positive
 <DT><B>--alphabet</B>=<I>VAL</I> (absent=printable)<DD>
 Build words from the specified alphabet
+<DT><B>--beta</B>=<I>VAL</I> (absent=0.001)<DD>
+desired probability of a false negative
 <DT><B>--dictionary</B>=<I>VAL</I><DD>
 Add dictionary file(s).
 <DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
@@ -42,12 +46,16 @@ Show this help in format <I>FMT</I> (pager, plain or groff).
 don't put static strings into the initial dictionary
 <DT><B>--no-words</B><DD>
 Don't try to build words from a dictionary
+<DT><B>--noise</B>=<I>VAL</I> (absent=0.05)<DD>
+expected amount of noise characters
 <DT><B>--print-chars</B><DD>
 Print all observed letters.
 <DT><B>--print-strings</B><DD>
 Print static strings
 <DT><B>--print-words</B><DD>
 Print all buildable words.
+<DT><B>--text-probability</B>=<I>VAL</I> (absent=0.1)<DD>
+a prior probability of the search data
 <DT><B>--words</B>=<I>VAL</I><DD>
 Add specified words to the dictionary.
 </DL>
@@ -64,6 +72,6 @@ Add specified words to the dictionary.
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 20:04:39 GMT, February 09, 2017
+Time: 18:29:06 GMT, April 25, 2017
 </BODY>
 </HTML>

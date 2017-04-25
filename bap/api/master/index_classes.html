@@ -19,6 +19,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -55,6 +57,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -63,9 +66,6 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Index of classes</title>
 </head>
@@ -93,18 +93,9 @@ BIR <a href="Bap.Std.Biri.html">interpreter</a>
 </div>
 </td></tr>
 <tr><td align="left"><br>C</td></tr>
-<tr><td><a href="Microx.Std.concretizer-c.html">concretizer</a> [<a href="Microx.Std.html">Microx.Std</a>]</td>
-<td></td></tr>
-<tr><td><a href="Microx.Std.conqueror-c.html">conqueror</a> [<a href="Microx.Std.html">Microx.Std</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Stmt.constant_folder-c.html">constant_folder</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
 <td><div class="info">
 <code class="code">constant_folder</code> is a class that implements the <code class="code">fold_consts</code>
-</div>
-</td></tr>
-<tr><td><a href="Microx_conqueror.context-c.html">context</a> [<a href="Microx_conqueror.html">Microx_conqueror</a>]</td>
-<td><div class="info">
-execution context.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Taint.context-c.html">context</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
@@ -155,16 +146,6 @@ linear storage literally implements operational
 </div>
 </td></tr>
 <tr><td align="left"><br>M</td></tr>
-<tr><td><a href="Microx_conqueror.main-c.html">main</a> [<a href="Microx_conqueror.html">Microx_conqueror</a>]</td>
-<td><div class="info">
-BIR interpreter, that executes a program in a given context.
-</div>
-</td></tr>
-<tr><td><a href="Microx_concretizer.main-c.html">main</a> [<a href="Microx_concretizer.html">Microx_concretizer</a>]</td>
-<td><div class="info">
-expression interpreter that never halts due to an unknown value.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Term.mapper-c.html">mapper</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 Mapper perfoms deep identity term mapping.
@@ -181,7 +162,7 @@ Exp mapper.
 </div>
 </td></tr>
 <tr><td align="left"><br>P</td></tr>
-<tr><td><a href="Bap.Std.Taint.propagator-c.html">propagator</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
+<tr><td><a href="Bap.Std.Taint.S.propagator-c.html">propagator</a> [<a href="Bap.Std.Taint.S.html">Bap.Std.Taint.S</a>]</td>
 <td><div class="info">
 Propagate taint through expressions.
 </div>
@@ -206,17 +187,21 @@ All visitors provide some information about the current
 </div>
 </td></tr>
 <tr><td align="left"><br>T</td></tr>
-<tr><td><a href="Bap.Std.Biri.t-c.html">t</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.t-c.html">t</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html">t</a> [<a href="Bap_primus.Std.Primus.Context.html">Bap_primus.Std.Primus.Context</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.S.t-c.html">t</a> [<a href="Bap.Std.Biri.S.html">Bap.Std.Biri.S</a>]</td>
 <td><div class="info">
 base class for BIR interpreters
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Bili.t-c.html">t</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
+<tr><td><a href="Bap.Std.Bili.S.t-c.html">t</a> [<a href="Bap.Std.Bili.S.html">Bap.Std.Bili.S</a>]</td>
 <td><div class="info">
 Base class for BIL interpreters
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.t-c.html">t</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
+<tr><td><a href="Bap.Std.Expi.S.t-c.html">t</a> [<a href="Bap.Std.Expi.S.html">Bap.Std.Expi.S</a>]</td>
 <td><div class="info">
 Expression interpreter.
 </div>

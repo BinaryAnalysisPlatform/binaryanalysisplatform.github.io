@@ -23,6 +23,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -59,6 +61,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -67,9 +70,6 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Memory.Make_iterators</title>
 </head>
@@ -80,7 +80,7 @@
 </div>
 <h1>Functor <a href="type_Bap.Std.Memory.Make_iterators.html">Bap.Std.Memory.Make_iterators</a></h1>
 
-<pre><span class="keyword">module</span> Make_iterators <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Memory_iterators.html">Memory_iterators</a></code><code class="type">  with type t := t
+<pre><span class="keyword">module</span> Make_iterators <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type">Legacy.Monad.S</code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Memory_iterators.html">Memory_iterators</a></code><code class="type">  with type t := t
                           and type 'a m = 'a M.t</code></pre><div class="info module top">
 lifts iterators to monad <code class="code"><span class="constructor">M</span></code><br>
 </div>
@@ -93,7 +93,7 @@ lifts iterators to monad <code class="code"><span class="constructor">M</span></
 <td align="center" valign="top" width="15%">
 <code>M</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Bap.Std.Monad.S.html">Monad.S</a></code>
+<td><code class="type">Legacy.Monad.S</code>
 </table>
 </td>
 </tr>

@@ -20,6 +20,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -56,6 +58,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -64,9 +67,6 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference</title>
 </head>
@@ -106,6 +106,8 @@ left, then <a href="argot_index.html">click_here</a>.
 <h3 id="3_Corelibraries">Core libraries</h3><ul>
 <li><a href="Bap.Std.html">bap</a> - BAP standard library</li>
 <li><a href="Regular.Std.html">regular</a> - regular inductive types</li>
+<li><a href="Monads.Std.html">monads</a> - a missing monads library</li>
+<li><a href="Ogre.html">ogre</a> - a sexp-based NoSQL database</li>
 <li><a href="Bap_future.Std.html">future</a> - coinductive types</li>
 <li><a href="Graphlib.Std.html">graphlib</a> - graph library</li>
 </ul>
@@ -122,6 +124,7 @@ left, then <a href="argot_index.html">click_here</a>.
 </ul>
 
 <h3 id="3_Auxiliarylibraries">Auxiliary libraries</h3><ul>
+<li><a href="Bap_primus.Std.html">primus</a> - The Microexecution Framework</li>
 <li><a href="Bap_traces.Std.html">traces</a> - loading execution traces</li>
 <li><a href="Bap_bml.html">bml</a> - an extensible DSL for term transformation</li>
 <li><a href="Bap_byteweight.html">byteweight</a> - an interface to byteweight implementation</li>
@@ -129,7 +132,6 @@ left, then <a href="argot_index.html">click_here</a>.
 <li><a href="Bap_ida.Std.html">ida</a> - call IDA from OCaml</li>
 <li><a href="Bap_elf.Std.html">elf</a> - native support for ELF files</li>
 <li><a href="Bap_dwarf.Std.html">dwarf</a> - native DWARF parser</li>
-<li><a href="Microx.Std.html">microx</a> - a library for code microexecution</li>
 <li><a href="Bap_build.Std.html">build</a> - BAP build system as an ocamlbuild plugin</li>
 <li><a href="Text_tags.html">text-tags</a> - Use semantics tags to format your texts</li>
 </ul>
@@ -161,9 +163,14 @@ left, then <a href="argot_index.html">click_here</a>.
 <li><a href="man1/bap-plugin-objdump.1.html">objdump</a> - use objdump to provide a symbolizer</li>
 <li><a href="man1/bap-plugin-phoenix.1.html">phoenix</a> - output project information in a phoenix format</li>
 <li><a href="man1/bap-plugin-piqi-printers.1.html">piqi-printers</a> - provides piqi serialization for main data types (BIL, IR)</li>
+<li><a href="man1/bap-plugin-primus-lisp.1.html">primus-lisp</a> - install and load Primus lisp libraries</li>
+<li><code class="code">primus-loader</code> - generic program loader for Primus</li>
+<li><code class="code">primus-x86</code> - x86 support package</li>
 <li><a href="man1/bap-plugin-print.1.html">print</a> - print project in various formats</li>
 <li><a href="man1/bap-plugin-propagate-taint.1.html">propagate-taint</a> - propagate taints through a program</li>
 <li><a href="man1/bap-plugin-read-symbols.1.html">read-symbols</a> - read symbol information from file</li>
+<li><a href="man1/bap-plugin-run.1.html">run</a> - a pass that will run a program</li>
+<li><a href="man1/bap-plugin-strings.1.html">strings</a> - BAP Core Library</li>
 <li><a href="man1/bap-plugin-taint.1.html">taint</a> - taint specified terms</li>
 <li><a href="man1/bap-plugin-trace.1.html">trace</a> - manage execution traces</li>
 <li><a href="man1/bap-plugin-warn-unused.1.html">warn-unused</a> - warn about unused results of certain functions</li>

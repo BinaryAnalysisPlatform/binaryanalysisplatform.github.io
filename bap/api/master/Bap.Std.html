@@ -21,6 +21,8 @@
 <link title="Bap_config" rel="Chapter" href="Bap_config.html">
 <link title="Core_printers" rel="Chapter" href="Core_printers.html">
 <link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
 <link title="Bap_future" rel="Chapter" href="Bap_future.html">
 <link title="Graphlib" rel="Chapter" href="Graphlib.html">
 <link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
@@ -57,6 +59,7 @@
 <link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
 <link title="Bap_c" rel="Chapter" href="Bap_c.html">
 <link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
 <link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
 <link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
 <link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
@@ -65,9 +68,6 @@
 <link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
-<link title="Microx" rel="Chapter" href="Microx.html">
-<link title="Microx_conqueror" rel="Chapter" href="Microx_conqueror.html">
-<link title="Microx_concretizer" rel="Chapter" href="Microx_concretizer.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="BAP API" rel="Section" href="#api">
 <link title="Overview" rel="Subsection" href="#2_Overview">
@@ -647,11 +647,6 @@
 Machine integer as a sequence of bits.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Monad.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Monad is an interface, that is pervasives through many data
-      types.
-</div>
-
 <pre><span class="keyword">module</span> <a href="Bap.Std.Seq.html">Seq</a>: <code class="type">module type of Seq</code><code class="type"> 
     with type 'a t = 'a Sequence.t</code></pre><div class="info">
 Lazy sequence
@@ -833,7 +828,7 @@ A BIL type error<br>
 Expression Language Interpreter.
 </div>
 
-<pre><span name="TYPEexpi"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a>]</code> <a href="Bap.Std.expi-c.html">expi</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Expi.t-c.html">Expi.t</a></code></pre><div class="info">
+<pre><span name="TYPEexpi"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a>]</code> <a href="Bap.Std.expi-c.html">expi</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a> as 'a]</code> <code class="type">Expi.t</code></pre><div class="info">
 Expression <a href="Bap.Std.Expi.html">interpreter</a>
 </div>
 
@@ -841,7 +836,7 @@ Expression <a href="Bap.Std.Expi.html">interpreter</a>
 BIL Interpreter.
 </div>
 
-<pre><span name="TYPEbili"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a>]</code> <a href="Bap.Std.bili-c.html">bili</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Bili.t-c.html">Bili.t</a></code></pre><div class="info">
+<pre><span name="TYPEbili"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a>]</code> <a href="Bap.Std.bili-c.html">bili</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a]</code> <code class="type">Bili.t</code></pre><div class="info">
 BIL <a href="Bap.Std.Bili.html">interpreter</a>
 </div>
 
@@ -1062,7 +1057,7 @@ jmp<br>
 BIR Interpreter
 </div>
 
-<pre><span name="TYPEbiri"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a>]</code> <a href="Bap.Std.biri-c.html">biri</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a> as 'a]</code> <code class="type"><a href="Bap.Std.Biri.t-c.html">Biri.t</a></code></pre><div class="info">
+<pre><span name="TYPEbiri"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a>]</code> <a href="Bap.Std.biri-c.html">biri</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a> as 'a]</code> <code class="type">Biri.t</code></pre><div class="info">
 BIR <a href="Bap.Std.Biri.html">interpreter</a>
 </div>
 <br>
