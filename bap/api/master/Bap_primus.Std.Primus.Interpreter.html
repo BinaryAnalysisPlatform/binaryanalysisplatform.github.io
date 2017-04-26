@@ -80,6 +80,134 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a></h1>
 
-<pre><span class="keyword">module</span> Interpreter: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Interpreter: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Interpreter.
+<p>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+        The Interpreter is the core componet of the Primus Machine. It
+        provides lots of observations, giving other components an
+        ability to track every event that happens during the program
+        evaluation. The components can affect the results of
+        evaluation in a limited way, by affecting the state of the
+        components that are used by the Interpreter, name the
+        Environemnt and the Memory.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALenter_term"><span class="keyword">val</span> enter_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+an identifier of a term that will be executed next.<br>
+</div>
+
+<pre><span id="VALleave_term"><span class="keyword">val</span> leave_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+an identifier of a term that just finished the execution.<br>
+</div>
+
+<pre><span id="VALenter_level"><span class="keyword">val</span> enter_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">Primus.Context.level</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+new program locatio entered<br>
+</div>
+
+<pre><span id="VALleave_level"><span class="keyword">val</span> leave_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">Primus.Context.level</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a program location left<br>
+</div>
+
+<pre><span id="VALenter_top"><span class="keyword">val</span> enter_top</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+the top-level term entered<br>
+</div>
+
+<pre><span id="VALenter_sub"><span class="keyword">val</span> enter_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a subroutine entered<br>
+</div>
+
+<pre><span id="VALenter_arg"><span class="keyword">val</span> enter_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a subroutine argument is entered<br>
+</div>
+
+<pre><span id="VALenter_blk"><span class="keyword">val</span> enter_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a basic block is entered<br>
+</div>
+
+<pre><span id="VALenter_phi"><span class="keyword">val</span> enter_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a phi-node is entered<br>
+</div>
+
+<pre><span id="VALenter_def"><span class="keyword">val</span> enter_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a definition is entered<br>
+</div>
+
+<pre><span id="VALenter_jmp"><span class="keyword">val</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a jump term is entered<br>
+</div>
+
+<pre><span id="VALenter_term"><span class="keyword">val</span> enter_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+an identifier of a term that will be executed next.<br>
+</div>
+
+<pre><span id="VALleave_term"><span class="keyword">val</span> leave_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+an identifier of a term that just finished the execution.<br>
+</div>
+
+<pre><span id="VALenter_level"><span class="keyword">val</span> enter_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">Primus.Context.level</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+new program locatio left<br>
+</div>
+
+<pre><span id="VALleave_level"><span class="keyword">val</span> leave_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">Primus.Context.level</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a program location left<br>
+</div>
+
+<pre><span id="VALenter_top"><span class="keyword">val</span> enter_top</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+the top-level term left<br>
+</div>
+
+<pre><span id="VALenter_sub"><span class="keyword">val</span> enter_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a subroutine is left<br>
+</div>
+
+<pre><span id="VALenter_arg"><span class="keyword">val</span> enter_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a subroutine argument is left<br>
+</div>
+
+<pre><span id="VALenter_blk"><span class="keyword">val</span> enter_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a basic block is left<br>
+</div>
+
+<pre><span id="VALenter_phi"><span class="keyword">val</span> enter_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a phi-node is left<br>
+</div>
+
+<pre><span id="VALenter_def"><span class="keyword">val</span> enter_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a definition is left<br>
+</div>
+
+<pre><span id="VALleave_jmp"><span class="keyword">val</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a jump term is left<br>
+</div>
+
+<pre><span id="VALvariable_access"><span class="keyword">val</span> variable_access</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a value of the variable will be looked up<br>
+</div>
+
+<pre><span id="VALvariable_read"><span class="keyword">val</span> variable_read</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a variabe was valuated to the provided value.<br>
+</div>
+
+<pre><span id="VALvariable_written"><span class="keyword">val</span> variable_written</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a variable was set to the specified value.<br>
+</div>
+
+<pre><span id="VALaddress_access"><span class="keyword">val</span> address_access</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+an address will be read<br>
+</div>
+
+<pre><span id="VALaddress_read"><span class="keyword">val</span> address_read</span> : <code class="type">(<a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEword">word</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a byte from the given address was read<br>
+</div>
+
+<pre><span id="VALaddress_written"><span class="keyword">val</span> address_written</span> : <code class="type">(<a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEword">word</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+a byte was written to the given address<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Make(Machine) makes an interpreter that computes in the
+          given machine.
+</div>
+</body></html>

@@ -78,5 +78,22 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Machine.S.Observation.html">Bap_primus.Std.Primus.Machine.S.Observation</a></h1>
 
-<pre><span class="keyword">module</span> Observation: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Observation: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Observations interface.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALobserve"><span class="keyword">val</span> observe</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -><br>       ('a -> (unit, 'e) <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Primus.Machine.S.t</a>) -><br>       (unit, 'e) <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Primus.Machine.S.t</a></code></pre><div class="info ">
+<code class="code">observe obs on_observation</code> subscribes to the given
+              observation <code class="code">obs</code>. Every time the observation <code class="code">obs</code> is
+              made a function <code class="code">on_observation</code> is called. The
+              function can perform arbitrary computations in the
+              machine monad, e.g., make its own computations, or access
+              other components via their interfaces.<br>
+</div>
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Primus.statement</a> -><br>       'a -> (unit, 'e) <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Primus.Machine.S.t</a></code></pre><div class="info ">
+<code class="code">make observation event</code> make an <code class="code">observation</code> of the
+              given <code class="code">event</code>.<br>
+</div>
 </body></html>

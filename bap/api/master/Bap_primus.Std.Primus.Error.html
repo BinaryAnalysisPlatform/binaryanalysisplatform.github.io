@@ -78,8 +78,19 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Error.html">Bap_primus.Std.Primus.Error</a></h1>
 
-<pre><span class="keyword">module</span> Error: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Error: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Primus error.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEerror">Primus.error</a></code> = ..</pre>
 
+
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap_primus.Std.Primus.Error.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+returns a textual representation of an error<br>
+</div>
+
+<pre><span id="VALadd_printer"><span class="keyword">val</span> add_printer</span> : <code class="type">(<a href="Bap_primus.Std.Primus.Error.html#TYPEt">t</a> -> string option) -> unit</code></pre><div class="info ">
+<code class="code">add_printer to_string</code> registers a printer.<br>
+</div>
 </body></html>

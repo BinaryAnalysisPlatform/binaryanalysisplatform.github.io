@@ -76,5 +76,25 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Generator.Random.Seeded.html">Bap_primus.Std.Primus.Generator.Random.Seeded</a></h1>
 
-<pre><span class="keyword">module</span> Seeded: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Seeded: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Self seeded generators.
+<p>
+
+            These generators will be seeded by a value derived from
+            the Machine clone identifier.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(int -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Primus.Generator.t</a>) -><br>       <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Primus.Generator.t</a></code></pre><div class="info ">
+<code class="code">create init</code> creates a self-seeded generator from a
+              regular generator.<br>
+</div>
+
+<pre><span id="VALlcg"><span class="keyword">val</span> lcg</span> : <code class="type">?min:int -> ?max:int -> unit -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Primus.Generator.t</a></code></pre><div class="info ">
+<code class="code">lcg ~min ~max ()</code> a linear congruential generator.<br>
+</div>
+
+<pre><span id="VALbyte"><span class="keyword">val</span> byte</span> : <code class="type"><a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Primus.Generator.t</a></code></pre><div class="info ">
+<code class="code">byte</code> is the same as <code class="code">lcg ~min:0 ~max:255 ()</code><br>
+</div>
 </body></html>

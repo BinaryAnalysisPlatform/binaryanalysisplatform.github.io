@@ -78,5 +78,40 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a></h1>
 
-<pre><span class="keyword">module</span> Observation: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Observation: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Machine Observation.
+<p>
+
+        The Primus Framework is built on top of the Machine
+        observation. The Machine components make their own
+        observations, based on observation made by other components.
+<p>
+
+        A value of type <code class="code"><span class="keywordsign">'</span>a observation</code> is a first-class
+        representation of an event of type <code class="code"><span class="keywordsign">'</span>a</code>. While machine
+        components are functors, the values of type observation should
+        not depenend on the type of the functor.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">?inspect:('a -> Sexp.t) -><br>       string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> * 'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Primus.statement</a></code></pre><div class="info ">
+<code class="code">provide ?inspect name</code> returns a pair of two handlers. The
+          first element is used to observe values, the second is used
+          to provide values for the observation.
+<p>
+
+          The <code class="code">inspect</code> function should provide a sexp representation
+          of an observed value, and is used for introspection and
+          pretty-printing (it is not required, and if it is provided, it
+          is not necessary to disclose everything<br>
+</div>
+
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -> string</code></pre><div class="info ">
+<code class="code">name observation</code> is a name of the observed attribute.<br>
+</div>
+
+<pre><span id="VALinspect"><span class="keyword">val</span> inspect</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -> 'a -> Sexp.t</code></pre><div class="info ">
+<code class="code">inspect observation value</code> returns a sexp representation of
+          an observed <code class="code">value</code><br>
+</div>
 </body></html>

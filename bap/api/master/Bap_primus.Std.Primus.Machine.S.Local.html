@@ -81,11 +81,26 @@
 <h1>Module <a href="type_Bap_primus.Std.Primus.Machine.S.Local.html">Bap_primus.Std.Primus.Machine.S.Local</a></h1>
 
 <pre><span class="keyword">module</span> Local: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Primus.Machine.State</a></code><code class="type">  with type ('a,'e) m := ('a,'e) t
-                               and type 'a t := 'a state</code></pre><hr width="100%">
+                               and type 'a t := 'a state</code></pre><div class="info module top">
+Local state of the machine.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">('a, 'e)</code> m</span> </pre>
 
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       ('a, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">get state</code> extracts the state.<br>
+</div>
+
+<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       'a -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>)<br>       <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">put state x</code> saves a machine state<br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       f:('a -> 'a) -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>)<br>       <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">update state ~f</code> updates a state using function <code class="code">f</code>.<br>
+</div>
 </body></html>

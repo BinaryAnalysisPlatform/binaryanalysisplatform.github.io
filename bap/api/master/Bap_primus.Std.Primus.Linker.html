@@ -80,13 +80,52 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Linker.html">Bap_primus.Std.Primus.Linker</a></h1>
 
-<pre><span class="keyword">module</span> Linker: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Linker: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Machine Linker.
+<p>
+
+        The Linker dynamically extends program with the new code.
+<p>
+
+        The code is represented as a functor that performs a
+        computation using a provided machine.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEname"><span class="keyword">type</span> <code class="type"></code>name</span> = <code class="type">[ `addr of <a href="Bap.Std.html#TYPEaddr">addr</a> | `symbol of string | `tid of <a href="Bap.Std.html#TYPEtid">tid</a> ]</code> </pre>
+<div class="info ">
+A code identifier.
+<p>
+
+          A program code can be identified by a name, address or by a
+          term identifier.<br>
+</div>
+
+<pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEerror">Primus.error</a> += </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="EXTENSIONUnbound_name">Unbound_name</span> <span class="keyword">of</span> <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">name</a></code></code></td>
+
+</tr></table>
+
+<div class="info ">
+The Linker error<br>
+</div>
 
 
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Linker.Code.html">Code</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.Code.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Linker.Code.html">Code</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.Code.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Code representation.
+</div>
+
 <pre><span id="TYPEcode"><span class="keyword">type</span> <code class="type"></code>code</span> = <code class="type">(module Bap_primus.Std.Primus.Linker.Code)</code> </pre>
+<div class="info ">
+code representation<br>
+</div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Linker.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Linker.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> parametrize the <code class="code"><span class="constructor">Linker</span></code> with the <code class="code"><span class="constructor">Machine</span></code>.
+</div>
+</body></html>

@@ -76,15 +76,67 @@
 &nbsp;</div>
 <h1>Class <a href="type_Bap_primus.Std.Primus.Context.t.html">Bap_primus.Std.Primus.Context.t</a></h1>
 
-<pre><span name="TYPEt"><span class="keyword">class</span> t</span> : <code class="type">?envp:string array -> ?argv:string array -> ?main:<a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.html#TYPEproject">project</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Bap_primus.Std.Primus.Context.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><b>Inherits</b><ul>
+<pre><span name="TYPEt"><span class="keyword">class</span> t</span> : <code class="type">?envp:string array -> ?argv:string array -> ?main:<a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.html#TYPEproject">project</a> -> </code><code class="code"><span class="keyword">object</span></code> <a href="Bap_primus.Std.Primus.Context.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+Primus Interpreter Context.
+<p>
+
+          Although it is possible to extend the Context class via the
+          inheritence it is not recommended, as the Primus framework
+          provides more composable way to extend the interpreter
+          state. See the <code class="code"><span class="constructor">State</span></code> module for more information.
+<p>
+
+          A value of type <code class="code"><span class="keywordsign">#</span>t</code> can be accessed in the machine
+          operation (an operation in the Machine monad), by the virtue
+          of the <code class="code">get ()</code> operation. The context can be changed with
+          the <code class="code">put ctxt</code> operation.
+<p>
+
+          <code class="code"><span class="keyword">new</span> ~envp ~argv ~main proj</code> creates a fresh new
+          context. The <code class="code">envp</code> is an array of environemnt
+          variables. The representation depends on a system, but
+          usually it is an array of <code class="code">name=value</code>
+          bindings. Correspondingly, the <code class="code">argv</code> is an array of the
+          program arguments. The <code class="code">main</code> argument, if present, defines
+          a function that is considered the entry point to a program.
+<p>
+
+          Note: it is usually not necessary to create a new context
+          manually, unless you are implementing a new instatiation of
+          a framework.<br>
+</div>
+<b>Inherits</b><ul>
 <li><code class="code"><span class="constructor">Biri</span>.context</code></li>
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODargv"><span class="keyword">method</span> argv</span> : <code class="type">string array</code></pre>
-<pre><span id="METHODenvp"><span class="keyword">method</span> envp</span> : <code class="type">string array</code></pre>
-<pre><span id="METHODproject"><span class="keyword">method</span> project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">project</a></code></pre>
-<pre><span id="METHODwith_project"><span class="keyword">method</span> with_project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">project</a> -><br>       (< argv : string array;<br>          bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a>;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_undefined : 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_word : <a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          current : <a href="Bap.Std.html#TYPEtid">tid</a>; enter_term : <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b;<br>          envp : string array; level : <a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option;<br>          main : <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> option; next : <a href="Bap.Std.html#TYPEtid">tid</a> option;<br>          program : <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a>; project : <a href="Bap.Std.html#TYPEproject">project</a>;<br>          set_next : <a href="Bap.Std.html#TYPEtid">tid</a> option -> 'b; trace : <a href="Bap.Std.html#TYPEtid">tid</a> list;<br>          update : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'b;<br>          with_level : <a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a> -> 'b; with_project : 'a;<br>          .. ><br>        as 'b)<br>       as 'a</code></pre>
-<pre><span id="METHODcurrent"><span class="keyword">method</span> current</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a></code></pre>
-<pre><span id="METHODlevel"><span class="keyword">method</span> level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a></code></pre>
-<pre><span id="METHODwith_level"><span class="keyword">method</span> with_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a> -> 'b</code></pre></body></html>
+<pre><span id="METHODargv"><span class="keyword">method</span> argv</span> : <code class="type">string array</code></pre><div class="info ">
+<code class="code">argv</code> an array of command line arguments<br>
+</div>
+
+<pre><span id="METHODenvp"><span class="keyword">method</span> envp</span> : <code class="type">string array</code></pre><div class="info ">
+<code class="code">envp</code> an array of process environment variables<br>
+</div>
+
+<pre><span id="METHODproject"><span class="keyword">method</span> project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">project</a></code></pre><div class="info ">
+<code class="code">project</code> a static model of a program<br>
+</div>
+
+<pre><span id="METHODwith_project"><span class="keyword">method</span> with_project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">project</a> -><br>       (< argv : string array;<br>          bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a>;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_undefined : 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_word : <a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          current : <a href="Bap.Std.html#TYPEtid">tid</a>; enter_term : <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b;<br>          envp : string array; level : <a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option;<br>          main : <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> option; next : <a href="Bap.Std.html#TYPEtid">tid</a> option;<br>          program : <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a>; project : <a href="Bap.Std.html#TYPEproject">project</a>;<br>          set_next : <a href="Bap.Std.html#TYPEtid">tid</a> option -> 'b; trace : <a href="Bap.Std.html#TYPEtid">tid</a> list;<br>          update : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'b;<br>          with_level : <a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a> -> 'b; with_project : 'a;<br>          .. ><br>        as 'b)<br>       as 'a</code></pre><div class="info ">
+<code class="code">with_project proj</code> updates the static model of a program<br>
+</div>
+
+<pre><span id="METHODcurrent"><span class="keyword">method</span> current</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<code class="code">current</code> returns a term identifier of a current program
+              term.<br>
+</div>
+
+<pre><span id="METHODlevel"><span class="keyword">method</span> level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a></code></pre><div class="info ">
+<code class="code">level</code> returns a current program location.<br>
+</div>
+
+<pre><span id="METHODwith_level"><span class="keyword">method</span> with_level</span> : <code class="type"><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a> -> 'b</code></pre><div class="info ">
+<code class="code">with_level level</code> invoked by the interpreter every time
+              a program position changes.<br>
+</div>
+</body></html>

@@ -306,7 +306,11 @@ infix notation for <code class="code">from_string_exn</code>
 <tr><td><a href="Monads.Std.Monad.Syntax.S.html#VAL(>>=)">(&gt;&gt;=)</a> [<a href="Monads.Std.Monad.Syntax.S.html">Monads.Std.Monad.Syntax.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Syntax.html#VAL(>>>)">(&gt;&gt;&gt;)</a> [<a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">Bap_primus.Std.Primus.Machine.S.Syntax</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">event &gt;&gt;&gt; action</code> is the same as
+              <code class="code"><span class="constructor">Observation</span>.observe event action</code>
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Syntax.S2.html#VAL(>>|)">(&gt;&gt;|)</a> [<a href="Monads.Std.Monad.Syntax.S2.html">Monads.Std.Monad.Syntax.S2</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Syntax.S.html#VAL(>>|)">(&gt;&gt;|)</a> [<a href="Monads.Std.Monad.Syntax.S.html">Monads.Std.Monad.Syntax.S</a>]</td>
@@ -958,7 +962,11 @@ infix notation for <code class="code">from_string_exn</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALadd">add</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add var generator</code> adds a variable <code class="code">var</code> to the
+            environment.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.Digest.html#VALadd">add</a> [<a href="Regular.Std.Data.Cache.Digest.html">Regular.Std.Data.Cache.Digest</a>]</td>
 <td><div class="info">
 <code class="code">add digest fmt x y z ...</code> is a variadic function that
@@ -1006,9 +1014,17 @@ appends a block to a subroutine
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.html#VALadd_component">add_component</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add_component comp</code> registers a machine component in the
+          Primus Framework.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALadd_data">add_data</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add_data</code> maps a memory chunk <code class="code">mem</code> as writable and
+        nonexecutable segment of machine memory.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Blk.Builder.html#VALadd_def">add_def</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
 <td><div class="info">
 appends a definition
@@ -1030,7 +1046,10 @@ appends generic element
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Error.html#VALadd_printer">add_printer</a> [<a href="Bap_primus.Std.Primus.Error.html">Bap_primus.Std.Primus.Error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add_printer to_string</code> registers a printer.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.S.html#VALadd_reader">add_reader</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">add_reader ?desc ~ver name reader</code> registers a new <code class="code">reader</code>
@@ -1057,7 +1076,11 @@ appends generic element
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALadd_text">add_text</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add_text mem</code> maps a memory chunk <code class="code">mem</code> as executable and
+            readonly segment of machine memory.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.S.html#VALadd_writer">add_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">add_writer ?desc ~ver name writer</code> registers a new <code class="code">writer</code>
@@ -1133,11 +1156,20 @@ A virtual address of an entity
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALaddress_access">address_access</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+an address will be read
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALaddress_read">address_read</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a byte from the given address was read
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALaddress_written">address_written</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a byte was written to the given address
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALaf">af</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td><div class="info">
 adjust flag
@@ -1268,7 +1300,11 @@ the size of allocated memory is the product of arguments
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALallocate">allocate</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">allocate addr size</code> allocates a segment of the specified
+            <code class="code">size</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.S2.html#VALancestor">ancestor</a> [<a href="Monads.Std.Monad.State.Multi.S2.html">Monads.Std.Monad.State.Multi.S2</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.S.html#VALancestor">ancestor</a> [<a href="Monads.Std.Monad.State.Multi.S.html">Monads.Std.Monad.State.Multi.S</a>]</td>
@@ -4126,9 +4162,15 @@ one bit
 <tr><td><a href="Graphlib.Std.Graphlib.html#VALby_natural_order">by_natural_order</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html#VALbyte">byte</a> [<a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">Bap_primus.Std.Primus.Generator.Random.Seeded</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">byte</code> is the same as <code class="code">lcg ~min:0 ~max:255 ()</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.html#VALbyte">byte</a> [<a href="Bap_primus.Std.Primus.Generator.Random.html">Bap_primus.Std.Primus.Generator.Random</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">byte seed</code> the same as <code class="code">lcg ~min:0 ~max:255 seed</code>
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.html#VALbytes_of_sexp">bytes_of_sexp</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>C</td></tr>
@@ -5020,11 +5062,25 @@ project license
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Primitive.html#VALcreate">create</a> [<a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Bap_primus.Std.Primus.Lisp.Primitive</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create ~docs name code</code> creates a lisp primitive, that is
+            accessible from lisp as a regular function with the given
+            <code class="code">name</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html#VALcreate">create</a> [<a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">Bap_primus.Std.Primus.Generator.Random.Seeded</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create init</code> creates a self-seeded generator from a
+              regular generator.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.html#VALcreate">create</a> [<a href="Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">create (<span class="keyword">module</span> <span class="constructor">Iterator</span>) seed</code> creates a integer generator
+          from the provided <code class="code"><span class="constructor">Iterator</span></code>, and initializes it with the
+          given seed.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_abi.Stack.html#VALcreate">create</a> [<a href="Bap_c_abi.Stack.html">Bap_c_abi.Stack</a>]</td>
 <td><div class="info">
 <code class="code">stack = create ?growsup arch</code> is a function that returns
@@ -5396,7 +5452,11 @@ a term is identified as dead
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALdeclare">declare</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">declare ~inspect ~uuid ~name make</code> declares a state with
+            the given <code class="code">uuid</code> and <code class="code">name</code>.
+</div>
+</td></tr>
 <tr><td><a href="Ogre.html#VALdeclare">declare</a> [<a href="Ogre.html">Ogre</a>]</td>
 <td><div class="info">
 <code class="code"><span class="keyword">let</span> attr () = declare ~name scheme</code> declares an attribute named
@@ -5461,7 +5521,10 @@ default path for the signatures database
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Primitives.html#VALdefs">defs</a> [<a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Bap_primus.Std.Primus.Lisp.Primitives</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a list of primitives defined in the Machine monad.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Node.html#VALdegree">degree</a> [<a href="Graphlib.Std.Node.html">Graphlib.Std.Node</a>]</td>
 <td><div class="info">
 <code class="code">degree ?dir n</code> when <code class="code">in_or_out</code> is <code class="code"><span class="keywordsign">`</span><span class="constructor">In</span></code> then returns
@@ -5815,23 +5878,50 @@ returns the order of bytes in a word
 <tr><td><a href="Bap.Std.html#VALendian_of_sexp">endian_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_arg">enter_arg</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a subroutine argument is entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_blk">enter_blk</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a basic block is entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_def">enter_def</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a definition is entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_jmp">enter_jmp</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a jump term is entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_level">enter_level</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+new program locatio entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_phi">enter_phi</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a phi-node is entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_sub">enter_sub</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a subroutine entered
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_term">enter_term</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+an identifier of a term that will be executed next.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALenter_top">enter_top</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the top-level term entered
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Backend.Img.Fields.html#VALentry">entry</a> [<a href="Bap.Std.Backend.Img.Fields.html">Bap.Std.Backend.Img.Fields</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Backend.Img.html#VALentry">entry</a> [<a href="Bap.Std.Backend.Img.html">Bap.Std.Backend.Img</a>]</td>
@@ -5981,7 +6071,11 @@ plugin subsystem event stream.
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Code.html#VALexec">exec</a> [<a href="Bap_primus.Std.Primus.Linker.Code.html">Bap_primus.Std.Primus.Linker.Code</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALexec">exec</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">exec name</code> executes a code fragment associated with the
+            given name.
+</div>
+</td></tr>
 <tr><td><a href="Arm_utils.html#VALexec">exec</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Ogre.S.html#VALexec">exec</a> [<a href="Ogre.S.html">Ogre.S</a>]</td>
@@ -6185,7 +6279,12 @@ A subroutine is visible outside of the compilation unit
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Make.html#VALfailf">failf</a> [<a href="Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">failf msg a1 ... am ()</code> terminates a lisp machine, and
+            correspondingly the Primus machine with the
+            <code class="code"><span class="constructor">Runtime_error</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Ogre.S.html#VALfailf">failf</a> [<a href="Ogre.S.html">Ogre.S</a>]</td>
 <td><div class="info">
 <code class="code">failf fmt args... ()</code> constructs an error based on the
@@ -6483,7 +6582,10 @@ for compatibility with Core &lt;= 111.28
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.html#VALfinished">finished</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">finished</code> occurs when machine terminates.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type_mapper.Search.html#VALfinished">finished</a> [<a href="Bap_c_type_mapper.Search.html">Bap_c_type_mapper.Search</a>]</td>
 <td><div class="info">
 <code class="code">finished needle</code> is called when a search is finished, it will
@@ -6993,9 +7095,15 @@ Global Descriptor Table
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALget">get</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">get var</code> returns a value associated with the variable.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALget">get</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">get state</code> extracts the state.
+</div>
+</td></tr>
 <tr><td><a href="Ogre.Query.String.html#VALget">get</a> [<a href="Ogre.Query.String.html">Ogre.Query.String</a>]</td>
 <td><div class="info">
 <code class="code">filed.(n)</code> creates a field variable that ranges over values
@@ -7314,9 +7422,15 @@ the instruction is jump with a target that is not a constant
 <tr><td><a href="Bap_config.html#VALinfodir">infodir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.html#VALinit">init</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">init ?log ?paths features</code> initializes the Lisp machine.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Component.html#VALinit">init</a> [<a href="Bap_primus.Std.Primus.Machine.Component.html">Bap_primus.Std.Primus.Machine.Component</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">init ()</code> component initialization function.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALinit">init</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 <code class="code">init n ~f</code> returns a fresh byte sequence of length <code class="code">n</code>, with
@@ -7397,9 +7511,16 @@ a queue of instructions disassembled in this step
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALinspect">inspect</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">inspect state value</code> introspects given <code class="code">value</code> of the state.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Observation.html#VALinspect">inspect</a> [<a href="Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">inspect observation value</code> returns a sexp representation of
+          an observed <code class="code">value</code>
+</div>
+</td></tr>
 <tr><td><a href="Text_tags.html#VALinstall">install</a> [<a href="Text_tags.html">Text_tags</a>]</td>
 <td><div class="info">
 <code class="code">install ppf mode</code> switch formatter <code class="code">ppf</code> into a <code class="code">mode</code>.
@@ -7604,7 +7725,11 @@ invariant must be always true while the term is evaluated
 <tr><td><a href="Bap.Std.Backend.Symbol.html#VALis_function">is_function</a> [<a href="Bap.Std.Backend.Symbol.html">Bap.Std.Backend.Symbol</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALis_linked">is_linked</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_linked name</code> computes to <code class="code"><span class="keyword">true</span></code> if the <code class="code">name</code> is
+            associated with some code.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_mem">is_mem</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td><div class="info">
 <code class="code">is_mem x = <span class="constructor">Var</span>.same x mem</code>
@@ -7974,9 +8099,17 @@ jump to the specified memory and continue disassembly in it.
 <tr><td><a href="Bap.Std.Memory.html#VALlast_byte">last_byte</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html#VALlcg">lcg</a> [<a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">Bap_primus.Std.Primus.Generator.Random.Seeded</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lcg ~min ~max ()</code> a linear congruential generator.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.html#VALlcg">lcg</a> [<a href="Bap_primus.Std.Primus.Generator.Random.html">Bap_primus.Std.Primus.Generator.Random</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">lcg ~min ~max seed</code> a linear congruential generator,
+        that produces a sequence of pseudorandom values that lies in
+        the range between <code class="code">min</code> and <code class="code">max</code> (all inclusive).
+</div>
+</td></tr>
 <tr><td><a href="X86_env.ModeVars.html#VALldt">ldt</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
 <td><div class="info">
 Local Descriptor Table
@@ -7998,24 +8131,21 @@ a subroutine doesn't contain any calls in any disguise, i.e.,
         no longjmps, indirect calls, exceptions, etc.
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_arg">leave_arg</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_blk">leave_blk</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_def">leave_def</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_jmp">leave_jmp</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a jump term is left
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_level">leave_level</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_phi">leave_phi</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_sub">leave_sub</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a program location left
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_term">leave_term</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALleave_top">leave_top</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+an identifier of a term that just finished the execution.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Location.Fields.html#VALlen">len</a> [<a href="Bap.Std.Location.Fields.html">Bap.Std.Location.Fields</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Location.html#VALlen">len</a> [<a href="Bap.Std.Location.html">Bap.Std.Location</a>]</td>
@@ -8183,11 +8313,18 @@ decodes a shifted operand for a memory operation
 <tr><td><a href="Arm_mul.html#VALlift_smul">lift_smul</a> [<a href="Arm_mul.html">Arm_mul</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALlink">link</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">link ~addr ~name ~tid code</code> links the given <code class="code">code</code>
+            fragment into the Machine.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALlink">link</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Make.html#VALlink_primitives">link_primitives</a> [<a href="Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">link_primitives prims</code> provides the primitives <code class="code">prims</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_bml.Registry.html#VALlist">list</a> [<a href="Bap_bml.Registry.html">Bap_bml.Registry</a>]</td>
 <td><div class="info">
 <code class="code">list ()</code> list all bindings
@@ -8254,7 +8391,10 @@ a term is identified as always non dead
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALload">load</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">load addr</code> loads a byte from the given address
+</div>
+</td></tr>
 <tr><td><a href="Ogre.Doc.html#VALload">load</a> [<a href="Ogre.Doc.html">Ogre.Doc</a>]</td>
 <td><div class="info">
 <code class="code">load chan</code> loads a document from a channel, returns an error if
@@ -8430,7 +8570,11 @@ loaded event happens when a pass is succesfully loaded
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Observation.html#VALmake">make</a> [<a href="Bap_primus.Std.Primus.Machine.S.Observation.html">Bap_primus.Std.Primus.Machine.S.Observation</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">make observation event</code> make an <code class="code">observation</code> of the
+              given <code class="code">event</code>.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALmake">make</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 <code class="code">make n c</code> returns a new byte sequence of length <code class="code">n</code>, filled with
@@ -8555,7 +8699,11 @@ Create a manpage for the plugin
 <tr><td><a href="Bap_traces.Std.Move.Fields.html#VALmap">map</a> [<a href="Bap_traces.Std.Move.Fields.html">Bap_traces.Std.Move.Fields</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALmap">map</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">map mem</code> maps a memory chunk <code class="code">mem</code> to a segment with the
+            given permissions.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALmap">map</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td><div class="info">
 <code class="code">map ss ~f</code> returns new stream, that is build by application
@@ -8770,7 +8918,10 @@ Mark something as marked
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.Base.html#VALmax">max</a> [<a href="Bap_primus.Std.Primus.Iterator.Base.html">Bap_primus.Std.Primus.Iterator.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+maximum value in the iterator domain
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALmax">max</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">max tab</code> return the highest binding
@@ -8962,7 +9113,10 @@ a write access to a memory cell
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.Base.html#VALmin">min</a> [<a href="Bap_primus.Std.Primus.Iterator.Base.html">Bap_primus.Std.Primus.Iterator.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+minimum value in the iterator domain
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALmin">min</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
 <td><div class="info">
 <code class="code">min tab</code> return the lowest binding
@@ -9062,9 +9216,15 @@ mx status control register
 <tr><td><a href="Bap_traces.Std.Trace.S.html#VALname">name</a> [<a href="Bap_traces.Std.Trace.S.html">Bap_traces.Std.Trace.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALname">name</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">name state</code> a state name that was given during the construction.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Observation.html#VALname">name</a> [<a href="Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">name observation</code> is a name of the observed attribute.
+</div>
+</td></tr>
 <tr><td><a href="Bap_abi.html#VALname">name</a> [<a href="Bap_abi.html">Bap_abi</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_config.html#VALname">name</a> [<a href="Bap_config.html">Bap_config</a>]</td>
@@ -9269,11 +9429,25 @@ segment's permissions
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Make.html#VALnext">next</a> [<a href="Bap_primus.Std.Primus.Generator.Make.html">Bap_primus.Std.Primus.Generator.Make</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.Infinite.html#VALnext">next</a> [<a href="Bap_primus.Std.Primus.Iterator.Infinite.html">Bap_primus.Std.Primus.Iterator.Infinite</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">next iterator</code> moves the iterator to the next element of
+            the sequence.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.Finite.html#VALnext">next</a> [<a href="Bap_primus.Std.Primus.Iterator.Finite.html">Bap_primus.Std.Primus.Iterator.Finite</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">next iterator</code> moves an <code class="code">iterator</code> to the next element of
+            the sequence, or returns <code class="code"><span class="constructor">None</span></code> if there are no more
+            elements.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#VALnext">next</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">next p cls t</code> moves the cursor position <code class="code">p</code> to the next
+            position, that points to the term <code class="code">t</code> of the class
+            <code class="code">cls</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.html#VALnext">next</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
 <td><div class="info">
 <code class="code">next t p id</code> returns a term that preceeds a term with a given
@@ -9478,7 +9652,11 @@ overflow flag
 <tr><td><a href="X86_env.html#VALo_rsp">o_rsp</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Observation.html#VALobserve">observe</a> [<a href="Bap_primus.Std.Primus.Machine.S.Observation.html">Bap_primus.Std.Primus.Machine.S.Observation</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">observe obs on_observation</code> subscribes to the given
+              observation <code class="code">obs</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALobserve">observe</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td><div class="info">
 <code class="code">observe s f</code> is like <code class="code">watch</code> but a subscription identifier is
@@ -10297,7 +10475,10 @@ Function prototype.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Observation.html#VALprovide">provide</a> [<a href="Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">provide ?inspect name</code> returns a pair of two handlers.
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_parser.html#VALprovide">provide</a> [<a href="Bap_c_parser.html">Bap_c_parser</a>]</td>
 <td><div class="info">
 called by a plugin that provides a parser.
@@ -10348,7 +10529,10 @@ A subroutine have no effects except the return value and their
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALput">put</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">put state x</code> saves a machine state
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.State.S2.html#VALput">put</a> [<a href="Monads.Std.Monad.State.S2.html">Monads.Std.Monad.State.S2</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.State.S.html#VALput">put</a> [<a href="Monads.Std.Monad.State.S.html">Monads.Std.Monad.State.S</a>]</td>
@@ -11118,7 +11302,10 @@ stack pointer
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALsave">save</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">save addr x</code> stores a byte <code class="code">x</code> at the given address <code class="code">addr</code>
+</div>
+</td></tr>
 <tr><td><a href="Ogre.Doc.html#VALsave">save</a> [<a href="Ogre.Doc.html">Ogre.Doc</a>]</td>
 <td><div class="info">
 <code class="code">save doc out</code> stores the document in a channel.
@@ -11226,7 +11413,11 @@ tags a segment
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.html#VALsegmentation_fault">segmentation_fault</a> [<a href="Bap_primus.Std.Primus.Memory.html">Bap_primus.Std.Primus.Memory</a>]</td>
-<td></td></tr>
+<td><div class="info">
+occurs when an access (read or write) is perfomed on address
+          that is not mapped into the Machine memory.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.html#VALsegments">segments</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 <code class="code">segments image</code> returns a mapping from addresses to segments
@@ -11282,7 +11473,10 @@ tags a segment
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALset">set</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">set var value</code> binds a variable <code class="code">var</code> to the given <code class="code">value</code>.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALset">set</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 <code class="code">set s n c</code> modifies <code class="code">s</code> in place, replacing the byte at index <code class="code">n</code>
@@ -12155,7 +12349,11 @@ Start logging events.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.html#VALstatic">static</a> [<a href="Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">static value</code> returns a generator that always produces the
+          same <code class="code">value</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.S2.html#VALstatus">status</a> [<a href="Monads.Std.Monad.State.Multi.S2.html">Monads.Std.Monad.State.Multi.S2</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.S.html#VALstatus">status</a> [<a href="Monads.Std.Monad.State.Multi.S.html">Monads.Std.Monad.State.Multi.S</a>]</td>
@@ -12896,9 +13094,16 @@ this event can used to synchronize traces
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Error.html#VALto_string">to_string</a> [<a href="Bap_primus.Std.Primus.Error.html">Bap_primus.Std.Primus.Error</a>]</td>
-<td></td></tr>
+<td><div class="info">
+returns a textual representation of an error
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#VALto_string">to_string</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">to_string level</code> a textual and human readable
+        representation of a cursor.
+</div>
+</td></tr>
 <tr><td><a href="Ogre.Doc.html#VALto_string">to_string</a> [<a href="Ogre.Doc.html">Ogre.Doc</a>]</td>
 <td><div class="info">
 <code class="code">to_string doc</code> returns a textual representation of a document
@@ -13012,8 +13217,18 @@ description of a tracer that was used to create the trace
           undefined value
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Env.html#VALundefined_variable">undefined_variable</a> [<a href="Bap_primus.Std.Primus.Env.html">Bap_primus.Std.Primus.Env</a>]</td>
+<td><div class="info">
+happens when an undefined variable is accessed.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.html#VALunfold">unfold</a> [<a href="Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unfold ~min ~max ~seed ~f</code> creates a generator that
+          generates values by applying a function <code class="code">f</code> to a pair of
+          a generator state and previous value.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALunfold">unfold</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td><div class="info">
 <code class="code">unfold ~init ~f</code> a more general than <code class="code">from</code> way of building a
@@ -13088,7 +13303,10 @@ description of a tracer that was used to create the trace
 <tr><td><a href="Bap_future.Std.Stream.html#VALunzip">unzip</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALupdate">update</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">update state ~f</code> updates a state using function <code class="code">f</code>.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Edge.html#VALupdate">update</a> [<a href="Graphlib.Std.Edge.html">Graphlib.Std.Edge</a>]</td>
 <td><div class="info">
 <code class="code">update e l g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then return a
@@ -13179,7 +13397,10 @@ description of a tracer that was used to create the trace
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.Base.html#VALvalue">value</a> [<a href="Bap_primus.Std.Primus.Iterator.Base.html">Bap_primus.Std.Primus.Iterator.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+current value
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#VALvalue">value</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td><div class="info">
 returns result's value
@@ -13202,11 +13423,20 @@ returns result's value
 <tr><td><a href="Bap.Std.html#VALvar_of_sexp">var_of_sexp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALvariable_access">variable_access</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a value of the variable will be looked up
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALvariable_read">variable_read</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a variabe was valuated to the provided value.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALvariable_written">variable_written</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a variable was set to the specified value.
+</div>
+</td></tr>
 <tr><td><a href="X86_env.html#VALvars_of_mode">vars_of_mode</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td><div class="info">
 <code class="code">vars_of_mode mode</code> creates registers for a <code class="code">mode</code>

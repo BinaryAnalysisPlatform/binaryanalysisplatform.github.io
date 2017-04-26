@@ -80,10 +80,37 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a></h1>
 
-<pre><span class="keyword">module</span> Generator: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Generator: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Value generators<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEgenerator">Primus.generator</a></code> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.Random.html">Random</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(module Bap_primus.Std.Primus.Iterator.Infinite with type dom = int and type t = 'a) -><br>       'a -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create (<span class="keyword">module</span> <span class="constructor">Iterator</span>) seed</code> creates a integer generator
+          from the provided <code class="code"><span class="constructor">Iterator</span></code>, and initializes it with the
+          given seed.<br>
+</div>
+
+<pre><span id="VALstatic"><span class="keyword">val</span> static</span> : <code class="type">int -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">static value</code> returns a generator that always produces the
+          same <code class="code">value</code>.<br>
+</div>
+
+<pre><span id="VALunfold"><span class="keyword">val</span> unfold</span> : <code class="type">?min:int -><br>       ?max:int -><br>       ?seed:int -><br>       f:('a * int -> 'a * int) -> 'a -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">unfold ~min ~max ~seed ~f</code> creates a generator that
+          generates values by applying a function <code class="code">f</code> to a pair of
+          a generator state and previous value.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.Random.html">Random</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Random Number Generators
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the generator interface into the
+          Machine monad.
+</div>
+</body></html>

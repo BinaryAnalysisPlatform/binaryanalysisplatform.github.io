@@ -80,7 +80,16 @@
 </div>
 <h1>Module type <a href="type_Bap_primus.Std.Primus.Iterator.Finite.html">Bap_primus.Std.Primus.Iterator.Finite</a></h1>
 
-<pre><span class="keyword">module type</span> Finite = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Iterator.Finite.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> Finite = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Iterator.Finite.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Finite iterators produce finite sequences of values.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Bap_primus.Std.Primus.Iterator.Base.html">Bap_primus.Std.Primus.Iterator.Base</a></pre>
+
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">t -> t option</code></pre><div class="info ">
+<code class="code">next iterator</code> moves an <code class="code">iterator</code> to the next element of
+            the sequence, or returns <code class="code"><span class="constructor">None</span></code> if there are no more
+            elements.<br>
+</div>
 </body></html>

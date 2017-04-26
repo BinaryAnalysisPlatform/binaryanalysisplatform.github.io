@@ -80,17 +80,72 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a></h1>
 
-<pre><span class="keyword">module</span> Machine: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Machine: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Primus Machine.
+<p>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.State.html">State</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+        The Machine is the core of Primus Framework.  The Machine
+        behavior is extended/changed with Machine Components. A
+        component is a functor that takes a machine instance, and
+        registers reactions to different events, that can happen
+        during the machine evaluation. Events can be obtained from the
+        observations made by the core components of the Machine, such
+        as the Interpreter, or by other components, if their
+        implementors provided any observations.
+<p>
+
+        A machine is usually instantiated and ran only once. For
+        example, the <code class="code">run</code> analysis creates a machine parameterized by
+        the static model of a binary and runs a machine from the
+        specified entry point, until it terminates.
+<p>
+
+        The user analysis is usually written in a form of a component,
+        and is registered with the <code class="code">register_component</code> function.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALfinished"><span class="keyword">val</span> finished</span> : <code class="type">unit <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+<code class="code">finished</code> occurs when machine terminates.<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.State.html">State</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Machine State.
+</div>
+
 <pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type">'a</code> state</span> = <code class="type">('a, <a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">State.t</a></code> </pre>
 
 
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.State.html">State</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.Component.html">Component</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Component.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.State.html">State</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+An interface to the state.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Machine interface.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Machine.Component.html">Component</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Component.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Machine component interface.
+</div>
+
 <pre><span id="TYPEcomponent"><span class="keyword">type</span> <code class="type"></code>component</span> = <code class="type">(module Bap_primus.Std.Primus.Machine.Component)</code> </pre>
+<div class="info ">
+The Machine component.<br>
+</div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="type">  with type 'a m = 'a M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.Main.html">Main</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Main.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="type">  with type 'a m = 'a M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Monad</span>)</code> a monad transformer that wraps the Machine
+          into an arbitrary <code class="code"><span class="constructor">Monad</span></code>.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.Main.html">Main</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Main.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">Main</span>(<span class="constructor">Machine</span>)</code> instantiates the <code class="code"><span class="constructor">Machine</span></code> and provides a
+          function, that runs the Machine
+</div>
+
+<pre><span id="VALadd_component"><span class="keyword">val</span> add_component</span> : <code class="type"><a href="Bap_primus.Std.Primus.Machine.html#TYPEcomponent">component</a> -> unit</code></pre><div class="info ">
+<code class="code">add_component comp</code> registers a machine component in the
+          Primus Framework.<br>
+</div>
+</body></html>

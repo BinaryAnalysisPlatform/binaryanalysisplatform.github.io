@@ -78,8 +78,19 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.Primitive.html">Bap_primus.Std.Primus.Lisp.Primitive</a></h1>
 
-<pre><span class="keyword">module</span> Primitive: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Primitive: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+A lisp primitive<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 
+
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?docs:string -><br>       string -><br>       (<a href="Bap.Std.html#TYPEword">word</a> list -> 'a) -> 'a <a href="Bap_primus.Std.Primus.Lisp.Primitive.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">create ~docs name code</code> creates a lisp primitive, that is
+            accessible from lisp as a regular function with the given
+            <code class="code">name</code>. A function <code class="code">code</code> accepts a list of arguments,
+            and returns a computation in a Machine monad, that should
+            evaluate to a word.<br>
+</div>
 </body></html>

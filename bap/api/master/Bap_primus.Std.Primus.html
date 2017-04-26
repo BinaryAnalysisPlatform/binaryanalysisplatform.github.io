@@ -79,12 +79,25 @@
 <pre><span class="keyword">module</span> Primus: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = ..</pre>
+<div class="info ">
+Machine error.
+<p>
+
+        The error type is an extensible variant, and components
+        usually register their own error constructors.<br>
+</div>
 
 
 <pre><span id="TYPEobservation"><span class="keyword">type</span> <code class="type">'a</code> observation</span> </pre>
+<div class="info ">
+<code class="code">an observation</code> of a value of type <code class="code">an</code>.<br>
+</div>
 
 
 <pre><span id="TYPEstatement"><span class="keyword">type</span> <code class="type">'a</code> statement</span> </pre>
+<div class="info ">
+<code class="code">a statement</code> is used to make an observation of type <code class="code">a</code>.<br>
+</div>
 
 
 <pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type">('a, 'e)</code> result</span> = <code class="type">('a, 'e) <a href="Monads.Std.Monad.Result.html#TYPEresult">Monad.Result.result</a></code> = </pre><table class="typetable">
@@ -106,23 +119,68 @@
 
 
 <pre><span id="TYPEgenerator"><span class="keyword">type</span> <code class="type"></code>generator</span> </pre>
+<div class="info ">
+value generator<br>
+</div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Observation.html">Observation</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span id="TYPEcontext"><span class="keyword">class type</span> <a href="Bap_primus.Std.Primus.context-c.html">context</a></span> = <code class="type"><a href="Bap_primus.Std.Primus.Context.t-c.html">Context.t</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.html">Machine</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Observation.html">Observation</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Machine Observation.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Evaluation Context.
+</div>
+
+<pre><span id="TYPEcontext"><span class="keyword">class type</span> <a href="Bap_primus.Std.Primus.context-c.html">context</a></span> = <code class="type"><a href="Bap_primus.Std.Primus.Context.t-c.html">Context.t</a></code></pre><div class="info">
+Evaluation context.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.html">Machine</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Primus Machine.
+</div>
+
 <pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type">'a</code> state</span> = <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.html#TYPEstate">Machine.state</a></code> </pre>
+<div class="info ">
+type abbreviation for the Machine.state<br>
+</div>
 
 
 <pre><span id="TYPEcomponent"><span class="keyword">type</span> <code class="type"></code>component</span> = <code class="type"><a href="Bap_primus.Std.Primus.Machine.html#TYPEcomponent">Machine.component</a></code> </pre>
+<div class="info ">
+The Machine component.<br>
+</div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.html">Interpreter</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Iterator.html">Iterator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Iterator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.html">Generator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Linker.html">Linker</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Env.html">Env</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Memory.html">Memory</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.html">Lisp</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Error.html">Error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.html">Interpreter</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Interpreter.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Iterator.html">Iterator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Iterator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Iterator is a sequence of values from some domain.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.html">Generator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Value generators
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Linker.html">Linker</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Linker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Machine Linker.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Env.html">Env</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Evaluation environemnt.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Memory.html">Memory</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Virtual memory.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.html">Lisp</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Lisp machine.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Error.html">Error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Primus error.
+</div>
+</body></html>

@@ -80,11 +80,29 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a></h1>
 
-<pre><span class="keyword">module</span> Lisp: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Lisp: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Lisp machine.
+<p>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Primitive</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+        The Lisp Machine is an extensible Lisp Machine embedded into
+        the Primus Machine. The Lisp machine is used to provide
+        function stubs (summaries), as well as to control the Primus
+        Machine using a dialect of Lisp.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Primitive</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A lisp primitive
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+a list of primitives.
+</div>
+
 <pre><span id="TYPEprimitives"><span class="keyword">type</span> <code class="type"></code>primitives</span> = <code class="type">(module Bap_primus.Std.Primus.Lisp.Primitives)</code> </pre>
+<div class="info ">
+a list of priomitives.<br>
+</div>
 
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEerror">Primus.error</a> += </code></pre><table class="typetable">
 <tr>
@@ -97,4 +115,15 @@
 
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Make(Machine) creates a Lisp machine embedded into the
+          Primus <code class="code"><span class="constructor">Machine</span></code>.
+</div>
+
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">?log:Format.formatter -> ?paths:string list -> string list -> unit</code></pre><div class="info ">
+<code class="code">init ?log ?paths features</code> initializes the Lisp machine.
+          This function should be called by a plugin, that is
+          responsible for providing lisp code. In the <code class="code">bap</code> framework
+          it is called by the <code class="code">primus-lisp</code> plugin.<br>
+</div>
+</body></html>

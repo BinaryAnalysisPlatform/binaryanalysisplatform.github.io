@@ -80,6 +80,17 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Memory.html">Bap_primus.Std.Primus.Memory</a></h1>
 
-<pre><span class="keyword">module</span> Memory: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Memory: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Virtual memory.
+<p>
+
+        The virtual memory is a byte addressable machine memory.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALsegmentation_fault"><span class="keyword">val</span> segmentation_fault</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a></code></pre><div class="info ">
+occurs when an access (read or write) is perfomed on address
+          that is not mapped into the Machine memory.<br>
+</div>
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Memory.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
