@@ -137,7 +137,10 @@ OGRE - Open Generic Representation.
     where the declaration has the following syntax:
 <p>
 
-    <pre class="verbatim">removed-by-ocamldoc</pre>
+    <pre class="verbatim">     declaration ::= ( declare &lt;attribute-name&gt; &lt;field&gt; &lt;field&gt; ... )
+     field ::= ( &lt;field-name&gt; &lt;field-type&gt; )
+     field-type ::= int | str | bool | float
+   </pre>
 <p>
 
     Each declaration declare an attribute, that defines a type of the
