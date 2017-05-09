@@ -87,7 +87,732 @@ Lisp machine.
         The Lisp Machine is an extensible Lisp Machine embedded into
         the Primus Machine. The Lisp machine is used to provide
         function stubs (summaries), as well as to control the Primus
-        Machine using a dialect of Lisp.<br>
+        Machine using a dialect of Lisp.
+<p>
+
+        <h1 id="1_PrimusLispLanguage">Primus Lisp Language</h1>
+<p>
+
+        <h2 id="2_Overview">Overview</h2>
+<p>
+
+        Primus Lisp is a dialect of Lisp, that can be used to interact
+        with a native program. Primus Lisp is close to Common Lisp and
+        to the Emacs Lisp dialect.
+<p>
+
+        Primus Lips is a low-level language, that doesn't provide many
+        abstractions, as it tries to be as close to the machine
+        language as possible. In that sense Primus Lisp can be seen as
+        an assembler, except that it can't really assemble binaries,
+        as it operates over already existing and assembled
+        program. Primus Lisp, however is still quite powerfull, as the
+        absence of suitable abstractions is compensated with powerful
+        and versatile meta-programming system.
+<p>
+
+        Primus Lisp is primarily used for the following tasks:<ul>
+<li>writing function summaries (aka stubs);</li>
+<li>setting up program environment;</li>
+<li>exploring and observing program behavior.</li>
+</ul>
+
+        A Primus Lisp program is a file, that can contain the
+        following entities:<ul>
+<li>feature requests;</li>
+<li>declarations;</li>
+<li>constants</li>
+<li>substitutions;</li>
+<li>macros;</li>
+<li>functions;</li>
+<li>advice</li>
+</ul>
+
+        The entities may be specified in any order, however the above
+        order constitutes a good programming practice.
+<p>
+
+        Each file provides (implements) a feature, that has the same
+        name as the name of the file without an extension and
+        directories. Thus the namespace of features is flat. A feature
+        is usually a function, macro definition, or any other
+        definition, or a collection of definition, gathered under the
+        same theme. For example, the <code class="code">getopt</code> feature implements C
+        <code class="code">getopt</code> function, and accompanying definitions. The features
+        maybe very specific, i.e., providing an implementation for
+        only one small function, or they can be a collection of other
+        features. For example, the <code class="code">posix</code> feature provides an
+        implementation of all functions specified in the POSIX
+        standard (not all at the time of writing).
+<p>
+
+        A collection of files is called library.  To use features
+        provided by another file, the file should be requested with
+        the <code class="code">(require &lt;name&gt;)</code> form, where <code class="code">&lt;name&gt;</code> is the name of the
+        feature. A file with the requested name is searched in the
+        library, and loaded, making all its definitions available in
+        the lexical scope, that follows the <code class="code">require</code> form. If a
+        feature is already provided, then nothing
+        happens. Dependencies should not contain cycles.
+<p>
+
+        Declarations specify attributes that are shared by all
+        definitions in a file.For example, a declaration
+<p>
+
+        <pre class="verbatim">(declare (context (arch armv7))</pre>
+<p>
+
+        makes all definitions visible only in the context of the ARMv7
+        architecture.
+<p>
+
+        Constants and substitutions are primitive abstractions that
+        give names to code fragments. Macros are program
+        transformations. Functions add parameters to a code, and are
+        basic building blocks. Scope of all definitions can be limited
+        with the context declarations. Finally, a function can be
+        advised with another function using the <code class="code">advice-add</code> function.
+<p>
+
+        <h2 id="2_Typesystem">Type system</h2>
+<p>
+
+        A type defines all possible values of an expression. In Primus
+        Lisp, expression values can be only scalar, i.e., machine
+        words of different widths. The width is always specified in
+        the number of bits. A maximum width of a word is equal to the
+        width of the architecture machine word, thus a family of types
+        is dependent on the context of evaluation. (Note, current
+        implementation limits maximum width of the machine word to 64
+        bits). We denote a type of expression with a decimal number,
+        e.g., <code class="code">(exp : 16)</code> means that an expression ranges over all 16
+        bit words.
+<p>
+
+        An expression can have a polymorphic type <code class="code">t</code> that denotes a
+        powerset of all types for the given architecture. For example,
+        for ARMv7, <pre class="verbatim">t = 32 \/ 31 \/ .. \/ 1</pre>. Thus a value of any
+        type, is a also a value of type <code class="code">t</code>.
+<p>
+
+        Side note -- the type system doesn't include the unit type,
+        i.e., the <code class="code">0</code> type. An expression <code class="code">()</code> evaluates to the <code class="code">0:1</code>
+        value.
+<p>
+
+        <h2 id="2_Functionsandexpressions">Functions and expressions</h2>
+<p>
+
+        Functions are named abstractions of code, where a code is a
+        sequence of expressions. Since a value of an expression is
+        a machine word, functions are not first-class values in Primus
+        Lisp. However, functions and types can be manipulated on the
+        meta-programming level.
+<p>
+
+        A function is defined with the <code class="code">defun</code> form, that has the
+        following syntax:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;&lt;p2&gt;&nbsp;...&nbsp;&lt;pM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eN&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        A function definition may optionally contain a documentation
+        strings and a declaration section. For example,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;strlen&nbsp;(p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"returns&nbsp;a&nbsp;length&nbsp;of&nbsp;the&nbsp;null-terminated&nbsp;string&nbsp;pointed&nbsp;by&nbsp;P"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(<span class="keyword">external</span>&nbsp;<span class="string">"strlen"</span>))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(msg&nbsp;<span class="string">"strlen&nbsp;was&nbsp;called&nbsp;with&nbsp;$p"</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">let</span>&nbsp;((len&nbsp;0))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">while</span>&nbsp;(not&nbsp;(points-<span class="keyword">to</span>-null&nbsp;p))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(incr&nbsp;len&nbsp;p))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        A function can be called (applied) using the function
+        application form:
+<p>
+
+        <pre class="verbatim">(&lt;function-name&gt; &lt;e1&gt; &lt;e2&gt; ... &lt;eM&gt;)</pre>
+<p>
+
+        The first element of the function application form is not an
+        expression and must be an identified. The rest arguments are
+        expressions, that are evaluated from left to right. All
+        arguments are passed by value.
+<p>
+
+        The body of a function is a sequence of expressions, that is
+        evaluated in the lexical order (i.e., from top to down). A
+        value of the last expression is the result of the function
+        evaluation. An expression is either a function application or
+        or a special form. Primus Lisp defines only 5 special forms,
+        the rest of the syntax is defined using the macro system.
+<p>
+
+        <h3 id="3_Choice">Choice</h3>
+<p>
+
+        The <pre class="verbatim">(if &lt;cond&gt; &lt;e1&gt; &lt;e2&gt; .. &lt;eM&gt;)</pre> form is a basic
+        control flow structure. If &lt;cond&gt; evaluates to a non-zero word
+        then the result of the &lt;if&gt; form is the result of the &lt;e1&gt;
+        expression. Otherwise, a sequence of expressions
+<p>
+
+        <pre class="verbatim">&lt;e2&gt; .. &lt;eM&gt;</pre> is evaluated and the result of the <code class="code"><span class="keyword">if</span></code>
+        form is the result of the last expression <pre class="verbatim">&lt;eM&gt;</pre>.
+<p>
+
+        Several derived forms are defined as macros, e.g.,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">when</span>&nbsp;&lt;cond&gt;&nbsp;&lt;body&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">or</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">and</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        <h3 id="3_Loops">Loops</h3>
+<p>
+
+        Iterations can be implemented either using recursion or with
+        the <code class="code"><span class="keyword">while</span></code> special form. Since the interpreter doesn't
+        provide the tail-call optimization it is better to use the
+        latter (although the interpreter itself is using a constant
+        stack size, as it uses the host language heap memory to
+        represent the Primus Lisp call stack).
+<p>
+
+        The <pre class="verbatim">(while &lt;cond&gt; &lt;e1&gt; &lt;e2&gt; ..&lt;eM&gt;)</pre> form, will evaluate
+        the &lt;cond&gt; expression first, and if it is a non-zero value,
+        then the sequence of expressions <pre class="verbatim">&lt;e1&gt; .. &lt;eM&gt;</pre> is
+        evaluated, and the value of the last expression becomes the
+        value of the <code class="code"><span class="keyword">while</span></code> form. If the value of the &lt;cond&gt;
+        expression is not a zero, then this value becomes the value of
+        the <code class="code"><span class="keyword">while</span></code> form.
+<p>
+
+        <h3 id="3_Variables">Variables</h3>
+<p>
+
+        The <code class="code"><span class="keyword">let</span></code> form binds values to names in the lexical scope.
+<p>
+
+        <pre class="verbatim">(let ((&lt;v1&gt; &lt;e1&gt;) .. (&lt;vM&gt; &lt;eM&gt;) &lt;s1&gt; .. &lt;sN&gt;)</pre>
+<p>
+
+        form binds variables <pre class="verbatim">&lt;v1&gt;, ... &lt;vM &gt;</pre> to values of
+        expressions <pre class="verbatim">&lt;e1&gt;, ..., &lt;eM&gt;</pre> in expressions
+        <pre class="verbatim">&lt;s1&gt;,...,&lt;sN&gt;</pre>.  The lexical scope of the bound variable
+        starts from the next binding expression and ends with the
+        scope of the whole let expression. Thus, a variable &lt;v1&gt; is
+        bound in expressions <pre class="verbatim">&lt;e2&gt;,..., &lt;eM&gt;</pre> as well as in
+        <pre class="verbatim">&lt;s1&gt;,..., &lt;sN&gt;</pre>.
+<p>
+
+        The value of the <code class="code"><span class="keyword">let</span></code> form is the value of the last
+        expression <pre class="verbatim">&lt;sN&gt;</pre>.
+<p>
+
+        <h3 id="3_Sequencing">Sequencing </h3>
+<p>
+
+        The <pre class="verbatim">(prog &lt;e1&gt; ... &lt;eM&gt;)</pre> form combines a sequence of
+        expressions into one expression, and is useful in the contexts
+        where an expression is required. The expressions are evaluated
+        from left to right, and the value of the <code class="code">prog</code> form is the
+        value of the last expression.
+<p>
+
+        <h3 id="3_Messaging">Messaging </h3>
+<p>
+
+        The <pre class="verbatim">(msg &lt;fmt&gt; &lt;e0&gt; &lt;eM&gt;)</pre> form constructs
+        logging/debugging messages using an embedded formatting
+        language. The formed message will be sent to the logging
+        facility, that was set up during the Primus Lisp library
+        initialization.
+<p>
+
+        The format language interprets all symbols literally, unless
+        they start with the dollar sign ($).
+<p>
+
+        A pair of characters of the form <pre class="verbatim">$&lt;n&gt;</pre>, where <pre class="verbatim">&lt;n&gt;</pre>
+        is a decimal digit, will be substituted with the value of the
+        n'th expression (counting from zero).
+<p>
+
+        A sequence <pre class="verbatim">$&lt;expr&gt;</pre> will be substituted with the value of
+        expression <pre class="verbatim">$&lt;expr&gt;</pre>. Thus the <code class="code">$</code> symbol can be seen as
+        an anti-quotation, that temporary disables the quoting marks.
+<p>
+
+        Example,
+<p>
+
+        <pre class="verbatim">(msg "hello, $0 $0 world, (+ 7 8) = $(+ 7 8)" "cruel")</pre>
+<p>
+
+        will be rendered to a message:
+<p>
+
+        <pre class="verbatim">"hello, cruel cruel world, (+ 7 8) = 15"</pre>
+<p>
+
+        <h2 id="2_Metaprogramming">Metaprogramming</h2>
+<p>
+
+        Ordinary Primus Lisp expressions are evaluated at the runtime
+        in the Primus emulator, and are quite limited as they need to
+        be evaluated directly on the CPU model. To mitigate this
+        limitation, Primus Lisp provides a powerful metaprogramming
+        system. The metaprogram is evaluated when the Primus Lisp
+        program is read. A metaprogram generates a program, that will
+        be evaluated by the CPU. The metaprogram itself is Turing
+        complete, thus any transformation can be applied to a
+        program. The Primus Lisp metaprogramming system use
+        term-rewriting as a computational model, with Lisp code
+        fragments as terms. Primus Lisp provides three facilities for
+        metaprogramming:
+<p>
+<ul>
+<li>syntactic constants;</li>
+<li>syntactic substitutions;</li>
+<li>macro definitions.</li>
+</ul>
+
+        <h3 id="3_Constants">Constants</h3>
+<p>
+
+        The syntactic constants is the simplest syntactic
+        substitution, it just substitutes atoms for atoms. Constants
+        are introduced with the <code class="code">defconstant</code> form, that has the
+        following syntax:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        For example,
+<p>
+
+        <pre class="verbatim">(defconstant main-address 0xDEAD)</pre>
+<p>
+
+        During the program parsing, each occurrence of the
+        <pre class="verbatim">&lt;name&gt;</pre> term will be rewritten with the <pre class="verbatim">&lt;value&gt;</pre>
+        term, that should be an atom.
+<p>
+
+        <h3 id="3_Substitutions">Substitutions</h3>
+<p>
+
+        The syntactic substitutions is the generalization of syntactic
+        constant, and has quite a similar syntax:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;name&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;value&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        During parsing, every occurrence of the term <pre class="verbatim">&lt;name&gt;</pre> (that
+        should be an atom), will be rewritten with a sequence of
+        values <pre class="codepre"><code class="code">&nbsp;{&lt;value&gt;}&nbsp;</code></pre>.
+<p>
+
+        Example,
+<p>
+
+        <pre class="verbatim">(defsubst ten-digits 0 1 2 3 4 5 6 7 8 9)</pre>
+<p>
+
+        A process of applying of the substitutions is called
+        "expansion". Since the expansion transforms an atom to a list
+        of atoms, it can be applied only inside the macro or function
+        application. For example,
+<p>
+
+        <pre class="verbatim">(+ ten-digits)</pre>
+<p>
+
+        will be expanded to
+<p>
+
+        <pre class="verbatim">(+ 0 1 2 3 4 5 6 7 8 9 )</pre>
+<p>
+
+        <h4 id="4_Specialsyntax">Special syntax</h4>
+<p>
+
+        Expansions also provide a support for extensible value
+        specification syntax, that enables domain-specific data
+        specification languages. Currently, we support only two
+        syntaxes: <code class="code">:ascii</code> and <code class="code">:hex</code>.
+<p>
+
+        In the <code class="code">:ascii</code> syntax the values should be atoms, possibly
+        delimited with double quotes. Each character of each atom will
+        be expanded to its corresponding ASCII code. Strings can
+        contain special characters prefixed with a backslash. The
+        special character can be one of the well-known ASCII special
+        character, e.g., <code class="code">\n</code>, <code class="code">\r</code>, etc, or it can be a decimal or a
+        hexadecimal code of a character.
+<p>
+
+        Example, given the following substitution:
+<p>
+
+        <pre class="verbatim">(defsubst hello-cruel-world :ascii "hello, cruel world\n\000")</pre>
+<p>
+
+        the following application:
+<p>
+
+        <pre class="verbatim">(write-block SP hello-cruel-world</pre>
+<p>
+
+        will be expanded with
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x72&nbsp;0x75&nbsp;0x65&nbsp;0x6c&nbsp;0x20&nbsp;0x77&nbsp;0x6f&nbsp;0x72
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x6c&nbsp;0x64&nbsp;0x0a&nbsp;0x00)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        In the <code class="code">:hex</code> syntax the sequence of atoms is split into
+        two-characters subsequences each treated as a hex value. This
+        syntax is useful for encoding memory dumps in a format that is
+        close to the hexdump (without offsets). E.g., given the
+        following substitution rule
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubt&nbsp;example&nbsp;:hex&nbsp;68656c&nbsp;6c&nbsp;6f2c2063)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        an application
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;example)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        will be expanded into
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        <h3 id="3_Macro">Macro</h3>
+<p>
+
+        The macros provide the most versatile and powerful way to
+        specify arbitrary code transformations. The macro definitions
+        introduce abstractions on the meta-programming level. I.e., it
+        allows a programmer to write a function that operates on code
+        terms, making the code a first class value.
+<p>
+
+        The macro definition has the following syntax:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;...&nbsp;&lt;pM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        A macro definition adds a term rewriting rule, that rewrites
+        each occurrence of <pre class="verbatim">(&lt;name&gt; &lt;t1&gt; .. &lt;tN&gt;)</pre>, where <code class="code"><span class="constructor">N</span> &gt;= <span class="constructor">M</span></code>
+        with the <pre class="verbatim">&lt;value&gt;</pre> in which occurrences of the parameter
+        &lt;pN&gt; is substituted with the term &lt;tN&gt;. If <code class="code"><span class="constructor">N</span></code> is bigger than
+        <code class="code"><span class="constructor">M</span></code>, then the last parameter is bound with the sequence
+        <pre class="verbatim">&lt;tM&gt;...&lt;tN&gt;</pre>.
+<p>
+
+        The macro subsystem doesn't provide any specific looping or
+        control-flow facilities, however, the macro-overloading
+        mechanism along with the recursion make it possible to encode
+        arbitrary meta-transformations.
+<p>
+
+        Other than a standard context-based ad-hoc overloading
+        mechanism, the macro application uses arity-based
+        resolution. As it was described above, if a number of
+        arguments is greater than the number of parameters, then the
+        last parameter is bound to the rest of the arguments. When
+        several macro definitions matches, then a definition that has
+        fewer unmatched arguments is chosen. For example, suppose we
+        have the following definitions:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x)&nbsp;1)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x&nbsp;xs)&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;xs)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        The the following term
+<p>
+
+        <pre class="verbatim">(list-length 1 2 3)</pre>
+<p>
+
+        will be normalized (after a series of transformations) with
+        the following:
+<p>
+
+        <pre class="verbatim">(+ 1 (+ 1 1))</pre>
+<p>
+
+        <pre class="codepre"><code class="code">1:&nbsp;(list-length&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))
+2:&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))
+3:&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;1))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        In the first step, both definition match. In the first
+        definition <code class="code">x</code> is bound to <code class="code">1 2 3</code>, while in the second
+        <code class="code">x</code> is bound to <code class="code">1</code> and <code class="code">xs</code> is bound to <code class="code">2 3</code>. Since the last
+        parameter is bound to fewer arguments, the second definition
+        is chosen as the most certain. In the second step the second
+        definition is still more concrete. Finally at the last step,
+        the second definition doesn't match at all, as it has more
+        parameters than arguments.
+<p>
+
+        A slightly more complex example, is a fold iterator, that
+        applies a function to a sequence of arguments  of arbitrary
+        length, e.g.,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x)&nbsp;(f&nbsp;a&nbsp;x))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x&nbsp;xs)&nbsp;(fold&nbsp;f&nbsp;(f&nbsp;a&nbsp;x)&nbsp;xs))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        Using this definition we can define a sum function (although
+        it is not needed as the <code class="code">+</code> function defined in the Primus Lisp
+        standard library, already accepts arbitrary number of
+        arguments), as:
+<p>
+
+        <pre class="verbatim">(defmacro sum (xs) (fold + 0 xs))</pre>
+<p>
+
+        The <pre class="verbatim">(sum 1 2 3)</pre> will be rewritten as follows:
+<p>
+
+        <pre class="codepre"><code class="code">1:&nbsp;(sum&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)
+2:&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)
+3:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
+4:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        A more real example is the <code class="code">write-block</code> macro, that takes a
+        sequence of bytes, and writes them starting from the given
+        address:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;write-block&nbsp;(addr&nbsp;bytes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(fold&nbsp;memory-write&nbsp;addr&nbsp;bytes))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        The definition uses the <code class="code">memory-write</code> primitive, that writes
+        a byte at the given address and returns an address of the next
+        byte.
+<p>
+
+        <h2 id="2_Polymorphism">Polymorphism</h2>
+<p>
+
+        Primus Lisp provides both kinds of polymorphism: parametric
+        and ad hoc.
+<p>
+
+        Expressions in Primus Lisp have types, that are denoted with
+        natural numbers starting with one. Each type defines a set of
+        values that can be represented with the given number of
+        bits. Values with different widths are different, even if they
+        represent the same number. Expressions can be polymorphic,
+        e.g., function
+<p>
+
+        <pre class="verbatim">(defun square (x) ( * x x))</pre>
+<p>
+
+        has type `forall n. n -&gt; n -&gt; n`. Thus it can be applied to
+        values of different types, e.g., <code class="code">(square 4:4)</code>, that will be
+        evaluated to the <code class="code">0:4</code> value, or <code class="code">(square 4:8)</code>, that will be
+        evaluated to <code class="code">16:8</code>, etc. The parametric polymorphism doesn't
+        require any special annotations or type specifications so we
+        will not stop on it anymore.
+<p>
+
+        The ad hoc polymorphism provides a facilities for overloading
+        definitions. That is, the same entity may have multiple
+        definitions, and depending on a context, only one definition
+        should be chosen. Not only functions can have multiple
+        definitions, but also macros, constants, and
+        substitutions. Since the latter three entities operate on the
+        syntactic level, the syntax of Primus Lisp itself is
+        context-dependent.
+<p>
+
+        <h3 id="3_Context">Context</h3>
+<p>
+
+        A context (from the perspective of the type system) is a set
+        of type class instances. The context is fixed when a program
+        is parsed. A Primus Lisp program may not change the context;
+        neither in runtime, nor it the parse time, thus a program is
+        parsed and evaluated at the specific context. However, a
+        definition may declare that it makes sense only in some
+        context. If more than one definition make sense under the
+        given context, then the most specific one is chosen. If no
+        definition is more specific than another, then an error
+        occurs.
+<p>
+
+        A type class defines a type as a set of features. The subset
+        relation induces a subtyping relation over types - a type <code class="code">t'</code>
+        is a subtype of a type <code class="code">t</code> if <code class="code">t' &lt;= t</code> (i.e., if <code class="code">t'</code> is a
+        subset of <code class="code">t</code>). Each feature is a textual tag, called a
+        feature constructor.
+<p>
+
+        The context declaration limits an associated definition to the
+        specified type class(es), and has the following syntax:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;&lt;<span class="keyword">type</span>-<span class="keyword">class</span>-name&gt;&nbsp;{&lt;feature-constructor&gt;}))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        Let's use the following two definitions for a concrete example,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;arm&nbsp;gnueabi)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">R0</span>)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;x86&nbsp;cdecl)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(read-word&nbsp;word-width&nbsp;(+&nbsp;<span class="constructor">SP</span>&nbsp;(sizeof&nbsp;word-width))))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        We have two definitions of the same macro <code class="code">get-arg-0</code>, that
+        are applicable to different contexts. The first definition,
+        is only applicable in the context of the ARM architecture and
+        the gnueabi ABI. The second is applicable in the context of
+        the x86 architecture and the cdecl ABI. More formally, a
+        definition is considered only if its context is a subtype of
+        the current type context.
+<p>
+
+        <h2 id="2_Advicemechanism">Advice mechanism</h2>
+<p>
+
+        Primus Lisp also provides a mechanism for non-intrusive
+        extending existing function definitions. An existing
+        definition maybe advised with another definition. A piece of
+        advice maybe added to a function, and will be called either
+        before, or after the function evaluation, e.g.,
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;memory-written&nbsp;(a&nbsp;x)&nbsp;(msg&nbsp;<span class="string">"write&nbsp;$x&nbsp;to&nbsp;$a"</span>))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(advice-add&nbsp;memory-written&nbsp;:after&nbsp;memory-write)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        The general syntax is:
+<p>
+
+        <pre class="verbatim">(advice-add &lt;advisor&gt; &lt;when&gt; &lt;advised&gt;)</pre>
+<p>
+
+        where the &lt;when&gt; clause is either <code class="code">:before</code> or <code class="code">:after</code>.
+<p>
+
+        <h2 id="2_Formalsyntax">Formal syntax</h2>
+<p>
+
+        Each entity is an s-expression with the grammar, specified
+        below.We use BNF-like syntax with the following conventions.
+        Non-terminal symbols are denoted like &lt;this&gt;, square brackets
+        denote optional components, and curly brackets denote zero,
+        one, or several repetitions of the enclosed component. Ordinary
+        parentheses do not bear any notation, and should be read
+        literally. Note, since the grammar is not context free, and is
+        extensible, the following is an approximation of the language
+        grammar. Grammar extension points are defined as '..' in the
+        production definition.
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;<span class="keyword">module</span>&nbsp;::=&nbsp;{&lt;entity&gt;}
+&nbsp;entity&nbsp;::=&nbsp;&lt;feature-request&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;declarations&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;constant-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;substitution-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;macro-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;<span class="keyword">function</span>-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;advising&gt;
+feature-request&nbsp;::=&nbsp;(require&nbsp;&lt;ident&gt;)
+declarations&nbsp;::=&nbsp;(declare&nbsp;{&lt;attribute&gt;})
+constant-definition&nbsp;::=
+&nbsp;&nbsp;(defconstant&nbsp;&lt;ident&gt;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]&nbsp;&lt;atom&gt;)
+substitution-definition&nbsp;::=
+&nbsp;&nbsp;(defsubst&nbsp;&lt;ident&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;atom&gt;})
+macro-definition&nbsp;::=
+&nbsp;&nbsp;(defmacro&nbsp;&lt;ident&gt;&nbsp;({&lt;macro-param&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;exp&gt;)
+<span class="keyword">function</span>-definition&nbsp;::=
+&nbsp;&nbsp;(defun&nbsp;&lt;ident&gt;&nbsp;({&lt;<span class="keyword">function</span>-param&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&lt;exp&gt;})
+advice&nbsp;::=&nbsp;(advice-add&nbsp;&lt;ident&gt;&nbsp;&lt;<span class="keyword">method</span>&gt;&nbsp;&lt;ident&gt;)
+exp&nbsp;::=&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">if</span>&nbsp;&lt;exp&gt;&nbsp;&lt;exp&gt;&nbsp;{&lt;exp&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">let</span>&nbsp;({&lt;binding&gt;})&nbsp;{&lt;exp&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">while</span>&nbsp;exp&nbsp;{exps})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(prog&nbsp;{exp})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(msg&nbsp;&lt;format&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(&lt;ident&gt;&nbsp;{exp})
+binding&nbsp;::=&nbsp;(&lt;var&gt;&nbsp;&lt;exp&gt;)
+attribute&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;&lt;attribute-value&gt;)
+macro-param&nbsp;::=&nbsp;{&lt;ident&gt;}
+<span class="keyword">function</span>-param&nbsp;::=&nbsp;{&lt;var&gt;}
+var&nbsp;=&nbsp;&lt;ident&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;ident&gt;:&lt;size&gt;
+
+attribute-value&nbsp;::=&nbsp;?each&nbsp;attribute&nbsp;defines&nbsp;its&nbsp;own&nbsp;syntax?
+<span class="keyword">external</span>-attribute-value&nbsp;::=&nbsp;{&lt;ident&gt;}
+context-attribute-value&nbsp;::=&nbsp;{&lt;context-declaration&gt;}
+context-declaration&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;{&lt;ident&gt;})
+docstring&nbsp;::=&nbsp;&lt;text&gt;
+syntax&nbsp;::=&nbsp;:hex&nbsp;<span class="keywordsign">|</span>&nbsp;:ascii&nbsp;<span class="keywordsign">|</span>&nbsp;..
+atom&nbsp;&nbsp;::=&nbsp;&lt;word&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;text&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;..
+word&nbsp;&nbsp;::=&nbsp;<span class="keywordsign">?&lt;</span>ascii-char&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;:&lt;size&gt;
+int&nbsp;&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0x{&lt;hex&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0b{&lt;bin&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0o{&lt;oct&gt;}
+size&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}
+ident&nbsp;::=&nbsp;?any&nbsp;atom&nbsp;that&nbsp;is&nbsp;not&nbsp;recognized&nbsp;<span class="keyword">as</span>&nbsp;a&nbsp;&lt;word&gt;?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <hr width="100%">
 
