@@ -84,22 +84,22 @@
 Result of computation.
 <p>
 
-        Result of an expression evaluation depends on a context.
-        Thus, each result has a unique identifier, associated with it,
-        that is usually provided by a context. The result is a
-        concrete value, that is created whenever an expression is
-        evaluated under a given context. Since, context is changed
-        during the evaluation (at least because a new result is
-        allocated), two consecutive evaluations of the same expression
-        will give different results. (This property is preserved by
-        Expi.context class, that provides methods for creating values
-        of type result).
+      Result of an expression evaluation depends on a context.
+      Thus, each result has a unique identifier, associated with it,
+      that is usually provided by a context. The result is a
+      concrete value, that is created whenever an expression is
+      evaluated under a given context. Since, context is changed
+      during the evaluation (at least because a new result is
+      allocated), two consecutive evaluations of the same expression
+      will give different results. (This property is preserved by
+      Expi.context class, that provides methods for creating values
+      of type result).
 <p>
 
-        Since <code class="code"><span class="constructor">Result</span>.<span class="constructor">Id</span></code> is a regular type, it is possible to
-        associate arbitrary information (like taint information,
-        formulae, etc) with each result, using associative data
-        structures, like maps and hash tables.<br>
+      Since <code class="code"><span class="constructor">Result</span>.<span class="constructor">Id</span></code> is a regular type, it is possible to
+      associate arbitrary information (like taint information,
+      formulae, etc) with each result, using associative data
+      structures, like maps and hash tables.<br>
 </div>
 <hr width="100%">
 
@@ -109,16 +109,16 @@ result identifier<br>
 </div>
 
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a></code> </pre>
 
 
-<pre><span id="TYPEr"><span class="keyword">type</span> <code class="type">'a</code> r</span> = <code class="type">(<a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>, 'a) Monad.State.t</code> </pre>
+<pre><span id="TYPEr"><span class="keyword">type</span> <code class="type">'a</code> r</span> = <code class="type">(<a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a>, 'a) Std.Monad.State.t</code> </pre>
 <div class="info ">
 State monad that evaluates to result<br>
 </div>
 
 
-<pre><span id="TYPEu"><span class="keyword">type</span> <code class="type">'a</code> u</span> = <code class="type">(unit, 'a) Monad.State.t</code> </pre>
+<pre><span id="TYPEu"><span class="keyword">type</span> <code class="type">'a</code> u</span> = <code class="type">(unit, 'a) Std.Monad.State.t</code> </pre>
 <div class="info ">
 State monad that evaluates to unit<br>
 </div>
@@ -126,24 +126,24 @@ State monad that evaluates to unit<br>
 
 <pre><span id="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">undefined id</code> creates a result with the given <code class="code">id</code> and
-          undefined value<br>
+        undefined value<br>
 </div>
 
-<pre><span id="VALstorage"><span class="keyword">val</span> storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALstorage"><span class="keyword">val</span> storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Std.Bil.storage</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">storage s id</code> creates a result with the given <code class="code">id</code> and
-          storage <code class="code">s</code> as a value<br>
+        storage <code class="code">s</code> as a value<br>
 </div>
 
-<pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALword"><span class="keyword">val</span> word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a> -> <a href="Bap.Std.Bil.Result.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">word w id</code> creates a result with the given <code class="code">id</code> and
-          word <code class="code">w</code> as a value<br>
+        word <code class="code">w</code> as a value<br>
 </div>
 
 <pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.Result.html#TYPEid">id</a></code></pre><div class="info ">
 returns result's identifier<br>
 </div>
 
-<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.html#TYPEvalue">Bil.value</a></code></pre><div class="info ">
+<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type"><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> -> <a href="Bap.Std.Bil.html#TYPEvalue">Std.Bil.value</a></code></pre><div class="info ">
 returns result's value<br>
 </div>
 

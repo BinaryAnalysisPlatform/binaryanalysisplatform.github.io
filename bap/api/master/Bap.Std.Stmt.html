@@ -85,12 +85,12 @@
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">Bil.stmt</code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">Std.Bil.stmt</code> </pre>
 
 
 <pre><span name="TYPEstate"><span class="keyword">class</span> <a href="Bap.Std.Stmt.state-c.html">state</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.state-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 All visitors provide some information about the current
-        position of the visitor
+      position of the visitor
 </div>
 
 <pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> <a href="Bap.Std.Stmt.visitor-c.html">visitor</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -111,12 +111,12 @@ AST transformation.
 
 <pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">'a #<a href="Bap.Std.Stmt.visitor-c.html">visitor</a> -> init:'a -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
 <code class="code">fold ~init visitor stmt</code> folds a <code class="code">stmt</code> with a visitor. See
-        <code class="code"><span class="constructor">Bil</span>.fold</code> and <a href="Bap.Std.Exp.html#VALfold"><code class="code"><span class="constructor">Exp</span>.fold</code></a> for more details.<br>
+      <code class="code"><span class="constructor">Bil</span>.fold</code> and <a href="Bap.Std.Exp.html#VALfold"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Exp</span>.fold</code></a> for more details.<br>
 </div>
 
 <pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">unit #<a href="Bap.Std.Stmt.visitor-c.html">visitor</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
 <code class="code">iter visitor stmt</code> iters over a <code class="code">stmt</code> with a visitor. See
-        <code class="code"><span class="constructor">Bil</span>.iter</code> and <a href="Bap.Std.Exp.html#VALiter"><code class="code"><span class="constructor">Exp</span>.iter</code></a> for more details.<br>
+      <code class="code"><span class="constructor">Bil</span>.iter</code> and <a href="Bap.Std.Exp.html#VALiter"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Exp</span>.iter</code></a> for more details.<br>
 </div>
 
 <pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">#<a href="Bap.Std.Stmt.mapper-c.html">mapper</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre><div class="info ">
@@ -125,35 +125,100 @@ AST transformation.
 
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a #<a href="Bap.Std.Stmt.finder-c.html">finder</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
 <code class="code">find finder stmt</code> performs a lookup into the Bil statement. See
-        <code class="code"><span class="constructor">Bil</span>.find</code> and <a href="Bap.Std.Exp.html#VALfind"><code class="code"><span class="constructor">Exp</span>.find</code></a> for more details.<br>
+      <code class="code"><span class="constructor">Bil</span>.find</code> and <a href="Bap.Std.Exp.html#VALfind"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Exp</span>.find</code></a> for more details.<br>
 </div>
 
 <pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">unit #<a href="Bap.Std.Stmt.finder-c.html">finder</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">exists finder stmt</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">find finder stmt &lt;&gt; <span class="constructor">None</span></code>.
-        See <code class="code"><span class="constructor">Bil</span>.exists</code> and <a href="Bap.Std.Exp.html#VALexists"><code class="code"><span class="constructor">Exp</span>.exists</code></a> for more details.<br>
+      See <code class="code"><span class="constructor">Bil</span>.exists</code> and <a href="Bap.Std.Exp.html#VALexists"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Exp</span>.exists</code></a> for more details.<br>
 </div>
 
-<pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_referenced"><span class="keyword">val</span> is_referenced</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">is_referenced x stmt</code> is true is <code class="code">x</code> is used in the <code class="code">stmt</code>
-        in any place other then right hand side of the assignment. E.g.,
-        <code class="code">is_referenced x <span class="constructor">Bil</span>.(x := var x)</code> is <code class="code"><span class="keyword">true</span></code>, but
-        <code class="code">is_referenced x <span class="constructor">Bil</span>.(x := var y)</code> is <code class="code"><span class="keyword">false</span></code>.
-        see <a href="Bap.Std.Bil.html#VALis_referenced"><code class="code"><span class="constructor">Bil</span>.is_referenced</code></a> for more details.<br>
+      in any place other then right hand side of the assignment. E.g.,
+      <code class="code">is_referenced x <span class="constructor">Bil</span>.(x := var x)</code> is <code class="code"><span class="keyword">true</span></code>, but
+      <code class="code">is_referenced x <span class="constructor">Bil</span>.(x := var y)</code> is <code class="code"><span class="keyword">false</span></code>.
+      see <a href="Bap.Std.Bil.html#VALis_referenced"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bil</span>.is_referenced</code></a> for more details.<br>
+</div>
+
+<pre><span id="VALnormalize"><span class="keyword">val</span> normalize</span> : <code class="type">?normalize_exp:bool -> <a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list -> <a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list</code></pre><div class="info ">
+<code class="code">normalize xs</code> produces a normalized BIL program with the same<code class="code">^1</code>
+      semantics but in the BIL normalized form. Precondition: <code class="code">xs</code> is
+      well-typed.
+<p>
+
+      The BIL Normalized Form (BNF) is a subset of the BIL
+      language, where expressions have the following properties:
+<p>
+<ul>
+<li>No let expressions - new variable can be created only with a
+       Move instruction.</li>
+</ul>
+<ul>
+<li>All memory operations have sizes equal to one byte. Thus the
+       size and endiannes can be ignored in analysis. During the
+       normalization, the following rewrites are performed</li>
+</ul>
+<ul>
+<li>Memory load expressions can be only applied to a memory. This
+       effectively disallows creation of temporary memory regions,
+       and requires all store operations to be commited via the
+       assignemnt operation. Also, this provides a guarantee, that
+       store expressions will not occur in integer assigments, jmp
+       destinations, and conditional expressions, leaving them valid
+       only in an assignment statment where the rhs has type mem_t.</li>
+</ul>
+
+      <pre class="verbatim">let x = &lt;expr&gt; in ... x ... =&gt; ... &lt;expr&gt; ...
+       x[a,el]:n =&gt; x[a+n-1] @ ... @ x[a]
+       x[a,be]:n =&gt; x[a] @ ... @ x[a+n-1]
+       m[a,el]:n &lt;- x =&gt; (...((m[a] &lt;- x&lt;0&gt;)[a+1] &lt;- x&lt;1&gt;)...)[a+n-1] &lt;- x&lt;n-1&gt;
+       m[a,be]:n &lt;- x =&gt; (...((m[a] &lt;- x&lt;n-1&gt;)[a+1] &lt;- x&lt;n&gt;)...)[a+n-1] &lt;- x&lt;0&gt;
+       ... ite c ? x : y ... =&gt; if c  [... x ...]  [... y ...]
+       (x[a] &lt;- b)[c] =&gt; m := x[a] &lt;- b; m[c]</pre>
+<p>
+
+      <code class="code">^1</code>: The normalization procedure may duplicate expressions
+      that might be considered non-generative. For example,
+<p>
+
+      <code class="code"><span class="keyword">let</span> x = m[a] <span class="keyword">in</span> x + x</code>
+<p>
+
+      is rewritten to <code class="code">m[a] + m[a]</code>. Given a concrete semantics of a
+      memory (for example, if memory is mapped to a device register
+      that changes every times it is read) this expression may have
+      different value. It will also have different effect (such as
+      two memory accesses, page faults etc).
+<p>
+
+      However, in the formal semantics of BAP we do not consider
+      effects, and treat all expressions as side-effect free, thus
+      the above transformation, as well as<br>
+<b>Since</b> 1.3<br>
+</div>
+
+<pre><span id="VALsimpl"><span class="keyword">val</span> simpl</span> : <code class="type">?ignore:<a href="Bap.Std.Eff.html#TYPEt">Std.Eff.t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre><div class="info ">
+<code class="code">simpl ?ignore xs</code> recursively applies <code class="code"><span class="constructor">Exp</span>.simpl</code> and also
+      simplifies <code class="code"><span class="keyword">if</span></code> and <code class="code"><span class="keyword">while</span></code> expressions with statically known
+      conditionals, e.g., <code class="code"><span class="keyword">if</span> (<span class="keyword">true</span>) xs ys</code> is simplified to <code class="code">xs</code>,
+      <code class="code"><span class="keyword">while</span> (<span class="keyword">false</span>) xs</code> is simplified to <code class="code">xs</code>.<br>
+<b>Since</b> 1.3<br>
 </div>
 
 <pre><span id="VALfixpoint"><span class="keyword">val</span> fixpoint</span> : <code class="type">(<a href="Bap.Std.Stmt.html#TYPEt">t</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a>) -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">fixpoint f x</code> applies transformation <code class="code">f</code> until it reaches
-        fixpoint. See <a href="Bap.Std.Bil.html#VALfixpoint"><code class="code"><span class="constructor">Bil</span>.fixpoint</code></a> and <br>
+      fixpoint. See <a href="Bap.Std.Bil.html#VALfixpoint"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bil</span>.fixpoint</code></a> and <br>
 </div>
 
-<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> -> Std.Var.Set.t</code></pre><div class="info ">
 <code class="code">free_vars stmt</code> returns a set of all unbound variables, that
-        occurs in the <code class="code">stmt</code>.<br>
+      occurs in the <code class="code">stmt</code>.<br>
 </div>
 
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Std.Bili.context</a> as 'a) -> 'a</code></pre><div class="info ">
 <code class="code">eval prog</code> eval BIL program under given context. Returns the
-        context which contains all effects of computations.<br>
+      context which contains all effects of computations.<br>
 </div>
 
 <pre><span class="keyword">include</span> Regular.S</pre>

@@ -110,7 +110,7 @@ Plugin - a loadable self-contained piece of code.
 <code class="code">bundle plugin</code> returns a plugin's bundle<br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit Or_error.t</code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit Std.Or_error.t</code></pre><div class="info ">
 <code class="code">load plugin</code> load all unsatisfied dependencies of a <code class="code">plugin</code>,
         and then load the <code class="code">plugin</code> itself. If it is already
         loaded, then do nothing.

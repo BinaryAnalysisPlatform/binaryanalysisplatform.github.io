@@ -82,52 +82,52 @@
 
 <pre><span class="keyword">module</span> Reconstructor: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Reconstructor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Reconstructor is responsible for reconstructing symbol table
-      from a CFG. It should partition a CFG into a set of possibly
-      intersecting functions. See <a href="Bap.Std.Symtab.html"><code class="code"><span class="constructor">Symtab</span></code></a> module for more
-      information about symbol table and functions.<br>
+    from a CFG. It should partition a CFG into a set of possibly
+    intersecting functions. See <a href="Bap.Std.Symtab.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Symtab</span></code></a> module for more
+    information about symbol table and functions.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEreconstructor">reconstructor</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEreconstructor">Std.reconstructor</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEcfg">cfg</a> -> <a href="Bap.Std.html#TYPEsymtab">symtab</a>) -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEcfg">Std.cfg</a> -> <a href="Bap.Std.html#TYPEsymtab">Std.symtab</a>) -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create f</code> creates a reconstructor from a given function <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">(<a href="Bap.Std.html#TYPEword">word</a> -> string) -> <a href="Bap.Std.html#TYPEword">word</a> list -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">(<a href="Bap.Std.html#TYPEword">Std.word</a> -> string) -> <a href="Bap.Std.html#TYPEword">Std.word</a> list -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">default name roots</code> builds a reconstructor from given a
-        function, that maps addresses to function names (see
-        <a href="Bap.Std.Symbolizer.html"><code class="code"><span class="constructor">Symbolizer</span></code></a>) and a list of known function starts. The
-        reconstructor will extend the list of function start with
-        destinations of call instructions found in the CFG, and then
-        for each function start build a function using the following
-        definition of a function:
+      function, that maps addresses to function names (see
+      <a href="Bap.Std.Symbolizer.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Symbolizer</span></code></a>) and a list of known function starts. The
+      reconstructor will extend the list of function start with
+      destinations of call instructions found in the CFG, and then
+      for each function start build a function using the following
+      definition of a function:
 <p>
 
-           Function is built from the entry block and every block that
-           is reachable from it without using calls, if the block
-           address is greater than the entry block address and less
-           than the address of entry block of the next symbol.
+         Function is built from the entry block and every block that
+         is reachable from it without using calls, if the block
+         address is greater than the entry block address and less
+         than the address of entry block of the next symbol.
 <p>
 
-        Note: this is an approximation, that works fine for most cases.<br>
+      Note: this is an approximation, that works fine for most cases.<br>
 </div>
 
-<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEaddr">addr</a>) <a href="Bap.Std.html#TYPEseq">seq</a> -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">Std.addr</a> * <a href="Bap.Std.html#TYPEaddr">Std.addr</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a> -> <a href="Bap.Std.Reconstructor.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_blocks</code> produces a reconstructor from a serialized
-        sequence of blocks. Each element of the sequence is deconstructed
-        as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
-        virtual address of a block start, and <code class="code">ea</code> is an address of the
-        block end.<br>
+      sequence of blocks. Each element of the sequence is deconstructed
+      as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
+      virtual address of a block start, and <code class="code">ea</code> is an address of the
+      block end.<br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap.Std.Reconstructor.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a> -> <a href="Bap.Std.html#TYPEsymtab">symtab</a></code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap.Std.Reconstructor.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">Std.cfg</a> -> <a href="Bap.Std.html#TYPEsymtab">Std.symtab</a></code></pre><div class="info ">
 <code class="code">run reconstructor cfg</code> reconstructs a symbol table from a
-        given cfg<br>
+      given cfg<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Reconstructor.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Reconstructor.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Std.Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
 a factory of reconstructors
 </div>
 </body></html>

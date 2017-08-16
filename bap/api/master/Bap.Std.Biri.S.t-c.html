@@ -76,7 +76,7 @@
 &nbsp;</div>
 <h1>Class <a href="type_Bap.Std.Biri.S.t.html">Bap.Std.Biri.S.t</a></h1>
 
-<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Biri.context</a>]</code> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Biri.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Biri.context-c.html">Std.Biri.context</a>]</code> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Biri.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 base class for BIR interpreters<br>
 </div>
 <b>Inherits</b><ul>
@@ -84,81 +84,88 @@ base class for BIR interpreters<br>
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODenter_term"><span class="keyword">method</span> enter_term</span> : <code class="type">'t 'p.<br>         ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>         't <a href="Bap.Std.html#TYPEterm">term</a> -> (#<a href="Bap.Std.Biri.context-c.html">Biri.context</a> as 'a) <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODenter_term"><span class="keyword">method</span> enter_term</span> : <code class="type">'t 'p.<br>         ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -><br>         't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> (#<a href="Bap.Std.Biri.context-c.html">Std.Biri.context</a> as 'a) <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 called for each term, just after the position is updated,
-            but before any side effect of term evaluation had occurred.<br>
+          but before any side effect of term evaluation had occurred.<br>
 </div>
 
-<pre><span id="METHODeval"><span class="keyword">method</span> eval</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODleave_term"><span class="keyword">method</span> leave_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval"><span class="keyword">method</span> eval</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -> 't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<code class="code">eval cls t</code> evaluates a term <code class="code">t</code> of the <code class="code">cls</code> class. The
+          method implementation will call the <code class="code">enter_term</code> method,
+          and then will dispatch to the <code class="code">eval_XXX</code> method, where
+          <code class="code"><span class="constructor">XXX</span></code> is a name of a term corresponding to <code class="code">cls</code>. Finally,
+          the <code class="code">leave_term</code> method is called.<br>
+</div>
+
+<pre><span id="METHODleave_term"><span class="keyword">method</span> leave_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -> 't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 called after all side effects of the term has occurred<br>
 </div>
 
-<pre><span id="METHODeval_sub"><span class="keyword">method</span> eval_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_sub"><span class="keyword">method</span> eval_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 Evaluates a subroutine with the following algorithm:
 <p>
 
-            0. next &lt;- first block of subroutine and goto 1
-            1. eval all in and in/out arguments and goto 2
-            2. if next is some blk then eval it and goto 2 else goto 3
-            3. if next is some sub then eval it and goto 2 else goto 4
-            4. eval all out and in/out arguments.<br>
+          0. next &lt;- first block of subroutine and goto 1
+          1. eval all in and in/out arguments and goto 2
+          2. if next is some blk then eval it and goto 2 else goto 3
+          3. if next is some sub then eval it and goto 2 else goto 4
+          4. eval all out and in/out arguments.<br>
 </div>
 
-<pre><span id="METHODeval_arg"><span class="keyword">method</span> eval_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_arg"><span class="keyword">method</span> eval_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate argument by first evaluating its right hand side,
-            and then assigning the result to the left hand side.<br>
+          and then assigning the result to the left hand side.<br>
 </div>
 
-<pre><span id="METHODeval_blk"><span class="keyword">method</span> eval_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_blk"><span class="keyword">method</span> eval_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate all terms in a given block, starting with phi
-            nodes, then proceeding to def nodes and finally evaluating
-            all jmp terms until either jump is taken or jump condition
-            is undefined.
-            After the evaluation the context#next will point next
-            destination.<br>
+          nodes, then proceeding to def nodes and finally evaluating
+          all jmp terms until either jump is taken or jump condition
+          is undefined.
+          After the evaluation the context#next will point next
+          destination.<br>
 </div>
 
-<pre><span id="METHODeval_def"><span class="keyword">method</span> eval_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_def"><span class="keyword">method</span> eval_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate definition by assigning the result of the right
-            hand side to the definition variable<br>
+          hand side to the definition variable<br>
 </div>
 
-<pre><span id="METHODeval_phi"><span class="keyword">method</span> eval_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_phi"><span class="keyword">method</span> eval_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 based on trace select an expression and assign its
-            value to the left hand side of phi node.<br>
+          value to the left hand side of phi node.<br>
 </div>
 
-<pre><span id="METHODeval_jmp"><span class="keyword">method</span> eval_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_jmp"><span class="keyword">method</span> eval_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate condition, and if it is false, then do nothing,
-            otherwise evaluate jump target (see below)<br>
+          otherwise evaluate jump target (see below)<br>
 </div>
 
-<pre><span id="METHODeval_goto"><span class="keyword">method</span> eval_goto</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_goto"><span class="keyword">method</span> eval_goto</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">Std.label</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
-            on the label variant<br>
+          on the label variant<br>
 </div>
 
-<pre><span id="METHODeval_call"><span class="keyword">method</span> eval_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">call</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_call"><span class="keyword">method</span> eval_call</span> : <code class="type"><a href="Bap.Std.html#TYPEcall">Std.call</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate target label, using <code class="code">eval_direct</code> or
-            <code class="code">eval_indirect</code>, based on the label variant.
-            Ignores return label.<br>
+          <code class="code">eval_indirect</code>, based on the label variant.
+          Ignores return label.<br>
 </div>
 
-<pre><span id="METHODeval_ret"><span class="keyword">method</span> eval_ret</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">label</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_ret"><span class="keyword">method</span> eval_ret</span> : <code class="type"><a href="Bap.Std.html#TYPElabel">Std.label</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
-            on the label variant<br>
+          on the label variant<br>
 </div>
 
-<pre><span id="METHODeval_exn"><span class="keyword">method</span> eval_exn</span> : <code class="type">int -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_exn"><span class="keyword">method</span> eval_exn</span> : <code class="type">int -> <a href="Bap.Std.html#TYPEtid">Std.tid</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 ignore arguments and set context#next to None<br>
 </div>
 
-<pre><span id="METHODeval_direct"><span class="keyword">method</span> eval_direct</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_direct"><span class="keyword">method</span> eval_direct</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 set context#next to the a given tid<br>
 </div>
 
-<pre><span id="METHODeval_indirect"><span class="keyword">method</span> eval_indirect</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
+<pre><span id="METHODeval_indirect"><span class="keyword">method</span> eval_indirect</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a <a href="Bap.Std.Biri.S.html#TYPEu">u</a></code></pre><div class="info ">
 ignore argument and set context#next to None<br>
 </div>
 </body></html>

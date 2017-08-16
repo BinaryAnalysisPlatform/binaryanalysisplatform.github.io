@@ -1,0 +1,58 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of PRIMUS-GREEDY</TITLE>
+</HEAD><BODY>
+<H1>PRIMUS-GREEDY</H1>
+Section: Primus-greedy Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus-greedy - implements the greedy scheduling strategy
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus-greedy</B> [<I>OPTION</I>]... 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+The greedy scheduling strategy will continue with the same state, unless the machine reaches a termination state, i.e., when the <B>next</B> value in a context becomes <B>None</B>. In that case another alive state that has a <B>next</B> value that is not <B>None</B> is chosen. If such state doesn't exist, then the Machine finally terminates. Thus this strategy will perform a depth-first traversal of the state tree, and guarantees that all paths are explored
+<P>
+
+The greedy scheduler will attempt to reschedule everytime a basic block is evaluated.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
+Show this help in format <I>FMT</I> (pager, plain or groff).
+<DT><B>--scheduler</B><DD>
+Enable the scheduler.
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:10:17 GMT, August 16, 2017
+</BODY>
+</HTML>

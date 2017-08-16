@@ -76,7 +76,7 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Make(Machine) makes an interpreter that computes in the
           given machine.<br>
 </div>
@@ -89,13 +89,13 @@ Make(Machine) makes an interpreter that computes in the
 <td align="center" valign="top" width="15%">
 <code>Machine</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code>
+<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code>
 </table>
 </td>
 </tr>
 </table>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.Biri.html">Biri</a>: <code class="type">Biri.S</code><code class="type"> 
-          with type ('a,'e) state = ('a,'e) Machine.t</code></pre>
-<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#context]</code> <a href="Bap_primus.Std.Primus.Interpreter.Make.t-c.html">t</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> = <code class="type">'a Machine.t</code> </pre>
+
+</body></html>

@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Bap.Std.Bil.html">
+<link rel="previous" href="Bap.Std.Var.html">
 <link rel="next" href="Bap.Std.Type_error.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -74,7 +74,7 @@
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Context</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Bap.Std.Bil.html" title="Bap.Std.Bil">Previous</a>
+<div class="navbar"><a class="pre" href="Bap.Std.Var.html" title="Bap.Std.Var">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
 &nbsp;<a class="post" href="Bap.Std.Type_error.html" title="Bap.Std.Type_error">Next</a>
 </div>
@@ -84,22 +84,22 @@
 Base class for evaluation contexts.
 <p>
 
-      All interpreters evaluate terms under a given context,
-      wrapped into a state monad. All context must be structural
-      subtypes of the <code class="code"><span class="constructor">Context</span>.t</code>.
+    All interpreters evaluate terms under a given context,
+    wrapped into a state monad. All context must be structural
+    subtypes of the <code class="code"><span class="constructor">Context</span>.t</code>.
 <p>
 
-      The base context is just a mapping from variables to values.
+    The base context is just a mapping from variables to values.
 <p>
 
-      Other than a type <code class="code"><span class="constructor">Context</span>.t</code> this module has n class <code class="code">t</code> that
-      provides a logarithmic implementation for lookup and update
-      methods.
+    Other than a type <code class="code"><span class="constructor">Context</span>.t</code> this module has n class <code class="code">t</code> that
+    provides a logarithmic implementation for lookup and update
+    methods.
 <p>
 
-      Since context, for any interpreter must be a structural subtype
-      of <code class="code"><span class="constructor">Context</span>.t</code> it is not required that this particular should be used.
-      Any implementation that has matching interface will work.<br>
+    Since context, for any interpreter must be a structural subtype
+    of <code class="code"><span class="constructor">Context</span>.t</code> it is not required that this particular should be used.
+    Any implementation that has matching interface will work.<br>
 </div>
 <hr width="100%">
 

@@ -80,20 +80,20 @@
 
 <pre><span class="keyword">module</span> Segment: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.Segment.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Image Segments.
-        Segment is a contiguous region of memory that has
-        permissions. The same as segment in ELF.<br>
+      Segment is a contiguous region of memory that has
+      permissions. The same as segment in ELF.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">Image.segment</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Image.html#TYPEsegment">Std.Image.segment</a></code> </pre>
 
 
 <pre><span class="keyword">include</span> Regular.S</pre>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Image.Segment.html#TYPEt">t</a> -> string</code></pre><div class="info ">
 <code class="code">name segment</code> a name associated with the segment (usually
-      meaningless). Guaranteed to be unique across other segments of
-      the same image.<br>
+        meaningless). Guaranteed to be unique across other segments of
+        the same image.<br>
 </div>
 
 <pre><span id="VALis_writable"><span class="keyword">val</span> is_writable</span> : <code class="type"><a href="Bap.Std.Image.Segment.html#TYPEt">t</a> -> bool</code></pre><div class="info ">

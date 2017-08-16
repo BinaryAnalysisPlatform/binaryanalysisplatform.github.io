@@ -80,6 +80,9 @@
 
 <pre><span class="keyword">module</span> Types: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.Types.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
+<pre><span id="TYPEvar"><span class="keyword">type</span> <code class="type"></code>var</span> </pre>
+
+
 <pre><code><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
@@ -107,7 +110,7 @@ Sign-extending widening cast.<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTcast.HIGH"><span class="constructor">HIGH</span></span></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-Narrowning cast. Keeps the high bits.<br>
+Narrowing cast. Keeps the high bits.<br>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -347,7 +350,7 @@ Unary operations implemented in the IR<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Load"><span class="constructor">Load</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.html#TYPEendian">endian</a> * <a href="Bap.Std.html#TYPEsize">size</a></code></code></td>
+<code><span id="TYPEELTexp.Load"><span class="constructor">Load</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.html#TYPEendian">Std.endian</a> * <a href="Bap.Std.html#TYPEsize">Std.size</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 load from memory<br>
 </div>
@@ -357,7 +360,7 @@ load from memory<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Store"><span class="constructor">Store</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a><br>        * <a href="Bap.Std.html#TYPEendian">endian</a> * <a href="Bap.Std.html#TYPEsize">size</a></code></code></td>
+<code><span id="TYPEELTexp.Store"><span class="constructor">Store</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a><br>        * <a href="Bap.Std.html#TYPEendian">Std.endian</a> * <a href="Bap.Std.html#TYPEsize">Std.size</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 store to memory<br>
 </div>
@@ -387,7 +390,7 @@ unary operation<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Var"><span class="constructor">Var</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></code></td>
+<code><span id="TYPEELTexp.Var"><span class="constructor">Var</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEvar">var</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 variable<br>
 </div>
@@ -397,7 +400,7 @@ variable<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEword">word</a></code></code></td>
+<code><span id="TYPEELTexp.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 immediate value<br>
 </div>
@@ -417,7 +420,7 @@ casting<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Let"><span class="constructor">Let</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
+<code><span id="TYPEELTexp.Let"><span class="constructor">Let</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 let-binding<br>
 </div>
@@ -427,7 +430,7 @@ let-binding<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTexp.Unknown"><span class="constructor">Unknown</span></span> <span class="keyword">of</span> <code class="type">string * <a href="Bap.Std.html#TYPEtyp">typ</a></code></code></td>
+<code><span id="TYPEELTexp.Unknown"><span class="constructor">Unknown</span></span> <span class="keyword">of</span> <code class="type">string * <a href="Bap.Std.Bil.Types.html#TYPEtyp">typ</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 unknown or undefined value<br>
 </div>
@@ -458,7 +461,10 @@ extract portion of word<br>
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
 <code><span id="TYPEELTexp.Concat"><span class="constructor">Concat</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
-
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+concatenate two words<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 
 <div class="info ">
@@ -466,12 +472,33 @@ BIL expression variants<br>
 </div>
 
 
+<pre><code><span id="TYPEtyp"><span class="keyword">type</span> <code class="type"></code>typ</span> = </code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtyp.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type">int</code></code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+<code class="code"><span class="constructor">Imm</span> n</code> - n-bit immediate<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code><span class="keyword">|</span></code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTtyp.Mem"><span class="constructor">Mem</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr_size">Std.addr_size</a> * <a href="Bap.Std.html#TYPEsize">Std.size</a></code></code></td>
+
+</tr></table>
+
+
+
 <pre><code><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTstmt.Move"><span class="constructor">Move</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
+<code><span id="TYPEELTstmt.Move"><span class="constructor">Move</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Bil.Types.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.Types.html#TYPEexp">exp</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 assign value of expression to variable<br>
 </div>

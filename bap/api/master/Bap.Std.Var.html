@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Type.html">
-<link rel="next" href="Bap.Std.Bil.html">
+<link rel="next" href="Bap.Std.Context.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,7 +76,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Type.html" title="Bap.Std.Type">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Bil.html" title="Bap.Std.Bil">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Context.html" title="Bap.Std.Context">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Var.html">Bap.Std.Var</a></h1>
 
@@ -84,66 +84,66 @@
 BIL variable.
 <p>
 
-      BIL variables are regular values. Variables can have
-      indices. Usually the index is used to represent the same
-      variable but at different time or space (control flow path).
-      This is particulary useful for representing variables in SSA
-      form.
+    A variable is a symbolic name, that may have different values
+    during program evaluation. A variable may be virtual, in the
+    sense that it doesn't correspond to some physical location, or it
+    can be physical if a variable is a some physical location, e.g.,
+    a register. All variables have types that designate a set of
+    values over which a variable ranges.
 <p>
 
-      By default, comparison functions takes indices into account. In
-      order to compare two variables regardless their index use <code class="code">same</code>
-      function, or compare with <code class="code">base x</code>.
+    BIL variables are regular values. Variables can have
+    indices. Usually the index is used to represent the same
+    variable but at different time or space (control flow path).
+    This is particulary useful for representing variables in SSA
+    form.
 <p>
 
-      A variable can represent a physical register or be just a virtual
-      variable.
+    By default, comparison functions takes indices into account. In
+    order to compare two variables regardless their index use <code class="code">same</code>
+    function, or compare with <code class="code">base x</code>.
 <p>
 
-      <h2 id="2_Printing">Printing</h2>
+    <h2 id="2_Printing">Printing</h2>
 <p>
 
-      A default pretty printer doesn't print zero indices.<br>
+    A default pretty printer doesn't print zero indices and never
+    prints types.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code> </pre>
 
 
-<pre><span class="keyword">include</span> Regular.S</pre>
-<div class="info ">
-implements <code class="code"><span class="constructor">Regular</span></code> interface<br>
-</div>
-
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?is_virtual:bool -> ?fresh:bool -> string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?is_virtual:bool -> ?fresh:bool -> string -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?register ?fresh name typ</code> creates a variable with
-        a given <code class="code">name</code> and <code class="code">typ</code>e.
+      a given <code class="code">name</code> and <code class="code">typ</code>e.
 <p>
 
-        A newly created variable has version equal to 0.
+      A newly created variable has version equal to 0.
 <p>
 
-        If <code class="code">fresh</code> is <code class="code"><span class="keyword">true</span></code> (defaults to <code class="code"><span class="keyword">false</span></code>), then a unique salt
-        is mixed to the name of variable, making it unique.
+      If <code class="code">fresh</code> is <code class="code"><span class="keyword">true</span></code> (defaults to <code class="code"><span class="keyword">false</span></code>), then a unique salt
+      is mixed to the name of variable, making it unique.
 <p>
 
-        If <code class="code">is_virtual</code> is <code class="code"><span class="keyword">true</span></code> (defaults to <code class="code"><span class="keyword">false</span></code>), then a
-        variable is virtual, i.e., it doesn't correspond to some
-        physical register or memory location and was added to a program
-        artificially.<br>
+      If <code class="code">is_virtual</code> is <code class="code"><span class="keyword">true</span></code> (defaults to <code class="code"><span class="keyword">false</span></code>), then a
+      variable is virtual, i.e., it doesn't correspond to some
+      physical register or memory location and was added to a program
+      artificially.<br>
 </div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> string</code></pre><div class="info ">
 <code class="code">name var</code> returns a name assosiated with variable<br>
 </div>
 
-<pre><span id="VALtyp"><span class="keyword">val</span> typ</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtyp">typ</a></code></pre><div class="info ">
+<pre><span id="VALtyp"><span class="keyword">val</span> typ</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></pre><div class="info ">
 <code class="code">typ var</code> returns a type assosiated with variable<br>
 </div>
 
 <pre><span id="VALis_physical"><span class="keyword">val</span> is_physical</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_physical v</code> is <code class="code"><span class="keyword">true</span></code> if a variable <code class="code">v</code> represents a
-        physical register or memory location.<br>
+<code class="code">is_physical v</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">v</code> represents a contents of a
+      physical register.<br>
 </div>
 
 <pre><span id="VALis_virtual"><span class="keyword">val</span> is_virtual</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
@@ -151,22 +151,27 @@ implements <code class="code"><span class="constructor">Regular</span></code> in
 </div>
 
 <pre><span id="VALwith_index"><span class="keyword">val</span> with_index</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code"> var ver</code> returns a variable, that is identical to
-        <code class="code">var</code>, but with version equal to <code class="code">ver</code><br>
+<code class="code">with_index v i</code> returns a variable, that is identical to
+      <code class="code">v</code>, but with the index <code class="code">i</code><br>
 </div>
 
 <pre><span id="VALindex"><span class="keyword">val</span> index</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">index v</code> returns variable's index<br>
+<code class="code">index v</code> is an index of <code class="code">v</code><br>
 </div>
 
 <pre><span id="VALbase"><span class="keyword">val</span> base</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">base var</code> returns an original variable. Essentially,
-        identical to <code class="code">with_index var 0</code><br>
+<code class="code">base v</code> returns an original variable. Essentially,
+      identical to <code class="code">with_index v 0</code>.<br>
 </div>
 
 <pre><span id="VALsame"><span class="keyword">val</span> same</span> : <code class="type"><a href="Bap.Std.Var.html#TYPEt">t</a> -> <a href="Bap.Std.Var.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">same x y</code> compares variables ignoring indices, i.e., for
-        variables <code class="code">x</code> and <code class="code">y</code> the <code class="code">same x y</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">equal
-        (base x) (base y)</code><br>
+      variables <code class="code">x</code> and <code class="code">y</code> the <code class="code">same x y</code> is <code class="code"><span class="keyword">true</span></code> iff <code class="code">equal
+      (base x) (base y)</code><br>
+</div>
+
+<pre><span class="keyword">include</span> Regular.S</pre>
+<div class="info ">
+implements <code class="code"><span class="constructor">Regular</span></code> interface<br>
 </div>
 </body></html>

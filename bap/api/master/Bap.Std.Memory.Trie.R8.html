@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
+<link rel="previous" href="Bap.Std.Memory.Trie.Stable.html">
 <link rel="next" href="Bap.Std.Memory.Trie.R16.html">
 <link rel="Up" href="Bap.Std.Memory.Trie.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -73,12 +74,13 @@
 <link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Bap.Std.Memory.Trie.R8</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a class="up" href="Bap.Std.Memory.Trie.html" title="Bap.Std.Memory.Trie">Up</a>
+<div class="navbar"><a class="pre" href="Bap.Std.Memory.Trie.Stable.html" title="Bap.Std.Memory.Trie.Stable">Previous</a>
+&nbsp;<a class="up" href="Bap.Std.Memory.Trie.html" title="Bap.Std.Memory.Trie">Up</a>
 &nbsp;<a class="post" href="Bap.Std.Memory.Trie.R16.html" title="Bap.Std.Memory.Trie.R16">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Memory.Trie.R8.html">Bap.Std.Memory.Trie.R8</a></h1>
 
-<pre><span class="keyword">module</span> R8: <code class="type"><a href="Bap.Std.Trie.S.html">Trie.S</a></code><code class="type">  with type key = t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> R8: <code class="type"><a href="Bap.Std.Trie.S.html">Std.Trie.S</a></code><code class="type">  with type key = t</code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
@@ -97,9 +99,9 @@ a key type that is used to lookup data<br>
 </div>
 
 <pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> key:<a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> data:'a -> unit</code></pre><div class="info ">
-<code class="code">add trie ~key ~data</code> adds <code class="code">data</code> associated with <code class="code">key</code>, if
-          <code class="code">trie</code> already has some data associated with the <code class="code">key</code>, then
-          it will be overwritten<br>
+<code class="code">add trie ~key ~data</code> associates <code class="code">data</code> with <code class="code">key</code>. If
+          <code class="code">trie</code> already has some value associated with <code class="code">key</code>, then
+          the value will be overwritten (rebound)<br>
 </div>
 
 <pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> ('a option -> 'a option) -> unit</code></pre><div class="info ">
@@ -107,7 +109,7 @@ a key type that is used to lookup data<br>
           <code class="code">f</code> will be called with <code class="code"><span class="constructor">Some</span> data</code>, otherwise it will be called
           with <code class="code"><span class="constructor">None</span></code>. If <code class="code">f</code> returns <code class="code"><span class="constructor">None</span></code> then there will be no data
           associated with <code class="code">key</code>, if <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> thing</code>, then <code class="code">thing</code>
-          will be bound to <code class="code">key</code><br>
+          will be associated with <code class="code">key</code><br>
 </div>
 
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> 'a option</code></pre><div class="info ">
@@ -126,16 +128,16 @@ a key type that is used to lookup data<br>
 </div>
 
 <pre><span id="VALlongest_match"><span class="keyword">val</span> longest_match</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> <a href="Bap.Std.Trie.S.html#TYPEkey">key</a> -> (int * 'a) option</code></pre><div class="info ">
-<code class="code">longest_match trie k</code> find the value associated with a
-          longest substring of a key <code class="code">k</code>. Returns a pair - a length of
-          matched key and data, associated with that key.<br>
+<code class="code">longest_match trie key</code> find a value associated with a
+          longest substring of <code class="code">key</code>. Returns a pair - a length of
+          matched key and the value, associated with that key.<br>
 </div>
 
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">length trie</code> returns the amount of entries in the <code class="code">trie</code><br>
+<code class="code">length trie</code> returns the number of values in <code class="code">trie</code><br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Bap.Std.Trie.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
 <code class="code">pp pp_val</code> creates a printer for a given value printer
           <code class="code">pp_val</code>. Example:
 <p>

@@ -80,40 +80,40 @@
 
 <pre><span class="keyword">module</span> Edge: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.Ir.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 since in IR the order of edges defines semantics, we provide
-          extra functions<br>
+        extra functions<br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">include</span> Edge</pre>
 
-<pre><span id="VALjmps"><span class="keyword">val</span> jmps</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALjmps"><span class="keyword">val</span> jmps</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">jmps dir e g</code> enumerates all jumps (including calls,
-            interrupts, indirects, etc), that occurs before if
-            <code class="code">dir = <span class="keywordsign">`</span>before</code> or after if <code class="code">dir = <span class="keywordsign">`</span>after</code> an edge <code class="code">e</code><br>
+          interrupts, indirects, etc), that occurs before if
+          <code class="code">dir = <span class="keywordsign">`</span>before</code> or after if <code class="code">dir = <span class="keywordsign">`</span>after</code> an edge <code class="code">e</code><br>
 </div>
 
-<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type">[ `after | `before ] -><br>       <a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">edges dir e g</code> enumerates all edges occurring before of
-            after an edge <code class="code">e</code> in graph <code class="code">g</code><br>
+          after an edge <code class="code">e</code> in graph <code class="code">g</code><br>
 </div>
 
-<pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
+<pre><span id="VALjmp"><span class="keyword">val</span> jmp</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> <a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code></pre><div class="info ">
 <code class="code">jmp e</code> returns a jmp term associated with edge <code class="code">e</code><br>
 </div>
 
-<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> <a href="Bap.Std.html#TYPEtid">Std.tid</a></code></pre><div class="info ">
 <code class="code">tid e</code> returns a tid of a jmp term that is associated
-            with an edge <code class="code">e</code><br>
+          with an edge <code class="code">e</code><br>
 </div>
 
-<pre><span id="VALcond"><span class="keyword">val</span> cond</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<pre><span id="VALcond"><span class="keyword">val</span> cond</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> graph -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 <code class="code">cond e g</code> computes a condition expression that is
-            asserted to be <code class="code"><span class="keyword">true</span></code> if this branch is taken.
+          asserted to be <code class="code"><span class="keyword">true</span></code> if this branch is taken.
 <p>
 
-            Note: this is not the same as a condition associated with
-            the jmp term itself, it takes into account all conditions
-            preceding the edge.<br>
+          Note: this is not the same as a condition associated with
+          the jmp term itself, it takes into account all conditions
+          preceding the edge.<br>
 </div>
 
 <pre><span class="keyword">include</span> Printable.S</pre>

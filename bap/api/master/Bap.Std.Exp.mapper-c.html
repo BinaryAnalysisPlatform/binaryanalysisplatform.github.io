@@ -80,21 +80,21 @@
 
 <pre><span name="TYPEmapper"><span class="keyword">class</span> mapper</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Exp.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 Exp mapper.
-        By default performs deep identity mapping. Non-leaf methods
-        deconstructs terms, calls corresponding methods on its parts
-        and the constructs it back. So if you're overriding a non-leaf
-        method, then make sure that you called the parent method if
-        you want a normal traversal.
+      By default performs deep identity mapping. Non-leaf methods
+      deconstructs terms, calls corresponding methods on its parts
+      and the constructs it back. So if you're overriding a non-leaf
+      method, then make sure that you called the parent method if
+      you want a normal traversal.
 <p>
 
-        A usual template for method overriding is:
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">object</span>(self)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;mapper&nbsp;<span class="keyword">as</span>&nbsp;super
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;map_X&nbsp;arg=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;x&nbsp;=&nbsp;super<span class="keywordsign">#</span>map_X&nbsp;arg&nbsp;<span class="keyword">in</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do_mapping&nbsp;x
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+      A usual template for method overriding is:
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">object</span>(self)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;mapper&nbsp;<span class="keyword">as</span>&nbsp;super
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>&nbsp;map_X&nbsp;arg=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;x&nbsp;=&nbsp;super<span class="keywordsign">#</span>map_X&nbsp;arg&nbsp;<span class="keyword">in</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do_mapping&nbsp;x
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Exp.state-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span>.state</code></a></li>
@@ -102,16 +102,16 @@ Exp mapper.
 <hr width="100%">
 
 <pre><span id="METHODmap_exp"><span class="keyword">method</span> map_exp</span> : <code class="type"><a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_load"><span class="keyword">method</span> map_load</span> : <code class="type">mem:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       addr:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_store"><span class="keyword">method</span> map_store</span> : <code class="type">mem:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       addr:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       exp:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_binop"><span class="keyword">method</span> map_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">binop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_unop"><span class="keyword">method</span> map_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">unop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_cast"><span class="keyword">method</span> map_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">cast</a> -> int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_let"><span class="keyword">method</span> map_let</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> exp:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> body:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_load"><span class="keyword">method</span> map_load</span> : <code class="type">mem:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       addr:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Std.endian</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_store"><span class="keyword">method</span> map_store</span> : <code class="type">mem:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       addr:<a href="Bap.Std.Exp.html#TYPEt">t</a> -><br>       exp:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Std.endian</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_binop"><span class="keyword">method</span> map_binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">Std.binop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_unop"><span class="keyword">method</span> map_unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">Std.unop</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_cast"><span class="keyword">method</span> map_cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">Std.cast</a> -> int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_let"><span class="keyword">method</span> map_let</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> exp:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> body:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
 <pre><span id="METHODmap_ite"><span class="keyword">method</span> map_ite</span> : <code class="type">cond:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> yes:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> no:<a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
 <pre><span id="METHODmap_extract"><span class="keyword">method</span> map_extract</span> : <code class="type">hi:int -> lo:int -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
 <pre><span id="METHODmap_concat"><span class="keyword">method</span> map_concat</span> : <code class="type"><a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_int"><span class="keyword">method</span> map_int</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_var"><span class="keyword">method</span> map_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
-<pre><span id="METHODmap_sym"><span class="keyword">method</span> map_sym</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre>
-<pre><span id="METHODmap_unknown"><span class="keyword">method</span> map_unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre></body></html>
+<pre><span id="METHODmap_int"><span class="keyword">method</span> map_int</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_var"><span class="keyword">method</span> map_var</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre>
+<pre><span id="METHODmap_sym"><span class="keyword">method</span> map_sym</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre>
+<pre><span id="METHODmap_unknown"><span class="keyword">method</span> map_unknown</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre></body></html>

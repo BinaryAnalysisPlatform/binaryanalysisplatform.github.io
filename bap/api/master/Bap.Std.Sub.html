@@ -85,21 +85,21 @@ Subroutine.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code> </pre>
 <div class="info ">
 Subroutine is a set of blocks.  The first block of a function is
-        considered an entry block.<br>
+      considered an entry block.<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> ?name:string -> unit -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -> ?name:string -> unit -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?name ()</code> creates an empty subroutine with an optional
-        name.<br>
+      name.<br>
 </div>
 
-<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">block</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a> -> <a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEblock">Std.block</a> -> <a href="Bap.Std.html#TYPEcfg">Std.cfg</a> -> <a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code></pre><div class="info ">
 <code class="code">lift entry</code> takes an basic block of assembler instructions,
-        as an entry and lifts it to the subroutine term.<br>
+      as an entry and lifts it to the subroutine term.<br>
 </div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> string</code></pre><div class="info ">
@@ -112,107 +112,107 @@ updates subroutine name<br>
 
 <pre><span id="VALssa"><span class="keyword">val</span> ssa</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">ssa sub</code> returns <code class="code">sub</code> in SSA form. If program is already in
-        SSA, then do nothing (see also <a href="Bap.Std.Sub.html#VALis_ssa"><code class="code"><span class="constructor">Sub</span>.is_ssa</code></a>). The underlying
-        algorithm produces a semi-pruned SSA form. To represent
-        different versions of the same variable we use <a href="Bap.Std.Var.html">variable
-        versions</a>. Any definition of a variable increases its version
-        number. So, the zero version is reserved for variables that
-        weren't defined before the first use.<br>
+      SSA, then do nothing (see also <a href="Bap.Std.Sub.html#VALis_ssa"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Sub</span>.is_ssa</code></a>). The underlying
+      algorithm produces a semi-pruned SSA form. To represent
+      different versions of the same variable we use <a href="Bap.Std.Var.html">variable
+      versions</a>. Any definition of a variable increases its version
+      number. So, the zero version is reserved for variables that
+      weren't defined before the first use.<br>
 </div>
 
 <pre><span id="VALis_ssa"><span class="keyword">val</span> is_ssa</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">is_ssa sub</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">sub</code> was transformed into an SSA
-        form. This is O(1) predicate that doesn't really check, that
-        a subroutine is in an SSA form, so it is a responsibility of
-        a user to preserve the SSA form on any transformation.<br>
+      form. This is O(1) predicate that doesn't really check, that
+      a subroutine is in an SSA form, so it is a responsibility of
+      a user to preserve the SSA form on any transformation.<br>
 </div>
 
-<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Var.Set.t</code></pre><div class="info ">
+<pre><span id="VALfree_vars"><span class="keyword">val</span> free_vars</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Std.Var.Set.t</code></pre><div class="info ">
 <code class="code">free_vars sub</code> computes a set of variables that are free in
-        a given subroutine <code class="code">sub</code>. The variable is considered free if it
-        is used before defined or is not locally bound.  If <code class="code">sub</code> is in
-        an SSA form, then the set is computed trivially, thanks to a
-        naming scheme. If program is not in an SSA form, then a BFS on a
-        dominators tree is used.<br>
+      a given subroutine <code class="code">sub</code>. The variable is considered free if it
+      is used before defined or is not locally bound.  If <code class="code">sub</code> is in
+      an SSA form, then the set is computed trivially, thanks to a
+      naming scheme. If program is not in an SSA form, then a BFS on a
+      dominators tree is used.<br>
 </div>
 
-<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Graphs.Tid.t</code></pre><div class="info ">
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> Std.Graphs.Tid.t</code></pre><div class="info ">
 <code class="code">to_graph sub</code> builds a graph of subroutine <code class="code">sub</code>. Graph nodes
-        are block term identifiers, and edges are labeled with term
-        identifiers of the jmp terms, that corresponds to the edge.
-        This representation is useful, if you need to compute some
-        graph relation on a subroutine, that will be later used to
-        perform its incremental transformation.<br>
+      are block term identifiers, and edges are labeled with term
+      identifiers of the jmp terms, that corresponds to the edge.
+      This representation is useful, if you need to compute some
+      graph relation on a subroutine, that will be later used to
+      perform its incremental transformation.<br>
 </div>
 
-<pre><span id="VALto_cfg"><span class="keyword">val</span> to_cfg</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a></code></pre><div class="info ">
+<pre><span id="VALto_cfg"><span class="keyword">val</span> to_cfg</span> : <code class="type"><a href="Bap.Std.Sub.html#TYPEt">t</a> -> <a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a></code></pre><div class="info ">
 <code class="code">to_cfg sub</code> builds a graph representation of a subroutine
-        <code class="code">sub</code>. All graph operations are mapped to corresponding
-        <code class="code"><span class="constructor">Term</span></code> operations. See <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code> for more information.<br>
+      <code class="code">sub</code>. All graph operations are mapped to corresponding
+      <code class="code"><span class="constructor">Term</span></code> operations. See <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code> for more information.<br>
 </div>
 
-<pre><span id="VALof_cfg"><span class="keyword">val</span> of_cfg</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Graphs.Ir.t</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_cfg"><span class="keyword">val</span> of_cfg</span> : <code class="type"><a href="Bap.Std.Graphs.Ir.html#TYPEt">Std.Graphs.Ir.t</a> -> <a href="Bap.Std.Sub.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_cfg cfg</code> extracts a <code class="code">sub term</code> from a given graph <code class="code">cfg</code>.
-        Since <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code> module builds term incrementally this
-        operation is just a projection, i.e., it has O(0) complexity.<br>
+      Since <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Ir</span></code> module builds term incrementally this
+      operation is just a projection, i.e., it has O(0) complexity.<br>
 </div>
 
-<pre><span id="VALaliases"><span class="keyword">val</span> aliases</span> : <code class="type">string list <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALaliases"><span class="keyword">val</span> aliases</span> : <code class="type">string list <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 other names for the given subroutine.<br>
 </div>
 
-<pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine doesn't examine any values except its arguments,
-        and have no effects except the return value. Basically this is
-        just slightly more strict class than the pure attribute below,
-        since function is not allowed to read global memory.  Note that a
-        function that has pointer arguments and examines the data
-        pointed to is not const. Likewise, a function that
-        calls a non-const function usually is not be const. It does not
-        make sense for a const function to return void<br>
+      and have no effects except the return value. Basically this is
+      just slightly more strict class than the pure attribute below,
+      since function is not allowed to read global memory.  Note that a
+      function that has pointer arguments and examines the data
+      pointed to is not const. Likewise, a function that
+      calls a non-const function usually is not be const. It does not
+      make sense for a const function to return void<br>
 </div>
 
-<pre><span id="VALpure"><span class="keyword">val</span> pure</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALpure"><span class="keyword">val</span> pure</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine have no effects except the return value and their
-        return value depends only on the parameters and/or global
-        variables.<br>
+      return value depends only on the parameters and/or global
+      variables.<br>
 </div>
 
-<pre><span id="VALstub"><span class="keyword">val</span> stub</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALstub"><span class="keyword">val</span> stub</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine is a stub<br>
 </div>
 
-<pre><span id="VALextern"><span class="keyword">val</span> extern</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALextern"><span class="keyword">val</span> extern</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine is visible outside of the compilation unit<br>
 </div>
 
-<pre><span id="VALleaf"><span class="keyword">val</span> leaf</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALleaf"><span class="keyword">val</span> leaf</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a subroutine doesn't contain any calls in any disguise, i.e.,
-        no longjmps, indirect calls, exceptions, etc.<br>
+      no longjmps, indirect calls, exceptions, etc.<br>
 </div>
 
-<pre><span id="VALmalloc"><span class="keyword">val</span> malloc</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALmalloc"><span class="keyword">val</span> malloc</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine is malloc-like, i.e., the pointer P returned
-        by the subroutine cannot alias any other pointer valid when the
-        function returns, and moreover no pointers to valid objects occur
-        in any storage addressed by P.<br>
+      by the subroutine cannot alias any other pointer valid when the
+      function returns, and moreover no pointers to valid objects occur
+      in any storage addressed by P.<br>
 </div>
 
-<pre><span id="VALnoreturn"><span class="keyword">val</span> noreturn</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALnoreturn"><span class="keyword">val</span> noreturn</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine will not return (either loop infinitely or abort
-        a program)<br>
+      a program)<br>
 </div>
 
-<pre><span id="VALreturns_twice"><span class="keyword">val</span> returns_twice</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALreturns_twice"><span class="keyword">val</span> returns_twice</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine may return more than one time. Examples of such
-        functions are setjmp and vfork<br>
+      functions are setjmp and vfork<br>
 </div>
 
-<pre><span id="VALnothrow"><span class="keyword">val</span> nothrow</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALnothrow"><span class="keyword">val</span> nothrow</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 A subroutine doesn't throw exceptions<br>
 </div>
 
-<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALentry_point"><span class="keyword">val</span> entry_point</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a subroutine is the binary entry point<br>
 </div>
 

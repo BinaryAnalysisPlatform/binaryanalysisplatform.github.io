@@ -88,16 +88,16 @@
 <pre><span id="TYPEbuffer"><span class="keyword">type</span> <code class="type">'a</code> buffer</span> = <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">Bap_dwarf.Std.Dwarf.Buffer.t</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">endian</a> -><br>       (<a href="Bap_dwarf.Std.Dwarf.html#TYPEsection">Bap_dwarf.Std.Dwarf.section</a> * 'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEbuffer">buffer</a>) list -><br>       'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEendian">Std.endian</a> -><br>       (<a href="Bap_dwarf.Std.Dwarf.html#TYPEsection">Bap_dwarf.Std.Dwarf.section</a> * 'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEbuffer">buffer</a>) list -><br>       'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">create endian sections</code> creates data representation from a assoc list
           of sections. Will complain if there're repeating sections.<br>
 </div>
 
-<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> -><br>       <a href="Bap_dwarf.Std.Dwarf.html#TYPEsection">Bap_dwarf.Std.Dwarf.section</a> -><br>       'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEbuffer">buffer</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALsection"><span class="keyword">val</span> section</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> -><br>       <a href="Bap_dwarf.Std.Dwarf.html#TYPEsection">Bap_dwarf.Std.Dwarf.section</a> -><br>       'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEbuffer">buffer</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">section data</code> lookups for a <code class="code">section</code> in <code class="code">data</code><br>
 </div>
 
-<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Std.endian</a></code></pre><div class="info ">
 <code class="code">endian data</code> the endianness of <code class="code">data</code><br>
 </div>
 </body></html>

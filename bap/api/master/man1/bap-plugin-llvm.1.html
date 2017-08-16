@@ -32,6 +32,8 @@ Uses LLVM library to provide disassembler and file loader
 <H2>OPTIONS</H2>
 
 <DL COMPACT>
+<DT><B>--base</B>=<I>VAL</I><DD>
+Replace image base address. If not set, a reasonable default corresponded to a file type will be used. For example, for any executable file a default image base is equal to lowest image virtual address. For relocatable files a default image base is equal to 0xC0000000.
 <DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
 Show this help in format <I>FMT</I> (pager, plain or groff).
 <DT><B>--x86-syntax</B>=<I>VAL</I> (absent=att)<DD>
@@ -42,7 +44,7 @@ Choose style of code for x86 syntax between either `att' or `intel'
 
 <P>
 
-<B><A HREF="../man1/bap-plugin-elf-loader.1.html">bap-plugin-elf-loader</A></B>(1)
+<B><A HREF="../man1/bap-plugin-elf-loader.1.html">bap-plugin-elf-loader</A></B>(1), <B><A HREF="../man1/bap-plugin-relocatable.1.html">bap-plugin-relocatable</A></B>(1)
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
@@ -57,6 +59,6 @@ Choose style of code for x86 syntax between either `att' or `intel'
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 21:55:16 GMT, May 08, 2017
+Time: 17:10:14 GMT, August 16, 2017
 </BODY>
 </HTML>

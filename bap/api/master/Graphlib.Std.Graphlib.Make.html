@@ -78,7 +78,7 @@
 </div>
 <h1>Functor <a href="type_Graphlib.Std.Graphlib.Make.html">Graphlib.Std.Graphlib.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.S.html">Opaque.S</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type">T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graph.html">Graph</a></code><code class="type"> 
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Opaque.S.html">Std.Opaque.S</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">Edge</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="type"><a href="Graphlib.Std.Graph.html">Std.Graph</a></code><code class="type"> 
       with type node = Node.t
        and type Node.label = Node.t
        and type Edge.label = Edge.t</code></pre><div class="info module top">
@@ -106,12 +106,12 @@
 <td align="center" valign="top" width="15%">
 <code>Node</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Regular.Std.Opaque.S.html">Opaque.S</a></code>
+<td><code class="type"><a href="Regular.Std.Opaque.S.html">Std.Opaque.S</a></code>
 <tr>
 <td align="center" valign="top" width="15%">
 <code>Edge</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type">T</code>
+<td><code class="type">Std.T</code>
 </table>
 </td>
 </tr>
@@ -196,13 +196,13 @@ type of edges<br>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Node.html">Node</a>: <code class="type"><a href="Graphlib.Std.Node.html">Node</a></code><code class="type">  with type graph = t
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Node.html">Node</a>: <code class="type"><a href="Graphlib.Std.Node.html">Std.Node</a></code><code class="type">  with type graph = t
                         and type t = node
                         and type edge = edge</code></pre><div class="info">
 Graph nodes.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Edge.html">Edge</a>: <code class="type"><a href="Graphlib.Std.Edge.html">Edge</a></code><code class="type">  with type graph = t
+<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Edge.html">Edge</a>: <code class="type"><a href="Graphlib.Std.Edge.html">Std.Edge</a></code><code class="type">  with type graph = t
                         and type t = edge
                         and type node = node</code></pre><div class="info">
 Graph edges
@@ -212,11 +212,11 @@ Graph edges
 <code class="code">empty</code> is an empty graph<br>
 </div>
 
-<pre><span id="VALnodes"><span class="keyword">val</span> nodes</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEnode">node</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALnodes"><span class="keyword">val</span> nodes</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEnode">node</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">nodes g</code> returns all nodes of graph <code class="code">g</code> in an unspecified order<br>
 </div>
 
-<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">edges g</code> returns all edges of graph <code class="code">g</code> in an unspecified order<br>
 </div>
 

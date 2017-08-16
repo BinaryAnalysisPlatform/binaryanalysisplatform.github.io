@@ -92,7 +92,7 @@ A parser interface.
 <pre><span id="TYPEdecls"><span class="keyword">type</span> <code class="type"></code>decls</span> = <code class="type">(string * <a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a>) list</code> </pre>
 
 
-<pre><span id="TYPEparser"><span class="keyword">type</span> <code class="type"></code>parser</span> = <code class="type"><a href="Bap_c_size.base-c.html">Bap_c_size.base</a> -> string -> <a href="Bap_c_parser.html#TYPEdecls">decls</a> Or_error.t</code> </pre>
+<pre><span id="TYPEparser"><span class="keyword">type</span> <code class="type"></code>parser</span> = <code class="type"><a href="Bap_c_size.base-c.html">Bap_c_size.base</a> -> string -> <a href="Bap_c_parser.html#TYPEdecls">decls</a> Std.Or_error.t</code> </pre>
 
 
 <pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap_c_parser.html#TYPEparser">parser</a></code></pre><div class="info ">

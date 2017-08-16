@@ -108,17 +108,18 @@ Plugin loader.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type">[ `Errored of string * Error.t<br>       | `Linking of string<br>       | `Loaded of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Loading of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Opening of string ]</code> </pre>
+<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type">[ `Errored of string * Std.Error.t<br>       | `Linking of string<br>       | `Loaded of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Loading of <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a><br>       | `Opening of string ]</code> </pre>
 
 
-<pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">?library:string list -> unit -> <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a> list</code></pre><div class="info ">
-<code class="code">list ?library ()</code> scans a list of directories, provided by a
+<pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">?env:string list -><br>       ?provides:string list -><br>       ?library:string list -> unit -> <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a> list</code></pre><div class="info ">
+<code class="code">list ?env ~provides:features ?library ()</code> scans a list of directories, provided by a
         <code class="code">library</code> parameter, and, finally, <code class="code"><span class="constructor">Config</span>.libdir</code> for files with
-        a <code class="code">plugin</code> extension.<br>
+        a <code class="code">plugin</code> extension. Returns all plugins that provide a
+        superset of <code class="code">features</code> and has constrains that are subset of <code class="code">env</code>.<br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?don't_setup_handlers:bool -><br>       ?library:string list -> ?exclude:string list -> unit -> unit</code></pre><div class="info ">
-<code class="code">run ?library ?exclude</code> load and execute all plugins that can
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?env:string list -><br>       ?provides:string list -><br>       ?don't_setup_handlers:bool -><br>       ?library:string list -> ?exclude:string list -> unit -> unit</code></pre><div class="info ">
+<code class="code">run ?env ?provides ?library ?exclude</code> load and execute all plugins that can
         be found in the <code class="code">library</code> paths, and are not in the <code class="code">exclude</code>
         list. The default event handler will abort the program if
         there is any <code class="code"><span class="constructor">Errored</span></code> event occurs, a message will be printed
@@ -127,8 +128,8 @@ Plugin loader.
         setup a more fine granular error handling.<br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?library:string list -><br>       ?exclude:string list -><br>       unit -><br>       (<a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a>, string * Error.t)<br>       Result.t list</code></pre><div class="info ">
-<code class="code">load ?library ?exclude</code> is like <code class="code">run</code>, but will not setup
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?env:string list -><br>       ?provides:string list -><br>       ?library:string list -><br>       ?exclude:string list -><br>       unit -><br>       (<a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a>, string * Std.Error.t)<br>       Std.Result.t list</code></pre><div class="info ">
+<code class="code">load ?env ?provides ?library ?exclude</code> is like <code class="code">run</code>, but will not setup
         handlers, and will return a result of loading. Each element of
         the list is either an <code class="code"><span class="constructor">Ok</span> plugin</code> if a <code class="code">plugin</code> was
         successfully loaded, or <code class="code"><span class="constructor">Error</span> (name,error)</code> if a plugin with

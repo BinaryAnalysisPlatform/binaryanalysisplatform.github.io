@@ -87,33 +87,33 @@ Subroutine argument.<br>
 <hr width="100%">
 <br>
 In the IR model subroutines are not functions, that has a return
-        value, but a more general subroutine that has a set of
-        arguments, that can be used for  input, output or both
-        purposes.<br>
+      value, but a more general subroutine that has a set of
+      arguments, that can be used for  input, output or both
+      purposes.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?intent:<a href="Bap.Std.html#TYPEintent">intent</a> -> <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -><br>       ?intent:<a href="Bap.Std.html#TYPEintent">Std.intent</a> -> <a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?intent var exp</code> creates an argument. If intent is
-        not specified it is left unknown.<br>
+      not specified it is left unknown.<br>
 </div>
 
-<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 <code class="code">lhs arg</code> returns a variable associated with the argument.<br>
 </div>
 
-<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 <code class="code">rhs arg</code> returns an expression to which argument is
-        bound.<br>
+      bound.<br>
 </div>
 
-<pre><span id="VALintent"><span class="keyword">val</span> intent</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEintent">intent</a> option</code></pre><div class="info ">
+<pre><span id="VALintent"><span class="keyword">val</span> intent</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEintent">Std.intent</a> option</code></pre><div class="info ">
 <code class="code">intent arg</code> returns the argument intent. The <code class="code"><span class="constructor">None</span></code> value
-        denontes unknown intent.<br>
+      denontes unknown intent.<br>
 </div>
 
-<pre><span id="VALwith_intent"><span class="keyword">val</span> with_intent</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEintent">intent</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALwith_intent"><span class="keyword">val</span> with_intent</span> : <code class="type"><a href="Bap.Std.Arg.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEintent">Std.intent</a> -> <a href="Bap.Std.Arg.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">with_intent intent arg</code> updates argument intent<br>
 </div>
 
@@ -123,24 +123,24 @@ removes the intent from an argument<br>
 <br>
 <h2 id="2_Attributes">Attributes</h2><br>
 
-<pre><span id="VALwarn_unused"><span class="keyword">val</span> warn_unused</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALwarn_unused"><span class="keyword">val</span> warn_unused</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a caller of the subroutine must use an argument tagged with
-        this attribute. This is useful for subroutines where not
-        checking the result is either a security problem or always a
-        bug, such as <code class="code">realloc</code><br>
+      this attribute. This is useful for subroutines where not
+      checking the result is either a security problem or always a
+      bug, such as <code class="code">realloc</code><br>
 </div>
 
-<pre><span id="VALalloc_size"><span class="keyword">val</span> alloc_size</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALalloc_size"><span class="keyword">val</span> alloc_size</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 the size of allocated memory is the product of arguments
-        marked with <code class="code">alloc_size</code> attribute<br>
+      marked with <code class="code">alloc_size</code> attribute<br>
 </div>
 
-<pre><span id="VALformat"><span class="keyword">val</span> format</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALformat"><span class="keyword">val</span> format</span> : <code class="type">string <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 format(DSL) the specified argument of a subroutine is
-        actually a format string written in a corresponding DSL.<br>
+      actually a format string written in a corresponding DSL.<br>
 </div>
 
-<pre><span id="VALnonnull"><span class="keyword">val</span> nonnull</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALnonnull"><span class="keyword">val</span> nonnull</span> : <code class="type">unit <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a contract requirement that this argument is not NULL.<br>
 </div>
 

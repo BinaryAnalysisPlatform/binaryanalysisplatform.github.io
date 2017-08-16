@@ -82,8 +82,8 @@
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Result.S.html">Monads.Std.Monad.Result.S</a></pre>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.T.html">T</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Monad.Monad</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Exception.T.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Result.S.html">Monad.Result.S</a></code><code class="type"> 
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.T.html">T</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Exception.T.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Result.S.html">Std.Monad.Result.S</a></code><code class="type"> 
           with type 'a t := 'a T(M).t
            and type 'a m := 'a T(M).m
            and type 'a e := 'a T(M).e

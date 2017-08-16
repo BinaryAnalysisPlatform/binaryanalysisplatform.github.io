@@ -80,15 +80,15 @@
 An interface that a backend shall implement.
 <p>
 
-        The functions provided by a loader return an OGRE document,
-        wrapped into option and error monads, thus the three outcomes
-        are possible with the following interpretation:
+      The functions provided by a loader return an OGRE document,
+      wrapped into option and error monads, thus the three outcomes
+      are possible with the following interpretation:
 <p>
 <ul>
 <li><code class="code"><span class="constructor">Ok</span> <span class="constructor">None</span></code> - a loader doesn't know how handle files of this
-          type.</li>
+        type.</li>
 <li><code class="code"><span class="constructor">Ok</span> (<span class="constructor">Some</span> doc)</code> - a loader was able to obtain some
-          information from the input.</li>
+        information from the input.</li>
 </ul>
 <ul>
 <li><code class="code"><span class="constructor">Error</span> err</code> - a file was corrupted, according to the loader.</li>
@@ -97,11 +97,11 @@ An interface that a backend shall implement.
 </div>
 <hr width="100%">
 
-<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> option Or_error.t</code></pre><div class="info ">
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> option Std.Or_error.t</code></pre><div class="info ">
 <code class="code">from_file name</code> loads a file with the given <code class="code">name</code>.<br>
 </div>
 
-<pre><span id="VALfrom_data"><span class="keyword">val</span> from_data</span> : <code class="type">Bigstring.t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> option Or_error.t</code></pre><div class="info ">
+<pre><span id="VALfrom_data"><span class="keyword">val</span> from_data</span> : <code class="type">Std.Bigstring.t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> option Std.Or_error.t</code></pre><div class="info ">
 <code class="code">from_data data</code> loads image from the specified array of bytes.<br>
 </div>
 </body></html>

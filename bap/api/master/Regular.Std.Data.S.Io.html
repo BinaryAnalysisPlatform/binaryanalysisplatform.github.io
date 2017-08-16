@@ -83,51 +83,51 @@ Input/Output functions for the given datum.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">?ver:string -> ?fmt:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a></code></pre><div class="info ">
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">?ver:string -> ?fmt:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a></code></pre><div class="info ">
 <code class="code">read ?ver ?fmt file</code> reads datum from a <code class="code">file</code><br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?ver:string -><br>       ?fmt:string -> in_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a></code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?ver:string -><br>       ?fmt:string -> Std.in_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a></code></pre><div class="info ">
 <code class="code">load ?ver ?fmt channel</code> loads datum from the input channel<br>
 </div>
 
-<pre><span id="VALload_all"><span class="keyword">val</span> load_all</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       ?rev:bool -> in_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> list</code></pre><div class="info ">
+<pre><span id="VALload_all"><span class="keyword">val</span> load_all</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       ?rev:bool -> Std.in_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> list</code></pre><div class="info ">
 <code class="code">read_all ?ver ?fmt ?rev channel</code> reads a sequence of datums
             stored in the storage accessed via <code class="code">channel</code> and returns it as a
             list. If <code class="code">rev</code> is <code class="code"><span class="keyword">true</span></code> (defaults to <code class="code"><span class="keyword">false</span></code>) then a list will
             be reversed (slightly faster).<br>
 </div>
 
-<pre><span id="VALscan"><span class="keyword">val</span> scan</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       in_channel -> unit -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> option</code></pre><div class="info ">
+<pre><span id="VALscan"><span class="keyword">val</span> scan</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       Std.in_channel -> unit -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> option</code></pre><div class="info ">
 <code class="code">scan ?ver ?fmt channel</code> creates a stream of data, that
             are loaded consequently from the channel<br>
 </div>
 
-<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type">?ver:string -> ?fmt:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type">?ver:string -> ?fmt:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> -> unit</code></pre><div class="info ">
 <code class="code">write ?ver ?fmt file datum</code> writes the <code class="code">datum</code> to the <code class="code">file</code><br>
 </div>
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?ver:string -><br>       ?fmt:string -> out_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?ver:string -><br>       ?fmt:string -> Std.out_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> -> unit</code></pre><div class="info ">
 <code class="code">save ?ver ?fmt channel datum</code> saves the <code class="code">datum</code> to the <code class="code">channel</code><br>
 </div>
 
-<pre><span id="VALsave_all"><span class="keyword">val</span> save_all</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       out_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> list -> unit</code></pre><div class="info ">
+<pre><span id="VALsave_all"><span class="keyword">val</span> save_all</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       Std.out_channel -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> list -> unit</code></pre><div class="info ">
 <code class="code">save_all ?ver ?fmt data channel</code> saves a list of data into
             a <code class="code">channel</code><br>
 </div>
 
-<pre><span id="VALdump"><span class="keyword">val</span> dump</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       out_channel -> (unit -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> option) -> unit</code></pre><div class="info ">
+<pre><span id="VALdump"><span class="keyword">val</span> dump</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       Std.out_channel -> (unit -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> option) -> unit</code></pre><div class="info ">
 <code class="code">dump ?ver ?fmt chan stream</code> dumps a <code class="code">stream</code> (represented
             by a <code class="code">next</code> function) into channel.<br>
 </div>
 
-<pre><span id="VALshow"><span class="keyword">val</span> show</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALshow"><span class="keyword">val</span> show</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> -> unit</code></pre><div class="info ">
 <code class="code">show ?ver ?fmt datum</code> saves datum to standard output
             channel, using a <code class="code">default_printer</code> if <code class="code">fmt</code> is not
             specified. Does nothing the printer is not set up.<br>
 </div>
 
-<pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">?ver:string -><br>       ?fmt:string -> Format.formatter -> <a href="Regular.Std.Data.S.html#TYPEt">Data.S.t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">?ver:string -><br>       ?fmt:string -> Format.formatter -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> -> unit</code></pre><div class="info ">
 <code class="code">print ?ver ?fmt ppf</code> prints datum to a given formatter, using
             a <code class="code">default_printer</code> if <code class="code">fmt</code> is left unspecified.<br>
 </div>

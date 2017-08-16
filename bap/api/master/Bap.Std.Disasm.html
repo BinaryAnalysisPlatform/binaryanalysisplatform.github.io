@@ -83,66 +83,66 @@
 
 <pre><span class="keyword">module</span> Disasm: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Disassembled program.
-      An interface for diassembling things.<br>
+    An interface for diassembling things.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdisasm">disasm</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdisasm">Std.disasm</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEcfg">cfg</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEcfg">Std.cfg</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create cfg</code><br>
 </div>
 
-<pre><span id="VALof_mem"><span class="keyword">val</span> of_mem</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_mem"><span class="keyword">val</span> of_mem</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">Std.brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">Std.rooter</a> -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">disassemble ?roots arch mem</code> disassemble provided memory region
-        <code class="code">mem</code> using best available algorithm and backend for the specified
-        <code class="code">arch</code>. Roots, if provided, should point to memory regions, that
-        are believed to contain code. At best, this should be a list of
-        function starts. If no roots are provided, then the starting
-        address of the provided memory <code class="code">mem</code> will be used as a root.
+      <code class="code">mem</code> using best available algorithm and backend for the specified
+      <code class="code">arch</code>. Roots, if provided, should point to memory regions, that
+      are believed to contain code. At best, this should be a list of
+      function starts. If no roots are provided, then the starting
+      address of the provided memory <code class="code">mem</code> will be used as a root.
 <p>
 
-        The returned value will contain all memory reachable from the
-        a given set of roots, at our best knowledge.<br>
+      The returned value will contain all memory reachable from the
+      a given set of roots, at our best knowledge.<br>
 </div>
 
-<pre><span id="VALof_image"><span class="keyword">val</span> of_image</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -><br>       <a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_image"><span class="keyword">val</span> of_image</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">Std.brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">Std.rooter</a> -><br>       <a href="Bap.Std.html#TYPEimage">Std.image</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">disassemble_image image</code> disassemble a given image.
-        Will take executable segments of the image and disassemble it,
-        applying <code class="code">disassemble</code> function. If no roots are specified, then
-        symbol table will be used as a source of roots. If file doesn't
-        contain one, then entry point will be used.<br>
+      Will take executable segments of the image and disassemble it,
+      applying <code class="code">disassemble</code> function. If no roots are specified, then
+      symbol table will be used as a source of roots. If file doesn't
+      contain one, then entry point will be used.<br>
 </div>
 
-<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">rooter</a> -><br>       ?loader:string -> string -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">?backend:string -><br>       ?brancher:<a href="Bap.Std.html#TYPEbrancher">Std.brancher</a> -><br>       ?rooter:<a href="Bap.Std.html#TYPErooter">Std.rooter</a> -><br>       ?loader:string -> string -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">disassemble_file ?roots path</code> takes a path to a binary and
-        disassembles it<br>
+      disassembles it<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Disasm.With_exn.html">With_exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 <code class="code"><span class="constructor">With_exn</span>.f</code> is the same as <code class="code">f</code> except that it throws an
-        exception instead of returning <code class="code"><span class="constructor">Error</span></code>.
+      exception instead of returning <code class="code"><span class="constructor">Error</span></code>.
 </div>
 
 <pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.Disasm.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">merge d1 d2</code> is a union of control flow graphs and erros of
-        the two disassemblers.<br>
+      the two disassemblers.<br>
 </div>
 
-<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALinsns"><span class="keyword">val</span> insns</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * <a href="Bap.Std.html#TYPEinsn">Std.insn</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 returns all instructions that was successfully decoded in an
-        ascending order of their addresses. Each instruction is
-        accompanied with its block of memory.<br>
+      ascending order of their addresses. Each instruction is
+      accompanied with its block of memory.<br>
 </div>
 
-<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">cfg</a></code></pre><div class="info ">
+<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.Disasm.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEcfg">Std.cfg</a></code></pre><div class="info ">
 A whole program CFG.<br>
 </div>
 <br>
 <h2 id="2_Tags">Tags</h2><br>
 
-<pre><span id="VALinsn"><span class="keyword">val</span> insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALinsn"><span class="keyword">val</span> insn</span> : <code class="type"><a href="Bap.Std.html#TYPEinsn">Std.insn</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 machine instruction.<br>
 </div>
 </body></html>

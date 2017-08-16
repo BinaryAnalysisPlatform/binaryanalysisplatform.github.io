@@ -76,7 +76,7 @@
 &nbsp;</div>
 <h1>Class <a href="type_Bap.Std.Bili.S.t.html">Bap.Std.Bili.S.t</a></h1>
 
-<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a>]</code> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bili.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
+<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Std.Bili.context</a>]</code> t</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bili.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 Base class for BIL interpreters<br>
 </div>
 <b>Inherits</b><ul>
@@ -84,11 +84,11 @@ Base class for BIL interpreters<br>
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODeval"><span class="keyword">method</span> eval</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a) <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODeval_stmt"><span class="keyword">method</span> eval_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">stmt</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODeval_move"><span class="keyword">method</span> eval_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODeval_jmp"><span class="keyword">method</span> eval_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODeval_while"><span class="keyword">method</span> eval_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> body:<a href="Bap.Std.html#TYPEstmt">stmt</a> list -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
-<pre><span id="METHODeval_if"><span class="keyword">method</span> eval_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.html#TYPEstmt">stmt</a> list -> no:<a href="Bap.Std.html#TYPEstmt">stmt</a> list -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval"><span class="keyword">method</span> eval</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list -> (#<a href="Bap.Std.Bili.context-c.html">Std.Bili.context</a> as 'a) <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval_stmt"><span class="keyword">method</span> eval_stmt</span> : <code class="type"><a href="Bap.Std.html#TYPEstmt">Std.stmt</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval_move"><span class="keyword">method</span> eval_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval_jmp"><span class="keyword">method</span> eval_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval_while"><span class="keyword">method</span> eval_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> body:<a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
+<pre><span id="METHODeval_if"><span class="keyword">method</span> eval_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       yes:<a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list -> no:<a href="Bap.Std.html#TYPEstmt">Std.stmt</a> list -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
 <pre><span id="METHODeval_cpuexn"><span class="keyword">method</span> eval_cpuexn</span> : <code class="type">int -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre>
 <pre><span id="METHODeval_special"><span class="keyword">method</span> eval_special</span> : <code class="type">string -> 'a <a href="Bap.Std.Bili.S.html#TYPEu">u</a></code></pre></body></html>

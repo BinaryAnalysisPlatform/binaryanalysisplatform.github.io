@@ -82,31 +82,31 @@
 Default Logger.
 <p>
 
-      The logger will capture <a href="Bap.Std.Event.Log.html"><code class="code"><span class="constructor">Event</span>.<span class="constructor">Log</span></code></a> events and print them into
-      the log file, that is located at <code class="code">$<span class="constructor">BAP_LOG_DIR</span>/log</code> or, if
-      <code class="code">$<span class="constructor">BAP_LOG_DIR</span></code> is undefined, then it is in the
-      <code class="code">$<span class="constructor">XDG_STATE_HOME</span>/bap/log</code> folder, and if this variable is also
-      undefined, then the log will be at <code class="code">$<span class="constructor">HOME</span>/.local/stat/bap</code> or if
-      even $HOME is undefined, then it will be in the system
-      temporary folder under name <code class="code">bap.log</code>.
+    The logger will capture <a href="Bap.Std.Event.Log.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Event</span>.<span class="constructor">Log</span></code></a> events and print them into
+    the log file, that is located at <code class="code">$<span class="constructor">BAP_LOG_DIR</span>/log</code> or, if
+    <code class="code">$<span class="constructor">BAP_LOG_DIR</span></code> is undefined, then it is in the
+    <code class="code">$<span class="constructor">XDG_STATE_HOME</span>/bap/log</code> folder, and if this variable is also
+    undefined, then the log will be at <code class="code">$<span class="constructor">HOME</span>/.local/stat/bap</code> or if
+    even $HOME is undefined, then it will be in the system
+    temporary folder under name <code class="code">bap.log</code>.
 <p>
 
-      Every time a logger is started the logs in the folder will be
-      rotated. Previous logs will be accessed as <code class="code"><span class="constructor">NAME</span>~<span class="constructor">AGE</span></code>,
-      where <code class="code"><span class="constructor">NAME</span></code> is the name of the log file, and <code class="code"><span class="constructor">AGE</span></code> is the age
-      of the log (in calls to <code class="code">start</code> function). For example, if the
-      name is <code class="code">log</code>, then the previous log will be in the file
-      <code class="code">log~1</code>.
+    Every time a logger is started the logs in the folder will be
+    rotated. Previous logs will be accessed as <code class="code"><span class="constructor">NAME</span>~<span class="constructor">AGE</span></code>,
+    where <code class="code"><span class="constructor">NAME</span></code> is the name of the log file, and <code class="code"><span class="constructor">AGE</span></code> is the age
+    of the log (in calls to <code class="code">start</code> function). For example, if the
+    name is <code class="code">log</code>, then the previous log will be in the file
+    <code class="code">log~1</code>.
 <p>
 
-      The maximum age of the log can be set via environment variable
-      <code class="code"><span class="constructor">BAP_BACKLOG</span></code> and it defaults to <code class="code">99</code>, i.e., the oldest log file
-      will have name <code class="code">log~99</code>.<br>
+    The maximum age of the log can be set via environment variable
+    <code class="code"><span class="constructor">BAP_BACKLOG</span></code> and it defaults to <code class="code">99</code>, i.e., the oldest log file
+    will have name <code class="code">log~99</code>.<br>
 </div>
 <hr width="100%">
 
 <pre><span id="VALstart"><span class="keyword">val</span> start</span> : <code class="type">unit -> unit</code></pre><div class="info ">
 Start logging events. Only events of type <code class="code"><span class="constructor">Event</span>.<span class="constructor">Log</span></code> are
-        logged.<br>
+      logged.<br>
 </div>
 </body></html>

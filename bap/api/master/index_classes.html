@@ -101,11 +101,15 @@ BIR <a href="Bap.Std.Biri.html">interpreter</a>
 <tr><td><a href="Bap.Std.Taint.context-c.html">context</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html">context</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Biri evaluates terms in the context of a whole program (since
+      terms may contain calls and jumps).
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bili.context-c.html">context</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Bili</span>.context</code> extends <code class="code"><span class="constructor">Expi</span>.context</code> with PC (Program
-        Counter).
+      Counter).
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html">context</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
@@ -133,16 +137,16 @@ A visitor with a shortcut.
 </td></tr>
 <tr><td><a href="Bap.Std.Exp.finder-c.html">finder</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td><div class="info">
-A visitor with shortcut.
+A visitor with a shortcut.
 </div>
 </td></tr>
 <tr><td align="left"><br>L</td></tr>
 <tr><td><a href="Bap.Std.Bil.Storage.linear-c.html">linear</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
 <td><div class="info">
 linear storage literally implements operational
-          semantics, but has O(N) lookup and uses space
-          very ineffectively, as it is implemented as a list
-          of assignments.
+        semantics, but has O(N) lookup and uses space
+        very ineffectively, as it is implemented as a list
+        of assignments.
 </div>
 </td></tr>
 <tr><td align="left"><br>M</td></tr>
@@ -171,29 +175,22 @@ Propagate taint through expressions.
 <tr><td><a href="Bap.Std.Bil.Storage.sparse-c.html">sparse</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
 <td><div class="info">
 sparse storage is slightly more efficient storage,
-          in comparison with linear.
+        in comparison with linear.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Stmt.state-c.html">state</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
 <td><div class="info">
 All visitors provide some information about the current
-        position of the visitor
+      position of the visitor
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Exp.state-c.html">state</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td><div class="info">
 All visitors provide some information about the current
-        position of the visitor
+      position of the visitor
 </div>
 </td></tr>
 <tr><td align="left"><br>T</td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.t-c.html">t</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html">t</a> [<a href="Bap_primus.Std.Primus.Context.html">Bap_primus.Std.Primus.Context</a>]</td>
-<td><div class="info">
-Primus Interpreter Context.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html">t</a> [<a href="Bap.Std.Biri.S.html">Bap.Std.Biri.S</a>]</td>
 <td><div class="info">
 base class for BIR interpreters
@@ -207,6 +204,16 @@ Base class for BIL interpreters
 <tr><td><a href="Bap.Std.Expi.S.t-c.html">t</a> [<a href="Bap.Std.Expi.S.html">Bap.Std.Expi.S</a>]</td>
 <td><div class="info">
 Expression interpreter.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eval.S.t-c.html">t</a> [<a href="Bap.Std.Eval.S.html">Bap.Std.Eval.S</a>]</td>
+<td><div class="info">
+a virtual base class for all evaluators
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.t-c.html">t</a> [<a href="Bap.Std.Eval.S2.html">Bap.Std.Eval.S2</a>]</td>
+<td><div class="info">
+a virtual base class for all evaluators
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html">t</a> [<a href="Bap.Std.Context.html">Bap.Std.Context</a>]</td>

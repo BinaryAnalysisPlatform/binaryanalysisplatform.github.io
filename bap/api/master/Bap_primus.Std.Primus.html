@@ -78,12 +78,12 @@
 
 <pre><span class="keyword">module</span> Primus: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = ..</pre>
+<pre><span id="TYPEexn"><span class="keyword">type</span> <code class="type"></code>exn</span> = ..</pre>
 <div class="info ">
-Machine error.
+Machine Exception.
 <p>
 
-        The error type is an extensible variant, and components
+        The exn type is an extensible variant, and components
         usually register their own error constructors.<br>
 </div>
 
@@ -100,22 +100,40 @@ Machine error.
 </div>
 
 
-<pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type">('a, 'e)</code> result</span> = <code class="type">('a, 'e) <a href="Monads.Std.Monad.Result.html#TYPEresult">Monad.Result.result</a></code> = </pre><table class="typetable">
+<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
+
+
+<pre><code><span id="TYPEexit_status"><span class="keyword">type</span> <code class="type"></code>exit_status</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTresult.Ok"><span class="constructor">Ok</span></span> <span class="keyword">of</span> <code class="type">'a</code></code></td>
+<code><span id="TYPEELTexit_status.Normal"><span class="constructor">Normal</span></span></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTresult.Error"><span class="constructor">Error</span></span> <span class="keyword">of</span> <code class="type">'e</code></code></td>
+<code><span id="TYPEELTexit_status.Exn"><span class="constructor">Exn</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEexn">exn</a></code></code></td>
 
 </tr></table>
 
+<div class="info ">
+Machine exit status.
+        A machine may terminate normally, or abnormally with the
+        specified exception.<br>
+</div>
+
+
+<pre><span id="TYPEeffect"><span class="keyword">type</span> <code class="type">'a</code> effect</span> </pre>
+<div class="info ">
+An abstract type that represents an effect produced by a
+        Machine run. That type is left abstract, and has no
+        operations, as its purpose is to disallow running machine
+        directly, withou an instantiation of the <code class="code"><span class="constructor">Machine</span>.<span class="constructor">Main</span></code>
+        module.<br>
+</div>
 
 
 <pre><span id="TYPEgenerator"><span class="keyword">type</span> <code class="type"></code>generator</span> </pre>
@@ -128,13 +146,12 @@ value generator<br>
 Machine Observation.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Evaluation Context.
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Pos.html">Pos</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Pos.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A hierarchical program position.
 </div>
 
-<pre><span id="TYPEcontext"><span class="keyword">class type</span> <a href="Bap_primus.Std.Primus.context-c.html">context</a></span> = <code class="type"><a href="Bap_primus.Std.Primus.Context.t-c.html">Context.t</a></code></pre><div class="info">
-Evaluation context.
-</div>
+<pre><span id="TYPEpos"><span class="keyword">type</span> <code class="type"></code>pos</span> = <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">Pos.t</a></code> </pre>
+
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.html">Machine</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Primus Machine.
@@ -152,6 +169,7 @@ The Machine component.<br>
 </div>
 
 
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Value.html">Value</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.html">Interpreter</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 The Interpreter.
 </div>
@@ -180,7 +198,7 @@ Virtual memory.
 Lisp machine.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Error.html">Error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Exn.html">Exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Primus error.
 </div>
 </body></html>

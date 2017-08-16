@@ -84,46 +84,46 @@ Builder interface.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
 This interface provides an efficient way to build new
-          blocks. It is also useful, when rebuilding existing block.
-          It is the user responsibility to preserve the uniqueness of
-          identifiers throughout the program instance.<br>
+        blocks. It is also useful, when rebuilding existing block.
+        It is the user responsibility to preserve the uniqueness of
+        identifiers throughout the program instance.<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -><br>       ?phis:int -> ?defs:int -> ?jmps:int -> unit -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -><br>       ?phis:int -> ?defs:int -> ?jmps:int -> unit -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ~tid ~phis ~defs ~jmp ()</code> creates a block builder.
-          If <code class="code">tid</code> parameter is specified, then the new block will
-          have this tid. If any of <code class="code">phis</code>, <code class="code">defs</code> or <code class="code">jmps</code> parameters
-          are specified, the provtided number would be used as a hint
-          of the expected amount of the corresponding entries. Since
-          it is the hint, it can mismatch with the actual size. The
-          hint must be a positive number.<br>
+        If <code class="code">tid</code> parameter is specified, then the new block will
+        have this tid. If any of <code class="code">phis</code>, <code class="code">defs</code> or <code class="code">jmps</code> parameters
+        are specified, the provtided number would be used as a hint
+        of the expected amount of the corresponding entries. Since
+        it is the hint, it can mismatch with the actual size. The
+        hint must be a positive number.<br>
 </div>
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">?same_tid:bool -><br>       ?copy_phis:bool -><br>       ?copy_defs:bool -><br>       ?copy_jmps:bool -> <a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">?same_tid:bool -><br>       ?copy_phis:bool -><br>       ?copy_defs:bool -><br>       ?copy_jmps:bool -> <a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> <a href="Bap.Std.Blk.Builder.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">init blk</code> creates a builder based on an existing
-          block. If <code class="code">copy_phis</code>, <code class="code">copy_defs</code> or <code class="code">copy_jmps</code> is <code class="code"><span class="keyword">true</span></code>
-          (defaults to <code class="code"><span class="keyword">false</span></code>), then prepopulate builder with
-          corresponding terms from block <code class="code">blk</code>. If <code class="code">same_tid</code> is true
-          (default), then a resulting block will have the same <code class="code">tid</code>
-          as block <code class="code">blk</code>. Otherwise, a fresh new <code class="code">tid</code> will be created.<br>
+        block. If <code class="code">copy_phis</code>, <code class="code">copy_defs</code> or <code class="code">copy_jmps</code> is <code class="code"><span class="keyword">true</span></code>
+        (defaults to <code class="code"><span class="keyword">false</span></code>), then prepopulate builder with
+        corresponding terms from block <code class="code">blk</code>. If <code class="code">same_tid</code> is true
+        (default), then a resulting block will have the same <code class="code">tid</code>
+        as block <code class="code">blk</code>. Otherwise, a fresh new <code class="code">tid</code> will be created.<br>
 </div>
 
-<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_def"><span class="keyword">val</span> add_def</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> unit</code></pre><div class="info ">
 appends a definition
 <p>
 appends a jump<br>
 </div>
 
-<pre><span id="VALadd_jmp"><span class="keyword">val</span> add_jmp</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_jmp"><span class="keyword">val</span> add_jmp</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> unit</code></pre><div class="info ">
 appends a phi node<br>
 </div>
 
-<pre><span id="VALadd_phi"><span class="keyword">val</span> add_phi</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_phi"><span class="keyword">val</span> add_phi</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> unit</code></pre><div class="info ">
 appends generic element<br>
 </div>
 
-<pre><span id="VALadd_elt"><span class="keyword">val</span> add_elt</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.Blk.html#TYPEelt">Blk.elt</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_elt"><span class="keyword">val</span> add_elt</span> : <code class="type"><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> -> <a href="Bap.Std.Blk.html#TYPEelt">Std.Blk.elt</a> -> unit</code></pre><div class="info ">
 returns current result<br>
 </div>
 </body></html>

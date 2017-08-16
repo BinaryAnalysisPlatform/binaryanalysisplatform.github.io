@@ -84,43 +84,54 @@
 Abstract taint.
 <p>
 
-      We represent a taint with a term identifier, to designated,
-      that a taint was produced by a term with the given id. A taint
-      set is usually associated with each variable of a given
-      term. This set defines a set of taints with which a variable is
-      tainted.<br>
+    We represent a taint with a term identifier, to designate that a
+    taint was produced by a term with the given id. A taint set is
+    usually associated with each variable of a given term. This set
+    defines a set of taints with which a variable is tainted.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a></code> </pre>
 
 
-<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type"></code>set</span> = <code class="type">Tid.Set.t</code> </pre>
+<pre><span id="TYPEset"><span class="keyword">type</span> <code class="type"></code>set</span> = <code class="type">Std.Tid.Set.t</code> </pre>
 
 
-<pre><span id="TYPEmap"><span class="keyword">type</span> <code class="type"></code>map</span> = <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Var.Map.t</code> </pre>
+<pre><span id="TYPEmap"><span class="keyword">type</span> <code class="type"></code>map</span> = <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> Std.Var.Map.t</code> </pre>
 
 
-<pre><span id="VALreg"><span class="keyword">val</span> reg</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALreg"><span class="keyword">val</span> reg</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 value stored in register is source of taint<br>
 </div>
 
-<pre><span id="VALptr"><span class="keyword">val</span> ptr</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
+<pre><span id="VALptr"><span class="keyword">val</span> ptr</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEt">t</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 value stored at memory location, that is stored
-        in the register is tainted.<br>
+      in the register is tainted.<br>
+</div>
+
+<pre><span id="VALregs"><span class="keyword">val</span> regs</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
+maps each variable that is used in a term to a set of register taints<br>
+</div>
+
+<pre><span id="VALptrs"><span class="keyword">val</span> ptrs</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
+maps each variable that is used in a term to a set of pointer taints<br>
+</div>
+
+<pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> -> <a href="Bap.Std.Taint.html#TYPEmap">map</a> -> <a href="Bap.Std.Taint.html#TYPEmap">map</a></code></pre><div class="info ">
+<code class="code">merge t1 t2</code> merge taint maps<br>
 </div>
 
 <pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Bap.Std.Taint.context-c.html">context</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Taint.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Taint.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Taint.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.State.S2.html">Monad.State.S2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Taint.S.html">S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) M.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Taint.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.State.S2.html">Std.Monad.State.S2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Taint.S.html">S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) M.t</code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Taint.S.html">Bap.Std.Taint.S</a></pre>
 
-<pre><span id="VALpp_set"><span class="keyword">val</span> pp_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp_set"><span class="keyword">val</span> pp_set</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEset">set</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
 print a set of taints<br>
 </div>
 
-<pre><span id="VALpp_map"><span class="keyword">val</span> pp_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp_map"><span class="keyword">val</span> pp_map</span> : <code class="type"><a href="Bap.Std.Taint.html#TYPEmap">map</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
 print a taint map<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Taint.Map.html">Map</a>: <code class="type">Regular.S</code><code class="type">  with type t = map</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Taint.Map.html">Map</a>: <code class="type">S</code><code class="type">  with type t = map</code></pre></body></html>

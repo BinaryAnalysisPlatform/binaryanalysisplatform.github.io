@@ -76,9 +76,9 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Symbolizer.Factory.html">Bap.Std.Symbolizer.Factory</a></h1>
 
-<pre><span class="keyword">module</span> Factory: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Factory: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Std.Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info module top">
 A factory of symbolizers. Use it register and create
-        symbolizers.<br>
+      symbolizers.<br>
 </div>
 <hr width="100%">
 
@@ -89,14 +89,14 @@ A factory of symbolizers. Use it register and create
 <code class="code">list source</code> is a list of names of source providers<br>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> option</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Std.Source.source</a> option</code></pre><div class="info ">
 <code class="code">create name args</code> finds a source provider with the
-            given name and creates it<br>
+          given name and creates it<br>
 </div>
 
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Source.source</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> <a href="Bap.Std.Source.Factory.S.html#TYPEt">t</a> <a href="Bap.Std.Source.html#TYPEsource">Std.Source.source</a> -> unit</code></pre><div class="info ">
 <code class="code">register name cons</code> registers a method that creates a given
-            source of information. If a method with the given name already
-            exists, then it will be superceeded by a new one.<br>
+          source of information. If a method with the given name already
+          exists, then it will be superceeded by a new one.<br>
 </div>
 </body></html>

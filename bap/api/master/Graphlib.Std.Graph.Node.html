@@ -78,7 +78,7 @@
 </div>
 <h1>Module <a href="type_Graphlib.Std.Graph.Node.html">Graphlib.Std.Graph.Node</a></h1>
 
-<pre><span class="keyword">module</span> Node: <code class="type"><a href="Graphlib.Std.Node.html">Node</a></code><code class="type">  with type graph = t
+<pre><span class="keyword">module</span> Node: <code class="type"><a href="Graphlib.Std.Node.html">Std.Node</a></code><code class="type">  with type graph = t
                         and type t = node
                         and type edge = edge</code></pre><div class="info module top">
 Graph nodes.<br>
@@ -86,7 +86,7 @@ Graph nodes.<br>
 <hr width="100%">
 <br>
 Semantics of operations is denoted using mathematical model,
-        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> interface.<br>
+        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface.<br>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
@@ -117,21 +117,21 @@ node type is opaque<br>
         <code class="code">g</code>.<br>
 </div>
 
-<pre><span id="VALsuccs"><span class="keyword">val</span> succs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALsuccs"><span class="keyword">val</span> succs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">succs node graph</code> returns a sequence of successors of a
         <code class="code">node</code> in a a given <code class="code">graph</code><br>
 </div>
 
-<pre><span id="VALpreds"><span class="keyword">val</span> preds</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALpreds"><span class="keyword">val</span> preds</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">preds node graph</code> returns a sequence of predecessors of a
         <code class="code">node</code> in a a given <code class="code">graph</code><br>
 </div>
 
-<pre><span id="VALinputs"><span class="keyword">val</span> inputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALinputs"><span class="keyword">val</span> inputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">inputs node graph</code> is incomming edges of a <code class="code">node</code> in <code class="code">graph</code><br>
 </div>
 
-<pre><span id="VALoutputs"><span class="keyword">val</span> outputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALoutputs"><span class="keyword">val</span> outputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">outputs node graph</code> is outcomming edges of a <code class="code">node</code> in <code class="code">graph</code><br>
 </div>
 
@@ -146,7 +146,7 @@ node type is opaque<br>
 <pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
 <code class="code">insert n g</code> returns new graph <code class="code">g'</code> that has a set of nodes
         <code class="code"><span class="constructor">N</span></code> extended with node <code class="code">n</code>. If <code class="code"><span class="constructor">N</span></code> was contained <code class="code">n</code>, then
-        the <code class="code">g == g'</code>. Use <a href="Graphlib.Std.Node.html#VALupdate"><code class="code"><span class="constructor">Node</span>.update</code></a> to change existing nodes.
+        the <code class="code">g == g'</code>. Use <a href="Graphlib.Std.Node.html#VALupdate"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Node</span>.update</code></a> to change existing nodes.
 <p>
 
         Postconditions: <pre class="verbatim">          - N(g') = N(g) ∪ {n}.

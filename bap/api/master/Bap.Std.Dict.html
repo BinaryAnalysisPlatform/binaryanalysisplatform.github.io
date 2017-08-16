@@ -86,12 +86,12 @@ Universal Heterogeneous Map.<br>
 <hr width="100%">
 <br>
 The dictionary can store values of arbitrary type. Only one
-        value of a a given tag can be stored in the map. For example, if
-        you have tag <code class="code">cconv</code> (calling convention) then it is
-        guaranteed that in map there is zero or one value with this
-        tag.<br>
+      value of a a given tag can be stored in the map. For example, if
+      you have tag <code class="code">cconv</code> (calling convention) then it is
+      guaranteed that in map there is zero or one value with this
+      tag.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdict">dict</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEdict">Std.dict</a></code> </pre>
 <div class="info ">
 type of map<br>
 </div>
@@ -105,37 +105,37 @@ an empty instance<br>
 <code class="code">is_empty map</code> true if is empty.<br>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set map tag x</code> inserts or update<br>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> bool</code></pre><div class="info ">
 <code class="code">mem map tag</code> checks membership<br>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a option</code></pre><div class="info ">
 <code class="code">find map tag</code> lookups value<br>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -><br>       'a <a href="Bap.Std.html#TYPEtag">tag</a> -> 'a -> [ `Duplicate | `Ok of <a href="Bap.Std.Dict.html#TYPEt">t</a> ]</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -><br>       'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a -> [ `Duplicate | `Ok of <a href="Bap.Std.Dict.html#TYPEt">t</a> ]</code></pre><div class="info ">
 <code class="code">add map tag x</code> adds new value<br>
 </div>
 
-<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -><br>       'a <a href="Bap.Std.html#TYPEtag">tag</a> -> ('a option -> 'a option) -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -><br>       'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> ('a option -> 'a option) -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">change map tag f</code> changes value.<br>
 </div>
 
-<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">tag</a> -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> <a href="Bap.Std.Dict.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">remove map tag</code> returns a map without a value associated
-        with <code class="code">tag</code><br>
+      with <code class="code">tag</code><br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> (<a href="Bap.Std.Value.html#TYPEtypeid">Value.typeid</a> * <a href="Bap.Std.html#TYPEvalue">value</a>) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> (<a href="Bap.Std.Value.html#TYPEtypeid">Std.Value.typeid</a> * <a href="Bap.Std.html#TYPEvalue">Std.value</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">to_sequence dict</code> is a sequence of all tid value
-        entries<br>
+      entries<br>
 </div>
 
-<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.Dict.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">Std.value</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">data dict</code> is a sequence of all dict elements<br>
 </div>
 </body></html>

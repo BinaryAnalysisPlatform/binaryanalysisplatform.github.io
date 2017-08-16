@@ -85,28 +85,28 @@ Term identifier<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a></code> </pre>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap.Std.Tid.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ()</code> creates a fresh newly term identifier<br>
 </div>
 
-<pre><span id="VALset_name"><span class="keyword">val</span> set_name</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALset_name"><span class="keyword">val</span> set_name</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> -> string -> unit</code></pre><div class="info ">
 <code class="code">set_name tid name</code> associates a <code class="code">name</code> with a given
-        term identifier <code class="code">tid</code>. Any previous associations are
-        overridden.<br>
+      term identifier <code class="code">tid</code>. Any previous associations are
+      overridden.<br>
 </div>
 
-<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> string</code></pre><div class="info ">
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> -> string</code></pre><div class="info ">
 <code class="code">name tid</code> returns a term name: either a string name
-        with at-prefix, or number identifier.<br>
+      with at-prefix, or number identifier.<br>
 </div>
 
-<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">tid</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">Std.tid</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">from_string s</code> parses tid from string. The expected
-        format is:
-        <pre class="verbatim">          tid = symbol | number.
+      format is:
+      <pre class="verbatim">          tid = symbol | number.
           symbol = "@", string.
           number = "%", hex.
           string = ?sequence of characters?.
@@ -114,12 +114,12 @@ Term identifier<br>
        </pre><br>
 </div>
 
-<pre><span id="VALfrom_string_exn"><span class="keyword">val</span> from_string_exn</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<pre><span id="VALfrom_string_exn"><span class="keyword">val</span> from_string_exn</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">Std.tid</a></code></pre><div class="info ">
 <code class="code">from_string_exn s</code> same as <code class="code">from_string_exn</code> but throws
-        exception on error.<br>
+      exception on error.<br>
 </div>
 
-<pre><span id="VAL(!!)"><span class="keyword">val</span> (!!)</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">tid</a></code></pre><div class="info ">
+<pre><span id="VAL(!!)"><span class="keyword">val</span> (!!)</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEtid">Std.tid</a></code></pre><div class="info ">
 infix notation for <code class="code">from_string_exn</code><br>
 </div>
 

@@ -87,31 +87,31 @@ Program in Intermediate representation.<br>
 <br>
 Program is a collection of function terms.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">tid</a> -> unit -> <a href="Bap.Std.Program.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -> unit -> <a href="Bap.Std.Program.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?tid ()</code> creates an empty program. If <code class="code">tid</code><br>
 </div>
 
-<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEsymtab">symtab</a> -> <a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a></code></pre><div class="info ">
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type"><a href="Bap.Std.html#TYPEsymtab">Std.symtab</a> -> <a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code></pre><div class="info ">
 <code class="code">lift symbols</code> takes a table of functions and return a whole
-        program lifted into IR<br>
+      program lifted into IR<br>
 </div>
 
-<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Program.html#TYPEt">t</a> -> Graphs.Callgraph.t</code></pre><div class="info ">
+<pre><span id="VALto_graph"><span class="keyword">val</span> to_graph</span> : <code class="type"><a href="Bap.Std.Program.html#TYPEt">t</a> -> Std.Graphs.Callgraph.t</code></pre><div class="info ">
 <code class="code">to_graph program</code> creates a callgraph of a <code class="code">program</code><br>
 </div>
 
-<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">
+<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Std.tid</a> -> 'b <a href="Bap.Std.html#TYPEterm">Std.term</a> option</code></pre><div class="info ">
 <code class="code">lookup t program id</code> is like find but performs deep
-        lookup in the whole <code class="code">program</code> for a term with a given <code class="code">id</code>.
-        This function is memoized, so it has amortized O(1)
-        complexity, with a wostcase complexity of $O(N)$, where $N$ is
-        the total amount of terms in program.<br>
+      lookup in the whole <code class="code">program</code> for a term with a given <code class="code">id</code>.
+      This function is memoized, so it has amortized O(1)
+      complexity, with a wostcase complexity of $O(N)$, where $N$ is
+      the total amount of terms in program.<br>
 </div>
 
-<pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">tid</a> -> 'a <a href="Bap.Std.html#TYPEterm">term</a> option</code></pre><div class="info ">
+<pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">('a, 'b) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -><br>       <a href="Bap.Std.Program.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Std.tid</a> -> 'a <a href="Bap.Std.html#TYPEterm">Std.term</a> option</code></pre><div class="info ">
 <code class="code">parent t program id</code> is <code class="code"><span class="constructor">Some</span> p</code> iff <code class="code">find t p id &lt;&gt; <span class="constructor">None</span></code><br>
 </div>
 

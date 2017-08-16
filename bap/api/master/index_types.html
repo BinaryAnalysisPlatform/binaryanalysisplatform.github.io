@@ -177,7 +177,7 @@ Binary operations implemented in the BIL
 <tr><td><a href="Bap.Std.html#TYPEblock">block</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <code class="code">block</code> is a region of memory that is believed to be a basic block
-      of control flow graph to the best of our knowledge.
+    of control flow graph to the best of our knowledge.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Kind.html#TYPEbranch">branch</a> [<a href="Bap.Std.Kind.html">Bap.Std.Kind</a>]</td>
@@ -289,7 +289,7 @@ Type for converting <code class="code">string</code> &lt;-&gt; <code class="code
 <td></td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#TYPEdest">dest</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
 <td><div class="info">
-destination target (if known) and edge classification (see <a href="Bap.Std.html#TYPEedge"><code class="code">edge</code></a>)
+destination target (if known) and edge classification (see <a href="Bap.Std.html#TYPEedge"><code class="code"><span class="constructor">Std</span>.edge</code></a>)
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Brancher.html#TYPEdests">dests</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
@@ -306,7 +306,7 @@ a string that digests data
 <tr><td><a href="Bap.Std.html#TYPEdisasm">disasm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 value of type <code class="code">disasm</code> is a result of the disassembling of a
-      memory region.
+    memory region.
 </div>
 </td></tr>
 <tr><td><a href="Ogre.html#TYPEdoc">doc</a> [<a href="Ogre.html">Ogre</a>]</td>
@@ -410,6 +410,12 @@ type of edges
 Graph edges classification.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.html#TYPEeffect">effect</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
+<td><div class="info">
+An abstract type that represents an effect produced by a
+        Machine run.
+</div>
+</td></tr>
 <tr><td><a href="Bap_elf.Std.Elf.html#TYPEelf">elf</a> [<a href="Bap_elf.Std.Elf.html">Bap_elf.Std.Elf</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Blk.html#TYPEelt">elt</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
@@ -463,11 +469,6 @@ Error conditions
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEerror">error</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.html#TYPEerror">error</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
-<td><div class="info">
-Machine error.
-</div>
-</td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.T1.html#TYPEerror">error</a> [<a href="Monads.Std.Monad.Result.T1.html">Monads.Std.Monad.Result.T1</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.S2.html#TYPEerror">error</a> [<a href="Monads.Std.Monad.Fail.S2.html">Monads.Std.Monad.Fail.S2</a>]</td>
@@ -484,6 +485,11 @@ An error that can occur when loading or running pass.
 <code class="code">error</code> domain of errors.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Type.html#TYPEerror">error</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
+<td><div class="info">
+type error
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugins.html#TYPEevent">event</a> [<a href="Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a>]</td>
@@ -492,8 +498,18 @@ An error that can occur when loading or running pass.
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEevent">event</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.html#TYPEexit_status">exit_status</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
+<td><div class="info">
+Machine exit status.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.html#TYPEexn">exn</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.html#TYPEexn">exn</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
+<td><div class="info">
+Machine Exception.
+</div>
+</td></tr>
 <tr><td><a href="Ogre.Query.html#TYPEexp">exp</a> [<a href="Ogre.Query.html">Ogre.Query</a>]</td>
 <td><div class="info">
 logical expression language, defined as
@@ -549,7 +565,7 @@ floating point value
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.html#TYPEfrontier">frontier</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Frontier</span></code></a>s
+a type representing <a href="Graphlib.Std.Frontier.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Frontier</span></code></a>s
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">full_insn</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -599,6 +615,13 @@ a partition <a href="Graphlib.Std.Group.html">Cell</a>
 <tr><td align="left"><br>I</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEid">id</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Value.html#TYPEid">id</a> [<a href="Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Machine.html#TYPEid">id</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
+<td><div class="info">
+Machine identifier type.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#TYPEid">id</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> [<a href="Monads.Std.Monad.State.Multi.S2.html">Monads.Std.Monad.State.Multi.S2</a>]</td>
@@ -650,14 +673,14 @@ See Section 4.1 of Intel manual for more
 <tr><td><a href="Bap.Std.html#TYPEinsn">insn</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 values of type <code class="code">insn</code> represents machine instructions decoded
-      from the a given piece of memory
+    from the a given piece of memory
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEinsns">insns</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
 <td><div class="info">
 <code class="code">insns</code> is a list of pairs, where each pair consists of a
-          memory region occupied by an instruction, and the instruction
-          itself.
+        memory region occupied by an instruction, and the instruction
+        itself.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEinteger">integer</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -734,34 +757,33 @@ target of control transfer
 <td></td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.html#TYPElenspec">lenspec</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPElevel">level</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.html#TYPElevel">level</a> [<a href="Bap_primus.Std.Primus.Context.html">Bap_primus.Std.Primus.Context</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
-program location.
+<code class="code">(t,p) level</code> a cursor pointing to a <code class="code">t term</code>, that is
+          nested in the parent cursor <code class="code">p</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.Log.html#TYPElevel">level</a> [<a href="Bap.Std.Event.Log.html">Bap.Std.Event.Log</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPElevel0">level0</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 a level of the basic terms, e.g., defs, jmps and phi-nodes.
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPElevel1">level1</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 a level of arguments and basic blocks
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPElevel2">level2</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel2">level2</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 a cursor pointing to a function
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPElevel3">level3</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel3">level3</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 the highest level of the hierarchy - a cursor the points
-            to the whole program.
+          to the whole program.
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.html#TYPElexbuf">lexbuf</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
@@ -785,17 +807,21 @@ memory location
 <tr><td><a href="Bap_c_type.html#TYPElong_long">long_long</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>M</td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
+<td><div class="info">
+<code class="code">link ~addr ~name ~tid code</code> links the given <code class="code">code</code>
+            fragment into the Machine.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.html#TYPEm">m</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-the machine computation.
+an external monad in which the machine computation is wrapped
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.S.html#TYPEm">m</a> [<a href="Bap_c_type_mapper_intf.S.html">Bap_c_type_mapper_intf.S</a>]</td>
@@ -859,6 +885,14 @@ the machine computation.
 <tr><td><a href="Monads.Std.Monad.Trans.S.html#TYPEm">m</a> [<a href="Monads.Std.Monad.Trans.S.html">Monads.Std.Monad.Trans.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Memory_iterators.html#TYPEm">m</a> [<a href="Bap.Std.Memory_iterators.html">Bap.Std.Memory_iterators</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S.html#TYPEm">m</a> [<a href="Bap.Std.Eval.S.html">Bap.Std.Eval.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.html#TYPEm">m</a> [<a href="Bap.Std.Eval.S2.html">Bap.Std.Eval.S2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.html#TYPEm">m</a> [<a href="Bap.Std.Eval.T2.html">Bap.Std.Eval.T2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.html#TYPEm">m</a> [<a href="Bap.Std.Eval.T1.html">Bap.Std.Eval.T1</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_bundle.Std.html#TYPEmanifest">manifest</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
 <td></td></tr>
@@ -941,7 +975,7 @@ models for 64 bit systems
 A code identifier.
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPEnil">nil</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPEnil">nil</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 uninhabited type
 </div>
@@ -977,6 +1011,8 @@ type of nodes
 <code class="code">an observation</code> of a value of type <code class="code">an</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Image.Scheme.html#TYPEoff">off</a> [<a href="Bap.Std.Image.Scheme.html">Bap.Std.Image.Scheme</a>]</td>
+<td></td></tr>
 <tr><td><a href="X86_types.html#TYPEoffsetinfo">offsetinfo</a> [<a href="X86_types.html">X86_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#TYPEop">op</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -1056,6 +1092,8 @@ memory access permissions
 <td></td></tr>
 <tr><td><a href="Bap_plugins.Std.html#TYPEplugin">plugin</a> [<a href="Bap_plugins.Std.html">Bap_plugins.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.html#TYPEpos">pos</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Arch.html#TYPEppc">ppc</a> [<a href="Bap.Std.Arch.html">Bap.Std.Arch</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Disasm_expert.Basic.html#TYPEpred">pred</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
@@ -1087,6 +1125,11 @@ a list of priomitives.
 <td></td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEproto">proto</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Observation.html#TYPEprovider">provider</a> [<a href="Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a>]</td>
+<td><div class="info">
+An observation provider.
+</div>
+</td></tr>
 <tr><td align="left"><br>Q</td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEqualifier">qualifier</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
@@ -1140,7 +1183,7 @@ A witness that can read configured params
 <tr><td><a href="Bap.Std.Memory.Input.html#TYPEreader">reader</a> [<a href="Bap.Std.Memory.Input.html">Bap.Std.Memory.Input</a>]</td>
 <td><div class="info">
 <code class="code">reader mem ~pos_ref</code> defines a set of functions with a
-          common interface.
+        common interface.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html#TYPEreal">real</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -1158,18 +1201,19 @@ abstract and opaque register
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Image.Scheme.html#TYPEregion">region</a> [<a href="Bap.Std.Image.Scheme.html">Bap.Std.Image.Scheme</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a contiguous piece of memory.
+</div>
+</td></tr>
 <tr><td><a href="Arm_types.html#TYPErepair">repair</a> [<a href="Arm_types.html">Arm_types</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.html#TYPEresult">result</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.html#TYPEresult">result</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Image.html#TYPEresult">result</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 constructing an image can result in actual image and a set
-        (hopefully empty) of errors occured in a process of decoding an
-        image, that do not prevent us from actually creating an image.
+      (hopefully empty) of errors occured in a process of decoding an
+      image, that do not prevent us from actually creating an image.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#TYPEresult">result</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
@@ -1259,6 +1303,8 @@ shift types
 <tr><td><a href="Bap_c_type.html#TYPEsigned">signed</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#TYPEsize">size</a> [<a href="Arm_types.html">Arm_types</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Image.Scheme.html#TYPEsize">size</a> [<a href="Bap.Std.Image.Scheme.html">Bap.Std.Image.Scheme</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEsize">size</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
@@ -1426,7 +1472,7 @@ IDA instance
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Error.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Error.html">Bap_primus.Std.Primus.Error</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Exn.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Exn.html">Bap_primus.Std.Primus.Exn</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Primitive.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Bap_primus.Std.Primus.Lisp.Primitive</a>]</td>
 <td></td></tr>
@@ -1437,19 +1483,28 @@ IDA instance
 iterator type
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Value.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-the machine
+the machine computation
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
 <td><div class="info">
-<code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>c) t</code> is a type of state that holds a value of type
+<code class="code"><span class="keywordsign">'</span>a t</code> is a type of state that holds a value of type
             <code class="code"><span class="keywordsign">'</span>a</code>, and can be constructed from the base context of type
             <code class="code"><span class="keywordsign">'</span>c</code>.
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
+<td><div class="info">
+a program location
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Observation.Provider.html#TYPEt">t</a> [<a href="Bap_primus.Std.Primus.Observation.Provider.html">Bap_primus.Std.Primus.Observation.Provider</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_abi.html#TYPEt">t</a> [<a href="Bap_c_abi.html">Bap_c_abi</a>]</td>
 <td><div class="info">
@@ -1647,6 +1702,11 @@ bytes
 </td></tr>
 <tr><td><a href="Regular.Std.Opaque.S.html#TYPEt">t</a> [<a href="Regular.Std.Opaque.S.html">Regular.Std.Opaque.S</a>]</td>
 <td></td></tr>
+<tr><td><a href="Regular.Std.Regular.Minimal.html#TYPEt">t</a> [<a href="Regular.Std.Regular.Minimal.html">Regular.Std.Regular.Minimal</a>]</td>
+<td><div class="info">
+type t should be binable, sexpable and provide compare function
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Regular.S.html#TYPEt">t</a> [<a href="Regular.Std.Regular.S.html">Regular.Std.Regular.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html#TYPEt">t</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
@@ -1723,8 +1783,8 @@ symbolizer data type
 <tr><td><a href="Bap.Std.Phi.html#TYPEt">t</a> [<a href="Bap.Std.Phi.html">Bap.Std.Phi</a>]</td>
 <td><div class="info">
 Phi nodes are used to represent a set of values that can be
-        assigned to a given variable depending on a control flow path
-        taken.
+      assigned to a given variable depending on a control flow path
+      taken.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#TYPEt">t</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
@@ -1737,7 +1797,7 @@ Jmp is the only way to transfer control from block to block.
 <tr><td><a href="Bap.Std.Blk.Builder.html#TYPEt">t</a> [<a href="Bap.Std.Blk.Builder.html">Bap.Std.Blk.Builder</a>]</td>
 <td><div class="info">
 This interface provides an efficient way to build new
-          blocks.
+        blocks.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Blk.html#TYPEt">t</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
@@ -1848,21 +1908,21 @@ type of map
 <tr><td><a href="Bap.Std.Value.S.html#TYPEt">t</a> [<a href="Bap.Std.Value.S.html">Bap.Std.Value.S</a>]</td>
 <td><div class="info">
 In order to construct a value with the a given type you must
-          provide an implementation for marshaling functions,
-          comparison function and pretty-printing.
+        provide an implementation for marshaling functions,
+        comparison function and pretty-printing.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Value.Match.html#TYPEt">t</a> [<a href="Bap.Std.Value.Match.html">Bap.Std.Value.Match</a>]</td>
 <td><div class="info">
 This module can be used to handle several cases in parallel
-          instead of using a sequence of nested matches or if/then/else
-          chains.
+        instead of using a sequence of nested matches or if/then/else
+        chains.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Value.Tag.html#TYPEt">t</a> [<a href="Bap.Std.Value.Tag.html">Bap.Std.Value.Tag</a>]</td>
 <td><div class="info">
 <code class="code">register ~name ~uuid (<span class="keyword">module</span> <span class="constructor">T</span>)</code> creates a new variant
-          constructor, that accepts values of type <code class="code"><span class="constructor">T</span>.t</code>.
+        constructor, that accepts values of type <code class="code"><span class="constructor">T</span>.t</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Value.html#TYPEt">t</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
@@ -1876,19 +1936,28 @@ a universal value
 <td></td></tr>
 <tr><td><a href="Bap.Std.Exp.html#TYPEt">t</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Type_error.html#TYPEt">t</a> [<a href="Bap.Std.Type_error.html">Bap.Std.Type_error</a>]</td>
+<tr><td><a href="Bap.Std.Eff.html#TYPEt">t</a> [<a href="Bap.Std.Eff.html">Bap.Std.Eff</a>]</td>
+<td><div class="info">
+a set of expression effects
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Var.html#TYPEt">t</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Type.Error.html#TYPEt">t</a> [<a href="Bap.Std.Type.Error.html">Bap.Std.Type.Error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Type.html#TYPEt">t</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
+<td><div class="info">
+type is either an immediate value or a storage
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.html#TYPEt">t</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bil.html#TYPEt">t</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Var.html#TYPEt">t</a> [<a href="Bap.Std.Var.html">Bap.Std.Var</a>]</td>
+<tr><td><a href="Bap.Std.Bitvector.Stable.V2.html#TYPEt">t</a> [<a href="Bap.Std.Bitvector.Stable.V2.html">Bap.Std.Bitvector.Stable.V2</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Type.html#TYPEt">t</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
-<td><div class="info">
-type is either an immediate value of memory reference
-</div>
-</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Stable.V1.html#TYPEt">t</a> [<a href="Bap.Std.Bitvector.Stable.V1.html">Bap.Std.Bitvector.Stable.V1</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bitvector.html#TYPEt">t</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 <code class="code">word</code> is an abbreviation to <code class="code"><span class="constructor">Bitvector</span>.t</code>
@@ -1909,7 +1978,10 @@ trie can store arbitrary data
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> [<a href="Bap.Std.Integer.Base.html">Bap.Std.Integer.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+type of integer
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.S.html#TYPEt">t</a> [<a href="Bap.Std.Integer.S.html">Bap.Std.Integer.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtable">table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
@@ -1954,7 +2026,7 @@ type of token must implement bin_prot, be comparable and
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.Level.html#TYPEtop">top</a> [<a href="Bap_primus.Std.Primus.Context.Level.html">Bap_primus.Std.Primus.Context.Level</a>]</td>
+<tr><td><a href="Bap_primus.Std.Primus.Pos.html#TYPEtop">top</a> [<a href="Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a>]</td>
 <td><div class="info">
 the top-most program term.
 </div>
@@ -1970,14 +2042,13 @@ the trace
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.html#TYPEtree">tree</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Tree</span></code></a> representation.
+a <a href="Graphlib.Std.Tree.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Tree</span></code></a> representation.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bil.Types.html#TYPEtyp">typ</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtyp">typ</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-short abbreviation for a type
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEtype_error">type_error</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 A BIL type error
@@ -2022,6 +2093,8 @@ Unary operations implemented in the IR
 </div>
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.html#TYPEvalue">value</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_c_data.html#TYPEvalue">value</a> [<a href="Bap_c_data.html">Bap_c_data</a>]</td>
 <td><div class="info">
 Abstract value lattice.
@@ -2034,11 +2107,14 @@ Value of a result.
 </td></tr>
 <tr><td><a href="Bap.Std.html#TYPEvalue">value</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Types.html#TYPEvar">var</a> [<a href="Bap.Std.Bil.Types.html">Bap.Std.Bil.Types</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEvar">var</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-bil variable
-</div>
-</td></tr>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bil.html#TYPEvar_compare">var_compare</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bil.html#TYPEvars">vars</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.html#TYPEvector">vector</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 <a href="Bap.Std.Vector.html">Resizable array</a>
@@ -2047,7 +2123,10 @@ bil variable
 <tr><td><a href="X86_types.html#TYPEvex">vex</a> [<a href="X86_types.html">X86_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#TYPEvoid">void</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
-<td></td></tr>
+<td><div class="info">
+a type that has no values
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.html#TYPEvoid">void</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
 <td><div class="info">
 uninhabited type

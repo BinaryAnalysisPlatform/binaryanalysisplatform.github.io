@@ -83,7 +83,7 @@ Generic dot printer.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Sequence.t -><br>       edges:'e Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Std.Sequence.t -><br>       edges:'e Std.Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
 <code class="code">pp_graph ~nodes_of_edge ~nodes ~edges ppf</code> - generic dot
           printer.
 <p>

@@ -23,10 +23,10 @@ bap - Binary Analysis Platform
 
 <PRE>
 
-      <B>bap</B> [PLUGIN OPTION]... --list-formats
-      <B>bap</B> [PLUGIN OPTION]... [--source-type=<I>SOURCE</I>] --list-plugins
-      <B>bap</B> [PLUGIN OPTION]... --<I>PLUGIN</I>-help
-      <B>bap</B> <I>FILE</I> [PLUGIN OPTION]... [OPTION]...
+      bap [PLUGIN OPTION]... --list-formats
+      bap [PLUGIN OPTION]... [--source-type=<I>SOURCE</I>] --list-plugins
+      bap [PLUGIN OPTION]... --<I>PLUGIN</I>-help
+      bap <I>FILE</I> [PLUGIN OPTION]... [OPTION]...
 </PRE>
 
 <A NAME="lbAD">&nbsp;</A>
@@ -105,12 +105,14 @@ Input filename.
 <DL COMPACT>
 <DT><B>--list-formats</B><DD>
 Print detailed information about available project printers
+<DT><B>--brancher</B>=<I>VAL</I><DD>
+Use specified brancher, should be either `relocatable' or `internal'
 <DT><B>-d</B> [<I>VAL</I>], <B>--dump</B>[=<I>VAL</I>] (default=bir)<DD>
 Print a project using the designated format to a specified destination. If format and destination is not specified, then a program will be printed in the IR form to the standard output. The argument consists of format specification, and an optional destination, separated from the format by a colon (:) symbol. The format specification, consists of format name and optional version number, separated from the name by a dash symbol, e.g., `&lt;fmt&gt;` or `&lt;fmt&gt;-&lt;ver&gt;`. Acceptable format names are one of `callgraph', `cfg', `symbols', `asm.adt', `marshal', `bil', `asm.sexp', `asm.decoded', `adt', `bil.sexp', `asm', `bir' or `bil.adt'. If version is omitted then the latest version of the given format will be used. If destination is not omitted, then data will to the specified destination, otherwise it will be printed to the standard output. The full argument grammar is `fmt ::= &lt;fmt&gt;[-&lt;ver&gt;][:&lt;dst&gt;]'. Examples: `bir', `bir-0.1`, `sexp-0.9:data.sexp`, etc. Use `--list-formats' command line option to get the detailed information about available formats and corresponding versions. This option can be specified several times, to dump the project is several formats (and possibly destinations) simultaneously.
 <DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
 Show this help in format <I>FMT</I> (pager, plain or groff).
 <DT><B>--loader</B>=<I>VAL</I> (absent=llvm)<DD>
-Backend name for an image loader, should be one of `ida', `llvm' or `bap-elf'
+Backend name for an image loader, should be either `ida' or `llvm'
 <DT><B>-p</B> <I>PASS</I>, <B>--passes</B>=<I>PASS</I>, <B>--pass</B>=<I>PASS</I><DD>
 Runs passes (comma separated). This option replaces the previously existing <B>--</B><I>PASS</I> options which are now deprecated and will soon be removed.
 <DT><B>--reconstructor</B>=<I>VAL</I><DD>
@@ -135,7 +137,7 @@ Dynamically loads file <I>PATH</I>.plugin. A plugin must be compiled with <B>bap
 <DT><B>-L</B><I>PATH</I><DD>
 Add <I>PATH</I> to a set of search paths. Plugins found in the search paths will be loaded automatically.
 <DT><B>--list-plugins</B><DD>
-List available plugins
+List all available plugins or list plugins that provide some features, e.g. --list-plugins=disassembler,lifter
 <DT><B>--disable-plugin</B><DD>
 Don't load <I>PLUGIN</I> automatically
 <DT><B>--disable-autoload</B><DD>
@@ -182,6 +184,6 @@ Report bugs to <A HREF="https://github.com/BinaryAnalysisPlatform/bap/issues">ht
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 21:55:09 GMT, May 08, 2017
+Time: 17:10:07 GMT, August 16, 2017
 </BODY>
 </HTML>

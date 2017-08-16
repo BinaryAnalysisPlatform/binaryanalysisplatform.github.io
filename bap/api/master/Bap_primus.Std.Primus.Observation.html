@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="next" href="Bap_primus.Std.Primus.Context.html">
+<link rel="next" href="Bap_primus.Std.Primus.Pos.html">
 <link rel="Up" href="Bap_primus.Std.Primus.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -74,7 +74,7 @@
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Bap_primus.Std.Primus.html" title="Bap_primus.Std.Primus">Up</a>
-&nbsp;<a class="post" href="Bap_primus.Std.Primus.Context.html" title="Bap_primus.Std.Primus.Context">Next</a>
+&nbsp;<a class="post" href="Bap_primus.Std.Primus.Pos.html" title="Bap_primus.Std.Primus.Pos">Next</a>
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a></h1>
 
@@ -94,24 +94,40 @@ Machine Observation.
 </div>
 <hr width="100%">
 
-<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">?inspect:('a -> Sexp.t) -><br>       string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> * 'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Primus.statement</a></code></pre><div class="info ">
+<pre><span id="TYPEprovider"><span class="keyword">type</span> <code class="type"></code>provider</span> </pre>
+<div class="info ">
+An observation provider.
+          A provider facilitates introspection of the Primus Machine,
+          for the sake of debugging and dumping the effects. The
+          provider shoud not (and can't be) used for affecting the
+          behavior of a machine, or for the analysis, as its main
+          purpose is debugging, logging, and tracing the execution.<br>
+</div>
+
+
+<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">?inspect:('a -> Std.Sexp.t) -><br>       string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> * 'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Std.Primus.statement</a></code></pre><div class="info ">
 <code class="code">provide ?inspect name</code> returns a pair of two handlers. The
           first element is used to observe values, the second is used
           to provide values for the observation.
 <p>
 
-          The <code class="code">inspect</code> function should provide a sexp representation
-          of an observed value, and is used for introspection and
+          The <code class="code">inspect</code> function may provide a sexp representation of
+          an observed value, that will be used for introspection and
           pretty-printing (it is not required, and if it is provided, it
           is not necessary to disclose everything<br>
 </div>
 
-<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -> string</code></pre><div class="info ">
+<pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -> string</code></pre><div class="info ">
 <code class="code">name observation</code> is a name of the observed attribute.<br>
 </div>
 
-<pre><span id="VALinspect"><span class="keyword">val</span> inspect</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -> 'a -> Sexp.t</code></pre><div class="info ">
+<pre><span id="VALinspect"><span class="keyword">val</span> inspect</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -> 'a -> Std.Sexp.t</code></pre><div class="info ">
 <code class="code">inspect observation value</code> returns a sexp representation of
           an observed <code class="code">value</code><br>
 </div>
-</body></html>
+
+<pre><span id="VALlist_providers"><span class="keyword">val</span> list_providers</span> : <code class="type">unit -> <a href="Bap_primus.Std.Primus.Observation.html#TYPEprovider">provider</a> list</code></pre><div class="info ">
+enumerate all currently available observation providers<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Observation.Provider.html">Provider</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.Provider.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

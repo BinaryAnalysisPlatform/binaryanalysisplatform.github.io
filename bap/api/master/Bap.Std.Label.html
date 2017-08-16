@@ -86,26 +86,26 @@ Target of a control flow transfer.<br>
 <hr width="100%">
 <br>
 Labels can be direct, that are known to us. Or indirect, that
-        are arbitrary expressions.<br>
+      are arbitrary expressions.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPElabel">label</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPElabel">Std.label</a></code> </pre>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ()</code> creates a new label with a freshly generated
-        identifier.<br>
+      identifier.<br>
 </div>
 
-<pre><span id="VALdirect"><span class="keyword">val</span> direct</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALdirect"><span class="keyword">val</span> direct</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">direct label</code> creates a direct label with a given identifier.<br>
 </div>
 
-<pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">indirect exp</code> creates a label that is resolved to an
-        expression <code class="code">exp</code><br>
+      expression <code class="code">exp</code><br>
 </div>
 
-<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">?direct:(<a href="Bap.Std.html#TYPEtid">tid</a> -> <a href="Bap.Std.html#TYPEtid">tid</a>) -><br>       ?indirect:(<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.html#TYPEexp">exp</a>) -> <a href="Bap.Std.Label.html#TYPEt">t</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALchange"><span class="keyword">val</span> change</span> : <code class="type">?direct:(<a href="Bap.Std.html#TYPEtid">Std.tid</a> -> <a href="Bap.Std.html#TYPEtid">Std.tid</a>) -><br>       ?indirect:(<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a>) -> <a href="Bap.Std.Label.html#TYPEt">t</a> -> <a href="Bap.Std.Label.html#TYPEt">t</a></code></pre><div class="info ">
 updates the label<br>
 </div>
 

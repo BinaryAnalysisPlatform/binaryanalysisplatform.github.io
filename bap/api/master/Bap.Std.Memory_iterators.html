@@ -89,48 +89,48 @@ Iterators lifted into monad<br>
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> </pre>
 
 
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       init:'b -><br>       f:(<a href="Bap.Std.html#TYPEword">word</a> -> 'b -> 'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       init:'b -><br>       f:(<a href="Bap.Std.html#TYPEword">Std.word</a> -> 'b -> 'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">fold ~word_size ~init ~f t</code> folds over elements of <code class="code">t</code>,
-        so a result is <code class="code">f (... (f (f a elt_1) elt_2) ...) elt_n</code><br>
+      so a result is <code class="code">f (... (f (f a elt_1) elt_2) ...) elt_n</code><br>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEword">word</a> -> unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEword">Std.word</a> -> unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">iter ~word_size ~f t</code> applies <code class="code">f</code> to elements of <code class="code">t</code><br>
 </div>
 
-<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       init:'b -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> 'b -> 'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">foldi ~word_size ~init ~f t</code> is like <a href="Bap.Std.Memory_iterators.html#VALfold"><code class="code"><span class="constructor">Memory_iterators</span>.fold</code></a>, but also passes
-        an address to the <code class="code">f</code><br>
+<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       init:'b -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> 'b -> 'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'b <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">foldi ~word_size ~init ~f t</code> is like <a href="Bap.Std.Memory_iterators.html#VALfold"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Memory_iterators</span>.fold</code></a>, but also passes
+      an address to the <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">iteri ~word_size ~f t</code> is like <a href="Bap.Std.Memory_iterators.html#VALiter"><code class="code"><span class="constructor">Memory_iterators</span>.iter</code></a>, but also passes
-        an address to the <code class="code">f</code><br>
+<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       unit <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">iteri ~word_size ~f t</code> is like <a href="Bap.Std.Memory_iterators.html#VALiter"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Memory_iterators</span>.iter</code></a>, but also passes
+      an address to the <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">exists ~word_size ~f t</code> checks if at least one element of <code class="code">t</code>
-        satisfies the predicate <code class="code">f</code><br>
+      satisfies the predicate <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">for_all ~word_size ~f t</code> checks if all elements of <code class="code">t</code>
-        satisfies the predicate <code class="code">f</code><br>
+      satisfies the predicate <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       int <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       int <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">count ~word_size ~f t</code> is the number of elements in <code class="code">t</code>
-        that satisfies the predicate <code class="code">f</code>.<br>
+      that satisfies the predicate <code class="code">f</code>.<br>
 </div>
 
-<pre><span id="VALfind_if"><span class="keyword">val</span> find_if</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       <a href="Bap.Std.html#TYPEword">word</a> option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALfind_if"><span class="keyword">val</span> find_if</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> bool <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       <a href="Bap.Std.html#TYPEword">Std.word</a> option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">find_if ~word_size ~f t</code> returns the first element of
-        <code class="code">t</code> that satisfies the predicate <code class="code">p</code> or None if no elements
-        satisfied<br>
+      <code class="code">t</code> that satisfies the predicate <code class="code">p</code> or None if no elements
+      satisfied<br>
 </div>
 
-<pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> -> 'a option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'a option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">?word_size:<a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap.Std.Memory_iterators.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> 'a option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a>) -><br>       'a option <a href="Bap.Std.Memory_iterators.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">find_map ~word_size ~f t</code> returns the first evaluation
-        of <code class="code">f</code> that returns <code class="code"><span class="constructor">Some</span></code> or None if <code class="code">f</code> always returns <code class="code"><span class="constructor">None</span></code><br>
+      of <code class="code">f</code> that returns <code class="code"><span class="constructor">Some</span></code> or None if <code class="code">f</code> always returns <code class="code"><span class="constructor">None</span></code><br>
 </div>
 </body></html>

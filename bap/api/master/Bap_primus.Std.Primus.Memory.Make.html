@@ -76,7 +76,7 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><table border="0" cellpadding="3" width="100%">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Memory.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -85,35 +85,32 @@
 <td align="center" valign="top" width="15%">
 <code>Machine</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code>
+<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code>
 </table>
 </td>
 </tr>
 </table>
 <hr width="100%">
 
-<pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">('a, 'e)</code> m</span> = <code class="type">('a, 'e) Machine.t</code> </pre>
-
-
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       (<a href="Bap.Std.html#TYPEword">word</a>, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>)<br>       <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> Machine.t</code></pre><div class="info ">
 <code class="code">load addr</code> loads a byte from the given address<br>
 </div>
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       <a href="Bap.Std.html#TYPEword">word</a> -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">save addr x</code> stores a byte <code class="code">x</code> at the given address <code class="code">addr</code><br>
+<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> unit Machine.t</code></pre><div class="info ">
+<code class="code">store addr x</code> stores a byte <code class="code">x</code> at the given address <code class="code">addr</code><br>
 </div>
 
-<pre><span id="VALadd_text"><span class="keyword">val</span> add_text</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALadd_text"><span class="keyword">val</span> add_text</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Std.mem</a> -> unit Machine.t</code></pre><div class="info ">
 <code class="code">add_text mem</code> maps a memory chunk <code class="code">mem</code> as executable and
             readonly segment of machine memory.<br>
 </div>
 
-<pre><span id="VALadd_data"><span class="keyword">val</span> add_data</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALadd_data"><span class="keyword">val</span> add_data</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Std.mem</a> -> unit Machine.t</code></pre><div class="info ">
 <code class="code">add_data</code> maps a memory chunk <code class="code">mem</code> as writable and
-        nonexecutable segment of machine memory.<br>
+            nonexecutable segment of machine memory.<br>
 </div>
 
-<pre><span id="VALallocate"><span class="keyword">val</span> allocate</span> : <code class="type">?readonly:bool -><br>       ?executable:bool -><br>       ?generator:<a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Primus.Generator.t</a> -><br>       <a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       int -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALallocate"><span class="keyword">val</span> allocate</span> : <code class="type">?readonly:bool -><br>       ?executable:bool -><br>       ?generator:<a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Std.Primus.Generator.t</a> -><br>       <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> int -> unit Machine.t</code></pre><div class="info ">
 <code class="code">allocate addr size</code> allocates a segment of the specified
             <code class="code">size</code>. An unitilialized reads from the segment will
             produce values generated by a generator (defaults to a
@@ -125,8 +122,18 @@
             segmentation fault. (TODO: provide more fine-granular traps).<br>
 </div>
 
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">?readonly:bool -><br>       ?executable:bool -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) <a href="Bap_primus.Std.Primus.Memory.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">?readonly:bool -> ?executable:bool -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> unit Machine.t</code></pre><div class="info ">
 <code class="code">map mem</code> maps a memory chunk <code class="code">mem</code> to a segment with the
             given permissions. See also <code class="code">add_text</code> and <code class="code">add_data</code>.<br>
+</div>
+
+<pre><span id="VALis_mapped"><span class="keyword">val</span> is_mapped</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> bool Machine.t</code></pre><div class="info ">
+<code class="code">is_mapped addr</code> a computation that evaluates to true,
+            when the value is mapped, i.e., it is readable.<br>
+</div>
+
+<pre><span id="VALis_writable"><span class="keyword">val</span> is_writable</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> bool Machine.t</code></pre><div class="info ">
+<code class="code">is_writable addr</code> is a computation that evaluates to
+            <code class="code"><span class="keyword">true</span></code> if <code class="code">addr</code> is writable.<br>
 </div>
 </body></html>

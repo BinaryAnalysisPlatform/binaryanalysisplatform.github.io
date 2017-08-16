@@ -193,13 +193,33 @@ project license<br>
 copyright holders<br>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.tags">tags</span>&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+bundle tags<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELTt.cons">cons</span>&nbsp;: <code class="type">string list</code>;</code></td>
+<td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
+bundle constraints<br>
+</div>
+</td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
 
 
 <pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Manifest.Fields.html">Fields</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Manifest.Fields.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?author:string -><br>       ?version:string -><br>       ?main:string -><br>       ?date:float -><br>       ?desc:string -><br>       ?requires:string list -><br>       ?provides:string list -><br>       ?url:string -><br>       ?license:string -> ?copyrights:string -> string -> <a href="Bap_bundle.Std.Manifest.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?author:string -><br>       ?version:string -><br>       ?main:string -><br>       ?date:float -><br>       ?desc:string -><br>       ?requires:string list -><br>       ?provides:string list -><br>       ?url:string -><br>       ?license:string -><br>       ?copyrights:string -><br>       ?tags:string list -> ?cons:string list -> string -> <a href="Bap_bundle.Std.Manifest.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create name</code> create a bundle for a program with a given <code class="code">name</code><br>
 </div>
 

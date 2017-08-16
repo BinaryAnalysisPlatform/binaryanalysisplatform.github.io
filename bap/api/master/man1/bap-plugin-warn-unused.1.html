@@ -23,10 +23,10 @@ warn-unused - warn about unused results of certain functions
 
 <PRE>
 
-    <B>--warn-unused</B>
-    <B>--warn-unused-taint</B>
-    <B>--warn-unused-print</B>
-    <B>--warn-unused-mark</B>
+    <B>--</B>warn-unused
+    <B>--</B>warn-unused<B>-taint</B>
+    <B>--</B>warn-unused<B>-print</B>
+    <B>--</B>warn-unused<B>-mark</B>
 </PRE>
 
 <A NAME="lbAD">&nbsp;</A>
@@ -42,24 +42,24 @@ If a subroutine has GNU attribute <B>warn_unused_result</B> and its result is no
 <DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
 Show this help in format <I>FMT</I> (pager, plain or groff).
 <DT><B>--mark</B><DD>
-run warn-unused-mark pass
+run warn-unused<B>-mark</B> pass
 <DT><B>--print</B><DD>
-run warn-unused-print pass
+run warn-unused<B>-print</B> pass
 <DT><B>--taint</B><DD>
-run warn-unused-taint pass
+run warn-unused<B>-taint</B> pass
 </DL>
 <A NAME="lbAF">&nbsp;</A>
 <H2>PASSES</H2>
 
 <DL COMPACT>
-<DT><B>--warn-unused-taint</B><DD>
+<DT><B>--</B>warn-unused<B>-taint</B><DD>
 Taint all values defined by functions that are marked with <B>warn_unused_result</B> attribute. Will run <B>callsites</B> as a dependency.
-<DT><B>--warn-unused-print</B><DD>
+<DT><B>--</B>warn-unused<B>-print</B><DD>
 Print all calls that weren't checked.
-<DT><B>--warn-unused-mark</B><DD>
+<DT><B>--</B>warn-unused<B>-mark</B><DD>
 Mark all unchecked calls with <B>Term.dead</B> attribute
-<DT><B>--warn-unused</B><DD>
-Same as <B>--warn-unused-taint --propagate-taint --warn-unused-print</B>
+<DT><B>--</B>warn-unused<DD>
+Same as <B>--</B>warn-unused<B>-taint</B> <B>--propagate-taint --</B>warn-unused<B>-print</B>
 </DL>
 <A NAME="lbAG">&nbsp;</A>
 <H2>SEE ALSO</H2>
@@ -82,6 +82,6 @@ Same as <B>--warn-unused-taint --propagate-taint --warn-unused-print</B>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 21:55:21 GMT, May 08, 2017
+Time: 17:10:25 GMT, August 16, 2017
 </BODY>
 </HTML>

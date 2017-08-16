@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Word.html">
-<link rel="next" href="Bap.Std.Type.html">
+<link rel="next" href="Bap.Std.Bil.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,7 +76,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Word.html" title="Bap.Std.Word">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Type.html" title="Bap.Std.Type">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Bil.html" title="Bap.Std.Bil">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Addr.html">Bap.Std.Addr</a></h1>
 
@@ -87,7 +87,7 @@ Shortcut for bitvectors that represent addresses<br>
 
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a></pre>
 
-<pre><span id="VALmemref"><span class="keyword">val</span> memref</span> : <code class="type">?disp:int -><br>       ?index:int -> ?scale:<a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a></code></pre><div class="info ">
+<pre><span id="VALmemref"><span class="keyword">val</span> memref</span> : <code class="type">?disp:int -><br>       ?index:int -> ?scale:<a href="Bap.Std.html#TYPEsize">Std.size</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a></code></pre><div class="info ">
 <code class="code">memref ?disp ?index ?scale base</code> mimics a memory reference syntax
         in gas assembler,   <code class="code">dis(base,index,scale)</code>
         assembler operation. It returns address at

@@ -84,7 +84,7 @@ Base interface of all iterators.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Integer.Base.html">Base</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
-The minimal interface of the machine integer.
+The minimal interface of an integer.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Basic.html">Basic</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
@@ -122,7 +122,12 @@ Machine component interface.
 Data interface.
 </div>
 </td></tr>
+<tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.Delay.html">Delay</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.Eager.html">Eager</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td></td></tr>
 <tr><td><a href="Graphlib.Std.Edge.html">Edge</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 Interface that every Graph edge should provide
@@ -171,6 +176,8 @@ Iterators lifted into monad
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Minimal.html">Minimal</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td></td></tr>
+<tr><td><a href="Regular.Std.Regular.Minimal.html">Minimal</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td></td></tr>
 <tr><td><a href="X86_env.ModeVars.html">ModeVars</a> [<a href="X86_env.html">X86_env</a>]</td>
@@ -185,7 +192,7 @@ CPU BIL variables.
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Graphlib.Std.Node.html">Node</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Graph</span></code></a> nodes.
+<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.
 </div>
 </td></tr>
 <tr><td align="left"><br>O</td></tr>
@@ -337,6 +344,11 @@ A required interface for the type to be lifted to value.
 <td></td></tr>
 <tr><td><a href="Bap.Std.Expi.S.html">S</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S.html">S</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+An interface of a basic evaluator in a <code class="code"><span class="constructor">T1</span></code> monad
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.S.html">S</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Prefix trie interface.
@@ -344,7 +356,7 @@ Prefix trie interface.
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.S.html">S</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
-Signature for integral type.
+The integer signature.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Trans.S1.html">S1</a> [<a href="Monads.Std.Monad.Trans.html">Monads.Std.Monad.Trans</a>]</td>
@@ -385,6 +397,11 @@ Signature for integral type.
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.S2.html">S2</a> [<a href="Monads.Std.Monad.Plus.html">Monads.Std.Monad.Plus</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.html">S2</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+An interface of a basic evaluator in a <code class="code"><span class="constructor">T1</span></code> monad
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html">State</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
 An interface to the state.

@@ -80,22 +80,22 @@
 An interface to a memory storage.
 <p>
 
-        A storage is a mapping from addresses to bytes. For
-        consistency and efficiency bytes are still reprented with
-        bitvectors.
+      A storage is a mapping from addresses to bytes. For
+      consistency and efficiency bytes are still reprented with
+      bitvectors.
 <p>
 
-        Storages should not take care of aliasing or endiannes, as they
-        are byte addressable. All memory operations are normalized by
-        Bili.<br>
+      Storages should not take care of aliasing or endiannes, as they
+      are byte addressable. All memory operations are normalized by
+      Bili.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="METHODload"><span class="keyword">method</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> option</code></pre><div class="info ">
+<pre><span id="METHODload"><span class="keyword">method</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> option</code></pre><div class="info ">
 <code class="code">load a</code> loads a byte from a a given address  <code class="code">a</code><br>
 </div>
 
-<pre><span id="METHODsave"><span class="keyword">method</span> save</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       <a href="Bap.Std.html#TYPEword">word</a> -> < load : <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEword">word</a> option; save : 'a; .. ><br>       as 'a</code></pre><div class="info ">
+<pre><span id="METHODsave"><span class="keyword">method</span> save</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -><br>       <a href="Bap.Std.html#TYPEword">Std.word</a> -> < load : <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> option; save : 'a; .. ><br>       as 'a</code></pre><div class="info ">
 <code class="code">save a w</code> stores byte <code class="code">w</code> at address <code class="code">a</code><br>
 </div>
 </body></html>

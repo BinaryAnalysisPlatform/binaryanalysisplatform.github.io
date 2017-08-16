@@ -78,7 +78,7 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Make(Machine) creates a Lisp machine embedded into the
           Primus <code class="code"><span class="constructor">Machine</span></code>.<br>
 </div>
@@ -91,20 +91,20 @@ Make(Machine) creates a Lisp machine embedded into the
 <td align="center" valign="top" width="15%">
 <code>Machine</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code>
+<td><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code>
 </table>
 </td>
 </tr>
 </table>
 <hr width="100%">
 
-<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, unit -> ('b, 'c) Machine.t) format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, unit -> 'b Machine.t) Std.format4 -> 'a</code></pre><div class="info ">
 <code class="code">failf msg a1 ... am ()</code> terminates a lisp machine, and
             correspondingly the Primus machine with the
             <code class="code"><span class="constructor">Runtime_error</span></code>.<br>
 </div>
 
-<pre><span id="VALlink_primitives"><span class="keyword">val</span> link_primitives</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprimitives">Primus.Lisp.primitives</a> -><br>       (unit, #<a href="Bap_primus.Std.Primus.Context.t-c.html">Primus.Context.t</a>) Machine.t</code></pre><div class="info ">
+<pre><span id="VALlink_primitives"><span class="keyword">val</span> link_primitives</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprimitives">Std.Primus.Lisp.primitives</a> -> unit Machine.t</code></pre><div class="info ">
 <code class="code">link_primitives prims</code> provides the primitives <code class="code">prims</code><br>
 </div>
 </body></html>

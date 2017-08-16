@@ -76,7 +76,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Bili.S.Expi.html">Bap.Std.Bili.S.Expi</a></h1>
 
-<pre><span class="keyword">module</span> Expi: <code class="type"><a href="Bap.Std.Expi.S.html">Expi.S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) state</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Expi: <code class="type"><a href="Bap.Std.Expi.S.html">Std.Expi.S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) state</code></pre><hr width="100%">
 
 <pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type">('a, 'e)</code> state</span> </pre>
 
@@ -84,10 +84,15 @@
 <pre><span id="TYPEu"><span class="keyword">type</span> <code class="type">'a</code> u</span> = <code class="type">(unit, 'a) <a href="Bap.Std.Expi.S.html#TYPEstate">state</a></code> </pre>
 
 
-<pre><span id="TYPEr"><span class="keyword">type</span> <code class="type">'a</code> r</span> = <code class="type">(<a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>, 'a) <a href="Bap.Std.Expi.S.html#TYPEstate">state</a></code> </pre>
+<pre><span id="TYPEr"><span class="keyword">type</span> <code class="type">'a</code> r</span> = <code class="type">(<a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a>, 'a) <a href="Bap.Std.Expi.S.html#TYPEstate">state</a></code> </pre>
 
 
-<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">Expi.context</a>]</code> <a href="Bap.Std.Expi.S.t-c.html">t</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Expi.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Expi.S.M.html">M</a>: <code class="type">T2</code><code class="type">  with type ('a,'e) t = ('a,'e) state</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Expi.S.Eval.html">Eval</a>: <code class="type"><a href="Bap.Std.Eval.S2.html">Std.Eval.S2</a></code><code class="type">  with type ('a,'e) m := ('a,'e) state
+                           and module M := M</code></pre><div class="info">
+</div>
+
+<pre><span name="TYPEt"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Expi.context-c.html">Std.Expi.context</a>]</code> <a href="Bap.Std.Expi.S.t-c.html">t</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Expi.S.t-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Expression interpreter.
 </div>
 </body></html>

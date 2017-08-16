@@ -1,0 +1,59 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of PRIMUS-PRINT</TITLE>
+</HEAD><BODY>
+<H1>PRIMUS-PRINT</H1>
+Section: Primus-print Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus-print - prints Primus states and observations
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus-print</B> [<I>OPTION</I>]... 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Monitors a Lisp Machine execution.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
+Show this help in format <I>FMT</I> (pager, plain or groff).
+<DT><B>--observations</B>=<I>VAL</I><DD>
+A list of observations to print. A keyword `all` can be use to select all events. To ignore a particular event, add `-' before the name. An optional + is allowed for the consistency.
+<DT><B>--output</B>=<I>VAL</I><DD>
+A name of a file in which to store the monitor output. If not specified, then outputs result into stdout
+<DT><B>--traceback</B>[=<I>VAL</I>] (default=16)<DD>
+Stores and outputs a trace of execution. Takes an optional argument that limits the traceback length to the specified number of terms.
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:10:18 GMT, August 16, 2017
+</BODY>
+</HTML>

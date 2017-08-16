@@ -76,17 +76,7 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Regular.Std.Regular.Make.html">Regular.Std.Regular.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="code"><span class="keyword">sig</span></code><div class="sig_block">
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
-<div class="info ">
-type t should be binable, sexpable and provide compare function<br>
-</div>
-
-
-<pre><span class="keyword">include</span> Pretty_printer.S</pre>
-
-<pre><span class="keyword">include</span> Regular.Std.Data.Versioned.S</pre>
-</div><code class="code"><span class="keyword">end</span></code><code class="code">) </code>: <code class="type"><a href="Regular.Std.Regular.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Regular.Std.Regular.Minimal.html">Minimal</a></code><code class="code">) </code>: <code class="type"><a href="Regular.Std.Regular.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info module top">
 In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
         minimum implementation <code class="code"><span class="constructor">M</span></code><br>
 </div>
@@ -99,14 +89,7 @@ In order to implement <code class="code"><span class="constructor">Regular</span
 <td align="center" valign="top" width="15%">
 <code>M</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type">sig
-        (** type t should be binable, sexpable and provide compare function  *)
-        type t [@@deriving bin_io, sexp, compare]
-        include Pretty_printer.S with type t := t
-        include Data.Versioned.S with type t := t
-        val hash : t -> int
-        val module_name : string option
-      end</code>
+<td><code class="type"><a href="Regular.Std.Regular.Minimal.html">Minimal</a></code>
 </table>
 </td>
 </tr>

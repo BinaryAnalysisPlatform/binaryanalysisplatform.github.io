@@ -82,16 +82,16 @@
 A program analysis pass.
 <p>
 
-        Pass is essentially a function that takes a project data
-        structures, and returns a new project, possibly modified.
+      Pass is essentially a function that takes a project data
+      structures, and returns a new project, possibly modified.
 <p>
 
-        Passes may depend on other passes, and have a few properties,
-        associated with them.<br>
+      Passes may depend on other passes, and have a few properties,
+      associated with them.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Project.pass</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Std.Project.pass</a></code> </pre>
 
 
 <pre><code><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = </code></pre><table class="typetable">
@@ -99,31 +99,31 @@ A program analysis pass.
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTerror.Unsat_dep"><span class="constructor">Unsat_dep</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Project.pass</a> * string</code></code></td>
+<code><span id="TYPEELTerror.Unsat_dep"><span class="constructor">Unsat_dep</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Std.Project.pass</a> * string</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTerror.Runtime_error"><span class="constructor">Runtime_error</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Project.pass</a> * exn</code></code></td>
+<code><span id="TYPEELTerror.Runtime_error"><span class="constructor">Runtime_error</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Project.html#TYPEpass">Std.Project.pass</a> * exn</code></code></td>
 
 </tr></table>
 
 <div class="info ">
 An error that can occur when loading or running pass.<ul>
 <li><code class="code"><span class="constructor">Not_loaded</span> name</code> pass with a given <code class="code">name</code> wasn't loaded for
-          some reason. This is a very unlikely error, indicating
-          either a logic error in the plugin system implementation or
-          something very weird, that we didn't expect.</li>
+        some reason. This is a very unlikely error, indicating
+        either a logic error in the plugin system implementation or
+        something very weird, that we didn't expect.</li>
 </ul>
 <ul>
 <li><code class="code"><span class="constructor">Not_loaded</span> name</code> when we tried to load plugin with a given
-          <code class="code">name</code> we failed to find it in our search paths.</li>
+        <code class="code">name</code> we failed to find it in our search paths.</li>
 </ul>
 <ul>
 <li><code class="code"><span class="constructor">Runtime_error</span> (name,exn)</code> when plugin with a given <code class="code">name</code>
-          was run it raised an <code class="code">exn</code>.</li>
+        was run it raised an <code class="code">exn</code>.</li>
 </ul>
 <br>
 </div>
@@ -132,25 +132,25 @@ An error that can occur when loading or running pass.<ul>
 <pre><span id="EXCEPTIONFailed"><span class="keyword">exception</span> Failed</span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEerror">error</a></code></pre>
 <div class="info ">
 raised when a pass failed to load or to run. Note: this
-          exception is raised only from two functions in this module, that
-          state this in their documentation and has <code class="code">_exn</code> suffix in their
-          name.<br>
+        exception is raised only from two functions in this module, that
+        state this in their documentation and has <code class="code">_exn</code> suffix in their
+        name.<br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEproject">project</a> -><br>       (<a href="Bap.Std.html#TYPEproject">project</a>, <a href="Bap.Std.Project.Pass.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEproject">Std.project</a> -><br>       (<a href="Bap.Std.html#TYPEproject">Std.project</a>, <a href="Bap.Std.Project.Pass.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">run_pass project pass</code> applies <code class="code">pass</code> to a <code class="code">project</code>.
 <p>
 
-          If a pass has dependencies, then they will be run before the
-          pass in some topological order.<br>
+        If a pass has dependencies, then they will be run before the
+        pass in some topological order.<br>
 </div>
 
-<pre><span id="VALrun_exn"><span class="keyword">val</span> run_exn</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEproject">project</a> -> <a href="Bap.Std.html#TYPEproject">project</a></code></pre><div class="info ">
+<pre><span id="VALrun_exn"><span class="keyword">val</span> run_exn</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEproject">Std.project</a> -> <a href="Bap.Std.html#TYPEproject">Std.project</a></code></pre><div class="info ">
 <code class="code">run_pass_exn proj</code> is the same as <code class="code">run_pass</code>, but raises an
-          exception on error. Useful to provide custom error
-          handling/printing.<br>
+        exception on error. Useful to provide custom error
+        handling/printing.<br>
 <b>Raises</b> <code>Pass_failed</code> if failed to load, or if plugin failed at
-          runtime.<br>
+        runtime.<br>
 </div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -> string</code></pre><div class="info ">
@@ -159,6 +159,6 @@ raised when a pass failed to load or to run. Note: this
 
 <pre><span id="VALautorun"><span class="keyword">val</span> autorun</span> : <code class="type"><a href="Bap.Std.Project.Pass.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
 <code class="code">autorun pass</code> is <code class="code"><span class="keyword">true</span></code> if a <code class="code">pass</code> was created with
-          autorun option<br>
+        autorun option<br>
 </div>
 </body></html>

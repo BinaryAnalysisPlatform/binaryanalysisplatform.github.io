@@ -84,40 +84,40 @@
 Input information.
 <p>
 
-        This module abstracts input type.<br>
+      This module abstracts input type.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Project.html#TYPEinput">Project.input</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.Project.html#TYPEinput">Std.Project.input</a></code> </pre>
 
 
 <pre><span id="VALfile"><span class="keyword">val</span> file</span> : <code class="type">?loader:string -> filename:string -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">file ?loader ~filename</code> input data from a file, using the
-          specified loader. If <code class="code">loader</code> is not specified, then some existing
-          loader will be used. If it is specified, then it is first looked
-          up in the <code class="code">available_loaders</code> and if it is not found, then it will
-          be looked up in the <a href="Bap.Std.Image.html#VALavailable_backends"><code class="code"><span class="constructor">Image</span>.available_backends</code></a>.<br>
+        specified loader. If <code class="code">loader</code> is not specified, then some existing
+        loader will be used. If it is specified, then it is first looked
+        up in the <code class="code">available_loaders</code> and if it is not found, then it will
+        be looked up in the <a href="Bap.Std.Image.html#VALavailable_backends"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Image</span>.available_backends</code></a>.<br>
 </div>
 
-<pre><span id="VALbinary"><span class="keyword">val</span> binary</span> : <code class="type">?base:<a href="Bap.Std.html#TYPEaddr">addr</a> -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -> filename:string -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALbinary"><span class="keyword">val</span> binary</span> : <code class="type">?base:<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -> filename:string -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">binary ?base arch ~filename</code> create an input from a binary
-          file, that is a pure code.<br>
+        file, that is a pure code.<br>
 </div>
 <div class="param_info"><code class="code">base</code> : is an virtual address of the first byte (defaults to 0).</div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?finish:(<a href="Bap.Std.html#TYPEproject">project</a> -> <a href="Bap.Std.html#TYPEproject">project</a>) -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       string -><br>       code:<a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a> -><br>       data:<a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a> -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?finish:(<a href="Bap.Std.html#TYPEproject">Std.project</a> -> <a href="Bap.Std.html#TYPEproject">Std.project</a>) -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       string -><br>       code:<a href="Bap.Std.html#TYPEvalue">Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a> -><br>       data:<a href="Bap.Std.html#TYPEvalue">Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a> -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create arch filename ~code ~data</code> creates an input from a
-          file, using two memory maps. The <code class="code">code</code> memmap spans the code in
-          the file, and <code class="code">data</code> spans the data. An optional <code class="code">finish</code>
-          function can be used to propagate to the project any
-          additional information that is available to the loader. It
-          defaults to <code class="code">ident</code>.<br>
+        file, using two memory maps. The <code class="code">code</code> memmap spans the code in
+        the file, and <code class="code">data</code> spans the data. An optional <code class="code">finish</code>
+        function can be used to propagate to the project any
+        additional information that is available to the loader. It
+        defaults to <code class="code">ident</code>.<br>
 </div>
 
 <pre><span id="VALregister_loader"><span class="keyword">val</span> register_loader</span> : <code class="type">string -> (string -> <a href="Bap.Std.Project.Input.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
 <code class="code">register_loader name load</code> register a loader under provided
-          <code class="code">name</code>. The <code class="code">load</code> function will be called the filename, and it
-          must return the <code class="code">input</code> value.<br>
+        <code class="code">name</code>. The <code class="code">load</code> function will be called the filename, and it
+        must return the <code class="code">input</code> value.<br>
 </div>
 
 <pre><span id="VALavailable_loaders"><span class="keyword">val</span> available_loaders</span> : <code class="type">unit -> string list</code></pre><div class="info ">

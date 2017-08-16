@@ -85,27 +85,27 @@ Rooter finds starts of functions in the binary.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPErooter">rooter</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPErooter">Std.rooter</a></code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEseq">seq</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create seq</code> creates a rooter from a given sequence of addresses<br>
 </div>
 
-<pre><span id="VALof_image"><span class="keyword">val</span> of_image</span> : <code class="type"><a href="Bap.Std.html#TYPEimage">image</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_image"><span class="keyword">val</span> of_image</span> : <code class="type"><a href="Bap.Std.html#TYPEimage">Std.image</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_image img</code> create a rooter that will use existing symbol
-        information inside the image, to find roots.<br>
+      information inside the image, to find roots.<br>
 </div>
 
-<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEaddr">addr</a>) <a href="Bap.Std.html#TYPEseq">seq</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">Std.addr</a> * <a href="Bap.Std.html#TYPEaddr">Std.addr</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a> -> <a href="Bap.Std.Rooter.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_blocks</code> produces a rooter from a serialized
-        sequence of blocks. Each element of the sequence is deconstructed
-        as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
-        virtual address of a block start, and <code class="code">ea</code> is an address of the
-        block end.<br>
+      sequence of blocks. Each element of the sequence is deconstructed
+      as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
+      virtual address of a block start, and <code class="code">ea</code> is an address of the
+      block end.<br>
 </div>
 
-<pre><span id="VALroots"><span class="keyword">val</span> roots</span> : <code class="type"><a href="Bap.Std.Rooter.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALroots"><span class="keyword">val</span> roots</span> : <code class="type"><a href="Bap.Std.Rooter.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">roots r</code> enumerates roots found by rooter <code class="code">r</code><br>
 </div>
 
@@ -113,7 +113,7 @@ Rooter finds starts of functions in the binary.<br>
 <code class="code">union r1 r2</code> joins roots from rooters <code class="code">r1</code> and <code class="code">r2</code><br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Rooter.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Rooter.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Std.Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
 A factory of rooters.
 </div>
 </body></html>

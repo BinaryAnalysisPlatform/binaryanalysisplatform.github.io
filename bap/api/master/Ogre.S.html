@@ -169,6 +169,10 @@ Monadic interface to the document.
       the query EDSL.<br>
 </div>
 
+<pre><span id="VALcollect"><span class="keyword">val</span> collect</span> : <code class="type">(('a -> 'a) -> 'b) <a href="Ogre.html#TYPEquery">Ogre.query</a> -> 'b <a href="Ogre.html#TYPEseq">Ogre.seq</a> t</code></pre><div class="info ">
+<code class="code">collect query</code> is the same as <code class="code">foreach query ~f:ident</code><br>
+</div>
+
 <pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">('b, 'a -> unit t) <a href="Ogre.html#TYPEattribute">Ogre.attribute</a> -> 'a</code></pre><div class="info ">
 <code class="code">provide attr v1 v2 ... vm</code> stores the constituents of an
       attribute value in the document. An attribute type encodes not
@@ -180,12 +184,12 @@ Monadic interface to the document.
       defines the type and the arity of the function.<br>
 </div>
 
-<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">Error.t -> 'a t</code></pre><div class="info ">
+<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">Std.Error.t -> 'a t</code></pre><div class="info ">
 <code class="code">fail error</code> aborts an inference process with the specified
       <code class="code">error</code>.<br>
 </div>
 
-<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) Std.format4 -> 'a</code></pre><div class="info ">
 <code class="code">failf fmt args... ()</code> constructs an error based on the
       specified format <code class="code">fmt</code> and arguments, terminated by the unit value
       <code class="code">()</code>. Example:
@@ -201,7 +205,7 @@ Monadic interface to the document.
       needed.<br>
 </div>
 
-<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> 'a Or_error.t m</code></pre><div class="info ">
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> 'a Std.Or_error.t m</code></pre><div class="info ">
 <code class="code">eval property document</code> makes an inference of a <code class="code">property</code> based
       on facts stored in a <code class="code">document</code>. If all requirements are
       satisfied and no errors occured the inferred result.
@@ -229,12 +233,12 @@ Monadic interface to the document.
       GPA score greater than 3.8.<br>
 </div>
 
-<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Or_error.t m</code></pre><div class="info ">
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Std.Or_error.t m</code></pre><div class="info ">
 <code class="code">exec op doc</code> executes an operation <code class="code">op</code> that, presumabely,
       updates the document <code class="code">doc</code>, returns an updated version.<br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> ('a * <a href="Ogre.html#TYPEdoc">Ogre.doc</a>) Or_error.t m</code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> ('a * <a href="Ogre.html#TYPEdoc">Ogre.doc</a>) Std.Or_error.t m</code></pre><div class="info ">
 <code class="code">run op doc</code> runs an operation <code class="code">op</code> that does some inference as
       well as may update the document. This function is a usual part
       of a generic state monad interface, and is provided for the

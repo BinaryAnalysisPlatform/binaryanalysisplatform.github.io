@@ -82,18 +82,18 @@
 
 <pre><span class="keyword">module</span> Memmap: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Memmap.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Memory maps.
-      Memory map is an assosiative data structure that maps memory
-      regions to values. Unlike in the Table, memory
-      regions in the Memmap can intersect in an arbitrary ways. This
-      data structure is also known as Interval Tree or Segmented Tree.
+    Memory map is an assosiative data structure that maps memory
+    regions to values. Unlike in the Table, memory
+    regions in the Memmap can intersect in an arbitrary ways. This
+    data structure is also known as Interval Tree or Segmented Tree.
 <p>
 
-      Underneath the hood it is implemented using augumented AVL tree,
-      so that all operations are logarithmic.<br>
+    Underneath the hood it is implemented using augumented AVL tree,
+    so that all operations are logarithmic.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEmemmap">memmap</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a></code> </pre>
 <div class="info ">
 memory map, aka interval trees<br>
 </div>
@@ -103,115 +103,119 @@ memory map, aka interval trees<br>
 <code class="code">empty</code> map<br>
 </div>
 
-<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALsingleton"><span class="keyword">val</span> singleton</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">singleton</code> a memory map containing only one memory region<br>
 </div>
 
-<pre><span id="VALmin_addr"><span class="keyword">val</span> min_addr</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> option</code></pre><div class="info ">
+<pre><span id="VALmin_addr"><span class="keyword">val</span> min_addr</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> option</code></pre><div class="info ">
 <code class="code">min_addr map</code> is a minimum addr mapped in <code class="code">map</code><br>
 </div>
 
-<pre><span id="VALmax_addr"><span class="keyword">val</span> max_addr</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> option</code></pre><div class="info ">
+<pre><span id="VALmax_addr"><span class="keyword">val</span> max_addr</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> option</code></pre><div class="info ">
 <code class="code">max_addr map</code> is a maximum addr mapped in <code class="code">map</code><br>
 </div>
 
-<pre><span id="VALmin_binding"><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) option</code></pre><div class="info ">
+<pre><span id="VALmin_binding"><span class="keyword">val</span> min_binding</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) option</code></pre><div class="info ">
 <code class="code">min_binding map</code> is a minimum binding mapped in <code class="code">map</code><br>
 </div>
 
-<pre><span id="VALmax_binding"><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) option</code></pre><div class="info ">
+<pre><span id="VALmax_binding"><span class="keyword">val</span> max_binding</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) option</code></pre><div class="info ">
 <code class="code">max_binding map</code> is a maximum binding mapped in <code class="code">map</code><br>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">add map mem tag</code> adds a new memory region <code class="code">mem</code> tagged with
-        <code class="code">tag</code>. If the same region was already in the <code class="code">map</code> it will be
-        tagged with the <code class="code">tag</code> again, even if it has had the same tag.<br>
+      <code class="code">tag</code>. If the same region was already in the <code class="code">map</code> it will be
+      tagged with the <code class="code">tag</code> again, even if it has had the same tag.<br>
 </div>
 
-<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">dominators map mem</code> an ordered sequence of all memory regions,
-        containing <code class="code">mem</code>. A memory region <code class="code">(x,y)</code> contains region <code class="code">(p,q)</code>,
-        iff <code class="code">p &gt;= x <span class="keywordsign">&amp;&amp;</span> q &lt;= y</code>, where memory regions are depicted using
-        closed intervals.<br>
+      containing <code class="code">mem</code>. A memory region <code class="code">(x,y)</code> contains region <code class="code">(p,q)</code>,
+      iff <code class="code">p &gt;= x <span class="keywordsign">&amp;&amp;</span> q &lt;= y</code>, where memory regions are depicted using
+      closed intervals.<br>
 </div>
 
-<pre><span id="VALintersections"><span class="keyword">val</span> intersections</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALintersections"><span class="keyword">val</span> intersections</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">intersections map mem</code> an ordered sequence of all memory regions,
-        that intersects with <code class="code">mem</code>. Memory region <code class="code">(x,y)</code> intersects with
-        region <code class="code">(p,q)</code> iff there exists such <code class="code">z</code> that
+      that intersects with <code class="code">mem</code>. Memory region <code class="code">(x,y)</code> intersects with
+      region <code class="code">(p,q)</code> iff there exists such <code class="code">z</code> that
 <p>
 
-        <code class="code">z &gt;= p <span class="keywordsign">||</span> z &lt;= q <span class="keywordsign">&amp;&amp;</span> z &gt;= x <span class="keywordsign">&amp;&amp;</span> z &lt;= y</code>.
+      <code class="code">z &gt;= p <span class="keywordsign">||</span> z &lt;= q <span class="keywordsign">&amp;&amp;</span> z &gt;= x <span class="keywordsign">&amp;&amp;</span> z &lt;= y</code>.
 <p>
 
-        In other words if there exists such byte that belongs to both memory
-        regions.<br>
+      In other words if there exists such byte that belongs to both memory
+      regions.<br>
 </div>
 
-<pre><span id="VALintersects"><span class="keyword">val</span> intersects</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALintersects"><span class="keyword">val</span> intersects</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> bool</code></pre><div class="info ">
 <code class="code">intersects map mem</code> is true if <code class="code">intersections map mem</code> is not empty<br>
 </div>
 
-<pre><span id="VALdominates"><span class="keyword">val</span> dominates</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALdominates"><span class="keyword">val</span> dominates</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> bool</code></pre><div class="info ">
 <code class="code">dominates map mem</code> if there is a non empty set of dominators<br>
 </div>
 
-<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> bool</code></pre><div class="info ">
 <code class="code">contains map addr</code> true if there exists such memory region <code class="code">mem</code>,
-        that <code class="code"><span class="constructor">Memory</span>.contains mem addr</code><br>
+      that <code class="code"><span class="constructor">Memory</span>.contains mem addr</code><br>
 </div>
 
-<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALlookup"><span class="keyword">val</span> lookup</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">lookup map addr</code> returns an ordered sequence of all memory
-        containing the <code class="code">addr</code><br>
+      containing the <code class="code">addr</code><br>
 </div>
 
 <pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">map m f</code> returns a new map with each tag mapped
-        with function <code class="code">f</code><br>
+      with function <code class="code">f</code><br>
 </div>
 
-<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:(<a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a -> 'b) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">mapi m f</code> the same as <code class="code">map</code>, but <code class="code">f</code> is called with two
-        arguments: <code class="code">mem</code> and <code class="code">tag</code>, where <code class="code">mem</code> is a memory region,
-        and <code class="code">tag</code> is a <code class="code">tag</code> assosiated with that region.<br>
+      arguments: <code class="code">mem</code> and <code class="code">tag</code>, where <code class="code">mem</code> is a memory region,
+      and <code class="code">tag</code> is a <code class="code">tag</code> assosiated with that region.<br>
 </div>
 
 <pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:('a -> bool) -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">filter map f</code> returns a map that contains only those elements
-        for which <code class="code">f</code> evaluated to <code class="code"><span class="keyword">true</span></code><br>
+      for which <code class="code">f</code> evaluated to <code class="code"><span class="keyword">true</span></code><br>
 </div>
 
 <pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> f:('a -> 'b option) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">filter_map m f</code> creates a new map by applying a function <code class="code">f</code> to
-        each tag. If <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> x</code> then this region will be mapped
-        to <code class="code">x</code> in a new map, otherwise it will be dropped.<br>
+      each tag. If <code class="code">f</code> returns <code class="code"><span class="constructor">Some</span> x</code> then this region will be mapped
+      to <code class="code">x</code> in a new map, otherwise it will be dropped.<br>
 </div>
 
-<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEmem">mem</a> -> 'a -> 'b option) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfilter_mapi"><span class="keyword">val</span> filter_mapi</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -><br>       f:(<a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a -> 'b option) -> 'b <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">filter_mapi</code> is like <code class="code">filter_map</code> but use function also accepts
-        would assosiated memory region<br>
+      would assosiated memory region<br>
 </div>
 
-<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">remove map mem</code> removes all bindings to <code class="code">mem</code><br>
 </div>
 
-<pre><span id="VALremove_intersections"><span class="keyword">val</span> remove_intersections</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALremove_intersections"><span class="keyword">val</span> remove_intersections</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">remove_intersections map mem</code> removes all bindings that
-        that intersects with <code class="code">mem</code><br>
+      that intersects with <code class="code">mem</code><br>
 </div>
 
-<pre><span id="VALremove_dominators"><span class="keyword">val</span> remove_dominators</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALremove_dominators"><span class="keyword">val</span> remove_dominators</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">remove_dominators map mem</code> removes all bindings that are
-        dominators to <code class="code">mem</code><br>
+      dominators to <code class="code">mem</code><br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> -> (<a href="Bap.Std.html#TYPEmem">Std.mem</a> * 'a) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">to_sequence map</code> converts the memmap <code class="code"><span class="keywordsign">'</span>a t</code> to a sequence of
-        key-value pairs<br>
+      key-value pairs<br>
 </div>
 
 <pre><span class="keyword">include</span> Container.S1</pre>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Bap.Std.Memmap.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
+<code class="code">pp pp_elem</code> constracts a printer for a memmap to the given element.<br>
+</div>
 </body></html>

@@ -95,7 +95,7 @@ returns a size of the data type representation if type
         restructions.<br>
 </div>
 
-<pre><span id="METHODalignment"><span class="keyword">method</span> alignment</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre><div class="info ">
+<pre><span id="METHODalignment"><span class="keyword">method</span> alignment</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre><div class="info ">
 <code class="code">alignment t</code> calculates an alignment restriction for data
         type <code class="code">t</code>. The default aligment rules are the following:<ul>
 <li>if type is scalar then the alignment is <code class="code">sizeof(t)</code>;</li>
@@ -109,7 +109,7 @@ returns a size of the data type representation if type
 <br>
 </div>
 
-<pre><span id="METHODpadding"><span class="keyword">method</span> padding</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap_c_size.html#TYPEbits">bits</a> -> <a href="Bap.Std.html#TYPEsize">size</a> option</code></pre><div class="info ">
+<pre><span id="METHODpadding"><span class="keyword">method</span> padding</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap_c_size.html#TYPEbits">bits</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a> option</code></pre><div class="info ">
 <code class="code">padding t off</code> computes a required padding at given offset
         that should be inserted before value of type <code class="code">t</code> to satisfy
         the aligment restriction for <code class="code">t</code>, as determined by the
@@ -132,11 +132,11 @@ if spec is complete then returns a total size of the
     structure, including padding.<br>
 </div>
 
-<pre><span id="METHODinteger"><span class="keyword">method</span> integer</span> : <code class="type"><a href="Bap_c_type.html#TYPEinteger">Bap_c_type.integer</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
-<pre><span id="METHODpointer"><span class="keyword">method</span> pointer</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre>
-<pre><span id="METHODenum"><span class="keyword">method</span> enum</span> : <code class="type">(string * int64 option) list -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
+<pre><span id="METHODinteger"><span class="keyword">method</span> integer</span> : <code class="type"><a href="Bap_c_type.html#TYPEinteger">Bap_c_type.integer</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre>
+<pre><span id="METHODpointer"><span class="keyword">method</span> pointer</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr_size">Std.addr_size</a></code></pre>
+<pre><span id="METHODenum"><span class="keyword">method</span> enum</span> : <code class="type">(string * int64 option) list -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre>
 <pre><span id="METHODreal"><span class="keyword">method</span> real</span> : <code class="type"><a href="Bap_c_type.html#TYPEreal">Bap_c_type.real</a> -> [ `r128 | `r32 | `r64 ]</code></pre>
-<pre><span id="METHODcomplex"><span class="keyword">method</span> complex</span> : <code class="type"><a href="Bap_c_type.html#TYPEcomplex">Bap_c_type.complex</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
-<pre><span id="METHODfloating"><span class="keyword">method</span> floating</span> : <code class="type"><a href="Bap_c_type.html#TYPEfloating">Bap_c_type.floating</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
-<pre><span id="METHODbasic"><span class="keyword">method</span> basic</span> : <code class="type"><a href="Bap_c_type.html#TYPEbasic">Bap_c_type.basic</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre>
-<pre><span id="METHODscalar"><span class="keyword">method</span> scalar</span> : <code class="type"><a href="Bap_c_type.html#TYPEscalar">Bap_c_type.scalar</a> -> <a href="Bap.Std.html#TYPEsize">size</a></code></pre></body></html>
+<pre><span id="METHODcomplex"><span class="keyword">method</span> complex</span> : <code class="type"><a href="Bap_c_type.html#TYPEcomplex">Bap_c_type.complex</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre>
+<pre><span id="METHODfloating"><span class="keyword">method</span> floating</span> : <code class="type"><a href="Bap_c_type.html#TYPEfloating">Bap_c_type.floating</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre>
+<pre><span id="METHODbasic"><span class="keyword">method</span> basic</span> : <code class="type"><a href="Bap_c_type.html#TYPEbasic">Bap_c_type.basic</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre>
+<pre><span id="METHODscalar"><span class="keyword">method</span> scalar</span> : <code class="type"><a href="Bap_c_type.html#TYPEscalar">Bap_c_type.scalar</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a></code></pre></body></html>

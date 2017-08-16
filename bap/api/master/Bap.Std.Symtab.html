@@ -86,15 +86,15 @@ Reconstructed symbol table.<br>
 <hr width="100%">
 <br>
 This data structure holds information about functions that
-        were found in the executable.<br>
+      were found in the executable.<br>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsymtab">symtab</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsymtab">Std.symtab</a></code> </pre>
 <div class="info ">
 symbol table<br>
 </div>
 
 
-<pre><span id="TYPEfn"><span class="keyword">type</span> <code class="type"></code>fn</span> = <code class="type">string * <a href="Bap.Std.html#TYPEblock">block</a> * <a href="Bap.Std.html#TYPEcfg">cfg</a></code> </pre>
+<pre><span id="TYPEfn"><span class="keyword">type</span> <code class="type"></code>fn</span> = <code class="type">string * <a href="Bap.Std.html#TYPEblock">Std.block</a> * <a href="Bap.Std.html#TYPEcfg">Std.cfg</a></code> </pre>
 <div class="info ">
 <code class="code">(name,entry,graph)</code> a simple representation of a function<br>
 </div>
@@ -106,8 +106,8 @@ empty symbol table<br>
 
 <pre><span id="VALadd_symbol"><span class="keyword">val</span> add_symbol</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">add_symbol table name entry blocks</code> extends <code class="code">table</code> with a
-        new symbol with a given <code class="code">name</code>, <code class="code">entry</code> block and body
-        <code class="code">blocks</code>.<br>
+      new symbol with a given <code class="code">name</code>, <code class="code">entry</code> block and body
+      <code class="code">blocks</code>.<br>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> <a href="Bap.Std.Symtab.html#TYPEt">t</a></code></pre><div class="info ">
@@ -118,31 +118,31 @@ empty symbol table<br>
 <code class="code">find_by_name symbols name</code> finds a symbol with a given namem<br>
 </div>
 
-<pre><span id="VALfind_by_start"><span class="keyword">val</span> find_by_start</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> option</code></pre><div class="info ">
+<pre><span id="VALfind_by_start"><span class="keyword">val</span> find_by_start</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> option</code></pre><div class="info ">
 <code class="code">find_by_start symbols addr</code> finds a symbol that starts from
-        a given address<br>
+      a given address<br>
 </div>
 
-<pre><span id="VALowners"><span class="keyword">val</span> owners</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
+<pre><span id="VALowners"><span class="keyword">val</span> owners</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
 <code class="code">owners addr</code> return a list of functions that owns <code class="code">addr</code><br>
 </div>
 
-<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
+<pre><span id="VALdominators"><span class="keyword">val</span> dominators</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
 <code class="code">dominators syms mem</code> returns a list of functions that
-        dominates over provided memory region <code class="code">mem</code><br>
+      dominates over provided memory region <code class="code">mem</code><br>
 </div>
 
-<pre><span id="VALintersecting"><span class="keyword">val</span> intersecting</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
+<pre><span id="VALintersecting"><span class="keyword">val</span> intersecting</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> list</code></pre><div class="info ">
 <code class="code">intersecting_mem syms mem</code> returns a list of functions, that
-        resides in memory region <code class="code">mem</code><br>
+      resides in memory region <code class="code">mem</code><br>
 </div>
 
-<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> <a href="Bap.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEt">t</a> -> <a href="Bap.Std.Symtab.html#TYPEfn">fn</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">to_sequence symtab</code> returns a sequence of functions<br>
 </div>
 
-<pre><span id="VALspan"><span class="keyword">val</span> span</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> unit <a href="Bap.Std.html#TYPEmemmap">memmap</a></code></pre><div class="info ">
+<pre><span id="VALspan"><span class="keyword">val</span> span</span> : <code class="type"><a href="Bap.Std.Symtab.html#TYPEfn">fn</a> -> unit <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a></code></pre><div class="info ">
 <code class="code">span fn</code> returns a memory map of a region occupied by a
-        function <code class="code">fn</code><br>
+      function <code class="code">fn</code><br>
 </div>
 </body></html>

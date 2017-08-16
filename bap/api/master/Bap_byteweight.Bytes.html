@@ -85,7 +85,7 @@ Default implementation that uses memory chunk as the domain.<br>
 
 <pre><span class="keyword">include</span> <a href="Bap_byteweight.S.html">Bap_byteweight.S</a></pre>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">t -> length:int -> threshold:float -> corpus -> <a href="Bap.Std.html#TYPEaddr">addr</a> list</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">t -> length:int -> threshold:float -> corpus -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> list</code></pre><div class="info ">
 <code class="code">find mem ~length ~threshold corpus</code> extract addresses of all
       memory chunks of the specified <code class="code">length</code>, that were classified
       positively under given <code class="code">threshold</code>.<br>

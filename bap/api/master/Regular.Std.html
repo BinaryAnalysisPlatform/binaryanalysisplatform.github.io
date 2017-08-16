@@ -110,12 +110,12 @@ Interface that should support any regular data type.
     So what the library actually provides. First of all it defines the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a> interface, that each regular data type is expected to
     implement. This includes a full set of <code class="code"><span class="constructor">Io</span></code> functions, that allows
-    one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Data</span></code></a>
+    one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>
     interface). It also provides an inteface for creating different
     collections from the values of that type, including trees,
     hashtables, maps, sets, etc. Also, it describes the whole algebra
     of comparison functions. For the opaque data types an interface
-    called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
+    called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>. It doesn't provide printing and serialization, but has
     everything that can be derived for a type with a total order
     (e.g., containers, comparison function, etc).
@@ -125,7 +125,7 @@ Interface that should support any regular data type.
     minimal implementation, and derives the rest.
 <p>
 
-    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Bytes</span></code></a> module is provided that facilitates the
+    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bytes</span></code></a> module is provided that facilitates the
     transfer from mutable to immutable <code class="code"><span class="constructor">Strings</span></code>. It is the extension
     of OCaml standard Bytes module, enhanced with the expected set of
     functions.<br>
@@ -136,7 +136,7 @@ Interface that should support any regular data type.
 <br>
 <h3 id="3_Typedefinitions">Type definitions</h3><br>
 
-<pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type">Bytes.t</code> </pre>
+<pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type">Std.Bytes.t</code> </pre>
 <div class="info ">
 bytes is a mutable sequence of bytes that has a fixed length.<br>
 </div>

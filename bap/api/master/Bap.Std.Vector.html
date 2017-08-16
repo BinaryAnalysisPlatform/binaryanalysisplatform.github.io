@@ -84,13 +84,13 @@
 Resizable Array.
 <p>
 
-      Resizable arrays with a logarithmic push_back in the style of
-      C++. A user need to provide a default value (c.f.,
-      DefaultConstructible requirement in C++ version).<br>
+    Resizable arrays with a logarithmic push_back in the style of
+    C++. A user need to provide a default value (c.f.,
+    DefaultConstructible requirement in C++ version).<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEvector">vector</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Bap.Std.html#TYPEvector">Std.vector</a></code> </pre>
 <div class="info ">
 a type of vector holding elements of type <code class="code"><span class="keywordsign">'</span>a</code><br>
 </div>
@@ -98,9 +98,9 @@ a type of vector holding elements of type <code class="code"><span class="keywor
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?capacity:int -> 'a -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ?capacity default</code> creates an empty vector with a a given
-        <code class="code">capacity</code>. It is guaranteed that the default value will never
-        be seen by the user unless he put it into the vector explicitely
-        with <code class="code">append</code> or <code class="code">set</code>.<br>
+      <code class="code">capacity</code>. It is guaranteed that the default value will never
+      be seen by the user unless he put it into the vector explicitely
+      with <code class="code">append</code> or <code class="code">set</code>.<br>
 </div>
 
 <pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info ">
@@ -113,23 +113,59 @@ a type of vector holding elements of type <code class="code"><span class="keywor
 
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> int -> 'a</code></pre><div class="info ">
 <code class="code">get vec n</code> like <code class="code">nth</code> but raises exception if index is out of
-        bounds<br>
+      bounds<br>
 </div>
 
 <pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> int -> 'a -> unit</code></pre><div class="info ">
 <code class="code">set vec n x</code> sets <code class="code">n</code>'th element of a vector <code class="code">vec</code> to <code class="code">x</code> if
-        <code class="code">n &lt; length vec</code> then raises exception<br>
+      <code class="code">n &lt; length vec</code> then raises exception<br>
 </div>
 
 <pre><span id="VALmap_to_array"><span class="keyword">val</span> map_to_array</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:('a -> 'b) -> 'b array</code></pre><div class="info ">
 <code class="code">map_to_array xs ~f</code> copies data from <code class="code">xs</code> to an array applying
-        <code class="code">f</code> to each element. See also <code class="code">to_array</code> function from
-        <code class="code"><span class="constructor">Container</span>.<span class="constructor">S1</span></code> interface<br>
+      <code class="code">f</code> to each element. See also <code class="code">to_array</code> function from
+      <code class="code"><span class="constructor">Container</span>.<span class="constructor">S1</span></code> interface<br>
+</div>
+
+<pre><span id="VALfindi"><span class="keyword">val</span> findi</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:(int -> 'a -> bool) -> (int * 'a) option</code></pre><div class="info ">
+<code class="code">findi xs ~f</code> retuns an index <code class="code">i</code> and a value <code class="code">x</code> of the first
+      element of <code class="code">xs</code>, for which <code class="code">f i x</code> is <code class="code"><span class="keyword">true</span></code>.<br>
+</div>
+
+<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> f:(int -> 'a -> unit) -> unit</code></pre><div class="info ">
+<code class="code">iter xs ~f</code> applies <code class="code">f i x</code> for each <code class="code">x_i</code> in <code class="code">xs</code><br>
+</div>
+
+<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> init:'b -> f:(int -> 'b -> 'a -> 'b) -> 'b</code></pre><div class="info ">
+<code class="code">foldi xs ~init:s_0 ~f</code> computes <code class="code">f n s_n x_n</code>, where <code class="code">s_n = f
+      (n-1) s_[n-1] x_[n-1]</code> and <code class="code">n</code> is the number of elements in
+      <code class="code">xs</code><br>
+</div>
+
+<pre><span id="VALindex"><span class="keyword">val</span> index</span> : <code class="type">?equal:('a -> 'a -> bool) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int option</code></pre><div class="info ">
+<code class="code">index ?equal xs x</code> returns an index of the first element <code class="code">p</code> of
+      <code class="code">xs</code> for which <code class="code">equal p x</code> is <code class="code"><span class="keyword">true</span></code>. The <code class="code">equal</code> parameter
+      defaults to the OCaml builtin polymorphic equality.<br>
+</div>
+
+<pre><span id="VALindex_exn"><span class="keyword">val</span> index_exn</span> : <code class="type">?equal:('a -> 'a -> bool) -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int</code></pre><div class="info ">
+<code class="code">index_exn ?equal xs x</code> is the same as <code class="code">index ?equal xs x</code> but
+      an exception is thrown instead of <code class="code"><span class="constructor">None</span></code><br>
+</div>
+
+<pre><span id="VALindex_with"><span class="keyword">val</span> index_with</span> : <code class="type">?equal:('a -> 'a -> bool) -> default:int -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> -> 'a -> int</code></pre><div class="info ">
+<code class="code">index_with ?equal ~default xs x</code> same as <code class="code">index</code> but returns
+      the <code class="code">default</code> value instead of <code class="code"><span class="constructor">None</span></code>.<br>
 </div>
 
 <pre><span class="keyword">include</span> Container.S1</pre>
 <div class="info ">
 implements common accessors for the array, like <code class="code">find</code>, <code class="code">fold</code>,
-        <code class="code">iter</code>, etc<br>
+      <code class="code">iter</code>, etc<br>
+</div>
+
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Bap.Std.Vector.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
+<code class="code">pp pp_elem</code> creates a vector printer that uses <code class="code">pp_elem</code> to
+      print elements.<br>
 </div>
 </body></html>

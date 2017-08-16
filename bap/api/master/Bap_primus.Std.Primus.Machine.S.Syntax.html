@@ -85,9 +85,9 @@ Computation Syntax.<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">include</span> Monad.Syntax.S2</pre>
+<pre><span class="keyword">include</span> Monad.Syntax.S</pre>
 
-<pre><span id="VAL(>>>)"><span class="keyword">val</span> (&gt;&gt;&gt;)</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Primus.observation</a> -><br>       ('a -> (unit, 'e) <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Primus.Machine.S.t</a>) -><br>       (unit, 'e) <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Primus.Machine.S.t</a></code></pre><div class="info ">
+<pre><span id="VAL(>>>)"><span class="keyword">val</span> (&gt;&gt;&gt;)</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -><br>       ('a -> unit <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Std.Primus.Machine.S.t</a>) -><br>       unit <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Std.Primus.Machine.S.t</a></code></pre><div class="info ">
 <code class="code">event &gt;&gt;&gt; action</code> is the same as
               <code class="code"><span class="constructor">Observation</span>.observe event action</code><br>
 </div>

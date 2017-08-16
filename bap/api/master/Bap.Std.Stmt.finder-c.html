@@ -82,26 +82,26 @@
 
 <pre><span name="TYPEfinder"><span class="keyword">class</span> <code class="type">['a]</code> finder</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.finder-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 A visitor with a shortcut.
-        Finder is a specialization of a visitor, that uses <code class="code">return</code> as its
-        folding argument. At any time you can stop the traversing by
-        calling <code class="code">return</code> function of the provided argument (which is by
-        itself is a record with one field - a function accepting argument
-        of type <code class="code"><span class="keywordsign">'</span>a option</code>).
+      Finder is a specialization of a visitor, that uses <code class="code">return</code> as its
+      folding argument. At any time you can stop the traversing by
+      calling <code class="code">return</code> function of the provided argument (which is by
+      itself is a record with one field - a function accepting argument
+      of type <code class="code"><span class="keywordsign">'</span>a option</code>).
 <p>
 
-        For example, the following function will check whether <code class="code">x</code>
-        variable is assigned (i.e., occurs on the left of the
-        assignment operator) in the provided scope.
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;is_assigned&nbsp;x&nbsp;=&nbsp;find&nbsp;(<span class="keyword">object</span>(self)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[unit]&nbsp;finder
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;enter_move&nbsp;y&nbsp;_rhs&nbsp;cc&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;<span class="constructor">Var</span>.(x&nbsp;=&nbsp;y)&nbsp;<span class="keyword">then</span>&nbsp;cc.return&nbsp;(<span class="constructor">Some</span>&nbsp;());&nbsp;cc
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+      For example, the following function will check whether <code class="code">x</code>
+      variable is assigned (i.e., occurs on the left of the
+      assignment operator) in the provided scope.
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;is_assigned&nbsp;x&nbsp;=&nbsp;find&nbsp;(<span class="keyword">object</span>(self)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[unit]&nbsp;finder
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;enter_move&nbsp;y&nbsp;_rhs&nbsp;cc&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">if</span>&nbsp;<span class="constructor">Var</span>.(x&nbsp;=&nbsp;y)&nbsp;<span class="keyword">then</span>&nbsp;cc.return&nbsp;(<span class="constructor">Some</span>&nbsp;());&nbsp;cc
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-        There're three <code class="code">find</code> functions in the library, that accepts
-        an object of type <code class="code">finder</code>:
+      There're three <code class="code">find</code> functions in the library, that accepts
+      an object of type <code class="code">finder</code>:
 <p>
 <ul>
 <li><code class="code"><span class="constructor">Bil</span>.finder</code> searches in the <code class="code">stmt list</code> aka <code class="code">bil</code></li>
@@ -109,8 +109,8 @@ A visitor with a shortcut.
 <li><code class="code"><span class="constructor">Exp</span>.finder</code> searches in <code class="code">exp</code>.</li>
 </ul>
 
-        In addition, you can use this object directly, using one of
-        the two provided entry points.<br>
+      In addition, you can use this object directly, using one of
+      the two provided entry points.<br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Stmt.visitor-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Stmt</span>.visitor</code></a></li>

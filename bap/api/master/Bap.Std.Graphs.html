@@ -84,34 +84,34 @@
 BAP Common Graphs.
 <p>
 
-      This module contains several graph structures, that are used
-      across BAP.
+    This module contains several graph structures, that are used
+    across BAP.
 <p>
 
-      The idiomatic use case is to bind the chosen graph to a shorter
-      name and use it as a first class module with different functions
-      in <a href="Graphlib.Std.html">graphlib</a> library, e.g.,
+    The idiomatic use case is to bind the chosen graph to a shorter
+    name and use it as a first class module with different functions
+    in <a href="Graphlib.Std.html">graphlib</a> library, e.g.,
 <p>
 
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>
+    <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>&nbsp;=&nbsp;<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;insns&nbsp;cfg&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Graphlib</span>.reverse_postorder_traverse&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;cfg&nbsp;|&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Seq</span>.map&nbsp;~f:<span class="constructor">Block</span>.insns&nbsp;|&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Seq</span>.concat_map&nbsp;~f:<span class="constructor">Seq</span>.of_list
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;insns&nbsp;cfg&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Graphlib</span>.reverse_postorder_traverse&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;cfg&nbsp;|&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Seq</span>.map&nbsp;~f:<span class="constructor">Block</span>.insns&nbsp;|&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Seq</span>.concat_map&nbsp;~f:<span class="constructor">Seq</span>.of_list
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Cfg.html">Cfg</a>: <code class="type">Graph</code><code class="type">  with type t = cfg
-                        and type node = block
-                        and type Edge.label = edge</code></pre><div class="info">
+                      and type node = block
+                      and type Edge.label = edge</code></pre><div class="info">
 Control Flow Graph with a machine basic block as a node.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Callgraph.html">Callgraph</a>: <code class="type">Graph</code><code class="type">  with type node = tid
-                              and type Node.label = tid
-                              and type Edge.label = jmp term list</code></pre><div class="info">
+                            and type Node.label = tid
+                            and type Edge.label = jmp term list</code></pre><div class="info">
 A call graph representation.
 </div>
 
@@ -120,8 +120,8 @@ Graph view over IR.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Tid.html">Tid</a>: <code class="type">Graph</code><code class="type">  with type node = tid
-                        and type Node.label = tid
-                        and type Edge.label = tid</code></pre><div class="info">
+                      and type Node.label = tid
+                      and type Edge.label = tid</code></pre><div class="info">
 Graph of Term identifiers.
 </div>
 </body></html>

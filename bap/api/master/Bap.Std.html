@@ -91,14 +91,13 @@
       <h3 id="3_LayeredArchitecture">Layered Architecture</h3>
 <p>
 
-      The BAP library has a layered architecture consisting of four
+      The BAP library has the layered architecture consisting of four
       layers. Although the layers are not really observable from outside
-      of the library, they make it easier to learn the library, as
-      they introduce new concepts sequentially. On top of this layers,
-      the <a href="Bap.Std.html#project">Project</a> module is defined, that
-      consolidates all information about target of an
-      analysis. <code class="code"><span class="constructor">Project</span></code> module may be viewed as an entry point to
-      the library.
+      of the library, they make it easier to learn the library as they
+      introduce new concepts sequentially. On top of these layers, the
+      <a href="Bap.Std.html#project">Project</a> module is defined that consolidates
+      all information about a target of analysis. The <code class="code"><span class="constructor">Project</span></code> module
+      may be viewed as an entry point to the library.
 <p>
 
       <pre class="verbatim">        +-----------------------------------------------------+
@@ -131,12 +130,12 @@
 
       The <a href="Bap.Std.html#bfl">Foundation library</a> defines <a href="Bap.Std.Bil.html">BAP Instruction
       language</a> data types, as well as other useful data structures,
-      like <a href="Bap.Std.Value.html"><code class="code"><span class="constructor">Value</span></code></a>, <a href="Bap.Std.Trie.html"><code class="code"><span class="constructor">Trie</span></code></a>, <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Vector</span></code></a>, etc. The
+      like <a href="Bap.Std.Value.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Value</span></code></a>, <a href="Bap.Std.Trie.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Trie</span></code></a>, <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Vector</span></code></a>, etc. The
       <a href="Bap.Std.html#image">Memory model</a> layer is responsible for loading
       and parsing binary objects and representing them in a computer
       memory. It also defines a few useful data structures that are
-      used extensively by later layers, e.g., <a href="Bap.Std.Table.html"><code class="code"><span class="constructor">Table</span></code></a> and
-      <a href="Bap.Std.Memmap.html"><code class="code"><span class="constructor">Memmap</span></code></a>. The next layer performs
+      used extensively by later layers, e.g., <a href="Bap.Std.Table.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Table</span></code></a> and
+      <a href="Bap.Std.Memmap.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Memmap</span></code></a>. The next layer performs
       <a href="Bap.Std.html#disasm">disassembly</a> and lifting to BIL. Finally, the
       <a href="Bap.Std.html#sema">semantic analysis</a> layer transforms a binary
       into an IR representation, that is suitable for writing
@@ -165,20 +164,20 @@
       following set is not complete):
 <p>
 <ul>
-<li>loader - add new file formats (see <a href="Bap.Std.Image.html#VALregister_backend"><code class="code"><span class="constructor">Image</span>.register_backend</code></a> or <a href="Bap.Std.Project.Input.html"><code class="code"><span class="constructor">Project</span>.<span class="constructor">Input</span></code></a>);</li>
-<li>target - add new architecture (see <a href="Bap.Std.html#VALregister_target"><code class="code">register_target</code></a>);</li>
+<li>loader - add new file formats (see <a href="Bap.Std.Image.html#VALregister_backend"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Image</span>.register_backend</code></a> or <a href="Bap.Std.Project.Input.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Project</span>.<span class="constructor">Input</span></code></a>);</li>
+<li>target - add new architecture (see <a href="Bap.Std.html#VALregister_target"><code class="code"><span class="constructor">Std</span>.register_target</code></a>);</li>
 <li>disassembler - plug in a disassembler (see 'disasm.hpp' for c++ disassembler interface);</li>
-<li>attributes - extend the attribute type (<a href="Bap.Std.Value.Tag.html#VALregister"><code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span>.register</code></a>);</li>
-<li>symbolizer - add names to functions (see <a href="Bap.Std.Symbolizer.html"><code class="code"><span class="constructor">Symbolizer</span></code></a>);</li>
-<li>rooter - find function starts (see <a href="Bap.Std.Rooter.html"><code class="code"><span class="constructor">Rooter</span></code></a>);</li>
-<li>brancher - resolve jump destinations (see <a href="Bap.Std.Brancher.html"><code class="code"><span class="constructor">Brancher</span></code></a>)</li>
+<li>attributes - extend the attribute type (<a href="Bap.Std.Value.Tag.html#VALregister"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Value</span>.<span class="constructor">Tag</span>.register</code></a>);</li>
+<li>symbolizer - add names to functions (see <a href="Bap.Std.Symbolizer.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Symbolizer</span></code></a>);</li>
+<li>rooter - find function starts (see <a href="Bap.Std.Rooter.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Rooter</span></code></a>);</li>
+<li>brancher - resolve jump destinations (see <a href="Bap.Std.Brancher.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Brancher</span></code></a>)</li>
 <li>reconstructor - CFG reconstruction algorithm (see
-        <a href="Bap.Std.Reconstructor.html"><code class="code"><span class="constructor">Reconstructor</span></code></a>);</li>
+        <a href="Bap.Std.Reconstructor.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Reconstructor</span></code></a>);</li>
 <li>analysis - write your own arbitrary analysis pass (see
-        <a href="Bap.Std.Project.html#VALregister_pass"><code class="code"><span class="constructor">Project</span>.register_pass</code></a>)</li>
+        <a href="Bap.Std.Project.html#VALregister_pass"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Project</span>.register_pass</code></a>)</li>
 </ul>
 
-      The <a href="Regular.Std.html"><code class="code"><span class="constructor">Regular</span>.<span class="constructor">Std</span></code></a> library, that forms a foundation for the BAP
+      The <a href="Regular.Std.html"><code class="code"><span class="constructor">Std</span></code></a> library, that forms a foundation for the BAP
       Standard Library, also follows the dependency injection
       principle, so every data type that implements regular interface,
       can be dynamically extended with:
@@ -206,7 +205,7 @@
       --help</code> for more information.
 <p>
 
-      We use <a href="Bap.Std.Project.html"><code class="code"><span class="constructor">Project</span></code></a> data structure to represent a program and all
+      We use <a href="Bap.Std.Project.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Project</span></code></a> data structure to represent a program and all
       associated knowledge that we were capable to infer.  To learn
       how to use the project data structure continue to
       <a href="Bap.Std.html#project"><i>Working with project</i></a>.<br>
@@ -225,7 +224,7 @@
 <li><a href="Bap.Std.Exp.html">exp</a>  - <a href="Bap.Std.Bil.html">BIL</a> expression sub-language;</li>
 <li><a href="Bap.Std.Stmt.html">stmt</a> - <a href="Bap.Std.Bil.html">BIL</a> statements;</li>
 <li><a href="Bap.Std.Bitvector.html">bitvector</a> - a bitvector data structure
-        to represent immediate data, used usually by their aliases <a href="Bap.Std.html#TYPEword"><code class="code">word</code></a> and <a href="Bap.Std.html#TYPEaddr"><code class="code">addr</code></a>;</li>
+        to represent immediate data, used usually by their aliases <a href="Bap.Std.html#TYPEword"><code class="code"><span class="constructor">Std</span>.word</code></a> and <a href="Bap.Std.html#TYPEaddr"><code class="code"><span class="constructor">Std</span>.addr</code></a>;</li>
 <li><a href="Bap.Std.Value.html">value</a> - an extensible variant type;</li>
 <li><a href="Bap.Std.Dict.html">dict</a> - an extensible record;</li>
 <li><a href="Bap.Std.Vector.html">vector</a> - an array that can grow;</li>
@@ -286,14 +285,14 @@
 
       Like <a href="Bap.Std.Value.html">value</a> is an extensible sum type, <a href="Bap.Std.Dict.html">dict</a>
       can be viewed as an extensible product type. Dict is a sequence
-      of values of type <a href="Bap.Std.html#TYPEvalue"><code class="code">value</code></a>, with <a href="Bap.Std.Value.Tag.html">tags</a> used as
+      of values of type <a href="Bap.Std.html#TYPEvalue"><code class="code"><span class="constructor">Std</span>.value</code></a>, with <a href="Bap.Std.Value.Tag.html">tags</a> used as
       field names. Of course, fields are unique.
 <p>
 
       <h3 id="vector">Vector</h3>
 <p>
 
-      <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Vector</span></code></a> is an implementation of C++ STL like vectors with
+      <a href="Bap.Std.Vector.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Vector</span></code></a> is an implementation of C++ STL like vectors with
       logarithmic push back.
 <p>
 
@@ -312,7 +311,7 @@
       <a href="Bap.Std.Bitvector.Trie.html">tries</a> inside.
 <p>
 
-      For the common string trie, there's <a href="Bap.Std.Trie.String.html"><code class="code"><span class="constructor">Trie</span>.<span class="constructor">String</span></code></a>.<br>
+      For the common string trie, there's <a href="Bap.Std.Trie.String.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Trie</span>.<span class="constructor">String</span></code></a>.<br>
 <br>
 <h2 id="image">Memory model</h2>
 <p>
@@ -361,9 +360,9 @@
       one of the following functions:
 <p>
 <ul>
-<li><a href="Bap.Std.Disasm.html#VALof_mem"><code class="code"><span class="constructor">Disasm</span>.of_mem</code></a> - to disassemble a region of memory;</li>
-<li><a href="Bap.Std.Disasm.html#VALof_image"><code class="code"><span class="constructor">Disasm</span>.of_image</code></a> - to disassemble a loaded binary object;</li>
-<li><a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="constructor">Disasm</span>.of_file</code></a> - to disassemble file.</li>
+<li><a href="Bap.Std.Disasm.html#VALof_mem"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm</span>.of_mem</code></a> - to disassemble a region of memory;</li>
+<li><a href="Bap.Std.Disasm.html#VALof_image"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm</span>.of_image</code></a> - to disassemble a loaded binary object;</li>
+<li><a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm</span>.of_file</code></a> - to disassemble file.</li>
 </ul>
 
       All these functions perform disassembly by recursive descent,
@@ -410,7 +409,7 @@
       A disassembled program is represented as a set of interconnected
       <a href="Bap.Std.Block.html">basic blocks</a>, called a whole program control flow
       graph (CFG) and it is indeed represented as a graph
-      <a href="Bap.Std.Graphs.Cfg.html"><code class="code"><span class="constructor">Graphs</span>.<span class="constructor">Cfg</span></code></a>.  See <a href="Graphlib.Std.html">graphlib</a> for more
+      <a href="Bap.Std.Graphs.Cfg.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graphs</span>.<span class="constructor">Cfg</span></code></a>.  See <a href="Graphlib.Std.html">graphlib</a> for more
       information on graphs.
 <p>
 
@@ -431,7 +430,7 @@
       The expert interface exposes low level interface that provides
       facilities for building custom implementations of
       disassemblers. The interface to the disassembler backend is
-      exposed via the <a href="Bap.Std.Disasm_expert.Basic.html"><code class="code"><span class="constructor">Disasm_expert</span>.<span class="constructor">Basic</span></code></a> module. New backends can
+      exposed via the <a href="Bap.Std.Disasm_expert.Basic.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm_expert</span>.<span class="constructor">Basic</span></code></a> module. New backends can
       be added by implementing the 'disasm.hpp' interface.
 <p>
 
@@ -559,7 +558,7 @@
 
       There're two general approaches to obtain a value of type
       <a href="Bap.Std.Project.html">project</a>:<ul>
-<li>create it manually using <a href="Bap.Std.Project.html#VALcreate"><code class="code"><span class="constructor">Project</span>.create</code></a> function;</li>
+<li>create it manually using <a href="Bap.Std.Project.html#VALcreate"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Project</span>.create</code></a> function;</li>
 <li>write a plugin to the <code class="code">bap</code> frontend.</li>
 </ul>
 
@@ -644,7 +643,7 @@
 <h1 id="api">BAP API</h1><br>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Integer.html">Integer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Machine integer as a sequence of bits.
+Abstract integral type.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Seq.html">Seq</a>: <code class="type">module type of Seq</code><code class="type"> 
@@ -658,6 +657,12 @@ Lazy sequence
 <pre><span class="keyword">module</span> <a href="Bap.Std.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Constructs a trie
 </div>
+
+<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
+
+
+<pre><span id="TYPEdict"><span class="keyword">type</span> <code class="type"></code>dict</span> </pre>
+
 
 <pre><span id="TYPEword"><span class="keyword">type</span> <code class="type"></code>word</span> </pre>
 <div class="info ">
@@ -689,7 +694,7 @@ size of address<br>
 
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Bitvector.html">Bitvector</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bitvector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Bitvector -- a type for representing binary values.
+Bitvector -- an integer with modular arithmentics.
 </div>
 
 <pre><span id="TYPEendian"><span class="keyword">type</span> <code class="type"></code>endian</span> = <code class="type"><a href="Bap.Std.Bitvector.html#TYPEendian">Bitvector.endian</a></code> = </pre><table class="typetable">
@@ -724,15 +729,37 @@ Shortcut for bitvectors that represent words
 Shortcut for bitvectors that represent addresses
 </div>
 
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.html">Bil</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Main BIL module.
+</div>
+
+<pre><span id="TYPEtyp"><span class="keyword">type</span> <code class="type"></code>typ</span> = <code class="type">Bil.typ</code> </pre>
+
+
+<pre><span id="TYPEvar"><span class="keyword">type</span> <code class="type"></code>var</span> = <code class="type">Bil.var</code> </pre>
+
+
+<pre><span id="TYPEbil"><span class="keyword">type</span> <code class="type"></code>bil</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEt">Bil.t</a></code> </pre>
+
+
+<pre><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = <code class="type">Bil.binop</code> </pre>
+
+
+<pre><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = <code class="type">Bil.cast</code> </pre>
+
+
+<pre><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = <code class="type">Bil.exp</code> </pre>
+
+
+<pre><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = <code class="type">Bil.stmt</code> </pre>
+
+
+<pre><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = <code class="type">Bil.unop</code> </pre>
+
+
 <pre><span class="keyword">module</span> <a href="Bap.Std.Type.html">Type</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 The type of a BIL expression.
 </div>
-
-<pre><span id="TYPEtyp"><span class="keyword">type</span> <code class="type"></code>typ</span> = <code class="type"><a href="Bap.Std.Type.html#TYPEt">Type.t</a></code> </pre>
-<div class="info ">
-short abbreviation for a type<br>
-</div>
-
 
 <pre><span id="VALbool_t"><span class="keyword">val</span> bool_t</span> : <code class="type"><a href="Bap.Std.html#TYPEtyp">typ</a></code></pre><div class="info ">
 one bit<br>
@@ -764,65 +791,32 @@ one bit<br>
 
 <pre><span id="VALmem32_t"><span class="keyword">val</span> mem32_t</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEtyp">typ</a></code></pre><div class="info ">
 <code class="code">mem32_t size</code> creates a type for memory with <code class="code">32</code>-bit addresses
-      and elements of size <code class="code">size</code>.<br>
+    and elements of the given <code class="code">size</code>.<br>
 </div>
 
 <pre><span id="VALmem64_t"><span class="keyword">val</span> mem64_t</span> : <code class="type"><a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.html#TYPEtyp">typ</a></code></pre><div class="info ">
 <code class="code">mem64_t size</code> creates a type for memory with <code class="code">64</code>-bit addresses
-      and elements of size <code class="code">size</code>.<br>
+    and elements of the given <code class="code">size</code>.<br>
 </div>
-
-<pre><span id="TYPEvar"><span class="keyword">type</span> <code class="type"></code>var</span> </pre>
-<div class="info ">
-bil variable<br>
-</div>
-
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Var.html">Var</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Var.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 BIL variable.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bil.html">Bil</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bil.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Main BIL module.
-</div>
-
-<pre><span id="TYPEbil"><span class="keyword">type</span> <code class="type"></code>bil</span> = <code class="type"><a href="Bap.Std.Bil.html#TYPEt">Bil.t</a></code> </pre>
-
-
-<pre><span id="TYPEbinop"><span class="keyword">type</span> <code class="type"></code>binop</span> = <code class="type">Bil.binop</code> </pre>
-
-
-<pre><span id="TYPEcast"><span class="keyword">type</span> <code class="type"></code>cast</span> = <code class="type">Bil.cast</code> </pre>
-
-
-<pre><span id="TYPEexp"><span class="keyword">type</span> <code class="type"></code>exp</span> = <code class="type">Bil.exp</code> </pre>
-
-
-<pre><span id="TYPEstmt"><span class="keyword">type</span> <code class="type"></code>stmt</span> = <code class="type">Bil.stmt</code> </pre>
-
-
-<pre><span id="TYPEunop"><span class="keyword">type</span> <code class="type"></code>unop</span> = <code class="type">Bil.unop</code> </pre>
-
-
-<pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
-
-
-<pre><span id="TYPEdict"><span class="keyword">type</span> <code class="type"></code>dict</span> </pre>
-
-
 <pre><span class="keyword">module</span> <a href="Bap.Std.Context.html">Context</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Context.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Base class for evaluation contexts.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Type_error.html">Type_error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type_error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-BIL type errors.
-</div>
-
-<pre><span id="TYPEtype_error"><span class="keyword">type</span> <code class="type"></code>type_error</span> = <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">Type_error.t</a></code> </pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Type_error.html">Type_error</a>: <code class="type">module type of Type.Error</code><code class="type">  with type t = Type.Error.t</code></pre>
+<pre><span id="TYPEtype_error"><span class="keyword">type</span> <code class="type"></code>type_error</span> = <code class="type">Type_error.t</code> </pre>
 <div class="info ">
 A BIL type error<br>
 </div>
 
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Eval.html">Eval</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Eval.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Basic and generic expression evaluator.
+</div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Expi.html">Expi</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Expi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Expression Language Interpreter.
@@ -838,6 +832,10 @@ BIL Interpreter.
 
 <pre><span name="TYPEbili"><span class="keyword">class</span> <code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a>]</code> <a href="Bap.Std.bili-c.html">bili</a></span> : <code class="type"></code><code class="type">[#<a href="Bap.Std.Bili.context-c.html">Bili.context</a> as 'a]</code> <code class="type">Bili.t</code></pre><div class="info">
 BIL <a href="Bap.Std.Bili.html">interpreter</a>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Eff.html">Eff</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Eff.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Effect analysis.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Exp.html">Exp</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Exp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -884,7 +882,7 @@ Resizable Array.
 BAP IR.
 <p>
 
-      Program is a tree of terms.<br>
+    Program is a tree of terms.<br>
 </div>
 
 
@@ -1072,8 +1070,8 @@ Color something with a color<br>
 
 <pre><span id="VALforeground"><span class="keyword">val</span> foreground</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
 print marked entity with the specified color.  (the same
-      as color, but pretty printing function will output ascii escape
-      sequence of corresponding color.<br>
+    as color, but pretty printing function will output ascii escape
+    sequence of corresponding color.<br>
 </div>
 
 <pre><span id="VALbackground"><span class="keyword">val</span> background</span> : <code class="type"><a href="Bap.Std.html#TYPEcolor">color</a> <a href="Bap.Std.html#TYPEtag">tag</a></code></pre><div class="info ">
@@ -1157,9 +1155,9 @@ memory location<br>
 A backend interface.
 <p>
 
-      This interface must be implemented by a backend plugin, and
-      registered with <code class="code"><span class="constructor">Image</span>.register</code> function in order to be
-      accessible for loading images.<br>
+    This interface must be implemented by a backend plugin, and
+    registered with <code class="code"><span class="constructor">Image</span>.register</code> function in order to be
+    accessible for loading images.<br>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Backend.html">Backend</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Backend.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap.Std.Image.html">Image</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Image.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1197,21 +1195,21 @@ Reconstructor  defines a method for reconstructing symbol tables<br>
 <pre><span id="TYPEdisasm"><span class="keyword">type</span> <code class="type"></code>disasm</span> </pre>
 <div class="info ">
 value of type <code class="code">disasm</code> is a result of the disassembling of a
-      memory region.<br>
+    memory region.<br>
 </div>
 
 
 <pre><span id="TYPEinsn"><span class="keyword">type</span> <code class="type"></code>insn</span> </pre>
 <div class="info ">
 values of type <code class="code">insn</code> represents machine instructions decoded
-      from the a given piece of memory<br>
+    from the a given piece of memory<br>
 </div>
 
 
 <pre><span id="TYPEblock"><span class="keyword">type</span> <code class="type"></code>block</span> </pre>
 <div class="info ">
 <code class="code">block</code> is a region of memory that is believed to be a basic block
-      of control flow graph to the best of our knowledge.<br>
+    of control flow graph to the best of our knowledge.<br>
 </div>
 
 
@@ -1221,7 +1219,7 @@ values of type <code class="code">insn</code> represents machine instructions de
 <pre><span id="TYPEjump"><span class="keyword">type</span> <code class="type"></code>jump</span> = <code class="type">[ `Cond | `Jump ]</code> </pre>
 <div class="info ">
 a jump kind.
-      A jump to another block can be conditional or unconditional.<br>
+    A jump to another block can be conditional or unconditional.<br>
 </div>
 
 
@@ -1306,7 +1304,7 @@ Disassembled program.
 Reconstructed symbol table.
 </div>
 
-<pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Or_error.t</code> </pre>
+<pre><span id="TYPElifter"><span class="keyword">type</span> <code class="type"></code>lifter</span> = <code class="type"><a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -><br>       <a href="Bap.Std.html#TYPEbil">bil</a> Std.Or_error.t</code> </pre>
 
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.CPU.html">CPU</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.CPU.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1319,16 +1317,16 @@ Abstract interface for all targets.
 
 <pre><span id="VALtarget_of_arch"><span class="keyword">val</span> target_of_arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> (module Bap.Std.Target)</code></pre><div class="info ">
 <code class="code">target_of_arch arch</code> returns a module packed into value, that
-      abstracts target architecture. The returned module has type
-      <a href="Bap.Std.Target.html"><code class="code"><span class="constructor">Target</span></code></a> and can be unpacked locally with:
-      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Target</span>&nbsp;=&nbsp;(<span class="keyword">val</span>&nbsp;target_of_arch&nbsp;arch)&nbsp;<span class="keyword">in</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+    abstracts target architecture. The returned module has type
+    <a href="Bap.Std.Target.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Target</span></code></a> and can be unpacked locally with:
+    <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Target</span>&nbsp;=&nbsp;(<span class="keyword">val</span>&nbsp;target_of_arch&nbsp;arch)&nbsp;<span class="keyword">in</span>
+&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
 <pre><span id="VALregister_target"><span class="keyword">val</span> register_target</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> (module Bap.Std.Target) -> unit</code></pre><div class="info ">
 Register new target architecture. If target for the given arch
-      already exists, then it will be superseeded by the new
-      target.<br>
+    already exists, then it will be superseeded by the new
+    target.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Tid.html">Tid</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Tid.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
@@ -1396,12 +1394,12 @@ Rooter finds starts of functions in the binary.
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Brancher.html">Brancher</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Brancher.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Brancher is responsible for resolving destinations of branch
-      instructions.
+    instructions.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Reconstructor.html">Reconstructor</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Reconstructor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Reconstructor is responsible for reconstructing symbol table
-      from a CFG.
+    from a CFG.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Event.html">Event</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

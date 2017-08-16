@@ -78,19 +78,19 @@
 
 <pre><span name="TYPEcontext"><span class="keyword">class</span> context</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Taint.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-<pre><span id="METHODtaint_reg"><span class="keyword">method</span> taint_reg</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -><br>       <a href="Bap.Std.Taint.html#TYPEset">set</a> -><br>       (< all_taints : <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          ptr_taints : <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          reg_taints : <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          taint_ptr : <a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a> -> 'b;<br>          taint_reg : 'a; .. ><br>        as 'b)<br>       as 'a</code></pre><div class="info ">
+<pre><span id="METHODtaint_reg"><span class="keyword">method</span> taint_reg</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> -><br>       <a href="Bap.Std.Taint.html#TYPEset">set</a> -><br>       (< all_taints : <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          ptr_taints : <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          reg_taints : <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a>;<br>          taint_ptr : <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a> -> 'b;<br>          taint_reg : 'a; .. ><br>        as 'b)<br>       as 'a</code></pre><div class="info ">
 taint result with the given set of taints<br>
 </div>
 
-<pre><span id="METHODtaint_ptr"><span class="keyword">method</span> taint_ptr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.html#TYPEsize">size</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a> -> 'b</code></pre><div class="info ">
+<pre><span id="METHODtaint_ptr"><span class="keyword">method</span> taint_ptr</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEsize">Std.size</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a> -> 'b</code></pre><div class="info ">
 taint memory region <code class="code">addr, addr+size</code> with the given set of taints<br>
 </div>
 
-<pre><span id="METHODreg_taints"><span class="keyword">method</span> reg_taints</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a></code></pre><div class="info ">
+<pre><span id="METHODreg_taints"><span class="keyword">method</span> reg_taints</span> : <code class="type"><a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a></code></pre><div class="info ">
 returns a set of taints associated with a given result of computation<br>
 </div>
 
-<pre><span id="METHODptr_taints"><span class="keyword">method</span> ptr_taints</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a></code></pre><div class="info ">
+<pre><span id="METHODptr_taints"><span class="keyword">method</span> ptr_taints</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.Taint.html#TYPEset">set</a></code></pre><div class="info ">
 returns a set of taints associated with a given address<br>
 </div>
 

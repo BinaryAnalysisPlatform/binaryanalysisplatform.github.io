@@ -21,13 +21,13 @@ map-terms - map terms using BML DSL
 
 <P>
 
-<B>bap</B> [<B>--map-terms-with</B>=<I>SCHEME</I>] [<B>--map-terms-using</B>=<I>FILE</I>] <B>--map-terms</B>
+<B>bap</B> [<B>--</B>map-terms<B>-with</B>=<I>SCHEME</I>] [<B>--</B>map-terms<B>-using</B>=<I>FILE</I>] <B>--</B>map-terms
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
 <P>
 
-Transform terms using a domain specific pattern matching language. The pass accepts a list of patterns via a command line argument <B>--</B><B>map-terms-pattern</B> (that can be specified several times), or via file, that contains a list of patterns. Each pattern is represented by a pair <B>(&lt;condition&gt; &lt;action&gt;)</B>. The <B>&lt;action&gt;</B> specifies a transformation over a term, that is applied if a <B>&lt;condition&gt;</B> is satisfied. Both <B>&lt;condition&gt;</B> and <B>&lt;action&gt;</B> can be a single <B>&lt;expression&gt;</B> or a list of expressions, delimited with parentheses. If there is a list of conditions, then all must be satisfied. If there is a list of actions, then all actions are applied in order. Each expression is either a nullary function <B>(&lt;id&gt;)</B> or an unary function <B>(&lt;id&gt; &lt;arg&gt;)</B>. Where <B>&lt;id&gt;</B> must be a valid predicate or mapper name. There is a predefined set of standard functions, but it can be extended by adding new mappers or predicates to the BML language using $(bap-bml) library. 
+Transform terms using a domain specific pattern matching language. The pass accepts a list of patterns via a command line argument <B>--</B>map-terms<B>-pattern</B> (that can be specified several times), or via file, that contains a list of patterns. Each pattern is represented by a pair <B>(&lt;condition&gt; &lt;action&gt;)</B>. The <B>&lt;action&gt;</B> specifies a transformation over a term, that is applied if a <B>&lt;condition&gt;</B> is satisfied. Both <B>&lt;condition&gt;</B> and <B>&lt;action&gt;</B> can be a single <B>&lt;expression&gt;</B> or a list of expressions, delimited with parentheses. If there is a list of conditions, then all must be satisfied. If there is a list of actions, then all actions are applied in order. Each expression is either a nullary function <B>(&lt;id&gt;)</B> or an unary function <B>(&lt;id&gt; &lt;arg&gt;)</B>. Where <B>&lt;id&gt;</B> must be a valid predicate or mapper name. There is a predefined set of standard functions, but it can be extended by adding new mappers or predicates to the BML language using <B> bap-bml</B> library. 
 <A NAME="lbAE">&nbsp;</A>
 <H2>OPTIONS</H2>
 
@@ -147,6 +147,6 @@ Mark a term with the given <B>TID</B> as a taint source for memory values.
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 21:55:16 GMT, May 08, 2017
+Time: 17:10:15 GMT, August 16, 2017
 </BODY>
 </HTML>

@@ -80,29 +80,29 @@
 This module allows plugins to access BAP configuration variables.
 <p>
 
-        When reading the values for the configuration variables, the
-        decreasing order of precedence for the values is:<ul>
+      When reading the values for the configuration variables, the
+      decreasing order of precedence for the values is:<ul>
 <li>Command line arguments</li>
 <li>Environment variables</li>
 <li>Configuration file</li>
 <li>Default fallback value</li>
 </ul>
 
-        Example usage:
+      Example usage:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;path&nbsp;=&nbsp;<span class="constructor">Config</span>.(param&nbsp;string&nbsp;~doc:<span class="string">"a&nbsp;path&nbsp;to&nbsp;file"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~default:<span class="string">"input.txt"</span>&nbsp;<span class="string">"path"</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;debug&nbsp;=&nbsp;<span class="constructor">Config</span>.(flag&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>&nbsp;)
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;path&nbsp;=&nbsp;<span class="constructor">Config</span>.(param&nbsp;string&nbsp;~doc:<span class="string">"a&nbsp;path&nbsp;to&nbsp;file"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~default:<span class="string">"input.txt"</span>&nbsp;<span class="string">"path"</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;debug&nbsp;=&nbsp;<span class="constructor">Config</span>.(flag&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>&nbsp;)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;()&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Config</span>.when_ready
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;{<span class="constructor">Config</span>.get=(!)}&nbsp;<span class="keywordsign">-&gt;</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do_stuff&nbsp;!path&nbsp;!debug&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;main&nbsp;()&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Config</span>.when_ready
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;{<span class="constructor">Config</span>.get=(!)}&nbsp;<span class="keywordsign">-&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;do_stuff&nbsp;!path&nbsp;!debug&nbsp;<span class="comment">(*&nbsp;...&nbsp;*)</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <hr width="100%">
 
@@ -112,13 +112,13 @@ Version number<br>
 
 <pre><span id="VALdatadir"><span class="keyword">val</span> datadir</span> : <code class="type">string</code></pre><div class="info ">
 A directory for bap specific read-only architecture
-          independent data files.<br>
+        independent data files.<br>
 </div>
 
 <pre><span id="VALlibdir"><span class="keyword">val</span> libdir</span> : <code class="type">string</code></pre><div class="info ">
 A directory for bap specific object files, libraries, and
-          internal binaries that are not intended to be executed directly
-          by users or shell scripts<br>
+        internal binaries that are not intended to be executed directly
+        by users or shell scripts<br>
 </div>
 
 <pre><span id="VALconfdir"><span class="keyword">val</span> confdir</span> : <code class="type">string</code></pre><div class="info ">
@@ -140,79 +140,79 @@ Parse a string to an 'a<br>
 <pre><span id="TYPEconverter"><span class="keyword">type</span> <code class="type">'a</code> converter</span> </pre>
 <div class="info ">
 Type for converting <code class="code">string</code> &lt;-&gt; <code class="code"><span class="keywordsign">'</span>a</code>. Also defines a default
-          value for the <code class="code"><span class="keywordsign">'</span>a</code> type.<br>
+        value for the <code class="code"><span class="keywordsign">'</span>a</code> type.<br>
 </div>
 
 
 <pre><span id="VALdeprecated"><span class="keyword">val</span> deprecated</span> : <code class="type">string</code></pre><div class="info ">
 Default deprecation warning message, for easy deprecation of
-          parameters.<br>
+        parameters.<br>
 </div>
 
 <pre><span id="VALparam"><span class="keyword">val</span> param</span> : <code class="type">'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       ?deprecated:string -><br>       ?default:'a -><br>       ?as_flag:'a -><br>       ?docv:string -><br>       ?doc:string -><br>       ?synonyms:string list -> string -> 'a <a href="Bap.Std.Self.Config.html#TYPEparam">param</a></code></pre><div class="info ">
 <code class="code">param conv ~default ~docv ~doc name</code> creates a parameter
-          which is referred to on the command line, environment
-          variable, and config file using the value of <code class="code">name</code>, with
-          the type defined by <code class="code">conv</code>, using the <code class="code">default</code> value if
-          unspecified by user.
+        which is referred to on the command line, environment
+        variable, and config file using the value of <code class="code">name</code>, with
+        the type defined by <code class="code">conv</code>, using the <code class="code">default</code> value if
+        unspecified by user.
 <p>
 
-          The <code class="code">default</code> is optional, and falls back to the
-          default defined by <code class="code">conv</code>.
+        The <code class="code">default</code> is optional, and falls back to the
+        default defined by <code class="code">conv</code>.
 <p>
 
-          <code class="code">doc</code> is the man page information of the argument. The
-          variable <code class="code"><span class="string">"$(docv)"</span></code> can be used to refer to the value of
-          <code class="code">docv</code>. <code class="code">docv</code> is a variable name used in the man page to
-          stand for their value.
+        <code class="code">doc</code> is the man page information of the argument. The
+        variable <code class="code"><span class="string">"$(docv)"</span></code> can be used to refer to the value of
+        <code class="code">docv</code>. <code class="code">docv</code> is a variable name used in the man page to
+        stand for their value.
 <p>
 
-          A user can optionally add <code class="code">deprecated</code> to a parameter that
-          is to be deprecated soon. This will cause the parameter to be
-          usable as normal, but will emit a warning to the user if they
-          try to use it.
-          Example usage: <code class="code"><span class="constructor">Config</span>.(param ~deprecated int <span class="string">"--old"</span>)</code>.
+        A user can optionally add <code class="code">deprecated</code> to a parameter that
+        is to be deprecated soon. This will cause the parameter to be
+        usable as normal, but will emit a warning to the user if they
+        try to use it.
+        Example usage: <code class="code"><span class="constructor">Config</span>.(param ~deprecated int <span class="string">"--old"</span>)</code>.
 <p>
 
-          Additionally, <code class="code">synonyms</code> can be added to allow multiple
-          arguments referring to the same parameters. However, this is
-          usually discouraged, and considered proper usage only in rare
-          scenarios.
+        Additionally, <code class="code">synonyms</code> can be added to allow multiple
+        arguments referring to the same parameters. However, this is
+        usually discouraged, and considered proper usage only in rare
+        scenarios.
 <p>
 
-          Also, a developer can use the <code class="code">~as_flag</code> to specify a
-          default value that the argument takes if it is used like a
-          flag. This behaviour can be understood better through the
-          following example.
+        Also, a developer can use the <code class="code">~as_flag</code> to specify a
+        default value that the argument takes if it is used like a
+        flag. This behaviour can be understood better through the
+        following example.
 <p>
 
-              Consider <code class="code"><span class="constructor">Config</span>.(param (some int) ~as_flag:(<span class="constructor">Some</span> 10) <span class="string">"x"</span>)</code>.
+            Consider <code class="code"><span class="constructor">Config</span>.(param (some int) ~as_flag:(<span class="constructor">Some</span> 10) <span class="string">"x"</span>)</code>.
 <p>
 
-              This results in 3 possible command line invocations:
+            This results in 3 possible command line invocations:
 <p>
 
-              1. No <code class="code">--x</code> - Results in <code class="code">default</code> value (specifically
-                            here, <code class="code"><span class="constructor">None</span></code>).
+            1. No <code class="code">--x</code> - Results in <code class="code">default</code> value (specifically
+                          here, <code class="code"><span class="constructor">None</span></code>).
 <p>
 
-              2. Only <code class="code">--x</code> - This causes it to have the value <code class="code">as_flag</code>
-                              (specifically here,<code class="code"><span class="constructor">Some</span> 10</code>).
+            2. Only <code class="code">--x</code> - This causes it to have the value <code class="code">as_flag</code>
+                            (specifically here,<code class="code"><span class="constructor">Some</span> 10</code>).
 <p>
 
-              3. <code class="code">--x=20</code> - This causes it to have the value from the
-                            command line (specifically here, <code class="code"><span class="constructor">Some</span> 20</code>).<br>
+            3. <code class="code">--x=20</code> - This causes it to have the value from the
+                          command line (specifically here, <code class="code"><span class="constructor">Some</span> 20</code>).<br>
 </div>
 
 <pre><span id="VALparam_all"><span class="keyword">val</span> param_all</span> : <code class="type">'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       ?deprecated:string -><br>       ?default:'a list -><br>       ?as_flag:'a -><br>       ?docv:string -><br>       ?doc:string -><br>       ?synonyms:string list -> string -> 'a list <a href="Bap.Std.Self.Config.html#TYPEparam">param</a></code></pre><div class="info ">
 Create a parameter which accepts a list at command line by
-          repetition of argument. Similar to <code class="code">param (list <span class="keywordsign">'</span>a) ...</code>
-          in all other respects. Defaults to an empty list if unspecified.<br>
+        repetition of argument. Similar to <code class="code">param (list <span class="keywordsign">'</span>a) ...</code>
+        in all other respects. Defaults to an empty list if unspecified.<br>
 </div>
 
 <pre><span id="VALflag"><span class="keyword">val</span> flag</span> : <code class="type">?deprecated:string -><br>       ?docv:string -><br>       ?doc:string -><br>       ?synonyms:string list -> string -> bool <a href="Bap.Std.Self.Config.html#TYPEparam">param</a></code></pre><div class="info ">
 Create a boolean parameter that is set to true if user
-          mentions it in the command line arguments<br>
+        mentions it in the command line arguments<br>
 </div>
 
 <pre><span id="VALdetermined"><span class="keyword">val</span> determined</span> : <code class="type">'a <a href="Bap.Std.Self.Config.html#TYPEparam">param</a> -> 'a <a href="Bap_future.Std.html#TYPEfuture">Bap_future.Std.future</a></code></pre><div class="info ">
@@ -236,9 +236,9 @@ A witness that can read configured params<br>
 
 <pre><span id="VALwhen_ready"><span class="keyword">val</span> when_ready</span> : <code class="type">(<a href="Bap.Std.Self.Config.html#TYPEreader">reader</a> -> unit) -> unit</code></pre><div class="info ">
 <code class="code">when_ready f</code> requests the system to call function <code class="code">f</code> once
-          configuration parameters are  established and stabilized. An
-          access function will be passed to the function <code class="code">f</code>,  that can be
-          used to safely dereference parameters.<br>
+        configuration parameters are  established and stabilized. An
+        access function will be passed to the function <code class="code">f</code>,  that can be
+        used to safely dereference parameters.<br>
 </div>
 
 <pre><span id="TYPEmanpage_block"><span class="keyword">type</span> <code class="type"></code>manpage_block</span> = <code class="type">[ `I of string * string<br>       | `Noblank<br>       | `P of string<br>       | `Pre of string<br>       | `S of string ]</code> </pre>
@@ -253,11 +253,11 @@ The type for a block of man page text.
 <li><code class="code"><span class="keywordsign">`</span><span class="constructor">Noblank</span></code> suppresses the blank line introduced between two blocks.</li>
 </ul>
 
-          Except in <code class="code"><span class="keywordsign">`</span><span class="constructor">Pre</span></code>, whitespace and newlines are not significant
-          and are all collapsed to a single space. In labels <code class="code">l</code> and text
-          strings <code class="code">t</code>, the syntax <code class="code"><span class="string">"$(i,italic text)"</span></code> and <code class="code"><span class="string">"$(b,bold
-          text)"</span></code> can be used to respectively produce italic and bold
-          text.<br>
+        Except in <code class="code"><span class="keywordsign">`</span><span class="constructor">Pre</span></code>, whitespace and newlines are not significant
+        and are all collapsed to a single space. In labels <code class="code">l</code> and text
+        strings <code class="code">t</code>, the syntax <code class="code"><span class="string">"$(i,italic text)"</span></code> and <code class="code"><span class="string">"$(b,bold
+        text)"</span></code> can be used to respectively produce italic and bold
+        text.<br>
 </div>
 
 
@@ -299,75 +299,75 @@ Create a manpage for the plugin<br>
 
 <pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">(string * 'a) list -> 'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">enum l</code> converts values such that unambiguous prefixes of
-          string names in <code class="code">l</code> map to the corresponding value of type <code class="code"><span class="keywordsign">'</span>a</code>.
+        string names in <code class="code">l</code> map to the corresponding value of type <code class="code"><span class="keywordsign">'</span>a</code>.
 <p>
 
-          <b>Warning.</b> The type <code class="code"><span class="keywordsign">'</span>a</code> must be comparable with
-          <code class="code"><span class="constructor">Pervasives</span>.compare</code>.<br>
+        <b>Warning.</b> The type <code class="code"><span class="keywordsign">'</span>a</code> must be comparable with
+        <code class="code"><span class="constructor">Pervasives</span>.compare</code>.<br>
 <b>Raises</b> <code>Invalid_argument</code> if <code class="code">l</code> is empty.<br>
 </div>
 
 <pre><span id="VALdoc_enum"><span class="keyword">val</span> doc_enum</span> : <code class="type">?quoted:bool -> (string * 'a) list -> string</code></pre><div class="info ">
 <code class="code">doc_enum l</code> documents the possible string names in the <code class="code">l</code>
-          map according to the number of alternatives. If <code class="code">quoted</code> is
-          <code class="code"><span class="keyword">true</span></code> (default), the tokens are quoted. The resulting
-          string can be used in sentences of the form <code class="code"><span class="string">"$(docv) must
-          be %s"</span></code>.<br>
+        map according to the number of alternatives. If <code class="code">quoted</code> is
+        <code class="code"><span class="keyword">true</span></code> (default), the tokens are quoted. The resulting
+        string can be used in sentences of the form <code class="code"><span class="string">"$(docv) must
+        be %s"</span></code>.<br>
 </div>
 
 <pre><span id="VALfile"><span class="keyword">val</span> file</span> : <code class="type">string <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">file</code> converts a value with the identity function and
-          checks with <code class="code"><span class="constructor">Sys</span>.file_exists</code> that a file with that name exists.<br>
+        checks with <code class="code"><span class="constructor">Sys</span>.file_exists</code> that a file with that name exists.<br>
 </div>
 
 <pre><span id="VALdir"><span class="keyword">val</span> dir</span> : <code class="type">string <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">dir</code> converts a value with the identity function and checks
-          with <code class="code"><span class="constructor">Sys</span>.file_exists</code> and <code class="code"><span class="constructor">Sys</span>.is_directory</code>
-          that a directory with that name exists.<br>
+        with <code class="code"><span class="constructor">Sys</span>.file_exists</code> and <code class="code"><span class="constructor">Sys</span>.is_directory</code>
+        that a directory with that name exists.<br>
 </div>
 
 <pre><span id="VALnon_dir_file"><span class="keyword">val</span> non_dir_file</span> : <code class="type">string <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">non_dir_file</code> converts a value with the identity function and checks
-          with <code class="code"><span class="constructor">Sys</span>.file_exists</code> and <code class="code"><span class="constructor">Sys</span>.is_directory</code>
-          that a non directory file with that name exists.<br>
+        with <code class="code"><span class="constructor">Sys</span>.file_exists</code> and <code class="code"><span class="constructor">Sys</span>.is_directory</code>
+        that a non directory file with that name exists.<br>
 </div>
 
 <pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -> 'a list <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">list sep c</code> splits the argument at each <code class="code">sep</code> (defaults to <code class="code"><span class="string">','</span></code>)
-          character and converts each substrings with <code class="code">c</code>.<br>
+        character and converts each substrings with <code class="code">c</code>.<br>
 </div>
 
 <pre><span id="VALarray"><span class="keyword">val</span> array</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -> 'a array <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">array sep c</code> splits the argument at each <code class="code">sep</code> (defaults to <code class="code"><span class="string">','</span></code>)
-          character and converts each substring with <code class="code">c</code>.<br>
+        character and converts each substring with <code class="code">c</code>.<br>
 </div>
 
 <pre><span id="VALpair"><span class="keyword">val</span> pair</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'b <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -> ('a * 'b) <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">pair sep c0 c1</code> splits the argument at the <em>first</em> <code class="code">sep</code> character
-          (defaults to <code class="code"><span class="string">','</span></code>) and respectively converts the substrings with
-          <code class="code">c0</code> and <code class="code">c1</code>.<br>
+        (defaults to <code class="code"><span class="string">','</span></code>) and respectively converts the substrings with
+        <code class="code">c0</code> and <code class="code">c1</code>.<br>
 </div>
 
 <pre><span id="VALt2"><span class="keyword">val</span> t2</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'b <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -> ('a * 'b) <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
-<a href="Bap.Std.Self.Config.html#VALt2"><code class="code"><span class="constructor">Self</span>.<span class="constructor">Config</span>.t2</code></a> is <a href="Bap.Std.Self.Config.html#VALpair"><code class="code"><span class="constructor">Self</span>.<span class="constructor">Config</span>.pair</code></a>.<br>
+<a href="Bap.Std.Self.Config.html#VALt2"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Self</span>.<span class="constructor">Config</span>.t2</code></a> is <a href="Bap.Std.Self.Config.html#VALpair"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Self</span>.<span class="constructor">Config</span>.pair</code></a>.<br>
 </div>
 
 <pre><span id="VALt3"><span class="keyword">val</span> t3</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'b <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'c <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       ('a * 'b * 'c) <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">t3 sep c0 c1 c2</code> splits the argument at the <em>first</em> two <code class="code">sep</code>
-          characters (defaults to <code class="code"><span class="string">','</span></code>) and respectively converts the
-          substrings with <code class="code">c0</code>, <code class="code">c1</code> and <code class="code">c2</code>.<br>
+        characters (defaults to <code class="code"><span class="string">','</span></code>) and respectively converts the
+        substrings with <code class="code">c0</code>, <code class="code">c1</code> and <code class="code">c2</code>.<br>
 </div>
 
 <pre><span id="VALt4"><span class="keyword">val</span> t4</span> : <code class="type">?sep:char -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'b <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'c <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       'd <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -><br>       ('a * 'b * 'c * 'd) <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">t4 sep c0 c1 c2 c3</code> splits the argument at the <em>first</em> three <code class="code">sep</code>
-          characters (defaults to <code class="code"><span class="string">','</span></code>) respectively converts the substrings
-          with <code class="code">c0</code>, <code class="code">c1</code>, <code class="code">c2</code> and <code class="code">c3</code>.<br>
+        characters (defaults to <code class="code"><span class="string">','</span></code>) respectively converts the substrings
+        with <code class="code">c0</code>, <code class="code">c1</code>, <code class="code">c2</code> and <code class="code">c3</code>.<br>
 </div>
 
 <pre><span id="VALsome"><span class="keyword">val</span> some</span> : <code class="type">?none:string -><br>       'a <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a> -> 'a option <a href="Bap.Std.Self.Config.html#TYPEconverter">converter</a></code></pre><div class="info ">
 <code class="code">some none c</code> is like the converter <code class="code">c</code> except it returns
-          <code class="code"><span class="constructor">Some</span></code> value. It is used for command line arguments
-          that default to <code class="code"><span class="constructor">None</span></code> when absent. <code class="code">none</code> is what to print to
-          document the absence (defaults to <code class="code"><span class="string">""</span></code>).<br>
+        <code class="code"><span class="constructor">Some</span></code> value. It is used for command line arguments
+        that default to <code class="code"><span class="constructor">None</span></code> when absent. <code class="code">none</code> is what to print to
+        document the absence (defaults to <code class="code"><span class="string">""</span></code>).<br>
 </div>
 </body></html>

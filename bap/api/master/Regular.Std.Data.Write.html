@@ -85,18 +85,18 @@ Write typeclass.
 <p>
 
         Defines a class of writeable (serializable) values. See module
-        <a href="Regular.Std.Data.Read.html"><code class="code"><span class="constructor">Data</span>.<span class="constructor">Read</span></code></a> for more information concerning when and why to use
+        <a href="Regular.Std.Data.Read.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">Read</span></code></a> for more information concerning when and why to use
         this module.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEwriter">writer</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code> </pre>
 <div class="info ">
 a writer type class<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?to_bytes:('a -> <a href="Regular.Std.html#TYPEbytes">bytes</a>) -><br>       ?to_bigstring:('a -> bigstring) -><br>       ?dump:(out_channel -> 'a -> unit) -><br>       ?pp:(Format.formatter -> 'a -> unit) -><br>       ?size:('a -> int) -><br>       ?blit_to_string:('a, string) <a href="Regular.Std.Data.html#TYPEcopy">Data.copy</a> -><br>       ?blit_to_bigstring:('a, bigstring) <a href="Regular.Std.Data.html#TYPEcopy">Data.copy</a> -><br>       unit -> 'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?to_bytes:('a -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a>) -><br>       ?to_bigstring:('a -> Std.bigstring) -><br>       ?dump:(Std.out_channel -> 'a -> unit) -><br>       ?pp:(Format.formatter -> 'a -> unit) -><br>       ?size:('a -> int) -><br>       ?blit_to_string:('a, string) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       ?blit_to_bigstring:('a, Std.bigstring) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       unit -> 'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create &lt;minimal-implementation&gt;</code> creates a writable
           instance from a provided minimal implementation.
 <p>
@@ -114,7 +114,7 @@ a writer type class<br>
           <code class="code">writeable</code> will use to write <code class="code">value</code><br>
 </div>
 
-<pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> out_channel -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> Std.out_channel -> 'a -> unit</code></pre><div class="info ">
 <code class="code">to_channel writeable out value</code> writes the <code class="code">writable</code>
           <code class="code">value</code> into the channel <code class="code">chan</code><br>
 </div>
@@ -124,12 +124,12 @@ a writer type class<br>
           into the formatter <code class="code">ppf</code><br>
 </div>
 
-<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> <a href="Regular.Std.html#TYPEbytes">bytes</a></code></pre><div class="info ">
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a></code></pre><div class="info ">
 <code class="code">to_bytes writeable value</code> serializes the <code class="code">value</code> into
           <code class="code">bytes</code> data type.<br>
 </div>
 
-<pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> bigstring</code></pre><div class="info ">
+<pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> Std.bigstring</code></pre><div class="info ">
 <code class="code">to_bigstring writeable value</code> serializes the <code class="code">value</code> into
           <code class="code">bigstring</code> data type.<br>
 </div>
@@ -141,7 +141,7 @@ a writer type class<br>
           if the <code class="code">value</code> doesn't fit into the string <code class="code">buf</code><br>
 </div>
 
-<pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> bigstring -> 'a -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> Std.bigstring -> 'a -> int -> unit</code></pre><div class="info ">
 <code class="code">blit_to_bigstring writeable buf value pos</code> copies a
           serialized representation of the <code class="code">value</code> into existing
           bigstring <code class="code">buf</code>, starting from the given position. It is

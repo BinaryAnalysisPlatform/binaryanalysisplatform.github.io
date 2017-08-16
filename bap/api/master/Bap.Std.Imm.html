@@ -85,8 +85,22 @@ Integer immediate operand<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimm">imm</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEimm">Std.imm</a></code> </pre>
 
+
+<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> width:int -> <a href="Bap.Std.html#TYPEword">Std.word</a> option</code></pre><div class="info ">
+<code class="code">to_word ~width x</code> projects <code class="code">x</code> to a word. Returns <code class="code"><span class="constructor">None</span></code> only
+      if <code class="code">width</code> is non-positive.<br>
+</div>
+
+<pre><span id="VALto_int64"><span class="keyword">val</span> to_int64</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<code class="code">to_int64 x</code> maps immediates to the OCaml <code class="code">int64</code> type<br>
+</div>
+
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Bap.Std.Imm.html#TYPEt">t</a> -> int option</code></pre><div class="info ">
+<code class="code">to_int x</code> projects immediates to the OCaml <code class="code">int</code> type. Returns
+      <code class="code"><span class="constructor">None</span></code> if it doesn't fit.<br>
+</div>
 
 <pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

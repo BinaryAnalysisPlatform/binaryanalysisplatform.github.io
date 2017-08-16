@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Expi.html">
-<link rel="next" href="Bap.Std.Exp.html">
+<link rel="next" href="Bap.Std.Eff.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,7 +76,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Expi.html" title="Bap.Std.Expi">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Exp.html" title="Bap.Std.Exp">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Eff.html" title="Bap.Std.Eff">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Bili.html">Bap.Std.Bili</a></h1>
 
@@ -84,18 +84,18 @@
 BIL Interpreter.
 <p>
 
-      <code class="code">bili</code> extends <code class="code">expi</code> with methods for evaluating BIL
-      statements, thus allowing one to interpret BIL AST. To
-      interpret BIL in the intermediate representation use
-      <a href="Bap.Std.Biri.html">biri</a>.
+    <code class="code">bili</code> extends <code class="code">expi</code> with methods for evaluating BIL
+    statements, thus allowing one to interpret BIL AST. To
+    interpret BIL in the intermediate representation use
+    <a href="Bap.Std.Biri.html">biri</a>.
 <p>
 
-      Also, if you don't need to change the default behavior
-      of the interpreter, then you may use <a href="Bap.Std.Stmt.html#VALeval"><code class="code"><span class="constructor">Stmt</span>.eval</code></a> that
-      exposes an easier interface for BIL evaluation. For example,
+    Also, if you don't need to change the default behavior
+    of the interpreter, then you may use <a href="Bap.Std.Stmt.html#VALeval"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Stmt</span>.eval</code></a> that
+    exposes an easier interface for BIL evaluation. For example,
 <p>
 
-      <pre class="verbatim">      let x = Var.create "x" bool_t;;
+    <pre class="verbatim">      let x = Var.create "x" bool_t;;
       val x : var = x
       let ctxt = Stmt.eval [Bil.(x := int Word.b0)] (new Bili.context);;
       val ctxt : Bili.context = &lt;obj&gt;
@@ -107,10 +107,10 @@ BIL Interpreter.
 
 <pre><span name="TYPEcontext"><span class="keyword">class</span> <a href="Bap.Std.Bili.context-c.html">context</a></span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Bili.context-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 <code class="code"><span class="constructor">Bili</span>.context</code> extends <code class="code"><span class="constructor">Expi</span>.context</code> with PC (Program
-        Counter).
+      Counter).
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Bili.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Bili.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap.Std.Bili.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.State.S2.html">Monad.State.S2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Bili.S.html">S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) M.t</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Bili.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.State.S2.html">Std.Monad.State.S2</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Bili.S.html">S</a></code><code class="type">  with type ('a,'e) state = ('a,'e) M.t</code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Bili.S.html">Bap.Std.Bili.S</a></pre>
 </body></html>

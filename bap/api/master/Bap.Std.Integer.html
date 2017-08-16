@@ -79,19 +79,25 @@
 <h1>Module <a href="type_Bap.Std.Integer.html">Bap.Std.Integer</a></h1>
 
 <pre><span class="keyword">module</span> Integer: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Machine integer as a sequence of bits.<br>
+Abstract integral type.
+<p>
+
+      This module describes an interface of an integral arithmetic
+      type, as well as the <code class="code"><span class="constructor">Make</span></code> functor, that derives a module that
+      implements this interface from a module that provides the
+      minimal (<code class="code"><span class="constructor">Base</span></code>) interface<br>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Integer.Base.html">Base</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.Base.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The minimal interface of the machine integer.
+The minimal interface of an integer.
 </div>
 
 <pre><span class="keyword">module type</span> <a href="Bap.Std.Integer.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Signature for integral type.
+The integer signature.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Integer.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type"><a href="Bap.Std.Integer.Base.html">Base</a></code><code class="code">) </code>: <code class="type"><a href="Bap.Std.Integer.S.html">S</a></code><code class="type">  with type t = T.t</code></pre><div class="info">
-Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="constructor">Integer</span>.<span class="constructor">S</span></code></a> from the minimal implementation.
+Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Integer</span>.<span class="constructor">S</span></code></a> from the minimal implementation.
 </div>
 </body></html>

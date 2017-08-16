@@ -85,40 +85,40 @@ Symbolizer maps addresses to function names<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsymbolizer">symbolizer</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEsymbolizer">Std.symbolizer</a></code> </pre>
 <div class="info ">
 symbolizer data type<br>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEaddr">addr</a> -> string option) -> <a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> string option) -> <a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create fn</code> creates a symbolizer for a given function<br>
 </div>
 
-<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">addr</a> * <a href="Bap.Std.html#TYPEaddr">addr</a>) <a href="Bap.Std.html#TYPEseq">seq</a> -> <a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_blocks"><span class="keyword">val</span> of_blocks</span> : <code class="type">(string * <a href="Bap.Std.html#TYPEaddr">Std.addr</a> * <a href="Bap.Std.html#TYPEaddr">Std.addr</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a> -> <a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_blocks</code> produces a symbolizer from a serialized
-        sequence of blocks. Each element of the sequence is deconstructed
-        as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
-        virtual address of a block start, and <code class="code">ea</code> is an address of the
-        block end.<br>
+      sequence of blocks. Each element of the sequence is deconstructed
+      as <code class="code">(name,ba,ea)</code>, where <code class="code">name</code> is a subroutine name, <code class="code">ba</code> is a
+      virtual address of a block start, and <code class="code">ea</code> is an address of the
+      block end.<br>
 </div>
 
-<pre><span id="VALresolve"><span class="keyword">val</span> resolve</span> : <code class="type"><a href="Bap.Std.Symbolizer.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">addr</a> -> string</code></pre><div class="info ">
+<pre><span id="VALresolve"><span class="keyword">val</span> resolve</span> : <code class="type"><a href="Bap.Std.Symbolizer.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> string</code></pre><div class="info ">
 <code class="code">resolve symbolizer addr</code> returns a name of function,
-        to which a given address belongs. If the address is not know to
-        the symbolizer, then the name is constructed from an address<br>
+      to which a given address belongs. If the address is not know to
+      the symbolizer, then the name is constructed from an address<br>
 </div>
 
 <pre><span id="VALchain"><span class="keyword">val</span> chain</span> : <code class="type"><a href="Bap.Std.Symbolizer.html#TYPEt">t</a> list -> <a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">chain ss</code> creates a symbolizer, that will try to resolve
-        an address using each symbolizer in order.<br>
+      an address using each symbolizer in order.<br>
 </div>
 
 <pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Bap.Std.Symbolizer.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">empty</code> is a symbolizer that knows nothing.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Symbolizer.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap.Std.Symbolizer.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Std.Source.Factory.S</a></code><code class="type">  with type t = t</code></pre><div class="info">
 A factory of symbolizers.
 </div>
 </body></html>

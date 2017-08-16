@@ -85,31 +85,31 @@
 Assembly instruction.
 <p>
 
-      On a high level, the instruction is a pair of the opcode and
-      operands. A BIL code, that describes semantics of the
-      instruction may be attached to it. Also, semantic tags (or flags)
-      may add further information about the instruction.
+    On a high level, the instruction is a pair of the opcode and
+    operands. A BIL code, that describes semantics of the
+    instruction may be attached to it. Also, semantic tags (or flags)
+    may add further information about the instruction.
 <p>
 
-      The instruction are usually created by a low level machinery,
-      and analyzed on the later stages. So, usually, there is no need
-      to create one manually.
+    The instruction are usually created by a low level machinery,
+    and analyzed on the later stages. So, usually, there is no need
+    to create one manually.
 <p>
 
-      For example, each block is a sequence of instructions (see
-      <a href="Bap.Std.Block.html#VALinsns"><code class="code"><span class="constructor">Block</span>.insns</code></a>), also with each non-synthetic term there is an
-      an <a href="Bap.Std.Disasm.html#VALinsn"><code class="code"><span class="constructor">Disasm</span>.insn</code></a> field, that stores an instruction from which
-      the term was born.<br>
+    For example, each block is a sequence of instructions (see
+    <a href="Bap.Std.Block.html#VALinsns"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Block</span>.insns</code></a>), also with each non-synthetic term there is an
+    an <a href="Bap.Std.Disasm.html#VALinsn"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm</span>.insn</code></a> field, that stores an instruction from which
+    the term was born.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEinsn">insn</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEinsn">Std.insn</a></code> </pre>
 
 
-<pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">?bil:<a href="Bap.Std.html#TYPEbil">bil</a> -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_basic"><span class="keyword">val</span> of_basic</span> : <code class="type">?bil:<a href="Bap.Std.html#TYPEbil">Std.bil</a> -> <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Std.Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Insn.html#TYPEt">t</a></code></pre><div class="info ">
 <h3 id="3_Creating">Creating</h3>
-        The following functions will create <code class="code">insn</code> instances from a lower
-        level representation.<br>
+      The following functions will create <code class="code">insn</code> instances from a lower
+      level representation.<br>
 </div>
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> string</code></pre><div class="info ">
@@ -120,31 +120,31 @@ returns backend specific name of instruction<br>
 target-specific assembler string representing the instruction<br>
 </div>
 
-<pre><span id="VALbil"><span class="keyword">val</span> bil</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEbil">bil</a></code></pre><div class="info ">
+<pre><span id="VALbil"><span class="keyword">val</span> bil</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEbil">Std.bil</a></code></pre><div class="info ">
 returns BIL program specifying instruction semantics<br>
 </div>
 
-<pre><span id="VALops"><span class="keyword">val</span> ops</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEop">op</a> array</code></pre><div class="info ">
+<pre><span id="VALops"><span class="keyword">val</span> ops</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEop">Std.op</a> array</code></pre><div class="info ">
 instruction operands<br>
 </div>
 <br>
 <h3 id="3_Instructionproperties">Instruction properties</h3>
 <p>
 
-        A property or a semantic tag is some kind of attribute
-        associated with an instruction. Usually a property is a
-        boolean, it either holds or not. In our case we employ modular
-        logic, and a property can have an intermediate state between
-        true and false. That means, that we have two kinds of
-        relations, strong "must" and weaker "may".  The <code class="code">must</code>
-        property is known to be a property associated with the
-        instruction. It is a strong knowledge. For example, if an
-        instruction has <code class="code">jump</code> property, then it is guaranteed to be a
-        jump instruction. On the other hand, the <code class="code">may</code> property
-        represent some uncertain knowledge. For example, the <code class="code">load</code>
-        property is <code class="code">may</code> as it designates that an instruction may
-        access the main memory, or may not access, as it depends on some
-        information, that cannot be deduced statically.<br>
+      A property or a semantic tag is some kind of attribute
+      associated with an instruction. Usually a property is a
+      boolean, it either holds or not. In our case we employ modular
+      logic, and a property can have an intermediate state between
+      true and false. That means, that we have two kinds of
+      relations, strong "must" and weaker "may".  The <code class="code">must</code>
+      property is known to be a property associated with the
+      instruction. It is a strong knowledge. For example, if an
+      instruction has <code class="code">jump</code> property, then it is guaranteed to be a
+      jump instruction. On the other hand, the <code class="code">may</code> property
+      represent some uncertain knowledge. For example, the <code class="code">load</code>
+      property is <code class="code">may</code> as it designates that an instruction may
+      access the main memory, or may not access, as it depends on some
+      information, that cannot be deduced statically.<br>
 
 <pre><code><span id="TYPEmust"><span class="keyword">type</span> <code class="type"></code>must</span> = </code></pre><table class="typetable">
 <tr>
@@ -177,7 +177,7 @@ the instruction performs a non-regular control flow<br>
 
 <pre><span id="VALconditional"><span class="keyword">val</span> conditional</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
 under some dynamic condition the instruction may perform a
-        non-regular control flow<br>
+      non-regular control flow<br>
 </div>
 
 <pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEmust">must</a> <a href="Bap.Std.Insn.html#TYPEproperty">property</a></code></pre><div class="info ">
@@ -228,16 +228,16 @@ the instruction may store to memory<br>
 <code class="code">must property insn</code> postulate that <code class="code">insn</code> shouldn't have the <code class="code">property</code><br>
 </div>
 
-<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp_adt"><span class="keyword">val</span> pp_adt</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
 <code class="code">pp_adt</code> prints instruction in ADT format, suitable for reading
-        by evaluating in many languages, e.g. Python, Js, etc<br>
+      by evaluating in many languages, e.g. Python, Js, etc<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.html">Trie</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Prefix Tree
-        This module provides a trie data structure where a sequence of
-        instructions is used as a key (and an individual instruction
-        as a token).
+      This module provides a trie data structure where a sequence of
+      instructions is used as a key (and an individual instruction
+      as a token).
 </div>
 
 <pre><span class="keyword">include</span> Regular.S</pre>

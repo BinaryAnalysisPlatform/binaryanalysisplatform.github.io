@@ -82,12 +82,12 @@
 
 <pre><span name="TYPEmapper"><span class="keyword">class</span> mapper</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.mapper-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 AST transformation.
-        mapper allows one to map AST, performing some limited
-        amount of transformations on it. Mapper provides extra
-        flexibility by mapping <code class="code">stmt</code> to <code class="code">stmt list</code>, thus allowing
-        to remove statements from the output (by mapping to empty list) or
-        to map one statement to several. This is particularly useful when
-        you map <code class="code"><span class="keyword">if</span></code> or <code class="code"><span class="keyword">while</span></code> statements.<br>
+      mapper allows one to map AST, performing some limited
+      amount of transformations on it. Mapper provides extra
+      flexibility by mapping <code class="code">stmt</code> to <code class="code">stmt list</code>, thus allowing
+      to remove statements from the output (by mapping to empty list) or
+      to map one statement to several. This is particularly useful when
+      you map <code class="code"><span class="keyword">if</span></code> or <code class="code"><span class="keyword">while</span></code> statements.<br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Exp.mapper-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span>.mapper</code></a></li>
@@ -97,13 +97,13 @@ AST transformation.
 
 <pre><span id="METHODrun"><span class="keyword">method</span> run</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre><div class="info ">
 Default entry point.
-          But again, you can use any method as an entry<br>
+        But again, you can use any method as an entry<br>
 </div>
 
 <pre><span id="METHODmap_stmt"><span class="keyword">method</span> map_stmt</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
-<pre><span id="METHODmap_move"><span class="keyword">method</span> map_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
-<pre><span id="METHODmap_jmp"><span class="keyword">method</span> map_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
-<pre><span id="METHODmap_while"><span class="keyword">method</span> map_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
-<pre><span id="METHODmap_if"><span class="keyword">method</span> map_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
+<pre><span id="METHODmap_move"><span class="keyword">method</span> map_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
+<pre><span id="METHODmap_jmp"><span class="keyword">method</span> map_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
+<pre><span id="METHODmap_while"><span class="keyword">method</span> map_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
+<pre><span id="METHODmap_if"><span class="keyword">method</span> map_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
 <pre><span id="METHODmap_cpuexn"><span class="keyword">method</span> map_cpuexn</span> : <code class="type">int -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre>
 <pre><span id="METHODmap_special"><span class="keyword">method</span> map_special</span> : <code class="type">string -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list</code></pre></body></html>

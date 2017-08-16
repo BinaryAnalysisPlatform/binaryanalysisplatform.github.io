@@ -138,7 +138,7 @@ Logging event.<br>
 }
 
 
-<pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap.Std.Event.html#TYPEevent">Event.event</a> += </code></pre><table class="typetable">
+<pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap.Std.Event.html#TYPEevent">Std.Event.event</a> += </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -149,17 +149,17 @@ Logging event.<br>
 
 
 
-<pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap.Std.Event.Log.html#TYPElevel">level</a> -><br>       section:string -> ('a, Format.formatter, unit) format -> 'a</code></pre><div class="info ">
+<pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap.Std.Event.Log.html#TYPElevel">level</a> -><br>       section:string -> ('a, Format.formatter, unit) Std.format -> 'a</code></pre><div class="info ">
 <code class="code">message level ~section fmt ...</code> send a message of the
-          specified <code class="code">level</code> and <code class="code">section</code>.
+        specified <code class="code">level</code> and <code class="code">section</code>.
 <p>
 
-          Do not use this function directly, instead include the
-          instantiation of a <code class="code"><span class="constructor">Self</span></code> functor, and use corresponding
-          logging functions, e.g.,
+        Do not use this function directly, instead include the
+        instantiation of a <code class="code"><span class="constructor">Self</span></code> functor, and use corresponding
+        logging functions, e.g.,
 <p>
 
-          <pre class="verbatim">            include Self()
+        <pre class="verbatim">            include Self()
             (* ... *)
             info "created some %s" "thing"
          </pre><br>

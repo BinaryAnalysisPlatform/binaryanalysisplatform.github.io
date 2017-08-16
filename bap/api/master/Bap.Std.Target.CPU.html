@@ -78,77 +78,77 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap.Std.Target.CPU.html">Bap.Std.Target.CPU</a></h1>
 
-<pre><span class="keyword">module</span> CPU: <code class="type"><a href="Bap.Std.CPU.html">CPU</a></code><code class="type"> </code></pre><div class="info module top">
+<pre><span class="keyword">module</span> CPU: <code class="type"><a href="Bap.Std.CPU.html">Std.CPU</a></code><code class="type"> </code></pre><div class="info module top">
 access to the CPU variables.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALgpr"><span class="keyword">val</span> gpr</span> : <code class="type">Var.Set.t</code></pre><div class="info ">
+<pre><span id="VALgpr"><span class="keyword">val</span> gpr</span> : <code class="type">Std.Var.Set.t</code></pre><div class="info ">
 A set of general purpose registers<br>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 Memory<br>
 </div>
 
-<pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 Stack pointer<br>
 </div>
 <br>
 <h4 id="4_Flagregisters">Flag registers</h4><br>
 
-<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 zero flag<br>
 </div>
 
-<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 carry flag<br>
 </div>
 
-<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 overflow flag<br>
 </div>
 
-<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a></code></pre><div class="info ">
+<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
 negative flag<br>
 </div>
 <br>
 <h3 id="3_Predicates">Predicates</h3><br>
 
-<pre><span id="VALis_reg"><span class="keyword">val</span> is_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_reg"><span class="keyword">val</span> is_reg</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_reg var</code> true if <code class="code">var</code> is a processor register<br>
 </div>
 
-<pre><span id="VALis_flag"><span class="keyword">val</span> is_flag</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_flag"><span class="keyword">val</span> is_flag</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_flag reg</code> is true if <code class="code">reg</code> is a flag register<br>
 </div>
 
-<pre><span id="VALis_sp"><span class="keyword">val</span> is_sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_sp"><span class="keyword">val</span> is_sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_sp x = <span class="constructor">Var</span>.same x sp</code><br>
 </div>
 
-<pre><span id="VALis_bp"><span class="keyword">val</span> is_bp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_bp"><span class="keyword">val</span> is_bp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_bp x</code> is true if <code class="code">x</code> can be possibly used as a base
-        pointer register.<br>
+      pointer register.<br>
 </div>
 
-<pre><span id="VALis_zf"><span class="keyword">val</span> is_zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_zf"><span class="keyword">val</span> is_zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_zf x = <span class="constructor">Var</span>.same x zf</code><br>
 </div>
 
-<pre><span id="VALis_cf"><span class="keyword">val</span> is_cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_cf"><span class="keyword">val</span> is_cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_cf x = <span class="constructor">Var</span>.same x cf</code><br>
 </div>
 
-<pre><span id="VALis_vf"><span class="keyword">val</span> is_vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_vf"><span class="keyword">val</span> is_vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_vf x = <span class="constructor">Var</span>.same x vf</code><br>
 </div>
 
-<pre><span id="VALis_nf"><span class="keyword">val</span> is_nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_nf"><span class="keyword">val</span> is_nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_nf x = <span class="constructor">Var</span>.same x nf</code><br>
 </div>
 
-<pre><span id="VALis_mem"><span class="keyword">val</span> is_mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_mem"><span class="keyword">val</span> is_mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> bool</code></pre><div class="info ">
 <code class="code">is_mem x = <span class="constructor">Var</span>.same x mem</code><br>
 </div>
 </body></html>

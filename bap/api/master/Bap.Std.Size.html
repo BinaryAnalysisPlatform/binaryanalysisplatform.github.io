@@ -101,7 +101,7 @@ Defines possible sizes for operations operands<br>
 <br>
 <h3 id="3_Liftingfromint">Lifting from int</h3><br>
 
-<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Bap.Std.Size.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.<br>
 </div>
@@ -116,7 +116,7 @@ Defines possible sizes for operations operands<br>
         instead of <code class="code"><span class="constructor">Or_error</span>.t</code><br>
 </div>
 
-<pre><span id="VALaddr_of_int"><span class="keyword">val</span> addr_of_int</span> : <code class="type">int -> [ `r32 | `r64 ] Or_error.t</code></pre><div class="info ">
+<pre><span id="VALaddr_of_int"><span class="keyword">val</span> addr_of_int</span> : <code class="type">int -> [ `r32 | `r64 ] Std.Or_error.t</code></pre><div class="info ">
 <code class="code">addr_of_int n</code> return <code class="code"><span class="constructor">Ok</span> <span class="keywordsign">`</span>rn</code> if <code class="code"><span class="keywordsign">`</span>rn</code> exists, <code class="code"><span class="constructor">Error</span></code>
         otherwise.<br>
 </div>

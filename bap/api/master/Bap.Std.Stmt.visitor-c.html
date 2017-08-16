@@ -82,37 +82,37 @@
 
 <pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> visitor</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Stmt.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 Visitor.
-        Visits AST providing lots of hooks.
+      Visits AST providing lots of hooks.
 <p>
 
-        For each AST constructor <code class="code"><span class="constructor">C</span></code> the visitor provides three methods:
-        <code class="code">enter_C</code>, <code class="code">visit_C</code>, <code class="code">leave_C</code>. The default implementation for
-        <code class="code">enter_C</code> and <code class="code">leave_C</code> is to return its argument. The default
-        implementation for <code class="code">visit_C</code> is the following:
-        1. call <code class="code">enter_C</code>
-        2. visit all children
-        3. call <code class="code">leave_C</code>.
+      For each AST constructor <code class="code"><span class="constructor">C</span></code> the visitor provides three methods:
+      <code class="code">enter_C</code>, <code class="code">visit_C</code>, <code class="code">leave_C</code>. The default implementation for
+      <code class="code">enter_C</code> and <code class="code">leave_C</code> is to return its argument. The default
+      implementation for <code class="code">visit_C</code> is the following:
+      1. call <code class="code">enter_C</code>
+      2. visit all children
+      3. call <code class="code">leave_C</code>.
 <p>
 
-        It is recommended to override <code class="code">enter_C</code> method if you only need
-        to visit <code class="code"><span class="constructor">C</span></code> constructor without changing a way you're visiting
-        the tree.
+      It is recommended to override <code class="code">enter_C</code> method if you only need
+      to visit <code class="code"><span class="constructor">C</span></code> constructor without changing a way you're visiting
+      the tree.
 <p>
 
-        For example, to collect all resolved jumps one could write the
-        following function:
+      For example, to collect all resolved jumps one could write the
+      following function:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;collect_calls&nbsp;bil&nbsp;=&nbsp;(<span class="keyword">object</span>(self)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[<span class="constructor">Word</span>.t&nbsp;list]&nbsp;visitor
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;enter_int&nbsp;x&nbsp;js&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;in_jmp&nbsp;<span class="keyword">then</span>&nbsp;x&nbsp;::&nbsp;js&nbsp;<span class="keyword">else</span>&nbsp;js
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)<span class="keywordsign">#</span>run&nbsp;bil&nbsp;[]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;collect_calls&nbsp;bil&nbsp;=&nbsp;(<span class="keyword">object</span>(self)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">inherit</span>&nbsp;[<span class="constructor">Word</span>.t&nbsp;list]&nbsp;visitor
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">method</span>!&nbsp;enter_int&nbsp;x&nbsp;js&nbsp;=&nbsp;<span class="keyword">if</span>&nbsp;in_jmp&nbsp;<span class="keyword">then</span>&nbsp;x&nbsp;::&nbsp;js&nbsp;<span class="keyword">else</span>&nbsp;js
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)<span class="keywordsign">#</span>run&nbsp;bil&nbsp;[]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
-         The default entry point of the visitor is method <code class="code">run</code>, but
-         you can use any other method as well, for example, if you do
-         not have a statement at all and want to visit expression.<br>
+       The default entry point of the visitor is method <code class="code">run</code>, but
+       you can use any other method as well, for example, if you do
+       not have a statement at all and want to visit expression.<br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Exp.visitor-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span>.visitor</code></a></li>
@@ -127,30 +127,30 @@ Visitor.
 
 <pre><span id="METHODvisit_stmt"><span class="keyword">method</span> visit_stmt</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
 <pre><span id="METHODleave_stmt"><span class="keyword">method</span> leave_stmt</span> : <code class="type"><a href="Bap.Std.Stmt.html#TYPEt">t</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_move"><span class="keyword">method</span> enter_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODenter_move"><span class="keyword">method</span> enter_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Move</span>(var,exp)</code><br>
 </div>
 
-<pre><span id="METHODvisit_move"><span class="keyword">method</span> visit_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_move"><span class="keyword">method</span> leave_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_jmp"><span class="keyword">method</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODvisit_move"><span class="keyword">method</span> visit_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_move"><span class="keyword">method</span> leave_move</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_jmp"><span class="keyword">method</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">Jmp</span> exp</code><br>
 </div>
 
-<pre><span id="METHODvisit_jmp"><span class="keyword">method</span> visit_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_jmp"><span class="keyword">method</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">exp</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_while"><span class="keyword">method</span> enter_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODvisit_jmp"><span class="keyword">method</span> visit_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_jmp"><span class="keyword">method</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_while"><span class="keyword">method</span> enter_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">While</span> (cond,bil)</code><br>
 </div>
 
-<pre><span id="METHODvisit_while"><span class="keyword">method</span> visit_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_while"><span class="keyword">method</span> leave_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_if"><span class="keyword">method</span> enter_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODvisit_while"><span class="keyword">method</span> visit_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_while"><span class="keyword">method</span> leave_while</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_if"><span class="keyword">method</span> enter_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">If</span> (cond,yes,no)</code><br>
 </div>
 
-<pre><span id="METHODvisit_if"><span class="keyword">method</span> visit_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_if"><span class="keyword">method</span> leave_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_if"><span class="keyword">method</span> visit_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_if"><span class="keyword">method</span> leave_if</span> : <code class="type">cond:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       yes:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> no:<a href="Bap.Std.Stmt.html#TYPEt">t</a> list -> 'a -> 'a</code></pre>
 <pre><span id="METHODenter_cpuexn"><span class="keyword">method</span> enter_cpuexn</span> : <code class="type">int -> 'a -> 'a</code></pre><div class="info ">
 <code class="code"><span class="constructor">CpuExn</span> n</code><br>
 </div>

@@ -91,7 +91,7 @@ Error conditions<br>
 </div>
 
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?comp:string -><br>       mode:string -><br>       path:string -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Regular.Std.html#TYPEbytes">bytes</a> -><br>       (unit, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?comp:string -><br>       mode:string -><br>       path:string -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -><br>       (unit, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">save ?comp ~mode ~path arch data</code> store signatures data in the
     database of signatures specified by the <code class="code">path</code> parameter. The
     triple <code class="code">arch-comp-mode</code> defines a key for the created entry. If an
@@ -100,7 +100,7 @@ Error conditions<br>
     created and the specified destination.<br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?comp:string -><br>       ?path:string -><br>       mode:string -><br>       <a href="Bap.Std.html#TYPEarch">arch</a> -><br>       (<a href="Regular.Std.html#TYPEbytes">bytes</a>, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?comp:string -><br>       ?path:string -><br>       mode:string -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       (<a href="Regular.Std.html#TYPEbytes">Std.bytes</a>, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">load ?comp ?path ~mode arch</code> finds a signature for the specified
     <code class="code">arch-comp-path</code> tripple. The <code class="code">path</code> defaults to <code class="code">default_path</code>.<br>
 </div>

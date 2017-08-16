@@ -82,9 +82,9 @@
 Information obtained during project reconstruction.
 <p>
 
-        These pieces of information are guaranteed to be discovered
-        during the project reconstruction. See <a href="Bap.Std.Project.html#VALcreate"><code class="code"><span class="constructor">Project</span>.create</code></a>
-        function for more information on the reconstruction process.<br>
+      These pieces of information are guaranteed to be discovered
+      during the project reconstruction. See <a href="Bap.Std.Project.html#VALcreate"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Project</span>.create</code></a>
+      function for more information on the reconstruction process.<br>
 </div>
 <hr width="100%">
 
@@ -92,28 +92,32 @@ Information obtained during project reconstruction.
 occurs everytime a new file is opened. The value is a filename<br>
 </div>
 
-<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Std.arch</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs once input architecture is known<br>
 </div>
 
-<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs once input memory is loaded<br>
 </div>
 
-<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> <a href="Bap.Std.html#TYPEmemmap">memmap</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">Std.value</a> <a href="Bap.Std.html#TYPEmemmap">Std.memmap</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs once code segment is discovered<br>
 </div>
 
-<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.html#TYPEcfg">cfg</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALcfg"><span class="keyword">val</span> cfg</span> : <code class="type"><a href="Bap.Std.html#TYPEcfg">Std.cfg</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs everytime a whole program control flow graph is changed<br>
 </div>
 
-<pre><span id="VALsymtab"><span class="keyword">val</span> symtab</span> : <code class="type"><a href="Bap.Std.html#TYPEsymtab">symtab</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALsymtab"><span class="keyword">val</span> symtab</span> : <code class="type"><a href="Bap.Std.html#TYPEsymtab">Std.symtab</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs everytime a symbol table is changed<br>
 </div>
 
-<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
 occurs every time a program term is changed during the
-          project reconstruction process.<br>
+        project reconstruction process.<br>
+</div>
+
+<pre><span id="VALspec"><span class="keyword">val</span> spec</span> : <code class="type"><a href="Ogre.Doc.html#TYPEt">Ogre.Doc.t</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
+occurs once image spec is known<br>
 </div>
 </body></html>

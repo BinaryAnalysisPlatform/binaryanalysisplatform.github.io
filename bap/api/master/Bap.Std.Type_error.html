@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap.Std.Context.html">
-<link rel="next" href="Bap.Std.Expi.html">
+<link rel="next" href="Bap.Std.Eval.html">
 <link rel="Up" href="Bap.Std.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,39 +76,9 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap.Std.Context.html" title="Bap.Std.Context">Previous</a>
 &nbsp;<a class="up" href="Bap.Std.html" title="Bap.Std">Up</a>
-&nbsp;<a class="post" href="Bap.Std.Expi.html" title="Bap.Std.Expi">Next</a>
+&nbsp;<a class="post" href="Bap.Std.Eval.html" title="Bap.Std.Eval">Next</a>
 </div>
 <h1>Module <a href="type_Bap.Std.Type_error.html">Bap.Std.Type_error</a></h1>
 
-<pre><span class="keyword">module</span> Type_error: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Type_error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-BIL type errors.
-<p>
-
-      A type error will occur during the evaluation of a BIL program
-      that is not well typed.<br>
-</div>
-<hr width="100%">
-
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
-
-
-<pre><span id="VALbad_mem"><span class="keyword">val</span> bad_mem</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">bad_mem</code> error occurs when a value of type <code class="code">mem</code> was expected<br>
-</div>
-
-<pre><span id="VALbad_imm"><span class="keyword">val</span> bad_imm</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">bad_imm</code> error occurs when a value of type <code class="code">imm</code> was expected<br>
-</div>
-
-<pre><span id="VALbad_cast"><span class="keyword">val</span> bad_cast</span> : <code class="type"><a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">bad_cast</code> error occurs when parameters to the cast operation
-        are not valid.<br>
-</div>
-
-<pre><span id="VALbad_type"><span class="keyword">val</span> bad_type</span> : <code class="type">exp:<a href="Bap.Std.html#TYPEtyp">typ</a> -> got:<a href="Bap.Std.html#TYPEtyp">typ</a> -> <a href="Bap.Std.Type_error.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">bad_type ~exp ~got</code> error happens when we expect a value of
-        type <code class="code">exp</code> but got a value of type <code class="code">got</code>.<br>
-</div>
-
-<pre><span class="keyword">include</span> Regular.S</pre>
+<pre><span class="keyword">module</span> Type_error: <code class="type">module type of Type.Error</code><code class="type">  with type t = Type.Error.t</code></pre><hr width="100%">
 </body></html>

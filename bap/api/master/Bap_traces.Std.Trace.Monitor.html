@@ -101,12 +101,12 @@ Monitor defines an error handling policy.<br>
 <code class="code">stop_on_error</code> will silently finish a stream in case of error.<br>
 </div>
 
-<pre><span id="VALpack_errors"><span class="keyword">val</span> pack_errors</span> : <code class="type">(Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEevent">Bap_traces.Std.Trace.event</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALpack_errors"><span class="keyword">val</span> pack_errors</span> : <code class="type">(Std.Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEevent">Bap_traces.Std.Trace.event</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">pack_errors pack</code> will transform any occured error into event
           using <code class="code">pack</code> function.<br>
 </div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEstep">Bap_traces.Std.Trace.step</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(Std.Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEstep">Bap_traces.Std.Trace.step</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create filter</code> creates a user defined monitor from function
           <code class="code">filter</code> that is applied to a sequence of events or errors, and
           returns a sequence of events.<br>

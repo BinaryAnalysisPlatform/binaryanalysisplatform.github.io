@@ -86,7 +86,7 @@ A lisp primitive<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?docs:string -><br>       string -><br>       (<a href="Bap.Std.html#TYPEword">word</a> list -> 'a) -> 'a <a href="Bap_primus.Std.Primus.Lisp.Primitive.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?docs:string -><br>       string -><br>       (<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list -> 'a) -><br>       'a <a href="Bap_primus.Std.Primus.Lisp.Primitive.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create ~docs name code</code> creates a lisp primitive, that is
             accessible from lisp as a regular function with the given
             <code class="code">name</code>. A function <code class="code">code</code> accepts a list of arguments,

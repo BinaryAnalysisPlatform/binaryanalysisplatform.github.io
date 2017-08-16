@@ -82,36 +82,36 @@
 
 <pre><span class="keyword">module</span> Brancher: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Brancher.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Brancher is responsible for resolving destinations of branch
-      instructions.<br>
+    instructions.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEbrancher">brancher</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap.Std.html#TYPEbrancher">Std.brancher</a></code> </pre>
 
 
-<pre><span id="TYPEdest"><span class="keyword">type</span> <code class="type"></code>dest</span> = <code class="type"><a href="Bap.Std.html#TYPEaddr">addr</a> option * <a href="Bap.Std.html#TYPEedge">edge</a></code> </pre>
+<pre><span id="TYPEdest"><span class="keyword">type</span> <code class="type"></code>dest</span> = <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> option * <a href="Bap.Std.html#TYPEedge">Std.edge</a></code> </pre>
 <div class="info ">
-destination target (if known) and edge classification (see <a href="Bap.Std.html#TYPEedge"><code class="code">edge</code></a>)<br>
+destination target (if known) and edge classification (see <a href="Bap.Std.html#TYPEedge"><code class="code"><span class="constructor">Std</span>.edge</code></a>)<br>
 </div>
 
 
 <pre><span id="TYPEdests"><span class="keyword">type</span> <code class="type"></code>dests</span> = <code class="type"><a href="Bap.Std.Brancher.html#TYPEdest">dest</a> list</code> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEmem">mem</a> -><br>        <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Brancher.html#TYPEdests">dests</a>) -><br>       <a href="Bap.Std.Brancher.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(<a href="Bap.Std.html#TYPEmem">Std.mem</a> -><br>        <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Std.Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Brancher.html#TYPEdests">dests</a>) -><br>       <a href="Bap.Std.Brancher.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create resolve</code> creates a brancher from <code class="code">resolve</code> function,
-        that accepts a memory region, occupied by an instruction, the
-        instruction itself and returns a list of destination.<br>
+      that accepts a memory region, occupied by an instruction, the
+      instruction itself and returns a list of destination.<br>
 </div>
 
-<pre><span id="VALof_bil"><span class="keyword">val</span> of_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -> <a href="Bap.Std.Brancher.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_bil"><span class="keyword">val</span> of_bil</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Std.arch</a> -> <a href="Bap.Std.Brancher.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_bil arch</code> creates a brancher that will use a BIL code to
-        statically deduce the instruction destinations.<br>
+      statically deduce the instruction destinations.<br>
 </div>
 
-<pre><span id="VALresolve"><span class="keyword">val</span> resolve</span> : <code class="type"><a href="Bap.Std.Brancher.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Brancher.html#TYPEdests">dests</a></code></pre><div class="info ">
+<pre><span id="VALresolve"><span class="keyword">val</span> resolve</span> : <code class="type"><a href="Bap.Std.Brancher.html#TYPEt">t</a> -><br>       <a href="Bap.Std.html#TYPEmem">Std.mem</a> -><br>       <a href="Bap.Std.Disasm_expert.Basic.html#TYPEfull_insn">Std.Disasm_expert.Basic.full_insn</a> -> <a href="Bap.Std.Brancher.html#TYPEdests">dests</a></code></pre><div class="info ">
 <code class="code">resolve brancher mem insn</code> returns a list of destinations of
-        the instruction <code class="code">insn</code>, that occupies memory region <code class="code">mem</code>.<br>
+      the instruction <code class="code">insn</code>, that occupies memory region <code class="code">mem</code>.<br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Brancher.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Source.Factory.S</a></code><code class="type">  with type t = t</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Brancher.Factory.html">Factory</a>: <code class="type"><a href="Bap.Std.Source.Factory.S.html">Std.Source.Factory.S</a></code><code class="type">  with type t = t</code></pre></body></html>

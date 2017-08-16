@@ -106,7 +106,7 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">!$v</code> lifts <code class="code">v</code> to an Or_error monad. It is, essentially, the
           same as <code class="code"><span class="constructor">Ok</span> v</code><br>
 </div>
@@ -114,35 +114,35 @@
 The following lifter will check that their operand has a
           corresponding width.<br>
 
-<pre><span id="VALi1"><span class="keyword">val</span> i1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi1"><span class="keyword">val</span> i1</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i1 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 1</code><br>
 </div>
 
-<pre><span id="VALi4"><span class="keyword">val</span> i4</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi4"><span class="keyword">val</span> i4</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i4 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 4</code><br>
 </div>
 
-<pre><span id="VALi8"><span class="keyword">val</span> i8</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi8"><span class="keyword">val</span> i8</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i8 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 8</code><br>
 </div>
 
-<pre><span id="VALi16"><span class="keyword">val</span> i16</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi16"><span class="keyword">val</span> i16</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i16 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 16</code><br>
 </div>
 
-<pre><span id="VALi32"><span class="keyword">val</span> i32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi32"><span class="keyword">val</span> i32</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i32 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 32</code><br>
 </div>
 
-<pre><span id="VALi64"><span class="keyword">val</span> i64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALi64"><span class="keyword">val</span> i64</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">i64 x</code> is <code class="code"><span class="constructor">Ok</span> x</code> iff <code class="code">bitwidth x = 64</code><br>
 </div>
 
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">int w v</code> will be <code class="code"><span class="constructor">Ok</span></code> if <code class="code">v</code> has width <code class="code">w</code><br>
 </div>
 
-<pre><span id="VALof_word_size"><span class="keyword">val</span> of_word_size</span> : <code class="type">Word_size.t -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Bitvector.t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALof_word_size"><span class="keyword">val</span> of_word_size</span> : <code class="type">Std.Word_size.t -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">Std.Bitvector.t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">of_word_size w</code> creates a lifter for a specified word size
           <code class="code">w</code>, i.e. either <code class="code">i64</code> or <code class="code">i32</code><br>
 </div>

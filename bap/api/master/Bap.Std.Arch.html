@@ -132,15 +132,15 @@ Architecture<br>
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bap.Std.Arch.html#TYPEt">t</a> option</code></pre><div class="info ">
 <code class="code">of_string s</code> will try to be clever and to capture all
-        commonly known synonyms, e.g., <code class="code">of_string <span class="string">"i686"</span></code> will
-        work<br>
+      commonly known synonyms, e.g., <code class="code">of_string <span class="string">"i686"</span></code> will
+      work<br>
 </div>
 
-<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">addr_size</a></code></pre><div class="info ">
+<pre><span id="VALaddr_size"><span class="keyword">val</span> addr_size</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEaddr_size">Std.addr_size</a></code></pre><div class="info ">
 <code class="code">addr_size arch</code> returns an address size for a a given <code class="code">arch</code><br>
 </div>
 
-<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">endian</a></code></pre><div class="info ">
+<pre><span id="VALendian"><span class="keyword">val</span> endian</span> : <code class="type"><a href="Bap.Std.Arch.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEendian">Std.endian</a></code></pre><div class="info ">
 <code class="code">endian arch</code> returns a word endianness of the <code class="code">arch</code><br>
 </div>
 

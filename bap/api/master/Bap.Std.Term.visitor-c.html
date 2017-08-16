@@ -80,39 +80,39 @@
 
 <pre><span name="TYPEvisitor"><span class="keyword">class</span> <code class="type">['a]</code> visitor</span> : <code class="type"></code><code class="code"><span class="keyword">object</span></code> <a href="Bap.Std.Term.visitor-c.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info class top">
 Visitor performs deep visiting. As always, don't forget to
-        overrid parent methods. The visitor comes with useful <code class="code">enter_T</code>
-        <code class="code">leave_T</code> that are no-ops in this visitor, so if you inherit
-        directly from it, then you may not call to the parent method.<br>
+      overrid parent methods. The visitor comes with useful <code class="code">enter_T</code>
+      <code class="code">leave_T</code> that are no-ops in this visitor, so if you inherit
+      directly from it, then you may not call to the parent method.<br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Exp.visitor-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Exp</span>.visitor</code></a></li>
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODenter_term"><span class="keyword">method</span> enter_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre><div class="info ">
+<pre><span id="METHODenter_term"><span class="keyword">method</span> enter_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -> 't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre><div class="info ">
 <code class="code">visit_term cls t</code> dispatch term <code class="code">t</code> to corresponding method<br>
 </div>
 
-<pre><span id="METHODvisit_term"><span class="keyword">method</span> visit_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_term"><span class="keyword">method</span> leave_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">cls</a> -> 't <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_program"><span class="keyword">method</span> enter_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODrun"><span class="keyword">method</span> run</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_program"><span class="keyword">method</span> leave_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">program</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_sub"><span class="keyword">method</span> enter_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_sub"><span class="keyword">method</span> visit_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_sub"><span class="keyword">method</span> leave_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">sub</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_blk"><span class="keyword">method</span> enter_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_blk"><span class="keyword">method</span> visit_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_blk"><span class="keyword">method</span> leave_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">blk</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_arg"><span class="keyword">method</span> enter_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_arg"><span class="keyword">method</span> visit_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_arg"><span class="keyword">method</span> leave_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">arg</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_phi"><span class="keyword">method</span> enter_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_phi"><span class="keyword">method</span> visit_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_phi"><span class="keyword">method</span> leave_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">phi</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_def"><span class="keyword">method</span> enter_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_def"><span class="keyword">method</span> visit_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_def"><span class="keyword">method</span> leave_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">def</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODenter_jmp"><span class="keyword">method</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODvisit_jmp"><span class="keyword">method</span> visit_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre>
-<pre><span id="METHODleave_jmp"><span class="keyword">method</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">jmp</a> <a href="Bap.Std.html#TYPEterm">term</a> -> 'a -> 'a</code></pre></body></html>
+<pre><span id="METHODvisit_term"><span class="keyword">method</span> visit_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -> 't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_term"><span class="keyword">method</span> leave_term</span> : <code class="type">'t 'p. ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -> 't <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_program"><span class="keyword">method</span> enter_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODrun"><span class="keyword">method</span> run</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_program"><span class="keyword">method</span> leave_program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_sub"><span class="keyword">method</span> enter_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_sub"><span class="keyword">method</span> visit_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_sub"><span class="keyword">method</span> leave_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_blk"><span class="keyword">method</span> enter_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_blk"><span class="keyword">method</span> visit_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_blk"><span class="keyword">method</span> leave_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_arg"><span class="keyword">method</span> enter_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_arg"><span class="keyword">method</span> visit_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_arg"><span class="keyword">method</span> leave_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_phi"><span class="keyword">method</span> enter_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_phi"><span class="keyword">method</span> visit_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_phi"><span class="keyword">method</span> leave_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_def"><span class="keyword">method</span> enter_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_def"><span class="keyword">method</span> visit_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_def"><span class="keyword">method</span> leave_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODenter_jmp"><span class="keyword">method</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODvisit_jmp"><span class="keyword">method</span> visit_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre>
+<pre><span id="METHODleave_jmp"><span class="keyword">method</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> 'a -> 'a</code></pre></body></html>

@@ -84,110 +84,110 @@
 Graph view over IR.
 <p>
 
-        This module implements a graph view on an intermediate
-        representation of a subroutine. To create an instance of a
-        graph, using existing subroutine use <a href="Bap.Std.Sub.html#VALto_cfg"><code class="code"><span class="constructor">Sub</span>.to_cfg</code></a>. At any
-        moment current sub term can be obtained using <a href="Bap.Std.Sub.html#VALof_cfg"><code class="code"><span class="constructor">Sub</span>.of_cfg</code></a>
-        function. This is a just a projection operation, so it doesn't
-        take any computing time.
+      This module implements a graph view on an intermediate
+      representation of a subroutine. To create an instance of a
+      graph, using existing subroutine use <a href="Bap.Std.Sub.html#VALto_cfg"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Sub</span>.to_cfg</code></a>. At any
+      moment current sub term can be obtained using <a href="Bap.Std.Sub.html#VALof_cfg"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Sub</span>.of_cfg</code></a>
+      function. This is a just a projection operation, so it doesn't
+      take any computing time.
 <p>
 
-        All <code class="code"><span class="constructor">Graph</span></code> modification operations, like <code class="code">insert</code>, <code class="code">remove</code>
-        and <code class="code">update</code> in <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">Edge</span></code> modules are mapped to
-        corresponding <code class="code"><span class="constructor">Term</span></code> operations. Also, for performance
-        reasons, graph is augmented with auxiliary data structures,
-        that performs most of the operations in O(log(N)) time.
+      All <code class="code"><span class="constructor">Graph</span></code> modification operations, like <code class="code">insert</code>, <code class="code">remove</code>
+      and <code class="code">update</code> in <code class="code"><span class="constructor">Node</span></code> and <code class="code"><span class="constructor">Edge</span></code> modules are mapped to
+      corresponding <code class="code"><span class="constructor">Term</span></code> operations. Also, for performance
+      reasons, graph is augmented with auxiliary data structures,
+      that performs most of the operations in O(log(N)) time.
 <p>
 
-        Although this implements all operations of <code class="code"><span class="constructor">Graph</span></code> interface
-        it is recommended to use <a href="Bap.Std.Term.html"><code class="code"><span class="constructor">Term</span></code></a> or <code class="code"><span class="constructor">Builder</span></code> interfaces to
-        build and modify underlying terms. The next few sections will
-        clarify the behavior of a graph when it is modified using
-        <code class="code"><span class="constructor">Graph</span></code> interface. If you do not want to read the following
-        sections, then better do not use this module to build your
-        terms.
+      Although this implements all operations of <code class="code"><span class="constructor">Graph</span></code> interface
+      it is recommended to use <a href="Bap.Std.Term.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Term</span></code></a> or <code class="code"><span class="constructor">Builder</span></code> interfaces to
+      build and modify underlying terms. The next few sections will
+      clarify the behavior of a graph when it is modified using
+      <code class="code"><span class="constructor">Graph</span></code> interface. If you do not want to read the following
+      sections, then better do not use this module to build your
+      terms.
 <p>
 
-        <h2 id="2_Insertingnodes">Inserting nodes</h2>
+      <h2 id="2_Insertingnodes">Inserting nodes</h2>
 <p>
 
-        When node is inserted into a graph <code class="code">g</code> all jumps of a node,
-        that lead to blocks that are already in a graph will be
-        represented as edges. Also, all jumps from other nodes to the
-        inserted node, will be added as edges (assuming that this
-        other nodes are also in the graph g). Thus inserting node can
-        create an arbitrary number of edges, from zero to N. If jump
-        target is not yet in the graph, then jump is not removed from a
-        sequence of jumps of the inserted node, but just ignored.
+      When node is inserted into a graph <code class="code">g</code> all jumps of a node,
+      that lead to blocks that are already in a graph will be
+      represented as edges. Also, all jumps from other nodes to the
+      inserted node, will be added as edges (assuming that this
+      other nodes are also in the graph g). Thus inserting node can
+      create an arbitrary number of edges, from zero to N. If jump
+      target is not yet in the graph, then jump is not removed from a
+      sequence of jumps of the inserted node, but just ignored.
 <p>
 
-        <h2 id="2_Updatingnodes">Updating nodes</h2>
+      <h2 id="2_Updatingnodes">Updating nodes</h2>
 <p>
 
-        When node is updated with the same node (but possibly with
-        different set of terms, see <a href="Bap.Std.html#sema">description of sameness</a>)
-        then all changes that affects control flow will be
-        applied. For example, if jump is absent in a new version of a
-        block, and this jump corresponds to an edge in the graph, then
-        this edge will be removed.
+      When node is updated with the same node (but possibly with
+      different set of terms, see <a href="Bap.Std.html#sema">description of sameness</a>)
+      then all changes that affects control flow will be
+      applied. For example, if jump is absent in a new version of a
+      block, and this jump corresponds to an edge in the graph, then
+      this edge will be removed.
 <p>
 
-        <h2 id="2_Removingnodes">Removing nodes</h2>
+      <h2 id="2_Removingnodes">Removing nodes</h2>
 <p>
 
-        The node will be removed from the underlying <code class="code">sub term</code>, and
-        all edges incident to the removed node will be also removed.
-        This will not affect jmp terms of blk terms.
+      The node will be removed from the underlying <code class="code">sub term</code>, and
+      all edges incident to the removed node will be also removed.
+      This will not affect jmp terms of blk terms.
 <p>
 
-        <h2 id="2_Insertingedges">Inserting edges</h2>
+      <h2 id="2_Insertingedges">Inserting edges</h2>
 <p>
 
-        Edges in IR graph represents a transfer of a control flow
-        between basic blocks. The basic block in IR is more reach,
-        rather then a node in a graph. For example, in blk term the
-        order of jumps matters. Jump <code class="code">n</code> is taken, only if guard
-        conditions of jumps <code class="code">0</code> to <code class="code">n-1</code> evaluated to <code class="code"><span class="keyword">false</span></code> (like
-        switch statement in C language). The order of edges in a graph
-        is unspecified. So, some precaution should be taken, to handle
-        edge removing and inserting correctly. Each edge is labeled
-        with abstract label, that represents the jump position in a
-        graph.
+      Edges in IR graph represents a transfer of a control flow
+      between basic blocks. The basic block in IR is more reach,
+      rather then a node in a graph. For example, in blk term the
+      order of jumps matters. Jump <code class="code">n</code> is taken, only if guard
+      conditions of jumps <code class="code">0</code> to <code class="code">n-1</code> evaluated to <code class="code"><span class="keyword">false</span></code> (like
+      switch statement in C language). The order of edges in a graph
+      is unspecified. So, some precaution should be taken, to handle
+      edge removing and inserting correctly. Each edge is labeled
+      with abstract label, that represents the jump position in a
+      graph.
 <p>
 
-        When an edge is created it will look for corresponding jumps
-        in source node. If there exists such jump, and it points to
-        the destination, then it will be left untouched. If it points
-        to a different node, then it will be fixed to point at the
-        a given destination. If there is no position in a slot,
-        represented by the a given label, then it will be
-        inserted. Dummy jumps will be prepended before the inserted
-        jump, if needed.
+      When an edge is created it will look for corresponding jumps
+      in source node. If there exists such jump, and it points to
+      the destination, then it will be left untouched. If it points
+      to a different node, then it will be fixed to point at the
+      a given destination. If there is no position in a slot,
+      represented by the a given label, then it will be
+      inserted. Dummy jumps will be prepended before the inserted
+      jump, if needed.
 <p>
 
-        When an edge is inserted into the graph, then source and
-        destination nodes are inserted or updated (depending on whether
-        they were already present in the graph). As a result, the
-        graph must contain at least nodes, incident to the edge, and
-        the edge itself.
+      When an edge is inserted into the graph, then source and
+      destination nodes are inserted or updated (depending on whether
+      they were already present in the graph). As a result, the
+      graph must contain at least nodes, incident to the edge, and
+      the edge itself.
 <p>
 
-        <h2 id="2_Updatingedge">Updating edge</h2>
+      <h2 id="2_Updatingedge">Updating edge</h2>
 <p>
 
-        Updating an edge is basically the same, as updating incident
-        nodes, a given that the edge exists in the graph.
+      Updating an edge is basically the same, as updating incident
+      nodes, a given that the edge exists in the graph.
 <p>
 
-        <h2 id="2_Removingedge">Removing edge</h2>
+      <h2 id="2_Removingedge">Removing edge</h2>
 <p>
 
-        Removing an edge is not symmetric with edge insertion. It
-        doesn't remove the incident nodes, but instead removes jumps
-        from the source node to destination. The jumps are removed
-        accurately, so that the order (and semantics) is preserved. If
-        the removed jump was in the middle of the sequence then it is
-        substituted by a dummy jump with <code class="code"><span class="keyword">false</span></code> guard.<br>
+      Removing an edge is not symmetric with edge insertion. It
+      doesn't remove the incident nodes, but instead removes jumps
+      from the source node to destination. The jumps are removed
+      accurately, so that the order (and semantics) is preserved. If
+      the removed jump was in the middle of the sequence then it is
+      substituted by a dummy jump with <code class="code"><span class="keyword">false</span></code> guard.<br>
 </div>
 <hr width="100%">
 
@@ -202,7 +202,7 @@ Graph view over IR.
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Ir.Edge.html">Edge</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.Ir.Edge.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 since in IR the order of edges defines semantics, we provide
-          extra functions
+        extra functions
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Graphs.Ir.Node.html">Node</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Graphs.Ir.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

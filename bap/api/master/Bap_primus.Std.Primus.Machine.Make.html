@@ -80,7 +80,7 @@
 </div>
 <h1>Functor <a href="type_Bap_primus.Std.Primus.Machine.Make.html">Bap_primus.Std.Primus.Machine.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S.html">Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="type">  with type 'a m = 'a M.t</code></pre><div class="info module top">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S.html">Std.Monad.S</a></code><code class="code">) </code>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="type">  with type 'a m := 'a M.t</code></pre><div class="info module top">
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">Monad</span>)</code> a monad transformer that wraps the Machine
           into an arbitrary <code class="code"><span class="constructor">Monad</span></code>.<br>
 </div>
@@ -93,22 +93,22 @@
 <td align="center" valign="top" width="15%">
 <code>M</code></td>
 <td align="center" valign="top">:</td>
-<td><code class="type"><a href="Monads.Std.Monad.S.html">Monad.S</a></code>
+<td><code class="type"><a href="Monads.Std.Monad.S.html">Std.Monad.S</a></code>
 </table>
 </td>
 </tr>
 </table>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
-the machine<br>
+the machine computation<br>
 </div>
 
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> </pre>
 <div class="info ">
-the machine computation.<br>
+an external monad in which the machine computation is wrapped<br>
 </div>
 
 
@@ -120,17 +120,15 @@ Observations interface.
 Computation Syntax.
 </div>
 
-<pre><span class="keyword">include</span> Monad.State.Multi.S2</pre>
+<pre><span class="keyword">include</span> Monad.State.Multi.S</pre>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Primus.Machine.State</a></code><code class="type">  with type ('a,'e) m := ('a,'e) t
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
                                and type 'a t := 'a state</code></pre><div class="info">
 Local state of the machine.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Global.html">Global</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Primus.Machine.State</a></code><code class="type">  with type ('a,'e) m := ('a,'e) t
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Global.html">Global</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
                                and type 'a t := 'a state</code></pre><div class="info">
 Global state shared across all machine clones.
 </div>
-
-<pre><span class="keyword">include</span> Monad.Fail.S2</pre>
 </body></html>

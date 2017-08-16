@@ -86,11 +86,6 @@
 returns all known taints.
 </div>
 </td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODargv">argv</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
-<td><div class="info">
-<code class="code">argv</code> an array of command line arguments
-</div>
-</td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODarray">array</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td><div class="info">
 <code class="code">array spec</code> if array <code class="code">spec</code> is complete, then returns a
@@ -118,25 +113,19 @@ returns a size of the data type representation if type
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_storage">create_storage</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
 <td><div class="info">
 creates a fresh new result, containing a given storage,
-          and returns it with a modified context.
+        and returns it with a modified context.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_undefined">create_undefined</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
 <td><div class="info">
 creates a fresh new result, containing an undefined value,
-          and returns it with a modified context.
+        and returns it with a modified context.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Expi.context-c.html#METHODcreate_word">create_word</a> [<a href="Bap.Std.Expi.context-c.html">Bap.Std.Expi.context</a>]</td>
 <td><div class="info">
 creates a fresh new result, containing a given word,
-          and returns it with a modified context.
-</div>
-</td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODcurrent">current</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
-<td><div class="info">
-<code class="code">current</code> returns a term identifier of a current program
-              term.
+        and returns it with a modified context.
 </div>
 </td></tr>
 <tr><td align="left"><br>D</td></tr>
@@ -145,6 +134,10 @@ creates a fresh new result, containing a given word,
 we can't do this!
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.S.t-c.html#METHODdivision_by_zero">division_by_zero</a> [<a href="Bap.Std.Eval.S.t-c.html">Bap.Std.Eval.S.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.t-c.html#METHODdivision_by_zero">division_by_zero</a> [<a href="Bap.Std.Eval.S2.t-c.html">Bap.Std.Eval.S2.t</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>E</td></tr>
 <tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODempty">empty</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
 <td><div class="info">
@@ -286,11 +279,14 @@ Statements
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODenter_term">enter_term</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Should be called when a new term is entered.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODenter_term">enter_term</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 called for each term, just after the position is updated,
-            but before any side effect of term evaluation had occurred.
+          but before any side effect of term evaluation had occurred.
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.S.base-c.html#METHODenter_type">enter_type</a> [<a href="Bap_c_type_mapper_intf.S.base-c.html">Bap_c_type_mapper_intf.S.base</a>]</td>
@@ -323,47 +319,51 @@ called for each term, just after the position is updated,
 </td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODenum">enum</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODenvp">envp</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
+<tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval">eval</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
-<code class="code">envp</code> an array of process environment variables
+<code class="code">eval cls t</code> evaluates a term <code class="code">t</code> of the <code class="code">cls</code> class.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval">eval</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval">eval</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_arg">eval_arg</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate argument by first evaluating its right hand side,
-            and then assigning the result to the left hand side.
+          and then assigning the result to the left hand side.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_binop">eval_binop</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_binop">eval_binop</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_binop">eval_binop</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_blk">eval_blk</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate all terms in a given block, starting with phi
-            nodes, then proceeding to def nodes and finally evaluating
-            all jmp terms until either jump is taken or jump condition
-            is undefined.
+          nodes, then proceeding to def nodes and finally evaluating
+          all jmp terms until either jump is taken or jump condition
+          is undefined.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_call">eval_call</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate target label, using <code class="code">eval_direct</code> or
-            <code class="code">eval_indirect</code>, based on the label variant.
+          <code class="code">eval_indirect</code>, based on the label variant.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_cast">eval_cast</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_cast">eval_cast</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_concat">eval_concat</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_cast">eval_cast</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_concat">eval_concat</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_concat">eval_concat</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_cpuexn">eval_cpuexn</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_def">eval_def</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate definition by assigning the result of the right
-            hand side to the definition variable
+          hand side to the definition variable
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_direct">eval_direct</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
@@ -376,14 +376,18 @@ set context#next to the a given tid
 ignore arguments and set context#next to None
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_exp">eval_exp</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_exp">eval_exp</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_extract">eval_extract</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_exp">eval_exp</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_extract">eval_extract</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_extract">eval_extract</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_goto">eval_goto</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
-            on the label variant
+          on the label variant
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_if">eval_if</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
@@ -393,52 +397,68 @@ evaluate label, using <code class="code">eval_direct</code> or <code class="code
 ignore argument and set context#next to None
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_int">eval_int</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_int">eval_int</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_ite">eval_ite</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_int">eval_int</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_ite">eval_ite</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_ite">eval_ite</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_jmp">eval_jmp</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate condition, and if it is false, then do nothing,
-            otherwise evaluate jump target (see below)
+          otherwise evaluate jump target (see below)
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_jmp">eval_jmp</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_let">eval_let</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_let">eval_let</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_load">eval_load</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_let">eval_let</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_load">eval_load</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_load">eval_load</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_move">eval_move</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_phi">eval_phi</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 based on trace select an expression and assign its
-            value to the left hand side of phi node.
+          value to the left hand side of phi node.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_ret">eval_ret</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 evaluate label, using <code class="code">eval_direct</code> or <code class="code">eval_indirect</code>, based
-            on the label variant
+          on the label variant
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_special">eval_special</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_stmt">eval_stmt</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_store">eval_store</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_store">eval_store</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_store">eval_store</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.S.t-c.html#METHODeval_sub">eval_sub</a> [<a href="Bap.Std.Biri.S.t-c.html">Bap.Std.Biri.S.t</a>]</td>
 <td><div class="info">
 Evaluates a subroutine with the following algorithm:
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_unknown">eval_unknown</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_unknown">eval_unknown</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_unop">eval_unop</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_unknown">eval_unknown</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODeval_var">eval_var</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_unop">eval_unop</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_unop">eval_unop</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.semantics-c.html#METHODeval_var">eval_var</a> [<a href="Bap.Std.Eval.T2.semantics-c.html">Bap.Std.Eval.T2.semantics</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.semantics-c.html#METHODeval_var">eval_var</a> [<a href="Bap.Std.Eval.T1.semantics-c.html">Bap.Std.Eval.T1.semantics</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Bili.S.t-c.html#METHODeval_while">eval_while</a> [<a href="Bap.Std.Bili.S.t-c.html">Bap.Std.Bili.S.t</a>]</td>
 <td></td></tr>
@@ -560,16 +580,15 @@ called after all side effects of the term has occurred
 <td></td></tr>
 <tr><td><a href="Bap.Std.Stmt.visitor-c.html#METHODleave_while">leave_while</a> [<a href="Bap.Std.Stmt.visitor-c.html">Bap.Std.Stmt.visitor</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODlevel">level</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
-<td><div class="info">
-<code class="code">level</code> returns a current program location.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODload">load</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
 <td><div class="info">
 a byte is loaded from a given address
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.eff-c.html#METHODload">load</a> [<a href="Bap.Std.Eval.T2.eff-c.html">Bap.Std.Eval.T2.eff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.eff-c.html#METHODload">load</a> [<a href="Bap.Std.Eval.T1.eff-c.html">Bap.Std.Eval.T1.eff</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Bil.storage-c.html#METHODload">load</a> [<a href="Bap.Std.Bil.storage-c.html">Bap.Std.Bil.storage</a>]</td>
 <td><div class="info">
 <code class="code">load a</code> loads a byte from a a given address  <code class="code">a</code>
@@ -580,15 +599,22 @@ a byte is loaded from a given address
 a variable is looked up in a context
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.eff-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Eval.T2.eff-c.html">Bap.Std.Eval.T2.eff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.eff-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Eval.T1.eff-c.html">Bap.Std.Eval.T1.eff</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html#METHODlookup">lookup</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
 <td><div class="info">
-<code class="code">self<span class="keywordsign">#</span>lokup var</code> evaluate variable <code class="code">var</code> to a value that was
-          previously bound to it.
+<code class="code">self<span class="keywordsign">#</span>lookup var</code> evaluate variable <code class="code">var</code> to a value that was
+        previously bound to it.
 </div>
 </td></tr>
 <tr><td align="left"><br>M</td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODmain">main</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+the entry point of evaluation
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Term.mapper-c.html#METHODmap_arg">map_arg</a> [<a href="Bap.Std.Term.mapper-c.html">Bap.Std.Term.mapper</a>]</td>
 <td><div class="info">
 <code class="code">map_arg arg</code> is <code class="code">arg</code>
@@ -710,7 +736,11 @@ a variable is looked up in a context
 <td></td></tr>
 <tr><td align="left"><br>N</td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODnext">next</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+The <code class="code">next</code> term identifier is the identifier of a term,
+          that should be executed next.
+</div>
+</td></tr>
 <tr><td align="left"><br>P</td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODpadding">padding</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td><div class="info">
@@ -725,10 +755,8 @@ a variable is looked up in a context
 <tr><td><a href="Bap_c_size.base-c.html#METHODpointer">pointer</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODprogram">program</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODproject">project</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
 <td><div class="info">
-<code class="code">project</code> a static model of a program
+current model of a program.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Taint.context-c.html#METHODptr_taints">ptr_taints</a> [<a href="Bap.Std.Taint.context-c.html">Bap.Std.Taint.context</a>]</td>
@@ -769,14 +797,25 @@ Default entry point.
 <tr><td><a href="Bap_c_size.base-c.html#METHODscalar">scalar</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODset_next">set_next</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">set_next tid</code> set the identifier of the next term.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.dfs_visitor-c.html#METHODstart_tree">start_tree</a> [<a href="Graphlib.Std.dfs_visitor-c.html">Graphlib.Std.dfs_visitor</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.domain-c.html#METHODstorage_of_value">storage_of_value</a> [<a href="Bap.Std.Eval.T2.domain-c.html">Bap.Std.Eval.T2.domain</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.domain-c.html#METHODstorage_of_value">storage_of_value</a> [<a href="Bap.Std.Eval.T1.domain-c.html">Bap.Std.Eval.T1.domain</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODstore">store</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
 <td><div class="info">
 a byte is stored to a a given address
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.eff-c.html#METHODstore">store</a> [<a href="Bap.Std.Eval.T2.eff-c.html">Bap.Std.Eval.T2.eff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.eff-c.html#METHODstore">store</a> [<a href="Bap.Std.Eval.T1.eff-c.html">Bap.Std.Eval.T1.eff</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_c_size.base-c.html#METHODstructure">structure</a> [<a href="Bap_c_size.base-c.html">Bap_c_size.base</a>]</td>
 <td><div class="info">
 if spec is complete then returns a total size of the
@@ -795,13 +834,24 @@ taint result with the given set of taints
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Biri.context-c.html#METHODtrace">trace</a> [<a href="Bap.Std.Biri.context-c.html">Bap.Std.Biri.context</a>]</td>
-<td></td></tr>
+<td><div class="info">
+list of term that were already executed (may be long)
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODtype_error">type_error</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
 <td><div class="info">
 a given typing error has occured
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.S.t-c.html#METHODtype_error">type_error</a> [<a href="Bap.Std.Eval.S.t-c.html">Bap.Std.Eval.S.t</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.t-c.html#METHODtype_error">type_error</a> [<a href="Bap.Std.Eval.S2.t-c.html">Bap.Std.Eval.S2.t</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.domain-c.html#METHODundefined">undefined</a> [<a href="Bap.Std.Eval.T2.domain-c.html">Bap.Std.Eval.T2.domain</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.domain-c.html#METHODundefined">undefined</a> [<a href="Bap.Std.Eval.T1.domain-c.html">Bap.Std.Eval.T1.domain</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Expi.S.t-c.html#METHODundefined_addr">undefined_addr</a> [<a href="Bap.Std.Expi.S.t-c.html">Bap.Std.Expi.S.t</a>]</td>
 <td><div class="info">
 called when storage doesn't contain the addr
@@ -823,12 +873,20 @@ if spec is complete then returns a size of the biggest
 a variable is bind to a value.
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.eff-c.html#METHODupdate">update</a> [<a href="Bap.Std.Eval.T2.eff-c.html">Bap.Std.Eval.T2.eff</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.eff-c.html#METHODupdate">update</a> [<a href="Bap.Std.Eval.T1.eff-c.html">Bap.Std.Eval.T1.eff</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Context.t-c.html#METHODupdate">update</a> [<a href="Bap.Std.Context.t-c.html">Bap.Std.Context.t</a>]</td>
 <td><div class="info">
 <code class="code">self<span class="keywordsign">#</span>update var x</code> bind variable <code class="code">var</code> to value <code class="code">x</code>.
 </div>
 </td></tr>
 <tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.domain-c.html#METHODvalue_of_word">value_of_word</a> [<a href="Bap.Std.Eval.T2.domain-c.html">Bap.Std.Eval.T2.domain</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.domain-c.html#METHODvalue_of_word">value_of_word</a> [<a href="Bap.Std.Eval.T1.domain-c.html">Bap.Std.Eval.T1.domain</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap.Std.Term.visitor-c.html#METHODvisit_arg">visit_arg</a> [<a href="Bap.Std.Term.visitor-c.html">Bap.Std.Term.visitor</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.Exp.visitor-c.html#METHODvisit_binop">visit_binop</a> [<a href="Bap.Std.Exp.visitor-c.html">Bap.Std.Exp.visitor</a>]</td>
@@ -884,19 +942,12 @@ a variable is bind to a value.
 <tr><td><a href="Bap.Std.Stmt.visitor-c.html#METHODvisit_while">visit_while</a> [<a href="Bap.Std.Stmt.visitor-c.html">Bap.Std.Stmt.visitor</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>W</td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODwith_level">with_level</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
-<td><div class="info">
-<code class="code">with_level level</code> invoked by the interpreter every time
-              a program position changes.
-</div>
-</td></tr>
 <tr><td><a href="Bap.Std.Bili.context-c.html#METHODwith_pc">with_pc</a> [<a href="Bap.Std.Bili.context-c.html">Bap.Std.Bili.context</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap_primus.Std.Primus.Context.t-c.html#METHODwith_project">with_project</a> [<a href="Bap_primus.Std.Primus.Context.t-c.html">Bap_primus.Std.Primus.Context.t</a>]</td>
-<td><div class="info">
-<code class="code">with_project proj</code> updates the static model of a program
-</div>
-</td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.domain-c.html#METHODword_of_value">word_of_value</a> [<a href="Bap.Std.Eval.T2.domain-c.html">Bap.Std.Eval.T2.domain</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.domain-c.html#METHODword_of_value">word_of_value</a> [<a href="Bap.Std.Eval.T1.domain-c.html">Bap.Std.Eval.T1.domain</a>]</td>
+<td></td></tr>
 </table>
 </body>
 </html>

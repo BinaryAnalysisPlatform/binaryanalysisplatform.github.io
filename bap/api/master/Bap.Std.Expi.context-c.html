@@ -80,26 +80,26 @@
 Context for expression evaluation.
 <p>
 
-        Context provides a unique identifier for each freshly created
-        value.<br>
+      Context provides a unique identifier for each freshly created
+      value.<br>
 </div>
 <b>Inherits</b><ul>
 <li><a href="Bap.Std.Context.t-c.html"><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Context</span>.t</code></a></li>
 </ul>
 <hr width="100%">
 
-<pre><span id="METHODcreate_undefined"><span class="keyword">method</span> create_undefined</span> : <code class="type">(< bindings : (<a href="Bap.Std.html#TYPEvar">var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>) <a href="Bap.Std.html#TYPEseq">seq</a>;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          create_undefined : 'a;<br>          create_word : <a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> option;<br>          update : <a href="Bap.Std.html#TYPEvar">var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> -> 'b; .. ><br>        as 'b) *<br>       <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a> as 'a</code></pre><div class="info ">
+<pre><span id="METHODcreate_undefined"><span class="keyword">method</span> create_undefined</span> : <code class="type">(< bindings : (<a href="Bap.Std.html#TYPEvar">Std.var</a> * <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a>;<br>          create_storage : <a href="Bap.Std.Bil.storage-c.html">Std.Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a>;<br>          create_undefined : 'a;<br>          create_word : <a href="Bap.Std.html#TYPEword">Std.word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a>;<br>          lookup : <a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> option;<br>          update : <a href="Bap.Std.html#TYPEvar">Std.var</a> -> <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> -> 'b; .. ><br>        as 'b) *<br>       <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a> as 'a</code></pre><div class="info ">
 creates a fresh new result, containing an undefined value,
-          and returns it with a modified context.<br>
+        and returns it with a modified context.<br>
 </div>
 
-<pre><span id="METHODcreate_word"><span class="keyword">method</span> create_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code></pre><div class="info ">
+<pre><span id="METHODcreate_word"><span class="keyword">method</span> create_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a></code></pre><div class="info ">
 creates a fresh new result, containing a given word,
-          and returns it with a modified context.<br>
+        and returns it with a modified context.<br>
 </div>
 
-<pre><span id="METHODcreate_storage"><span class="keyword">method</span> create_storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Bil.result</a></code></pre><div class="info ">
+<pre><span id="METHODcreate_storage"><span class="keyword">method</span> create_storage</span> : <code class="type"><a href="Bap.Std.Bil.storage-c.html">Std.Bil.storage</a> -> 'b * <a href="Bap.Std.Bil.html#TYPEresult">Std.Bil.result</a></code></pre><div class="info ">
 creates a fresh new result, containing a given storage,
-          and returns it with a modified context.<br>
+        and returns it with a modified context.<br>
 </div>
 </body></html>

@@ -83,35 +83,35 @@
 <pre><span class="keyword">module</span> Group: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Group.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Group is a non-empty set that is a result of partitioning of an
       underlying set <code class="code"><span class="constructor">S</span></code> into a set of non-intersecting and non-empty
-      subsets that cover set <code class="code"><span class="constructor">S</span></code>. See <a href="Graphlib.Std.Partition.html"><code class="code"><span class="constructor">Partition</span></code></a> for more
+      subsets that cover set <code class="code"><span class="constructor">S</span></code>. See <a href="Graphlib.Std.Partition.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Partition</span></code></a> for more
       information.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">group</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a></code> </pre>
 
 
-<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">group</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">enum group</code> enumerates all elements of a group, including the
         designated one.<br>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">group</a> -> 'a -> bool</code></pre><div class="info ">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a -> bool</code></pre><div class="info ">
 <code class="code">mem group x</code> checks membership of <code class="code">x</code> in a given <code class="code">group</code>.<br>
 </div>
 
-<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">group</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a</code></pre><div class="info ">
 <code class="code">top group</code> returns the top element of a group also known as a
         representative element. The function is total since groups is
         guaranteed to be non-empty.<br>
 </div>
 
-<pre><span id="VALto_equiv"><span class="keyword">val</span> to_equiv</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">group</a> -> <a href="Graphlib.Std.html#TYPEequiv">equiv</a></code></pre><div class="info ">
+<pre><span id="VALto_equiv"><span class="keyword">val</span> to_equiv</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> <a href="Graphlib.Std.html#TYPEequiv">Std.equiv</a></code></pre><div class="info ">
 <code class="code">to_equiv g</code> returns the ordinal number representing the
         particular group <code class="code">g</code><br>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">printer</a> -> 'a <a href="Graphlib.Std.Group.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">printer</a></code></pre><div class="info ">
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Graphlib.Std.Group.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
 <code class="code">pp pp_elem g</code> prints group <code class="code">g</code> using element printer <code class="code">pp_elem</code><br>
 </div>
 </body></html>

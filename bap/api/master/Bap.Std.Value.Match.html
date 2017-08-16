@@ -88,54 +88,54 @@ Runtime parallel match.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
 This module can be used to handle several cases in parallel
-          instead of using a sequence of nested matches or if/then/else
-          chains.
+        instead of using a sequence of nested matches or if/then/else
+        chains.
 <p>
 
-          The combinators in the module are designed to be used as follows:
+        The combinators in the module are designed to be used as follows:
 <p>
 
-          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;v&nbsp;=&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;v&nbsp;@@
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;v&nbsp;=&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;switch&nbsp;v&nbsp;@@
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_load&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Load</span>&nbsp;x)&nbsp;&nbsp;@@
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_store&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Store</span>&nbsp;x)&nbsp;@@
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;register_read&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Read</span>&nbsp;x)&nbsp;&nbsp;@@
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unknown</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        Note: in the example, the whole expression will build and
+        then match. In case when performance matter, and when there
+        is more then one match, it is recommended to evaluate a
+        matching object first, and return a function, that matches
+        values. For this there is a <code class="code">select</code> combinator:
+<p>
+
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;@@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_load&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Load</span>&nbsp;x)&nbsp;&nbsp;@@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_store&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Store</span>&nbsp;x)&nbsp;@@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;register_read&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Read</span>&nbsp;x)&nbsp;&nbsp;@@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unknown</span>)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
-<p>
-
-          Note: in the example, the whole expression will build and
-          then match. In case when performance matter, and when there
-          is more then one match, it is recommended to evaluate a
-          matching object first, and return a function, that matches
-          values. For this there is a <code class="code">select</code> combinator:
-<p>
-
-          <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;lift&nbsp;=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Match</span>.(<span class="keyword">begin</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select&nbsp;@@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_load&nbsp;&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Load</span>&nbsp;x)&nbsp;&nbsp;@@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;memory_store&nbsp;&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Store</span>&nbsp;x)&nbsp;@@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;case&nbsp;register_read&nbsp;(<span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Read</span>&nbsp;x)&nbsp;&nbsp;@@
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;default&nbsp;(<span class="keyword">fun</span>&nbsp;()&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">`</span><span class="constructor">Unknown</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 
 
-<pre><span id="VALswitch"><span class="keyword">val</span> switch</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">value</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's</code></pre><div class="info ">
+<pre><span id="VALswitch"><span class="keyword">val</span> switch</span> : <code class="type"><a href="Bap.Std.html#TYPEvalue">Std.value</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's</code></pre><div class="info ">
 <code class="code">switch x matcher</code> applies <code class="code">matcher</code> to value <code class="code">x</code><br>
 </div>
 
-<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'s <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">value</a> -> 's</code></pre><div class="info ">
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'s <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEvalue">Std.value</a> -> 's</code></pre><div class="info ">
 <code class="code">select matcher x</code> applies <code class="code">matcher</code> to value <code class="code">x</code>.
-          <code class="code">select</code> is the same as <code class="code"><span class="constructor">Fn</span>.flip switch</code>.<br>
+        <code class="code">select</code> is the same as <code class="code"><span class="constructor">Fn</span>.flip switch</code>.<br>
 </div>
 
-<pre><span id="VALcase"><span class="keyword">val</span> case</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Value.tag</a> -><br>       ('a -> 's) -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcase"><span class="keyword">val</span> case</span> : <code class="type">'a <a href="Bap.Std.Value.html#TYPEtag">Std.Value.tag</a> -><br>       ('a -> 's) -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a> -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">case tag action matcher</code> adds an <code class="code">action</code> to <code class="code">matcher</code> that
-          will be invoked for values with a a given <code class="code">tag</code><br>
+        will be invoked for values with a a given <code class="code">tag</code><br>
 </div>
 
 <pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">(unit -> 's) -> 's <a href="Bap.Std.Value.Match.html#TYPEt">t</a></code></pre><div class="info ">

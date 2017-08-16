@@ -102,7 +102,7 @@ the mapper lifted into a regular state monad.
 the visitor lifted into the search monad.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S2.html">Monad.S2</a></code><code class="code">) </code>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) M.t</code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap_c_type_mapper.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.S2.html">Std.Monad.S2</a></code><code class="code">) </code>: <code class="type">S</code><code class="type">  with type ('a,'e) m = ('a,'e) M.t</code></pre><div class="info">
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> lifts the visitor into monad <code class="code"><span class="constructor">M</span></code>.
 </div>
 </body></html>

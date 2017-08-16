@@ -80,31 +80,31 @@
 Propagate taint through expressions.
 <p>
 
-          <h2 id="2_Semantics">Semantics</h2>
+        <h2 id="2_Semantics">Semantics</h2>
 <p>
 
-          <h3 id="3_Grammar">Grammar</h3>
+        <h3 id="3_Grammar">Grammar</h3>
 <p>
 
-          The following syntactic forms are used in propagation rules:
+        The following syntactic forms are used in propagation rules:
 <p>
 
-          <code class="code">*a</code> - load from address <code class="code">a</code>, where <code class="code">a</code> is immediate value;
-          <code class="code">*a &lt;- v</code> - store value <code class="code">v</code> at address <code class="code">a</code>;
-          <code class="code">exp <span class="keywordsign">~&gt;</span> v</code> - expression reduces to value <code class="code">v</code>;
-          <code class="code">v <span class="keywordsign">-&gt;</span> t</code> - value <code class="code">v</code> is tainted by a taint <code class="code">t</code>;
-          <code class="code">&lt;bop&gt;</code> - BIL binary operation or BIL concat expression;
-          <code class="code">&lt;uop&gt;</code> - BIL unary, extract or cast expression.
+        <code class="code">*a</code> - load from address <code class="code">a</code>, where <code class="code">a</code> is immediate value;
+        <code class="code">*a &lt;- v</code> - store value <code class="code">v</code> at address <code class="code">a</code>;
+        <code class="code">exp <span class="keywordsign">~&gt;</span> v</code> - expression reduces to value <code class="code">v</code>;
+        <code class="code">v <span class="keywordsign">-&gt;</span> t</code> - value <code class="code">v</code> is tainted by a taint <code class="code">t</code>;
+        <code class="code">&lt;bop&gt;</code> - BIL binary operation or BIL concat expression;
+        <code class="code">&lt;uop&gt;</code> - BIL unary, extract or cast expression.
 <p>
 
-          <h3 id="3_Rules">Rules</h3>
+        <h3 id="3_Rules">Rules</h3>
 <p>
 
-          Value <code class="code">v</code> is tainted by taint <code class="code">t</code>, denoted as <code class="code">v <span class="keywordsign">-&gt;</span> t</code>, if there
-          exists a deriviation of the following rules, proving this fact.
+        Value <code class="code">v</code> is tainted by taint <code class="code">t</code>, denoted as <code class="code">v <span class="keywordsign">-&gt;</span> t</code>, if there
+        exists a deriviation of the following rules, proving this fact.
 <p>
 
-          <pre class="verbatim">
+        <pre class="verbatim">
     *a ~&gt; v
     a -&gt; t
     ---------------- :: p_load
@@ -133,23 +133,23 @@ Propagate taint through expressions.
    </pre>
 <p>
 
-          Note 1: this class overrides only methods, that computes non-leaf
-          expressions, leaving a space for extension for derived classes.
+        Note 1: this class overrides only methods, that computes non-leaf
+        expressions, leaving a space for extension for derived classes.
 <p>
 
-          Note 2: we do not propagate taint from condition to branches in the
-          if/then/else expression, since we're propagating only data
-          dependency, not control dependency.
+        Note 2: we do not propagate taint from condition to branches in the
+        if/then/else expression, since we're propagating only data
+        dependency, not control dependency.
 <p>
 
-          Although, one can argue, that in expression <code class="code"><span class="keyword">if</span> c <span class="keyword">then</span> x <span class="keyword">else</span> y</code>
-          the result depends on <code class="code">c</code>, since if we change <code class="code">c</code> we will get
-          different results, there is a good reason for not propagating this
-          dependency - the consistency with BIR and BIL. Consider, BIL's
-          <code class="code"><span class="keyword">if</span></code> statement or BIR's conditional jump. If we will start to
-          propagate taint from condition in <code class="code">ite</code> expression, then we should
-          also propagate it in BIL's and BIR's conditionals. Unfortunatelly
-          the latter is not possible.<br>
+        Although, one can argue, that in expression <code class="code"><span class="keyword">if</span> c <span class="keyword">then</span> x <span class="keyword">else</span> y</code>
+        the result depends on <code class="code">c</code>, since if we change <code class="code">c</code> we will get
+        different results, there is a good reason for not propagating this
+        dependency - the consistency with BIR and BIL. Consider, BIL's
+        <code class="code"><span class="keyword">if</span></code> statement or BIR's conditional jump. If we will start to
+        propagate taint from condition in <code class="code">ite</code> expression, then we should
+        also propagate it in BIL's and BIR's conditionals. Unfortunatelly
+        the latter is not possible.<br>
 </div>
 <b>Inherits</b><ul>
 <li><code class="code"><span class="constructor">Bap</span>.<span class="constructor">Std</span>.<span class="constructor">Taint</span>.<span class="constructor">S</span>.<span class="constructor">Expi</span>.t</code></li>

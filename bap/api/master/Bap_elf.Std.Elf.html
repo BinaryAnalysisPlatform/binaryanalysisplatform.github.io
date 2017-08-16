@@ -1254,14 +1254,14 @@ ELF data structures.<br>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTelf.e_sections">e_sections</span>&nbsp;: <code class="type"><a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> <a href="Bap.Std.html#TYPEseq">seq</a></code>;</code></td>
+<code><span id="TYPEELTelf.e_sections">e_sections</span>&nbsp;: <code class="type"><a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTelf.e_segments">e_segments</span>&nbsp;: <code class="type"><a href="Bap_elf.Std.Elf.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEseq">seq</a></code>;</code></td>
+<code><span id="TYPEELTelf.e_segments">e_segments</span>&nbsp;: <code class="type"><a href="Bap_elf.Std.Elf.html#TYPEsegment">segment</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code>;</code></td>
 
 </tr></table>
 }
@@ -1299,17 +1299,17 @@ ELF data structures.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_elf.Std.Elf.html#TYPEelf">elf</a></code> </pre>
 
 
-<pre><span id="VALfrom_bigstring"><span class="keyword">val</span> from_bigstring</span> : <code class="type">?pos:int -><br>       ?len:int -><br>       Bigstring.t -> <a href="Bap_elf.Std.Elf.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALfrom_bigstring"><span class="keyword">val</span> from_bigstring</span> : <code class="type">?pos:int -><br>       ?len:int -><br>       Std.Bigstring.t -> <a href="Bap_elf.Std.Elf.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">from_bigstring data</code> parses data with optional offset
         provided as <code class="code">pos</code> and length as <code class="code">len</code><br>
 </div>
 
-<pre><span id="VALsection_name"><span class="keyword">val</span> section_name</span> : <code class="type">Bigstring.t -><br>       <a href="Bap_elf.Std.Elf.html#TYPEt">t</a> -><br>       <a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> -> string Or_error.t</code></pre><div class="info ">
+<pre><span id="VALsection_name"><span class="keyword">val</span> section_name</span> : <code class="type">Std.Bigstring.t -><br>       <a href="Bap_elf.Std.Elf.html#TYPEt">t</a> -><br>       <a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> -> string Std.Or_error.t</code></pre><div class="info ">
 <code class="code">section_name data elf section</code> retrieves name of <code class="code">section</code>
         from <code class="code">data</code><br>
 </div>
 
-<pre><span id="VALstring_of_section"><span class="keyword">val</span> string_of_section</span> : <code class="type">Bigstring.t -><br>       <a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> -> string Or_error.t</code></pre><div class="info ">
+<pre><span id="VALstring_of_section"><span class="keyword">val</span> string_of_section</span> : <code class="type">Std.Bigstring.t -><br>       <a href="Bap_elf.Std.Elf.html#TYPEsection">section</a> -> string Std.Or_error.t</code></pre><div class="info ">
 <code class="code">string_of_section data section</code> extracts the section data as
         string from the provided <code class="code">data</code><br>
 </div>

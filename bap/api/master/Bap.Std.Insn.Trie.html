@@ -78,16 +78,16 @@
 
 <pre><span class="keyword">module</span> Trie: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Insn.Trie.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 <h3 id="3_PrefixTree">Prefix Tree</h3>
-        This module provides a trie data structure where a sequence of
-        instructions is used as a key (and an individual instruction
-        as a token). Two implementations are provided, a regular, where
-        insns are compared as-is, and normalized, where instructions are
-        compared using normalized comparison.
+      This module provides a trie data structure where a sequence of
+      instructions is used as a key (and an individual instruction
+      as a token). Two implementations are provided, a regular, where
+      insns are compared as-is, and normalized, where instructions are
+      compared using normalized comparison.
 <p>
 
-        In normalized comparison concerete immediate values are ignored,
-        and if instructions have different number of operands, then only
-        then excess operands are excluded from the comparison.<br>
+      In normalized comparison concerete immediate values are ignored,
+      and if instructions have different number of operands, then only
+      then excess operands are excluded from the comparison.<br>
 </div>
 <hr width="100%">
 
@@ -97,11 +97,11 @@ Trie requires 0(1) get operation<br>
 </div>
 
 
-<pre><span id="VALkey_of_insns"><span class="keyword">val</span> key_of_insns</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">Insn.t</a> list -> <a href="Bap.Std.Insn.Trie.html#TYPEkey">key</a></code></pre><div class="info ">
+<pre><span id="VALkey_of_insns"><span class="keyword">val</span> key_of_insns</span> : <code class="type"><a href="Bap.Std.Insn.html#TYPEt">Std.Insn.t</a> list -> <a href="Bap.Std.Insn.Trie.html#TYPEkey">key</a></code></pre><div class="info ">
 <code class="code">key_of_insns insns</code> takes a list of instructions and transforms
-          it to <code class="code">key</code><br>
+        it to <code class="code">key</code><br>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a>: <code class="type"><a href="Bap.Std.Trie.S.html">Trie.S</a></code><code class="type">  with type key = key</code></pre>
+<pre><span class="keyword">module</span> <a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a>: <code class="type"><a href="Bap.Std.Trie.S.html">Std.Trie.S</a></code><code class="type">  with type key = key</code></pre>
 <pre><span class="keyword">include</span> <a href="Bap.Std.Trie.S.html">Bap.Std.Trie.S</a></pre>
 </body></html>

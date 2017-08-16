@@ -87,7 +87,7 @@ Combine Mem and Shift<br>
 <br>
 Combine Mem and Shift<br>
 
-<pre><span id="VALrepair_imm"><span class="keyword">val</span> repair_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEword">word</a> -><br>       sign_mask:int -> imm_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> <a href="Bap.Std.html#TYPEexp">exp</a></code></pre><div class="info ">
+<pre><span id="VALrepair_imm"><span class="keyword">val</span> repair_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -><br>       sign_mask:int -> imm_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 takes a word and converts it to an exp that is the offset for some
     memory instructions sign_mask - a bitmask that determines the bit
     in src that is the repair bit imm_mask - a bitmask that determines

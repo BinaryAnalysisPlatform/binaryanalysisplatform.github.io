@@ -85,15 +85,15 @@ A simple linear sweep disassembler.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">(<a href="Bap.Std.html#TYPEmem">mem</a> * <a href="Bap.Std.html#TYPEinsn">insn</a> option) list</code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">(<a href="Bap.Std.html#TYPEmem">Std.mem</a> * <a href="Bap.Std.html#TYPEinsn">Std.insn</a> option) list</code> </pre>
 <div class="info ">
 output type of a disassembler.<br>
 </div>
 
 
-<pre><span id="VALsweep"><span class="keyword">val</span> sweep</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">mem</a> -> <a href="Bap.Std.Disasm_expert.Linear.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALsweep"><span class="keyword">val</span> sweep</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       <a href="Bap.Std.html#TYPEmem">Std.mem</a> -> <a href="Bap.Std.Disasm_expert.Linear.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code"><span class="constructor">Linear</span>.sweep arch mem</code> will perform a linear sweep
-          disassembly on the specified memory <code class="code">mem</code><br>
+        disassembly on the specified memory <code class="code">mem</code><br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Disasm_expert.Linear.With_exn.html">With_exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Disasm_expert.Linear.With_exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

@@ -84,8 +84,8 @@
 Event subsystem.
 <p>
 
-      The event subsystem is a way of communicating between different
-      subsystems of BAP.<br>
+    The event subsystem is a way of communicating between different
+    subsystems of BAP.<br>
 </div>
 <hr width="100%">
 
@@ -100,18 +100,18 @@ global <code class="code">stream</code> of events<br>
 </div>
 
 <pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Bap.Std.Event.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-<code class="code">send event</code> to the <a href="Bap.Std.Event.html#VALstream"><code class="code"><span class="constructor">Event</span>.stream</code></a><br>
+<code class="code">send event</code> to the <a href="Bap.Std.Event.html#VALstream"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Event</span>.stream</code></a><br>
 </div>
 
 <pre><span id="VALregister_printer"><span class="keyword">val</span> register_printer</span> : <code class="type">(<a href="Bap.Std.Event.html#TYPEt">t</a> -> string option) -> unit</code></pre><div class="info ">
 <code class="code">register_printer f</code> when event <code class="code">e</code> is printed, <code class="code">f e</code> must be
-        <code class="code"><span class="constructor">None</span></code> if <code class="code">f</code> is not a subset of events, that is intended to be
-        printed by an <code class="code">f</code>. If it is <code class="code"><span class="constructor">Some</span> str</code>, then <code class="code">str</code> is printed
-        out.
+      <code class="code"><span class="constructor">None</span></code> if <code class="code">f</code> is not a subset of events, that is intended to be
+      printed by an <code class="code">f</code>. If it is <code class="code"><span class="constructor">Some</span> str</code>, then <code class="code">str</code> is printed
+      out.
 <p>
 
-        If more than one printer returns <code class="code"><span class="constructor">Some</span> thing</code> for the same event,
-        then the last registered has the precedence.<br>
+      If more than one printer returns <code class="code"><span class="constructor">Some</span> thing</code> for the same event,
+      then the last registered has the precedence.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap.Std.Event.Log.html">Log</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Event.Log.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

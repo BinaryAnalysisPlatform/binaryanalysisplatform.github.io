@@ -5,7 +5,7 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Bap_primus.Std.Primus.Memory.html">
-<link rel="next" href="Bap_primus.Std.Primus.Error.html">
+<link rel="next" href="Bap_primus.Std.Primus.Exn.html">
 <link rel="Up" href="Bap_primus.Std.Primus.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,7 +76,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Bap_primus.Std.Primus.Memory.html" title="Bap_primus.Std.Primus.Memory">Previous</a>
 &nbsp;<a class="up" href="Bap_primus.Std.Primus.html" title="Bap_primus.Std.Primus">Up</a>
-&nbsp;<a class="post" href="Bap_primus.Std.Primus.Error.html" title="Bap_primus.Std.Primus.Error">Next</a>
+&nbsp;<a class="post" href="Bap_primus.Std.Primus.Exn.html" title="Bap_primus.Std.Primus.Exn">Next</a>
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a></h1>
 
@@ -215,8 +215,8 @@ Lisp machine.
         following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;&lt;p2&gt;&nbsp;...&nbsp;&lt;pM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eN&gt;)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;&lt;p2&gt;&nbsp;...&nbsp;&lt;pM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eN&gt;)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -224,14 +224,14 @@ Lisp machine.
         strings and a declaration section. For example,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;strlen&nbsp;(p)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"returns&nbsp;a&nbsp;length&nbsp;of&nbsp;the&nbsp;null-terminated&nbsp;string&nbsp;pointed&nbsp;by&nbsp;P"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(<span class="keyword">external</span>&nbsp;<span class="string">"strlen"</span>))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(msg&nbsp;<span class="string">"strlen&nbsp;was&nbsp;called&nbsp;with&nbsp;$p"</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">let</span>&nbsp;((len&nbsp;0))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">while</span>&nbsp;(not&nbsp;(points-<span class="keyword">to</span>-null&nbsp;p))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(incr&nbsp;len&nbsp;p))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len))
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;strlen&nbsp;(p)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"returns&nbsp;a&nbsp;length&nbsp;of&nbsp;the&nbsp;null-terminated&nbsp;string&nbsp;pointed&nbsp;by&nbsp;P"</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(<span class="keyword">external</span>&nbsp;<span class="string">"strlen"</span>))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(msg&nbsp;<span class="string">"strlen&nbsp;was&nbsp;called&nbsp;with&nbsp;$p"</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">let</span>&nbsp;((len&nbsp;0))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">while</span>&nbsp;(not&nbsp;(points-<span class="keyword">to</span>-null&nbsp;p))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(incr&nbsp;len&nbsp;p))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -272,9 +272,9 @@ Lisp machine.
         Several derived forms are defined as macros, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">when</span>&nbsp;&lt;cond&gt;&nbsp;&lt;body&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">or</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">and</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">when</span>&nbsp;&lt;cond&gt;&nbsp;&lt;body&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">or</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">and</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -397,10 +397,10 @@ Lisp machine.
         following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;name&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;name&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -422,7 +422,7 @@ Lisp machine.
         constant, and has quite a similar syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;name&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;value&gt;})
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;name&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;value&gt;})
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -485,10 +485,10 @@ Lisp machine.
         will be expanded with
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x72&nbsp;0x75&nbsp;0x65&nbsp;0x6c&nbsp;0x20&nbsp;0x77&nbsp;0x6f&nbsp;0x72
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x6c&nbsp;0x64&nbsp;0x0a&nbsp;0x00)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x72&nbsp;0x75&nbsp;0x65&nbsp;0x6c&nbsp;0x20&nbsp;0x77&nbsp;0x6f&nbsp;0x72
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0x6c&nbsp;0x64&nbsp;0x0a&nbsp;0x00)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -499,21 +499,21 @@ Lisp machine.
         following substitution rule
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubt&nbsp;example&nbsp;:hex&nbsp;68656c&nbsp;6c&nbsp;6f2c2063)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubt&nbsp;example&nbsp;:hex&nbsp;68656c&nbsp;6c&nbsp;6f2c2063)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
         an application
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;example)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;example)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
         will be expanded into
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(write-block&nbsp;<span class="constructor">SP</span>&nbsp;0x68&nbsp;0x65&nbsp;0x6c&nbsp;0x6c&nbsp;0x6f&nbsp;0x2c&nbsp;0x20&nbsp;0x63)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -530,8 +530,8 @@ Lisp machine.
         The macro definition has the following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;...&nbsp;&lt;pM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;...&nbsp;&lt;pM&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
@@ -561,7 +561,7 @@ Lisp machine.
 <p>
 
         <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x)&nbsp;1)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x&nbsp;xs)&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;xs)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x&nbsp;xs)&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;xs)))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -578,9 +578,9 @@ Lisp machine.
         <pre class="verbatim">(+ 1 (+ 1 1))</pre>
 <p>
 
-        <pre class="codepre"><code class="code">1:&nbsp;(list-length&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))
-2:&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))
-3:&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;1))
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;(list-length&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3:&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;1))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -599,8 +599,8 @@ Lisp machine.
         length, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x)&nbsp;(f&nbsp;a&nbsp;x))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x&nbsp;xs)&nbsp;(fold&nbsp;f&nbsp;(f&nbsp;a&nbsp;x)&nbsp;xs))
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x)&nbsp;(f&nbsp;a&nbsp;x))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x&nbsp;xs)&nbsp;(fold&nbsp;f&nbsp;(f&nbsp;a&nbsp;x)&nbsp;xs))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -616,10 +616,10 @@ Lisp machine.
         The <pre class="verbatim">(sum 1 2 3)</pre> will be rewritten as follows:
 <p>
 
-        <pre class="codepre"><code class="code">1:&nbsp;(sum&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)
-2:&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)
-3:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
-4:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;(sum&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -628,8 +628,8 @@ Lisp machine.
         address:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;write-block&nbsp;(addr&nbsp;bytes)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(fold&nbsp;memory-write&nbsp;addr&nbsp;bytes))
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;write-block&nbsp;(addr&nbsp;bytes)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(fold&nbsp;memory-write&nbsp;addr&nbsp;bytes))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -707,13 +707,13 @@ Lisp machine.
         Let's use the following two definitions for a concrete example,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;arm&nbsp;gnueabi)))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">R0</span>)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;x86&nbsp;cdecl)))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(read-word&nbsp;word-width&nbsp;(+&nbsp;<span class="constructor">SP</span>&nbsp;(sizeof&nbsp;word-width))))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;x86&nbsp;cdecl)))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(read-word&nbsp;word-width&nbsp;(+&nbsp;<span class="constructor">SP</span>&nbsp;(sizeof&nbsp;word-width))))
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -736,8 +736,8 @@ Lisp machine.
         before, or after the function evaluation, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;memory-written&nbsp;(a&nbsp;x)&nbsp;(msg&nbsp;<span class="string">"write&nbsp;$x&nbsp;to&nbsp;$a"</span>))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(advice-add&nbsp;memory-written&nbsp;:after&nbsp;memory-write)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;memory-written&nbsp;(a&nbsp;x)&nbsp;(msg&nbsp;<span class="string">"write&nbsp;$x&nbsp;to&nbsp;$a"</span>))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(advice-add&nbsp;memory-written&nbsp;:after&nbsp;memory-write)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
 <p>
 
@@ -765,53 +765,53 @@ Lisp machine.
         production definition.
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;<span class="keyword">module</span>&nbsp;::=&nbsp;{&lt;entity&gt;}
-&nbsp;entity&nbsp;::=&nbsp;&lt;feature-request&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;declarations&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;constant-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;substitution-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;macro-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;<span class="keyword">function</span>-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;advising&gt;
-feature-request&nbsp;::=&nbsp;(require&nbsp;&lt;ident&gt;)
-declarations&nbsp;::=&nbsp;(declare&nbsp;{&lt;attribute&gt;})
-constant-definition&nbsp;::=
-&nbsp;&nbsp;(defconstant&nbsp;&lt;ident&gt;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]&nbsp;&lt;atom&gt;)
-substitution-definition&nbsp;::=
-&nbsp;&nbsp;(defsubst&nbsp;&lt;ident&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;atom&gt;})
-macro-definition&nbsp;::=
-&nbsp;&nbsp;(defmacro&nbsp;&lt;ident&gt;&nbsp;({&lt;macro-param&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;exp&gt;)
-<span class="keyword">function</span>-definition&nbsp;::=
-&nbsp;&nbsp;(defun&nbsp;&lt;ident&gt;&nbsp;({&lt;<span class="keyword">function</span>-param&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&lt;exp&gt;})
-advice&nbsp;::=&nbsp;(advice-add&nbsp;&lt;ident&gt;&nbsp;&lt;<span class="keyword">method</span>&gt;&nbsp;&lt;ident&gt;)
-exp&nbsp;::=&nbsp;()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">if</span>&nbsp;&lt;exp&gt;&nbsp;&lt;exp&gt;&nbsp;{&lt;exp&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">let</span>&nbsp;({&lt;binding&gt;})&nbsp;{&lt;exp&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">while</span>&nbsp;exp&nbsp;{exps})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(prog&nbsp;{exp})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(msg&nbsp;&lt;format&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(&lt;ident&gt;&nbsp;{exp})
-binding&nbsp;::=&nbsp;(&lt;var&gt;&nbsp;&lt;exp&gt;)
-attribute&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;&lt;attribute-value&gt;)
-macro-param&nbsp;::=&nbsp;{&lt;ident&gt;}
-<span class="keyword">function</span>-param&nbsp;::=&nbsp;{&lt;var&gt;}
-var&nbsp;=&nbsp;&lt;ident&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;ident&gt;:&lt;size&gt;
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;::=&nbsp;{&lt;entity&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity&nbsp;::=&nbsp;&lt;feature-request&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;declarations&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;constant-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;substitution-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;macro-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;<span class="keyword">function</span>-definition&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;advising&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feature-request&nbsp;::=&nbsp;(require&nbsp;&lt;ident&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;declarations&nbsp;::=&nbsp;(declare&nbsp;{&lt;attribute&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constant-definition&nbsp;::=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;ident&gt;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]&nbsp;&lt;atom&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitution-definition&nbsp;::=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;ident&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;atom&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;macro-definition&nbsp;::=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;ident&gt;&nbsp;({&lt;macro-param&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;exp&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span>-definition&nbsp;::=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;ident&gt;&nbsp;({&lt;<span class="keyword">function</span>-param&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&lt;exp&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;advice&nbsp;::=&nbsp;(advice-add&nbsp;&lt;ident&gt;&nbsp;&lt;<span class="keyword">method</span>&gt;&nbsp;&lt;ident&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp&nbsp;::=&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">if</span>&nbsp;&lt;exp&gt;&nbsp;&lt;exp&gt;&nbsp;{&lt;exp&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">let</span>&nbsp;({&lt;binding&gt;})&nbsp;{&lt;exp&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">while</span>&nbsp;exp&nbsp;{exps})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(prog&nbsp;{exp})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(msg&nbsp;&lt;format&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(&lt;ident&gt;&nbsp;{exp})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding&nbsp;::=&nbsp;(&lt;var&gt;&nbsp;&lt;exp&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;&lt;attribute-value&gt;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;macro-param&nbsp;::=&nbsp;{&lt;ident&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span>-param&nbsp;::=&nbsp;{&lt;var&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;=&nbsp;&lt;ident&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;ident&gt;:&lt;size&gt;
 
-attribute-value&nbsp;::=&nbsp;?each&nbsp;attribute&nbsp;defines&nbsp;its&nbsp;own&nbsp;syntax?
-<span class="keyword">external</span>-attribute-value&nbsp;::=&nbsp;{&lt;ident&gt;}
-context-attribute-value&nbsp;::=&nbsp;{&lt;context-declaration&gt;}
-context-declaration&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;{&lt;ident&gt;})
-docstring&nbsp;::=&nbsp;&lt;text&gt;
-syntax&nbsp;::=&nbsp;:hex&nbsp;<span class="keywordsign">|</span>&nbsp;:ascii&nbsp;<span class="keywordsign">|</span>&nbsp;..
-atom&nbsp;&nbsp;::=&nbsp;&lt;word&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;text&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;..
-word&nbsp;&nbsp;::=&nbsp;<span class="keywordsign">?&lt;</span>ascii-char&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;:&lt;size&gt;
-int&nbsp;&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0x{&lt;hex&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0b{&lt;bin&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0o{&lt;oct&gt;}
-size&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}
-ident&nbsp;::=&nbsp;?any&nbsp;atom&nbsp;that&nbsp;is&nbsp;not&nbsp;recognized&nbsp;<span class="keyword">as</span>&nbsp;a&nbsp;&lt;word&gt;?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute-value&nbsp;::=&nbsp;?each&nbsp;attribute&nbsp;defines&nbsp;its&nbsp;own&nbsp;syntax?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">external</span>-attribute-value&nbsp;::=&nbsp;{&lt;ident&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context-attribute-value&nbsp;::=&nbsp;{&lt;context-declaration&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context-declaration&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;{&lt;ident&gt;})
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docstring&nbsp;::=&nbsp;&lt;text&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;syntax&nbsp;::=&nbsp;:hex&nbsp;<span class="keywordsign">|</span>&nbsp;:ascii&nbsp;<span class="keywordsign">|</span>&nbsp;..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atom&nbsp;&nbsp;::=&nbsp;&lt;word&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;text&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;..
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;word&nbsp;&nbsp;::=&nbsp;<span class="keywordsign">?&lt;</span>ascii-char&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;:&lt;size&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0x{&lt;hex&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0b{&lt;bin&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0o{&lt;oct&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ident&nbsp;::=&nbsp;?any&nbsp;atom&nbsp;that&nbsp;is&nbsp;not&nbsp;recognized&nbsp;<span class="keyword">as</span>&nbsp;a&nbsp;&lt;word&gt;?
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
 <hr width="100%">
@@ -820,7 +820,7 @@ ident&nbsp;::=&nbsp;?any&nbsp;atom&nbsp;that&nbsp;is&nbsp;not&nbsp;recognized&nb
 A lisp primitive
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 a list of primitives.
 </div>
 
@@ -829,7 +829,7 @@ a list of primitives.
 a list of priomitives.<br>
 </div>
 
-<pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEerror">Primus.error</a> += </code></pre><table class="typetable">
+<pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -840,7 +840,7 @@ a list of priomitives.<br>
 
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Make(Machine) creates a Lisp machine embedded into the
           Primus <code class="code"><span class="constructor">Machine</span></code>.
 </div>
