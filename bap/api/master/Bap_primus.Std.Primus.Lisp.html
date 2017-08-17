@@ -101,7 +101,7 @@ Lisp machine.
         to the Emacs Lisp dialect.
 <p>
 
-        Primus Lips is a low-level language, that doesn't provide many
+        Primus Lips is a low-level language that doesn't provide many
         abstractions, as it tries to be as close to the machine
         language as possible. In that sense Primus Lisp can be seen as
         an assembler, except that it can't really assemble binaries,
@@ -146,18 +146,18 @@ Lisp machine.
         standard (not all at the time of writing).
 <p>
 
-        A collection of files is called library.  To use features
+        A collection of files is called a library.  To use features
         provided by another file, the file should be requested with
-        the <code class="code">(require &lt;name&gt;)</code> form, where <code class="code">&lt;name&gt;</code> is the name of the
-        feature. A file with the requested name is searched in the
+        the <code class="code">(require &lt;ident&gt;)</code> form, where <code class="code">&lt;ident&gt;</code> is the name of
+        the feature. A file with the requested name is searched in the
         library, and loaded, making all its definitions available in
         the lexical scope, that follows the <code class="code">require</code> form. If a
         feature is already provided, then nothing
         happens. Dependencies should not contain cycles.
 <p>
 
-        Declarations specify attributes that are shared by all
-        definitions in a file.For example, a declaration
+        Top-level declarations specify attributes that are shared by
+        all definitions in a file. For example, a declaration
 <p>
 
         <pre class="verbatim">(declare (context (arch armv7))</pre>
@@ -192,7 +192,7 @@ Lisp machine.
 
         An expression can have a polymorphic type <code class="code">t</code> that denotes a
         powerset of all types for the given architecture. For example,
-        for ARMv7, <pre class="verbatim">t = 32 \/ 31 \/ .. \/ 1</pre>. Thus a value of any
+        for ARMv7, <b>t = 32 \/ 31 \/ .. \/ 1 </b>. Thus a value of any
         type, is a also a value of type <code class="code">t</code>.
 <p>
 
@@ -215,31 +215,35 @@ Lisp machine.
         following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;&lt;p2&gt;&nbsp;...&nbsp;&lt;pM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eN&gt;)
+        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;name&gt;&nbsp;(&lt;arg&gt;&nbsp;...)&nbsp;&lt;exp&gt;&nbsp;...)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+        A list of arguments (that can be empty) defines function
+        arity. Functions in Primus Lisp has fixed arity, unlike
+        macros.
 <p>
 
         A function definition may optionally contain a documentation
         strings and a declaration section. For example,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;strlen&nbsp;(p)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"returns&nbsp;a&nbsp;length&nbsp;of&nbsp;the&nbsp;null-terminated&nbsp;string&nbsp;pointed&nbsp;by&nbsp;P"</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(<span class="keyword">external</span>&nbsp;<span class="string">"strlen"</span>))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(msg&nbsp;<span class="string">"strlen&nbsp;was&nbsp;called&nbsp;with&nbsp;$p"</span>)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">let</span>&nbsp;((len&nbsp;0))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">while</span>&nbsp;(not&nbsp;(points-<span class="keyword">to</span>-null&nbsp;p))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(incr&nbsp;len&nbsp;p))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;len))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">         (defun strlen (p)
+           "returns a length of the null-terminated string pointed by P"
+           (declare (external "strlen"))
+           (msg "strlen was called with $p")
+           (let ((len 0))
+             (while (not (points-to-null p))
+               (incr len p))
+             len))
+       </pre>
 <p>
 
         A function can be called (applied) using the function
         application form:
 <p>
 
-        <pre class="verbatim">(&lt;function-name&gt; &lt;e1&gt; &lt;e2&gt; ... &lt;eM&gt;)</pre>
+        <pre class="verbatim">(&lt;name&gt; &lt;exp&gt; ...)</pre>
 <p>
 
         The first element of the function application form is not an
@@ -249,33 +253,44 @@ Lisp machine.
 <p>
 
         The body of a function is a sequence of expressions, that is
-        evaluated in the lexical order (i.e., from top to down). A
+        evaluated in the lexical order (i.e., from left to right). A
         value of the last expression is the result of the function
         evaluation. An expression is either a function application or
         or a special form. Primus Lisp defines only 5 special forms,
         the rest of the syntax is defined using the macro system.
 <p>
 
-        <h3 id="3_Choice">Choice</h3>
+        <h3 id="3_Conditionals">Conditionals</h3>
 <p>
 
-        The <pre class="verbatim">(if &lt;cond&gt; &lt;e1&gt; &lt;e2&gt; .. &lt;eM&gt;)</pre> form is a basic
-        control flow structure. If &lt;cond&gt; evaluates to a non-zero word
-        then the result of the &lt;if&gt; form is the result of the &lt;e1&gt;
-        expression. Otherwise, a sequence of expressions
+        The <b>(if &lt;test-expr&gt; &lt;then-expr&gt; &lt;else-expr&gt; ...)</b> form is a basic
+        control flow structure. If <b>&lt;test-expr&gt;</b> evaluates to a non-zero word
+        then the result of the <b>&lt;if&gt;</b> form is the result of evaluation
+        of the <b>&lt;then-expr&gt;</b>, otherwise a sequence of <b>&lt;else-expr&gt;</b> ...
+        is evaluated and the result of the form evaluation
+        would be a result of the last expression in a form
 <p>
 
-        <pre class="verbatim">&lt;e2&gt; .. &lt;eM&gt;</pre> is evaluated and the result of the <code class="code"><span class="keyword">if</span></code>
-        form is the result of the last expression <pre class="verbatim">&lt;eM&gt;</pre>.
+        For example,
+<p>
+
+        <pre class="verbatim">        (if (&lt; 4 3)
+            (msg "shouldn't happen")
+          (msg "that's right")
+          (- 4 3))
+       </pre>
+<p>
+
+        Note that the the <b>&lt;else-expr&gt; </b> sequence maybe empty.
 <p>
 
         Several derived forms are defined as macros, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">when</span>&nbsp;&lt;cond&gt;&nbsp;&lt;body&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">or</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="keyword">and</span>&nbsp;&lt;e1&gt;&nbsp;&lt;e2&gt;&nbsp;..&nbsp;&lt;eM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (when &lt;cond&gt; &lt;expr&gt; ...)
+          (or &lt;expr&gt; ...)
+          (and &lt;expr&gt; ...)
+       </pre>
 <p>
 
         <h3 id="3_Loops">Loops</h3>
@@ -289,11 +304,11 @@ Lisp machine.
         represent the Primus Lisp call stack).
 <p>
 
-        The <pre class="verbatim">(while &lt;cond&gt; &lt;e1&gt; &lt;e2&gt; ..&lt;eM&gt;)</pre> form, will evaluate
+        The <b>(while &lt;cond&gt; &lt;expr&gt; ...) </b> form, will evaluate
         the &lt;cond&gt; expression first, and if it is a non-zero value,
-        then the sequence of expressions <pre class="verbatim">&lt;e1&gt; .. &lt;eM&gt;</pre> is
+        then the sequence of expressions <b>&lt;expr&gt; ... </b> is
         evaluated, and the value of the last expression becomes the
-        value of the <code class="code"><span class="keyword">while</span></code> form. If the value of the &lt;cond&gt;
+        value of the <code class="code"><span class="keyword">while</span></code> form. If the value of the <b>&lt;cond&gt; </b>
         expression is not a zero, then this value becomes the value of
         the <code class="code"><span class="keyword">while</span></code> form.
 <p>
@@ -304,26 +319,33 @@ Lisp machine.
         The <code class="code"><span class="keyword">let</span></code> form binds values to names in the lexical scope.
 <p>
 
-        <pre class="verbatim">(let ((&lt;v1&gt; &lt;e1&gt;) .. (&lt;vM&gt; &lt;eM&gt;) &lt;s1&gt; .. &lt;sN&gt;)</pre>
+        <pre class="verbatim">         (let (&lt;binding&gt; ...)  &lt;body-expr&gt; ...)
+         binding ::= (&lt;var&gt; &lt;expr&gt;)
+       </pre>
 <p>
 
-        form binds variables <pre class="verbatim">&lt;v1&gt;, ... &lt;vM &gt;</pre> to values of
-        expressions <pre class="verbatim">&lt;e1&gt;, ..., &lt;eM&gt;</pre> in expressions
-        <pre class="verbatim">&lt;s1&gt;,...,&lt;sN&gt;</pre>.  The lexical scope of the bound variable
-        starts from the next binding expression and ends with the
-        scope of the whole let expression. Thus, a variable &lt;v1&gt; is
-        bound in expressions <pre class="verbatim">&lt;e2&gt;,..., &lt;eM&gt;</pre> as well as in
-        <pre class="verbatim">&lt;s1&gt;,..., &lt;sN&gt;</pre>.
+        Evaluates each <b>&lt;binding&gt;</b> in order binding the <b>&lt;var&gt;</b>
+        identifier to a result of <b>&lt;expr&gt;</b>. The newly created
+        binding is available in consequent bindings and in the
+        &lt;body-expr&gt;, but is not visible outside of the scope of the
+        let-form.
+<p>
+
+        Example,
+        <pre class="verbatim">        (let ((x 4)
+              (y (+ x 2)))
+          (+ x 3))
+       </pre>
 <p>
 
         The value of the <code class="code"><span class="keyword">let</span></code> form is the value of the last
-        expression <pre class="verbatim">&lt;sN&gt;</pre>.
+        expression <b>&lt;sN&gt; </b>.
 <p>
 
         <h3 id="3_Sequencing">Sequencing </h3>
 <p>
 
-        The <pre class="verbatim">(prog &lt;e1&gt; ... &lt;eM&gt;)</pre> form combines a sequence of
+        The <b>(prog &lt;expr&gt; ...) </b> form combines a sequence of
         expressions into one expression, and is useful in the contexts
         where an expression is required. The expressions are evaluated
         from left to right, and the value of the <code class="code">prog</code> form is the
@@ -333,7 +355,7 @@ Lisp machine.
         <h3 id="3_Messaging">Messaging </h3>
 <p>
 
-        The <pre class="verbatim">(msg &lt;fmt&gt; &lt;e0&gt; &lt;eM&gt;)</pre> form constructs
+        The <b>(msg &lt;fmt&gt; &lt;expr&gt; ...) </b> form constructs
         logging/debugging messages using an embedded formatting
         language. The formed message will be sent to the logging
         facility, that was set up during the Primus Lisp library
@@ -344,13 +366,13 @@ Lisp machine.
         they start with the dollar sign ($).
 <p>
 
-        A pair of characters of the form <pre class="verbatim">$&lt;n&gt;</pre>, where <pre class="verbatim">&lt;n&gt;</pre>
+        A pair of characters of the form <b>$&lt;n&gt; </b>, where <b>&lt;n&gt; </b>
         is a decimal digit, will be substituted with the value of the
         n'th expression (counting from zero).
 <p>
 
-        A sequence <pre class="verbatim">$&lt;expr&gt;</pre> will be substituted with the value of
-        expression <pre class="verbatim">$&lt;expr&gt;</pre>. Thus the <code class="code">$</code> symbol can be seen as
+        A sequence <b>$&lt;expr&gt; </b> will be substituted with the value of
+        expression <b>$&lt;expr&gt; </b>. Thus the <code class="code">$</code> symbol can be seen as
         an anti-quotation, that temporary disables the quoting marks.
 <p>
 
@@ -397,11 +419,11 @@ Lisp machine.
         following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;name&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">         (defconstant &lt;name&gt; &lt;atom&gt;)
+         (defconstant &lt;name&gt; &lt;docstring&gt; &lt;atom&gt;)
+         (defconstant &lt;name&gt; &lt;declarations&gt; &lt;atom&gt;)
+         (defconstant &lt;name&gt; &lt;docstring&gt; &lt;declarations&gt; &lt;atom&gt;)
+       </pre>
 <p>
 
         For example,
@@ -411,22 +433,25 @@ Lisp machine.
 <p>
 
         During the program parsing, each occurrence of the
-        <pre class="verbatim">&lt;name&gt;</pre> term will be rewritten with the <pre class="verbatim">&lt;value&gt;</pre>
+        <b>&lt;name&gt; </b> term will be rewritten with the <b>&lt;value&gt; </b>
         term, that should be an atom.
 <p>
 
         <h3 id="3_Substitutions">Substitutions</h3>
 <p>
 
-        The syntactic substitutions is the generalization of syntactic
+        The syntactic substitution is a generalization of syntactic
         constant, and has quite a similar syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;name&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;value&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          | (defsubst &lt;name&gt; &lt;value&gt; ...)
+          | (defsubst &lt;name&gt; &lt;declarations&gt; &lt;value&gt; ...)
+          | (defsubst &lt;name&gt; :&lt;syntax&gt; &lt;value&gt; ...)
+          | (defsubst &lt;name&gt; &lt;declarations&gt; :&lt;syntax&gt; &lt;value&gt; ...)
+       </pre>
 <p>
 
-        During parsing, every occurrence of the term <pre class="verbatim">&lt;name&gt;</pre> (that
+        During parsing, every occurrence of the term <b>&lt;name&gt; </b> (that
         should be an atom), will be rewritten with a sequence of
         values <pre class="codepre"><code class="code">&nbsp;{&lt;value&gt;}&nbsp;</code></pre>.
 <p>
@@ -530,18 +555,20 @@ Lisp machine.
         The macro definition has the following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;name&gt;&nbsp;(&lt;p1&gt;&nbsp;...&nbsp;&lt;pM&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;value&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;value&gt;)
+          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;docstring&gt; &lt;value&gt;)
+          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;declarations&gt; &lt;value&gt;)
+          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;docstring&gt; &lt;declarations&gt; &lt;value&gt;)
+       </pre>
 <p>
 
         A macro definition adds a term rewriting rule, that rewrites
-        each occurrence of <pre class="verbatim">(&lt;name&gt; &lt;t1&gt; .. &lt;tN&gt;)</pre>, where <code class="code"><span class="constructor">N</span> &gt;= <span class="constructor">M</span></code>
-        with the <pre class="verbatim">&lt;value&gt;</pre> in which occurrences of the parameter
-        &lt;pN&gt; is substituted with the term &lt;tN&gt;. If <code class="code"><span class="constructor">N</span></code> is bigger than
-        <code class="code"><span class="constructor">M</span></code>, then the last parameter is bound with the sequence
-        <pre class="verbatim">&lt;tM&gt;...&lt;tN&gt;</pre>.
+        each occurrence of <b>(&lt;name&gt; &lt;arg&gt; ...) </b>, where the number
+        of arguments <code class="code"><span class="constructor">N</span></code> is greater or equal then the number of
+        parameters <code class="code"><span class="constructor">M</span></code>, with the <b>&lt;value&gt; </b> in which occurrences of the
+        <code class="code">i</code>th parameter is substituted with the term <code class="code">i</code>th argument. If <code class="code"><span class="constructor">N</span></code> is
+        bigger than <code class="code"><span class="constructor">M</span></code>, then the last parameter is bound with the
+        sequence of arguments  <b>&lt;argM&gt;...&lt;argN&gt; </b>.
 <p>
 
         The macro subsystem doesn't provide any specific looping or
@@ -551,7 +578,7 @@ Lisp machine.
 <p>
 
         Other than a standard context-based ad-hoc overloading
-        mechanism, the macro application uses arity-based
+        mechanism, the macro application uses the arity-based
         resolution. As it was described above, if a number of
         arguments is greater than the number of parameters, then the
         last parameter is bound to the rest of the arguments. When
@@ -560,9 +587,9 @@ Lisp machine.
         have the following definitions:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x)&nbsp;1)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;list-length&nbsp;(x&nbsp;xs)&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;xs)))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (defmacro list-length (x) 1)
+          (defmacro list-length (x xs) (+ 1 (list-length xs)))
+       </pre>
 <p>
 
         The the following term
@@ -578,10 +605,10 @@ Lisp machine.
         <pre class="verbatim">(+ 1 (+ 1 1))</pre>
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;(list-length&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;2&nbsp;3))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3:&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;(list-length&nbsp;3)))&nbsp;=&gt;&nbsp;(+&nbsp;1&nbsp;(+&nbsp;1&nbsp;1))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          1: (list-length 1 2 3) =&gt; (+ 1 (list-length 2 3))
+          2: (+ 1 (list-length 2 3)) =&gt; (+ 1 (+ 1 (list-length 3)))
+          3: (+ 1 (+ 1 (list-length 3))) =&gt; (+ 1 (+ 1 1))
+       </pre>
 <p>
 
         In the first step, both definition match. In the first
@@ -599,9 +626,9 @@ Lisp machine.
         length, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x)&nbsp;(f&nbsp;a&nbsp;x))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;fold&nbsp;(f&nbsp;a&nbsp;x&nbsp;xs)&nbsp;(fold&nbsp;f&nbsp;(f&nbsp;a&nbsp;x)&nbsp;xs))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (defmacro fold (f a x) (f a x))
+          (defmacro fold (f a x xs) (fold f (f a x) xs))
+       </pre>
 <p>
 
         Using this definition we can define a sum function (although
@@ -613,14 +640,14 @@ Lisp machine.
         <pre class="verbatim">(defmacro sum (xs) (fold + 0 xs))</pre>
 <p>
 
-        The <pre class="verbatim">(sum 1 2 3)</pre> will be rewritten as follows:
+        The <b>(sum 1 2 3) </b> will be rewritten as follows:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:&nbsp;(sum&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2:&nbsp;(fold&nbsp;+&nbsp;0&nbsp;1&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2&nbsp;3)&nbsp;=&gt;&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4:&nbsp;(fold&nbsp;+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)&nbsp;=&gt;&nbsp;(+&nbsp;(+&nbsp;(+&nbsp;0&nbsp;1)&nbsp;2)&nbsp;3)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          1: (sum 1 2 3) =&gt; (fold + 0 1 2 3)
+          2: (fold + 0 1 2 3) =&gt; (fold + (+ 0 1) 2 3)
+          3: (fold + (+ 0 1) 2 3) =&gt; (fold + (+ (+ 0 1) 2) 3)
+          4: (fold + (+ (+ 0 1) 2) 3) =&gt; (+ (+ (+ 0 1) 2) 3)
+       </pre>
 <p>
 
         A more real example is the <code class="code">write-block</code> macro, that takes a
@@ -628,9 +655,9 @@ Lisp machine.
         address:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;write-block&nbsp;(addr&nbsp;bytes)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(fold&nbsp;memory-write&nbsp;addr&nbsp;bytes))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (defmacro write-block (addr bytes)
+             (fold memory-write addr bytes))
+       </pre>
 <p>
 
         The definition uses the <code class="code">memory-write</code> primitive, that writes
@@ -700,21 +727,21 @@ Lisp machine.
         specified type class(es), and has the following syntax:
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;&lt;<span class="keyword">type</span>-<span class="keyword">class</span>-name&gt;&nbsp;{&lt;feature-constructor&gt;}))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (declare (context (&lt;type-class&gt; &lt;feature&gt; ...) ...))
+       </pre>
 <p>
 
         Let's use the following two definitions for a concrete example,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;arm&nbsp;gnueabi)))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">R0</span>)
+        <pre class="verbatim">          (defmacro get-arg-0 ()
+             (declare (context (arch arm gnueabi)))
+             R0)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;get-arg-0&nbsp;()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(declare&nbsp;(context&nbsp;(arch&nbsp;x86&nbsp;cdecl)))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(read-word&nbsp;word-width&nbsp;(+&nbsp;<span class="constructor">SP</span>&nbsp;(sizeof&nbsp;word-width))))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+          (defmacro get-arg-0 ()
+             (declare (context (arch x86 cdecl)))
+             (read-word word-width (+ SP (sizeof word-width))))
+       </pre>
 <p>
 
         We have two definitions of the same macro <code class="code">get-arg-0</code>, that
@@ -736,9 +763,9 @@ Lisp machine.
         before, or after the function evaluation, e.g.,
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;memory-written&nbsp;(a&nbsp;x)&nbsp;(msg&nbsp;<span class="string">"write&nbsp;$x&nbsp;to&nbsp;$a"</span>))
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(advice-add&nbsp;memory-written&nbsp;:after&nbsp;memory-write)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+        <pre class="verbatim">          (defun memory-written (a x) (msg "write $x to $a"))
+          (advice-add memory-written :after memory-write)
+       </pre>
 <p>
 
         The general syntax is:
@@ -755,64 +782,89 @@ Lisp machine.
 
         Each entity is an s-expression with the grammar, specified
         below.We use BNF-like syntax with the following conventions.
-        Non-terminal symbols are denoted like &lt;this&gt;, square brackets
-        denote optional components, and curly brackets denote zero,
-        one, or several repetitions of the enclosed component. Ordinary
+        Metavariables are denoted like <code class="code">&lt;this&gt;</code>. The <code class="code">&lt;this&gt; ...</code>
+        stands of any number of <code class="code">&lt;this&gt;</code> (possibly zero). Ordinary
         parentheses do not bear any notation, and should be read
         literally. Note, since the grammar is not context free, and is
         extensible, the following is an approximation of the language
-        grammar. Grammar extension points are defined as '..' in the
-        production definition.
+        grammar. Grammar extension points are defined with the
+        '?extensible?'comment in a production definition.
 <p>
 
-        <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">module</span>&nbsp;::=&nbsp;{&lt;entity&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;entity&nbsp;::=&nbsp;&lt;feature-request&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;declarations&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;constant-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;substitution-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;macro-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;<span class="keyword">function</span>-definition&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;advising&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;feature-request&nbsp;::=&nbsp;(require&nbsp;&lt;ident&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;declarations&nbsp;::=&nbsp;(declare&nbsp;{&lt;attribute&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;constant-definition&nbsp;::=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defconstant&nbsp;&lt;ident&gt;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]&nbsp;&lt;atom&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;substitution-definition&nbsp;::=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defsubst&nbsp;&lt;ident&gt;&nbsp;[&lt;declarations&gt;]&nbsp;[:&lt;syntax&gt;]&nbsp;{&lt;atom&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;macro-definition&nbsp;::=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defmacro&nbsp;&lt;ident&gt;&nbsp;({&lt;macro-param&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;exp&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span>-definition&nbsp;::=
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(defun&nbsp;&lt;ident&gt;&nbsp;({&lt;<span class="keyword">function</span>-param&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[&lt;docstring&gt;]&nbsp;[&lt;declarations&gt;]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{&lt;exp&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;advice&nbsp;::=&nbsp;(advice-add&nbsp;&lt;ident&gt;&nbsp;&lt;<span class="keyword">method</span>&gt;&nbsp;&lt;ident&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp&nbsp;::=&nbsp;()
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">if</span>&nbsp;&lt;exp&gt;&nbsp;&lt;exp&gt;&nbsp;{&lt;exp&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">let</span>&nbsp;({&lt;binding&gt;})&nbsp;{&lt;exp&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(<span class="keyword">while</span>&nbsp;exp&nbsp;{exps})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(prog&nbsp;{exp})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(msg&nbsp;&lt;format&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">|</span>&nbsp;(&lt;ident&gt;&nbsp;{exp})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;binding&nbsp;::=&nbsp;(&lt;var&gt;&nbsp;&lt;exp&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;&lt;attribute-value&gt;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;macro-param&nbsp;::=&nbsp;{&lt;ident&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">function</span>-param&nbsp;::=&nbsp;{&lt;var&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;=&nbsp;&lt;ident&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;ident&gt;:&lt;size&gt;
+        <pre class="verbatim">module ::= &lt;entity&gt; ...
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attribute-value&nbsp;::=&nbsp;?each&nbsp;attribute&nbsp;defines&nbsp;its&nbsp;own&nbsp;syntax?
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">external</span>-attribute-value&nbsp;::=&nbsp;{&lt;ident&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context-attribute-value&nbsp;::=&nbsp;{&lt;context-declaration&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;context-declaration&nbsp;::=&nbsp;(&lt;ident&gt;&nbsp;{&lt;ident&gt;})
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;docstring&nbsp;::=&nbsp;&lt;text&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;syntax&nbsp;::=&nbsp;:hex&nbsp;<span class="keywordsign">|</span>&nbsp;:ascii&nbsp;<span class="keywordsign">|</span>&nbsp;..
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;atom&nbsp;&nbsp;::=&nbsp;&lt;word&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;text&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;..
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;word&nbsp;&nbsp;::=&nbsp;<span class="keywordsign">?&lt;</span>ascii-char&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;&nbsp;<span class="keywordsign">|</span>&nbsp;&lt;int&gt;:&lt;size&gt;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0x{&lt;hex&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0b{&lt;bin&gt;}&nbsp;<span class="keywordsign">|</span>&nbsp;0o{&lt;oct&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;&nbsp;::=&nbsp;{&lt;decimal&gt;}
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ident&nbsp;::=&nbsp;?any&nbsp;atom&nbsp;that&nbsp;is&nbsp;not&nbsp;recognized&nbsp;<span class="keyword">as</span>&nbsp;a&nbsp;&lt;word&gt;?
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
+entity ::=
+  | &lt;feature-request&gt;
+  | &lt;declarations&gt;
+  | &lt;constant-definition&gt;
+  | &lt;substitution-definition&gt;
+  | &lt;macro-definition&gt;
+  | &lt;function-definition&gt;
+  | &lt;advising&gt;
+
+feature-request ::= (require &lt;ident&gt;)
+
+declarations ::= (declare &lt;attribute&gt; ...)
+
+constant-definition ::=
+  | (defconstant &lt;ident&gt; &lt;atom&gt;)
+  | (defconstant &lt;ident&gt; &lt;docstring&gt; &lt;atom&gt;)
+  | (defconstant &lt;ident&gt; &lt;declarations&gt; &lt;atom&gt;)
+  | (defconstant &lt;ident&gt; &lt;docstring&gt; &lt;declarations&gt; &lt;atom&gt;)
+
+substitution-definition ::=
+  | (defsubst &lt;ident&gt; &lt;atom&gt; ...)
+  | (defsubst &lt;ident&gt; &lt;declarations&gt; &lt;atom&gt; ...)
+  | (defsubst &lt;ident&gt; :&lt;syntax&gt; &lt;atom&gt; ...)
+  | (defsubst &lt;ident&gt; &lt;declarations&gt; :&lt;syntax&gt; &lt;atom&gt; ...)
+
+macro-definition ::=
+  | (defmacro &lt;ident&gt; (&lt;ident&gt; ...) &lt;exp&gt;)
+  | (defmacro &lt;ident&gt; (&lt;ident&gt; ...) &lt;docstring&gt; &lt;exp&gt;)
+  | (defmacro &lt;ident&gt; (&lt;ident&gt; ...) &lt;declarations&gt; &lt;exp&gt;)
+  | (defmacro &lt;ident&gt; (&lt;ident&gt; ...) &lt;docstring&gt; &lt;declarations&gt; &lt;exp&gt;)
+
+function-definition ::=
+  | (defun &lt;ident&gt; (&lt;var&gt; ...) &lt;exp&gt; ...)
+  | (defun &lt;ident&gt; (&lt;var&gt; ...) &lt;docstring&gt; &lt;exp&gt; ...)
+  | (defun &lt;ident&gt; (&lt;var&gt; ...) &lt;declarations&gt; &lt;exp&gt; ...)
+  | (defun &lt;ident&gt; (&lt;var&gt; ...) &lt;docstring&gt; &lt;declarations&gt; &lt;exp&gt; ...)
+
+advice ::=
+  | (advice-add &lt;ident&gt; &lt;method&gt; &lt;ident&gt;)
+
+exp ::=
+  | ()
+  | (if &lt;exp&gt; &lt;exp&gt; &lt;exp&gt; ...)
+  | (let (&lt;binding&gt; ...) &lt;exp&gt; ...)
+  | (while &lt;exp&gt; &lt;exp&gt; ...)
+  | (prog &lt;exp&gt; ...)
+  | (msg &lt;format&gt;)
+  | (&lt;ident&gt; &lt;exp&gt; ...)
+
+binding ::= (&lt;var&gt; &lt;exp&gt;)
+
+var ::= &lt;ident&gt; | &lt;ident&gt;:&lt;size&gt;
+
+attribute ::=
+  | (external &lt;ident&gt; ...)
+  | (context (&lt;ident&gt; &lt;ident&gt; ...) ...)
+  | (&lt;ident&gt; ?ident-specific-format?)
+
+docstring ::= &lt;text&gt;
+
+syntax ::= :hex | :ascii | ?extensible?
+
+atom  ::= &lt;word&gt; | &lt;text&gt; |
+
+word  ::= ?ascii-char? | &lt;int&gt; | &lt;int&gt;:&lt;size&gt;
+
+int   ::= ?decimal-octal-hex-or-bin format?
+
+size  ::= ?decimal?
+
+ident ::= ?any atom that is not recognized as a &lt;word&gt;?
+       </pre><br>
 </div>
 <hr width="100%">
 

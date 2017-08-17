@@ -90,9 +90,84 @@ The Interpreter.
         evaluation. The components can affect the results of
         evaluation in a limited way, by affecting the state of the
         components that are used by the Interpreter, name the
-        Environemnt and the Memory.<br>
+        Environemnt and the Memory.
+<p>
+
+        Note: we the <code class="code">observation (x,y,z)</code> notation in the
+        documentation to denote an observation of a value represented
+        with the <code class="code">(x,y,z)</code> tuple, that in fact corresponds to
+        <code class="code">observation &gt;&gt;&gt; <span class="keyword">fun</span> (x,y,z)</code> -&gt; ...<br>
 </div>
 <hr width="100%">
+
+<pre><span id="VALpc_change"><span class="keyword">val</span> pc_change</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">pc_change x</code> happens every time a code at address <code class="code">x</code> is executed.<br>
+</div>
+
+<pre><span id="VALloading"><span class="keyword">val</span> loading</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">loading x</code> happens before a value from the address <code class="code">x</code> is loaded
+          by the interpreter from the memory.<br>
+</div>
+
+<pre><span id="VALloaded"><span class="keyword">val</span> loaded</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">loaded (addr,value)</code> happens after the <code class="code">value</code> is loaded
+          from the address <code class="code">addr</code>.<br>
+</div>
+
+<pre><span id="VALstoring"><span class="keyword">val</span> storing</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">storing x</code> happens before a value is stored at address <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALstored"><span class="keyword">val</span> stored</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">stored (addr,value)</code> happens after the <code class="code">value</code> is stored at
+          the address <code class="code">addr</code><br>
+</div>
+
+<pre><span id="VALreading"><span class="keyword">val</span> reading</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">reading x</code> happens before the variable <code class="code">x</code> is read from the
+          environment.<br>
+</div>
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">Std.var</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">read (var,x)</code> happens after a variable <code class="code">var</code> is evaluated
+          to the value <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALwriting"><span class="keyword">val</span> writing</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">writing v</code> happens before a value is written to the variable <code class="code">v</code><br>
+</div>
+
+<pre><span id="VALwritten"><span class="keyword">val</span> written</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">Std.var</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">written (v,x)</code> happens after <code class="code">x</code> is assinged to <code class="code">v</code><br>
+</div>
+
+<pre><span id="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">undefined x</code> happens when a computation produces an
+          undefined value <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">const x</code> happens when a constant <code class="code">x</code> is created<br>
+</div>
+
+<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">((<a href="Bap.Std.html#TYPEbinop">Std.binop</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">binop ((op,x,y),r)</code> happens after the binary operation <code class="code">op</code>
+          is applied to values <code class="code">x</code> and <code class="code">y</code> and evaluates to <code class="code">r</code><br>
+</div>
+
+<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">((<a href="Bap.Std.html#TYPEunop">Std.unop</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">unop ((op,x),r)</code> happens after the unary operation <code class="code">op</code> is
+          applied to <code class="code">x</code> and results <code class="code">r</code><br>
+</div>
+
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">((<a href="Bap.Std.html#TYPEcast">Std.cast</a> * int * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">cast ((t,x),r)</code> happens after <code class="code">x</code> is casted to <code class="code">r</code> using
+          the casting type <code class="code">t</code><br>
+</div>
+
+<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">((int * int * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">extract ((hi,lo,x),r)</code> happens after <code class="code">r</code> is extracted from <code class="code">x</code><br>
+</div>
 
 <pre><span id="VALenter_term"><span class="keyword">val</span> enter_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
 an identifier of a term that will be executed next.<br>
@@ -178,6 +253,6 @@ an expression was left<br>
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Make(Machine) makes an interpreter that computes in the
-          given machine.
+          given <code class="code"><span class="constructor">Machine</span></code>.
 </div>
 </body></html>

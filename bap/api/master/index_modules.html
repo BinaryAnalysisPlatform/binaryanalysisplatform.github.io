@@ -330,7 +330,7 @@ Bap Plugin Library.
 </td></tr>
 <tr><td><a href="Bap_primus.html">Bap_primus</a> </td>
 <td><div class="info">
-Machine Exception.
+Primus - The Microexecution Framework.
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.html">Bap_traces</a> </td>
@@ -973,7 +973,7 @@ Graph view over IR.
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.html">Iterator</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Iterator is a sequence of values from some domain.
+Iterator is a sequence of values of some domain.
 </div>
 </td></tr>
 <tr><td align="left"><br>J</td></tr>
@@ -1072,7 +1072,10 @@ Primus Machine.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Main.html">Main</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Primus Entry Point.
+</div>
+</td></tr>
 <tr><td><a href="Bap_byteweight.Make.html">Make</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
@@ -1087,7 +1090,11 @@ Make(Machine) creates a Lisp machine embedded into the
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Memory.html">Bap_primus.Std.Primus.Memory</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the memory interface into the
+          <code class="code"><span class="constructor">Machine</span></code> monad.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Env.html">Bap_primus.Std.Primus.Env</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Env</span> = <span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code>
@@ -1107,11 +1114,15 @@ Make(Machine) creates a Lisp machine embedded into the
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
 <td><div class="info">
 Make(Machine) makes an interpreter that computes in the
-          given machine.
+          given <code class="code"><span class="constructor">Machine</span></code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> provides an interface to the Value type
+          lifted into the <code class="code"><span class="constructor">Machine</span></code> monad.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">Monad</span>)</code> a monad transformer that wraps the Machine
@@ -1458,7 +1469,10 @@ A lisp primitive
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.html">Primus</a> [<a href="Bap_primus.Std.html">Bap_primus.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Primus - The Microexecution Framework.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Printable.html">Printable</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
 Printable data structures.
@@ -1824,7 +1838,10 @@ Reconstructed symbol table.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Make.Syntax.html">Syntax</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Int-like syntax.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">Syntax</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
 Computation Syntax.
@@ -2060,7 +2077,10 @@ Arithmentic operations that doesn't check the widths.
 <tr><td><a href="Bap.Std.Bitvector.Stable.V2.html">V2</a> [<a href="Bap.Std.Bitvector.Stable.html">Bap.Std.Bitvector.Stable</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.html">Value</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A result of computation.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Value.html">Value</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Universal Values.

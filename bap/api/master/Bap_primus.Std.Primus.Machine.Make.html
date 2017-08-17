@@ -131,4 +131,41 @@ Local state of the machine.
                                and type 'a t := 'a state</code></pre><div class="info">
 Global state shared across all machine clones.
 </div>
+
+<pre><span id="VALraise"><span class="keyword">val</span> raise</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> -> 'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">raise exn</code> raises the machine exception <code class="code">exn</code>, intiating
+            an abonormal control flow<br>
+</div>
+
+<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a> -><br>       (<a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> -> 'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a>) -><br>       'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">catch x f</code> creates a computation that is equal to <code class="code">x</code> if
+            it terminates normally, and to <code class="code">f e</code> if <code class="code">x</code> terminates
+            abnormally with the exception <code class="code">e</code>.<br>
+</div>
+
+<pre><span id="VALproject"><span class="keyword">val</span> project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">Std.project</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">project</code> is a computation that results with the project
+            data structure. Note, that Machine is a State monad
+            with the <code class="code">env</code> type equal to <code class="code">project</code>, thus <code class="code">project</code> is
+            a shortcut to <code class="code">get ()</code>.
+<p>
+
+            You can use <code class="code">put project</code> to update the project data structure.<br>
+</div>
+
+<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">program</code> program representation<br>
+</div>
+
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Std.arch</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">arch</code> code architecture<br>
+</div>
+
+<pre><span id="VALargs"><span class="keyword">val</span> args</span> : <code class="type">string array <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">args</code> program command line arguments<br>
+</div>
+
+<pre><span id="VALenvp"><span class="keyword">val</span> envp</span> : <code class="type">string array <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">envp</code> program environment variables.<br>
+</div>
 </body></html>

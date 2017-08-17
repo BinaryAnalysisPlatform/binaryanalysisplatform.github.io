@@ -78,7 +78,7 @@
 
 <pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
 Make(Machine) makes an interpreter that computes in the
-          given machine.<br>
+          given <code class="code"><span class="constructor">Machine</span></code>.<br>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -98,4 +98,65 @@ Make(Machine) makes an interpreter that computes in the
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> = <code class="type">'a Machine.t</code> </pre>
 
+
+<pre><span id="VALhalt"><span class="keyword">val</span> halt</span> : <code class="type">Std.never_returns <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">halt</code> halts the machine by raise the <code class="code"><span class="constructor">Halt</span></code> exception.<br>
+</div>
+
+<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEpos">Std.Primus.pos</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">pos m</code> current program position.<br>
+</div>
+
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> unit <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">sub x</code> computes the subroutine <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALblk"><span class="keyword">val</span> blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> unit <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">blk x</code> interprets the block <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">get var</code> reads <code class="code">var</code><br>
+</div>
+
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -> unit <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">set var x</code> sets <code class="code">var</code> to <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type"><a href="Bap.Std.html#TYPEbinop">Std.binop</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">binop x y</code> computes a binary operation <code class="code">op</code> on <code class="code">x</code> and <code class="code">y</code><br>
+</div>
+
+<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type"><a href="Bap.Std.html#TYPEunop">Std.unop</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">unop op x</code> computes an unary operation <code class="code">op</code> on <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type"><a href="Bap.Std.html#TYPEcast">Std.cast</a> -><br>       int -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">cast t n x</code> casts <code class="code">n</code> bits of <code class="code">x</code> using a casting type <code class="code">t</code><br>
+</div>
+
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">concat x y</code> computes a concatenation of <code class="code">x</code> and <code class="code">y</code><br>
+</div>
+
+<pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">hi:int -><br>       lo:int -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">extract ~hi ~lo x</code> extracts bits from <code class="code">lo</code> to <code class="code">hi</code> from
+            <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">const x</code> computes the constant expression <code class="code">x</code><br>
+</div>
+
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap.Std.html#TYPEendian">Std.endian</a> -><br>       <a href="Bap.Std.html#TYPEsize">Std.size</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">load a d s</code> computes a load operation, that loads a word
+            of size <code class="code">s</code> using an order specified by the endianness <code class="code">d</code> from
+            address <code class="code">a</code>.<br>
+</div>
+
+<pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -><br>       <a href="Bap.Std.html#TYPEendian">Std.endian</a> -><br>       <a href="Bap.Std.html#TYPEsize">Std.size</a> -> unit <a href="Bap_primus.Std.Primus.Interpreter.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">store a x d s</code> computes a store operation, that stores at
+            the address <code class="code">a</code> the word <code class="code">x</code> of size <code class="code">s</code>, using an
+            ordering specified by the endianness <code class="code">d</code>.<br>
+</div>
 </body></html>

@@ -82,7 +82,7 @@
 
           Note that the Linker, as well as all other Primus Machine
           components, is stateless, i.e., the functor itself doesn't
-          contain any non-syntactic values, and thus it is purely
+          contain any non-syntactic values and thus it is purely
           functional. All the state is stored in the <code class="code"><span class="constructor">Machine</span></code>
           state. Thus it is absolutely safe, and correct, to create
           multiple instances of components, as they needed. The
@@ -105,7 +105,9 @@
 <hr width="100%">
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> = <code class="type">'a Machine.t</code> </pre>
-<div class="info ">
+
+
+<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?addr:<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -><br>       ?name:string -><br>       ?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -><br>       <a href="Bap_primus.Std.Primus.Linker.html#TYPEcode">Std.Primus.Linker.code</a> -> unit <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">link ~addr ~name ~tid code</code> links the given <code class="code">code</code>
             fragment into the Machine. The code can be invoked by one
             of the provided identifier. If no idetifiers were
@@ -114,7 +116,6 @@
             fragment, then the old binding will be shadowed by the new
             one.<br>
 </div>
-
 
 <pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -> unit <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">exec name</code> executes a code fragment associated with the

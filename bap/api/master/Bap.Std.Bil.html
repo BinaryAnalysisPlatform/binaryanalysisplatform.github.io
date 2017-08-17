@@ -486,7 +486,7 @@ Value of a result.
       In operational semantics a storage is represented
       syntactically as
       <pre class="verbatim">            v1 with [v2,ed] : nat &lt;- v3,
-       </pre>
+     </pre>
       where v1 may be either a <code class="code"><span class="constructor">Bot</span></code> value, representing an empty
       memory (or an absence of knowledge), or another storage. So a
       well typed memory object is defined inductively as:
@@ -495,7 +495,7 @@ Value of a result.
       <pre class="verbatim">          Inductive memory :=
            | bot : memory
            | store : (mem : memory) (addr : value) (data : value).
-       </pre>
+     </pre>
 <p>
 
       That is equivalent to an assoc list. Although we provide an

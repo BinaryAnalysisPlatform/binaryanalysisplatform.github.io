@@ -76,7 +76,63 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a></h1>
 
-<pre><span class="keyword">module</span> Primus: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Primus: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Primus - The Microexecution Framework.
+<p>
+
+      Primus is a microexecution framework that can be used to build
+      CPU and full system emulators, symbolic executers, static
+      fuzzers, policy checkers, tracers, quickcheck-like test suits,
+      etc.
+<p>
+
+      The underlying idea is quite simple - Primus interprets a lifted
+      program. The interpreter provides a set of extension points
+      through which it is possible to observe what is happening inside
+      the interpreter, and even to change the interpreter
+      behavior. This extension points are called "observations" in
+      Primus parlance. A simple publish/subscriber architecture is
+      used to watch for the interpreter events, where subscribers are
+      allowed to arbitrary change the interpreter state.
+<p>
+
+      A novel idea is that the interpreter is non-deterministic
+      in the same sense as a non-deterministic Turing machine. That
+      means that any computation may have more than one result. Every
+      time there is a non-determinism in the computation the machine
+      state is cloned. Different scheduling policies mixed with
+      different non-deterministic startegies provide an analyst a vast
+      selection of avenues to investigate.
+<p>
+
+      Primus is build around an idea of a component base linearly
+      extensible interpreter. That means, that an analysis can be
+      built from basic building blocks, with minimal coupling between
+      them. The central component is the Interpreter itself. It
+      evaluates a program and interacts with three other components:<ul>
+<li>Linker</li>
+<li>Env</li>
+<li>Memory</li>
+</ul>
+
+      The Linker is responsible for linking code into the program
+      abstraction. The <code class="code"><span class="constructor">Env</span></code> component defines the environment
+      behavior, i.e., variables. Finally, the <code class="code"><span class="constructor">Memory</span></code> component is
+      responsible for the memory representation.
+<p>
+
+      Primus framework is implemented as a monad transformer that
+      wraps any monad into the <code class="code"><span class="constructor">Machine</span></code> monad. The <code class="code"><span class="constructor">Machine</span></code> monad
+      denotes a computation, and is implemented as a composition of
+      state, exception, and continuation passing monad.
+<p>
+
+      Each user component is a functor that is parametrized by a
+      Machine monad. It is require to provide only one function -
+      <code class="code">init</code>. Usually, this function subscribes to observations, but
+      it can modify other components (depending on their interface).<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEexn"><span class="keyword">type</span> <code class="type"></code>exn</span> = ..</pre>
 <div class="info ">
@@ -101,6 +157,9 @@ Machine Exception.
 
 
 <pre><span id="TYPEvalue"><span class="keyword">type</span> <code class="type"></code>value</span> </pre>
+<div class="info ">
+a result of computation<br>
+</div>
 
 
 <pre><code><span id="TYPEexit_status"><span class="keyword">type</span> <code class="type"></code>exit_status</span> = </code></pre><table class="typetable">
@@ -131,7 +190,7 @@ Machine exit status.
 An abstract type that represents an effect produced by a
         Machine run. That type is left abstract, and has no
         operations, as its purpose is to disallow running machine
-        directly, withou an instantiation of the <code class="code"><span class="constructor">Machine</span>.<span class="constructor">Main</span></code>
+        directly, without an instantiation of the <code class="code"><span class="constructor">Machine</span>.<span class="constructor">Main</span></code>
         module.<br>
 </div>
 
@@ -169,13 +228,16 @@ The Machine component.<br>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Value.html">Value</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Value.html">Value</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A result of computation.
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.html">Interpreter</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 The Interpreter.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Iterator.html">Iterator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Iterator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Iterator is a sequence of values from some domain.
+Iterator is a sequence of values of some domain.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Generator.html">Generator</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

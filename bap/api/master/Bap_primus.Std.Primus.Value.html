@@ -80,7 +80,15 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a></h1>
 
-<pre><span class="keyword">module</span> Value: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Value: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+A result of computation.
+<p>
+
+        Each computation that terminates normally produces a machine
+        word that has a unique identifier. Basically, <code class="code">value</code> is an
+        abstract pair, that consists of the <code class="code">word</code> and an identifier.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEid"><span class="keyword">type</span> <code class="type"></code>id</span> </pre>
 
@@ -89,6 +97,18 @@
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a></code> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Value.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a></code></pre><div class="info ">
+<code class="code">to_word x</code> projects <code class="code">x</code> to a machine word<br>
+</div>
+
+<pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.html#TYPEt">t</a> -> <a href="Bap_primus.Std.Primus.Value.html#TYPEid">id</a></code></pre><div class="info ">
+<code class="code">id value</code> returns the <code class="code">value</code> identifier<br>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Value.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code"> : </code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> provides an interface to the Value type
+          lifted into the <code class="code"><span class="constructor">Machine</span></code> monad.
+</div>
+
 <pre><span class="keyword">include</span> Regular.S</pre>
 </body></html>

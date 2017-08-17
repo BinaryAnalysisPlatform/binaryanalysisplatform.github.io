@@ -169,13 +169,16 @@ AST transformation.
        only in an assignment statment where the rhs has type mem_t.</li>
 </ul>
 
-      <pre class="verbatim">let x = &lt;expr&gt; in ... x ... =&gt; ... &lt;expr&gt; ...
+      <pre class="verbatim">
+       let x = &lt;expr&gt; in ... x ... =&gt; ... &lt;expr&gt; ...
        x[a,el]:n =&gt; x[a+n-1] @ ... @ x[a]
        x[a,be]:n =&gt; x[a] @ ... @ x[a+n-1]
        m[a,el]:n &lt;- x =&gt; (...((m[a] &lt;- x&lt;0&gt;)[a+1] &lt;- x&lt;1&gt;)...)[a+n-1] &lt;- x&lt;n-1&gt;
        m[a,be]:n &lt;- x =&gt; (...((m[a] &lt;- x&lt;n-1&gt;)[a+1] &lt;- x&lt;n&gt;)...)[a+n-1] &lt;- x&lt;0&gt;
-       ... ite c ? x : y ... =&gt; if c  [... x ...]  [... y ...]
-       (x[a] &lt;- b)[c] =&gt; m := x[a] &lt;- b; m[c]</pre>
+       ... ite c ? x : y ... =&gt; if c { ... x ... } { ... y ... }
+       (x[a] &lt;- b)[c] =&gt; m := x[a] &lt;- b; m[c]
+
+     </pre>
 <p>
 
       <code class="code">^1</code>: The normalization procedure may duplicate expressions
