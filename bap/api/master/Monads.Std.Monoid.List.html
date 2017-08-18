@@ -80,6 +80,13 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monoid.List.html">Monads.Std.Monoid.List</a></h1>
 
-<pre><span class="keyword">module</span> List: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> List: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+A monoid that accumulates data in a list.<br>
+</div>
+<hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.List.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.List.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre><div class="info">
+Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code>
+</div>
+</body></html>

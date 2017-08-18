@@ -78,7 +78,18 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monoid.Int.Sum.html">Monads.Std.Monoid.Int.Sum</a></h1>
 
-<pre><span class="keyword">module</span> Sum: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t = int</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Sum: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t = int</code></pre><div class="info module top">
+A monoind over addition<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a></pre>
+
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">t list -> t</code></pre><div class="info ">
+<code class="code">concat xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code><br>
+</div>
+
+<pre><span id="VAL(@@)"><span class="keyword">val</span> (@@)</span> : <code class="type">t -> t -> t</code></pre><div class="info ">
+<code class="code">x @@ y</code> is <code class="code">plus x y</code><br>
+</div>
 </body></html>

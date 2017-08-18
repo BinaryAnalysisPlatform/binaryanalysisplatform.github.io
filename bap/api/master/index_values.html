@@ -341,7 +341,10 @@ see <code class="code"><span class="constructor">Word</span>.(/)</code>
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.S.html#VAL(@@)">(@@)</a> [<a href="Monads.Std.Monoid.S.html">Monads.Std.Monoid.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">x @@ y</code> is <code class="code">plus x y</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Memory.html#VAL(^!)">(^!)</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
 <td><div class="info">
 <code class="code">m^.n</code> dereferences a byte at address <code class="code">n</code>
@@ -1032,9 +1035,15 @@ see <code class="code"><span class="constructor">Word</span>.abs</code>
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S2.html#VALaccept">accept</a> [<a href="Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">accept x</code> accepts <code class="code">x</code> as a result of computation.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S.html#VALaccept">accept</a> [<a href="Monads.Std.Monad.Choice.S.html">Monads.Std.Monad.Choice.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">accept x</code> accepts <code class="code">x</code> as a result of computation.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Traces.html#VALadd">add</a> [<a href="Bap_traces.Std.Traces.html">Bap_traces.Std.Traces</a>]</td>
 <td><div class="info">
 <code class="code">add trace</code> registers a <code class="code">trace</code> into the repository
@@ -4482,9 +4491,19 @@ the instruction is a call to subroutine.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.S2.html#VALcatch">catch</a> [<a href="Monads.Std.Monad.Fail.S2.html">Monads.Std.Monad.Fail.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">catch m f</code> if <code class="code">m</code> diverges with some bottom value <code class="code">err</code>,
+            the <code class="code">f err</code> is a result of the whole computation, otherwise
+            returns <code class="code">m</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.S.html#VALcatch">catch</a> [<a href="Monads.Std.Monad.Fail.S.html">Monads.Std.Monad.Fail.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">catch m f</code> if <code class="code">m</code> diverges with some bottom value <code class="code">err</code>,
+            the <code class="code">f err</code> is a result of the whole computation, otherwise
+            returns <code class="code">m</code>.
+</div>
+</td></tr>
 <tr><td><a href="Arm_types.html#VALccr_or_nil_of_sexp">ccr_or_nil_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_types.html#VALccr_reg_of_sexp">ccr_reg_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
@@ -5135,7 +5154,10 @@ A human readable comment
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.S.html#VALconcat">concat</a> [<a href="Monads.Std.Monoid.S.html">Monads.Std.Monoid.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">concat xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code>
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.html#VALconcat">concat</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 <code class="code">concat sep sl</code> concatenates the list of byte sequences <code class="code">sl</code>,
@@ -6643,9 +6665,17 @@ A subroutine is visible outside of the compilation unit
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.S2.html#VALfail">fail</a> [<a href="Monads.Std.Monad.Fail.S2.html">Monads.Std.Monad.Fail.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">fail err</code> diverges the computation, possibly providing an
+            extra information in a value of type <code class="code"><span class="keywordsign">'</span>e error</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.S.html#VALfail">fail</a> [<a href="Monads.Std.Monad.Fail.S.html">Monads.Std.Monad.Fail.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">fail err</code> diverges the computation, possibly providing an
+            extra information in a value of type <code class="code">_ error</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Monitor.html#VALfail_on_error">fail_on_error</a> [<a href="Bap_traces.Std.Trace.Monitor.html">Bap_traces.Std.Trace.Monitor</a>]</td>
 <td><div class="info">
 <code class="code">fail_on_error</code> will fail with an <code class="code">error</code> <code class="code"><span class="constructor">Error</span>.raise error</code>
@@ -7620,9 +7650,17 @@ extra data segment #3
 <tr><td><a href="X86_env.ModeVars.html#VALgs_base">gs_base</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S2.html#VALguard">guard</a> [<a href="Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">guard cond</code> ensures <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code> in the rest of
+            computation.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S.html#VALguard">guard</a> [<a href="Monads.Std.Monad.Choice.S.html">Monads.Std.Monad.Choice.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">guard cond</code> ensures <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code> in the rest of
+            computation.
+</div>
+</td></tr>
 <tr><td align="left"><br>H</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#VALhalt">halt</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
 <td><div class="info">
@@ -10653,9 +10691,15 @@ offset
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Form.html#VALoffset">offset</a> [<a href="Bap_dwarf.Std.Dwarf.Form.html">Bap_dwarf.Std.Dwarf.Form</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S2.html#VALon">on</a> [<a href="Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">on cond x</code> computes <code class="code">x</code> only iff <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S.html#VALon">on</a> [<a href="Monads.Std.Monad.Choice.S.html">Monads.Std.Monad.Choice.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">on cond x</code> computes <code class="code">x</code> only iff <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALon_subscribe">on_subscribe</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
 <td><div class="info">
 <code class="code">on_subscribe s f</code> will call a function <code class="code">f</code> every time someone
@@ -10911,11 +10955,20 @@ phi
 <tr><td><a href="Bap_config.html#VALplugindir">plugindir</a> [<a href="Bap_config.html">Bap_config</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.S2.html#VALplus">plus</a> [<a href="Monads.Std.Monad.Plus.S2.html">Monads.Std.Monad.Plus.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">plus x y</code> an associative operation.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.S.html#VALplus">plus</a> [<a href="Monads.Std.Monad.Plus.S.html">Monads.Std.Monad.Plus.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">plus x y</code> an associative operation.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Base.html#VALplus">plus</a> [<a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">plus x y</code> an associative operation.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALplus">plus</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
 <code class="code">plus <span class="keywordsign">-&gt;</span> <span class="constructor">PLUS</span></code>
@@ -11354,9 +11407,15 @@ maps each variable that is used in a term to a set of pointer taints
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Basic2.html#VALpure">pure</a> [<a href="Monads.Std.Monad.Choice.Basic2.html">Monads.Std.Monad.Choice.Basic2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">pure x</code> creates a computation that results in <code class="code">x</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Basic.html#VALpure">pure</a> [<a href="Monads.Std.Monad.Choice.Basic.html">Monads.Std.Monad.Choice.Basic</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">pure x</code> creates a computation that results in <code class="code">x</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Sub.html#VALpure">pure</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
 <td><div class="info">
 A subroutine have no effects except the return value and their
@@ -11807,9 +11866,19 @@ maps each variable that is used in a term to a set of register taints
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S2.html#VALreject">reject</a> [<a href="Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">reject ()</code> rejects the rest of computation sequence, and
+            terminate the computation with the <code class="code">zero</code> result (Same as
+            <code class="code">zero ()</code>
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S.html#VALreject">reject</a> [<a href="Monads.Std.Monad.Choice.S.html">Monads.Std.Monad.Choice.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">reject ()</code> rejects the rest of computation sequence, and
+            terminate the computation with the <code class="code">zero</code> result (Same as
+            <code class="code">zero ()</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.Scheme.html#VALrelocation">relocation</a> [<a href="Bap.Std.Image.Scheme.html">Bap.Std.Image.Scheme</a>]</td>
 <td><div class="info">
 <code class="code">relocation fixup addr</code> a value referenced at the code that
@@ -14374,9 +14443,15 @@ triggers a stream of occurences of this observation
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S2.html#VALunless">unless</a> [<a href="Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unless cond x</code> computes <code class="code">x</code> unless <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.S.html#VALunless">unless</a> [<a href="Monads.Std.Monad.Choice.S.html">Monads.Std.Monad.Choice.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unless cond x</code> computes <code class="code">x</code> unless <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#VALunop">unop</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
 <td><div class="info">
 <code class="code">unop op x</code> computes an unary operation <code class="code">op</code> on <code class="code">x</code>
@@ -14865,15 +14940,30 @@ array of yms registers
 <tr><td><a href="Arm_utils.html#VALzero">zero</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Basic2.html#VALzero">zero</a> [<a href="Monads.Std.Monad.Choice.Basic2.html">Monads.Std.Monad.Choice.Basic2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero ()</code> creates a computation that has no result.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Basic.html#VALzero">zero</a> [<a href="Monads.Std.Monad.Choice.Basic.html">Monads.Std.Monad.Choice.Basic</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero ()</code> creates a computation that has no result.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.S2.html#VALzero">zero</a> [<a href="Monads.Std.Monad.Plus.S2.html">Monads.Std.Monad.Plus.S2</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero ()</code> constructs a zero element
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.S.html#VALzero">zero</a> [<a href="Monads.Std.Monad.Plus.S.html">Monads.Std.Monad.Plus.S</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero ()</code> constructs a zero element
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Base.html#VALzero">zero</a> [<a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zero</code> an element that is neutral to <code class="code">plus</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bil.Result.Id.html#VALzero">zero</a> [<a href="Bap.Std.Bil.Result.Id.html">Bap.Std.Bil.Result.Id</a>]</td>
 <td><div class="info">
 <code class="code">zero</code> identifier

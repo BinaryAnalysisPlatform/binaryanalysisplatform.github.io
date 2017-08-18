@@ -270,6 +270,15 @@ Warning: Module type Core_kernel.Std.Monad.S2 not found
 Warning: Module type Core_kernel.Std.Monad.S not found
 Warning: Module or module type Monad.S2 not found
 Warning: Module or module type Monad.S not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
 Warning: Module or module type Monad.Trans.S not found
 Warning: Module or module type Monad.S not found
 Warning: Module type Applicative.Args not found
@@ -502,6 +511,12 @@ Warning: Element String.mapi not found
 Warning: Element String.length not found
 Warning: Element String.length not found
 Warning: Element Marshal.from_bytes not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
 Warning: Element Graph not found
 Warning: Element Graphlib.To_ocamlgraph not found
 Warning: Element Graphlib.Of_ocamlgraph not found
@@ -621,6 +636,9 @@ Warning: Element String.mapi not found
 Warning: Element String.length not found
 Warning: Element String.length not found
 Warning: Element Marshal.from_bytes not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
 Warning: Element Opaque not found
 Warning: Element Printable not found
 Warning: Element Opaque.S not found

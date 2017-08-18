@@ -76,7 +76,11 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Monads.Std.Monoid.Stack.Make.html">Monads.Std.Monoid.Stack.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre><table border="0" cellpadding="3" width="100%">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre><div class="info module top">
+Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code><br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -93,4 +97,12 @@
 <hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a></pre>
+
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">t list -> t</code></pre><div class="info ">
+<code class="code">concat xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code><br>
+</div>
+
+<pre><span id="VAL(@@)"><span class="keyword">val</span> (@@)</span> : <code class="type">t -> t -> t</code></pre><div class="info ">
+<code class="code">x @@ y</code> is <code class="code">plus x y</code><br>
+</div>
 </body></html>

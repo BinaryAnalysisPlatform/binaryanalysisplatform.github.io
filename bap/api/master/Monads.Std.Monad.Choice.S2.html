@@ -78,10 +78,38 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Monads.Std.Monad.Choice.S2.html">Monads.Std.Monad.Choice.S2</a></h1>
 
-<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+The binary choice monad interface<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Choice.Basic2.html">Monads.Std.Monad.Choice.Basic2</a></pre>
+
+<pre><span id="VALaccept"><span class="keyword">val</span> accept</span> : <code class="type">'a -> ('a, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">accept x</code> accepts <code class="code">x</code> as a result of computation. (Same
+            as <code class="code">pure x</code>.<br>
+</div>
+
+<pre><span id="VALreject"><span class="keyword">val</span> reject</span> : <code class="type">unit -> ('a, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">reject ()</code> rejects the rest of computation sequence, and
+            terminate the computation with the <code class="code">zero</code> result (Same as
+            <code class="code">zero ()</code><br>
+</div>
+
+<pre><span id="VALguard"><span class="keyword">val</span> guard</span> : <code class="type">bool -> (unit, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">guard cond</code> ensures <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code> in the rest of
+            computation. Otherwise the rest of the computation is
+            rejected.<br>
+</div>
+
+<pre><span id="VALon"><span class="keyword">val</span> on</span> : <code class="type">bool -><br>       (unit, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a> -><br>       (unit, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">on cond x</code> computes <code class="code">x</code> only iff <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code><br>
+</div>
+
+<pre><span id="VALunless"><span class="keyword">val</span> unless</span> : <code class="type">bool -><br>       (unit, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a> -><br>       (unit, 'e) <a href="Monads.Std.Monad.Choice.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">unless cond x</code> computes <code class="code">x</code> unless <code class="code">cond</code> is <code class="code"><span class="keyword">true</span></code>.<br>
+</div>
 </body></html>

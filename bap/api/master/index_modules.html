@@ -479,7 +479,10 @@ Control Flow Graph with a machine basic block as a node.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.html">Choice</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A choice monad.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Chunk.html">Chunk</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
 Represent a memory chunk.
@@ -738,7 +741,10 @@ Factory of data processors.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.html">Fail</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A fail monad interface.
+</div>
+</td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Fbi.html">Fbi</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
 Function boundary identification.
@@ -796,7 +802,10 @@ the visitor lifted into the search monad.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.html">Float</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Provides monoids in the R domain.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Fmm.html">Fmm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Floating point immediate operand
@@ -940,7 +949,10 @@ Basic instruction.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.html">Int</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Provides monoids in the Z domain.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Int_err.html">Int_err</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
 <td><div class="info">
 Arithmetic raised into <code class="code"><span class="constructor">Or_error</span></code> monad 
@@ -1031,7 +1043,10 @@ Lisp machine.
 <tr><td><a href="Monads.Std.Monad.S.List.html">List</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.List.html">List</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoid that accumulates data in a list.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Bitvector.Trie.Little.html">Little</a> [<a href="Bap.Std.Bitvector.Trie.html">Bap.Std.Bitvector.Trie</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
@@ -1179,13 +1194,27 @@ Make(Machine) makes an interpreter that computes in the
 <tr><td><a href="Monads.Std.Monad.Choice.Make.html">Make</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.Set.Make.html">Make</a> [<a href="Monads.Std.Monoid.Set.html">Monads.Std.Monoid.Set</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Derives a set monoind from the set <code class="code"><span class="constructor">S</span></code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.List.Make.html">Make</a> [<a href="Monads.Std.Monoid.List.html">Monads.Std.Monoid.List</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code>
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Stack.Make.html">Make</a> [<a href="Monads.Std.Monoid.Stack.html">Monads.Std.Monoid.Stack</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code>
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Make.html">Make</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Make(Base) derives a monoid from its minimal definition
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Opaque.Make.html">Make</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
 <td><div class="info">
 creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
@@ -1321,9 +1350,15 @@ linking event
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.html">Monad</a> [<a href="Monads.Std.html">Monads.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+The Monad module.
+</div>
+</td></tr>
 <tr><td><a href="Monads.html">Monads</a> </td>
-<td></td></tr>
+<td><div class="info">
+A library of Monad Transfomers.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Monitor.html">Monitor</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
 Monitor defines an error handling policy.
@@ -1335,7 +1370,10 @@ A comparable interface with size-monomorphic comparison.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.html">Monoid</a> [<a href="Monads.Std.html">Monads.Std</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoid set.
+</div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Move.html">Move</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
 Represent a movement of data
@@ -1451,7 +1489,10 @@ Plugin loader.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.html">Plus</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A parametric <a href="Monads.Std.Monoid.html">monoid</a>
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Pos.html">Pos</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
 A hierarchical program position.
@@ -1479,9 +1520,15 @@ Printable data structures.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.Product.html">Product</a> [<a href="Monads.Std.Monoid.Float.html">Monads.Std.Monoid.Float</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoid over product
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.Product.html">Product</a> [<a href="Monads.Std.Monoid.Int.html">Monads.Std.Monoid.Int</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoid over product
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Program.html">Program</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Program in Intermediate representation.
@@ -1676,7 +1723,10 @@ Service injection point.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Set.html">Set</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A set monoind.
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Signal.html">Signal</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
 A handler to produce elements in streams.
@@ -1709,7 +1759,11 @@ An abstraction of a stack, commonly used in C compilers.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Stack.html">Stack</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A <a href="Monads.Std.Monoid.List.html">list monoid</a> that accumulates data in a
+        reversed order.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html">State</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
 Machine State.
@@ -1761,7 +1815,10 @@ Future library.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.html">Std</a> [<a href="Monads.html">Monads</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A library of Monad Transfomers.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.html">Std</a> [<a href="Regular.html">Regular</a>]</td>
 <td><div class="info">
 Interface that should support any regular data type.
@@ -1797,7 +1854,10 @@ Defines field subscripting syntax.
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.String.html">String</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoid on strings.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Trie.String.html">String</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
 <td><div class="info">
 Predefined prefix and suffix string tries.
@@ -1813,9 +1873,15 @@ Subroutine.
 <tr><td><a href="Bap.Std.Trie.Array.Suffix.html">Suffix</a> [<a href="Bap.Std.Trie.Array.html">Bap.Std.Trie.Array</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.Sum.html">Sum</a> [<a href="Monads.Std.Monoid.Float.html">Monads.Std.Monoid.Float</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoind over addition
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.Sum.html">Sum</a> [<a href="Monads.Std.Monoid.Int.html">Monads.Std.Monoid.Int</a>]</td>
-<td></td></tr>
+<td><div class="info">
+A monoind over addition
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Image.Symbol.html">Symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
 <td><div class="info">
 Symbol.
@@ -1918,7 +1984,10 @@ An evaluator parametrized by a <code class="code"><span class="constructor">T2</
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.TList.html">TList</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
-<td></td></tr>
+<td><div class="info">
+Concretizes <code class="code"><span class="keywordsign">'</span>a list</code> to <code class="code"><span class="constructor">T</span>.t list</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Table.html">Table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
 Table.
@@ -2057,6 +2126,11 @@ Persistent type identifiers.
 <tr><td align="left"><br>U</td></tr>
 <tr><td><a href="Bap_bml.Ops.Unary.html">Unary</a> [<a href="Bap_bml.Ops.html">Bap_bml.Ops</a>]</td>
 <td></td></tr>
+<tr><td><a href="Monads.Std.Monoid.Unit.html">Unit</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
+<td><div class="info">
+a trivial monoid
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Bytes.Unsafe.html">Unsafe</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
 Unsafe conversions (for advanced users)

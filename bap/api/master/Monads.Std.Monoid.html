@@ -78,15 +78,73 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monoid.html">Monads.Std.Monoid</a></h1>
 
-<pre><span class="keyword">module</span> Monoid: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Monoid: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+A monoid set.
+<p>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monoid.Base.html">Base</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Base.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monoid.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monoid.Base.html">Base</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t := M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.TList.html">TList</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.TList.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Stack.html">Stack</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Stack.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.List.html">List</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.String.html">String</a>: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t = string</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Set.html">Set</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Set.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Int.html">Int</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Int.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Float.html">Float</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Float.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+      A monoid is a set closed under an associative binary operation
+      <code class="code">plus</code> and a <code class="code">zero</code> element that is neutral to the <code class="code">plus</code>
+      operation.
+<p>
+
+      Good examples are numeric types with addition and zero, or
+      multiplication and one, see
+      <a href="Monads.Std.Monoid.Int.Sum.html">Monoid.Int.Sum</a>,
+      <a href="Monads.Std.Monoid.Int.Product.html">Monoid.Int.Product</a>,
+      <a href="Monads.Std.Monoid.Float.Sum.html">Monoid.Float.Sum</a>,
+      <a href="Monads.Std.Monoid.Float.Product.html">Monoid.Float.Product</a>.
+<p>
+
+      Containers are also usually form a monoid with an empty
+      container being a neutral element, and the  being
+      the closure, e.g., <a href="Monads.Std.Monoid.List.html">Monoid.List</a>,
+      <a href="Monads.Std.Monoid.Stack.html">Monoid.Stack</a>,
+      <a href="Monads.Std.Monoid.String.html">Monoid.String</a>, <a href="Monads.Std.Monoid.Set.html">Monoid.Set</a>.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monoid.Base.html">Base</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Base.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The minimal monoid interface
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monoid.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The monoid interface
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monoid.Base.html">Base</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info">
+Make(Base) derives a monoid from its minimal definition
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Unit.html">Unit</a>: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t = unit</code></pre><div class="info">
+a trivial monoid
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.TList.html">TList</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.TList.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Concretizes <code class="code"><span class="keywordsign">'</span>a list</code> to <code class="code"><span class="constructor">T</span>.t list</code>
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Stack.html">Stack</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Stack.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A <a href="Monads.Std.Monoid.List.html">list monoid</a> that accumulates data in a
+        reversed order.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.List.html">List</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A monoid that accumulates data in a list.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.String.html">String</a>: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t = string</code></pre><div class="info">
+A monoid on strings.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Set.html">Set</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Set.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+A set monoind.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Int.html">Int</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Int.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Provides monoids in the Z domain.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monoid.Float.html">Float</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monoid.Float.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Provides monoids in the R domain.
+</div>
+</body></html>

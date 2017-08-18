@@ -80,8 +80,19 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Choice.Basic2.html">Monads.Std.Monad.Choice.Basic2</a></h1>
 
-<pre><span class="keyword">module type</span> Basic2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> Basic2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+The minimal choice interface for binary monad.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
 
+
+<pre><span id="VALpure"><span class="keyword">val</span> pure</span> : <code class="type">'a -> ('a, 'e) <a href="Monads.Std.Monad.Choice.Basic2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">pure x</code> creates a computation that results in <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALzero"><span class="keyword">val</span> zero</span> : <code class="type">unit -> ('a, 'e) <a href="Monads.Std.Monad.Choice.Basic2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">zero ()</code> creates a computation that has no result.<br>
+</div>
 </body></html>

@@ -78,11 +78,38 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Monads.Std.Monad.Fail.S2.html">Monads.Std.Monad.Fail.S2</a></h1>
 
-<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fail.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fail.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+The binary fail monad interface.
+<p>
+
+          Implemented by:<ul>
+<li><a href="Monads.Std.Monad.Result.Make2.html">Monad.Result.Make2</a></li>
+</ul>
+<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type">'a</code> error</span> </pre>
+<div class="info ">
+a type of error<br>
+</div>
 
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
+<div class="info ">
+a monad type, where <code class="code"><span class="keywordsign">'</span>a</code> is a value type, and <code class="code"><span class="keywordsign">'</span>e</code> is a type
+            parameter of the <code class="code">error</code> type.<br>
+</div>
 
+
+<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">'e <a href="Monads.Std.Monad.Fail.S2.html#TYPEerror">error</a> -> ('a, 'e) <a href="Monads.Std.Monad.Fail.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">fail err</code> diverges the computation, possibly providing an
+            extra information in a value of type <code class="code"><span class="keywordsign">'</span>e error</code>.<br>
+</div>
+
+<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Fail.S2.html#TYPEt">t</a> -><br>       ('e <a href="Monads.Std.Monad.Fail.S2.html#TYPEerror">error</a> -> ('a, 'e) <a href="Monads.Std.Monad.Fail.S2.html#TYPEt">t</a>) -><br>       ('a, 'e) <a href="Monads.Std.Monad.Fail.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">catch m f</code> if <code class="code">m</code> diverges with some bottom value <code class="code">err</code>,
+            the <code class="code">f err</code> is a result of the whole computation, otherwise
+            returns <code class="code">m</code>.<br>
+</div>
 </body></html>

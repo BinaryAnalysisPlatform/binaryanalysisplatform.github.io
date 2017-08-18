@@ -78,11 +78,41 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Fail.S.html">Monads.Std.Monad.Fail.S</a></h1>
 
-<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fail.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fail.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+The unary fail monad interface.
+<p>
+
+          Implemented by:<ul>
+<li><a href="Monads.Std.Monad.Result.Make.html">Monad.Result.Make</a></li>
+<li><a href="Monads.Std.Monad.Result.Error.html">Monad.Result.Error</a></li>
+<li><a href="Monads.Std.Monad.Result.Error.Make.html">Monad.Result.Error.Make</a></li>
+<li><a href="Monads.Std.Monad.Result.Exception.html">Monad.Result.Exception</a></li>
+<li><a href="Monads.Std.Monad.Result.Exception.Make.html">Monad.Result.Exception.Make</a></li>
+</ul>
+<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type">'a</code> error</span> </pre>
+<div class="info ">
+a type of error<br>
+</div>
 
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+a monad type<br>
+</div>
 
+
+<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">'b <a href="Monads.Std.Monad.Fail.S.html#TYPEerror">error</a> -> 'a <a href="Monads.Std.Monad.Fail.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">fail err</code> diverges the computation, possibly providing an
+            extra information in a value of type <code class="code">_ error</code>.<br>
+</div>
+
+<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">'a <a href="Monads.Std.Monad.Fail.S.html#TYPEt">t</a> -><br>       ('b <a href="Monads.Std.Monad.Fail.S.html#TYPEerror">error</a> -> 'a <a href="Monads.Std.Monad.Fail.S.html#TYPEt">t</a>) -><br>       'a <a href="Monads.Std.Monad.Fail.S.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">catch m f</code> if <code class="code">m</code> diverges with some bottom value <code class="code">err</code>,
+            the <code class="code">f err</code> is a result of the whole computation, otherwise
+            returns <code class="code">m</code>.<br>
+</div>
 </body></html>

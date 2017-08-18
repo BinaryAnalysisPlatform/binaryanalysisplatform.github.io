@@ -4,8 +4,9 @@
 <link rel="stylesheet" href="style.css" type="text/css">
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
-<link rel="next" href="Monads.Std.Monad.Fail.html">
-<link rel="Up" href="Monads.Std.Monad.html">
+<link rel="previous" href="Monads.Std.Monoid.Make.html">
+<link rel="next" href="Monads.Std.Monoid.TList.html">
+<link rel="Up" href="Monads.Std.Monoid.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -70,24 +71,27 @@
 <link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
 <link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
 <link title="Bap_build" rel="Chapter" href="Bap_build.html">
-<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Monads.Std.Monad.Plus</title>
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Monads.Std.Monoid.Unit</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a class="up" href="Monads.Std.Monad.html" title="Monads.Std.Monad">Up</a>
-&nbsp;<a class="post" href="Monads.Std.Monad.Fail.html" title="Monads.Std.Monad.Fail">Next</a>
+<div class="navbar"><a class="pre" href="Monads.Std.Monoid.Make.html" title="Monads.Std.Monoid.Make">Previous</a>
+&nbsp;<a class="up" href="Monads.Std.Monoid.html" title="Monads.Std.Monoid">Up</a>
+&nbsp;<a class="post" href="Monads.Std.Monoid.TList.html" title="Monads.Std.Monoid.TList">Next</a>
 </div>
-<h1>Module <a href="type_Monads.Std.Monad.Plus.html">Monads.Std.Monad.Plus</a></h1>
+<h1>Module <a href="type_Monads.Std.Monoid.Unit.html">Monads.Std.Monoid.Unit</a></h1>
 
-<pre><span class="keyword">module</span> Plus: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Plus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-A parametric <a href="Monads.Std.Monoid.html">monoid</a><br>
+<pre><span class="keyword">module</span> Unit: <code class="type"><a href="Monads.Std.Monoid.S.html">S</a></code><code class="type">  with type t = unit</code></pre><div class="info module top">
+a trivial monoid<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Plus.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Plus.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-a monoid over an unary polymorphic type.
+<pre><span class="keyword">include</span> <a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a></pre>
+
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">t list -> t</code></pre><div class="info ">
+<code class="code">concat xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code><br>
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Plus.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Plus.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-a monoid over a binary polymorphic type.
+<pre><span id="VAL(@@)"><span class="keyword">val</span> (@@)</span> : <code class="type">t -> t -> t</code></pre><div class="info ">
+<code class="code">x @@ y</code> is <code class="code">plus x y</code><br>
 </div>
 </body></html>
