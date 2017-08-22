@@ -84,7 +84,11 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type err := T.t</code></pre><table border="0" cellpadding="3" width="100%">
+         and type err := T.t</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">E</span>)(<span class="constructor">M</span>)</code> concretized the type of error to <code class="code"><span class="constructor">E</span>.t</code> and
+          composes the Result monad with the monad <code class="code"><span class="constructor">M</span></code>.<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>

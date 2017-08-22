@@ -80,7 +80,14 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Result.Error.html">Monads.Std.Monad.Result.Error</a></h1>
 
-<pre><span class="keyword">module</span> Error: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Error: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Error monad.
+<p>
+
+          The error monad is a concretization of the result monad with
+          the error type fixed to <code class="code"><span class="constructor">Error</span>.t</code>, aka <code class="code"><span class="constructor">Or_error</span> <span class="constructor">Monad</span></code><br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Result.Error.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Error.T.html">T</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.T.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
@@ -88,6 +95,9 @@
           with type 'a t := 'a T(M).t
            and type 'a m := 'a T(M).m
            and type 'a e := 'a T(M).e
-           and type err := Error.t</code></pre>
+           and type err := Error.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> wraps <code class="code"><span class="constructor">M</span></code> into the <code class="code"><span class="constructor">Error</span></code> monad.
+</div>
+
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Result.Error.S.html">Monads.Std.Monad.Result.Error.S</a></pre>
 </body></html>

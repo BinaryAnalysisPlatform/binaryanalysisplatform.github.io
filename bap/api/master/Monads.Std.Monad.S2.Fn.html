@@ -78,5 +78,35 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.S2.Fn.html">Monads.Std.Monad.S2.Fn</a></h1>
 
-<pre><span class="keyword">module</span> Fn: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Fn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Fn: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Fn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Various function combinators lifted into the Kleisli category.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type">'a -> ('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">id x</code> a monadic identity function<br>
+</div>
+
+<pre><span id="VALignore"><span class="keyword">val</span> ignore</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a> -> (unit, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">ignore m</code> computes <code class="code">m</code> and discards the result.<br>
+</div>
+
+<pre><span id="VALnothing"><span class="keyword">val</span> nothing</span> : <code class="type">unit -> (unit, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">nothing</code> is a computation that does nothing.<br>
+</div>
+
+<pre><span id="VALnon"><span class="keyword">val</span> non</span> : <code class="type">('a -> (bool, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       'a -> (bool, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">non f</code> returns a negation of the function <code class="code">f</code>.<br>
+</div>
+
+<pre><span id="VALapply_n_times"><span class="keyword">val</span> apply_n_times</span> : <code class="type">n:int -><br>       ('a -> ('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       'a -> ('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">apply_n_times ~n f</code> creates a chaing of computation of
+            size <code class="code">n</code> made from applications of the same function to its
+            own result.<br>
+</div>
+
+<pre><span id="VALcompose"><span class="keyword">val</span> compose</span> : <code class="type">('b -> ('c, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       ('a -> ('b, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       'a -> ('c, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">compose f g</code> creates a composition <code class="code">f.g</code> of two
+            function.<br>
+</div>
 </body></html>

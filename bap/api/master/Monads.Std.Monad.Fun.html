@@ -80,11 +80,27 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Fun.html">Monads.Std.Monad.Fun</a></h1>
 
-<pre><span class="keyword">module</span> Fun: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Fun: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Function Monad.
+<p>
+
+        The function monad delays the computation until it is actually
+        run. This is not the only monad that has such behavior, i.e.,
+        State, Cont, Lazy, and Reader monads are also delayed, but
+        they all have other additional behaviors on top of the
+        delaying the computation. The function monad can be seen as a
+        Reader monad with <code class="code">unit</code> environment, or as a Lazy monad
+        without the memoization.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="TYPEthunk"><span class="keyword">type</span> <code class="type">'a</code> thunk</span> </pre>
+<div class="info ">
+A function monad computation is a thunk that returns a value
+          of type <code class="code"><span class="keywordsign">'</span>a</code>.<br>
+</div>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Fun.S.html">Monads.Std.Monad.Fun.S</a></pre>

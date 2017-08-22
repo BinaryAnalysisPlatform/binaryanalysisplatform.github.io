@@ -80,7 +80,14 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Seq.html">Monads.Std.Monad.Seq</a></h1>
 
-<pre><span class="keyword">module</span> Seq: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Seq: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Sequence monad.
+<p>
+
+        The sequence monad is the same as the list monad, except the
+        sequences are used to represent multiple results.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Seq.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Seq.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
@@ -89,8 +96,14 @@
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.T1.html">T1</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type">Std.T1</code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Seq.S.html">S</a></code><code class="type">  with type 'a m := 'a T1(M).m
              and type 'a t := 'a T1(M).t
-             and type 'a e := 'a T1(M).e</code></pre>
+             and type 'a e := 'a T1(M).e</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.T2.html">T2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type">Std.T2</code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad2.html">Std.Monad.Monad2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Seq.S2.html">S2</a></code><code class="type">  with type ('a,'e) m := ('a,'e) T2(M).m
               and type ('a,'e) t := ('a,'e) T2(M).t
-              and type ('a,'e) e := ('a,'e) T2(M).e</code></pre></body></html>
+              and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><div class="info">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code>
+</div>
+</body></html>

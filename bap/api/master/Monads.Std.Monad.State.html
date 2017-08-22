@@ -80,18 +80,56 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.State.html">Monads.Std.Monad.State</a></h1>
 
-<pre><span class="keyword">module</span> State: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> State: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The State Monad.
+<p>
+
+        The state monad denotes a generic effectful
+        computation. Unlike <code class="code"><span class="constructor">Writer</span></code> and <code class="code"><span class="constructor">Reader</span></code> the <code class="code"><span class="constructor">State</span></code> monad
+        can perform arbitrary transformations on state. However, the
+        same as with<code class="code"><span class="constructor">Reader</span></code>, the State monad comes in two flavors -
+        with a type of state fixed at module level, or with a type of
+        state left to be a type variable. In both cases the type of
+        state remains constant during the computation. There is no
+        difference in implementation, these are just two different
+        interfaces.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEstorage"><span class="keyword">type</span> <code class="type">('a, 'e)</code> storage</span> </pre>
+<div class="info ">
+an abstract storage<br>
+</div>
 
 
 <pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type">('a, 'e)</code> state</span> </pre>
+<div class="info ">
+an abstract type of stateful computations. The type variable
+          <code class="code"><span class="keywordsign">'</span>a</code> denotes types of values and the type variable <code class="code"><span class="keywordsign">'</span>e</code> denotes a
+          type of the state (aka envionment, aka world).<br>
+</div>
 
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.State.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.State.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The State Monad interface with a fixed environment.
+</div>
+
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.State.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.Multi.html">Multi</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.Multi.html">Multi</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Multi State monad.
+</div>
+
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.State.S2.html">Monads.Std.Monad.State.S2</a></pre>
+
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">('a, 'e) t -> 'e -> 'a</code></pre><div class="info ">
+<code class="code">eval m</code> is the same as <code class="code">run m &gt;&gt;| fst</code>, i.e., it runs the
+          computation and returns the computed value.<br>
+</div>
+
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">('a, 'e) t -> 'e -> 'e</code></pre><div class="info ">
+<code class="code">exec m</code> is the same as <code class="code">run m &gt;&gt;| snd</code>, i.e., it runs the
+          computation and returns the final state.<br>
+</div>
 
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.T1.html">T1</a> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type">Std.T</code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.T2.html">T2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>

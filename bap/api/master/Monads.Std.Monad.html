@@ -92,36 +92,123 @@ A fail monad interface.
 </div>
 
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Choice.html">Choice</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A choice monad.
+A choice monad interface.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Trans.html">Trans</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Basic.html">Basic</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Basic2.html">Basic2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Collection.html">Collection</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Syntax.html">Syntax</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Syntax.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Trans.html">Trans</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Monad Transformer Interface.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Basic.html">Basic</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Basic monad interface.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Basic2.html">Basic2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Basic binary monad interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Collection.html">Collection</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Container interface in the Kleisli category.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Syntax.html">Syntax</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Syntax.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Describes monadic operators.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+An unary monad interface.
+</div>
+
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Core.html">Core</a> = <code class="type">Std.Monad.S</code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Core2.html">Core2</a> = <code class="type">Std.Monad.S2</code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Minimal.html">Minimal</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Minimal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Minimal2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Basic.html">Basic</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Basic2.html">Basic2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'s) t := ('a,'s) M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Core.html">Core</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Core.html">Core</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t = 'a M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Core2.html">Core2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Core2.html">Core2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'e) t = ('a,'e) M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Minimal.html">Minimal</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Minimal.html">Minimal</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t = 'a M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Minimal2.html">Minimal2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'e) t = ('a,'e) M.t</code></pre>
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Core.html">Core</a> = <code class="type">Std.Monad.S</code></pre><div class="info">
+Reexports Core's <code class="code"><span class="constructor">Monad</span>.<span class="constructor">S</span></code> as <code class="code"><span class="constructor">Monads</span>.<span class="constructor">Core</span></code>
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Core2.html">Core2</a> = <code class="type">Std.Monad.S2</code></pre><div class="info">
+Reexports Core's <code class="code"><span class="constructor">Monad</span>.<span class="constructor">S2</span></code> as <code class="code"><span class="constructor">Monads</span>.<span class="constructor">Core2</span></code>
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Minimal.html">Minimal</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Minimal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Minimal monad interface.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Minimal2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Minimal monad interface.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Basic.html">Basic</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Basic.html">Basic</a> implementation
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Basic2.html">Basic2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'s) t := ('a,'s) M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Basic2.html">Basic</a> implementation
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Core.html">Core</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Core.html">Core</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t = 'a M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Core</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Core.html">Core</a> implementation
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Core2.html">Core2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Core2.html">Core2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'e) t = ('a,'e) M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Core2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Core2.html">Core</a> implementation
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Minimal.html">Minimal</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Minimal.html">Minimal</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code><code class="type">  with type 'a t = 'a M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Minimal</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Minimal.html">Minimal</a> implementation
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Minimal2.html">Minimal2</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code><code class="type">  with type ('a,'e) t = ('a,'e) M.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Minimal2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Minimal2.html">Minimal</a> implementation
+</div>
+
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Monad.html">Monad</a> = <code class="type"><a href="Monads.Std.Monad.S.html">S</a></code></pre>
 <pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Monad2.html">Monad2</a> = <code class="type"><a href="Monads.Std.Monad.S2.html">S2</a></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Ident.html">Ident</a>: <code class="type"><a href="Monads.Std.Monad.Monad.html">Monad</a></code><code class="type">  with type 'a t = 'a</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.html">Option</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.html">Result</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.List.html">List</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Writer.html">Writer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Writer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Reader.html">Reader</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.html">State</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.html">Fun</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Lazy.html">Lazy</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Lazy.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Cont.html">Cont</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Ident.html">Ident</a>: <code class="type"><a href="Monads.Std.Monad.Monad.html">Monad</a></code><code class="type">  with type 'a t = 'a</code></pre><div class="info">
+The identity monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.html">Option</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The option aka Maybe monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.html">Result</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Result Monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.List.html">List</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.List.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The List monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Sequence monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Writer.html">Writer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Writer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Writer monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Reader.html">Reader</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Reader monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.html">State</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The State Monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.html">Fun</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Function Monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Lazy.html">Lazy</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Lazy.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Lazy monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Cont.html">Cont</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The continuation monad.
+</div>
+</body></html>

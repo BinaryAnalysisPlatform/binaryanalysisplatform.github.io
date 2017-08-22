@@ -78,11 +78,41 @@
 &nbsp;</div>
 <h1>Module <a href="type_Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a></h1>
 
-<pre><span class="keyword">module</span> Cont: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Cont: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The continuation monad.
+<p>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Cont.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Cont.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+        The continuation monad reifies computations by making them
+        available as first class values. A continuation encapsulates
+        an evaluation context of a host language (OCaml in our
+        case). The continuation monad behaves like it is a function
+        monad, except that it provides the <code class="code">call/cc</code> operator. The
+        <code class="code">call/cc</code> operator calls a user provided function with a
+        current continuaton. This continuation can be stored in a
+        state (i.e., if the Continuation monad is composed with the
+        State monad) and later resumed. It may also be used to
+        implement various control structures, i.e., exceptions or
+        coroutines.
+<p>
+
+        The same as with the state monad we provide two interfaces,
+        one with the type of final result of the computation is fixed
+        on the module level, and another where it is a type variable.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Cont.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The unary monad interface
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Cont.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Cont.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The binary monad interface.
+</div>
+
 <pre><span id="TYPEcont"><span class="keyword">type</span> <code class="type">('a, 'r)</code> cont</span> </pre>
+<div class="info ">
+type of continuation monads<br>
+</div>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Cont.S2.html">Monads.Std.Monad.Cont.S2</a></pre>
@@ -93,8 +123,15 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type r := T.t</code></pre>
+         and type r := T.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">T</span>)(<span class="constructor">M</span>)</code> wraps the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad
+          and fix the type of the whole computation to <code class="code"><span class="constructor">T</span>.t</code>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Cont.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Cont.S2.html">S2</a></code><code class="type"> 
         with type ('a,'e) t := ('a,'e) T2(M).t
          and type 'a m     := 'a     T2(M).m
-         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre></body></html>
+         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><div class="info">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> wrapes the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad.
+</div>
+</body></html>

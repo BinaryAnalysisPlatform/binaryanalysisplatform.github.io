@@ -81,7 +81,10 @@
 <pre><span class="keyword">module</span> Make2 <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Reader.S2.html">S2</a></code><code class="type"> 
         with type ('a,'e) t := ('a,'e) T2(M).t
          and type 'a m     := 'a     T2(M).m
-         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><table border="0" cellpadding="3" width="100%">
+         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -98,6 +101,10 @@
 <hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Trans.S1.html">Monads.Std.Monad.Trans.S1</a></pre>
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">unit -> ('e, 'e) t</code></pre><div class="info ">
+<code class="code">read ()</code> reads the environment.<br>
+</div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad2.html">Monads.Std.Monad.Monad2</a></pre>
 </body></html>

@@ -80,5 +80,37 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.S.Lift.html">Monads.Std.Monad.S.Lift</a></h1>
 
-<pre><span class="keyword">module</span> Lift: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.Lift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Lift: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.Lift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Lifts functions into the monad.
+<p>
+
+          A function that operates on values can be mapped to a
+          function that operates on computations. We provide several
+          liftes for common arities.<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALnullary"><span class="keyword">val</span> nullary</span> : <code class="type">'a -> 'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">nullary x</code> lifts <code class="code">x</code> (a synonym to <code class="code">return</code>)<br>
+</div>
+
+<pre><span id="VALunary"><span class="keyword">val</span> unary</span> : <code class="type">('a -> 'b) -> 'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'b <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">unary f</code> lifts <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALbinary"><span class="keyword">val</span> binary</span> : <code class="type">('a -> 'b -> 'c) -><br>       'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'b <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'c <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">binary f</code> lifts <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALternary"><span class="keyword">val</span> ternary</span> : <code class="type">('a -> 'b -> 'c -> 'd) -><br>       'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'b <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'c <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'd <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">ternary f</code> lifts <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALquaternary"><span class="keyword">val</span> quaternary</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e) -><br>       'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'b <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'c <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'd <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'e <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">quaternary f</code> lifts <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALquinary"><span class="keyword">val</span> quinary</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f) -><br>       'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'b <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'c <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -><br>       'd <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'e <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a> -> 'f <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
+<code class="code">quinary f</code> lifts <code class="code">f</code><br>
+</div>
 </body></html>

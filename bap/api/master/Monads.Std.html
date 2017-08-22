@@ -77,7 +77,7 @@
 <h1>Module <a href="type_Monads.Std.html">Monads.Std</a></h1>
 
 <pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-A library of Monad Transfomers.
+Monad Transformer Library.
 <p>
 
     <h2 id="abstract">Abstract</h2>
@@ -159,8 +159,8 @@ A library of Monad Transfomers.
     of some algorithm. There are different mechanisms for
     parametrization an algorithm, but all of them require defining
     some kind of abstraction, that are usually denoted in a
-    programming language with a type of module type. In simplest
-    cases, an algorithm is parametrized by simple scalar values, e.g.,
+    programming language with a type or a module type. In simple
+    cases, an algorithm is parametrized by scalar, e.g.,
 <p>
 
     <pre class="verbatim">      algorithm a b ::=
@@ -181,13 +181,14 @@ A library of Monad Transfomers.
    </pre>
 <p>
 
-    However, there is even more opportunities for generalization. The
-    semicolon is a sequencing operator that has a semantics that is
-    usually defined by a programming language, and most often in
+    However, we have one more generalization opportunity. The
+    semicolon is a sequencing operator that has semantics that is
+    usually defined by a programming language, and, typically, in
     regular deterministic languages <code class="code">x := f a; y := f b</code> means: first
     compute <code class="code">f a</code> and assign the result to <code class="code">x</code>, then compute <code class="code">f b</code> and
     assign the result to <code class="code">y</code>. However, what if we would like to
-    parametrize our algorithm even with it:
+    parametrize our algorithm with a behavior of the semicolon
+    and operators:
 <p>
 
     <pre class="verbatim">      algorithm ((return _), (_ := _ ; _)) ((_ + _), (f _)) a b ::=

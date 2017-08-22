@@ -100,4 +100,18 @@
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Trans.S1.html">Monads.Std.Monad.Trans.S1</a></pre>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad2.html">Monads.Std.Monad.Monad2</a></pre>
+
+<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'s -> (unit, 's) t</code></pre><div class="info ">
+<code class="code">put s</code> changes the current state to <code class="code">s</code><br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> ('s, 's) t</code></pre><div class="info ">
+<code class="code">get s</code> gets the current state
+<p>
+<code class="code">gets p</code> projects the current state with the function <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">('s -> 's) -> (unit, 's) t</code></pre><div class="info ">
+<code class="code">update f</code> updates the current state with the function <code class="code">f</code><br>
+</div>
 </body></html>

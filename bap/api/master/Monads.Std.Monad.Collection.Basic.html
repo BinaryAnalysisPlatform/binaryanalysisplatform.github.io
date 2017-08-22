@@ -78,10 +78,20 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Collection.Basic.html">Monads.Std.Monad.Collection.Basic</a></h1>
 
-<pre><span class="keyword">module type</span> Basic = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> Basic = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Base signature for collections<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+<code class="code">x t</code> a container that hold values of type <code class="code">x</code><br>
+</div>
 
+
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -> 'a <a href="Monads.Std.Monad.Collection.Basic.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">return x</code> creates a singleton container holding <code class="code">x</code><br>
+</div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Plus.S.html">Monads.Std.Monad.Plus.S</a></pre>
 </body></html>

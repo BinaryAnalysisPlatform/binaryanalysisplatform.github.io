@@ -80,11 +80,36 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Reader.html">Monads.Std.Monad.Reader</a></h1>
 
-<pre><span class="keyword">module</span> Reader: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Reader: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Reader monad.
+<p>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Reader.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Reader.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+        The reader monad denotes a very limited form of effectful
+        computation. In fact only a coeffect is allowed, i.e., a
+        computation may depend on the state of the world, but can't
+        change the world itself. The reader monad can be seen as a way
+        of threading several functions with some common parameter
+        without pollutiong the namespace with global variables.  Also
+        known as the configuration monad, since a common usage would
+        be to use the Reader monad to pass command line arguments and
+        program configuration.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Reader.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The reader monad interface with the environment type fixed
+          on the module level.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Reader.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The reader monad interface with the environemnt type left
+          variable.
+</div>
+
 <pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">('a, 'b)</code> reader</span> </pre>
+<div class="info ">
+an abstract type of reader computations<br>
+</div>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Reader.S2.html">Monads.Std.Monad.Reader.S2</a></pre>
@@ -95,8 +120,15 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type env := T.t</code></pre>
+         and type env := T.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> concretizes the environment type to <code class="code"><span class="constructor">Env</span>.t</code>
+          and composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.
+</div>
+
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Reader.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Reader.S2.html">S2</a></code><code class="type"> 
         with type ('a,'e) t := ('a,'e) T2(M).t
          and type 'a m     := 'a     T2(M).m
-         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre></body></html>
+         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><div class="info">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.
+</div>
+</body></html>

@@ -84,7 +84,11 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type r := T.t</code></pre><table border="0" cellpadding="3" width="100%">
+         and type r := T.t</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">T</span>)(<span class="constructor">M</span>)</code> wraps the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad
+          and fix the type of the whole computation to <code class="code"><span class="constructor">T</span>.t</code><br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -110,5 +114,29 @@
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad.html">Monads.Std.Monad.Monad</a></pre>
 
 <pre><span id="TYPEr"><span class="keyword">type</span> <code class="type"></code>r</span> </pre>
+<div class="info ">
+type of the final result of computation<br>
+</div>
 
+
+<pre><span id="VALcall"><span class="keyword">val</span> call</span> : <code class="type">f:(cc:('a -> 'b t) -> 'a t) -> 'a t</code></pre><div class="info ">
+<code class="code">call ~f</code> calls <code class="code">f ~cc</code> with the current continuation <code class="code">cc</code>.
+<p>
+
+            The <code class="code">call ~f</code> computation may be computed more than
+            once, i.e., it would be resumed every time the
+            continuation is invoked. The captured continuation
+            represents the computation around the <code class="code">call</code>. Thus
+            invoking this computation will effectively escape the <code class="code">f</code>
+            function (discarding the consequent computations) and
+            continue with a computation that follows the <code class="code">call</code>. The
+            continuation is multi-shot, in the sense that it can be
+            called (resumed) multiple times (or not called at all). Every
+            time it is called, the computation will resume at the same
+            point, thus a computation that contains the <code class="code">call</code> can be
+            seen as a reenterable computation, and the <code class="code">call</code> itself
+            marks the entry point, and the continuation acts like a
+            key that allows any computation that has it to reenter the
+            subroutine at this point.<br>
+</div>
 </body></html>

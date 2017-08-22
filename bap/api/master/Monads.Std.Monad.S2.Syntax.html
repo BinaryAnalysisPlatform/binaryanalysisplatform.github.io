@@ -78,8 +78,48 @@
 &nbsp;</div>
 <h1>Module <a href="type_Monads.Std.Monad.S2.Syntax.html">Monads.Std.Monad.S2.Syntax</a></h1>
 
-<pre><span class="keyword">module</span> Syntax: <code class="type"><a href="Monads.Std.Monad.Syntax.S2.html">Std.Monad.Syntax.S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) t</code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Syntax: <code class="type"><a href="Monads.Std.Monad.Syntax.S2.html">Std.Monad.Syntax.S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) t</code></pre><div class="info module top">
+Monadic operators, see
+          <a href="Monads.Std.Monad.Syntax.S2.html">Monad.Syntax.S2</a> for more.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
 
+
+<pre><span id="VAL(>>=)"><span class="keyword">val</span> (&gt;&gt;=)</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('a -> ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a>) -><br>       ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">m &gt;&gt;= f</code> is <code class="code">bind m f</code><br>
+</div>
+
+<pre><span id="VAL(>>|)"><span class="keyword">val</span> (&gt;&gt;|)</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('a -> 'b) -> ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">m &gt;&gt;= f</code> is <code class="code">map m ~f</code><br>
+</div>
+
+<pre><span id="VAL(>=>)"><span class="keyword">val</span> (&gt;=&gt;)</span> : <code class="type">('a -> ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a>) -><br>       ('b -> ('c, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a>) -><br>       'a -> ('c, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">f &gt;=&gt; g</code> is <code class="code"><span class="keyword">fun</span> x <span class="keywordsign">-&gt;</span> f x &gt;&gt;= g</code><br>
+</div>
+
+<pre><span id="VAL(!!)"><span class="keyword">val</span> (!!)</span> : <code class="type">'a -> ('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!!x</code> is <code class="code">return x</code><br>
+</div>
+
+<pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type">('a -> 'b) -><br>       ('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!$f</code> is <code class="code"><span class="constructor">Lift</span>.unary f</code><br>
+</div>
+
+<pre><span id="VAL(!$$)"><span class="keyword">val</span> (!$$)</span> : <code class="type">('a -> 'b -> 'c) -><br>       ('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('c, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!$$f</code> is <code class="code"><span class="constructor">Lift</span>.binary f</code><br>
+</div>
+
+<pre><span id="VAL(!$$$)"><span class="keyword">val</span> (!$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd) -><br>       ('a, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('b, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('c, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('d, 'e) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!$$$f</code> is <code class="code"><span class="constructor">Lift</span>.ternary f</code><br>
+</div>
+
+<pre><span id="VAL(!$$$$)"><span class="keyword">val</span> (!$$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e) -><br>       ('a, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('b, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('c, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('d, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('e, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quaternary f</code><br>
+</div>
+
+<pre><span id="VAL(!$$$$$)"><span class="keyword">val</span> (!$$$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f) -><br>       ('a, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('b, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('c, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('d, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('e, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a> -><br>       ('f, 's) <a href="Monads.Std.Monad.Syntax.S2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">!$$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quinary f</code><br>
+</div>
 </body></html>

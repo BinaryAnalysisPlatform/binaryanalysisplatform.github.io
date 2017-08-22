@@ -84,7 +84,11 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type env := T.t</code></pre><table border="0" cellpadding="3" width="100%">
+         and type env := T.t</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> concretizes the environment type to <code class="code"><span class="constructor">Env</span>.t</code>
+          and composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -109,6 +113,10 @@
 
 <pre><span id="TYPEenv"><span class="keyword">type</span> <code class="type"></code>env</span> </pre>
 
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">unit -> <a href="Monads.Std.Monad.Reader.S.html#TYPEenv">env</a> t</code></pre><div class="info ">
+<code class="code">read ()</code> reads the environemnt<br>
+</div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad.html">Monads.Std.Monad.Monad</a></pre>
 </body></html>

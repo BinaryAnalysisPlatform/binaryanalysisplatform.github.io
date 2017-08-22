@@ -174,7 +174,7 @@ Bitvector -- an integer with modular arithmentics.
       restore it from string. The format of the representation is the
       following (in EBNF):
       <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;repr&nbsp;&nbsp;=&nbsp;[sign],&nbsp;[base],&nbsp;digit,&nbsp;{digit},&nbsp;<span class="string">":"</span>,&nbsp;size,&nbsp;[kind]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;&nbsp;=&nbsp;<span class="string">"+"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"-"</span>;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sign&nbsp;&nbsp;=&nbsp;<span class="string">"+"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"-"</span>;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base&nbsp;&nbsp;=&nbsp;<span class="string">"0x"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"0b"</span>&nbsp;<span class="keywordsign">|</span>&nbsp;<span class="string">"0o"</span>;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;&nbsp;=&nbsp;dec,&nbsp;{dec};
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;digit&nbsp;=&nbsp;dec&nbsp;<span class="keywordsign">|</span>&nbsp;oct&nbsp;<span class="keywordsign">|</span>&nbsp;hex;
@@ -473,7 +473,7 @@ Specifies the order of bytes in a word.<br>
 
         <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_hex_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0xDEADBEEFl);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0xDEADBEEF:32u
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_hex_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_hex_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:32u
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
@@ -486,7 +486,7 @@ Specifies the order of bytes in a word.<br>
 
         <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_dec_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0xDEADBEEFl);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3735928559:32u
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_dec_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_dec_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:32u
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 <b>Since</b> 1.3<br>
@@ -500,7 +500,7 @@ Specifies the order of bytes in a word.<br>
 
         <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_oct_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0xDEADBEEFl);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0o33653337357:32u
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_oct_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_oct_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:32u
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>
@@ -513,7 +513,7 @@ Specifies the order of bytes in a word.<br>
 
         <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_bin_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0xDEADBEEFl);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0b11011110101011011011111011101111:32u
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_bin_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">#</span>&nbsp;printf&nbsp;<span class="string">"%a\n"</span>&nbsp;pp_bin_full&nbsp;(<span class="constructor">Word</span>.of_int32&nbsp;0x1);;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:32u
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre><br>
 </div>

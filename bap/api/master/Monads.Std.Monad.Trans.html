@@ -80,8 +80,42 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Trans.html">Monads.Std.Monad.Trans</a></h1>
 
-<pre><span class="keyword">module</span> Trans: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Trans: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Monad Transformer Interface.
+<p>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S1.html">S1</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+        A monad transformer is a monad composition operator. There is
+        not notion of a generic transformer, that takes two arbitrary
+        monads and compose them, but every single monad should provide
+        its own transformer. This module provides three interfaces of the
+        transfomers:
+<p>
+<ul>
+<li><a href="Monads.Std.Monad.Trans.S.html">Monad.Trans.S</a> composes two unary monad;</li>
+<li><a href="Monads.Std.Monad.Trans.S1.html">Monad.Trans.S</a> composes unary and binary monads;</li>
+<li><a href="Monads.Std.Monad.Trans.S2.html">Monad.Trans.S</a> composes two binary monad;</li>
+</ul>
+
+        A composition of two monads denoted as <code class="code"><span class="keyword">module</span> <span class="constructor">M</span> =
+        <span class="constructor">Outer</span>.<span class="constructor">Make</span>(<span class="constructor">Inner</span>)</code> can is a new monad <code class="code"><span class="constructor">M</span></code> that has properties
+        of both <code class="code"><span class="constructor">Outer</span></code> and <code class="code"><span class="constructor">Inner</span></code> (you visualize this composition as
+        a russian doll). All transfomers provide a <code class="code">lift</code> function
+        that lifts computations in the inner monad <code class="code">_ m</code> to the
+        resultint monad <code class="code">_ t</code>. The <code class="code">run</code> function will actually run
+        the computation and result in a value of type <code class="code">_ e</code> that each
+        monad transfomer defines differently.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Unary monad transformer.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S1.html">S1</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Unary to binary monad transfomer.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Trans.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Binary to binary monad transfomer
+</div>
+</body></html>

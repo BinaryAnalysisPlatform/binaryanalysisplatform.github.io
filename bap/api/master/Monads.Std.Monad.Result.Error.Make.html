@@ -82,7 +82,10 @@
           with type 'a t := 'a T(M).t
            and type 'a m := 'a T(M).m
            and type 'a e := 'a T(M).e
-           and type err := Error.t</code></pre><table border="0" cellpadding="3" width="100%">
+           and type err := Error.t</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> wraps <code class="code"><span class="constructor">M</span></code> into the <code class="code"><span class="constructor">Error</span></code> monad.<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -99,4 +102,11 @@
 <hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Result.S.html">Monads.Std.Monad.Result.S</a></pre>
+
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) Std.format4 -> 'a</code></pre><div class="info ">
+<code class="code">failf <span class="string">"&lt;fmt&gt;"</span> &lt;args&gt; ()</code> constructs an error message
+              using the specified format descripton and returns a
+              computation that will result in the constructed
+              error.<br>
+</div>
 </body></html>

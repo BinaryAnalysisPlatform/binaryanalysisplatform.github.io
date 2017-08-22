@@ -110,5 +110,24 @@
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad.html">Monads.Std.Monad.Monad</a></pre>
 
 <pre><span id="TYPEenv"><span class="keyword">type</span> <code class="type"></code>env</span> </pre>
+<div class="info ">
+the environment type.<br>
+</div>
 
+
+<pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type"><a href="Monads.Std.Monad.State.S.html#TYPEenv">env</a> -> unit t</code></pre><div class="info ">
+<code class="code">put s</code> changes the current state to <code class="code">s</code><br>
+</div>
+
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> <a href="Monads.Std.Monad.State.S.html#TYPEenv">env</a> t</code></pre><div class="info ">
+<code class="code">get s</code> gets the current state<br>
+</div>
+
+<pre><span id="VALgets"><span class="keyword">val</span> gets</span> : <code class="type">(<a href="Monads.Std.Monad.State.S.html#TYPEenv">env</a> -> 'r) -> 'r t</code></pre><div class="info ">
+<code class="code">gets p</code> projects the current state with the function <code class="code">p</code><br>
+</div>
+
+<pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">(<a href="Monads.Std.Monad.State.S.html#TYPEenv">env</a> -> <a href="Monads.Std.Monad.State.S.html#TYPEenv">env</a>) -> unit t</code></pre><div class="info ">
+<code class="code">update f</code> updates the current state with the function <code class="code">f</code><br>
+</div>
 </body></html>

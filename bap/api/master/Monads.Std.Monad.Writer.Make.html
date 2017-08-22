@@ -5,7 +5,6 @@
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Monads.Std.Monad.Writer.T1.html">
-<link rel="next" href="Monads.Std.Monad.Writer.T2.html">
 <link rel="Up" href="Monads.Std.Monad.Writer.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -76,14 +75,18 @@
 <body>
 <div class="navbar"><a class="pre" href="Monads.Std.Monad.Writer.T1.html" title="Monads.Std.Monad.Writer.T1">Previous</a>
 &nbsp;<a class="up" href="Monads.Std.Monad.Writer.html" title="Monads.Std.Monad.Writer">Up</a>
-&nbsp;<a class="post" href="Monads.Std.Monad.Writer.T2.html" title="Monads.Std.Monad.Writer.T2">Next</a>
-</div>
+&nbsp;</div>
 <h1>Functor <a href="type_Monads.Std.Monad.Writer.Make.html">Monads.Std.Monad.Writer.Make</a></h1>
 
 <pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="code">) </code> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Writer.S.html">S</a></code><code class="type">  with type 'a m := 'a T1(T)(M).m
              and type 'a t := 'a T1(T)(M).t
              and type 'a e := 'a T1(T)(M).e
-             and type state := T1(T)(M).state</code></pre><table border="0" cellpadding="3" width="100%">
+             and type state := T1(T)(M).state</code></pre><div class="info module top">
+Make(Sum)(M) constructs a reader that uses <code class="code"><span class="constructor">Sum</span>.t</code> type as a
+          state accumulator and composes the Writer with the monad
+          <code class="code"><span class="constructor">M</span></code>.<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -105,9 +108,29 @@
 <hr width="100%">
 
 <pre><span id="TYPEstate"><span class="keyword">type</span> <code class="type"></code>state</span> </pre>
+<div class="info ">
+type representing the system state (enironment)<br>
+</div>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Trans.S.html">Monads.Std.Monad.Trans.S</a></pre>
+
+<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="Monads.Std.Monad.Writer.S.html#TYPEstate">state</a> -> unit t</code></pre><div class="info ">
+<code class="code">write s</code> add <code class="code">s</code> to the current state<br>
+</div>
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">'a t -> <a href="Monads.Std.Monad.Writer.S.html#TYPEstate">state</a> t</code></pre><div class="info ">
+<code class="code">read m</code> reads the current state of computation <code class="code">m</code><br>
+</div>
+
+<pre><span id="VALlisten"><span class="keyword">val</span> listen</span> : <code class="type">'a t -> ('a * <a href="Monads.Std.Monad.Writer.S.html#TYPEstate">state</a>) t</code></pre><div class="info ">
+<code class="code">listen m</code> reads both the computation result and the
+            current state.<br>
+</div>
+
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">unit t -> <a href="Monads.Std.Monad.Writer.S.html#TYPEstate">state</a> m</code></pre><div class="info ">
+<code class="code">exec m</code> executes computation <code class="code">m</code> and reads the state<br>
+</div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad.html">Monads.Std.Monad.Monad</a></pre>
 </body></html>

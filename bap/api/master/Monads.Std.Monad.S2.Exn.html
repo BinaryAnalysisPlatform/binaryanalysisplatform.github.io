@@ -80,5 +80,17 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.S2.Exn.html">Monads.Std.Monad.S2.Exn</a></h1>
 
-<pre><span class="keyword">module</span> Exn: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Exn: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+Interacting between monads and language exceptions<br>
+</div>
+<hr width="100%">
+
+<pre><span id="VALexpect"><span class="keyword">val</span> expect</span> : <code class="type">?finally:(unit -> (unit, 's) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       f:(unit -> ('a, 's) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       catch:(exn -> ('a, 's) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a>) -><br>       ('a, 's) <a href="Monads.Std.Monad.S2.html#TYPEt">Std.Monad.S2.t</a></code></pre><div class="info ">
+<code class="code">expect ?finally ~f ~catch</code> evaluates <code class="code">f ()</code>, if an
+            exception <code class="code">e</code> is raised during the evaluation (or call)
+            then the result of whole computation will be <code class="code">catch e</code>.
+            If an optional argument <code class="code">?finally</code> is passed the
+            <code class="code">finally</code> is called after <code class="code">f ()</code> computation or after
+            <code class="code">catch e</code> if an exception was raised.<br>
+</div>
 </body></html>

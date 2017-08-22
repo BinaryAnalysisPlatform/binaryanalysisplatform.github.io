@@ -79,4 +79,11 @@
 <pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Result.S.html">Monads.Std.Monad.Result.S</a></pre>
+
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) Std.format4 -> 'a</code></pre><div class="info ">
+<code class="code">failf <span class="string">"&lt;fmt&gt;"</span> &lt;args&gt; ()</code> constructs an error message
+              using the specified format descripton and returns a
+              computation that will result in the constructed
+              error.<br>
+</div>
 </body></html>

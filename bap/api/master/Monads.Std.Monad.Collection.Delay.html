@@ -80,7 +80,17 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Collection.Delay.html">Monads.Std.Monad.Collection.Delay</a></h1>
 
-<pre><span class="keyword">module type</span> Delay = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Delay.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> Delay = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Delay.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+A container with a generic fold<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Collection.Basic.html">Monads.Std.Monad.Collection.Basic</a></pre>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">'a t -> init:'s -> f:('s -> 'a -> ('s -> 'r) -> 'r) -> ('s -> 'r) -> 'r</code></pre><div class="info ">
+<code class="code">fold xs ~init:s ~f</code> a delayed fold implementation. It is
+            the same as a regular <code class="code">fold</code> except that function <code class="code">f</code>
+            accepts an extra continuation argument, and the <code class="code">fold</code>
+            expression returns a continuation.<br>
+</div>
 </body></html>

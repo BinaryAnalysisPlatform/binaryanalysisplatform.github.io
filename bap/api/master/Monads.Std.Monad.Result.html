@@ -80,7 +80,25 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a></h1>
 
-<pre><span class="keyword">module</span> Result: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Result: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Result Monad.
+<p>
+
+        The result monad is a generalization of the Option monad,
+        where the bottom type can bear an arbitrary value of type
+        <code class="code"><span class="keywordsign">'</span>e</code>. The type <code class="code"><span class="keywordsign">'</span>e</code> is fixed and can not be changed during the
+        computation.
+<p>
+
+        <a href="Monads.Std.Monad.Result.Error.html">Monad.Result.Error</a> is a
+        specialization of the Result monad where <code class="code"><span class="keywordsign">'</span>e</code> is fixed to
+        <code class="code"><span class="constructor">Error</span>.t</code>.
+<p>
+
+        <a href="Monads.Std.Monad.Result.Exception.html">Monad.Result.Exception</a> is
+        another specialization that fixes <code class="code"><span class="keywordsign">'</span>e</code> to the <code class="code">exn</code> type.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEresult"><span class="keyword">type</span> <code class="type">('a, 'e)</code> result</span> = <code class="type">('a, 'e) Std.Result.t</code> = </pre><table class="typetable">
 <tr>
@@ -108,10 +126,23 @@
         with type 'a t := 'a T1(T)(M).t
          and type 'a m := 'a T1(T)(M).m
          and type 'a e := 'a T1(T)(M).e
-         and type err := T.t</code></pre>
+         and type err := T.t</code></pre><div class="info">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">E</span>)(<span class="constructor">M</span>)</code> concretized the type of error to <code class="code"><span class="constructor">E</span>.t</code> and
+          composes the Result monad with the monad <code class="code"><span class="constructor">M</span></code>.
+</div>
+
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.Result.S2.html">S2</a></code><code class="type"> 
         with type ('a,'e) t := ('a,'e) T2(M).t
          and type 'a m     := 'a     T2(M).m
-         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Error.html">Error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.html">Exception</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Exception.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+         and type ('a,'e) e := ('a,'e) T2(M).e</code></pre><div class="info">
+<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the result monad with the monad <code class="code"><span class="constructor">M</span></code>.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Error.html">Error</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Error.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Error monad.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Result.Exception.html">Exception</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Result.Exception.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+The Exception monad.
+</div>
+</body></html>

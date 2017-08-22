@@ -78,7 +78,28 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.State.Multi.html">Monads.Std.Monad.State.Multi</a></h1>
 
-<pre><span class="keyword">module</span> Multi: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module</span> Multi: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+The Multi State monad.
+<p>
+
+          The multi state monad is a generalization of a state monad
+          where a computation can have simultaneously more than one
+          state. It can be used to denote non-deterministic effects
+          and concurrent computations.
+<p>
+
+          The multi state monad introduces two new operators: <code class="code">fork</code>
+          and <code class="code">switch</code>. The <code class="code">fork</code> operator clones (replicates)
+          current state of computation (environment), the <code class="code">switch</code>
+          operator chooses between different available states.
+<p>
+
+          States form a hierarchy, with a state in which <code class="code">fork</code> is
+          called being a parent of a newly forked state. The initial
+          state, called the global state is an ancestor of all
+          states.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEstatus"><span class="keyword">type</span> <code class="type"></code>status</span> = <code class="type">[ `Current | `Dead | `Live ]</code> </pre>
 

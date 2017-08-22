@@ -80,8 +80,29 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Basic2.html">Monads.Std.Monad.Basic2</a></h1>
 
-<pre><span class="keyword">module type</span> Basic2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> Basic2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Basic binary monad interface.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
+<div class="info ">
+(a,e) t is a type of monad, where <code class="code">a</code> is a type of
+          computation values, and <code class="code">e</code> is a type of some extra
+          information attached to the computation, usually a type of
+          environment.<br>
+</div>
 
+
+<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a> -><br>       ('a -> ('b, 'e) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a>) -><br>       ('b, 'e) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">bind m f</code> passes the result of computation <code class="code">m</code> to function <code class="code">f</code><br>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">[ `Custom of<br>           ('a, 'e) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a> -><br>           f:('a -> 'b) -> ('b, 'e) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a><br>       | `Define_using_bind ]</code></pre><div class="info ">
+map function can be derived from bind or provided explicitly<br>
+</div>
+
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -> ('a, 'b) <a href="Monads.Std.Monad.Basic2.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">return x</code> creates a trivial compuation that results in <code class="code">x</code><br>
+</div>
 </body></html>

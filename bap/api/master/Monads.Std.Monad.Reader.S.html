@@ -78,12 +78,20 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Reader.S.html">Monads.Std.Monad.Reader.S</a></h1>
 
-<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Reader.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+The reader monad interface with the environment type fixed
+          on the module level.<br>
+</div>
+<hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Trans.S.html">Monads.Std.Monad.Trans.S</a></pre>
 
 <pre><span id="TYPEenv"><span class="keyword">type</span> <code class="type"></code>env</span> </pre>
 
+
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">unit -> <a href="Monads.Std.Monad.Reader.S.html#TYPEenv">env</a> t</code></pre><div class="info ">
+<code class="code">read ()</code> reads the environemnt<br>
+</div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Monad.html">Monads.Std.Monad.Monad</a></pre>
 </body></html>

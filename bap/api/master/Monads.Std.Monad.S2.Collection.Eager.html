@@ -78,7 +78,12 @@
 </div>
 <h1>Functor <a href="type_Monads.Std.Monad.S2.Collection.Eager.html">Monads.Std.Monad.S2.Collection.Eager</a></h1>
 
-<pre><span class="keyword">module</span> Eager <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Collection.Eager.html">Std.Monad.Collection.Eager</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">S</a></code><code class="type">  with type 'a t := 'a T.t</code></pre><table border="0" cellpadding="3" width="100%">
+<pre><span class="keyword">module</span> Eager <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code"> : </code><code class="type"><a href="Monads.Std.Monad.Collection.Eager.html">Std.Monad.Collection.Eager</a></code><code class="code">) </code>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">S</a></code><code class="type">  with type 'a t := 'a T.t</code></pre><div class="info module top">
+<code class="code"><span class="constructor">Eager</span>(<span class="constructor">C</span>)</code> derives
+            <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> for container
+            <code class="code"><span class="constructor">C</span></code><br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -95,8 +100,142 @@
 <hr width="100%">
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">('a, 'e)</code> m</span> </pre>
+<div class="info ">
+the monad<br>
+</div>
 
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+type of the container<br>
+</div>
 
+
+<pre><span id="VALall"><span class="keyword">val</span> all</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a> <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       ('a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a>, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">all cs</code> perfoms all computations in <code class="code">cs</code> and returns a
+            list of results in the same order. The order of
+            evaluation is unspecified.<br>
+</div>
+
+<pre><span id="VALall_ignore"><span class="keyword">val</span> all_ignore</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a> <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       (unit, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">all_ignore cs</code> performs all computations in <code class="code">cs</code> in an
+            unspecified order, and discards the results.<br>
+</div>
+
+<pre><span id="VALsequence"><span class="keyword">val</span> sequence</span> : <code class="type">(unit, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a> <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       (unit, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">sequence cs</code> performs all computations in <code class="code">cs</code> from left
+            to right.<br>
+</div>
+
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('b <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a>, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">map xs ~f</code> returns a container where <code class="code">n</code>'th element is a
+            result of computation <code class="code">f x_n</code>, where <code class="code">x_n</code> is the <code class="code">n</code>'th
+            element of the input container. It is unspecified, in
+            which order the computations are evaluated, and whether
+            all computations are performed.<br>
+</div>
+
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (unit, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       (unit, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">iter xs ~f</code> performs <code class="code">f x</code> for each <code class="code">x</code> in <code class="code">xs</code> in the
+            left to right order.<br>
+</div>
+
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       init:'b -><br>       f:('b -> 'a -> ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">fold xs ~init:s0 ~f</code> folds <code class="code">f</code> over <code class="code">xs</code> in the given monad.
+<p>
+
+            Effectively computes a chain:
+<p>
+
+            <pre class="verbatim">              f s0 x0 &gt;&gt;= fun s1 -&gt;
+              f s1 x1 &gt;&gt;= fun s2 -&gt;
+              ...
+              f sN xN
+           </pre>
+<p>
+
+            Except that the computation uses a constant stack size.<br>
+</div>
+
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       init:'b -><br>       f:('b -> 'a -> ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">fold_left</code> is a synonym for <code class="code">fold</code>.<br>
+</div>
+
+<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> 'b -> ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       init:'b -> ('b, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">fold_right xs ~f ~init:s0</code> folds <code class="code">f</code> over <code class="code">xs</code> from right to
+            left in the given monad.
+<p>
+
+            Effectively computes a chain:
+<p>
+
+            <pre class="verbatim">              f x_N s0     &gt;&gt;= fun s1 -&gt;
+              f x_(N-1) s1 &gt;&gt;= fun s2 -&gt;
+              ...
+              f x0 s_N
+           </pre>
+<p>
+
+            Except that the computation uses a constant stack size.<br>
+</div>
+
+<pre><span id="VALreduce"><span class="keyword">val</span> reduce</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> 'a -> ('a, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('a option, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">reduce xs ~f</code> same as <code class="code">fold</code> except that the initial
+            state is obtained from the first element of the
+            container, i.e., computes a sequence
+<p>
+
+            <pre class="verbatim">              f x0 x1 &gt;&gt;= fun s1 -&gt;
+              f s1 x2 &gt;&gt;= fun s2 -&gt;
+              ...
+              f sN xN
+           </pre><br>
+</div>
+
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">exists xs ~f</code> returns a computation that results in
+            <code class="code"><span class="keyword">true</span></code> iff there exists an element <code class="code">x</code> in <code class="code">xs</code> such that
+            <code class="code">f x</code> evaluates to <code class="code"><span class="keyword">true</span></code><br>
+</div>
+
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">for_all xs ~f</code> returns a computation that results in
+            <code class="code"><span class="keyword">true</span></code> iff for all <code class="code">x</code> in <code class="code">xs</code> <code class="code">f x</code> evaluates to <code class="code"><span class="keyword">true</span></code>.<br>
+</div>
+
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       (int, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">count xs ~f</code> returns a computation that results to a
+            number of elements of <code class="code">xs</code> for which <code class="code">f</code> evaluates to
+            <code class="code"><span class="keyword">true</span></code>. The order of application of <code class="code">f</code> is unspecified.<br>
+</div>
+
+<pre><span id="VALmap_reduce"><span class="keyword">val</span> map_reduce</span> : <code class="type">(module Monads.Std.Monoid.S with type t = 'a) -><br>       'b <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('b -> ('a, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('a, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">map_reduce (<span class="keyword">module</span> <span class="constructor">Monoid</span>) xs ~f</code> a composition of <code class="code">map</code>
+            and <code class="code">reduce</code>. Effectively the same as <code class="code">map xs ~f</code> and then
+            reduce in <code class="code"><span class="constructor">Monoid</span></code> except that no intermediate
+            collections are created.<br>
+</div>
+
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('a option, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">find xs ~f</code> returns the first element <code class="code">x</code> of <code class="code">xs</code> for
+            wich <code class="code">f x</code> evaluates to <code class="code"><span class="keyword">true</span></code>.<br>
+</div>
+
+<pre><span id="VALfind_map"><span class="keyword">val</span> find_map</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> ('b option, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('b option, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">find_map xs ~f</code> returns the first computation <code class="code">f x</code> for
+            <code class="code">x</code> in <code class="code">xs</code> which will result in non <code class="code"><span class="constructor">None</span></code>.<br>
+</div>
+
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> (bool, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a>, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">filter xs ~f</code> returns a computation that contains all
+            the elements of <code class="code">xs</code> for which <code class="code">f</code> evaluated to <code class="code"><span class="keyword">true</span></code>. The
+            order of the elements is the same.<br>
+</div>
+
+<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">'a <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a> -><br>       f:('a -> ('b option, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a>) -><br>       ('b <a href="Monads.Std.Monad.Collection.S2.html#TYPEt">t</a>, 'e) <a href="Monads.Std.Monad.Collection.S2.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">filter_map xs ~f</code> is a partial mapping from <code class="code">xs</code> to a
+            collection <code class="code">ys</code>, such that all the elements of <code class="code">xs</code> for which
+            <code class="code">f</code> returned <code class="code"><span class="constructor">Some</span></code> value are mapped, while the rest are
+            omitted.<br>
+</div>
 </body></html>

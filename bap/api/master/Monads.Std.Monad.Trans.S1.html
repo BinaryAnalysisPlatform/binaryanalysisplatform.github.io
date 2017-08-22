@@ -80,7 +80,10 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.Trans.S1.html">Monads.Std.Monad.Trans.S1</a></h1>
 
-<pre><span class="keyword">module type</span> S1 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span class="keyword">module type</span> S1 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Trans.S1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Unary to binary monad transfomer.<br>
+</div>
+<hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
 
@@ -90,4 +93,12 @@
 
 <pre><span id="TYPEe"><span class="keyword">type</span> <code class="type">('a, 'e)</code> e</span> </pre>
 
+
+<pre><span id="VALlift"><span class="keyword">val</span> lift</span> : <code class="type">'a <a href="Monads.Std.Monad.Trans.S1.html#TYPEm">m</a> -> ('a, 'e) <a href="Monads.Std.Monad.Trans.S1.html#TYPEt">t</a></code></pre><div class="info ">
+lifts inner monad into the resulting monad<br>
+</div>
+
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.Trans.S1.html#TYPEt">t</a> -> ('a, 'e) <a href="Monads.Std.Monad.Trans.S1.html#TYPEe">e</a></code></pre><div class="info ">
+runs the computation<br>
+</div>
 </body></html>
