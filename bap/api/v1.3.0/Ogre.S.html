@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Ogre.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_elf" rel="Chapter" href="Bap_elf.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Ogre.S</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Ogre.html" title="Ogre">Up</a>
+&nbsp;</div>
+<h1>Module type <a href="type_Ogre.S.html">Ogre.S</a></h1>
+
+<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+Monadic interface to the document.
+<p>
+
+    This interface exposes actual setters and getters, that should be
+    used to query data or to store it in a document. The interface is
+    provided by a monad transformer functor, that wraps the Ogre monad
+    into an arbitrary user monad.
+<p>
+
+    Underneath the hood, the Ogre monad is a state monad wrapped into
+    an error monad. The state holds the document, so that it is not
+    needed to pass it along all the functions, and the error monad
+    facilitates error propagation. We do not expose the <code class="code">catch</code> function
+    from the standard Error monad interface, as we are concerned that
+    it will be abused (we don't see any legitimate usage of this
+    function in the use cases of Ogre that we perceive).
+<p>
+
+    The interface is built around 3 accessors functions for data
+    querying and one mutator for inserting data into a document.
+<p>
+
+    <h3 id="3_Dataquerying">Data querying</h3>
+<p>
+
+    In our model, a document is a set of facts, that describe some
+    abstract entity. We're making a deriviations based on facts. To
+    make a deriviation we need some facts, the particular set of
+    required facts, as well as the modality of the requirement (i.e.,
+    how much it is needed), depends on the particular deriviation. For
+    example, we might <a href="Ogre.S.html#VALrequire"><code class="code"><span class="constructor">Ogre</span>.<span class="constructor">S</span>.require</code></a> a fact to be present or, if it is
+    optional, we might <a href="Ogre.S.html#VALrequest"><code class="code"><span class="constructor">Ogre</span>.<span class="constructor">S</span>.request</code></a> it, finally, we may query for a
+    collection of facts, and apply our deriviation <a href="Ogre.S.html#VALforeach"><code class="code"><span class="constructor">Ogre</span>.<span class="constructor">S</span>.foreach</code></a> fact. In
+    other terms, <code class="code">require attribute</code> mandates that there is one and
+    only one value of the given <code class="code">attribute</code>, <code class="code">request attribute</code> asks
+    for zero or one value, and <code class="code">foreach attribute</code> requires zero or more
+    values of the <code class="code">attribute</code>.<br>
+</div>
+<hr width="100%">
+
+<pre><span class="keyword">include</span> Monad.S</pre>
+
+<pre><span class="keyword">include</span> Monad.Trans.S</pre>
+
+<pre><span id="VALrequire"><span class="keyword">val</span> require</span> : <code class="type">?that:('a -> bool) -> ('a, 'b -> 'c) <a href="Ogre.html#TYPEattribute">Ogre.attribute</a> -> 'a t</code></pre><div class="info ">
+<code class="code">require a ~that:p</code> requires that an attribute <code class="code">a</code> has one and
+      only one value that satisfies a predicate <code class="code">p</code>. It is an error,
+      if there are no such values, or if there are more than one value.<br>
+</div>
+
+<pre><span id="VALrequest"><span class="keyword">val</span> request</span> : <code class="type">?that:('a -> bool) -> ('a, 'b -> 'c) <a href="Ogre.html#TYPEattribute">Ogre.attribute</a> -> 'a option t</code></pre><div class="info ">
+<code class="code">request a ~that:p</code> request no more than one value of an
+      attribute <code class="code">a</code>, that satisfies a predicate <code class="code">p</code>. The returned
+      value is wrapped in an option. If there are more than one
+      satisfying value, then it is an error.<br>
+</div>
+
+<pre><span id="VALforeach"><span class="keyword">val</span> foreach</span> : <code class="type">('a -> 'b) <a href="Ogre.html#TYPEquery">Ogre.query</a> -> f:'a -> 'b <a href="Ogre.html#TYPEseq">Ogre.seq</a> t</code></pre><div class="info ">
+<code class="code">foreach query ~f:action</code> applies an <code class="code">action</code> for each value of
+      an attributes specified in the query. The <code class="code">query</code> value is built
+      using a domain specific language embedded into OCaml. This
+      language is very similiar to SQL, and has join and where
+      clauses, e.g.,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;better_than_average_students&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;<span class="constructor">Query</span>.(<span class="keyword">begin</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~where:(students.(gpa)&nbsp;&gt;&nbsp;float&nbsp;3.5)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~join:[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[field&nbsp;classid];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field&nbsp;teacher&nbsp;~from:students;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;field&nbsp;id&nbsp;~from:teachers
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(from&nbsp;students&nbsp;$&nbsp;teachers)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span>)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~f:(<span class="keyword">fun</span>&nbsp;s&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;return&nbsp;(s,t))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      The type of the <code class="code">query</code> value encodes the type of the function
+      <code class="code">f</code>. A well formed query has a type of form
+      <code class="code">(t1 <span class="keywordsign">-&gt;</span> t2 <span class="keywordsign">-&gt;</span> .. <span class="keywordsign">-&gt;</span> tm <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a t) <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a t</code>, where <code class="code">t1</code> till <code class="code">tm</code> are
+      types of attributes enumerated in the <code class="code">from clause</code> (in that
+      particular order).
+<p>
+
+      See the <code class="code"><span class="constructor">Query</span></code> module documentation for more information about
+      the query EDSL.<br>
+</div>
+
+<pre><span id="VALcollect"><span class="keyword">val</span> collect</span> : <code class="type">(('a -> 'a) -> 'b) <a href="Ogre.html#TYPEquery">Ogre.query</a> -> 'b <a href="Ogre.html#TYPEseq">Ogre.seq</a> t</code></pre><div class="info ">
+<code class="code">collect query</code> is the same as <code class="code">foreach query ~f:ident</code><br>
+</div>
+
+<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">('b, 'a -> unit t) <a href="Ogre.html#TYPEattribute">Ogre.attribute</a> -> 'a</code></pre><div class="info ">
+<code class="code">provide attr v1 v2 ... vm</code> stores the constituents of an
+      attribute value in the document. An attribute type encodes not
+      only the type of an attribute value, but also a type and the
+      order of the fields. Thus, the <code class="code">attribute</code> itself captures a
+      format of the attribute representation, the same as <code class="code">format</code> is
+      used in printf-like functions. In that sense, the <code class="code">provide</code>
+      function is variadic, where the first argument (the attribute)
+      defines the type and the arity of the function.<br>
+</div>
+
+<pre><span id="VALfail"><span class="keyword">val</span> fail</span> : <code class="type">Std.Error.t -> 'a t</code></pre><div class="info ">
+<code class="code">fail error</code> aborts an inference process with the specified
+      <code class="code">error</code>.<br>
+</div>
+
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) Std.format4 -> 'a</code></pre><div class="info ">
+<code class="code">failf fmt args... ()</code> constructs an error based on the
+      specified format <code class="code">fmt</code> and arguments, terminated by the unit value
+      <code class="code">()</code>. Example:
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;failf&nbsp;<span class="string">"the&nbsp;file&nbsp;type&nbsp;%s&nbsp;is&nbsp;unsupported"</span>&nbsp;name&nbsp;()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      Note: don't forget to terminate a sequence of arguments with an
+      extra unit value. See the corresponding <code class="code">invalid_argf</code> and
+      <code class="code">failwithf</code> function for the reason, why this extra argument is
+      needed.<br>
+</div>
+
+<pre><span id="VALeval"><span class="keyword">val</span> eval</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> 'a Std.Or_error.t m</code></pre><div class="info ">
+<code class="code">eval property document</code> makes an inference of a <code class="code">property</code> based
+      on facts stored in a <code class="code">document</code>. If all requirements are
+      satisfied and no errors occured the inferred result.
+<p>
+
+      For example, given the property <code class="code">names_of_best_students</code>,
+      defined as,
+<p>
+
+      <pre class="codepre"><code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">let</span>&nbsp;names_of_best_students&nbsp;=
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;foreach&nbsp;<span class="constructor">Query</span>.(select&nbsp;(from&nbsp;students)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~where:(students.(gpa)&nbsp;&gt;&nbsp;float&nbsp;3.8))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~f:(<span class="keyword">fun</span>&nbsp;s&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;return&nbsp;(<span class="constructor">Student</span>.name&nbsp;s))
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code></pre>
+<p>
+
+      we can evaluate this property, with
+<p>
+
+      <pre class="codepre"><code class="code">eval&nbsp;names_of_best_students</code></pre>
+<p>
+
+      to get a sequence (possibly empty) of all students that have the
+      GPA score greater than 3.8.<br>
+</div>
+
+<pre><span id="VALexec"><span class="keyword">val</span> exec</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Std.Or_error.t m</code></pre><div class="info ">
+<code class="code">exec op doc</code> executes an operation <code class="code">op</code> that, presumabely,
+      updates the document <code class="code">doc</code>, returns an updated version.<br>
+</div>
+
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">'a t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> ('a * <a href="Ogre.html#TYPEdoc">Ogre.doc</a>) Std.Or_error.t m</code></pre><div class="info ">
+<code class="code">run op doc</code> runs an operation <code class="code">op</code> that does some inference as
+      well as may update the document. This function is a usual part
+      of a generic state monad interface, and is provided for the
+      consistency. Usually, it is a bad idea, or a notion of a bad
+      style to use this function.<br>
+</div>
+</body></html>
