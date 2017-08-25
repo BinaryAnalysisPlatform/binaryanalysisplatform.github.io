@@ -27,7 +27,7 @@ primus-loader - generic program loader for Primus
 
 <P>
 
-Loads a binary and sets up the environment. This loader is generic and sets things in an architecture specific way. The loading process is finished by the backend (target specific) loaders if necessary. The loader setups stack, prepares a callframe for the main function, fills it the environment and command line arguments. Finally it loads memory segments and allocates BSS sections. It also initializes several variables, that are usually defined by C programs - the <B>environ</B> variable points to the list of environment variables, <B>endp</B> points to the first address past the end of the last loaded segment, and <B>brk</B> is the program break
+Loads a binary and sets up the environment. This loader is generic and sets things in an architecture independent way. The loading process is finished by the backend (target specific) loaders if necessary. The loader setups stack, prepares a callframe for the main function, fills it the environment and command line arguments. Finally it loads memory segments and allocates BSS sections. It also initializes several variables, that are usually defined by C programs - the <B>environ</B> variable points to the list of environment variables, <B>endp</B> points to the first address past the end of the last loaded segment, and <B>brk</B> is the program break
 <A NAME="lbAE">&nbsp;</A>
 <H2>OPTIONS</H2>
 
@@ -45,6 +45,9 @@ generic program loader for Primus
 <P>
 
 <B><A HREF="../man1/bap-plugin-primus-x86.1.html">bap-plugin-primus-x86</A></B>(1), <B><A HREF="../man2/brk.2.html">brk</A></B>(2), <B><A HREF="../man3/end.3.html">end</A></B>(3)
+<P>
+
+<B>tags:</B> abi, loader, primus
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
@@ -59,6 +62,6 @@ generic program loader for Primus
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 21:20:13 GMT, August 22, 2017
+Time: 12:39:02 GMT, August 25, 2017
 </BODY>
 </HTML>

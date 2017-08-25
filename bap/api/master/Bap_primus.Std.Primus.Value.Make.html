@@ -104,6 +104,15 @@
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> = <code class="type">'a Machine.t</code> </pre>
 
 
+<pre><span id="VALid"><span class="keyword">val</span> id</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> -> <a href="Bap_primus.Std.Primus.Value.html#TYPEid">Std.Primus.Value.id</a></code></pre><div class="info ">
+<code class="code">id x</code> is a unique identifier of a value. Every
+            evaluation of non-trivial computation produces a value
+            with new identifier. Only seting and reading a variable
+            preserves value identifiers. Each new constaint or
+            arithmentic, or memory expression produces a value with a
+            new identifier.<br>
+</div>
+
 <pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a></code></pre><div class="info ">
 <code class="code">to_word x</code> projects <code class="code">x</code> to a machine <code class="code">word</code>. Note, many
             operations from the <code class="code"><span class="constructor">Word</span></code> module are lifted into the

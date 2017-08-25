@@ -1,10 +1,10 @@
 Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML><HEAD><TITLE>Man page of SSA</TITLE>
+<HTML><HEAD><TITLE>Man page of PRIMUS-LIMIT</TITLE>
 </HEAD><BODY>
-<H1>SSA</H1>
-Section: Ssa Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<H1>PRIMUS-LIMIT</H1>
+Section: Primus-limit Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
 <A HREF="../index.html">Return to Main Contents</A><HR>
 
 
@@ -15,54 +15,36 @@ Section: Ssa Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
 
 <P>
 
-ssa - translates a program into the SSA form
+primus-limit - ensures termination by limiting Primus machines
 <A NAME="lbAC">&nbsp;</A>
 <H2>SYNOPSIS</H2>
 
 <P>
 
-<PRE>
-
-    <B>ssa</B>
-
-</PRE>
-
+<B>primus-limit</B> [<I>OPTION</I>]... 
 <A NAME="lbAD">&nbsp;</A>
-<H2>DESCRIPTION</H2>
-
-<P>
-
-Translates the whole program into the SSA form
-<A NAME="lbAE">&nbsp;</A>
 <H2>OPTIONS</H2>
 
 <DL COMPACT>
 <DT><B>--help</B>[=<I>FMT</I>] (default=pager)<DD>
 Show this help in format <I>FMT</I> (pager, plain or groff).
+<DT><B>--max-length</B>=<I>VAL</I><DD>
+Limits the maximum number of basic blocks a single machinine can execute
+<DT><B>--max-visited</B>=<I>VAL</I><DD>
+Limits the maximum number of executions of the same block in a given machine
 </DL>
-<A NAME="lbAF">&nbsp;</A>
-<H2>SEE ALSO</H2>
-
-<P>
-
-<B>home:</B> <I>www:bap.ece.cmu.edu</I>
-<P>
-
-<B>tags:</B> pass, analysis, ssa
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
 <DL>
 <DT><A HREF="#lbAB">NAME</A><DD>
 <DT><A HREF="#lbAC">SYNOPSIS</A><DD>
-<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">OPTIONS</A><DD>
-<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+<DT><A HREF="#lbAD">OPTIONS</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 12:39:06 GMT, August 25, 2017
+Time: 12:39:01 GMT, August 25, 2017
 </BODY>
 </HTML>

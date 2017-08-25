@@ -310,6 +310,7 @@ Warning: Element C.Type.Mapper.Finder.base not found
 Warning: Element C.Type.Mapper.base not found
 Warning: Element C.Type.Mapper.State.base not found
 Warning: Element C.Type.Mapper.Finder.base not found
+Warning: Module type Regular.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module type Regular.S not found
@@ -335,6 +336,7 @@ Warning: Module or module type Identifiable.S not found
 Warning: Module or module type Identifiable.S not found
 Warning: Element Format not found
 Warning: Module or module type Identifiable.S not found
+Warning: Module type Regular.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module type Regular.S not found
