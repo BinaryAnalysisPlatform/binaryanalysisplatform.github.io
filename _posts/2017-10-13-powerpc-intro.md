@@ -22,15 +22,15 @@ implement the translation from IR to assembler, while we need the
 translation in the opposite direction. Its actually a little bit
 harder, as IR is usually smaller than the instruction set and a
 compiler developer has a benefit of choosing the subset of ISA on
-which it will map IR instructions. We do not have this luxury, as we
-need to support all the instructions. Even if they are not emitted by
-any compiler, they still can be encoded manually (especially someone
-with malicious intensions). Another source of complexity, is that we
-need to implement the translation that is much more precise, in fact
-it should be totally precise, as we need to represent all effects that
-occur in a CPU. So we need to represent all updates to the status
-registers and other side effects, that are usually of no interest to
-compiler developers.
+which he will map IR instructions. We do not have this luxury as we
+are required to support all instructions. Even those that are not
+emitted by any compiler, can still be encoded manually (especially
+someone with malicious intensions). Another source of complexity, is
+that we need to implement the translation that is much more precise,
+in fact it should be totally precise, as we need to represent all
+effects that occur in a CPU. So we need to represent all updates to
+the status registers and other side effects, that are usually of no
+interest to compiler developers.
 
 In BAP we actually do not use the "backend" word, when we referring a
 piece of code, that implements the support for a particular
