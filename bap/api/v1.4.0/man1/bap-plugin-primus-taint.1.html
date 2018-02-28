@@ -1,0 +1,84 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-taint</TITLE>
+</HEAD><BODY>
+<H1>primus-taint</H1>
+Section: Primus-taint Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus&#45;taint &#45; a taint analysis control interface
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus&#45;taint</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+The Primus Taint Analysis Framework Control Module
+<P>
+
+This plugin enables fine tuning of the Taint Analysis Framework, exposes the framework interface to Primus Lisp programs, and provides several useful components&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>Taint Propagation Policies</H2>
+
+<P>
+
+In the Taint Analysis Framework the taint propagation could be assigned individually based on a taint kind&#46; If no policy was assigned, then the default is used (selectable using this module)&#46; It is possible to implement custom policy&#46; This module provides two policies: <B>propagate&#45;by&#45;computation</B> (default) and <B>propagate&#45;exactly</B>&#46; The <B>propagate&#45;by&#45;computation</B> policy propagates a taint to the result of any computation&#46; The <B>propagate&#45;exactly</B> policy is more strict and propagate taint if is an operation is store, load, cast, or concat&#46;
+<A NAME="lbAF">&nbsp;</A>
+<H2>Taint Garbage Collectors</H2>
+
+<P>
+
+It is possible to track the liveness of a taint, i&#46;e&#46;, whether it is reachable from any live value&#46; By default we use a conservative garbage collector that sometimes gives a taint more credit than it deserves, in other words a taint may be treated as live even if it is no longer reachable&#46; When a taint is destroyed, either because it is not longer reachable or because a machine is finished, a taint finalizer, that is reflected to the <B>taint&#45;finalize</B>, Lisp signal is called, with the taint itself, and a boolean parameter that tells whether the taint was still live or dead, when the finalization was called&#46;
+<A NAME="lbAG">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;default&#45;policy</B>=<I>VAL</I> (absent=propagate&#45;by&#45;computation)<DD>
+Set the default taint propagation policy
+<DT><B>&#45;&#45;gc</B>=<I>VAL</I> (absent=conservative)<DD>
+Picks a taint garbage collector
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>home:</B> <I>www:bap&#46;ece&#46;cmu&#46;edu</I>
+<P>
+
+<B>tags:</B> dataflow, pass, taint, primus, primus&#45;lisp
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">Taint Propagation Policies</A><DD>
+<DT><A HREF="#lbAF">Taint Garbage Collectors</A><DD>
+<DT><A HREF="#lbAG">OPTIONS</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 22:27:58 GMT, February 28, 2018
+</BODY>
+</HTML>
