@@ -96,6 +96,11 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;written&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap</span>.<span class="constructor">Std</span>.var&nbsp;*&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;jumping&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value&nbsp;*&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;eval_cond&nbsp;:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;undefined&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;const&nbsp;:&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.value&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation<br>
@@ -147,6 +152,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;halt&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.never_returns<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Interpreter</span>.<span class="constructor">Make</span>.m<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;interrupt&nbsp;:&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Interpreter</span>.<span class="constructor">Make</span>.m<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pc&nbsp;:&nbsp;<span class="constructor">Bap</span>.<span class="constructor">Std</span>.addr&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Interpreter</span>.<span class="constructor">Make</span>.m<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;pos&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.pos&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Interpreter</span>.<span class="constructor">Make</span>.m<br>

@@ -105,12 +105,32 @@
 </table>
 <hr width="100%">
 
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> Machine.t</code></pre><div class="info ">
+<code class="code">set&nbsp;a</code> loads a byte from the address <code class="code">a</code><br>
+</div>
+
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -> unit Machine.t</code></pre><div class="info ">
+<code class="code">set&nbsp;a&nbsp;x</code> stores the byte <code class="code">x</code> at the address <code class="code">a</code>.
+<p>
+
+            Precondition: <code class="code"><span class="constructor">Value</span>.bitwidth&nbsp;x&nbsp;=&nbsp;8</code>.<br>
+</div>
+
 <pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> Machine.t</code></pre><div class="info ">
-<code class="code">load&nbsp;addr</code> loads a byte from the given address<br>
+<code class="code">load&nbsp;a</code> loads a byte from the given address <code class="code">a</code>.
+<p>
+
+            Same as <code class="code">get&nbsp;a&nbsp;&gt;&gt;=&nbsp;<span class="constructor">Value</span>.to_word</code><br>
 </div>
 
 <pre><span id="VALstore"><span class="keyword">val</span> store</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a> -> unit Machine.t</code></pre><div class="info ">
-<code class="code">store&nbsp;addr&nbsp;x</code> stores a byte <code class="code">x</code> at the given address <code class="code">addr</code><br>
+<code class="code">store&nbsp;a&nbsp;x</code> stores the byte <code class="code">x</code> at the address <code class="code">a</code>.
+<p>
+
+            Same as <code class="code"><span class="constructor">Value</span>.of_word&nbsp;x&nbsp;&gt;&gt;=&nbsp;set&nbsp;a</code>.
+<p>
+
+            Precondition: <code class="code"><span class="constructor">Value</span>.bitwidth&nbsp;x&nbsp;=&nbsp;8</code>.<br>
 </div>
 
 <pre><span id="VALadd_text"><span class="keyword">val</span> add_text</span> : <code class="type"><a href="Bap.Std.html#TYPEmem">Std.mem</a> -> unit Machine.t</code></pre><div class="info ">

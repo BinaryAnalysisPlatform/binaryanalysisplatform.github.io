@@ -553,6 +553,47 @@ Specifies the order of bytes in a word.<br>
 <pre><span id="VAL(--)"><span class="keyword">val</span> (--)</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> int -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">a&nbsp;--&nbsp;n</code> is <code class="code">npred&nbsp;a&nbsp;n</code><br>
 </div>
+
+<pre><span id="VALgcd"><span class="keyword">val</span> gcd</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
+<code class="code">gcd&nbsp;x&nbsp;y</code> is the greatest common divisor of <code class="code">x</code> and <code class="code">y</code>
+        in the integers. Note that this is not always the greatest
+        common divisor in the bitvectors of fixed length. For example,
+        in the 32-bit unsigned integers, <code class="code">2&nbsp;=&nbsp;2&nbsp;+&nbsp;2^32&nbsp;=&nbsp;2(1&nbsp;+&nbsp;2^31)</code>.
+        Thus, <code class="code">1&nbsp;+&nbsp;2^31</code> is a divisor of <code class="code">2</code>, even though <code class="code">gcd&nbsp;2&nbsp;2&nbsp;=&nbsp;2</code>.
+        Two properties that still hold are:
+        1. Both <code class="code">x</code> and <code class="code">y</code> are multiples of <code class="code">gcd&nbsp;x&nbsp;y</code>, and
+        2. <code class="code">gcd&nbsp;x&nbsp;y&nbsp;&lt;=&nbsp;min&nbsp;(abs&nbsp;x)&nbsp;(abs&nbsp;y)</code><br>
+</div>
+
+<pre><span id="VALlcm"><span class="keyword">val</span> lcm</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
+<code class="code">lcm&nbsp;x&nbsp;y</code> is the least common multiple of <code class="code">x</code> and <code class="code">y</code>
+        in the integers. Note that, like <code class="code">gcd&nbsp;x&nbsp;y</code>, this is not
+        always the least common multiple of <code class="code">x</code> and <code class="code">y</code> in the fixed-
+        length bitvectors. See the <code class="code">gcd</code> documentation for an example.
+        The result of this function will always be some common multiple
+        of the inputs, even in the fixed-width bitvectors.<br>
+</div>
+
+<pre><span id="VALgcdext"><span class="keyword">val</span> gcdext</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       (<a href="Bap.Std.Bitvector.html#TYPEt">t</a> * <a href="Bap.Std.Bitvector.html#TYPEt">t</a> * <a href="Bap.Std.Bitvector.html#TYPEt">t</a>)<br>       Std.Or_error.t</code></pre><div class="info ">
+<code class="code">gcdext&nbsp;x&nbsp;y</code> returns <code class="code">(g,&nbsp;s,&nbsp;t)</code> where <code class="code">g&nbsp;=&nbsp;gcd&nbsp;x&nbsp;y</code> and
+        <code class="code">g&nbsp;=&nbsp;s*x&nbsp;+&nbsp;t*y</code>. See the documentation for <code class="code">gcd&nbsp;x&nbsp;y</code> for
+        why this function is tricky to use.<br>
+</div>
+
+<pre><span id="VALgcd_exn"><span class="keyword">val</span> gcd_exn</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">gcd_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">gcd</code>, but will raise
+        an exception on error.<br>
+</div>
+
+<pre><span id="VALlcm_exn"><span class="keyword">val</span> lcm_exn</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -> <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">lcm_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">lcm</code>, but will raise
+        an exception on error.<br>
+</div>
+
+<pre><span id="VALgcdext_exn"><span class="keyword">val</span> gcdext_exn</span> : <code class="type"><a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> -><br>       <a href="Bap.Std.Bitvector.html#TYPEt">t</a> * <a href="Bap.Std.Bitvector.html#TYPEt">t</a> * <a href="Bap.Std.Bitvector.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">gcdext_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">gcdext</code>, but will raise
+        an exception on error.<br>
+</div>
 <br>
 <h2 id="2_Iterationoverbitvectorcomponents">Iteration over bitvector components </h2><br>
 

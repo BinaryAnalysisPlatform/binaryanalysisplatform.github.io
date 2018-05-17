@@ -156,10 +156,23 @@ Exp mapper.
 </div>
 
 <pre><span id="VALnormalize"><span class="keyword">val</span> normalize</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
-<code class="code">normalize</code> ensures no-lets and normalized-memory.
+<code class="code">normalize&nbsp;x</code> ensures no-lets and normalized-memory (BNF2).
+<p>
+
         Inlines all let expressions, expands multibyte loads to a
-        concatenation of one byte loads, and expand multibyte stores
-        into chains of one byte stores.<br>
+        concatenation of one byte loads, and expands multibyte stores
+        into chains of one byte stores.
+<p>
+
+        The function may duplicate expressions even those that are not
+        generative, thus breaking the semantics of the expression.
+<p>
+
+        Precondition: <code class="code">x</code> is well-typed and in BNF1.
+<p>
+
+        See <a href="Bap.Std.Stmt.html#VALnormalize"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Stmt</span>.normalize</code></a> for the definition of the BNF1 and
+        BNF2.<br>
 <b>Since</b> 1.3<br>
 </div>
 
@@ -231,19 +244,10 @@ Exp mapper.
 </div>
 
 <pre><span id="VALfold_consts"><span class="keyword">val</span> fold_consts</span> : <code class="type"><a href="Bap.Std.Exp.html#TYPEt">t</a> -> <a href="Bap.Std.Exp.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">fold_consts</code> performs one step of constant evaluation. In
-        order to perform all possible reductions one should use
-        <a href="Bap.Std.Exp.html#VALfixpoint"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Exp</span>.fixpoint</code></a> function, provided later. Example:
-        <code class="code"><span class="keyword">let</span>&nbsp;x&nbsp;=&nbsp;<span class="constructor">Bil</span>.var&nbsp;(<span class="constructor">Var</span>.create&nbsp;<span class="string">"x"</span>&nbsp;reg32_t)</code>
-        <code class="code">fixpoint&nbsp;fold_consts&nbsp;<span class="constructor">Bil</span>.(x&nbsp;<span class="keyword">lxor</span>&nbsp;x&nbsp;<span class="keyword">lxor</span>&nbsp;x&nbsp;<span class="keyword">lxor</span>&nbsp;x)</code>
+<code class="code">fold_consts&nbsp;x</code> performs constant folding of the expression <code class="code">x</code>.
 <p>
 
-        will yield <code class="code">0x0:32</code>, but without
-        a fixpoint, the result would be just:
-<p>
-
-        <code class="code">fold_constants&nbsp;<span class="constructor">Bil</span>.(x&nbsp;<span class="keyword">lxor</span>&nbsp;x&nbsp;<span class="keyword">lxor</span>&nbsp;x&nbsp;<span class="keyword">lxor</span>&nbsp;x)</code>
-        <code class="code">(0x0:32&nbsp;^&nbsp;x)&nbsp;^&nbsp;x</code>.
+        Reduces all computable expressions to integers.
 <p>
 
         See also <a href="Bap.Std.Bil.html#VALfold_consts"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bil</span>.fold_consts</code></a><br>

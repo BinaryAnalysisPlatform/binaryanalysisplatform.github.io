@@ -150,6 +150,19 @@ The Interpreter.
 <code class="code">written&nbsp;(v,x)</code> happens after <code class="code">x</code> is assinged to <code class="code">v</code><br>
 </div>
 
+<pre><span id="VALjumping"><span class="keyword">val</span> jumping</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">jumping&nbsp;(cond,dest)</code> happens just before a jump to <code class="code">dest</code>
+          is taken under the specified condition <code class="code">cond</code>.
+          Note: <code class="code">cond</code> is always <code class="code"><span class="keyword">true</span></code><br>
+<b>Since</b> 1.5.0<br>
+</div>
+
+<pre><span id="VALeval_cond"><span class="keyword">val</span> eval_cond</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<code class="code">eval_cond&nbsp;v</code> occurs every time the <code class="code">cond</code> part of a jump is
+          evaluated.<br>
+<b>Since</b> 1.5.0<br>
+</div>
+
 <pre><span id="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
 <code class="code">undefined&nbsp;x</code> happens when a computation produces an
           undefined value <code class="code">x</code>.<br>
@@ -261,7 +274,7 @@ occurs on <code class="code">halt</code> operation<br>
 
 <pre><span id="VALinterrupt"><span class="keyword">val</span> interrupt</span> : <code class="type">int <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
 <code class="code">interrupt&nbsp;n</code> occurs on the machine interrupt <code class="code">n</code> (aka CPU
-         exception)<br>
+          exception)<br>
 </div>
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
 <tr>

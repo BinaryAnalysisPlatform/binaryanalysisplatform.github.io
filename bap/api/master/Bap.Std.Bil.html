@@ -426,9 +426,7 @@ Brings infix operations into scope of the <code class="code"><span class="constr
 </div>
 
 <pre><span id="VALfold_consts"><span class="keyword">val</span> fold_consts</span> : <code class="type">stmt list -> stmt list</code></pre><div class="info ">
-<code class="code">fold_consts</code> evaluate constant expressions.
-        Note: this function performs only one step, and has no loops,
-        it is supposed to be run using a fixpoint combinator.<br>
+<code class="code">fold_consts</code> evaluates constant expressions and statements.<br>
 </div>
 
 <pre><span id="VALfixpoint"><span class="keyword">val</span> fixpoint</span> : <code class="type">(stmt list -> stmt list) -> stmt list -> stmt list</code></pre><div class="info ">

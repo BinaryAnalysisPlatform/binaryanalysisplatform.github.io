@@ -840,6 +840,7 @@ entity ::=
   | &lt;declarations&gt;
   | &lt;constant-definition&gt;
   | &lt;substitution-definition&gt;
+  | &lt;parameter-definition&gt;
   | &lt;macro-definition&gt;
   | &lt;function-definition&gt;
   | &lt;method-definition&gt;
@@ -850,9 +851,14 @@ declarations ::= (declare &lt;attribute&gt; ...)
 
 constant-definition ::=
   | (defconstant &lt;ident&gt; &lt;atom&gt;)
-  | (defconstant &lt;ident&gt; &lt;docstring&gt; &lt;atom&gt;)
-  | (defconstant &lt;ident&gt; &lt;declarations&gt; &lt;atom&gt;)
-  | (defconstant &lt;ident&gt; &lt;docstring&gt; &lt;declarations&gt; &lt;atom&gt;)
+  | (defconstant &lt;ident&gt; &lt;atom&gt; &lt;docstring&gt;)
+  | (defconstant &lt;ident&gt; &lt;atom&gt; &lt;declarations&gt;)
+  | (defconstant &lt;ident&gt; &lt;atom&gt; &lt;declarations&gt; &lt;docstring&gt;)
+
+parameter-definition ::=
+  | (defparameter &lt;ident&gt; &lt;atom&gt;)
+  | (defparameter &lt;ident&gt; &lt;atom&gt; &lt;docstring&gt;)
+  | (defparameter &lt;ident&gt; &lt;atom&gt; &lt;declarations&gt; &lt;docstring&gt;)
 
 substitution-definition ::=
   | (defsubst &lt;ident&gt; &lt;atom&gt; ...)
@@ -929,7 +935,7 @@ an abstract type representing a lisp program<br>
 <pre><span id="TYPEmessage"><span class="keyword">type</span> <code class="type"></code>message</span> </pre>
 <div class="info ">
 an abstract type that represents messages send with the
-         <code class="code">msg</code> form.<br>
+          <code class="code">msg</code> form.<br>
 </div>
 
 
@@ -937,6 +943,7 @@ an abstract type that represents messages send with the
 Primus Lisp program loader
 </div>
 
+<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">Doc</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Type.html">Type</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Lisp Type System.
 </div>
@@ -975,7 +982,7 @@ a list of primitives.<br>
 
 <pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEmessage">message</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
 <code class="code">message</code> observation occurs every time a message is sent
-         from the Primus Machine.<br>
+          from the Primus Machine.<br>
 </div>
 
 <pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">

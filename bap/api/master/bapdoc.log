@@ -1,3 +1,9 @@
+cmdliner error: Undefined variable $(recipe.scm) in "Load the specified recipe. The $(docv) parameter specifies the\n  name of the recipe along with an optional colon separated list of\n  arguments. The $(docv) parameter has the following syntax:\n  $(b,<name> : <arg1>=<val1> : <arg2>=<val2> : ...).\n\n  The $(b,<name>) part could be either a path to a valid\n  recipe or the name of a recipe, that would be search in the recipe\n  search paths. A name may omit $(b,.recipe) or $(b,.scm) extensions\n  for brevity.\n\n  The valid representations of a recipe is either the recipe file\n  itself (i.e., a file consisting of a list of s-expressions), a\n  directory with a valid $(recipe.scm) file, or zip file, that\n  contains a valid recipe directory. See the $(b,RECIPES) section for\n  more information.\n\n  If a recipe is a zip file then it will be unpacked to a temporary\n  folder that will be removed after the program terminates. Otherwise,\n  all recipe resources will be used as is and won't be restored to\n  their previous state, e.g., if the input/output files were provided,\n  and they were modified, the modifications will persist."
+cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
+cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
+cmdliner error: Undefined variable $(recipe.scm) in "Load the specified recipe. The $(docv) parameter specifies the\n  name of the recipe along with an optional colon separated list of\n  arguments. The $(docv) parameter has the following syntax:\n  $(b,<name> : <arg1>=<val1> : <arg2>=<val2> : ...).\n\n  The $(b,<name>) part could be either a path to a valid\n  recipe or the name of a recipe, that would be search in the recipe\n  search paths. A name may omit $(b,.recipe) or $(b,.scm) extensions\n  for brevity.\n\n  The valid representations of a recipe is either the recipe file\n  itself (i.e., a file consisting of a list of s-expressions), a\n  directory with a valid $(recipe.scm) file, or zip file, that\n  contains a valid recipe directory. See the $(b,RECIPES) section for\n  more information.\n\n  If a recipe is a zip file then it will be unpacked to a temporary\n  folder that will be removed after the program terminates. Otherwise,\n  all recipe resources will be used as is and won't be restored to\n  their previous state, e.g., if the input/output files were provided,\n  and they were modified, the modifications will persist."
+cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
+cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
 Warning: can't render manpage for baptop
 Called as "false", got:
 
@@ -14,12 +20,6 @@ cmdliner error: unescaped '$' in "\n    $(b,--no-$mname)\n"
 cmdliner error: unescaped '$' in "\n    $(b,--no-$mname)\n"
 cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
 cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
-File "/home/ivg/.opam/dev/lib/bap/bap.mli", line 7621, characters 25-35:
-Warning 3: deprecated: Bil.result
-[since 2018-03] in favor of the Primus Framework
-File "/home/ivg/.opam/dev/lib/bap/bap.mli", line 7627, characters 26-36:
-Warning 3: deprecated: Bil.result
-[since 2018-03] in favor of the Primus Framework
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Data.S not found
@@ -191,6 +191,9 @@ Warning: Module or module type Regular.S not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
@@ -433,13 +436,13 @@ Warning: Element Graph.pp not found
 Warning: Module type Bap_primus.Std.Primus.Machine.Component not found
 Warning: Module or module type Comparable.S_plain not found
 Warning: Module or module type Comparable.S_plain not found
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2295, characters 24-43:
+File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2402, characters 24-43:
 Warning 3: deprecated: Primitives
 [since 2018-03] use [Closure]
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2295, characters 24-43:
+File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2402, characters 24-43:
 Warning 3: deprecated: Primitives
 [since 2018-03] use [Closure]
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2381, characters 30-40:
+File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2501, characters 30-40:
 Warning 3: deprecated: primitives
 [since 2018-03] use [closure]
 Warning: Module type Regular.S not found
@@ -854,6 +857,9 @@ Warning: Module or module type Regular.S not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found

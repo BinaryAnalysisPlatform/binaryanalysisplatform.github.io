@@ -365,7 +365,13 @@ returns a sequence of nodes in post order<br>
 
 <pre><span id="VALdom_frontier"><span class="keyword">val</span> dom_frontier</span> : <code class="type">(module Graphlib.Std.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       ?rev:bool -> 'c -> 'n <a href="Graphlib.Std.html#TYPEtree">Std.tree</a> -> 'n <a href="Graphlib.Std.html#TYPEfrontier">Std.frontier</a></code></pre><div class="info ">
 <code class="code">dom_frontier&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;g&nbsp;dom_tree</code> calculates dominance
-        frontiers for all nodes in a graph <code class="code">g</code>.<br>
+        frontiers for all nodes in a graph <code class="code">g</code>.
+<p>
+
+        The dominance frontier of a node <code class="code">d</code> is the set of all nodes <code class="code">n</code>
+        such that <code class="code">d</code> dominates an immediate predecessor of <code class="code">n</code>, but <code class="code">d</code> does
+        not strictly dominate <code class="code">n</code>. It is the set of nodes where <code class="code">d</code>'s
+        dominance stops.<br>
 </div>
 
 <pre><span id="VALstrong_components"><span class="keyword">val</span> strong_components</span> : <code class="type">(module Graphlib.Std.Graph with type edge = 'e and type node = 'n and type t = 'c) -><br>       'c -> 'n <a href="Graphlib.Std.html#TYPEpartition">Std.partition</a></code></pre><div class="info ">

@@ -894,7 +894,10 @@ appends a phi node
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALadd_word">add_word</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">add_word&nbsp;d&nbsp;x</code> extends the dictionary <code class="code">d</code> with the new word <code class="code">x</code>.
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.S.html#VALadd_writer">add_writer</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
 <code class="code">add_writer&nbsp;?desc&nbsp;~ver&nbsp;name&nbsp;writer</code> registers a new <code class="code">writer</code>
@@ -978,7 +981,7 @@ other names for the given subroutine.
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html#VALall">all</a> [<a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html">Bap_primus.Std.Primus.Lisp.Type.Spec</a>]</td>
 <td><div class="info">
 <code class="code">all&nbsp;t</code> specifies that a function accepts a variable
-          number of arguments all having type <code class="code">t</code>.
+              number of arguments all having type <code class="code">t</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALall">all</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
@@ -1261,6 +1264,12 @@ target-specific assembler string representing the instruction
 <td><div class="info">
 <code class="code">attach&nbsp;v&nbsp;r&nbsp;xs</code> establishes the relation <code class="code">r</code> between the
             value <code class="code">v</code> and every object <code class="code">x</code> in the set of objects <code class="code">xs</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap_taint.Std.Taint.html#VALattached">attached</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
+<td><div class="info">
+(attached (r,o,v) occurs when the relation <code class="code">r</code> is established
+        between <code class="code">o</code> and <code class="code">v</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html#VALattr_of_sexp">attr_of_sexp</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
@@ -2267,7 +2276,11 @@ one bit
 <tr><td><a href="Arm_types.html#VALbranch_insn_of_sexp">branch_insn_of_sexp</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALbuild">build</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">build&nbsp;d&nbsp;chars</code> returns a sequence of all words in the
+      dictionary <code class="code">d</code> that could be built from the sequence of characters <code class="code">chars</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugin.html#VALbundle">bundle</a> [<a href="Bap_plugins.Std.Plugin.html">Bap_plugins.Std.Plugin</a>]</td>
 <td><div class="info">
 <code class="code">bundle&nbsp;plugin</code> returns a plugin's bundle
@@ -2481,7 +2494,7 @@ updates the label
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.html#VALcheck">check</a> [<a href="Bap_primus.Std.Primus.Lisp.Type.html">Bap_primus.Std.Primus.Lisp.Type</a>]</td>
 <td><div class="info">
 <code class="code">check&nbsp;env&nbsp;prog</code> type checks program in the environment
-           <code class="code">env</code> and returns a list of errors.
+            <code class="code">env</code> and returns a list of errors.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Type.html#VALcheck">check</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
@@ -2719,6 +2732,12 @@ A human readable comment
 <code class="code">concat</code> is <code class="code">lift2&nbsp;<span class="constructor">Word</span>.concat</code>
 </div>
 </td></tr>
+<tr><td><a href="Bap_future.Std.Stream.html#VALconcat">concat</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
+<td><div class="info">
+<code class="code">concat&nbsp;ss</code> returns a stream that will produce elements from 
+        the input list of streams <code class="code">ss</code>.
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.S.html#VALconcat">concat</a> [<a href="Monads.Std.Monoid.S.html">Monads.Std.Monoid.S</a>]</td>
 <td><div class="info">
 <code class="code">concat&nbsp;xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code>
@@ -2745,6 +2764,13 @@ A human readable comment
 <td><div class="info">
 <code class="code">concat_map&nbsp;t&nbsp;p&nbsp;~f</code> substitute subterm <code class="code">c</code> of type <code class="code">t</code> in
         parent term <code class="code">p</code> with <code class="code">f&nbsp;c</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap_future.Std.Stream.html#VALconcat_merge">concat_merge</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
+<td><div class="info">
+<code class="code">concat_merge&nbsp;xs&nbsp;~f</code> builds a stream, that will 
+        produce elements from the input list and applies <code class="code">f</code> to all 
+        consecutive elements.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Jmp.html#VALcond">cond</a> [<a href="Bap.Std.Jmp.html">Bap.Std.Jmp</a>]</td>
@@ -2996,7 +3022,7 @@ lifts basic register to a ARM one
 </td></tr>
 <tr><td><a href="Graphlib.Std.Solution.html#VALcreate">create</a> [<a href="Graphlib.Std.Solution.html">Graphlib.Std.Solution</a>]</td>
 <td><div class="info">
-<code class="code">create&nbsp;constraints&nbsp;init</code> creates an initial approximation of a
+<code class="code">create&nbsp;constraints&nbsp;default</code> creates an initial approximation of a
         solution.
 </div>
 </td></tr>
@@ -3352,6 +3378,12 @@ formatter that sends debug messages
 def
 </div>
 </td></tr>
+<tr><td><a href="Graphlib.Std.Solution.html#VALdefault">default</a> [<a href="Graphlib.Std.Solution.html">Graphlib.Std.Solution</a>]</td>
+<td><div class="info">
+<code class="code">default&nbsp;s</code> return the default value assigned to all variables
+        not in the internal finite mapping.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Reconstructor.html#VALdefault">default</a> [<a href="Bap.Std.Reconstructor.html">Bap.Std.Reconstructor</a>]</td>
 <td><div class="info">
 <code class="code">default&nbsp;name&nbsp;roots</code> builds a reconstructor from given a
@@ -3438,6 +3470,13 @@ Default deprecation warning message, for easy deprecation of
 <td><div class="info">
 <code class="code">depth_first_visit&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">G</span>)&nbsp;~init&nbsp;visitor&nbsp;g</code> allows to
         specify visiting functions using object.
+</div>
+</td></tr>
+<tr><td><a href="Graphlib.Std.Solution.html#VALderive">derive</a> [<a href="Graphlib.Std.Solution.html">Graphlib.Std.Solution</a>]</td>
+<td><div class="info">
+<code class="code">derive&nbsp;s&nbsp;~f&nbsp;default</code> creates a new solution from an old one
+        with a new <code class="code">default</code> and where for each node <code class="code">n</code> in <code class="code">s</code>'s finite
+        map, if <code class="code">f&nbsp;n&nbsp;(get&nbsp;s&nbsp;n)&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;v</code> then <code class="code">n</code> maps to <code class="code">v</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugin.html#VALdesc">desc</a> [<a href="Bap_plugins.Std.Plugin.html">Bap_plugins.Std.Plugin</a>]</td>
@@ -3637,7 +3676,10 @@ data segment
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALempty">empty</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+an empty unscrambler that doesn't know any words
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graph.html#VALempty">empty</a> [<a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a>]</td>
 <td><div class="info">
 <code class="code">empty</code> is an empty graph
@@ -3877,6 +3919,26 @@ extra data segment #1
 <tr><td><a href="Bap.Std.Exp.html#VALeval">eval</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td><div class="info">
 <code class="code">eval&nbsp;x</code> evaluate expression <code class="code">x</code> to a value.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALeval_cond">eval_cond</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
+<td><div class="info">
+<code class="code">eval_cond&nbsp;v</code> occurs every time the <code class="code">cond</code> part of a jump is
+          evaluated.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Make.html#VALeval_fun">eval_fun</a> [<a href="Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a>]</td>
+<td><div class="info">
+<code class="code">eval_fun&nbsp;name&nbsp;args</code> calls a lisp function with the given
+            <code class="code">name</code>, that is the most specific to the current context
+            and is applicable to the specified list of arguments.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Make.html#VALeval_method">eval_method</a> [<a href="Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a>]</td>
+<td><div class="info">
+<code class="code">eval_method&nbsp;name&nbsp;args</code> invokes all methods with the given
+            <code class="code">name</code> that are applicable in the current context to the
+            specified list of arguments.
 </div>
 </td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugins.html#VALevents">events</a> [<a href="Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a>]</td>
@@ -4607,12 +4669,12 @@ fold implementation
 </td></tr>
 <tr><td><a href="Bap.Std.Exp.html#VALfold_consts">fold_consts</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td><div class="info">
-<code class="code">fold_consts</code> performs one step of constant evaluation.
+<code class="code">fold_consts&nbsp;x</code> performs constant folding of the expression <code class="code">x</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.html#VALfold_consts">fold_consts</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td><div class="info">
-<code class="code">fold_consts</code> evaluate constant expressions.
+<code class="code">fold_consts</code> evaluates constant expressions and statements.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Table.html#VALfold_intersections">fold_intersections</a> [<a href="Bap.Std.Table.html">Bap.Std.Table</a>]</td>
@@ -4912,6 +4974,30 @@ segment registers let bases
 </div>
 </td></tr>
 <tr><td align="left"><br>G</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALgcd">gcd</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">gcd&nbsp;x&nbsp;y</code> is the greatest common divisor of <code class="code">x</code> and <code class="code">y</code>
+        in the integers.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALgcd_exn">gcd_exn</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">gcd_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">gcd</code>, but will raise
+        an exception on error.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALgcdext">gcdext</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">gcdext&nbsp;x&nbsp;y</code> returns <code class="code">(g,&nbsp;s,&nbsp;t)</code> where <code class="code">g&nbsp;=&nbsp;gcd&nbsp;x&nbsp;y</code> and
+        <code class="code">g&nbsp;=&nbsp;s*x&nbsp;+&nbsp;t*y</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALgcdext_exn">gcdext_exn</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">gcdext_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">gcdext</code>, but will raise
+        an exception on error.
+</div>
+</td></tr>
 <tr><td><a href="X86_env.ModeVars.html#VALgdt">gdt</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
 <td><div class="info">
 Global Descriptor Table
@@ -4920,6 +5006,13 @@ Global Descriptor Table
 <tr><td><a href="Arm_env.html#VALge">ge</a> [<a href="Arm_env.html">Arm_env</a>]</td>
 <td><div class="info">
 <code class="code">ge</code> array of general registers
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Make.html#VALgenerate_index">generate_index</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.Make.html">Bap_primus.Std.Primus.Lisp.Doc.Make</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALget">get</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
+<td><div class="info">
+<code class="code">set&nbsp;a</code> loads a byte from the address <code class="code">a</code>
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALget">get</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
@@ -5362,7 +5455,7 @@ formatter that sends info messages
 <tr><td><a href="Bap_primus.Std.Primus.Machine.html#VALinit">init</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
 <code class="code">init</code> event occurs just after all components have been
-         initialized, and before the execution starts
+          initialized, and before the execution starts
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Component.html#VALinit">init</a> [<a href="Bap_primus.Std.Primus.Machine.Component.html">Bap_primus.Std.Primus.Machine.Component</a>]</td>
@@ -5482,7 +5575,7 @@ a queue of instructions disassembled in this step
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html#VALint">int</a> [<a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html">Bap_primus.Std.Primus.Lisp.Type.Spec</a>]</td>
 <td><div class="info">
 a machine integer - a word that has the same width as
-             <code class="code"><span class="constructor">Arch</span>.addr_size</code>
+              <code class="code"><span class="constructor">Arch</span>.addr_size</code>
 </div>
 </td></tr>
 <tr><td><a href="Ogre.Query.html#VALint">int</a> [<a href="Ogre.Query.html">Ogre.Query</a>]</td>
@@ -5555,10 +5648,12 @@ a machine integer - a word that has the same width as
         and edges from this graphs.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#VALinterrupt">interrupt</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALinterrupt">interrupt</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
 <td><div class="info">
 <code class="code">interrupt&nbsp;n</code> occurs on the machine interrupt <code class="code">n</code> (aka CPU
-         exception)
+          exception)
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Symtab.html#VALintersecting">intersecting</a> [<a href="Bap.Std.Symtab.html">Bap.Std.Symtab</a>]</td>
@@ -5637,7 +5732,11 @@ invariant must be always true while the term is evaluated
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALis_buildable">is_buildable</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">is_buildable&nbsp;d&nbsp;chars</code> returns <code class="code"><span class="keyword">true</span></code> if in the dictionary <code class="code">d</code>
+      exists a word that can be built from the given characters.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.CPU.html#VALis_cf">is_cf</a> [<a href="Bap.Std.CPU.html">Bap.Std.CPU</a>]</td>
 <td><div class="info">
 <code class="code">is_cf&nbsp;x&nbsp;=&nbsp;<span class="constructor">Var</span>.same&nbsp;x&nbsp;cf</code>
@@ -5972,6 +6071,12 @@ the instruction performs a non-regular control flow
 jump to the specified memory and continue disassembly in it.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Interpreter.html#VALjumping">jumping</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
+<td><div class="info">
+<code class="code">jumping&nbsp;(cond,dest)</code> happens just before a jump to <code class="code">dest</code>
+          is taken under the specified condition <code class="code">cond</code>.
+</div>
+</td></tr>
 <tr><td align="left"><br>K</td></tr>
 <tr><td><a href="Bap_strings_index.Persistent.S.html#VALkey">key</a> [<a href="Bap_strings_index.Persistent.S.html">Bap_strings_index.Persistent.S</a>]</td>
 <td><div class="info">
@@ -6078,6 +6183,18 @@ the width of keys in the index.
 <code class="code">lcg&nbsp;~min&nbsp;~max&nbsp;seed</code> a linear congruential generator, that
             produces a sequence of pseudorandom values that lies in the
             range between <code class="code">min</code> and <code class="code">max</code> (all inclusive).
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALlcm">lcm</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">lcm&nbsp;x&nbsp;y</code> is the least common multiple of <code class="code">x</code> and <code class="code">y</code>
+        in the integers.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html#VALlcm_exn">lcm_exn</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<code class="code">lcm_exn&nbsp;x&nbsp;y</code> is the same as <code class="code">lcm</code>, but will raise
+        an exception on error.
 </div>
 </td></tr>
 <tr><td><a href="X86_env.ModeVars.html#VALldt">ldt</a> [<a href="X86_env.ModeVars.html">X86_env.ModeVars</a>]</td>
@@ -6427,7 +6544,7 @@ see <code class="code"><span class="constructor">Word</span>.lnot</code>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALload">load</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
 <td><div class="info">
-<code class="code">load&nbsp;addr</code> loads a byte from the given address
+<code class="code">load&nbsp;a</code> loads a byte from the given address <code class="code">a</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#VALload">load</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
@@ -7066,7 +7183,7 @@ a write access to a memory cell
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.html#VALmessage">message</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
 <code class="code">message</code> observation occurs every time a message is sent
-         from the Primus Machine.
+          from the Primus Machine.
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Event.Log.html#VALmessage">message</a> [<a href="Bap.Std.Event.Log.html">Bap.Std.Event.Log</a>]</td>
@@ -7146,6 +7263,11 @@ see <code class="code"><span class="constructor">Word</span>.modulo</code>
 <td></td></tr>
 <tr><td><a href="Arm_utils.html#VALmsb">msb</a> [<a href="Arm_utils.html">Arm_utils</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Value.Make.html#VALmul">mul</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
+<td><div class="info">
+see <code class="code"><span class="constructor">Word</span>.mul</code>
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.Base.html#VALmul">mul</a> [<a href="Bap.Std.Integer.Base.html">Bap.Std.Integer.Base</a>]</td>
 <td><div class="info">
 <code class="code">mul&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;*&nbsp;y</code>
@@ -7470,7 +7592,7 @@ A subroutine will not return (either loop infinitely or abort
 </td></tr>
 <tr><td><a href="Bap.Std.Exp.html#VALnormalize">normalize</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
 <td><div class="info">
-<code class="code">normalize</code> ensures no-lets and normalized-memory.
+<code class="code">normalize&nbsp;x</code> ensures no-lets and normalized-memory (BNF2).
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Bil.Trie.html#VALnormalize">normalize</a> [<a href="Bap.Std.Bil.Trie.html">Bap.Std.Bil.Trie</a>]</td>
@@ -7752,7 +7874,11 @@ Creating
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALof_file">of_file</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_file&nbsp;name</code> reads the dictionary from file <code class="code">name</code>,
+      each word is on a separate line.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Disasm.With_exn.html#VALof_file">of_file</a> [<a href="Bap.Std.Disasm.With_exn.html">Bap.Std.Disasm.With_exn</a>]</td>
 <td><div class="info">
 see <a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Disasm</span>.of_file</code></a>
@@ -7770,7 +7896,12 @@ see <a href="Bap.Std.Disasm.html#VALof_file"><code class="code"><span class="con
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html#VALof_files">of_files</a> [<a href="Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">of_files&nbsp;names</code> reads the dictionary from all provided file
+      <code class="code">names</code>, each file should be a sequence of newline separated
+      words.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Rooter.html#VALof_image">of_image</a> [<a href="Bap.Std.Rooter.html">Bap.Std.Rooter</a>]</td>
 <td><div class="info">
 <code class="code">of_image&nbsp;img</code> create a rooter that will use existing symbol
@@ -7987,7 +8118,11 @@ offset
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALonce">once</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">once&nbsp;xs</code> creates a stream that will at most contain the next value 
+        produced by <code class="code">xs</code> and nothing more.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html#VALone">one</a> [<a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html">Bap_primus.Std.Primus.Lisp.Type.Spec</a>]</td>
 <td><div class="info">
 <code class="code">one&nbsp;t</code> specifies that a function accepts one argument
@@ -8243,9 +8378,11 @@ returns a sequence of nodes in post order
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Message.html#VALpp">pp</a> [<a href="Bap_primus.Std.Primus.Lisp.Message.html">Bap_primus.Std.Primus.Lisp.Message</a>]</td>
 <td><div class="info">
 <code class="code">pp&nbsp;ppf&nbsp;msg</code> prints the message into the specified
-        formatter <code class="code">ppf</code>.
+            formatter <code class="code">ppf</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Element.html#VALpp">pp</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.Element.html">Bap_primus.Std.Primus.Lisp.Doc.Element</a>]</td>
+<td></td></tr>
 <tr><td><a href="Graphlib.Std.Group.html#VALpp">pp</a> [<a href="Graphlib.Std.Group.html">Graphlib.Std.Group</a>]</td>
 <td><div class="info">
 <code class="code">pp&nbsp;pp_elem&nbsp;g</code> prints group <code class="code">g</code> using element printer <code class="code">pp_elem</code>
@@ -9336,6 +9473,24 @@ takes a word and converts it to an exp that is the offset for some
         to which a given address belongs.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALresolve_addr">resolve_addr</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
+<td><div class="info">
+<code class="code">resolve_addr&nbsp;name</code> returns the address associated with the
+            given <code class="code">name</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALresolve_symbol">resolve_symbol</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
+<td><div class="info">
+<code class="code">resolve_symbol&nbsp;name</code> returns the symbolic name associated
+            with the given <code class="code">name</code>.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html#VALresolve_tid">resolve_tid</a> [<a href="Bap_primus.Std.Primus.Linker.Make.html">Bap_primus.Std.Primus.Linker.Make</a>]</td>
+<td><div class="info">
+<code class="code">resolve_tid&nbsp;name</code> returns the term identifier associated
+            with the given <code class="code">name</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_strings_detector.html#VALresult">result</a> [<a href="Bap_strings_detector.html">Bap_strings_detector</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type_mapper.Search.html#VALresult">result</a> [<a href="Bap_c_type_mapper.Search.html">Bap_c_type_mapper.Search</a>]</td>
@@ -9821,6 +9976,11 @@ tags a segment
 <code class="code">set&nbsp;()</code> set default options for <code class="code">bapbuild</code>.
 </div>
 </td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALset">set</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
+<td><div class="info">
+<code class="code">set&nbsp;a&nbsp;x</code> stores the byte <code class="code">x</code> at the address <code class="code">a</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html#VALset">set</a> [<a href="Bap_primus.Std.Primus.Env.Make.html">Bap_primus.Std.Primus.Env.Make</a>]</td>
 <td><div class="info">
 <code class="code">set&nbsp;var&nbsp;value</code> binds a variable <code class="code">var</code> to the given <code class="code">value</code>.
@@ -10242,7 +10402,12 @@ an image specification in OGRE
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALsplit">split</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">split&nbsp;xs&nbsp;~f</code> returns a pair of streams, where the first stream 
+        contains <code class="code">fst&nbsp;(f&nbsp;x)</code> for each <code class="code">x</code> in <code class="code">xs</code> and the second stream
+        contains <code class="code">snd&nbsp;(f&nbsp;x)</code> for each <code class="code">x</code> in <code class="code">xs</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Blk.html#VALsplit_after">split_after</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
 <td><div class="info">
 <code class="code">split_after&nbsp;blk&nbsp;def</code> creates two new blocks, where the first
@@ -10364,7 +10529,7 @@ returns an attribute storage of the project
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html#VALstore">store</a> [<a href="Bap_primus.Std.Primus.Memory.Make.html">Bap_primus.Std.Primus.Memory.Make</a>]</td>
 <td><div class="info">
-<code class="code">store&nbsp;addr&nbsp;x</code> stores a byte <code class="code">x</code> at the given address <code class="code">addr</code>
+<code class="code">store&nbsp;a&nbsp;x</code> stores the byte <code class="code">x</code> at the address <code class="code">a</code>.
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html#VALstore">store</a> [<a href="Bap_primus.Std.Primus.Interpreter.Make.html">Bap_primus.Std.Primus.Interpreter.Make</a>]</td>
@@ -11268,7 +11433,12 @@ triggers a stream of occurences of this observation
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALunzip">unzip</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">unzip&nbsp;xs</code> creates a pair of streams, where the first stream contains
+        <code class="code">fst&nbsp;x</code> for each <code class="code">x</code> in <code class="code">xs</code> and the second stream contains <code class="code">snd&nbsp;x</code> for
+        each <code class="code">x</code> in <code class="code">xs</code>.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html#VALupdate">update</a> [<a href="Bap_primus.Std.Primus.Machine.State.html">Bap_primus.Std.Primus.Machine.State</a>]</td>
 <td><div class="info">
 <code class="code">update&nbsp;state&nbsp;~f</code> updates a state using function <code class="code">f</code>.
@@ -11795,7 +11965,11 @@ zero flag
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html#VALzip">zip</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
-<td></td></tr>
+<td><div class="info">
+<code class="code">zip&nbsp;xs&nbsp;ys</code> creates a steam that will produce an element <code class="code">(x,y)</code> 
+        every time both <code class="code">xs</code> and <code class="code">ys</code> produce elements <code class="code">x</code> and <code class="code">y</code> respectively
+</div>
+</td></tr>
 </table>
 </body>
 </html>

@@ -180,6 +180,12 @@ AST transformation.
         This is effectively the same as make the <code class="code"><span class="constructor">Load</span></code> constructor to
         have type (<code class="code"><span class="constructor">Load</span>&nbsp;(var,exp,endian,size)</code>).</li>
 </ul>
+<ul>
+<li>No load or store expressions in the following positions:
+          1. the right-hand side of the let expression;
+          2. address or value subexpressions of the store expression;
+          3. storage or address subexpressions of the load expression;</li>
+</ul>
 
         The BIL Second Normalized Form (BNF2) is a subset of the BNF1
         (in a sense that all BNF2 programs are also in BNF1). This form

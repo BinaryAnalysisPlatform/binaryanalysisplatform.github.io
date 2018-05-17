@@ -176,6 +176,20 @@ Make(Machine) creates a Lisp machine embedded into the
             <code class="code"><span class="constructor">Runtime_error</span></code>.<br>
 </div>
 
+<pre><span id="VALeval_fun"><span class="keyword">val</span> eval_fun</span> : <code class="type">string -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> Machine.t</code></pre><div class="info ">
+<code class="code">eval_fun&nbsp;name&nbsp;args</code> calls a lisp function with the given
+            <code class="code">name</code>, that is the most specific to the current context
+            and is applicable to the specified list of arguments.<br>
+<b>Since</b> 1.5<br>
+</div>
+
+<pre><span id="VALeval_method"><span class="keyword">val</span> eval_method</span> : <code class="type">string -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list -> unit Machine.t</code></pre><div class="info ">
+<code class="code">eval_method&nbsp;name&nbsp;args</code> invokes all methods with the given
+            <code class="code">name</code> that are applicable in the current context to the
+            specified list of arguments.<br>
+<b>Since</b> 1.5<br>
+</div>
+
 <pre><span id="VALlink_primitives"><span class="keyword">val</span> link_primitives</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprimitives">Std.Primus.Lisp.primitives</a> -> unit Machine.t</code></pre><div class="info ">
 <code class="code">link_primitives&nbsp;prims</code> provides the primitives <code class="code">prims</code><br>
 </div>

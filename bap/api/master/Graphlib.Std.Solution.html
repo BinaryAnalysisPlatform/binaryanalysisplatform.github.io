@@ -107,14 +107,21 @@ an abstract representation of a solution<br>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('n, 'd, 'a) Std.Map.t -> 'd -> ('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;constraints&nbsp;init</code> creates an initial approximation of a
-        solution. The <code class="code">init</code> parameters defines the initial value of
-        all variables unspecified in the initial constraint.<br>
+<code class="code">create&nbsp;constraints&nbsp;default</code> creates an initial approximation of a
+        solution. The <code class="code">default</code> parameter defines the default value of
+        all variables unspecified in the initial constraints.<br>
 </div>
 
 <pre><span id="VALiterations"><span class="keyword">val</span> iterations</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> int</code></pre><div class="info ">
 <code class="code">iterations&nbsp;s</code> returns the total number of iterations that was
         made to obtain the current solution.<br>
+</div>
+
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> 'd</code></pre><div class="info ">
+<code class="code">default&nbsp;s</code> return the default value assigned to all variables
+        not in the internal finite mapping. This is usually a bottom
+        or top value, depending on whether iteration increases or
+        decreases.<br>
 </div>
 
 <pre><span id="VALis_fixpoint"><span class="keyword">val</span> is_fixpoint</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
@@ -125,5 +132,11 @@ an abstract representation of a solution<br>
 
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> 'n -> 'd</code></pre><div class="info ">
 <code class="code">get&nbsp;s&nbsp;x</code> returns a value of <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALderive"><span class="keyword">val</span> derive</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -><br>       f:('n -> 'd -> 'a option) -> 'a -> ('n, 'a) <a href="Graphlib.Std.Solution.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">derive&nbsp;s&nbsp;~f&nbsp;default</code> creates a new solution from an old one
+        with a new <code class="code">default</code> and where for each node <code class="code">n</code> in <code class="code">s</code>'s finite
+        map, if <code class="code">f&nbsp;n&nbsp;(get&nbsp;s&nbsp;n)&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;v</code> then <code class="code">n</code> maps to <code class="code">v</code>.<br>
 </div>
 </body></html>

@@ -135,8 +135,26 @@
             associated with any code fragment.<br>
 </div>
 
+<pre><span id="VALresolve_addr"><span class="keyword">val</span> resolve_addr</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       <a href="Bap.Std.html#TYPEaddr">Std.addr</a> option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">resolve_addr&nbsp;name</code> returns the address associated with the
+            given <code class="code">name</code>.<br>
+</div>
+
+<pre><span id="VALresolve_symbol"><span class="keyword">val</span> resolve_symbol</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       string option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">resolve_symbol&nbsp;name</code> returns the symbolic name associated
+            with the given <code class="code">name</code>.<br>
+<b>Since</b> 1.5.0<br>
+</div>
+
+<pre><span id="VALresolve_tid"><span class="keyword">val</span> resolve_tid</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       <a href="Bap.Std.html#TYPEtid">Std.tid</a> option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<code class="code">resolve_tid&nbsp;name</code> returns the term identifier associated
+            with the given <code class="code">name</code>.<br>
+<b>Since</b> 1.5.0<br>
+</div>
+
 <pre><span id="VALis_linked"><span class="keyword">val</span> is_linked</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -> bool <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">is_linked&nbsp;name</code> computes to <code class="code"><span class="keyword">true</span></code> if the <code class="code">name</code> is
             associated with some code.<br>
+<b>Since</b> 1.5.0<br>
 </div>
 </body></html>

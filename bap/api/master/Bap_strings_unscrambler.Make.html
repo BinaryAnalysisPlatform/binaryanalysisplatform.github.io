@@ -87,7 +87,23 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap_strings_unscrambler.Make.html">Bap_strings_unscrambler.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">A</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_strings_unscrambler.Alphabet.html">Alphabet</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_strings_unscrambler.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><table border="0" cellpadding="3" width="100%">
+<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">A</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_strings_unscrambler.Alphabet.html">Alphabet</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_strings_unscrambler.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<code class="code"><span class="constructor">Make</span>(<span class="constructor">Alphabet</span>)</code> creates an unscrambler for the given alphabet.
+<p>
+
+    The unscrambler will build all words from the provided sequence of
+    characters, essentially it is the same as playing scrabble. For
+    example, from characters <code class="code">h,e,l,l,o</code> it will build words "hell",
+    "hello", "ell", "hoe", and so on, provided that they are known to
+    the unscrambler, i.e., present in its dictionary.
+<p>
+
+    The unscrambler requires to know the alphabet of the language
+    beforehand, because it uses efficient trie-like representation of
+    the dictionary that enables O(1) search for words (O(1) in terms
+    of the dictionary size).<br>
+</div>
+<table border="0" cellpadding="3" width="100%">
 <tr>
 <td align="left" valign="top" width="1%%"><b>Parameters: </b></td>
 <td>
@@ -107,4 +123,34 @@
 
 
 
+
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a></code></pre><div class="info ">
+an empty unscrambler that doesn't know any words<br>
+</div>
+
+<pre><span id="VALof_file"><span class="keyword">val</span> of_file</span> : <code class="type">string -> <a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_file&nbsp;name</code> reads the dictionary from file <code class="code">name</code>,
+      each word is on a separate line. (the standard linux dictionary
+      file format)<br>
+</div>
+
+<pre><span id="VALof_files"><span class="keyword">val</span> of_files</span> : <code class="type">string list -> <a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">of_files&nbsp;names</code> reads the dictionary from all provided file
+      <code class="code">names</code>, each file should be a sequence of newline separated
+      words.<br>
+</div>
+
+<pre><span id="VALadd_word"><span class="keyword">val</span> add_word</span> : <code class="type"><a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a> -> string -> <a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">add_word&nbsp;d&nbsp;x</code> extends the dictionary <code class="code">d</code> with the new word <code class="code">x</code>.<br>
+</div>
+
+<pre><span id="VALbuild"><span class="keyword">val</span> build</span> : <code class="type"><a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a> -> string -> string Std.Sequence.t</code></pre><div class="info ">
+<code class="code">build&nbsp;d&nbsp;chars</code> returns a sequence of all words in the
+      dictionary <code class="code">d</code> that could be built from the sequence of characters <code class="code">chars</code><br>
+</div>
+
+<pre><span id="VALis_buildable"><span class="keyword">val</span> is_buildable</span> : <code class="type"><a href="Bap_strings_unscrambler.Make.html#TYPEt">t</a> -> string -> bool</code></pre><div class="info ">
+<code class="code">is_buildable&nbsp;d&nbsp;chars</code> returns <code class="code"><span class="keyword">true</span></code> if in the dictionary <code class="code">d</code>
+      exists a word that can be built from the given characters.<br>
+</div>
 </body></html>

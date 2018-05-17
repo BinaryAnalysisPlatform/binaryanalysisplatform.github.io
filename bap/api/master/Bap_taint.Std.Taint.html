@@ -111,6 +111,11 @@ Each taint represents an abstract object that we would like
         to track.
 </div>
 
+<pre><span id="VALattached"><span class="keyword">val</span> attached</span> : <code class="type">(<a href="Bap_taint.Std.Taint.Rel.html#TYPEt">Rel.t</a> * <a href="Bap_taint.Std.Taint.Object.html#TYPEt">Object.t</a> *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+(attached (r,o,v) occurs when the relation <code class="code">r</code> is established
+        between <code class="code">o</code> and <code class="code">v</code><br>
+</div>
+
 <pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Tracker.html">Tracker</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Tracker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
 Taint tracker control module.
 </div>

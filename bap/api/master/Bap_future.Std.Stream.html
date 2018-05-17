@@ -318,6 +318,43 @@ A stream of elements.
         values xs, producing a stream of results.<br>
 </div>
 
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> list -> 'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">concat&nbsp;ss</code> returns a stream that will produce elements from 
+        the input list of streams <code class="code">ss</code>. The ordering of the elements
+        of different streams is unspecified, though it is guaranteed
+        that elements of the same stream will preserve their ordering.<br>
+</div>
+
+<pre><span id="VALconcat_merge"><span class="keyword">val</span> concat_merge</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> list -><br>       f:('a -> 'a -> 'a) -> 'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">concat_merge&nbsp;xs&nbsp;~f</code> builds a stream, that will 
+        produce elements from the input list and applies <code class="code">f</code> to all 
+        consecutive elements. The ordering of the input list does not 
+        mandate the ordering of elemenets in the output stream, and is
+        undefined. See <code class="code">concat</code> for more information.<br>
+</div>
+
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       f:('a -> 'b * 'c) -> 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * 'c <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">split&nbsp;xs&nbsp;~f</code> returns a pair of streams, where the first stream 
+        contains <code class="code">fst&nbsp;(f&nbsp;x)</code> for each <code class="code">x</code> in <code class="code">xs</code> and the second stream
+        contains <code class="code">snd&nbsp;(f&nbsp;x)</code> for each <code class="code">x</code> in <code class="code">xs</code>.<br>
+</div>
+
+<pre><span id="VALzip"><span class="keyword">val</span> zip</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -> ('a * 'b) <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">zip&nbsp;xs&nbsp;ys</code> creates a steam that will produce an element <code class="code">(x,y)</code> 
+        every time both <code class="code">xs</code> and <code class="code">ys</code> produce elements <code class="code">x</code> and <code class="code">y</code> respectively<br>
+</div>
+
+<pre><span id="VALunzip"><span class="keyword">val</span> unzip</span> : <code class="type">('a * 'b) <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">unzip&nbsp;xs</code> creates a pair of streams, where the first stream contains
+        <code class="code">fst&nbsp;x</code> for each <code class="code">x</code> in <code class="code">xs</code> and the second stream contains <code class="code">snd&nbsp;x</code> for
+        each <code class="code">x</code> in <code class="code">xs</code>. Essentially, the same as <code class="code">split&nbsp;~f:ident</code><br>
+</div>
+
+<pre><span id="VALonce"><span class="keyword">val</span> once</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -> 'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<code class="code">once&nbsp;xs</code> creates a stream that will at most contain the next value 
+        produced by <code class="code">xs</code> and nothing more.<br>
+</div>
+
 <pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       init:'b -> f:('b -> 'a -> 'c option * 'b) -> 'c <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">parse&nbsp;ss&nbsp;~init&nbsp;~f</code> parses stream <code class="code">ss</code> and builds new stream
         <code class="code">ss'</code>. Function <code class="code">f</code> is applied to each consecutive element of

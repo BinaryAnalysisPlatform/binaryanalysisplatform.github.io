@@ -130,4 +130,20 @@ The Interval Tree Interface.
 <code class="code"><span class="constructor">Make</span>(<span class="constructor">Interval</span>)</code> create an abstract interval tree data type
         that uses abstract <code class="code"><span class="constructor">Interval</span></code>.
 </div>
+
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Interval_tree.Interval_binable.html">Interval_binable</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Interval_tree.Interval_binable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Binable Abstract Interval.
+</div>
+
+<pre><span class="keyword">module type</span> <a href="Bap.Std.Interval_tree.S_binable.html">S_binable</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Interval_tree.S_binable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Binable Interval Tree.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Interval_tree.Make_binable.html">Make_binable</a> <code class="code">(</code><code class="code"><span class="constructor">Interval</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap.Std.Interval_tree.Interval_binable.html">Interval_binable</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Bap.Std.Interval_tree.S_binable.html">S_binable</a></code><code class="type"> 
+      with type key := Interval.t
+       and type point := Interval.point</code></pre><div class="info">
+<code class="code"><span class="constructor">Make_binable</span>(<span class="constructor">Interval</span>)</code> create an abstract interval tree data type
+        that uses abstract <code class="code"><span class="constructor">Interval</span></code> and can be serialized via the Binable
+        interface.
+</div>
 </body></html>
