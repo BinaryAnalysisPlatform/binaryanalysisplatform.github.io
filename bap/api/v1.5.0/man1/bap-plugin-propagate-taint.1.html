@@ -1,0 +1,100 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of propagate-taint</TITLE>
+</HEAD><BODY>
+<H1>propagate-taint</H1>
+Section: Propagate-taint Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+propagate&#45;taint &#45; propagate taints through a program
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>propagate&#45;taint</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+A taint propagation framework, that uses microexecution to propagate the taint through a program&#46; The execution is perfomed using the ConquEror Engine, that is short for Concrete Evaluation with Errors&#46; This execution engine allows to run incomplete programs with an unspecified user input&#46; Moreover, to increase the coverage it may take infeasible paths&#46;
+<P>
+
+The taint is propagated from a seed to its maximum extent&#46; The seed is a definition point that is marked with a `Taint&#46;reg` or `Taint&#46;ptr` tag&#46; A usual way of using the framework, would be to use one or more passes that marks points of interest with a taint seed, then to use the `propagate&#45;taint` pass to propagate the taint, and, finally, to use a pass that will collect and analyze the result&#46;
+<P>
+
+The microexecution is performed over a lifted program using bap&#45;microx library&#46; Memory reads are intercepted and redirected to program image, if possible (for static data), otherwise they are concretized&#46; All other inputs, like reads from unknown registers or user input are also concretized&#46; Several concretization policies are provided:
+<P>
+
+<PRE>
+
+      &#45; Const &#45; all unknown values are concretized to a specified constant;
+      &#45; Random &#45; a random value is picked from a value domain;
+      &#45; Range &#45; a random value is picked from a specified range&#46;
+</PRE>
+
+<P>
+
+By default, the microexecution engine tries to visit all program branches&#46; During the execution, it will record missed branches as checkpoints&#46; When there is nothing more to explore, it will backtrack to a stored checkpoint, restoring the execution state at this program point, and continue the execution&#46; Of course, in this case the state will contradict with a path constraint&#46; In a deterministic mode the bactracking mechanism is disabled&#46; In this mode, no checkpoints are recorded, and whenever the interpreter requests a backtracking, it will instead return from a current procedure&#46;
+<P>
+
+The maximum length of an execution path is limited with some constant number of jumps (basic blocks)&#46; Also, a loop escaping mechanism, will detect loops and bail out of them after a specified amount of iterations&#46; In the deterministic mode it will just return from a procedure, otherwise, it will backtrack&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;deterministic</B><DD>
+Run in a deterministic mode&#46; In this mode we will follow only one execution path, without backtracking, giving a more feasable result, but much less coverage
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;interesting</B>=<I>VAL</I><DD>
+Look only at specified functions
+<DT><B>&#45;&#45;max&#45;iterations</B>=<I>N</I> (absent=10)<DD>
+Limit loop to <I>N</I> iterations
+<DT><B>&#45;&#45;max&#45;trace</B>=<I>BLOCKS</I> (absent=1000000)<DD>
+Limit maximum trace length to <I>BLOCKS</I>
+<DT><B>&#45;&#45;mem&#45;value</B>=<I>VAL</I> (absent=random)<DD>
+Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined memory locations will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
+<DT><B>&#45;&#45;print&#45;coverage</B><DD>
+print coverage [debug]
+<DT><B>&#45;&#45;random&#45;seed</B>=<I>VAL</I><DD>
+Initialize random number generator with the given seed
+<DT><B>&#45;&#45;reg&#45;value</B>=<I>VAL</I> (absent=random)<DD>
+Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined registers will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>bap&#45;plugin&#45;<A HREF="../man1/taint.1.html">taint</A></B>(1), <B>bap&#45;plugin&#45;map&#45;<A HREF="../man1/terms.1.html">terms</A></B>(1)
+<P>
+
+<B>tags:</B> dataflow, pass, taint
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:33:15 GMT, November 12, 2018
+</BODY>
+</HTML>

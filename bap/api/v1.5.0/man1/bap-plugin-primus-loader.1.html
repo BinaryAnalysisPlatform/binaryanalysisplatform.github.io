@@ -1,0 +1,67 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-loader</TITLE>
+</HEAD><BODY>
+<H1>primus-loader</H1>
+Section: Primus-loader Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus&#45;loader &#45; generic program loader for Primus
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus&#45;loader</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Loads a binary and sets up the environment&#46; This loader is generic and sets things in an architecture independent way&#46; The loading process is finished by the backend (target specific) loaders if necessary&#46; The loader setups stack, prepares a callframe for the main function, fills it the environment and command line arguments&#46; Finally it loads memory segments and allocates BSS sections&#46; It also initializes several variables, that are usually defined by C programs &#45; the <B>environ</B> variable points to the list of environment variables, <B>endp</B> points to the first address past the end of the last loaded segment, and <B>brk</B> is the program break
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;stack&#45;base</B>=<I>VAL</I> (absent=1073741824)<DD>
+default address of the stack base
+<DT><B>&#45;&#45;stack&#45;size</B>=<I>VAL</I> (absent=8388608)<DD>
+generic program loader for Primus
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>bap&#45;plugin&#45;primus&#45;<A HREF="../man1/x86.1.html">x86</A></B>(1), <B><A HREF="../man2/brk.2.html">brk</A></B>(2), <B><A HREF="../man3/end.3.html">end</A></B>(3)
+<P>
+
+<B>tags:</B> abi, loader, primus
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:33:08 GMT, November 12, 2018
+</BODY>
+</HTML>

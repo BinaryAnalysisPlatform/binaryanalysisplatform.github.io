@@ -1,0 +1,77 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-propagate-taint</TITLE>
+</HEAD><BODY>
+<H1>primus-propagate-taint</H1>
+Section: Primus-propagate-taint Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus&#45;propagate&#45;taint &#45; a compatibility layer between different taint analysis frameworks
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus&#45;propagate&#45;taint</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+This plugin implements a compatibility layer between the new Primus Taint Analysis Framework and the old taint propagation framework (the <B>propagate&#45;taint</B> plugin)&#46; The new framework uses the pubslisher&#45;subscriber pattern, provides sanitization operations, and tracks the taints liveness, that enables more conventional and online taint analysis&#46; However it represents taints as abstract objects associated with computations (values), while the old taint propagation framework uses a pipeline approach, with taints represented as attributes attached to program terms&#46; Since the new representation of taints is much more precise and there is no bijection between terms and values, this layer will loose information due to this impendance mismatch&#46; The trade&#45;offs of the translation and described below&#46; New analysis, if possible, shall rely on the new framework&#46;
+<P>
+
+The translation is achieved by mapping the <B>tainted&#45;ptr</B> and <B>tainted&#45;reg</B> attributes to corresponding taint introduction operations of the Primus Taint Analysis Framework, and by reflecting the taint state of the analysis into the <B>tainted&#45;regs</B> and <B>tainted&#45;ptrs</B> attributes&#46; Both steps are optional, and could be enabled and disabled individually&#46;
+<P>
+
+Since an attribute is attached to the whole term not to an individual expression or value we need some rule that prescribes how terms maps to values&#46; If a term is marked as a term that introduces a taint, then we assume that a value, computed in this term, references the tainted object either directly (in case of <B>tainted&#45;reg</B>) or indirectly (in case of <B>tainted&#45;ptr</B>)&#46; We always taint a value contained in the left&#45;hand side of a definition&#46; In addition, we also try to taint values on the right hand side&#46; If there is a load or store operation, then we taint address as a pointer to the object that will track, if it was marked with the <B>tainted&#45;reg</B> attribute&#46; If it was marked with the <B>tainted&#45;ptr</B> attribute then we dereference this pointer and taint the dereferenced address&#46; If the right hand side is an abritrary expression, then we assume that all variables that are used in this expression contain values that are referencing directly or indirectly the tainted object&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;from&#45;attributes</B><DD>
+Introduces taint in terms that are marked with the <B>tainted&#45;ptr</B> and <B>tainted&#45;reg</B> attribute&#46; 
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;no&#45;marks</B><DD>
+Disables the projection of the taint engine state to term attributes&#46; The option is only valid when the <B>run</B> option is specified&#46; This option is left for compatibility with the old interface and is not compatible with the <B>from&#45;attributes</B> or <B>to&#45;attrbutes</B> options&#46; It is an error to mix options from the new and old interfaces&#46; 
+<DT><B>&#45;&#45;run</B><DD>
+Enables propagating taint from term attributes and back to attributes, unless the latter is disabled with the <B>no&#45;marks</B> option&#46; This option is left for compatibility with the old interface and is not compatible with the <B>from&#45;attributes</B> or <B>to&#45;attrbutes</B> options&#46; It is an error to mix options from the new and old interfaces&#46; 
+<DT><B>&#45;&#45;to&#45;attributes</B><DD>
+Reflects the state of the taint propagation engine to the <B>tainted&#45;ptrs</B> and <B>tainted&#45;regs</B> term attributes&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>home:</B> <I>www:bap&#46;ece&#46;cmu&#46;edu</I>
+<P>
+
+<B>tags:</B> dataflow, pass, taint, primus
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:33:13 GMT, November 12, 2018
+</BODY>
+</HTML>

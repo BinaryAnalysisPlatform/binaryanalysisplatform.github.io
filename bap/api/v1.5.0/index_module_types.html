@@ -1,0 +1,506 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Bap_taint" rel="Chapter" href="Bap_taint.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
+<link title="Bare" rel="Chapter" href="Bare.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="X86_asm_reg" rel="Chapter" href="X86_asm_reg.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_llvm_env" rel="Chapter" href="X86_llvm_env.html">
+<link title="X86_asm" rel="Chapter" href="X86_asm.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="X86_asm_reg_types" rel="Chapter" href="X86_asm_reg_types.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html">
+<link title="Bap_llvm_loader" rel="Chapter" href="Bap_llvm_loader.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_strings_index" rel="Chapter" href="Bap_strings_index.html">
+<link title="Bap_strings_scanner" rel="Chapter" href="Bap_strings_scanner.html">
+<link title="Bap_strings" rel="Chapter" href="Bap_strings.html">
+<link title="Bap_strings_detector" rel="Chapter" href="Bap_strings_detector.html">
+<link title="Bap_strings_unscrambler" rel="Chapter" href="Bap_strings_unscrambler.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><title>BAR: BAP Annotated Reference : Index of module types</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of module types</h1>
+<table>
+<tr><td align="left"><br>A</td></tr>
+<tr><td><a href="Bap_strings_unscrambler.Alphabet.html">Alphabet</a> [<a href="Bap_strings_unscrambler.html">Bap_strings_unscrambler</a>]</td>
+<td><div class="info">
+symbol encoding
+</div>
+</td></tr>
+<tr><td align="left"><br>B</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Iterator.Base.html">Base</a> [<a href="Bap_primus.Std.Primus.Iterator.html">Bap_primus.Std.Primus.Iterator</a>]</td>
+<td><div class="info">
+Base interface of all iterators.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monoid.Base.html">Base</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
+<td><div class="info">
+The minimal monoid interface
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Integer.Base.html">Base</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
+<td><div class="info">
+The minimal interface of an integer.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Basic.html">Basic</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+Basic monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.Basic.html">Basic</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td><div class="info">
+Base signature for collections
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Choice.Basic.html">Basic</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
+<td><div class="info">
+The minimal choice interface for unary monad.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.Basic.html">Basic</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Basic2.html">Basic2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+Basic binary monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Choice.Basic2.html">Basic2</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
+<td><div class="info">
+The minimal choice interface for binary monad.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.Basic2.html">Basic2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Closure.html">Closure</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
+<td><div class="info">
+Machine independent closure.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Linker.Code.html">Code</a> [<a href="Bap_primus.Std.Primus.Linker.html">Bap_primus.Std.Primus.Linker</a>]</td>
+<td><div class="info">
+Code representation.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Machine.Component.html">Component</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
+<td><div class="info">
+Machine component interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Core.html">Core</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+Reexports Core's <code class="code"><span class="constructor">Monad</span>.<span class="constructor">S</span></code> as <code class="code"><span class="constructor">Monads</span>.<span class="constructor">Core</span></code>
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Core2.html">Core2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+Reexports Core's <code class="code"><span class="constructor">Monad</span>.<span class="constructor">S2</span></code> as <code class="code"><span class="constructor">Monads</span>.<span class="constructor">Core2</span></code>
+</div>
+</td></tr>
+<tr><td><a href="Bap_byteweight.Corpus.html">Corpus</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
+<td><div class="info">
+Data interface.
+</div>
+</td></tr>
+<tr><td align="left"><br>D</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.Delay.html">Delay</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td><div class="info">
+A container with a generic fold
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.Eager.html">Eager</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td><div class="info">
+A container with an eager (regular) fold.
+</div>
+</td></tr>
+<tr><td><a href="Graphlib.Std.Edge.html">Edge</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
+<td><div class="info">
+Interface that every Graph edge should provide
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Element.html">Element</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.html">Bap_primus.Std.Primus.Lisp.Doc</a>]</td>
+<td><div class="info">
+Abstract Element of a document.
+</div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Iterator.Finite.html">Finite</a> [<a href="Bap_primus.Std.Primus.Iterator.html">Bap_primus.Std.Primus.Iterator</a>]</td>
+<td><div class="info">
+Finite iterators produce finite sequences of values.
+</div>
+</td></tr>
+<tr><td align="left"><br>G</td></tr>
+<tr><td><a href="Graphlib.Std.Graph.html">Graph</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
+<td><div class="info">
+Graph signature.
+</div>
+</td></tr>
+<tr><td align="left"><br>I</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Iterator.Infinite.html">Infinite</a> [<a href="Bap_primus.Std.Primus.Iterator.html">Bap_primus.Std.Primus.Iterator</a>]</td>
+<td><div class="info">
+Inifinite iterators produces infinite sequences.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.Infix.html">Infix</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.Infix2.html">Infix2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Isomorphism</span></code> is a bijection between type <code class="code">s</code> and <code class="code">t</code>.
+</div>
+</td></tr>
+<tr><td align="left"><br>K</td></tr>
+<tr><td><a href="Bap_strings_index.Key.html">Key</a> [<a href="Bap_strings_index.html">Bap_strings_index</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Monads.Std.Monad.Minimal.html">Minimal</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+The Minimal monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Regular.Minimal.html">Minimal</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+The Minimal monad interface.
+</div>
+</td></tr>
+<tr><td><a href="X86_env.ModeVars.html">ModeVars</a> [<a href="X86_env.html">X86_env</a>]</td>
+<td><div class="info">
+CPU BIL variables.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Monad.html">Monad</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Monad2.html">Monad2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>N</td></tr>
+<tr><td><a href="Graphlib.Std.Node.html">Node</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
+<td><div class="info">
+<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.
+</div>
+</td></tr>
+<tr><td align="left"><br>O</td></tr>
+<tr><td><a href="Bap_bml.Ops.html">Ops</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Bap_traces.Std.Trace.P.html">P</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
+<td></td></tr>
+<tr><td><a href="Graphlib.Std.Predicate.html">Predicate</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
+<td><div class="info">
+A type of modules for filtering graphs.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>R</td></tr>
+<tr><td><a href="Bap_bml.Registry.html">Registry</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
+<td><div class="info">
+Interface to a registry.
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Bap_strings_index.Persistent.S.html">S</a> [<a href="Bap_strings_index.Persistent.html">Bap_strings_index.Persistent</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_traces.Std.Trace.S.html">S</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_byteweight.S.html">S</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
+<td><div class="info">
+Byteweight algorithm interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap_c_type_mapper_intf.S.html">S</a> [<a href="Bap_c_type_mapper_intf.html">Bap_c_type_mapper_intf</a>]</td>
+<td><div class="info">
+Type mapper, visitor, iterator, finder all in one.
+</div>
+</td></tr>
+<tr><td><a href="Bap_api.S.html">S</a> [<a href="Bap_api.html">Bap_api</a>]</td>
+<td><div class="info">
+Language processor interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Machine.S.html">S</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
+<td><div class="info">
+The Machine interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap_future.Std.Variadic.S.html">S</a> [<a href="Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a>]</td>
+<td><div class="info">
+Variadic argument list.
+</div>
+</td></tr>
+<tr><td><a href="Bap_future.Std.Applicable.S.html">S</a> [<a href="Bap_future.Std.Applicable.html">Bap_future.Std.Applicable</a>]</td>
+<td><div class="info">
+Applicable is an abstraction lying between Arrow, Monad and
+        Applicative.
+</div>
+</td></tr>
+<tr><td><a href="Ogre.S.html">S</a> [<a href="Ogre.html">Ogre</a>]</td>
+<td><div class="info">
+Monadic interface to the document.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.S.html">S</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td><div class="info">
+An unary monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Cont.S.html">S</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
+<td><div class="info">
+The unary monad interface
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Lazy.S.html">S</a> [<a href="Monads.Std.Monad.Lazy.html">Monads.Std.Monad.Lazy</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Fun.S.html">S</a> [<a href="Monads.Std.Monad.Fun.html">Monads.Std.Monad.Fun</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.State.S.html">S</a> [<a href="Monads.Std.Monad.State.html">Monads.Std.Monad.State</a>]</td>
+<td><div class="info">
+The State Monad interface with a fixed environment.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.State.Multi.S.html">S</a> [<a href="Monads.Std.Monad.State.Multi.html">Monads.Std.Monad.State.Multi</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Reader.S.html">S</a> [<a href="Monads.Std.Monad.Reader.html">Monads.Std.Monad.Reader</a>]</td>
+<td><div class="info">
+The reader monad interface with the environment type fixed
+          on the module level.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Writer.S.html">S</a> [<a href="Monads.Std.Monad.Writer.html">Monads.Std.Monad.Writer</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Seq.S.html">S</a> [<a href="Monads.Std.Monad.Seq.html">Monads.Std.Monad.Seq</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.List.S.html">S</a> [<a href="Monads.Std.Monad.List.html">Monads.Std.Monad.List</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Result.S.html">S</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Result.Error.S.html">S</a> [<a href="Monads.Std.Monad.Result.Error.html">Monads.Std.Monad.Result.Error</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Option.S.html">S</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
+<td><div class="info">
+The unary option monad.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.S2.Collection.S.html">S</a> [<a href="Monads.Std.Monad.S2.Collection.html">Monads.Std.Monad.S2.Collection</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.S.Collection.S.html">S</a> [<a href="Monads.Std.Monad.S.Collection.html">Monads.Std.Monad.S.Collection</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Syntax.S.html">S</a> [<a href="Monads.Std.Monad.Syntax.html">Monads.Std.Monad.Syntax</a>]</td>
+<td><div class="info">
+Operators for an unary monad.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.S.html">S</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td><div class="info">
+A container interface for an unary monad
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Trans.S.html">S</a> [<a href="Monads.Std.Monad.Trans.html">Monads.Std.Monad.Trans</a>]</td>
+<td><div class="info">
+Unary monad transformer.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Choice.S.html">S</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
+<td><div class="info">
+The unary choice monad interface
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Fail.S.html">S</a> [<a href="Monads.Std.Monad.Fail.html">Monads.Std.Monad.Fail</a>]</td>
+<td><div class="info">
+The unary fail monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Plus.S.html">S</a> [<a href="Monads.Std.Monad.Plus.html">Monads.Std.Monad.Plus</a>]</td>
+<td><div class="info">
+a monoid over an unary polymorphic type.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monoid.S.html">S</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
+<td><div class="info">
+The monoid interface
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Opaque.S.html">S</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
+<td><div class="info">
+Opaque type is like regular type, except that we can print or
+      examine it in any way.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Regular.S.html">S</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
+<td><div class="info">
+Regular interface.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.S.html">S</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
+<td><div class="info">
+Data type interface.
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Data.Versioned.S.html">S</a> [<a href="Regular.Std.Data.Versioned.html">Regular.Std.Data.Versioned</a>]</td>
+<td><div class="info">
+a data type with a version
+</div>
+</td></tr>
+<tr><td><a href="Regular.Std.Printable.S.html">S</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
+<td><div class="info">
+Interface for printing data.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.S.html">S</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.State.S.html">S</a> [<a href="Bap.Std.Legacy.Monad.State.html">Bap.Std.Legacy.Monad.State</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Integer.S.html">S</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
+<td><div class="info">
+The integer signature.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Trans.S1.html">S1</a> [<a href="Monads.Std.Monad.Trans.html">Monads.Std.Monad.Trans</a>]</td>
+<td><div class="info">
+Unary to binary monad transfomer.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.S2.html">S2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Cont.S2.html">S2</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
+<td><div class="info">
+The binary monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Lazy.S2.html">S2</a> [<a href="Monads.Std.Monad.Lazy.html">Monads.Std.Monad.Lazy</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Fun.S2.html">S2</a> [<a href="Monads.Std.Monad.Fun.html">Monads.Std.Monad.Fun</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.State.S2.html">S2</a> [<a href="Monads.Std.Monad.State.html">Monads.Std.Monad.State</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.State.Multi.S2.html">S2</a> [<a href="Monads.Std.Monad.State.Multi.html">Monads.Std.Monad.State.Multi</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Reader.S2.html">S2</a> [<a href="Monads.Std.Monad.Reader.html">Monads.Std.Monad.Reader</a>]</td>
+<td><div class="info">
+The reader monad interface with the environemnt type left
+          variable.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Seq.S2.html">S2</a> [<a href="Monads.Std.Monad.Seq.html">Monads.Std.Monad.Seq</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.List.S2.html">S2</a> [<a href="Monads.Std.Monad.List.html">Monads.Std.Monad.List</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Result.S2.html">S2</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Option.S2.html">S2</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
+<td><div class="info">
+The binary option monad
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Syntax.S2.html">S2</a> [<a href="Monads.Std.Monad.Syntax.html">Monads.Std.Monad.Syntax</a>]</td>
+<td></td></tr>
+<tr><td><a href="Monads.Std.Monad.Collection.S2.html">S2</a> [<a href="Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a>]</td>
+<td><div class="info">
+A container interface for a binary monad.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Trans.S2.html">S2</a> [<a href="Monads.Std.Monad.Trans.html">Monads.Std.Monad.Trans</a>]</td>
+<td><div class="info">
+Binary to binary monad transfomer
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Choice.S2.html">S2</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
+<td><div class="info">
+The binary choice monad interface
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Fail.S2.html">S2</a> [<a href="Monads.Std.Monad.Fail.html">Monads.Std.Monad.Fail</a>]</td>
+<td><div class="info">
+The binary fail monad interface.
+</div>
+</td></tr>
+<tr><td><a href="Monads.Std.Monad.Plus.S2.html">S2</a> [<a href="Monads.Std.Monad.Plus.html">Monads.Std.Monad.Plus</a>]</td>
+<td><div class="info">
+a monoid over a binary polymorphic type.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Legacy.Monad.S2.html">S2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap_primus.Std.Primus.Machine.State.html">State</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
+<td><div class="info">
+An interface to the state.
+</div>
+</td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap_taint.Std.Value.html">Value</a> [<a href="Bap_taint.Std.html">Bap_taint.Std</a>]</td>
+<td><div class="info">
+Abstract value.
+</div>
+</td></tr>
+</table>
+</body>
+</html>
