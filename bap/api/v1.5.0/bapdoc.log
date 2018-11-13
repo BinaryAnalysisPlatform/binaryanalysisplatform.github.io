@@ -1,0 +1,882 @@
+Warning: can't render manpage for baptop
+Called as "false", got:
+
+Warning: can't render manpage for bapbuild
+Called as "false", got:
+
+Warning: can't render manpage for bap-server
+Called as "false", got:
+
+Warning: can't render manpage for bapbundle
+Called as "false", got:
+
+cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
+cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
+Warning: Module or module type ?? not found
+Warning: Module or module type Stringable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
+Warning: Module type Core_kernel.Monad.Infix2 not found
+Warning: Module type Core_kernel.Monad.Infix not found
+Warning: Module type Core_kernel.Monad.Basic2 not found
+Warning: Module type Core_kernel.Monad.Basic not found
+Warning: Element Bil not found
+Warning: Element Value not found
+Warning: Element Trie not found
+Warning: Element Vector not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image.register_backend not found
+Warning: Element Project.Input not found
+Warning: Element register_target not found
+Warning: Element Value.Tag.register not found
+Warning: Element Symbolizer not found
+Warning: Element Rooter not found
+Warning: Element Brancher not found
+Warning: Element Reconstructor not found
+Warning: Element Project.register_pass not found
+Warning: Element Regular.Std not found
+Warning: Element Project not found
+Warning: Element Bil not found
+Warning: Element Arch not found
+Warning: Element Size not found
+Warning: Element Var not found
+Warning: Element Bil not found
+Warning: Element Type not found
+Warning: Element Bil not found
+Warning: Element Exp not found
+Warning: Element Bil not found
+Warning: Element Stmt not found
+Warning: Element Bil not found
+Warning: Element Bitvector not found
+Warning: Element word not found
+Warning: Element addr not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Regular.Std.Regular.S not found
+Warning: Element Bil.load not found
+Warning: Element Value not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Value.Tag not found
+Warning: Element Vector not found
+Warning: Module Trie not found
+Warning: Module type Trie.Key not found
+Warning: Element Bitvector not found
+Warning: Element Bitvector.Trie not found
+Warning: Element Trie.String not found
+Warning: Element Memory not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image not found
+Warning: Element Backend not found
+Warning: Element Image.register_backend not found
+Warning: Element Disasm not found
+Warning: Element Disasm_expert not found
+Warning: Element Disasm.of_mem not found
+Warning: Element Disasm.of_image not found
+Warning: Element Disasm.of_file not found
+Warning: Element Disasm not found
+Warning: Element Insn not found
+Warning: Element Block not found
+Warning: Element Block not found
+Warning: Element Graphs.Cfg not found
+Warning: Element Graphlib.Std not found
+Warning: Element Block.leader not found
+Warning: Element Block.terminator not found
+Warning: Element Insn not found
+Warning: Element Bil not found
+Warning: Element Disasm_expert.Basic not found
+Warning: Element CPU not found
+Warning: Element Target not found
+Warning: Element target_of_arch not found
+Warning: Element ARM not found
+Warning: Element X86_cpu not found
+Warning: Element Program not found
+Warning: Element Sub not found
+Warning: Element Arg not found
+Warning: Element Blk not found
+Warning: Element Def not found
+Warning: Element Phi not found
+Warning: Element Jmp not found
+Warning: Element Term not found
+Warning: Element Value not found
+Warning: Element Project not found
+Warning: Element Project.create not found
+Warning: Element Project.register_pass not found
+Warning: Element Project.register_pass' not found
+Warning: Element Project.t not found
+Warning: Element Value not found
+Warning: Element Memmap not found
+Warning: Element Image.section not found
+Warning: Element Image.segment not found
+Warning: Element Bil not found
+Warning: Element Value not found
+Warning: Element Trie not found
+Warning: Element Vector not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image.register_backend not found
+Warning: Element Project.Input not found
+Warning: Element register_target not found
+Warning: Element Value.Tag.register not found
+Warning: Element Symbolizer not found
+Warning: Element Rooter not found
+Warning: Element Brancher not found
+Warning: Element Reconstructor not found
+Warning: Element Project.register_pass not found
+Warning: Element Regular.Std not found
+Warning: Element Project not found
+Warning: Element Bil not found
+Warning: Element Arch not found
+Warning: Element Size not found
+Warning: Element Var not found
+Warning: Element Bil not found
+Warning: Element Type not found
+Warning: Element Bil not found
+Warning: Element Exp not found
+Warning: Element Bil not found
+Warning: Element Stmt not found
+Warning: Element Bil not found
+Warning: Element Bitvector not found
+Warning: Element word not found
+Warning: Element addr not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Regular.Std.Regular.S not found
+Warning: Element Bil.load not found
+Warning: Element Value not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Value.Tag not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Trie.Key not found
+Warning: Element Bitvector not found
+Warning: Element Bitvector.Trie not found
+Warning: Element Trie.String not found
+Warning: Element Memory not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image not found
+Warning: Element Backend not found
+Warning: Element Image.register_backend not found
+Warning: Element Disasm not found
+Warning: Element Disasm_expert not found
+Warning: Element Disasm.of_mem not found
+Warning: Element Disasm.of_image not found
+Warning: Element Disasm.of_file not found
+Warning: Element Disasm not found
+Warning: Element Insn not found
+Warning: Element Block not found
+Warning: Element Block not found
+Warning: Element Graphs.Cfg not found
+Warning: Element Graphlib.Std not found
+Warning: Element Block.leader not found
+Warning: Element Block.terminator not found
+Warning: Element Insn not found
+Warning: Element Bil not found
+Warning: Element Disasm_expert.Basic not found
+Warning: Element CPU not found
+Warning: Element Target not found
+Warning: Element target_of_arch not found
+Warning: Element ARM not found
+Warning: Element X86_cpu not found
+Warning: Element Program not found
+Warning: Element Sub not found
+Warning: Element Arg not found
+Warning: Element Blk not found
+Warning: Element Def not found
+Warning: Element Phi not found
+Warning: Element Jmp not found
+Warning: Element Term not found
+Warning: Element Value not found
+Warning: Element Project not found
+Warning: Element Project.create not found
+Warning: Element Project.register_pass not found
+Warning: Element Project.register_pass' not found
+Warning: Element Project.t not found
+Warning: Element Value not found
+Warning: Element Memmap not found
+Warning: Element Image.section not found
+Warning: Element Image.segment not found
+Warning: Module type Blit.S_distinct not found
+Warning: Module type Blit.S_distinct not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type Blit.S not found
+Warning: Module or module type Container.S0 not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Hashable.S not found
+Warning: Module or module type Comparable.S not found
+Warning: Module or module type Pretty_printer.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Hashable.S_binable not found
+Warning: Module or module type Comparable.S_binable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Sequence not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Pretty_printer.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Element Strings not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element Strings not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Module type Identifiable.S not found
+Warning: Module type Identifiable.S not found
+Warning: Module or module type Identifiable not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module or module type Monad.S not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Module or module type Monad.Trans.S not found
+Warning: Module or module type Monad.S not found
+Warning: Module or module type ?? not found
+Warning: Module type Applicative.Args not found
+Warning: Module or module type Applicative.S not found
+Warning: Module or module type Monad.S not found
+Warning: Module type Graph.Sig.P not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type Printable.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Element Graph not found
+Warning: Element Graphlib.To_ocamlgraph not found
+Warning: Element Graphlib.Of_ocamlgraph not found
+Warning: Element Graph not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Path not found
+Warning: Element Tree not found
+Warning: Element Partition not found
+Warning: Element Graph not found
+Warning: Element Graphlib.create not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Module type Bap_primus.Std.Primus.Machine.Component not found
+Warning: Module or module type Comparable.S_plain not found
+Warning: Module or module type Comparable.S_plain not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type Strings.Index.Persistent.S not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Monad.State.Multi.S not found
+Warning: Module or module type Monad.Syntax.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Element Word.(~-) not found
+Warning: Element Word.(+) not found
+Warning: Element Word.(-) not found
+Warning: Element Word.( * ) not found
+Warning: Element Word.(/) not found
+Warning: Element Word.(mod) not found
+Warning: Element Word.(lor) not found
+Warning: Element Word.(lsl) not found
+Warning: Element Word.(lsr) not found
+Warning: Element Word.(asr) not found
+Warning: Element Word.(lxor) not found
+Warning: Element Word.(land) not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Bap.Std.Disasm_expert.Basic not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+File "/home/oleg/.opam/bap-with-core/lib/bap-x86-cpu/x86_asm_reg.mli", line 1, characters 5-20:
+Warning 3: deprecated: module Core_kernel.Std
+[since 2018-03] Use Core_kernel directly instead
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Bap.Std.Bitvector not found
+Warning: Module type S not found
+Warning: Module type S not found
+Warning: Module type S not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module or module type S not found
+Warning: Element C.Type.Mapper.base not found
+Warning: Element C.Type.Mapper.State.base not found
+Warning: Element C.Type.Mapper.Finder.base not found
+Warning: Element C.Type.Mapper.base not found
+Warning: Element C.Type.Mapper.State.base not found
+Warning: Element C.Type.Mapper.Finder.base not found
+Warning: Module or module type ?? not found
+Warning: Element Trie not found
+Warning: Element Trie.Key not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Element Format not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module type S not found
+Warning: Module type S not found
+Warning: Module type S not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module or module type S not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Bap.Std.Bitvector not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Bap.Std.Disasm_expert.Basic not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type Strings.Index.Persistent.S not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Monad.State.Multi.S not found
+Warning: Module or module type Monad.Syntax.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Comparable.S_plain not found
+Warning: Module or module type Comparable.S_plain not found
+Warning: Module type Graph.Sig.P not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type Printable.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Module or module type Opaque.S not found
+Warning: Module type Applicative.Args not found
+Warning: Module or module type Applicative.S not found
+Warning: Module or module type Monad.S not found
+Warning: Module or module type Monad.Trans.S not found
+Warning: Module or module type Monad.S not found
+Warning: Module or module type ?? not found
+Warning: Module type Identifiable.S not found
+Warning: Module type Identifiable.S not found
+Warning: Module or module type Identifiable not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module or module type Monad.S not found
+Warning: Module type Blit.S_distinct not found
+Warning: Module type Blit.S_distinct not found
+Warning: Module or module type Identifiable.S not found
+Warning: Module or module type Blit.S not found
+Warning: Module or module type Container.S0 not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Hashable.S not found
+Warning: Module or module type Comparable.S not found
+Warning: Module or module type Pretty_printer.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Hashable.S_binable not found
+Warning: Module or module type Comparable.S_binable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Identifiable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Sequence not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Pretty_printer.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Stringable not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
+Warning: Module type Core_kernel.Monad.Infix2 not found
+Warning: Module type Core_kernel.Monad.Infix not found
+Warning: Module type Core_kernel.Monad.Basic2 not found
+Warning: Module type Core_kernel.Monad.Basic not found
+Warning: Element Bil not found
+Warning: Element Value not found
+Warning: Element Trie not found
+Warning: Element Vector not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image.register_backend not found
+Warning: Element Project.Input not found
+Warning: Element register_target not found
+Warning: Element Value.Tag.register not found
+Warning: Element Symbolizer not found
+Warning: Element Rooter not found
+Warning: Element Brancher not found
+Warning: Element Reconstructor not found
+Warning: Element Project.register_pass not found
+Warning: Element Project not found
+Warning: Element Bil not found
+Warning: Element Arch not found
+Warning: Element Size not found
+Warning: Element Var not found
+Warning: Element Bil not found
+Warning: Element Type not found
+Warning: Element Bil not found
+Warning: Element Exp not found
+Warning: Element Bil not found
+Warning: Element Stmt not found
+Warning: Element Bil not found
+Warning: Element Bitvector not found
+Warning: Element word not found
+Warning: Element addr not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Bil.load not found
+Warning: Element Value not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Value.Tag not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Trie.Key not found
+Warning: Element Bitvector not found
+Warning: Element Bitvector.Trie not found
+Warning: Element Trie.String not found
+Warning: Element Memory not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image not found
+Warning: Element Backend not found
+Warning: Element Image.register_backend not found
+Warning: Element Disasm not found
+Warning: Element Disasm_expert not found
+Warning: Element Disasm.of_mem not found
+Warning: Element Disasm.of_image not found
+Warning: Element Disasm.of_file not found
+Warning: Element Disasm not found
+Warning: Element Insn not found
+Warning: Element Block not found
+Warning: Element Block not found
+Warning: Element Graphs.Cfg not found
+Warning: Element Block.leader not found
+Warning: Element Block.terminator not found
+Warning: Element Insn not found
+Warning: Element Bil not found
+Warning: Element Disasm_expert.Basic not found
+Warning: Element CPU not found
+Warning: Element Target not found
+Warning: Element target_of_arch not found
+Warning: Element Program not found
+Warning: Element Sub not found
+Warning: Element Arg not found
+Warning: Element Blk not found
+Warning: Element Def not found
+Warning: Element Phi not found
+Warning: Element Jmp not found
+Warning: Element Term not found
+Warning: Element Value not found
+Warning: Element Project not found
+Warning: Element Project.create not found
+Warning: Element Project.register_pass not found
+Warning: Element Project.register_pass' not found
+Warning: Element Project.t not found
+Warning: Element Value not found
+Warning: Element Memmap not found
+Warning: Element Image.section not found
+Warning: Element Image.segment not found
+Warning: Element Strings not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element Graph not found
+Warning: Element Graphlib.To_ocamlgraph not found
+Warning: Element Graphlib.Of_ocamlgraph not found
+Warning: Element Graph not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Path not found
+Warning: Element Tree not found
+Warning: Element Partition not found
+Warning: Element Graph not found
+Warning: Element Graphlib.create not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element C.Type.Mapper.base not found
+Warning: Element C.Type.Mapper.State.base not found
+Warning: Element C.Type.Mapper.Finder.base not found
+Warning: Element C.Type.Mapper.base not found
+Warning: Element C.Type.Mapper.State.base not found
+Warning: Element C.Type.Mapper.Finder.base not found
+Warning: Element Trie not found
+Warning: Element Trie.Key not found
+Warning: Element Format not found
+Warning: Element Bil not found
+Warning: Element Value not found
+Warning: Element Trie not found
+Warning: Element Vector not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image.register_backend not found
+Warning: Element Project.Input not found
+Warning: Element register_target not found
+Warning: Element Value.Tag.register not found
+Warning: Element Symbolizer not found
+Warning: Element Rooter not found
+Warning: Element Brancher not found
+Warning: Element Reconstructor not found
+Warning: Element Project.register_pass not found
+Warning: Element Project not found
+Warning: Element Bil not found
+Warning: Element Arch not found
+Warning: Element Size not found
+Warning: Element Var not found
+Warning: Element Bil not found
+Warning: Element Type not found
+Warning: Element Bil not found
+Warning: Element Exp not found
+Warning: Element Bil not found
+Warning: Element Stmt not found
+Warning: Element Bil not found
+Warning: Element Bitvector not found
+Warning: Element word not found
+Warning: Element addr not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Bil.load not found
+Warning: Element Value not found
+Warning: Element Value not found
+Warning: Element Dict not found
+Warning: Element Value.Tag not found
+Warning: Element Vector not found
+Warning: Element Trie not found
+Warning: Element Trie.Key not found
+Warning: Element Bitvector not found
+Warning: Element Bitvector.Trie not found
+Warning: Element Trie.String not found
+Warning: Element Memory not found
+Warning: Element Table not found
+Warning: Element Memmap not found
+Warning: Element Image not found
+Warning: Element Backend not found
+Warning: Element Image.register_backend not found
+Warning: Element Disasm not found
+Warning: Element Disasm_expert not found
+Warning: Element Disasm.of_mem not found
+Warning: Element Disasm.of_image not found
+Warning: Element Disasm.of_file not found
+Warning: Element Disasm not found
+Warning: Element Insn not found
+Warning: Element Block not found
+Warning: Element Block not found
+Warning: Element Graphs.Cfg not found
+Warning: Element Block.leader not found
+Warning: Element Block.terminator not found
+Warning: Element Insn not found
+Warning: Element Bil not found
+Warning: Element Disasm_expert.Basic not found
+Warning: Element CPU not found
+Warning: Element Target not found
+Warning: Element target_of_arch not found
+Warning: Element Program not found
+Warning: Element Sub not found
+Warning: Element Arg not found
+Warning: Element Blk not found
+Warning: Element Def not found
+Warning: Element Phi not found
+Warning: Element Jmp not found
+Warning: Element Term not found
+Warning: Element Value not found
+Warning: Element Project not found
+Warning: Element Project.create not found
+Warning: Element Project.register_pass not found
+Warning: Element Project.register_pass' not found
+Warning: Element Project.t not found
+Warning: Element Value not found
+Warning: Element Memmap not found
+Warning: Element Image.section not found
+Warning: Element Image.segment not found
+Warning: Element Strings not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element Cache.S not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element Sys.max_string_length not found
+Warning: Element iter not found
+Warning: Element Sys.max_string_length not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element String.init not found
+Warning: Element String.map not found
+Warning: Element String.mapi not found
+Warning: Element String.length not found
+Warning: Element String.length not found
+Warning: Element Marshal.from_bytes not found
+Warning: Element abstract not found
+Warning: Element intro not found
+Warning: Element conv not found
+Warning: Element Opaque not found
+Warning: Element Printable not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Opaque.S not found
+Warning: Element filter not found
+Warning: Element Graph.pp not found
+Warning: Element Word.(~-) not found
+Warning: Element Word.(+) not found
+Warning: Element Word.(-) not found
+Warning: Element Word.( * ) not found
+Warning: Element Word.(/) not found
+Warning: Element Word.(mod) not found
+Warning: Element Word.(lor) not found
+Warning: Element Word.(lsl) not found
+Warning: Element Word.(lsr) not found
+Warning: Element Word.(asr) not found
+Warning: Element Word.(lxor) not found
+Warning: Element Word.(land) not found

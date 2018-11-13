@@ -1,0 +1,87 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of beagle</TITLE>
+</HEAD><BODY>
+<H1>beagle</H1>
+Section: Beagle Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+beagle &#45; microx powered obfuscated string solver
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>beagle</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Beagle is an obfuscated string solver that uses CPU emulation for discovering and decoding strings&#46; Beagle can also be used as an advanced data cross&#45;referrence tool&#46; Beagle combines Microexecution with digital signal processing techniques and efficient dictionary search&#46; Data that pass through a CPU emulator is processed with a low&#45;pass filter and string&#45;like patterns are detected&#46; At the final step, words are recovered from a detected shuffled sequence of characters&#46; For this we employ a scrabble&#45;like algorithm, that will detect all possible words, that can be built from a given sequence of characters&#46; The algorithm is parameterized by a dictionary&#46; It can be just an English dictionary, but it can be also a dictionary built from signatures obtained from a known compromised software&#46; The dictionary search algorithm uses a special trie data structure with a search procedure that doesn&#39;t depend on the size of a dictionary or the size of a character sequence&#46; 
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;alpha</B>=<I>VAL</I> (absent=0&#46;05)<DD>
+desired probability of a false positive
+<DT><B>&#45;&#45;alphabet</B>=<I>VAL</I> (absent=printable)<DD>
+Build words from the specified alphabet
+<DT><B>&#45;&#45;beta</B>=<I>VAL</I> (absent=0&#46;001)<DD>
+desired probability of a false negative
+<DT><B>&#45;&#45;dictionary</B>=<I>VAL</I><DD>
+Add dictionary file(s)&#46;
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;ignore&#45;strings</B><DD>
+don&#39;t put static strings into the initial dictionary
+<DT><B>&#45;&#45;no&#45;words</B><DD>
+Don&#39;t try to build words from a dictionary
+<DT><B>&#45;&#45;noise</B>=<I>VAL</I> (absent=0&#46;05)<DD>
+expected amount of noise characters
+<DT><B>&#45;&#45;print&#45;chars</B><DD>
+Print all observed letters&#46;
+<DT><B>&#45;&#45;print&#45;strings</B><DD>
+Print static strings
+<DT><B>&#45;&#45;print&#45;words</B><DD>
+Print all buildable words&#46;
+<DT><B>&#45;&#45;text&#45;probability</B>=<I>VAL</I> (absent=0&#46;1)<DD>
+a prior probability of the search data
+<DT><B>&#45;&#45;words</B>=<I>VAL</I><DD>
+Add specified words to the dictionary&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>home:</B> <I>www:bap&#46;ece&#46;cmu&#46;edu</I>
+<P>
+
+<B>tags:</B> deobfuscator, microx, primus, pass, strings
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:32:30 GMT, November 12, 2018
+</BODY>
+</HTML>

@@ -1,0 +1,71 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of run</TITLE>
+</HEAD><BODY>
+<H1>run</H1>
+Section: Run Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+run &#45; a pass that will run a program
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>run</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Run a program in the Primus emulator&#46; 
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;argv</B>=<I>VAL</I><DD>
+Process argument vector
+<DT><B>&#45;&#45;entry&#45;points</B>=<I>VAL</I><DD>
+Can be a list of entry points or a special keyword <B>all&#45;subroutines</B>&#46; An entry point is either a string denoting a function name, a tid starting with the <B>%</B> percent, or an address in a hexadecimal format prefixed with <B>0x</B>&#46; When the option is specified, the Primus Machine will start the execution from the specified entry point(s)&#46; Otherwise the execution will be started from all program terms that are marked with the [entry_point] attribute&#46; If there are several entry points, then the execution will be started from all of them in parallel, i&#46;e&#46;, by forking the machine and starting each machine from its own entry point&#46; Consider enabling corresponding scheduler&#46; If neither the argument nor there any entry points in the program, then a function called <B>_start</B> is called&#46; If <B>all&#45;subroutines</B> are specified then Primus will execute all subroutines in topological order
+<DT><B>&#45;&#45;env</B>=<I>VAL</I><DD>
+Program environemt as a comma separated list of VAR=VAL pairs
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;in&#45;isolation</B><DD>
+Run each entry point as an isolated machine&#46; Each entry point is started in a separate machine and run sequentially, with the project data structure passed between them&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>home:</B> <I>www:bap&#46;ece&#46;cmu&#46;edu</I>
+<P>
+
+<B>tags:</B> emulator, pass, primus
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:33:16 GMT, November 12, 2018
+</BODY>
+</HTML>
