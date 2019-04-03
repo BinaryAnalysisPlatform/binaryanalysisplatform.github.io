@@ -1,0 +1,665 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Bap.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class methods" rel=Appendix href="index_methods.html">
+<link title="Index of classes" rel=Appendix href="index_classes.html">
+<link title="Index of class types" rel=Appendix href="index_class_types.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Bap" rel="Chapter" href="Bap.html">
+<link title="Bap_bundle" rel="Chapter" href="Bap_bundle.html">
+<link title="Bap_config" rel="Chapter" href="Bap_config.html">
+<link title="Core_printers" rel="Chapter" href="Core_printers.html">
+<link title="Bap_plugins" rel="Chapter" href="Bap_plugins.html">
+<link title="Regular" rel="Chapter" href="Regular.html">
+<link title="Monads" rel="Chapter" href="Monads.html">
+<link title="Ogre" rel="Chapter" href="Ogre.html">
+<link title="Bap_future" rel="Chapter" href="Bap_future.html">
+<link title="Graphlib" rel="Chapter" href="Graphlib.html">
+<link title="Bap_taint" rel="Chapter" href="Bap_taint.html">
+<link title="Bap_primus" rel="Chapter" href="Bap_primus.html">
+<link title="Bare" rel="Chapter" href="Bare.html">
+<link title="Arm_insn" rel="Chapter" href="Arm_insn.html">
+<link title="Arm_mul" rel="Chapter" href="Arm_mul.html">
+<link title="Arm_utils" rel="Chapter" href="Arm_utils.html">
+<link title="Arm_mem_shift" rel="Chapter" href="Arm_mem_shift.html">
+<link title="Arm_flags" rel="Chapter" href="Arm_flags.html">
+<link title="Arm_env" rel="Chapter" href="Arm_env.html">
+<link title="Arm_mem" rel="Chapter" href="Arm_mem.html">
+<link title="Arm_op" rel="Chapter" href="Arm_op.html">
+<link title="Arm_bit" rel="Chapter" href="Arm_bit.html">
+<link title="Arm_branch" rel="Chapter" href="Arm_branch.html">
+<link title="ARM" rel="Chapter" href="ARM.html">
+<link title="Arm_shift" rel="Chapter" href="Arm_shift.html">
+<link title="Arm_mov" rel="Chapter" href="Arm_mov.html">
+<link title="Arm_cond" rel="Chapter" href="Arm_cond.html">
+<link title="Arm_types" rel="Chapter" href="Arm_types.html">
+<link title="Arm_reg" rel="Chapter" href="Arm_reg.html">
+<link title="Arm_helpers" rel="Chapter" href="Arm_helpers.html">
+<link title="Arm_lifter" rel="Chapter" href="Arm_lifter.html">
+<link title="X86_asm_reg" rel="Chapter" href="X86_asm_reg.html">
+<link title="X86_types" rel="Chapter" href="X86_types.html">
+<link title="X86_env" rel="Chapter" href="X86_env.html">
+<link title="X86_llvm_env" rel="Chapter" href="X86_llvm_env.html">
+<link title="X86_asm" rel="Chapter" href="X86_asm.html">
+<link title="X86_cpu" rel="Chapter" href="X86_cpu.html">
+<link title="X86_asm_reg_types" rel="Chapter" href="X86_asm_reg_types.html">
+<link title="Bap_api" rel="Chapter" href="Bap_api.html">
+<link title="Bap_abi" rel="Chapter" href="Bap_abi.html">
+<link title="Bap_c_type" rel="Chapter" href="Bap_c_type.html">
+<link title="Bap_c_data" rel="Chapter" href="Bap_c_data.html">
+<link title="Bap_c_attr" rel="Chapter" href="Bap_c_attr.html">
+<link title="Bap_c_type_mapper_intf" rel="Chapter" href="Bap_c_type_mapper_intf.html">
+<link title="Bap_c_type_printer" rel="Chapter" href="Bap_c_type_printer.html">
+<link title="Bap_c_term_attributes" rel="Chapter" href="Bap_c_term_attributes.html">
+<link title="Bap_c_abi" rel="Chapter" href="Bap_c_abi.html">
+<link title="Bap_c_type_mapper" rel="Chapter" href="Bap_c_type_mapper.html">
+<link title="Bap_c" rel="Chapter" href="Bap_c.html">
+<link title="Bap_c_parser" rel="Chapter" href="Bap_c_parser.html">
+<link title="Bap_c_size" rel="Chapter" href="Bap_c_size.html">
+<link title="Bap_bml" rel="Chapter" href="Bap_bml.html">
+<link title="Bap_build" rel="Chapter" href="Bap_build.html">
+<link title="Bap_byteweight_signatures" rel="Chapter" href="Bap_byteweight_signatures.html">
+<link title="Bap_byteweight" rel="Chapter" href="Bap_byteweight.html">
+<link title="Bap_demangle" rel="Chapter" href="Bap_demangle.html">
+<link title="Bap_dwarf" rel="Chapter" href="Bap_dwarf.html">
+<link title="Bap_ida" rel="Chapter" href="Bap_ida.html">
+<link title="Bap_llvm" rel="Chapter" href="Bap_llvm.html">
+<link title="Bap_llvm_loader" rel="Chapter" href="Bap_llvm_loader.html">
+<link title="Bap_traces" rel="Chapter" href="Bap_traces.html">
+<link title="Bap_strings_index" rel="Chapter" href="Bap_strings_index.html">
+<link title="Bap_strings_scanner" rel="Chapter" href="Bap_strings_scanner.html">
+<link title="Bap_strings" rel="Chapter" href="Bap_strings.html">
+<link title="Bap_strings_detector" rel="Chapter" href="Bap_strings_detector.html">
+<link title="Bap_strings_unscrambler" rel="Chapter" href="Bap_strings_unscrambler.html">
+<link title="Text_tags" rel="Chapter" href="Text_tags.html"><link title="BAP API" rel="Section" href="#api">
+<link title="Overview" rel="Subsection" href="#2_Overview">
+<link title="Foundation Library" rel="Subsection" href="#bfl">
+<link title="Memory model" rel="Subsection" href="#image">
+<link title="Disassembler" rel="Subsection" href="#disasm">
+<link title="Semantic Analysis" rel="Subsection" href="#sema">
+<link title="Working with project" rel="Subsection" href="#project">
+<title>BAR: BAP Annotated Reference : Bap.Std</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Bap.html" title="Bap">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Bap.Std.html">Bap.Std</a></h1>
+
+<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<br>
+<h2 id="2_Overview">Overview</h2>
+<p>
+
+      <h3 id="3_LayeredArchitecture">Layered Architecture</h3>
+<p>
+
+      The BAP library has the layered architecture consisting of four
+      layers. Although the layers are not really observable from outside
+      of the library, they make it easier to learn the library as they
+      introduce new concepts sequentially. On top of these layers, the
+      <a href="Bap.Std.html#project">Project</a> module is defined that consolidates
+      all information about a target of analysis. The <code class="code"><span class="constructor">Project</span></code> module
+      may be viewed as an entry point to the library.
+<p>
+
+      <pre class="verbatim">        +-----------------------------------------------------+
+        | +--------+   +-----------------------------------+  |
+        | |        |   |                                   |  |
+        | |        |   |       Foundation Library          |  |
+        | |        |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   P    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |   R    |   |                                   |  |
+        | |        |   |          Memory Model             |  |
+        | |   O    |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   J    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |   E    |   |                                   |  |
+        | |        |   |           Disassembly             |  |
+        | |   C    |   |                                   |  |
+        | |        |   +-----------------------------------+  |
+        | |   T    |                                          |
+        | |        |   +-----------------------------------+  |
+        | |        |   |                                   |  |
+        | |        |   |        Semantic Analysis          |  |
+        | |        |   |                                   |  |
+        | +--------+   +-----------------------------------+  |
+        +-----------------------------------------------------+
+     </pre>
+<p>
+
+      The <a href="Bap.Std.html#bfl">Foundation library</a> defines BAP Instruction
+      language data types, as well as other useful data structures,
+      like <code class="code"><span class="constructor">Value</span></code>, <code class="code"><span class="constructor">Trie</span></code>, <code class="code"><span class="constructor">Vector</span></code>, etc. The
+      <a href="Bap.Std.html#image">Memory model</a> layer is responsible for loading
+      and parsing binary objects and representing them in a computer
+      memory. It also defines a few useful data structures that are
+      used extensively by later layers, e.g., <code class="code"><span class="constructor">Table</span></code> and
+      <code class="code"><span class="constructor">Memmap</span></code>. The next layer performs
+      <a href="Bap.Std.html#disasm">disassembly</a> and lifting to BIL. Finally, the
+      <a href="Bap.Std.html#sema">semantic analysis</a> layer transforms a binary
+      into an IR representation, that is suitable for writing
+      analysis.
+<p>
+
+      <h3 id="3_PluginArchitecture">Plugin Architecture</h3>
+<p>
+
+      The standard library tries to be as extensible as possible. We
+      are aware, that there are not good solutions for some problems, so
+      we don't want to force our way of doing things. In short, we're
+      trying to provide mechanisms, not policies. We achive this by
+      employing the dependency injection principle. By inversing the
+      dependency we allow the library to depend on a user code. For
+      example, a user code can teach the library how to disassemble
+      the binary or even how to reconstruct the CFG. In fact, the
+      library by itself doesn't contain the disassembler or lifter, or
+      any architecture specific code. Everything is injected later by
+      corresponding plugins.
+<p>
+
+      The library defines a fixed set of extension points. (Other
+      libraries, that constitute the Platform and follow the same
+      principle, can define their own extension points, so the
+      following set is not complete):
+<p>
+<ul>
+<li>loader - add new file formats (see <code class="code"><span class="constructor">Image</span>.register_backend</code> or <code class="code"><span class="constructor">Project</span>.<span class="constructor">Input</span></code>);</li>
+<li>target - add new architecture (see <code class="code">register_target</code>);</li>
+<li>disassembler - plug in a disassembler (see 'disasm.hpp' for c++ disassembler interface);</li>
+<li>attributes - extend the attribute type (<code class="code"><span class="constructor">Value</span>.<span class="constructor">Tag</span>.register</code>);</li>
+<li>symbolizer - add names to functions (see <code class="code"><span class="constructor">Symbolizer</span></code>);</li>
+<li>rooter - find function starts (see <code class="code"><span class="constructor">Rooter</span></code>);</li>
+<li>brancher - resolve jump destinations (see <code class="code"><span class="constructor">Brancher</span></code>)</li>
+<li>reconstructor - CFG reconstruction algorithm (see
+        <code class="code"><span class="constructor">Reconstructor</span></code>);</li>
+<li>analysis - write your own arbitrary analysis pass (see
+        <code class="code"><span class="constructor">Project</span>.register_pass</code>)</li>
+</ul>
+
+      The <a href="Regular.Std.html"><code class="code"><span class="constructor">Std</span></code></a> library, that forms a foundation for the BAP
+      Standard Library, also follows the dependency injection
+      principle, so every data type that implements regular interface,
+      can be dynamically extended with:
+<p>
+<ul>
+<li>pretty printing function;</li>
+<li>serialization subroutines;</li>
+<li>caching.</li>
+</ul>
+
+      <h3 id="3_Writingtheanalysis">Writing the analysis</h3>
+<p>
+
+      A common use case, is to write some analysis that will take the
+      program in some representation and then either output result of
+      analysis in a human or machine readable way, or transform the
+      program, in a way that can be employed by other
+      analysis. Following a naming convention of a more established
+      community of compiler writers, we name such analysis a _pass_.
+<p>
+
+      The library itself doesn't run any analysis, it part of the job of a
+      frontend to run it. In particular, the <code class="code">bap</code> frontend, will run
+      the analyses based on a command line specification. See <code class="code">bap<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--help</code> for more information.
+<p>
+
+      We use <code class="code"><span class="constructor">Project</span></code> data structure to represent a program and all
+      associated knowledge that we were capable to infer.  To learn
+      how to use the project data structure continue to
+      <a href="Bap.Std.html#project"><i>Working with project</i></a>.<br>
+<br>
+<h2 id="bfl">Foundation Library</h2>
+<p>
+
+      At this layer we define (Binary Instruction language)
+      and few other useful data structures:
+<p>
+<ul>
+<li>arch - describes computer architecture;</li>
+<li>size - word and register sizes;</li>
+<li>var  - BIL variable;</li>
+<li>typ - BIL type system;</li>
+<li>exp  - BIL expression sub-language;</li>
+<li>stmt - BIL statements;</li>
+<li>bitvector - a bitvector data structure
+        to represent immediate data, used usually by their aliases <code class="code">word</code> and <code class="code">addr</code>;</li>
+<li>value - an extensible variant type;</li>
+<li>dict - an extensible record;</li>
+<li>vector - an array that can grow;</li>
+<li>Trie - prefix trees;</li>
+</ul>
+
+      Most of the types implement the <a href="Regular.Std.Regular.S.html">Regular</a>
+      interface. This interface is very similar to Core's
+      <code class="code"><span class="constructor">Identifiable</span></code>, and is supposed to represent a type that is as
+      common as a built-in type. One should expect to find any
+      function that is implemented for such types as <code class="code">int</code>, <code class="code">string</code>,
+      <code class="code">char</code>, etc.  Namely, this interface includes:
+<p>
+<ul>
+<li>comparison functions: (<code class="code">&lt;,&nbsp;&gt;,&nbsp;&lt;=&nbsp;,&nbsp;&gt;=&nbsp;,&nbsp;compare,&nbsp;between,&nbsp;...</code>);</li>
+<li>each type defines a polymorphic <code class="code"><span class="constructor">Map</span></code> with keys of type <code class="code">t</code>;</li>
+<li>each type provides a <code class="code"><span class="constructor">Set</span></code> with values of type <code class="code">t</code>;</li>
+<li>hashtable is exposed via <code class="code"><span class="constructor">Table</span></code> module;</li>
+<li>hashset is available under <code class="code"><span class="constructor">Hash_set</span></code> name</li>
+<li>sexpable and binable interface;</li>
+<li><code class="code">to_string</code>, <code class="code">str</code>, <code class="code">pp</code>, <code class="code">ppo</code>, <code class="code">pps</code> functions
+      for pretty-printing.</li>
+</ul>
+
+      It is a convention, that for each type, there is a module with
+      the same name that implements its interface. For example, type
+      <code class="code">exp</code> is a type abbreviation for <code class="code"><span class="constructor">Exp</span>.t</code>, and module <code class="code"><span class="constructor">Exp</span></code>
+      contains all functions and types related to type <code class="code">exp</code>. For
+      example, to create a hashtable of statements, just type:
+<p>
+
+      <code class="code"><span class="keyword">let</span>&nbsp;table&nbsp;=&nbsp;<span class="constructor">Exp</span>.<span class="constructor">Table</span>.create&nbsp;()</code>
+<p>
+
+      If a type is a variant type (i.e., it defines constructors) then
+      for each constructor named <code class="code"><span class="constructor">Name</span></code>, there exists a corresponding
+      function named <code class="code">name</code> that will accept the same number of
+      arguments as the arity of the constructor (also named a
+      _functional constructor_). For example, a <code class="code"><span class="constructor">Bil</span>.<span class="constructor">Int</span></code> can be
+      constructed with the <code class="code"><span class="constructor">Bil</span>.int</code> function that has type <code class="code">word&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exp</code>. If a constructor has several arguments of the same type we
+      usually disambiguate using labels, e.g., <code class="code"><span class="constructor">Bil</span>.<span class="constructor">Load</span>&nbsp;<span class="keyword">of</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(exp,exp,endian,size)</code> has function Bil.load with
+      type: <code class="code">mem:exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;addr:exp&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;endian&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;size&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;exp</code>
+<p>
+
+      <h3 id="value">Value</h3>
+<p>
+
+      Universal values can be viewed as extensible variants on
+      steroids. Not only they maybe extended, but they also can be
+      serialized, compared with user-defined comparison function and
+      even pretty printed.
+<p>
+
+      <h3 id="dict">Dict</h3>
+<p>
+
+      Like value is an extensible sum type, dict
+      can be viewed as an extensible product type. Dict is a sequence
+      of values of type <a href="Bap.Std.html#value"><i>Value</i></a>, with tags used as
+      field names. Of course, fields are unique.
+<p>
+
+      <h3 id="vector">Vector</h3>
+<p>
+
+      <code class="code"><span class="constructor">Vector</span></code> is an implementation of C++ STL like vectors with
+      logarithmic push back.
+<p>
+
+      <h3 id="tries">Tries</h3>
+<p>
+
+      The Foundation library also defines a prefix tree data structure
+      that proves to be useful for binary analysis applications.
+      Tries in BAP is a functor that derives a
+      polymorphic trie data structure for a given
+      Key.
+<p>
+
+      For convenience we support instantiating tries for most of
+      our data structures. For example, Word has several
+      tries inside.
+<p>
+
+      For the common string trie, there's <code class="code"><span class="constructor">Trie</span>.<span class="constructor">String</span></code>.<br>
+<br>
+<h2 id="image">Memory model</h2>
+<p>
+
+      This layer is responsible for the representation of binaries. It
+      provides interfaces for the memory objects:
+<p>
+<ul>
+<li>mem - a contiguous array of bytes, indexed with
+       absolute addresses;</li>
+</ul>
+<ul>
+<li> 'a table - a mapping from a memory regions to
+       arbitrary data (no duplicates or intersections);</li>
+</ul>
+<ul>
+<li>a memmap - a mapping from memory region to
+        arbitrary data with duplicates and intersections allowed, aka
+        segment tree or interval map;</li>
+</ul>
+<ul>
+<li>image - represents a binary object with all its
+       symbols, segments, sections and other meta information.</li>
+</ul>
+
+      The <code class="code"><span class="constructor">Image</span></code> module uses the plugin system to load binary
+      objects. In order to add new loader, one should implement the
+      Backend.t loader function and register it with the
+      Image.register_backend function.<br>
+<br>
+<h2 id="disasm">Disassembler</h2>
+<p>
+
+      This layer defines interfaces for disassemblers. Two interfaces
+      are provided:
+<p>
+<ul>
+<li>Disasm - a regular interface that hides all
+       complexities, but may not always be very flexible.</li>
+<li>Disasm_expert - an expert interface that
+      provides access to a low-level representation. It is very
+      flexible and fast, but harder to use.</li>
+</ul>
+
+      To disassemble files or data with the regular interface, use
+      one of the following functions:
+<p>
+<ul>
+<li><code class="code"><span class="constructor">Disasm</span>.of_mem</code> - to disassemble a region of memory;</li>
+<li><code class="code"><span class="constructor">Disasm</span>.of_image</code> - to disassemble a loaded binary object;</li>
+<li><code class="code"><span class="constructor">Disasm</span>.of_file</code> - to disassemble file.</li>
+</ul>
+
+      All these functions perform disassembly by recursive descent,
+      reconstruct the control flow graph, and perform lifting.
+<p>
+
+      The result of disassembly is represented by the abstract value
+      of type disasm. Two main data structures that are
+      used to represent disassembled program are:
+<p>
+<ul>
+<li>insn - a machine instruction;</li>
+<li>block - a basic block, i.e., a linear sequence of
+        instructions.</li>
+</ul>
+
+      The following figure shows the relationship between basic data
+      structures of the disassembled program.
+<p>
+
+      <pre class="verbatim">        +-----------------+
+        | +-------------+ |
+        | |   disasm    | |
+        | +-------------+ |
+        |        |        |
+        |        | *      |
+        | +-------------+ |
+        | |    block    | |
+        | +-------------+ |
+        |        |        |
+        |        | *      |
+        | +-------------+ |
+        | |     insn    | |
+        | +-------------+ |
+        |        |        |
+        |        | *      |
+        | +-------------+ |
+        | |     stmt    | |
+        | +-------------+ |
+        +-----------------+
+     </pre>
+<p>
+
+      A disassembled program is represented as a set of interconnected
+      basic blocks, called a whole program control flow
+      graph (CFG) and it is indeed represented as a graph
+      <code class="code"><span class="constructor">Graphs</span>.<span class="constructor">Cfg</span></code>.  See <a href="Graphlib.Std.html">graphlib</a> for more
+      information on graphs.
+<p>
+
+      Each block is a container to a sequence of machine
+      instructions. It is guaranteed that there's at least one
+      instruction in the block, thus the Block.leader
+      and Block.terminator functions are total.
+<p>
+
+      Each machine instruction is represented by its
+      <code class="code">opcode</code>, <code class="code">name</code> and <code class="code">array</code> of operands (these are machine and
+      disassembler specific), a set of predicates (that approximates
+      instruction semantics on a very high level), and a sequence of
+      BIL statements that precisely define the semantics of
+      the instruction.
+<p>
+
+      The expert interface exposes low level interface that provides
+      facilities for building custom implementations of
+      disassemblers. The interface to the disassembler backend is
+      exposed via the <code class="code"><span class="constructor">Disasm_expert</span>.<span class="constructor">Basic</span></code> module. New backends can
+      be added by implementing the 'disasm.hpp' interface.
+<p>
+
+      Modules of type CPU provide a high level abstraction of
+      the machine CPU and allow one to reason about the instruction
+      semantics independently from the target platform. The module
+      type Target brings <code class="code"><span class="constructor">CPU</span></code> and <code class="code"><span class="constructor">ABI</span></code> together. To get
+      an instance of this module, you can use the
+      target_of_arch function. Architecture
+      specific implementations of the <code class="code"><span class="constructor">Target</span></code> interface may (and
+      usually do) provide more information, see corresponding support
+      libraries for <a href="ARM.html"><code class="code"><span class="constructor">ARM</span></code></a> and <a href="X86_cpu.html">x86</a> architectures.<br>
+<br>
+<h2 id="sema">Semantic Analysis</h2>
+<p>
+
+      On the semantic level the disassembled program is lifted into
+      the BAP Intermediate Representation (BIR). BIR is a
+      semi-graphical representation of BIL (where BIL represents a
+      program as Abstract Syntax Tree). The BIR provides mechanisms to
+      express richer relationships between program terms and it also
+      easier to use for most use cases, especially for data dependency
+      analysis.
+<p>
+
+      The program in IR is build of terms. In fact the program itself
+      is also a term. There're only 7 kinds of terms:
+<p>
+<ul>
+<li>program - the program in whole;</li>
+<li>sub - subroutine;</li>
+<li>arg - subroutine argument;</li>
+<li>blk - basic block;</li>
+<li>def - definition of a variable;</li>
+<li>phi - phi-node in the SSA form;</li>
+<li>jmp - a transfer of control.</li>
+</ul>
+
+      Unlike expressions and statements in BIL, IR's terms are <em>      concrete entities</em>.  Concrete entity is such entity that can
+      change in time and space, as well as come in and out of
+      existence.  Contrary, <em>abstract entity</em> is eternal and
+      unchangeable.  <em>Identity</em> denotes the sameness of a concrete
+      entity as it changes in time.  Abstract entities don't have an
+      identity since they are immutable.  Program is built of concrete
+      entities called terms.  Terms have <em>attributes</em> that can
+      change in time, without affecting the identity of a term.
+      Attributes are abstract entities.  In each particular point of
+      space and time a term is represented by a snapshot of all its
+      attributes, colloquially called <em>value</em>.  Functions that
+      change the value of a term in fact return a new value with
+      different set of attributes.  For example, <code class="code">def</code> term has two
+      attributes: left hand side (lhs), that associates definition
+      with abstract variable, and right hand side (rhs) that
+      associates <code class="code">def</code> with an abstract expression. Suppose, that the
+      definition was:
+<p>
+
+      <pre class="codepre"><code class="code">        <span class="keywordsign">#</span> <span class="keyword">let</span> d_1 = <span class="constructor">Def</span>.create x <span class="constructor">Bil</span>.(var y + var z);;
+        <span class="keyword">val</span> d_1 : <span class="constructor">Def</span>.t = 00000001: x := y + z
+      </code></pre>
+<p>
+
+      To change the right hand side of a definition we use
+      <code class="code"><span class="constructor">Def</span>.with_rhs</code> that returns the <em>same</em> definition but with
+      <em>different</em> value:
+<p>
+
+      <pre class="codepre"><code class="code">        <span class="keywordsign">#</span> <span class="keyword">let</span> d_2 = <span class="constructor">Def</span>.with_rhs d_1 <span class="constructor">Bil</span>.(int <span class="constructor">Word</span>.b1);;
+        <span class="keyword">val</span> d_2 : <span class="constructor">Def</span>.t = 00000001: x := <span class="keyword">true</span>
+      </code></pre>
+<p>
+
+      <code class="code">d_1</code> and <code class="code">d_2</code> is different values
+<p>
+
+      <pre class="codepre"><code class="code">        <span class="keywordsign">#</span> <span class="constructor">Def</span>.equal d_1 d_2;;
+        - : bool = <span class="keyword">false</span>
+      </code></pre>  of the same term <pre class="codepre"><code class="code">        <span class="keywordsign">#</span> <span class="constructor">Term</span>.same d_1 d_2;;
+        - : bool = <span class="keyword">true</span>
+      </code></pre>
+<p>
+
+      The identity of this terms is denoted by the term identifier
+      (<code class="code">tid</code>). In the textual representation term identifiers are
+      printed as ordinal numbers.
+<p>
+
+      Terms, can contain other terms. But unlike BIL expressions or
+      statements, this relation is not truly recursive, since the
+      structure of program term is fixed: <code class="code">arg</code>, <code class="code">phi</code>, <code class="code">def</code>, <code class="code">jmp</code>
+      are leaf terms; <code class="code">sub</code> can only contain <code class="code">arg</code>'s or <code class="code">blk</code>'s; <code class="code">blk</code>
+      consists of <code class="code">phi</code>, <code class="code">def</code> and <code class="code">jmp</code> sequences of terms, as
+      pictured in the figure below.  Although, the term structure is
+      closed to changes, you still can extend particular term with
+      attributes, using <code class="code">set_attr</code> and <code class="code">get_attr</code> functions of the
+      Term module. This functions are using extensible
+      variant type to encode attributes.
+<p>
+
+      <pre class="verbatim">        +--------------------------------------------------------+
+        |                +-------------------+                   |
+        |                |      program      |                   |
+        |                +---------+---------+                   |
+        |                          |*                            |
+        |                +---------+---------+                   |
+        |                |        sub        |                   |
+        |                +---------+---------+                   |
+        |                          |                             |
+        |        +-----------------+---------------+             |
+        |        |*                                |*            |
+        |  +-----+-------+                 +-------+-------+     |
+        |  |    arg      |                 |      blk      |     |
+        |  +-------------+                 +-------+-------+     |
+        |                                          |             |
+        |           +---------------+--------------+             |
+        |           |*              |*             | *           |
+        |     +-----+-----+   +-----+-----+   +----+-----+       |
+        |     |    phi    |   |    def    |   |   jmp    |       |
+        |     +-----------+   +-----------+   +----------+       |
+        +--------------------------------------------------------+
+     </pre><br>
+<br>
+<h2 id="project">Working with project</h2>
+<p>
+
+      There're two general approaches to obtain a value of type
+      project:<ul>
+<li>create it manually using <code class="code"><span class="constructor">Project</span>.create</code> function;</li>
+<li>write a plugin to the <code class="code">bap</code> frontend.</li>
+</ul>
+
+      Although the first approach is simplistic and gives you a full
+      control, we still recommend to use the latter.
+<p>
+
+      To write a program analysis plugin (or pass in short) you need to
+      implement a function with one of the following interfaces:
+<p>
+<ul>
+<li><code class="code">project&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;project</code> and register it with
+        register_pass;</li>
+<li><code class="code">project&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit</code> and register it with
+         register_pass';</li>
+</ul>
+
+      Once loaded from the <code class="code">bap</code> frontend (see <code class="code">bap&nbsp;--help</code>) this
+      function will be invoked with a value of type
+      project that provides access to all information
+      gathered from the input source. If the registered function
+      returns a non <code class="code">unit</code> type, then it can functionally update the
+      project state, e.g., add annotations, discover new symbols,
+      transform program representation, etc.
+<p>
+
+      <h4 id="4_Example">Example</h4>
+<p>
+
+      The following plugin prints all sections in a file:
+<p>
+
+      <pre class="codepre"><code class="code">        <span class="keyword">open</span> <span class="constructor">Core_kernel</span>
+        <span class="keyword">open</span> <span class="constructor">Bap</span>.<span class="constructor">Std</span>
+        <span class="keyword">open</span> <span class="constructor">Format</span>
+
+        <span class="keyword">let</span> print_sections p =
+          <span class="constructor">Project</span>.memory p |&gt; <span class="constructor">Memmap</span>.to_sequence |&gt; <span class="constructor">Seq</span>.iter ~f:(<span class="keyword">fun</span> (mem,x) <span class="keywordsign">-&gt;</span>
+              <span class="constructor">Option</span>.iter (<span class="constructor">Value</span>.get <span class="constructor">Image</span>.section x) ~f:(<span class="keyword">fun</span> name <span class="keywordsign">-&gt;</span>
+                  printf <span class="string">"Section: %s@.%a@."</span> name <span class="constructor">Memory</span>.pp mem))
+
+        <span class="keyword">let</span> () = <span class="constructor">Project</span>.register_pass' print_sections
+      </code></pre>
+<p>
+
+      Note: this functionality is provided by the <code class="code">print</code> plugin.
+<p>
+
+      <h3 id="3_Passinginformationbetweenpasses">Passing information between passes</h3>
+<p>
+
+      To pass data from one pass to another in a type safe manner, we
+      use universal values. Values can be attached to a
+      particular memory region, IR terms, or put into the <code class="code">storage</code>
+      dictionary. For the first case we use the memmap data
+      structure.  It is an interval tree containing all the memory
+      regions that are used during analysis. For the <code class="code">storage</code> we use
+      <code class="code"><span class="constructor">Dict</span></code> data structure. Also, each program term, has its own
+      dictionary.
+<p>
+
+      <h3 id="3_Memoryannotations">Memory annotations</h3>
+<p>
+
+      By default the memory is annotated with the following attributes:
+<p>
+<ul>
+<li>section -- for regions of memory that had a
+      particular name in the original binary. For example, in ELF,
+      sections have names that annotate a corresponding memory
+      region. If project was created from memory object, then the
+      overall memory will be marked as a <code class="code"><span class="string">"bap.user"</span></code> section.</li>
+</ul>
+<ul>
+<li>segment -- if the binary data was loaded
+      from a binary format that contains segments, then the
+      corresponding memory regions are be marked. Segments provide
+      access to permission information.</li>
+</ul>
+<br>
+<br>
+<h1 id="api">BAP API</h1><br>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Integer.html">Integer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+Abstract integral type.
+</div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Legacy.html">Legacy</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Legacy.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<span class="deprecated">Legacy
+</span></div>
+
+<pre><span class="keyword">module</span> <a href="Bap.Std.Monad.html">Monad</a>: <code class="type">module type of Legacy.Monad</code></pre></body></html>
