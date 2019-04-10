@@ -1,0 +1,68 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-greedy</TITLE>
+</HEAD><BODY>
+<H1>primus-greedy</H1>
+Section: Primus-greedy Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+primus&#45;greedy &#45; evaluates all machines in the DFS order
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>primus&#45;greedy</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+The greedy scheduling strategy will continue with the same state, unless the machine reaches a termination state, i&#46;e&#46;, when the <B>next</B> value in a context becomes <B>None</B>&#46; In that case another alive state that has a <B>next</B> value that is not <B>None</B> is chosen&#46; If such state doesn&#39;t exist, then the Machine finally terminates&#46; Thus this strategy will perform a depth&#45;first traversal of the state tree, and guarantees that all paths are explored
+<P>
+
+The greedy scheduler will attempt to reschedule everytime a basic block is evaluated&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;scheduler</B><DD>
+Enable the scheduler&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>home:</B> <I>www:bap&#46;ece&#46;cmu&#46;edu</I>
+<P>
+
+<B>tags:</B> primus, scheduler
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 13:09:25 GMT, April 03, 2019
+</BODY>
+</HTML>

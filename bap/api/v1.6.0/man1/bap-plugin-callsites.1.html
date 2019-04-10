@@ -1,0 +1,96 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of callsites</TITLE>
+</HEAD><BODY>
+<H1>callsites</H1>
+Section: Callsites Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+callsites &#45; annotate callsites with subroutine&#39;s arguments
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>callsites</B> [<I>OPTION</I>]&#46;&#46;&#46; 
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+This pass will inject artifical definitions of a subroutine arguments at call sites&#46; Consider function <B>malloc</B> that has the following declaration in BIR:
+<P>
+
+<PRE>
+
+      sub malloc(malloc_size, malloc_result)
+      malloc_size :: in u32 = R0
+      malloc_result :: out u32 = R0
+</PRE>
+
+<P>
+
+This plugin will add two definitions, one just before the call to the malloc:
+<P>
+
+<PRE>
+
+      &#46;&#46;&#46;
+      000001c3: malloc_size := R0
+      0000015b: call @malloc with return %0000015c
+</PRE>
+
+<P>
+
+And prepend another to the block to which malloc will return:
+<P>
+
+<PRE>
+
+      0000015c:
+      000001c4: R0 := malloc_result
+      &#46;&#46;&#46;
+</PRE>
+
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B>bap&#45;plugin&#45;<A HREF="../man1/api.1.html">api</A></B>(1)
+<P>
+
+<B>tags:</B> pass
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 13:08:53 GMT, April 03, 2019
+</BODY>
+</HTML>
