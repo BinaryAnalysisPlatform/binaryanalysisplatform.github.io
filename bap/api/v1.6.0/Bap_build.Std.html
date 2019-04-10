@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,19 +89,18 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_build.Std.html">Bap_build.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-bapbuild support library.
-<p>
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>bapbuild support library.</p>
 
-    Underneath the hood <code class="code">bapbuild</code> is just a plugin to
+<p>Underneath the hood <code class="code">bapbuild</code> is just a plugin to
     <code class="code"><span class="constructor">Ocamlbuild</span></code>. Instead of using the <code class="code">bapbuild</code> utility, it is
     possible to use custom <code class="code">myocamlbuild.ml</code>. In that case to activate
     the bapbuild behavior it is needed to call <code class="code"><span class="constructor">Plugin_options</span>.set&nbsp;()</code>
     function, and and install plugin rules in the <code class="code"><span class="constructor">Before_rules</span></code>
-    phases, e.g.,
-<p>
+    phases, e.g.,</p>
 
-    <pre class="codepre"><code class="code">      <span class="keyword">open</span> <span class="constructor">Bap_build</span>.<span class="constructor">Std</span>
+<pre class="codepre"><code class="code">      <span class="keyword">open</span> <span class="constructor">Bap_build</span>.<span class="constructor">Std</span>
 
       <span class="keyword">let</span> () =
         <span class="constructor">Plugin_options</span>.set ();
@@ -108,9 +108,9 @@ bapbuild support library.
             <span class="keywordsign">|</span> <span class="constructor">Before_rules</span> <span class="keywordsign">-&gt;</span> <span class="constructor">Plugin_rules</span>.install ()
             <span class="keywordsign">|</span> _ <span class="keywordsign">-&gt;</span> ());
 
-    </code></pre><br>
+    </code></pre></div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_rules.html">Plugin_rules</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_rules.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_options.html">Plugin_options</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_options.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="MODULEPlugin_rules"><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_rules.html">Plugin_rules</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_rules.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEPlugin_options"><span class="keyword">module</span> <a href="Bap_build.Std.Plugin_options.html">Plugin_options</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_build.Std.Plugin_options.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -99,8 +100,8 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="X86_types.BV.html">BV</a>: <code class="type">Std.Bitvector</code></pre>
-<pre><span id="TYPEbinopf"><span class="keyword">type</span> <code class="type"></code>binopf</span> = <code class="type">Std.Exp.t -> Std.Exp.t -> Std.Exp.t</code> </pre>
+<pre><span class="keyword">module</span> <a href="X86_types.BV.html">BV</a>: <code class="type"><a href="Bap.Std.Bitvector.html">Std.Bitvector</a></code></pre>
+<pre><span id="TYPEbinopf"><span class="keyword">type</span> <code class="type"></code>binopf</span> = <code class="type"><a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a> -> <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a> -> <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a></code> </pre>
 
 
 <pre><code><span id="TYPEmode"><span class="keyword">type</span> <code class="type"></code>mode</span> = </code></pre><table class="typetable">
@@ -183,14 +184,14 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELToperand.Oaddr"><span class="constructor">Oaddr</span></span> <span class="keyword">of</span> <code class="type">Std.Exp.t</code></code></td>
+<code><span id="TYPEELToperand.Oaddr"><span class="constructor">Oaddr</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELToperand.Oimm"><span class="constructor">Oimm</span></span> <span class="keyword">of</span> <code class="type">Std.addr</code></code></td>
+<code><span id="TYPEELToperand.Oimm"><span class="constructor">Oimm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a></code></code></td>
 
 </tr></table>
 
@@ -208,7 +209,7 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTjumptarget.Jrel"><span class="constructor">Jrel</span></span> <span class="keyword">of</span> <code class="type">Std.addr * Std.addr</code></code></td>
+<code><span id="TYPEELTjumptarget.Jrel"><span class="constructor">Jrel</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> * <a href="Bap.Std.html#TYPEaddr">Std.addr</a></code></code></td>
 
 </tr></table>
 
@@ -225,14 +226,14 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELToffsetinfo.offlen">offlen</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELToffsetinfo.offlen">offlen</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELToffsetinfo.offtyp">offtyp</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELToffsetinfo.offtyp">offtyp</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 
 </tr>
 <tr>
@@ -260,7 +261,7 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 
 
 
-<pre><span id="TYPEcast_type"><span class="keyword">type</span> <code class="type"></code>cast_type</span> = <code class="type">Std.cast</code> </pre>
+<pre><span id="TYPEcast_type"><span class="keyword">type</span> <code class="type"></code>cast_type</span> = <code class="type"><a href="Bap.Std.html#TYPEcast">Std.cast</a></code> </pre>
 
 
 <pre><code><span id="TYPEopcode"><span class="keyword">type</span> <code class="type"></code>opcode</span> = </code></pre><table class="typetable">
@@ -268,14 +269,14 @@ See section 4.1 of the Intel® 64 and IA-32 Architectures Software
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Bswap"><span class="constructor">Bswap</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Bswap"><span class="constructor">Bswap</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Retn"><span class="constructor">Retn</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>) option * bool</code></code></td>
+<code><span id="TYPEELTopcode.Retn"><span class="constructor">Retn</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) option * bool</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 bytes to release, far/near ret<br>
 </div>
@@ -292,7 +293,7 @@ bytes to release, far/near ret<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Mov"><span class="constructor">Mov</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * Std.Exp.t option</code></code></td>
+<code><span id="TYPEELTopcode.Mov"><span class="constructor">Mov</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a> option</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dst, src, condition<br>
 </div>
@@ -302,14 +303,14 @@ dst, src, condition<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Movs"><span class="constructor">Movs</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Movs"><span class="constructor">Movs</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Movzx"><span class="constructor">Movzx</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Movzx"><span class="constructor">Movzx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dsttyp, dst, srctyp, src<br>
 </div>
@@ -319,7 +320,7 @@ dsttyp, dst, srctyp, src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Movsx"><span class="constructor">Movsx</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Movsx"><span class="constructor">Movsx</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dsttyp, dst, srctyp, src<br>
 </div>
@@ -329,7 +330,7 @@ dsttyp, dst, srctyp, src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Movdq"><span class="constructor">Movdq</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
+<code><span id="TYPEELTopcode.Movdq"><span class="constructor">Movdq</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dst type, dst op, src type, src op, aligned<br>
 </div>
@@ -339,7 +340,7 @@ dst type, dst op, src type, src op, aligned<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Movoffset"><span class="constructor">Movoffset</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoffsetinfo">offsetinfo</a> list</code></code></td>
+<code><span id="TYPEELTopcode.Movoffset"><span class="constructor">Movoffset</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoffsetinfo">offsetinfo</a> list</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dest type, dest, (src copy length, src type, src, src src offset, src dest offset)*<br>
 </div>
@@ -349,14 +350,14 @@ dest type, dest, (src copy length, src type, src, src src offset, src dest offse
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Lea"><span class="constructor">Lea</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * Std.Exp.t</code></code></td>
+<code><span id="TYPEELTopcode.Lea"><span class="constructor">Lea</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Call"><span class="constructor">Call</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a> * Std.addr</code></code></td>
+<code><span id="TYPEELTopcode.Call"><span class="constructor">Call</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.html#TYPEaddr">Std.addr</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 addr is RA<br>
 </div>
@@ -366,21 +367,21 @@ addr is RA<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Shift"><span class="constructor">Shift</span></span> <span class="keyword">of</span> <code class="type">Std.binop * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Shift"><span class="constructor">Shift</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">Std.binop</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Shiftd"><span class="constructor">Shiftd</span></span> <span class="keyword">of</span> <code class="type">Std.binop * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Shiftd"><span class="constructor">Shiftd</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">Std.binop</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Rotate"><span class="constructor">Rotate</span></span> <span class="keyword">of</span> <code class="type">Std.binop * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
+<code><span id="TYPEELTopcode.Rotate"><span class="constructor">Rotate</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEbinop">Std.binop</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * bool</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 left or right, type, src/dest op, shift op, use carry flag<br>
 </div>
@@ -390,14 +391,14 @@ left or right, type, src/dest op, shift op, use carry flag<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Bt"><span class="constructor">Bt</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Bt"><span class="constructor">Bt</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Bs"><span class="constructor">Bs</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEdirection">direction</a></code></code></td>
+<code><span id="TYPEELTopcode.Bs"><span class="constructor">Bs</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEdirection">direction</a></code></code></td>
 
 </tr>
 <tr>
@@ -411,14 +412,14 @@ left or right, type, src/dest op, shift op, use carry flag<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Jcc"><span class="constructor">Jcc</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEjumptarget">jumptarget</a> * Std.Exp.t</code></code></td>
+<code><span id="TYPEELTopcode.Jcc"><span class="constructor">Jcc</span></span> <span class="keyword">of</span> <code class="type"><a href="X86_types.html#TYPEjumptarget">jumptarget</a> * <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Setcc"><span class="constructor">Setcc</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * Std.Exp.t</code></code></td>
+<code><span id="TYPEELTopcode.Setcc"><span class="constructor">Setcc</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="Bap.Std.Exp.html#TYPEt">Std.Exp.t</a></code></code></td>
 
 </tr>
 <tr>
@@ -432,56 +433,56 @@ left or right, type, src/dest op, shift op, use carry flag<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Cmps"><span class="constructor">Cmps</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Cmps"><span class="constructor">Cmps</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Scas"><span class="constructor">Scas</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Scas"><span class="constructor">Scas</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Stos"><span class="constructor">Stos</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Stos"><span class="constructor">Stos</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Push"><span class="constructor">Push</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Push"><span class="constructor">Push</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pop"><span class="constructor">Pop</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Pop"><span class="constructor">Pop</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pushf"><span class="constructor">Pushf</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Pushf"><span class="constructor">Pushf</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Popf"><span class="constructor">Popf</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Popf"><span class="constructor">Popf</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Popcnt"><span class="constructor">Popcnt</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Popcnt"><span class="constructor">Popcnt</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 size, src, dest<br>
 </div>
@@ -505,56 +506,56 @@ size, src, dest<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Add"><span class="constructor">Add</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Add"><span class="constructor">Add</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Adc"><span class="constructor">Adc</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Adc"><span class="constructor">Adc</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Inc"><span class="constructor">Inc</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Inc"><span class="constructor">Inc</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Dec"><span class="constructor">Dec</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Dec"><span class="constructor">Dec</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Sub"><span class="constructor">Sub</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Sub"><span class="constructor">Sub</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Sbb"><span class="constructor">Sbb</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Sbb"><span class="constructor">Sbb</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Cmp"><span class="constructor">Cmp</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Cmp"><span class="constructor">Cmp</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Cmpxchg"><span class="constructor">Cmpxchg</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Cmpxchg"><span class="constructor">Cmpxchg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
@@ -568,70 +569,70 @@ size, src, dest<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Xadd"><span class="constructor">Xadd</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Xadd"><span class="constructor">Xadd</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Xchg"><span class="constructor">Xchg</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Xchg"><span class="constructor">Xchg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.And"><span class="constructor">And</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.And"><span class="constructor">And</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Or"><span class="constructor">Or</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Or"><span class="constructor">Or</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Xor"><span class="constructor">Xor</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Xor"><span class="constructor">Xor</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Test"><span class="constructor">Test</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Test"><span class="constructor">Test</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Ptest"><span class="constructor">Ptest</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Ptest"><span class="constructor">Ptest</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Not"><span class="constructor">Not</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Not"><span class="constructor">Not</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Neg"><span class="constructor">Neg</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Neg"><span class="constructor">Neg</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Mul"><span class="constructor">Mul</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Mul"><span class="constructor">Mul</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 typ, src<br>
 </div>
@@ -641,7 +642,7 @@ typ, src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Imul"><span class="constructor">Imul</span></span> <span class="keyword">of</span> <code class="type">Std.typ * (bool * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Imul"><span class="constructor">Imul</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * (bool * <a href="X86_types.html#TYPEoperand">operand</a>) * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 typ, (true if one operand form, dst operand), src1, src2<br>
 </div>
@@ -651,7 +652,7 @@ typ, (true if one operand form, dst operand), src1, src2<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Div"><span class="constructor">Div</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Div"><span class="constructor">Div</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 typ, src<br>
 </div>
@@ -661,7 +662,7 @@ typ, src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Idiv"><span class="constructor">Idiv</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Idiv"><span class="constructor">Idiv</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 typ, src<br>
 </div>
@@ -741,7 +742,7 @@ typ, src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Punpck"><span class="constructor">Punpck</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * Std.typ * <a href="X86_types.html#TYPEorder">order</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+<code><span id="TYPEELTopcode.Punpck"><span class="constructor">Punpck</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEorder">order</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 dest size, element size, low/high elements, dest, src, optional VEX src<br>
 </div>
@@ -751,7 +752,7 @@ dest size, element size, low/high elements, dest, src, optional VEX src<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Ppackedbinop"><span class="constructor">Ppackedbinop</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * Std.typ * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+<code><span id="TYPEELTopcode.Ppackedbinop"><span class="constructor">Ppackedbinop</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 Perform a generic packed binary operation. dest size, element size, binop, assembly string, dest, src, optional VEX src<br>
 </div>
@@ -761,14 +762,14 @@ Perform a generic packed binary operation. dest size, element size, binop, assem
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pbinop"><span class="constructor">Pbinop</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+<code><span id="TYPEELTopcode.Pbinop"><span class="constructor">Pbinop</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEbinopf">binopf</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pmov"><span class="constructor">Pmov</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * Std.typ * Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEcast_type">cast_type</a> * string)</code></code></td>
+<code><span id="TYPEELTopcode.Pmov"><span class="constructor">Pmov</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEcast_type">cast_type</a> * string)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 Packed move. dest size, dest elt size, src elt size, dest, src, ext(signed/zero), name<br>
 </div>
@@ -778,49 +779,49 @@ Packed move. dest size, dest elt size, src elt size, dest, src, ext(signed/zero)
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pmovmskb"><span class="constructor">Pmovmskb</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Pmovmskb"><span class="constructor">Pmovmskb</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pcmp"><span class="constructor">Pcmp</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * Std.typ * Std.binop * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
+<code><span id="TYPEELTopcode.Pcmp"><span class="constructor">Pcmp</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="Bap.Std.html#TYPEbinop">Std.binop</a> * string * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> option)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Palignr"><span class="constructor">Palignr</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Palignr"><span class="constructor">Palignr</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pcmpstr"><span class="constructor">Pcmpstr</span></span> <span class="keyword">of</span> <code class="type">(Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.Pcmpstr.html#TYPEimm8cb">Pcmpstr.imm8cb</a> * <a href="X86_types.Pcmpstr.html#TYPEpcmpinfo">Pcmpstr.pcmpinfo</a>)</code></code></td>
+<code><span id="TYPEELTopcode.Pcmpstr"><span class="constructor">Pcmpstr</span></span> <span class="keyword">of</span> <code class="type">(<a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a> *<br>      <a href="X86_types.Pcmpstr.html#TYPEimm8cb">Pcmpstr.imm8cb</a> * <a href="X86_types.Pcmpstr.html#TYPEpcmpinfo">Pcmpstr.pcmpinfo</a>)</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pshufb"><span class="constructor">Pshufb</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option</code></code></td>
+<code><span id="TYPEELTopcode.Pshufb"><span class="constructor">Pshufb</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option</code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Pshufd"><span class="constructor">Pshufd</span></span> <span class="keyword">of</span> <code class="type">Std.typ * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
+<code><span id="TYPEELTopcode.Pshufd"><span class="constructor">Pshufd</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a> * <a href="X86_types.html#TYPEoperand">operand</a> * <a href="X86_types.html#TYPEoperand">operand</a><br>        * <a href="X86_types.html#TYPEoperand">operand</a> option * <a href="X86_types.html#TYPEoperand">operand</a></code></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTopcode.Leave"><span class="constructor">Leave</span></span> <span class="keyword">of</span> <code class="type">Std.typ</code></code></td>
+<code><span id="TYPEELTopcode.Leave"><span class="constructor">Leave</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code></code></td>
 
 </tr>
 <tr>
@@ -996,14 +997,14 @@ Specifies mandatory prefix (0=none, 1=pref_opsize 2=repz 3=repnz)<br>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTprefix.addrsize">addrsize</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELTprefix.addrsize">addrsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTprefix.opsize">opsize</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELTprefix.opsize">opsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 General operand size<br>
 </div>
@@ -1013,7 +1014,7 @@ General operand size<br>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTprefix.bopsize">bopsize</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELTprefix.bopsize">bopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 Operand size that defaults to machine size
                      (e.g. for pop)<br>
@@ -1024,7 +1025,7 @@ Operand size that defaults to machine size
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTprefix.mopsize">mopsize</span>&nbsp;: <code class="type">Std.typ</code>;</code></td>
+<code><span id="TYPEELTprefix.mopsize">mopsize</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEtyp">Std.typ</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 Multi-scalar operand size<br>
 </div>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,17 +93,21 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.S.Exn.html">Monads.Std.Monad.S.Exn</a></h1>
 
-<pre><span class="keyword">module</span> Exn: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Interacting between monads and language exceptions<br>
+<pre><span id="MODULEExn"><span class="keyword">module</span> Exn</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Interacting between monads and language exceptions</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALexpect"><span class="keyword">val</span> expect</span> : <code class="type">?finally:(unit -> unit <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a>) -><br>       f:(unit -> 'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a>) -><br>       catch:(exn -> 'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a>) -> 'a <a href="Monads.Std.Monad.S.html#TYPEt">Std.Monad.S.t</a></code></pre><div class="info ">
-<code class="code">expect&nbsp;?finally&nbsp;~f&nbsp;~catch</code> evaluates <code class="code">f&nbsp;()</code>, if an
+<div class="info-desc">
+<p><code class="code">expect&nbsp;?finally&nbsp;~f&nbsp;~catch</code> evaluates <code class="code">f&nbsp;()</code>, if an
             exception <code class="code">e</code> is raised during the evaluation (or call)
             then the result of whole computation will be <code class="code">catch&nbsp;e</code>.
             If an optional argument <code class="code">?finally</code> is passed the
             <code class="code">finally</code> is called after <code class="code">f&nbsp;()</code> computation or after
-            <code class="code">catch&nbsp;e</code> if an exception was raised.<br>
+            <code class="code">catch&nbsp;e</code> if an exception was raised.</p>
+</div>
 </div>
 </body></html>

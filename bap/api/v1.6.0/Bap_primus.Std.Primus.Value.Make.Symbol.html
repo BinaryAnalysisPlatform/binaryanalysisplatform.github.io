@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,41 +91,43 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Value.Make.Symbol.html">Bap_primus.Std.Primus.Value.Make.Symbol</a></h1>
 
-<pre><span class="keyword">module</span> Symbol: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.Make.Symbol.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Symbol Value Isomorphism.
-<p>
+<pre><span id="MODULESymbol"><span class="keyword">module</span> Symbol</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Value.Make.Symbol.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Symbol Value Isomorphism.</p>
 
-            A value can have a symbolic representation that is usefull
+<p>A value can have a symbolic representation that is usefull
             to embed analysis in the machine computation. We inject
             symbols, represented with the <code class="code">string</code> data type, into the
             value, using interning, i.e., each symbol is mapped to its
-            index (see the Index module).
-<p>
+            index (see the Index module).</p>
 
-            The relation between values and symbols is not bijective,
+<p>The relation between values and symbols is not bijective,
             since not all values represent interned symbols, moreover
             it depends on the order of statements, i.e., a symbol shall
             be interned (with the <code class="code">to_value</code> call) before it can be
-            translated back into a symbolic representation.
-<p>
+            translated back into a symbolic representation.</p>
 
-            Implementors of Primus components are encouraged to use the
+<p>Implementors of Primus components are encouraged to use the
             <code class="code"><span class="constructor">Index</span></code> module and implement their own mapping with bijection
-            enforced by the abstraction.<br>
+            enforced by the abstraction.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALto_value"><span class="keyword">val</span> to_value</span> : <code class="type">string -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> Machine.t</code></pre><div class="info ">
-<code class="code">to_value&nbsp;sym</code> returns a value corresponding to the
-              provided symbolic representation.<br>
+<div class="info-desc">
+<p><code class="code">to_value&nbsp;sym</code> returns a value corresponding to the
+              provided symbolic representation.</p>
+</div>
 </div>
 
 <pre><span id="VALof_value"><span class="keyword">val</span> of_value</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> -> string Machine.t</code></pre><div class="info ">
-<code class="code">of_value&nbsp;v</code> returns a symbolic representation of the
-              value <code class="code">v</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">of_value&nbsp;v</code> returns a symbolic representation of the
+              value <code class="code">v</code>.</p>
 
-              If the symbolic representation of a value wasn't
-              established, then returns an empty string.<br>
+<p>If the symbolic representation of a value wasn't
+              established, then returns an empty string.</p>
+</div>
 </div>
 </body></html>

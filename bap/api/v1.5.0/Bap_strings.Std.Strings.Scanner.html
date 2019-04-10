@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -105,7 +106,7 @@
     forall <code class="code">c</code> in <code class="code">result</code>, <code class="code">not&nbsp;(is_stop&nbsp;c)</code><br>
 </div>
 
-<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?is_stop:(char -> bool) -><br>       read:(int -> char option) -> int -> (int * string) Sequence.t</code></pre><div class="info ">
+<pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?is_stop:(char -> bool) -><br>       read:(int -> char option) -> int -> (int * string) Std.Sequence.t</code></pre><div class="info ">
 <code class="code">scan&nbsp;~is_stop&nbsp;~read&nbsp;off</code> applies <code class="code">next&nbsp;~is_stop&nbsp;~read</code> for all
     offsets that are bigger than <code class="code">off</code> until <code class="code">read&nbsp;off</code> is not <code class="code"><span class="constructor">None</span></code>.
     Returns a sequence of non-empty strings, paired with their

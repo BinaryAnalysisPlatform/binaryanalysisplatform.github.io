@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,22 +91,28 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Machine.S.Observation.html">Bap_primus.Std.Primus.Machine.S.Observation</a></h1>
 
-<pre><span class="keyword">module</span> Observation: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Observations interface.<br>
+<pre><span id="MODULEObservation"><span class="keyword">module</span> Observation</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Observations interface.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALobserve"><span class="keyword">val</span> observe</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -><br>       ('a -> unit <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Std.Primus.Machine.S.t</a>) -><br>       unit <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Std.Primus.Machine.S.t</a></code></pre><div class="info ">
-<code class="code">observe&nbsp;obs&nbsp;on_observation</code> subscribes to the given
+<div class="info-desc">
+<p><code class="code">observe&nbsp;obs&nbsp;on_observation</code> subscribes to the given
               observation <code class="code">obs</code>. Every time the observation <code class="code">obs</code> is
               made a function <code class="code">on_observation</code> is called. The
               function can perform arbitrary computations in the
               machine monad, e.g., make its own computations, or access
-              other components via their interfaces.<br>
+              other components via their interfaces.</p>
+</div>
 </div>
 
 <pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Std.Primus.statement</a> -><br>       'a -> unit <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">Std.Primus.Machine.S.t</a></code></pre><div class="info ">
-<code class="code">make&nbsp;observation&nbsp;event</code> make an <code class="code">observation</code> of the
-              given <code class="code">event</code>.<br>
+<div class="info-desc">
+<p><code class="code">make&nbsp;observation&nbsp;event</code> make an <code class="code">observation</code> of the
+              given <code class="code">event</code>.</p>
+</div>
 </div>
 </body></html>

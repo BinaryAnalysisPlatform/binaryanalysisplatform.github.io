@@ -8,6 +8,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -123,8 +124,6 @@ Base signature for collections
 The minimal choice interface for unary monad.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Basic.html">Basic</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Basic2.html">Basic2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
 Basic binary monad interface.
@@ -135,9 +134,12 @@ Basic binary monad interface.
 The minimal choice interface for binary monad.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Basic2.html">Basic2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
 <tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Bap.Std.CPU.html">CPU</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+A BIL model of CPU
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Closure.html">Closure</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
 Machine independent closure.
@@ -208,10 +210,13 @@ Graph signature.
 Inifinite iterators produces infinite sequences.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Infix.html">Infix</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<tr><td><a href="Bap.Std.Interval_tree.Interval.html">Interval</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Infix2.html">Infix2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.Interval_binable.html">Interval_binable</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
+<td><div class="info">
+Binable Abstract Interval.
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Isomorphism.html">Isomorphism</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
 <code class="code"><span class="constructor">Isomorphism</span></code> is a bijection between type <code class="code">s</code> and <code class="code">t</code>.
@@ -220,7 +225,23 @@ Inifinite iterators produces infinite sequences.
 <tr><td align="left"><br>K</td></tr>
 <tr><td><a href="Bap_strings_index.Key.html">Key</a> [<a href="Bap_strings_index.html">Bap_strings_index</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Trie.Key.html">Key</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+Key requirements.
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Bap.Std.Image.Loader.html">Loader</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
+<td><div class="info">
+An interface that a backend shall implement.
+</div>
+</td></tr>
 <tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Bap.Std.Memory_iterators.html">Memory_iterators</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Iterators lifted into monad
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Minimal.html">Minimal</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
 The Minimal monad interface.
@@ -415,10 +436,39 @@ a data type with a version
 Interface for printing data.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.S.html">S</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<tr><td><a href="Bap.Std.Taint.S.html">S</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.State.S.html">S</a> [<a href="Bap.Std.Legacy.Monad.State.html">Bap.Std.Legacy.Monad.State</a>]</td>
+<tr><td><a href="Bap.Std.Source.Factory.S.html">S</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
+<td><div class="info">
+Factory interface
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.S.html">S</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Value.S.html">S</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
+<td><div class="info">
+A required interface for the type to be lifted to value.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.S.html">S</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.S.html">S</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S.html">S</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+An interface of a basic evaluator in a <code class="code"><span class="constructor">T1</span></code> monad
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.S.html">S</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
+<td><div class="info">
+The Interval Tree Interface.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.S.html">S</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+Prefix trie interface.
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.S.html">S</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
 The integer signature.
@@ -488,11 +538,30 @@ The binary fail monad interface.
 a monoid over a binary polymorphic type.
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.S2.html">S2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.html">S2</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+An interface of a basic evaluator in a <code class="code"><span class="constructor">T1</span></code> monad
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.S_binable.html">S_binable</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
+<td><div class="info">
+Binable Interval Tree.
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html">State</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
 An interface to the state.
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Bap.Std.Target.html">Target</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+Abstract interface for all targets.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.Token.html">Token</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+Minimum required interface for a token data type
 </div>
 </td></tr>
 <tr><td align="left"><br>V</td></tr>

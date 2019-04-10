@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,45 +93,39 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a></h1>
 
-<pre><span class="keyword">module</span> Lisp: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Lisp machine.
-<p>
+<pre><span id="MODULELisp"><span class="keyword">module</span> Lisp</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Lisp machine.</p>
 
-        The Lisp Machine is an extensible Lisp Machine embedded into
+<p>The Lisp Machine is an extensible Lisp Machine embedded into
         the Primus Machine. The Lisp machine is used to provide
         function stubs (summaries), as well as to control the Primus
-        Machine using a dialect of Lisp.
-<p>
+        Machine using a dialect of Lisp.</p>
 
-        <h1 id="1_PrimusLispLanguage">Primus Lisp Language</h1>
-<p>
-
-        <h2 id="2_Overview">Overview</h2>
-<p>
-
-        Primus Lisp is a dialect of Lisp, that can be used to interact
+<h2 id="1_PrimusLispLanguage">Primus Lisp Language</h2>
+<h3 id="2_Overview">Overview</h3>
+<p>Primus Lisp is a dialect of Lisp, that can be used to interact
         with a native program. Primus Lisp is close to Common Lisp and
-        to the Emacs Lisp dialect.
-<p>
+        to the Emacs Lisp dialect.</p>
 
-        Primus Lips is a low-level language that doesn't provide many
+<p>Primus Lips is a low-level language that doesn't provide many
         abstractions, as it tries to be as close to the machine
         language as possible. In that sense Primus Lisp can be seen as
         an assembler, except that it can't really assemble binaries,
         as it operates over already existing and assembled
         program. Primus Lisp, however is still quite powerfull, as the
         absence of suitable abstractions is compensated with powerful
-        and versatile meta-programming system.
-<p>
+        and versatile meta-programming system.</p>
 
-        Primus Lisp is primarily used for the following tasks:<ul>
+<p>Primus Lisp is primarily used for the following tasks:</p>
+<ul>
 <li>writing function summaries (aka stubs);</li>
 <li>setting up program environment;</li>
 <li>exploring and observing program behavior.</li>
 </ul>
-
-        A Primus Lisp program is a file, that can contain the
-        following entities:<ul>
+<p>A Primus Lisp program is a file, that can contain the
+        following entities:</p>
+<ul>
 <li>feature requests;</li>
 <li>declarations;</li>
 <li>constants</li>
@@ -139,12 +134,10 @@ Lisp machine.
 <li>macros;</li>
 <li>functions;</li>
 </ul>
+<p>The entities may be specified in any order, however the above
+        order constitutes a good programming practice.</p>
 
-        The entities may be specified in any order, however the above
-        order constitutes a good programming practice.
-<p>
-
-        Each file provides (implements) a feature, that has the same
+<p>Each file provides (implements) a feature, that has the same
         name as the name of the file without an extension and
         directories. Thus the namespace of features is flat. A feature
         is usually a function, macro definition, or any other
@@ -155,42 +148,33 @@ Lisp machine.
         only one small function, or they can be a collection of other
         features. For example, the <code class="code">posix</code> feature provides an
         implementation of all functions specified in the POSIX
-        standard (not all at the time of writing).
-<p>
+        standard (not all at the time of writing).</p>
 
-        A collection of files is called a library.  To use features
+<p>A collection of files is called a library.  To use features
         provided by another file, the file should be requested with
         the <code class="code">(require&nbsp;&lt;ident&gt;)</code> form, where <code class="code">&lt;ident&gt;</code> is the name of
         the feature. A file with the requested name is searched in the
         library, and loaded, making all its definitions available in
         the lexical scope, that follows the <code class="code">require</code> form. If a
         feature is already provided, then nothing
-        happens. Dependencies should not contain cycles.
-<p>
+        happens. Dependencies should not contain cycles.</p>
 
-        Top-level declarations specify attributes that are shared by
-        all definitions in a file. For example, a declaration
-<p>
+<p>Top-level declarations specify attributes that are shared by
+        all definitions in a file. For example, a declaration</p>
 
-        <pre class="verbatim">(declare (context (arch armv7))</pre>
-<p>
+<pre class="verbatim">(declare (context (arch armv7))</pre>
+<p>makes all definitions visible only in the context of the ARMv7
+        architecture.</p>
 
-        makes all definitions visible only in the context of the ARMv7
-        architecture.
-<p>
-
-        Constants and substitutions are primitive abstractions that
+<p>Constants and substitutions are primitive abstractions that
         give names to code fragments. Macros are program
         transformations. Functions add parameters to a code, and are
         basic building blocks. Scope of all definitions can be limited
         with the context declarations. Finally, a function can be
-        advised with another function using the <code class="code">advice-add</code> function.
-<p>
+        advised with another function using the <code class="code">advice-add</code> function.</p>
 
-        <h2 id="2_Typesystem">Type system</h2>
-<p>
-
-        A type defines all possible values of an expression. In Primus
+<h3 id="2_Typesystem">Type system</h3>
+<p>A type defines all possible values of an expression. In Primus
         Lisp, expression values can be only scalar, i.e., machine
         words of different widths. The width is always specified in
         the number of bits. A maximum width of a word is equal to the
@@ -199,48 +183,37 @@ Lisp machine.
         implementation limits maximum width of the machine word to 64
         bits). We denote a type of expression with a decimal number,
         e.g., <code class="code">(exp&nbsp;:&nbsp;16)</code> means that an expression ranges over all 16
-        bit words.
-<p>
+        bit words.</p>
 
-        An expression can have a polymorphic type <code class="code">t</code> that denotes a
+<p>An expression can have a polymorphic type <code class="code">t</code> that denotes a
         powerset of all types for the given architecture. For example,
         for ARMv7, <b>t = 32 \/ 31 \/ .. \/ 1 </b>. Thus a value of any
-        type, is a also a value of type <code class="code">t</code>.
-<p>
+        type, is a also a value of type <code class="code">t</code>.</p>
 
-        Side note -- the type system doesn't include the unit type,
+<p>Side note -- the type system doesn't include the unit type,
         i.e., the <code class="code">0</code> type. An expression <code class="code">()</code> evaluates to the <code class="code">0:1</code>
-        value.
-<p>
+        value.</p>
 
-        <h2 id="2_Functionsandexpressions">Functions and expressions</h2>
-<p>
-
-        Functions are named abstractions of code, where a code is a
+<h3 id="2_Functionsandexpressions">Functions and expressions</h3>
+<p>Functions are named abstractions of code, where a code is a
         sequence of expressions. Since a value of an expression is
         a machine word, functions are not first-class values in Primus
         Lisp. However, functions and types can be manipulated on the
-        meta-programming level.
-<p>
+        meta-programming level.</p>
 
-        A function is defined with the <code class="code">defun</code> form, that has the
-        following syntax:
-<p>
+<p>A function is defined with the <code class="code">defun</code> form, that has the
+        following syntax:</p>
 
-        <pre class="codepre"><code class="code">          (defun &lt;name&gt; (&lt;arg&gt; ...) &lt;exp&gt; ...)
+<pre class="codepre"><code class="code">          (defun &lt;name&gt; (&lt;arg&gt; ...) &lt;exp&gt; ...)
         </code></pre>
-<p>
-
-        A list of arguments (that can be empty) defines function
+<p>A list of arguments (that can be empty) defines function
         arity. Functions in Primus Lisp has fixed arity, unlike
-        macros.
-<p>
+        macros.</p>
 
-        A function definition may optionally contain a documentation
-        strings and a declaration section. For example,
-<p>
+<p>A function definition may optionally contain a documentation
+        strings and a declaration section. For example,</p>
 
-        <pre class="verbatim">         (defun strlen (p)
+<pre class="verbatim">         (defun strlen (p)
            "returns a length of the null-terminated string pointed by P"
            (declare (external "strlen"))
            (msg "strlen was called with $p")
@@ -249,156 +222,110 @@ Lisp machine.
                (incr len p))
              len))
        </pre>
-<p>
+<p>A function can be called (applied) using the function
+        application form:</p>
 
-        A function can be called (applied) using the function
-        application form:
-<p>
-
-        <pre class="verbatim">(&lt;name&gt; &lt;exp&gt; ...)</pre>
-<p>
-
-        The first element of the function application form is not an
+<pre class="verbatim">(&lt;name&gt; &lt;exp&gt; ...)</pre>
+<p>The first element of the function application form is not an
         expression and must be an identified. The rest arguments are
         expressions, that are evaluated from left to right. All
-        arguments are passed by value.
-<p>
+        arguments are passed by value.</p>
 
-        The body of a function is a sequence of expressions, that is
+<p>The body of a function is a sequence of expressions, that is
         evaluated in the lexical order (i.e., from left to right). A
         value of the last expression is the result of the function
         evaluation. An expression is either a function application or
         or a special form. Primus Lisp defines only 5 special forms,
-        the rest of the syntax is defined using the macro system.
-<p>
+        the rest of the syntax is defined using the macro system.</p>
 
-        <h3 id="3_Conditionals">Conditionals</h3>
-<p>
-
-        The <b>(if &lt;test-expr&gt; &lt;then-expr&gt; &lt;else-expr&gt; ...)</b> form is a basic
+<h4 id="3_Conditionals">Conditionals</h4>
+<p>The <b>(if &lt;test-expr&gt; &lt;then-expr&gt; &lt;else-expr&gt; ...)</b> form is a basic
         control flow structure. If <b>&lt;test-expr&gt;</b> evaluates to a non-zero word
         then the result of the <b>&lt;if&gt;</b> form is the result of evaluation
         of the <b>&lt;then-expr&gt;</b>, otherwise a sequence of <b>&lt;else-expr&gt;</b> ...
         is evaluated and the result of the form evaluation
-        would be a result of the last expression in a form
-<p>
+        would be a result of the last expression in a form</p>
 
-        For example,
-<p>
+<p>For example,</p>
 
-        <pre class="verbatim">        (if (&lt; 4 3)
+<pre class="verbatim">        (if (&lt; 4 3)
             (msg "shouldn't happen")
           (msg "that's right")
           (- 4 3))
        </pre>
-<p>
+<p>Note that the the <b>&lt;else-expr&gt; </b> sequence maybe empty.</p>
 
-        Note that the the <b>&lt;else-expr&gt; </b> sequence maybe empty.
-<p>
+<p>Several derived forms are defined as macros, e.g.,</p>
 
-        Several derived forms are defined as macros, e.g.,
-<p>
-
-        <pre class="verbatim">          (when &lt;cond&gt; &lt;expr&gt; ...)
+<pre class="verbatim">          (when &lt;cond&gt; &lt;expr&gt; ...)
           (or &lt;expr&gt; ...)
           (and &lt;expr&gt; ...)
        </pre>
-<p>
-
-        <h3 id="3_Loops">Loops</h3>
-<p>
-
-        Iterations can be implemented either using recursion or with
+<h4 id="3_Loops">Loops</h4>
+<p>Iterations can be implemented either using recursion or with
         the <code class="code"><span class="keyword">while</span></code> special form. Since the interpreter doesn't
         provide the tail-call optimization it is better to use the
         latter (although the interpreter itself is using a constant
         stack size, as it uses the host language heap memory to
-        represent the Primus Lisp call stack).
-<p>
+        represent the Primus Lisp call stack).</p>
 
-        The <b>(while &lt;cond&gt; &lt;expr&gt; ...) </b> form, will evaluate the
+<p>The <b>(while &lt;cond&gt; &lt;expr&gt; ...) </b> form, will evaluate the
         &lt;cond&gt; expression first, and if it is a non-zero value, then
         the sequence of expressions <b>&lt;expr&gt; ... </b> is evaluated, and
         the value of the last expression becomes the value of the
         <code class="code"><span class="keyword">while</span></code> form. If the value of the <b>&lt;cond&gt; </b> expression is a
         false value, then this value becomes the value of the <code class="code"><span class="keyword">while</span></code>
-        form.
-<p>
+        form.</p>
 
-        <h3 id="3_Variables">Variables</h3>
-<p>
+<h4 id="3_Variables">Variables</h4>
+<p>The <code class="code"><span class="keyword">let</span></code> form binds values to names in the lexical scope.</p>
 
-        The <code class="code"><span class="keyword">let</span></code> form binds values to names in the lexical scope.
-<p>
-
-        <pre class="verbatim">         (let (&lt;binding&gt; ...)  &lt;body-expr&gt; ...)
+<pre class="verbatim">         (let (&lt;binding&gt; ...)  &lt;body-expr&gt; ...)
          binding ::= (&lt;var&gt; &lt;expr&gt;)
        </pre>
-<p>
-
-        Evaluates each <b>&lt;binding&gt;</b> in order binding the <b>&lt;var&gt;</b>
+<p>Evaluates each <b>&lt;binding&gt;</b> in order binding the <b>&lt;var&gt;</b>
         identifier to a result of <b>&lt;expr&gt;</b>. The newly created
         binding is available in consequent bindings and in the
         &lt;body-expr&gt;, but is not visible outside of the scope of the
-        let-form.
-<p>
+        let-form.</p>
 
-        Example,
-        <pre class="verbatim">        (let ((x 4)
+<p>Example,</p>
+<pre class="verbatim">        (let ((x 4)
               (y (+ x 2)))
           (+ x 3))
        </pre>
-<p>
+<p>The value of the <code class="code"><span class="keyword">let</span></code> form is the value of the last
+        expression <b>&lt;sN&gt; </b>.</p>
 
-        The value of the <code class="code"><span class="keyword">let</span></code> form is the value of the last
-        expression <b>&lt;sN&gt; </b>.
-<p>
-
-        <h3 id="3_Sequencing">Sequencing </h3>
-<p>
-
-        The <b>(prog &lt;expr&gt; ...) </b> form combines a sequence of
+<h4 id="3_Sequencing">Sequencing </h4>
+<p>The <b>(prog &lt;expr&gt; ...) </b> form combines a sequence of
         expressions into one expression, and is useful in the contexts
         where an expression is required. The expressions are evaluated
         from left to right, and the value of the <code class="code">prog</code> form is the
-        value of the last expression.
-<p>
+        value of the last expression.</p>
 
-        <h3 id="3_Messaging">Messaging </h3>
-<p>
-
-        The <b>(msg &lt;fmt&gt; &lt;expr&gt; ...) </b> form constructs
+<h4 id="3_Messaging">Messaging </h4>
+<p>The <b>(msg &lt;fmt&gt; &lt;expr&gt; ...) </b> form constructs
         logging/debugging messages using an embedded formatting
         language. The formed message will be sent to the logging
         facility, that was set up during the Primus Lisp library
-        initialization.
-<p>
+        initialization.</p>
 
-        The format language interprets all symbols literally, unless
-        they start with the dollar sign ($).
-<p>
+<p>The format language interprets all symbols literally, unless
+        they start with the dollar sign ($).</p>
 
-        A pair of characters of the form <b>$&lt;n&gt; </b>, where <b>&lt;n&gt; </b>
+<p>A pair of characters of the form <b>$&lt;n&gt; </b>, where <b>&lt;n&gt; </b>
         is a decimal digit, will be substituted with the value of the
-        n'th expression (counting from zero).
-<p>
+        n'th expression (counting from zero).</p>
 
-        Example,
-<p>
+<p>Example,</p>
 
-        <pre class="verbatim">(msg "hello, $0 $0 world, (+ 7 8) = $1" "cruel" (+ 7 8))</pre>
-<p>
+<pre class="verbatim">(msg "hello, $0 $0 world, (+ 7 8) = $1" "cruel" (+ 7 8))</pre>
+<p>will be rendered to a message:</p>
 
-        will be rendered to a message:
-<p>
-
-        <pre class="verbatim">"hello, cruel cruel world, (+ 7 8) = 15"</pre>
-<p>
-
-        <h2 id="2_Metaprogramming">Metaprogramming</h2>
-<p>
-
-        Ordinary Primus Lisp expressions are evaluated at the runtime
+<pre class="verbatim">"hello, cruel cruel world, (+ 7 8) = 15"</pre>
+<h3 id="2_Metaprogramming">Metaprogramming</h3>
+<p>Ordinary Primus Lisp expressions are evaluated at the runtime
         in the Primus emulator, and are quite limited as they need to
         be evaluated directly on the CPU model. To mitigate this
         limitation, Primus Lisp provides a powerful metaprogramming
@@ -409,309 +336,220 @@ Lisp machine.
         program. The Primus Lisp metaprogramming system use
         term-rewriting as a computational model, with Lisp code
         fragments as terms. Primus Lisp provides three facilities for
-        metaprogramming:
-<p>
+        metaprogramming:</p>
+
 <ul>
 <li>syntactic constants;</li>
 <li>syntactic substitutions;</li>
 <li>macro definitions.</li>
 </ul>
-
-        <h3 id="3_Constants">Constants</h3>
-<p>
-
-        The syntactic constants is the simplest syntactic
+<h4 id="3_Constants">Constants</h4>
+<p>The syntactic constants is the simplest syntactic
         substitution, it just substitutes atoms for atoms. Constants
         are introduced with the <code class="code">defconstant</code> form, that has the
-        following syntax:
-<p>
+        following syntax:</p>
 
-        <pre class="verbatim">         (defconstant &lt;name&gt; &lt;atom&gt;)
+<pre class="verbatim">         (defconstant &lt;name&gt; &lt;atom&gt;)
          (defconstant &lt;name&gt; &lt;docstring&gt; &lt;atom&gt;)
          (defconstant &lt;name&gt; &lt;declarations&gt; &lt;atom&gt;)
          (defconstant &lt;name&gt; &lt;docstring&gt; &lt;declarations&gt; &lt;atom&gt;)
        </pre>
-<p>
+<p>For example,</p>
 
-        For example,
-<p>
-
-        <pre class="verbatim">(defconstant main-address 0xDEAD)</pre>
-<p>
-
-        During the program parsing, each occurrence of the
+<pre class="verbatim">(defconstant main-address 0xDEAD)</pre>
+<p>During the program parsing, each occurrence of the
         <b>&lt;name&gt; </b> term will be rewritten with the <b>&lt;value&gt; </b>
-        term, that should be an atom.
-<p>
+        term, that should be an atom.</p>
 
-        <h3 id="3_Substitutions">Substitutions</h3>
-<p>
+<h4 id="3_Substitutions">Substitutions</h4>
+<p>The syntactic substitution is a generalization of syntactic
+        constant, and has quite a similar syntax:</p>
 
-        The syntactic substitution is a generalization of syntactic
-        constant, and has quite a similar syntax:
-<p>
-
-        <pre class="verbatim">          | (defsubst &lt;name&gt; &lt;value&gt; ...)
+<pre class="verbatim">          | (defsubst &lt;name&gt; &lt;value&gt; ...)
           | (defsubst &lt;name&gt; &lt;declarations&gt; &lt;value&gt; ...)
           | (defsubst &lt;name&gt; :&lt;syntax&gt; &lt;value&gt; ...)
           | (defsubst &lt;name&gt; &lt;declarations&gt; :&lt;syntax&gt; &lt;value&gt; ...)
        </pre>
-<p>
-
-        During parsing, every occurrence of the term <b>&lt;name&gt; </b> (that
+<p>During parsing, every occurrence of the term <b>&lt;name&gt; </b> (that
         should be an atom), will be rewritten with a sequence of
-        values <pre class="codepre"><code class="code"> {&lt;value&gt;} </code></pre>.
-<p>
+        values</p>
+<pre class="codepre"><code class="code"> {&lt;value&gt;} </code></pre><p>.</p>
 
-        Example,
-<p>
+<p>Example,</p>
 
-        <pre class="verbatim">(defsubst ten-digits 0 1 2 3 4 5 6 7 8 9)</pre>
-<p>
-
-        A process of applying of the substitutions is called
+<pre class="verbatim">(defsubst ten-digits 0 1 2 3 4 5 6 7 8 9)</pre>
+<p>A process of applying of the substitutions is called
         "expansion". Since the expansion transforms an atom to a list
         of atoms, it can be applied only inside the macro or function
-        application. For example,
-<p>
+        application. For example,</p>
 
-        <pre class="verbatim">(+ ten-digits)</pre>
-<p>
+<pre class="verbatim">(+ ten-digits)</pre>
+<p>will be expanded to</p>
 
-        will be expanded to
-<p>
-
-        <pre class="verbatim">(+ 0 1 2 3 4 5 6 7 8 9 )</pre>
-<p>
-
-        <h4 id="4_Specialsyntax">Special syntax</h4>
-<p>
-
-        Expansions also provide a support for extensible value
+<pre class="verbatim">(+ 0 1 2 3 4 5 6 7 8 9 )</pre>
+<h5 id="4_Specialsyntax">Special syntax</h5>
+<p>Expansions also provide a support for extensible value
         specification syntax, that enables domain-specific data
         specification languages. Currently, we support only two
-        syntaxes: <code class="code">:ascii</code> and <code class="code">:hex</code>.
-<p>
+        syntaxes: <code class="code">:ascii</code> and <code class="code">:hex</code>.</p>
 
-        In the <code class="code">:ascii</code> syntax the values should be atoms, possibly
+<p>In the <code class="code">:ascii</code> syntax the values should be atoms, possibly
         delimited with double quotes. Each character of each atom will
         be expanded to its corresponding ASCII code. Strings can
         contain special characters prefixed with a backslash. The
         special character can be one of the well-known ASCII special
         character, e.g., <code class="code">\n</code>, <code class="code">\r</code>, etc, or it can be a decimal or a
-        hexadecimal code of a character.
-<p>
+        hexadecimal code of a character.</p>
 
-        Example, given the following substitution:
-<p>
+<p>Example, given the following substitution:</p>
 
-        <pre class="verbatim">(defsubst hello-cruel-world :ascii "hello, cruel world\n\000")</pre>
-<p>
+<pre class="verbatim">(defsubst hello-cruel-world :ascii "hello, cruel world\n\000")</pre>
+<p>the following application:</p>
 
-        the following application:
-<p>
+<pre class="verbatim">(write-block SP hello-cruel-world</pre>
+<p>will be expanded with</p>
 
-        <pre class="verbatim">(write-block SP hello-cruel-world</pre>
-<p>
-
-        will be expanded with
-<p>
-
-        <pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span>
+<pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span>
              0x68 0x65 0x6c 0x6c 0x6f 0x2c 0x20 0x63
              0x72 0x75 0x65 0x6c 0x20 0x77 0x6f 0x72
              0x6c 0x64 0x0a 0x00)
         </code></pre>
-<p>
-
-        In the <code class="code">:hex</code> syntax the sequence of atoms is split into
+<p>In the <code class="code">:hex</code> syntax the sequence of atoms is split into
         two-characters subsequences each treated as a hex value. This
         syntax is useful for encoding memory dumps in a format that is
         close to the hexdump (without offsets). E.g., given the
-        following substitution rule
-<p>
+        following substitution rule</p>
 
-        <pre class="codepre"><code class="code">          (defsubt example :hex 68656c 6c 6f2c2063)
+<pre class="codepre"><code class="code">          (defsubt example :hex 68656c 6c 6f2c2063)
         </code></pre>
-<p>
+<p>an application</p>
 
-        an application
-<p>
-
-        <pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span> example)
+<pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span> example)
         </code></pre>
-<p>
+<p>will be expanded into</p>
 
-        will be expanded into
-<p>
-
-        <pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span> 0x68 0x65 0x6c 0x6c 0x6f 0x2c 0x20 0x63)
+<pre class="codepre"><code class="code">          (write-block <span class="constructor">SP</span> 0x68 0x65 0x6c 0x6c 0x6f 0x2c 0x20 0x63)
         </code></pre>
-<p>
-
-        <h3 id="3_Macro">Macro</h3>
-<p>
-
-        The macros provide the most versatile and powerful way to
+<h4 id="3_Macro">Macro</h4>
+<p>The macros provide the most versatile and powerful way to
         specify arbitrary code transformations. The macro definitions
         introduce abstractions on the meta-programming level. I.e., it
         allows a programmer to write a function that operates on code
-        terms, making the code a first class value.
-<p>
+        terms, making the code a first class value.</p>
 
-        The macro definition has the following syntax:
-<p>
+<p>The macro definition has the following syntax:</p>
 
-        <pre class="verbatim">          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;value&gt;)
+<pre class="verbatim">          (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;value&gt;)
           (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;docstring&gt; &lt;value&gt;)
           (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;declarations&gt; &lt;value&gt;)
           (defmacro &lt;name&gt; (&lt;param&gt; ...) &lt;docstring&gt; &lt;declarations&gt; &lt;value&gt;)
        </pre>
-<p>
-
-        A macro definition adds a term rewriting rule, that rewrites
+<p>A macro definition adds a term rewriting rule, that rewrites
         each occurrence of <b>(&lt;name&gt; &lt;arg&gt; ...) </b>, where the number
         of arguments <code class="code"><span class="constructor">N</span></code> is greater or equal then the number of
         parameters <code class="code"><span class="constructor">M</span></code>, with the <b>&lt;value&gt; </b> in which occurrences of the
         <code class="code">i</code>th parameter is substituted with the term <code class="code">i</code>th argument. If <code class="code"><span class="constructor">N</span></code> is
         bigger than <code class="code"><span class="constructor">M</span></code>, then the last parameter is bound with the
-        sequence of arguments  <b>&lt;argM&gt;...&lt;argN&gt; </b>.
-<p>
+        sequence of arguments  <b>&lt;argM&gt;...&lt;argN&gt; </b>.</p>
 
-        The macro subsystem doesn't provide any specific looping or
+<p>The macro subsystem doesn't provide any specific looping or
         control-flow facilities, however, the macro-overloading
         mechanism along with the recursion make it possible to encode
-        arbitrary meta-transformations.
-<p>
+        arbitrary meta-transformations.</p>
 
-        Other than a standard context-based ad-hoc overloading
+<p>Other than a standard context-based ad-hoc overloading
         mechanism, the macro application uses the arity-based
         resolution. As it was described above, if a number of
         arguments is greater than the number of parameters, then the
         last parameter is bound to the rest of the arguments. When
         several macro definitions matches, then a definition that has
         fewer unmatched arguments is chosen. For example, suppose we
-        have the following definitions:
-<p>
+        have the following definitions:</p>
 
-        <pre class="verbatim">          (defmacro list-length (x) 1)
+<pre class="verbatim">          (defmacro list-length (x) 1)
           (defmacro list-length (x xs) (+ 1 (list-length xs)))
        </pre>
-<p>
+<p>The the following term</p>
 
-        The the following term
-<p>
+<pre class="verbatim">(list-length 1 2 3)</pre>
+<p>will be normalized (after a series of transformations) with
+        the following:</p>
 
-        <pre class="verbatim">(list-length 1 2 3)</pre>
-<p>
-
-        will be normalized (after a series of transformations) with
-        the following:
-<p>
-
-        <pre class="verbatim">(+ 1 (+ 1 1))</pre>
-<p>
-
-        <pre class="verbatim">          1: (list-length 1 2 3) =&gt; (+ 1 (list-length 2 3))
+<pre class="verbatim">(+ 1 (+ 1 1))</pre>
+<pre class="verbatim">          1: (list-length 1 2 3) =&gt; (+ 1 (list-length 2 3))
           2: (+ 1 (list-length 2 3)) =&gt; (+ 1 (+ 1 (list-length 3)))
           3: (+ 1 (+ 1 (list-length 3))) =&gt; (+ 1 (+ 1 1))
        </pre>
-<p>
-
-        In the first step, both definition match. In the first
+<p>In the first step, both definition match. In the first
         definition <code class="code">x</code> is bound to <code class="code">1&nbsp;2&nbsp;3</code>, while in the second
         <code class="code">x</code> is bound to <code class="code">1</code> and <code class="code">xs</code> is bound to <code class="code">2&nbsp;3</code>. Since the last
         parameter is bound to fewer arguments, the second definition
         is chosen as the most certain. In the second step the second
         definition is still more concrete. Finally at the last step,
         the second definition doesn't match at all, as it has more
-        parameters than arguments.
-<p>
+        parameters than arguments.</p>
 
-        A slightly more complex example, is a fold iterator, that
+<p>A slightly more complex example, is a fold iterator, that
         applies a function to a sequence of arguments  of arbitrary
-        length, e.g.,
-<p>
+        length, e.g.,</p>
 
-        <pre class="verbatim">          (defmacro fold (f a x) (f a x))
+<pre class="verbatim">          (defmacro fold (f a x) (f a x))
           (defmacro fold (f a x xs) (fold f (f a x) xs))
        </pre>
-<p>
-
-        Using this definition we can define a sum function (although
+<p>Using this definition we can define a sum function (although
         it is not needed as the <code class="code">+</code> function defined in the Primus Lisp
         standard library, already accepts arbitrary number of
-        arguments), as:
-<p>
+        arguments), as:</p>
 
-        <pre class="verbatim">(defmacro sum (xs) (fold + 0 xs))</pre>
-<p>
+<pre class="verbatim">(defmacro sum (xs) (fold + 0 xs))</pre>
+<p>The <b>(sum 1 2 3) </b> will be rewritten as follows:</p>
 
-        The <b>(sum 1 2 3) </b> will be rewritten as follows:
-<p>
-
-        <pre class="verbatim">          1: (sum 1 2 3) =&gt; (fold + 0 1 2 3)
+<pre class="verbatim">          1: (sum 1 2 3) =&gt; (fold + 0 1 2 3)
           2: (fold + 0 1 2 3) =&gt; (fold + (+ 0 1) 2 3)
           3: (fold + (+ 0 1) 2 3) =&gt; (fold + (+ (+ 0 1) 2) 3)
           4: (fold + (+ (+ 0 1) 2) 3) =&gt; (+ (+ (+ 0 1) 2) 3)
        </pre>
-<p>
-
-        A more real example is the <code class="code">write-block</code> macro, that takes a
+<p>A more real example is the <code class="code">write-block</code> macro, that takes a
         sequence of bytes, and writes them starting from the given
-        address:
-<p>
+        address:</p>
 
-        <pre class="verbatim">          (defmacro write-block (addr bytes)
+<pre class="verbatim">          (defmacro write-block (addr bytes)
              (fold memory-write addr bytes))
        </pre>
-<p>
-
-        The definition uses the <code class="code">memory-write</code> primitive, that writes
+<p>The definition uses the <code class="code">memory-write</code> primitive, that writes
         a byte at the given address and returns an address of the next
-        byte.
-<p>
+        byte.</p>
 
-        <h2 id="2_Polymorphism">Polymorphism</h2>
-<p>
+<h3 id="2_Polymorphism">Polymorphism</h3>
+<p>Primus Lisp provides both kinds of polymorphism: parametric
+        and ad hoc.</p>
 
-        Primus Lisp provides both kinds of polymorphism: parametric
-        and ad hoc.
-<p>
-
-        Expressions in Primus Lisp have types, that are denoted with
+<p>Expressions in Primus Lisp have types, that are denoted with
         natural numbers starting with one. Each type defines a set of
         values that can be represented with the given number of
         bits. Values with different widths are different, even if they
         represent the same number. Expressions can be polymorphic,
-        e.g., function
-<p>
+        e.g., function</p>
 
-        <pre class="verbatim">(defun square (x) ( * x x))</pre>
-<p>
-
-        has type `forall n. n -&gt; n -&gt; n`. Thus it can be applied to
+<pre class="verbatim">(defun square (x) ( * x x))</pre>
+<p>has type `forall n. n -&gt; n -&gt; n`. Thus it can be applied to
         values of different types, e.g., <code class="code">(square&nbsp;4:4)</code>, that will be
         evaluated to the <code class="code">0:4</code> value, or <code class="code">(square&nbsp;4:8)</code>, that will be
         evaluated to <code class="code">16:8</code>, etc. The parametric polymorphism doesn't
         require any special annotations or type specifications so we
-        will not stop on it anymore.
-<p>
+        will not stop on it anymore.</p>
 
-        The ad hoc polymorphism provides a facilities for overloading
+<p>The ad hoc polymorphism provides a facilities for overloading
         definitions. That is, the same entity may have multiple
         definitions, and depending on a context, only one definition
         should be chosen. Not only functions can have multiple
         definitions, but also macros, constants, and
         substitutions. Since the latter three entities operate on the
         syntactic level, the syntax of Primus Lisp itself is
-        context-dependent.
-<p>
+        context-dependent.</p>
 
-        <h3 id="3_Context">Context</h3>
-<p>
-
-        A context (from the perspective of the type system) is a set
+<h4 id="3_Context">Context</h4>
+<p>A context (from the perspective of the type system) is a set
         of type class instances. The context is fixed when a program
         is parsed. A Primus Lisp program may not change the context;
         neither in runtime, nor it the parse time, thus a program is
@@ -720,28 +558,22 @@ Lisp machine.
         context. If more than one definition make sense under the
         given context, then the most specific one is chosen. If no
         definition is more specific than another, then an error
-        occurs.
-<p>
+        occurs.</p>
 
-        A type class defines a type as a set of features. The subset
+<p>A type class defines a type as a set of features. The subset
         relation induces a subtyping relation over types - a type <code class="code">t'</code>
         is a subtype of a type <code class="code">t</code> if <code class="code">t'&nbsp;&lt;=&nbsp;t</code> (i.e., if <code class="code">t'</code> is a
         subset of <code class="code">t</code>). Each feature is a textual tag, called a
-        feature constructor.
-<p>
+        feature constructor.</p>
 
-        The context declaration limits an associated definition to the
-        specified type class(es), and has the following syntax:
-<p>
+<p>The context declaration limits an associated definition to the
+        specified type class(es), and has the following syntax:</p>
 
-        <pre class="verbatim">          (declare (context (&lt;type-class&gt; &lt;feature&gt; ...) ...))
+<pre class="verbatim">          (declare (context (&lt;type-class&gt; &lt;feature&gt; ...) ...))
        </pre>
-<p>
+<p>Let's use the following two definitions for a concrete example,</p>
 
-        Let's use the following two definitions for a concrete example,
-<p>
-
-        <pre class="verbatim">          (defmacro get-arg-0 ()
+<pre class="verbatim">          (defmacro get-arg-0 ()
              (declare (context (arch arm gnueabi)))
              R0)
 
@@ -749,83 +581,64 @@ Lisp machine.
              (declare (context (arch x86 cdecl)))
              (read-word word-width (+ SP (sizeof word-width))))
        </pre>
-<p>
-
-        We have two definitions of the same macro <code class="code">get-arg-0</code>, that
+<p>We have two definitions of the same macro <code class="code">get-arg-0</code>, that
         are applicable to different contexts. The first definition,
         is only applicable in the context of the ARM architecture and
         the gnueabi ABI. The second is applicable in the context of
         the x86 architecture and the cdecl ABI. More formally, a
         definition is considered only if its context is a subtype of
-        the current type context.
-<p>
+        the current type context.</p>
 
-        <h2 id="2_Advicemechanism">Advice mechanism</h2>
-<p>
-
-        Primus Lisp also provides a mechanism for non-intrusive
+<h3 id="2_Advicemechanism">Advice mechanism</h3>
+<p>Primus Lisp also provides a mechanism for non-intrusive
         extending existing function definitions. An existing
         definition maybe advised with another definition. A piece of
         advice maybe added to a function that will be called either
-        before or after the evaluation of an advised function, e.g.,
-<p>
+        before or after the evaluation of an advised function, e.g.,</p>
 
-        <pre class="verbatim">          (defun memory-written (a x)
+<pre class="verbatim">          (defun memory-written (a x)
             (declare (advice :before memory-write))
             (msg "write $x to $a"))
        </pre>
-<p>
-
-        This definition not only defines a new function called
+<p>This definition not only defines a new function called
         <code class="code">memory-written</code>, but also proclaims it as advice function to
-        the <code class="code">memory-write</code> function that should before it is called.
-<p>
+        the <code class="code">memory-write</code> function that should before it is called.</p>
 
-        If an advisor is attached before the advised function, then
+<p>If an advisor is attached before the advised function, then
         it the advisor will be called with the same arguments as the
         advised function. The return value of the advisor is
         ignored. The advisor function will be called as a normal Lisp
         function, with all expected overloading and name resolving. So
         it is possible to provide context specific advice. If there
         are several advice to the same function, then they will be
-        called in the unspecified order.
-<p>
+        called in the unspecified order.</p>
 
-        An advisor that is attached after the advised function will be
+<p>An advisor that is attached after the advised function will be
         called with one extra argument - the result of evaluation of
         the advised function. The value returned by the advisor will
         override the result of the advised function. If there are
         several advisors attached after the same function, then they
-        will be called in the unspecified order.
-<p>
+        will be called in the unspecified order.</p>
 
-        <h2 id="2_SignalingMechanims">Signaling Mechanims</h2>
-<p>
-
-        The Primus Observation system is reflected onto the Primus
+<h3 id="2_SignalingMechanims">Signaling Mechanims</h3>
+<p>The Primus Observation system is reflected onto the Primus
         Lisp Machine Signals. Every time a reflected observation
         occurs the Lisp Machine receives a signal that is dispatched
         to handlers. A handler can be declared defined with the
-        <code class="code">defmethod</code> form, e.g.,
-<p>
+        <code class="code">defmethod</code> form, e.g.,</p>
 
-        <pre class="verbatim">        (defmethod call (name arg)
+<pre class="verbatim">        (defmethod call (name arg)
           (when (= name 'malloc)
             (msg "malloc($0) was called" arg)))
        </pre>
-<p>
-
-        The <code class="code">defmethod</code> form follows the general definiton template,
+<p>The <code class="code">defmethod</code> form follows the general definiton template,
         i.e., it can contain a docstring and declaration section, and
         selection and resolution rules are applicable to
         methods. Methods of the same signal are invoked in an
-        unspecified order.
-<p>
+        unspecified order.</p>
 
-        <h2 id="2_Formalsyntax">Formal syntax</h2>
-<p>
-
-        Each entity is an s-expression with the grammar, specified
+<h3 id="2_Formalsyntax">Formal syntax</h3>
+<p>Each entity is an s-expression with the grammar, specified
         below.We use BNF-like syntax with the following conventions.
         Metavariables are denoted like <code class="code">&lt;this&gt;</code>. The <code class="code">&lt;this&gt;&nbsp;...</code>
         stands of any number of <code class="code">&lt;this&gt;</code> (possibly zero). Ordinary
@@ -833,10 +646,9 @@ Lisp machine.
         literally. Note, since the grammar is not context free, and is
         extensible, the following is an approximation of the language
         grammar. Grammar extension points are defined with the
-        '?extensible?'comment in a production definition.
-<p>
+        '?extensible?'comment in a production definition.</p>
 
-        <pre class="verbatim">module ::= &lt;entity&gt; ...
+<pre class="verbatim">module ::= &lt;entity&gt; ...
 
 entity ::=
   | &lt;feature-request&gt;
@@ -925,51 +737,63 @@ int   ::= ?decimal-octal-hex-or-bin format?
 size  ::= ?decimal?
 
 ident ::= ?any atom that is not recognized as a &lt;word&gt;?
-       </pre><br>
+       </pre></div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEprogram"><span class="keyword">type</span> <code class="type"></code>program</span> </pre>
 <div class="info ">
-an abstract type representing a lisp program<br>
+<div class="info-desc">
+<p>an abstract type representing a lisp program</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEmessage"><span class="keyword">type</span> <code class="type"></code>message</span> </pre>
 <div class="info ">
-an abstract type that represents messages send with the
-          <code class="code">msg</code> form.<br>
+<div class="info-desc">
+<p>an abstract type that represents messages send with the
+          <code class="code">msg</code> form.</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Load.html">Load</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Load.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Primus Lisp program loader
+<pre><span id="MODULELoad"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Load.html">Load</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Load.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Primus Lisp program loader</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">Doc</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Type.html">Type</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lisp Type System.
+<pre><span id="MODULEDoc"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">Doc</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Doc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEType"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Type.html">Type</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Lisp Type System.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Message.html">Message</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Message.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lisp Machine Message interface.
+<pre><span id="MODULEMessage"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Message.html">Message</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Message.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Lisp Machine Message interface.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Closure.html">Closure</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Closure.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Machine independent closure.
+<pre><span id="MODULETYPEClosure"><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Closure.html">Closure</a></span> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Closure.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Machine independent closure.</p>
+
 </div>
 
 <pre><span id="TYPEclosure"><span class="keyword">type</span> <code class="type"></code>closure</span> = <code class="type">(module Bap_primus.Std.Primus.Lisp.Closure)</code> </pre>
 <div class="info ">
-a closure packed as an OCaml value<br>
+<div class="info-desc">
+<p>a closure packed as an OCaml value</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Primitive</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEPrimitive"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Primitive</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitive.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULETYPEPrimitives"><span class="keyword">module type</span> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">Primitives</a></span> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Primitives.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="TYPEprimitives"><span class="keyword">type</span> <code class="type"></code>primitives</span> = <code class="type">(module Bap_primus.Std.Primus.Lisp.Primitives)</code> </pre>
 <div class="info ">
-a list of primitives.<br>
+<div class="info-desc">
+<p>a list of primitives.</p>
+</div>
 </div>
 
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
@@ -984,12 +808,15 @@ a list of primitives.<br>
 
 
 <pre><span id="VALmessage"><span class="keyword">val</span> message</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEmessage">message</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">message</code> observation occurs every time a message is sent
-          from the Primus Machine.<br>
+<div class="info-desc">
+<p><code class="code">message</code> observation occurs every time a message is sent
+          from the Primus Machine.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Make(Machine) creates a Lisp machine embedded into the
-          Primus <code class="code"><span class="constructor">Machine</span></code>.
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Make(Machine) creates a Lisp machine embedded into the
+          Primus <code class="code"><span class="constructor">Machine</span></code>.</p>
+
 </div>
 </body></html>

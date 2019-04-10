@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,28 +93,24 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a></h1>
 
-<pre><span class="keyword">module</span> Choice: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-A choice monad interface.
-<p>
+<pre><span id="MODULEChoice"><span class="keyword">module</span> Choice</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>A choice monad interface.</p>
 
-        A choice monad is a monad with an exceptional control flow,
+<p>A choice monad is a monad with an exceptional control flow,
         akin to the <code class="code"><span class="constructor">Fail</span></code> monad, except that it may not hold an
         additional error information. In exchange several control flow
         operators are provided. Basically, a choice computation may
-        have zero or one result.
-<p>
+        have zero or one result.</p>
 
-        Example:
-<p>
+<p>Example:</p>
 
-        <pre class="codepre"><code class="code">          <span class="keyword">let</span> sqrt x =
+<pre class="codepre"><code class="code">          <span class="keyword">let</span> sqrt x =
             guard (x &gt; 0.) &gt;&gt;| <span class="keyword">fun</span> () <span class="keywordsign">-&gt;</span>
             sqrt x
         </code></pre>
-<p>
+<p>Implemented by:</p>
 
-        Implemented by:
-<p>
 <ul>
 <li><a href="Monads.Std.Monad.Option.html">Monad.Option</a></li>
 <li><a href="Monads.Std.Monad.Option.Make.html">Monad.Option.Make</a></li>
@@ -125,25 +122,29 @@ A choice monad interface.
 <li><a href="Monads.Std.Monad.Seq.Make.html">Monad.Seq.Make</a></li>
 <li><a href="Monads.Std.Monad.Seq.Make2.html">Monad.Seq.Make2</a></li>
 </ul>
-<br>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.Basic.html">Basic</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The minimal choice interface for unary monad.
+<pre><span id="MODULETYPEBasic"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.Basic.html">Basic</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The minimal choice interface for unary monad.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The unary choice monad interface
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The unary choice monad interface</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.Basic2.html">Basic2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The minimal choice interface for binary monad.
+<pre><span id="MODULETYPEBasic2"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.Basic2.html">Basic2</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.Basic2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The minimal choice interface for binary monad.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The binary choice monad interface
+<pre><span id="MODULETYPES2"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Choice.S2.html">S2</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Choice.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The binary choice monad interface</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Choice.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Choice.Basic.html">Basic</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Choice.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Choice.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Choice.Basic2.html">Basic2</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Choice.S2.html">S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) M.t</code></pre></body></html>
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Monads.Std.Monad.Choice.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Choice.Basic.html">Basic</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Choice.S.html">S</a></code><code class="type">  with type 'a t := 'a M.t</code></pre>
+<pre><span id="MODULEMake2"><span class="keyword">module</span> <a href="Monads.Std.Monad.Choice.Make2.html">Make2</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Choice.Basic2.html">Basic2</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Choice.S2.html">S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) M.t</code></pre></body></html>

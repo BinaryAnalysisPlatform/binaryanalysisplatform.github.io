@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -95,7 +96,7 @@ Generic dot printer.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Sequence.t -><br>       edges:'e Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Std.Sequence.t -><br>       edges:'e Std.Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
 <code class="code">pp_graph&nbsp;~nodes_of_edge&nbsp;~nodes&nbsp;~edges&nbsp;ppf</code> - generic dot
           printer.
 <p>

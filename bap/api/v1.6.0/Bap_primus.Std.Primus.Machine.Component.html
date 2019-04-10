@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,21 +91,21 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Bap_primus.Std.Primus.Machine.Component.html">Bap_primus.Std.Primus.Machine.Component</a></h1>
 
-<pre><span class="keyword">module type</span> Component = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Component.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-Machine component interface.
-<p>
+<pre><span id="MODULETYPEComponent"><span class="keyword">module type</span> Component</span> = <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">S</a></code><code class="code">)&nbsp;</code><code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.Component.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<div class="info-desc">
+<p>Machine component interface.</p>
 
-          A machine component is a functor, that is applied every time
+<p>A machine component is a functor, that is applied every time
           the Machine is instantiated. The <code class="code">init</code> function is called
           when the Machine computation is started (the order in which
           components are initialized is not specified, but since all
           components store their state in the machine it doesn't
-          matter).
-<p>
+          matter).</p>
 
-          The <code class="code">init</code> function can perform any computation in the
+<p>The <code class="code">init</code> function can perform any computation in the
           machine monad. But usually, it registers event
-          observations.<br>
+          observations.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -123,6 +124,8 @@ Machine component interface.
 <hr width="100%">
 
 <pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -> unit Machine.t</code></pre><div class="info ">
-<code class="code">init&nbsp;()</code> component initialization function.<br>
+<div class="info-desc">
+<p><code class="code">init&nbsp;()</code> component initialization function.</p>
+</div>
 </div>
 </body></html>

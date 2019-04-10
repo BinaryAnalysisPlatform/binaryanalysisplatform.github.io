@@ -7,6 +7,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -83,15 +84,15 @@
 <body>
 <code class="code"><span class="keyword">sig</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t&nbsp;=&nbsp;{&nbsp;size&nbsp;:&nbsp;int;&nbsp;atime&nbsp;:&nbsp;float;&nbsp;mtime&nbsp;:&nbsp;float;&nbsp;ctime&nbsp;:&nbsp;float;&nbsp;}<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_t__&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Write</span>.writer<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_shape_t&nbsp;:&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Shape</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_read_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;__bin_read_t__&nbsp;:&nbsp;(int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Read</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_reader_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.reader<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_size_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Size</span>.sizer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_write_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Write</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_writer_t&nbsp;:&nbsp;t&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Type_class</span>.writer<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;bin_shape_t&nbsp;:&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Bin_prot</span>.<span class="constructor">Shape</span>.t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;compare&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;t_of_sexp&nbsp;:&nbsp;<span class="constructor">Ppx_sexp_conv_lib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
-&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ppx_sexp_conv_lib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;t_of_sexp&nbsp;:&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;t<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
 <span class="keyword">end</span></code></body></html>

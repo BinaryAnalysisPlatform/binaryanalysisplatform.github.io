@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -106,7 +107,7 @@ Initialize LLVM backend.
 <code class="code">llvm_version</code><br>
 </div>
 
-<pre><span id="VALinit_disassembler"><span class="keyword">val</span> init_disassembler</span> : <code class="type">?x86_syntax:<a href="Bap_llvm.Std.html#TYPEx86_syntax">x86_syntax</a> -> unit -> unit Or_error.t</code></pre><div class="info ">
+<pre><span id="VALinit_disassembler"><span class="keyword">val</span> init_disassembler</span> : <code class="type">?x86_syntax:<a href="Bap_llvm.Std.html#TYPEx86_syntax">x86_syntax</a> -><br>       unit -> unit Std.Or_error.t</code></pre><div class="info ">
 <code class="code">init_disassembler&nbsp;()</code> initializes and registers the LLVM based disassembler.<br>
 </div>
 

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,7 +93,7 @@
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Result.S.html">Monads.Std.Monad.Result.S</a></pre>
 
-<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, Format.formatter, unit, unit -> 'b t) Std.format4 -> 'a</code></pre><div class="info ">
 <code class="code">failf&nbsp;<span class="string">"&lt;fmt&gt;"</span>&nbsp;&lt;args&gt;&nbsp;()</code> constructs an error message
               using the specified format descripton and returns a
               computation that will result in the constructed

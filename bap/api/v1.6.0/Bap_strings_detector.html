@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,19 +93,17 @@
 </div>
 <h1>Module <a href="type_Bap_strings_detector.html">Bap_strings_detector</a></h1>
 
-<pre><span class="keyword">module</span> Bap_strings_detector: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_strings_detector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-String computation detector.
-<p>
+<pre><span id="MODULEBap_strings_detector"><span class="keyword">module</span> Bap_strings_detector</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_strings_detector.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>String computation detector.</p>
 
-    The detector uses maximum aposteriori likelihood estimator (MAP)
-    to detect code that operates with textual data.
-<p>
+<p>The detector uses maximum aposteriori likelihood estimator (MAP)
+    to detect code that operates with textual data.</p>
 
-    We define textual data as a contigious blocks of characters from
-    a specified alphabet.
-<p>
+<p>We define textual data as a contigious blocks of characters from
+    a specified alphabet.</p>
 
-    In our model a code is a sequence of instructions. Each
+<p>In our model a code is a sequence of instructions. Each
     instruction reads or writes characters. We're observing a set of
     characters accessed by an instruction (without any distinguishing
     whether it was a write or a read operation). The characters are
@@ -112,23 +111,20 @@ String computation detector.
     computation. Some of these values are textual data. Any particular
     instruction either works with data produced by textual values or
     not. Moreover, we're looking for contigious sequences of
-    instructions that work with textual value.
-<p>
+    instructions that work with textual value.</p>
 
-    The detector doesn't depend on a particular instruction
+<p>The detector doesn't depend on a particular instruction
     implementation, instead it should be called after each instruction
     (or whatever granularity a user prefers) with a sequence of
-    characters that were observed on that step.
-<p>
+    characters that were observed on that step.</p>
 
-    The detector distinguishes between two competing hypotheses. The
+<p>The detector distinguishes between two competing hypotheses. The
     null hypothesis is that we are observing a subsequence of
     instructions that doesn't interact with textual values. The
     alternative hypothesis states that the observed subsequence
-    operates with one or more textual values.
-<p>
+    operates with one or more textual values.</p>
 
-    The detector operates in two different modes. In the search mode
+<p>The detector operates in two different modes. In the search mode
     it looks for a subsequence that operates with textual values. Once
     it is found it switches to the second mode, and tries to find the
     end of this sequence, under an assumption that textual values have
@@ -137,19 +133,21 @@ String computation detector.
     values, and the H1 is that there are no longer textual
     values. Once we found the start and the end of the sequence, as
     well as all the characters that we attribute to the textual values
-    the detection is considered finished.
-<p>
+    the detection is considered finished.</p>
 
-    The detection relies on a fact, that when a code processes textual
+<p>The detection relies on a fact, that when a code processes textual
     values, built from a specified alphabet, the characters from this
     alphabet occurs slightly more often, then the it is prescribed by
-    the uniform distribution.<br>
+    the uniform distribution.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">+'a</code> t</span> </pre>
 <div class="info ">
-<code class="code">detector</code><br>
+<div class="info-desc">
+<p><code class="code">detector</code></p>
+</div>
 </div>
 
 
@@ -157,7 +155,9 @@ String computation detector.
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?alpha:float -><br>       ?beta:float -><br>       ?p1:float -><br>       ?ps:float -><br>       ?len_pdf:(float -> float) -><br>       Char.Set.t -> 'a <a href="Bap_strings_detector.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;alphabet</code> creates a detector.<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;alphabet</code> creates a detector.</p>
+</div>
 </div>
 <div class="param_info"><code class="code">alpha</code> : a desired probability of the false positive error;</div>
 <div class="param_info"><code class="code">beta</code> : a desired probability of the false negative error;</div>
@@ -165,14 +165,15 @@ String computation detector.
 <div class="param_info"><code class="code">ps</code> : probability of an alphabet character;</div>
 <div class="param_info"><code class="code">len_pdf</code> : probability distribution function of textual values
            lengths.</div>
-<br>
-<code class="code">run&nbsp;detector&nbsp;trace</code> runs a <code class="code">detector</code> on a sequence on a <code class="code">trace</code>
+<p><code class="code">run&nbsp;detector&nbsp;trace</code> runs a <code class="code">detector</code> on a sequence on a <code class="code">trace</code>
     represented as a sequence of bytes accessed during an exection.
     Returns a sequence of char sequences, where each subsequence is
     represented as a string and contains characters that were assumed
-    to belong to the textual data.<br>
+    to belong to the textual data.</p>
 
 <pre><span id="VALstep"><span class="keyword">val</span> step</span> : <code class="type">'a <a href="Bap_strings_detector.html#TYPEt">t</a> -> 'a -> char -> 'a <a href="Bap_strings_detector.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">step&nbsp;t&nbsp;data&nbsp;char</code> performs one observation.<br>
+<div class="info-desc">
+<p><code class="code">step&nbsp;t&nbsp;data&nbsp;char</code> performs one observation.</p>
+</div>
 </div>
 </body></html>

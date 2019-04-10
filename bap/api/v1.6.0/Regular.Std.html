@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,36 +91,29 @@
 &nbsp;</div>
 <h1>Module <a href="type_Regular.Std.html">Regular.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Interface that should support any regular data type.
-<p>
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Interface that should support any regular data type.</p>
 
-    <h2 id="2_Overview">Overview</h2>
-<p>
-
-    A regular type is catch all term for all data types that are
+<h3 id="2_Overview">Overview</h3>
+<p>A regular type is catch all term for all data types that are
     regular, like numbers, characters, strings and their algebraic
     closure. A proper term for such types would be inductive types. A
     regular type always has a concrete representation, it is
-    printable, comparable (with total order), hashable, etc.
-<p>
+    printable, comparable (with total order), hashable, etc.</p>
 
-    To contrast, functions, closures, proxies, descriptors, and any
+<p>To contrast, functions, closures, proxies, descriptors, and any
     co-inductive types are non-regular. The main difference, is that
     regular type is self contained, where non-regular types, usually
     represent something that can be only observed, but not really
-    represented with the data type.
-<p>
+    represented with the data type.</p>
 
-    On the border line we have <code class="code"><span class="constructor">Opaque</span></code> data types. These are types,
+<p>On the border line we have <code class="code"><span class="constructor">Opaque</span></code> data types. These are types,
     that pretend to be <code class="code"><span class="constructor">Regular</span></code>, but we can't actually inspect their
-    representation.
-<p>
+    representation.</p>
 
-    <h2 id="2_Features">Features</h2>
-<p>
-
-    So what the library actually provides. First of all it defines the
+<h3 id="2_Features">Features</h3>
+<p>So what the library actually provides. First of all it defines the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a> interface, that each regular data type is expected to
     implement. This includes a full set of <code class="code"><span class="constructor">Io</span></code> functions, that allows
     one to read, write and serialize values of the type (see <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>
@@ -130,103 +124,118 @@ Interface that should support any regular data type.
     called <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> is provided, that is a proper subset of the
     <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>. It doesn't provide printing and serialization, but has
     everything that can be derived for a type with a total order
-    (e.g., containers, comparison function, etc).
-<p>
+    (e.g., containers, comparison function, etc).</p>
 
-    A functor is provided for each interface, that requires the
-    minimal implementation, and derives the rest.
-<p>
+<p>A functor is provided for each interface, that requires the
+    minimal implementation, and derives the rest.</p>
 
-    Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bytes</span></code></a> module is provided that facilitates the
+<p>Finally, a <a href="Regular.Std.Bytes.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Bytes</span></code></a> module is provided that facilitates the
     transfer from mutable to immutable <code class="code"><span class="constructor">Strings</span></code>. It is the extension
     of OCaml standard Bytes module, enhanced with the expected set of
-    functions.<br>
-<b>See also</b> <a href="
-    https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/">Core Kernel Documentation</a><br>
+    functions.</p>
+</div>
+<ul class="info-attributes">
+<li><b>See also</b> <a href="
+    https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/">Core Kernel Documentation</a></li>
+</ul>
 </div>
 <hr width="100%">
-<br>
-<h3 id="3_Typedefinitions">Type definitions</h3><br>
-
+<h4 id="3_Typedefinitions">Type definitions</h4>
 <pre><span id="TYPEbytes"><span class="keyword">type</span> <code class="type"></code>bytes</span> = <code class="type">Bytes.t</code> </pre>
 <div class="info ">
-bytes is a mutable sequence of bytes that has a fixed length.<br>
+<div class="info-desc">
+<p>bytes is a mutable sequence of bytes that has a fixed length.</p>
+</div>
 </div>
 
 
 
-<br>
-<h4 id="4_ReaderandWritertypeclasses">Reader and Writer type classes</h4>
-<p>
-
-      Each type class is an abstraction of a tuple of function.<br>
+<h5 id="4_ReaderandWritertypeclasses">Reader and Writer type classes</h5>
+<p>Each type class is an abstraction of a tuple of function.</p>
 
 <pre><span id="TYPEreader"><span class="keyword">type</span> <code class="type">'a</code> reader</span> </pre>
 <div class="info ">
-an interface for reading a value from the input.<br>
+<div class="info-desc">
+<p>an interface for reading a value from the input.</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEwriter"><span class="keyword">type</span> <code class="type">'a</code> writer</span> </pre>
 <div class="info ">
-an interface for writing a value to the output.<br>
+<div class="info-desc">
+<p>an interface for writing a value to the output.</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEdigest"><span class="keyword">type</span> <code class="type"></code>digest</span> </pre>
 <div class="info ">
-a string that digests data<br>
+<div class="info-desc">
+<p>a string that digests data</p>
+</div>
 </div>
 
 
 
 
-<pre><span id="TYPEprinter"><span class="keyword">type</span> <code class="type">'a</code> printer</span> = <code class="type">Format.formatter -> 'a -> unit</code> </pre>
+<pre><span id="TYPEprinter"><span class="keyword">type</span> <code class="type">'a</code> printer</span> = <code class="type">Stdlib.Format.formatter -> 'a -> unit</code> </pre>
 <div class="info ">
-<code class="code"><span class="keywordsign">'</span>a&nbsp;printer</code> constructs a printer type for arbitrary type <code class="code"><span class="keywordsign">'</span>a</code>.
-<p>
+<div class="info-desc">
+<p><code class="code"><span class="keywordsign">'</span>a&nbsp;printer</code> constructs a printer type for arbitrary type <code class="code"><span class="keywordsign">'</span>a</code>.</p>
 
-      A value of type <code class="code"><span class="keywordsign">'</span>a&nbsp;printer</code> is a function that is expected by
-      the <code class="code">%a</code> specifier of the <code class="code"><span class="constructor">Format</span>.printf</code> family of functions.<br>
+<p>A value of type <code class="code"><span class="keywordsign">'</span>a&nbsp;printer</code> is a function that is expected by
+      the <code class="code">%a</code> specifier of the <code class="code"><span class="constructor">Format</span>.printf</code> family of functions.</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Printable.html">Printable</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Printable data structures.
+<pre><span id="MODULEPrintable"><span class="keyword">module</span> <a href="Regular.Std.Printable.html">Printable</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Printable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Printable data structures.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Seq.html">Seq</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lazy sequence.
+<pre><span id="MODULESeq"><span class="keyword">module</span> <a href="Regular.Std.Seq.html">Seq</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Seq.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Lazy sequence.</p>
+
 </div>
 
 <pre><span id="TYPEseq"><span class="keyword">type</span> <code class="type">'a</code> seq</span> = <code class="type">'a <a href="Regular.Std.Seq.html#TYPEt">Seq.t</a></code> </pre>
 <div class="info ">
-Abbreviation for <code class="code"><span class="keywordsign">'</span>a&nbsp;<span class="constructor">Sequence</span>.t</code><br>
+<div class="info-desc">
+<p>Abbreviation for <code class="code"><span class="keywordsign">'</span>a&nbsp;<span class="constructor">Sequence</span>.t</code></p>
+</div>
 </div>
 
 
 
 
 <pre><span id="VAL(^::)"><span class="keyword">val</span> (^::)</span> : <code class="type">'a -> 'a <a href="Regular.Std.html#TYPEseq">seq</a> -> 'a <a href="Regular.Std.html#TYPEseq">seq</a></code></pre><div class="info ">
-<code class="code">x&nbsp;^::&nbsp;xs</code> is a consing operator for sequences<br>
+<div class="info-desc">
+<p><code class="code">x&nbsp;^::&nbsp;xs</code> is a consing operator for sequences</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Data.html">Data</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Data types support module.
+<pre><span id="MODULEData"><span class="keyword">module</span> <a href="Regular.Std.Data.html">Data</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Data types support module.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Regular.html">Regular</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Regular types models a general concept of value, i.e., something
+<pre><span id="MODULERegular"><span class="keyword">module</span> <a href="Regular.Std.Regular.html">Regular</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Regular types models a general concept of value, i.e., something
       that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
-      <code class="code">char</code> and other built in types.
+      <code class="code">char</code> and other built in types.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Opaque.html">Opaque</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Opaque type is like regular type, except that we can print or
-      examine it in any way.
+<pre><span id="MODULEOpaque"><span class="keyword">module</span> <a href="Regular.Std.Opaque.html">Opaque</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Opaque type is like regular type, except that we can print or
+      examine it in any way.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Bytes.html">Bytes</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Extension of the standard bytes module.
+<pre><span id="MODULEBytes"><span class="keyword">module</span> <a href="Regular.Std.Bytes.html">Bytes</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Bytes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Extension of the standard bytes module.</p>
+
 </div>
 </body></html>

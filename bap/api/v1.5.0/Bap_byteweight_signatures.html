@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -103,7 +104,7 @@ Error conditions<br>
 </div>
 
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?comp:string -><br>       mode:string -><br>       path:string -><br>       Std.arch -><br>       <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -><br>       (unit, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">?comp:string -><br>       mode:string -><br>       path:string -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -><br>       (unit, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">save&nbsp;?comp&nbsp;~mode&nbsp;~path&nbsp;arch&nbsp;data</code> store signatures data in the
     database of signatures specified by the <code class="code">path</code> parameter. The
     triple <code class="code">arch-comp-mode</code> defines a key for the created entry. If an
@@ -112,7 +113,7 @@ Error conditions<br>
     created and the specified destination.<br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?comp:string -><br>       ?path:string -><br>       mode:string -><br>       Std.arch -><br>       (<a href="Regular.Std.html#TYPEbytes">Std.bytes</a>, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?comp:string -><br>       ?path:string -><br>       mode:string -><br>       <a href="Bap.Std.html#TYPEarch">Std.arch</a> -><br>       (<a href="Regular.Std.html#TYPEbytes">Std.bytes</a>, <a href="Bap_byteweight_signatures.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">load&nbsp;?comp&nbsp;?path&nbsp;~mode&nbsp;arch</code> finds a signature for the specified
     <code class="code">arch-comp-path</code> tripple. The <code class="code">path</code> defaults to <code class="code">default_path</code>.<br>
 </div>

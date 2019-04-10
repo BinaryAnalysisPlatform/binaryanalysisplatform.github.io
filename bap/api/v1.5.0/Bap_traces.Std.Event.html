@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -97,58 +98,58 @@ Types of events.<br>
 </div>
 <hr width="100%">
 
-<pre><span id="VALmemory_load"><span class="keyword">val</span> memory_load</span> : <code class="type">Std.addr <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALmemory_load"><span class="keyword">val</span> memory_load</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 an read access to a memory cell<br>
 </div>
 
-<pre><span id="VALmemory_store"><span class="keyword">val</span> memory_store</span> : <code class="type">Std.addr <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALmemory_store"><span class="keyword">val</span> memory_store</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a write access to a memory cell<br>
 </div>
 
-<pre><span id="VALregister_read"><span class="keyword">val</span> register_read</span> : <code class="type">Std.var <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALregister_read"><span class="keyword">val</span> register_read</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a value was read from a given register<br>
 </div>
 
-<pre><span id="VALregister_write"><span class="keyword">val</span> register_write</span> : <code class="type">Std.var <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALregister_write"><span class="keyword">val</span> register_write</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_traces.Std.html#TYPEmove">Bap_traces.Std.move</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a value is written to the specified register<br>
 </div>
 
-<pre><span id="VALtimestamp"><span class="keyword">val</span> timestamp</span> : <code class="type">int64 Std.tag</code></pre><div class="info ">
+<pre><span id="VALtimestamp"><span class="keyword">val</span> timestamp</span> : <code class="type">int64 <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 this event can used to synchronize traces<br>
 </div>
 
-<pre><span id="VALpc_update"><span class="keyword">val</span> pc_update</span> : <code class="type">Std.addr Std.tag</code></pre><div class="info ">
+<pre><span id="VALpc_update"><span class="keyword">val</span> pc_update</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 CPU PC register changed its value<br>
 </div>
 
-<pre><span id="VALcode_exec"><span class="keyword">val</span> code_exec</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">Bap_traces.Std.chunk</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALcode_exec"><span class="keyword">val</span> code_exec</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEchunk">Bap_traces.Std.chunk</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 CPU loaded this memory chunk for execution. This event
           occurs just before the execution. All side effects of
           the code execution occurs after this event.<br>
 </div>
 
-<pre><span id="VALcontext_switch"><span class="keyword">val</span> context_switch</span> : <code class="type">int Std.tag</code></pre><div class="info ">
+<pre><span id="VALcontext_switch"><span class="keyword">val</span> context_switch</span> : <code class="type">int <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 operating system has performed context switching to a provided
         thread (process) id.<br>
 </div>
 
-<pre><span id="VALsyscall"><span class="keyword">val</span> syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">Bap_traces.Std.syscall</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALsyscall"><span class="keyword">val</span> syscall</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEsyscall">Bap_traces.Std.syscall</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a system call has occured<br>
 </div>
 
-<pre><span id="VALexn"><span class="keyword">val</span> exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">Bap_traces.Std.exn</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALexn"><span class="keyword">val</span> exn</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEexn">Bap_traces.Std.exn</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a software exception has occured.<br>
 </div>
 
-<pre><span id="VALcall"><span class="keyword">val</span> call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">Bap_traces.Std.call</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALcall"><span class="keyword">val</span> call</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEcall">Bap_traces.Std.call</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a control flow transfer from one procedure to another has occured<br>
 </div>
 
-<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">Bap_traces.Std.return</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEreturn">Bap_traces.Std.return</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a return from a call has occured<br>
 </div>
 
-<pre><span id="VALmodload"><span class="keyword">val</span> modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">Bap_traces.Std.modload</a> Std.tag</code></pre><div class="info ">
+<pre><span id="VALmodload"><span class="keyword">val</span> modload</span> : <code class="type"><a href="Bap_traces.Std.html#TYPEmodload">Bap_traces.Std.modload</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
 a module (shared library) is dynamically linked into a host program.<br>
 </div>
 </body></html>

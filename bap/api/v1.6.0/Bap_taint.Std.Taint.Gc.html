@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,22 +91,24 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_taint.Std.Taint.Gc.html">Bap_taint.Std.Taint.Gc</a></h1>
 
-<pre><span class="keyword">module</span> Gc: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Gc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="MODULEGc"><span class="keyword">module</span> Gc</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Gc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="VALtaint_finalize"><span class="keyword">val</span> taint_finalize</span> : <code class="type">(<a href="Bap_taint.Std.Taint.Object.html#TYPEt">Bap_taint.Std.Taint.Object.t</a> * bool) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">taint_finalize&nbsp;(t,live)</code> occurs either when the taint <code class="code">t</code>
+<div class="info-desc">
+<p><code class="code">taint_finalize&nbsp;(t,live)</code> occurs either when the taint <code class="code">t</code>
           is no longer reachable or when when machine that created this
           taint finishes. In the former case <code class="code">live</code> would be <code class="code"><span class="keyword">true</span></code> in
-          the latter it is <code class="code"><span class="keyword">false</span></code>.
-<p>
+          the latter it is <code class="code"><span class="keyword">false</span></code>.</p>
 
-          The event may occur during the GC collection cycle and there
+<p>The event may occur during the GC collection cycle and there
           could be a significant delay between the actual time when the
           taint become unreachable and the time when the observation is
-          made.<br>
+          made.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Gc.Conservative.html">Conservative</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.Component.html">Std.Primus.Machine.Component</a></code><code class="type"> </code></pre><div class="info">
-Conservative Garbage Collector.
+<pre><span id="MODULEConservative"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Gc.Conservative.html">Conservative</a></span>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.Component.html">Std.Primus.Machine.Component</a></code><code class="type"> </code></pre><div class="info">
+<p>Conservative Garbage Collector.</p>
+
 </div>
 </body></html>

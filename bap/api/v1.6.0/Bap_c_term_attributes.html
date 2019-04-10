@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,25 +93,33 @@
 </div>
 <h1>Module <a href="type_Bap_c_term_attributes.html">Bap_c_term_attributes</a></h1>
 
-<pre><span class="keyword">module</span> Bap_c_term_attributes: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_term_attributes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-BIR attributes.<br>
+<pre><span id="MODULEBap_c_term_attributes"><span class="keyword">module</span> Bap_c_term_attributes</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_term_attributes.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>BIR attributes.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> Std.tag</code></pre><div class="info ">
-Abstraction of a data representation of C value. This
+<pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Abstraction of a data representation of C value. This
     attribute is attached to each inserted arg term, but can be
-    further propagated by other passes<br>
+    further propagated by other passes</p>
+</div>
 </div>
 
-<pre><span id="VALproto"><span class="keyword">val</span> proto</span> : <code class="type"><a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> Std.tag</code></pre><div class="info ">
-Function prototype. This attribute is inserted into each
-    annotated function.<br>
+<pre><span id="VALproto"><span class="keyword">val</span> proto</span> : <code class="type"><a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Function prototype. This attribute is inserted into each
+    annotated function.</p>
+</div>
 </div>
 
-<pre><span id="VALt"><span class="keyword">val</span> t</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> Std.tag</code></pre><div class="info ">
-A c type associated with a term. This attribute is attached to
+<pre><span id="VALt"><span class="keyword">val</span> t</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> <a href="Bap.Std.html#TYPEtag">Std.tag</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>A c type associated with a term. This attribute is attached to
     each inserted arg term, but maybe propagated by further by other
-    passes.<br>
+    passes.</p>
+</div>
 </div>
 </body></html>

@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,23 +91,28 @@
 </div>
 <h1>Module <a href="type_Bap_c_type_mapper.Search.html">Bap_c_type_mapper.Search</a></h1>
 
-<pre><span class="keyword">module</span> Search: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.Search.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Search Monad.
-<p>
+<pre><span id="MODULESearch"><span class="keyword">module</span> Search</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_type_mapper.Search.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Search Monad.</p>
 
-    A monad for searching with abnormal exit, i.e., the computation
-    terminates as soon as an item is found.<br>
+<p>A monad for searching with abnormal exit, i.e., the computation
+    terminates as soon as an item is found.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span class="keyword">include</span> Monad.S2</pre>
 
 <pre><span id="VALfinished"><span class="keyword">val</span> finished</span> : <code class="type">'e -> ('a, 'e) t</code></pre><div class="info ">
-<code class="code">finished&nbsp;needle</code> is called when a search is finished, it will
-      terminate the search with the <code class="code">needle</code> as a result.<br>
+<div class="info-desc">
+<p><code class="code">finished&nbsp;needle</code> is called when a search is finished, it will
+      terminate the search with the <code class="code">needle</code> as a result.</p>
+</div>
 </div>
 
 <pre><span id="VALresult"><span class="keyword">val</span> result</span> : <code class="type">('a, 'e) t -> 'e option</code></pre><div class="info ">
-<code class="code">result&nbsp;s</code> runs the computation <code class="code">s</code> and extracts the result.<br>
+<div class="info-desc">
+<p><code class="code">result&nbsp;s</code> runs the computation <code class="code">s</code> and extracts the result.</p>
+</div>
 </div>
 </body></html>

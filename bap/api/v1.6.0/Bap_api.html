@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,22 +93,21 @@
 </div>
 <h1>Module <a href="type_Bap_api.html">Bap_api</a></h1>
 
-<pre><span class="keyword">module</span> Bap_api: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_api.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-An interface to the api pass.
-<p>
+<pre><span id="MODULEBap_api"><span class="keyword">module</span> Bap_api</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_api.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>An interface to the api pass.</p>
 
-    Api pass will apply a high level model of a program <code class="code">api</code> to a low
-    level representation, i.e., the <code class="code">program&nbsp;term</code>.
-<p>
+<p>Api pass will apply a high level model of a program <code class="code">api</code> to a low
+    level representation, i.e., the <code class="code">program&nbsp;term</code>.</p>
 
-    The module is actually a static registry of language processors,
-    that will be applied by the api pass.
-<p>
+<p>The module is actually a static registry of language processors,
+    that will be applied by the api pass.</p>
 
-    The language processors are provide by plugins supporting
+<p>The language processors are provide by plugins supporting
     corresponding languages. Sometimes an abi information is required
     to apply the api, so the processors are actually provided by even
-    lower level modules, that supports specific architectures.<br>
+    lower level modules, that supports specific architectures.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -117,21 +117,28 @@ An interface to the api pass.
 <pre><span id="TYPEapi"><span class="keyword">type</span> <code class="type"></code>api</span> = <code class="type">string</code> </pre>
 
 
-<pre><span class="keyword">module type</span> <a href="Bap_api.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_api.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Language processor interface.
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Bap_api.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_api.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Language processor interface.</p>
+
 </div>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">(module Bap_api.S)</code> </pre>
 <div class="info ">
-language processor type<br>
+<div class="info-desc">
+<p>language processor type</p>
+</div>
 </div>
 
 
 <pre><span id="VALprocess"><span class="keyword">val</span> process</span> : <code class="type"><a href="Bap_api.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-apply the language processor<br>
+<div class="info-desc">
+<p>apply the language processor</p>
+</div>
 </div>
 
 <pre><span id="VALprocessors"><span class="keyword">val</span> processors</span> : <code class="type">unit -> <a href="Bap_api.html#TYPEt">t</a> list</code></pre><div class="info ">
-enumerate all registered language processors<br>
+<div class="info-desc">
+<p>enumerate all registered language processors</p>
+</div>
 </div>
 </body></html>

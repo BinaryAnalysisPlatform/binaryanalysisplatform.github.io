@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -89,209 +90,248 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Regular.Std.Data.S.html">Regular.Std.Data.S</a></h1>
 
-<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-Data type interface.
-<p>
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> S</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<div class="info-desc">
+<p>Data type interface.</p>
 
-        Types that implement this interface have a concrete
-        representation, that can be serialized and deserialized.
-<p>
+<p>Types that implement this interface have a concrete
+        representation, that can be serialized and deserialized.</p>
 
-        The only requirement is to provide a <code class="code">version</code> value, that
+<p>The only requirement is to provide a <code class="code">version</code> value, that
         represents a version number of the representation. Every time
-        the representation changes, the version should be incremented.
-<p>
+        the representation changes, the version should be incremented.</p>
 
-        The interface allows to implement more than one format and
+<p>The interface allows to implement more than one format and
         several versions of the same format. By default, the OCaml
-        Marshal format is used.
-<p>
+        Marshal format is used.</p>
 
-        All <code class="code"><span class="constructor">Regular</span></code> modules include this interface. The <code class="code"><span class="constructor">Regular</span></code>
+<p>All <code class="code"><span class="constructor">Regular</span></code> modules include this interface. The <code class="code"><span class="constructor">Regular</span></code>
         modules provide <code class="code">sexp</code> and <code class="code">bin_io</code> formats in addition to
-        the <code class="code"><span class="constructor">Marshal</span></code>. They may provide more formats.
-<p>
+        the <code class="code"><span class="constructor">Marshal</span></code>. They may provide more formats.</p>
 
-        <h3 id="3_Example">Example</h3>
-<p>
+<h4 id="3_Example">Example</h4>
+<p>Given a module <code class="code"><span class="constructor">Bil</span></code> that implements <code class="code"><span class="constructor">Regular</span></code> interface, it
+        is possible to read a value of type <code class="code"><span class="constructor">Bil</span>.t</code> as simple, as:</p>
 
-        Given a module <code class="code"><span class="constructor">Bil</span></code> that implements <code class="code"><span class="constructor">Regular</span></code> interface, it
-        is possible to read a value of type <code class="code"><span class="constructor">Bil</span>.t</code> as simple, as:
-<p>
-
-        <pre class="codepre"><code class="code">          <span class="keyword">let</span> prog = <span class="constructor">Bil</span>.<span class="constructor">Io</span>.read filename
-        </code></pre><br>
+<pre class="codepre"><code class="code">          <span class="keyword">let</span> prog = <span class="constructor">Bil</span>.<span class="constructor">Io</span>.read filename
+        </code></pre></div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-type constructor<br>
+<div class="info-desc">
+<p>type constructor</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEinfo"><span class="keyword">type</span> <code class="type"></code>info</span> = <code class="type">string * [ `Ver of string ] * string option</code> </pre>
 <div class="info ">
-<code class="code">name,<span class="constructor">Ver</span>&nbsp;v,desc</code> information attached to a particular
-          reader or writer.<br>
+<div class="info-desc">
+<p><code class="code">name,<span class="constructor">Ver</span>&nbsp;v,desc</code> information attached to a particular
+          reader or writer.</p>
+</div>
 </div>
 
 
 <pre><span id="VALversion"><span class="keyword">val</span> version</span> : <code class="type">string</code></pre><div class="info ">
-Data representation version. After any change in data
-          representation the version should be increased.
-<p>
+<div class="info-desc">
+<p>Data representation version. After any change in data
+          representation the version should be increased.</p>
 
-          Serializers that are derived from a data representation must have
+<p>Serializers that are derived from a data representation must have
           the same version as a version of the data structure, from which
           it is derived. This kind of serializers can only read and write
-          data of the same version.
-<p>
+          data of the same version.</p>
 
-          Other serializers can actually read and write data independent
+<p>Other serializers can actually read and write data independent
           on its representation version. A serializer, that can't store
           data of current version simply shouldn't be added to a set of
-          serializers.
-<p>
+          serializers.</p>
 
-          It is assumed, that if a reader and a writer has the same name
+<p>It is assumed, that if a reader and a writer has the same name
           and version, then whatever was written by the writer should be
           readable by the reader. The round-trip equality is not required,
-          thus it is acceptable if some information is lost.
-<p>
+          thus it is acceptable if some information is lost.</p>
 
-          It is also possible, that a reader and a writer that has the
+<p>It is also possible, that a reader and a writer that has the
           same name are compatible. In that case it is recommended to use
-          semantic versioning.<br>
+          semantic versioning.</p>
+</div>
 </div>
 
 <pre><span id="VALsize_in_bytes"><span class="keyword">val</span> size_in_bytes</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">size_in_bytes&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> returns the amount of bytes
+<div class="info-desc">
+<p><code class="code">size_in_bytes&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> returns the amount of bytes
           that is needed to represent <code class="code">datum</code> in the given format
-          and version<br>
+          and version</p>
+</div>
 </div>
 
 <pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> <a href="Regular.Std.Data.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">of_bytes&nbsp;?ver&nbsp;?fmt&nbsp;bytes</code> deserializes a value from bytes.<br>
+<div class="info-desc">
+<p><code class="code">of_bytes&nbsp;?ver&nbsp;?fmt&nbsp;bytes</code> deserializes a value from bytes.</p>
+</div>
 </div>
 
 <pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a></code></pre><div class="info ">
-<code class="code">to_bytes&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> serializes a <code class="code">datum</code> to a sequence of
-          bytes.<br>
+<div class="info-desc">
+<p><code class="code">to_bytes&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> serializes a <code class="code">datum</code> to a sequence of
+          bytes.</p>
+</div>
 </div>
 
 <pre><span id="VALblit_to_bytes"><span class="keyword">val</span> blit_to_bytes</span> : <code class="type">?ver:string -><br>       ?fmt:string -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
-<code class="code">blit_to_bytes&nbsp;?ver&nbsp;?fmt&nbsp;buffer&nbsp;datum&nbsp;offset</code> copies a
+<div class="info-desc">
+<p><code class="code">blit_to_bytes&nbsp;?ver&nbsp;?fmt&nbsp;buffer&nbsp;datum&nbsp;offset</code> copies a
           serialized representation of datum into a <code class="code">buffer</code>, starting from
-          the <code class="code">offset</code>.<br>
+          the <code class="code">offset</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">?ver:string -> ?fmt:string -> bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buf</code> deserializes a datum from bigstring<br>
+<div class="info-desc">
+<p><code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buf</code> deserializes a datum from bigstring</p>
+</div>
 </div>
 
 <pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> bigstring</code></pre><div class="info ">
-<code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> serializes a datum to a sequence of
-          bytes represented as bigstring<br>
+<div class="info-desc">
+<p><code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> serializes a datum to a sequence of
+          bytes represented as bigstring</p>
+</div>
 </div>
 
 <pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">?ver:string -><br>       ?fmt:string -> bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
-<code class="code">blit_to_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buffer&nbsp;datum&nbsp;offset</code> copies a
+<div class="info-desc">
+<p><code class="code">blit_to_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buffer&nbsp;datum&nbsp;offset</code> copies a
           serialized representation of datum into a <code class="code">buffer</code>, starting from
-          <code class="code">offset</code>.<br>
+          <code class="code">offset</code>.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Data.S.Io.html">Io</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Io.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Input/Output functions for the given datum.
+<pre><span id="MODULEIo"><span class="keyword">module</span> <a href="Regular.Std.Data.S.Io.html">Io</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Io.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Input/Output functions for the given datum.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Data.S.Cache.html">Cache</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Cache.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Data cache.
+<pre><span id="MODULECache"><span class="keyword">module</span> <a href="Regular.Std.Data.S.Cache.html">Cache</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Cache.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Data cache.</p>
+
 </div>
 
 <pre><span id="VALadd_reader"><span class="keyword">val</span> add_reader</span> : <code class="type">?desc:string -><br>       ver:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEreader">Std.reader</a> -> unit</code></pre><div class="info ">
-<code class="code">add_reader&nbsp;?desc&nbsp;~ver&nbsp;name&nbsp;reader</code> registers a new <code class="code">reader</code>
+<div class="info-desc">
+<p><code class="code">add_reader&nbsp;?desc&nbsp;~ver&nbsp;name&nbsp;reader</code> registers a new <code class="code">reader</code>
           with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
-          <code class="code">desc</code><br>
+          <code class="code">desc</code></p>
+</div>
 </div>
 
 <pre><span id="VALadd_writer"><span class="keyword">val</span> add_writer</span> : <code class="type">?desc:string -><br>       ver:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEwriter">Std.writer</a> -> unit</code></pre><div class="info ">
-<code class="code">add_writer&nbsp;?desc&nbsp;~ver&nbsp;name&nbsp;writer</code> registers a new <code class="code">writer</code>
+<div class="info-desc">
+<p><code class="code">add_writer&nbsp;?desc&nbsp;~ver&nbsp;name&nbsp;writer</code> registers a new <code class="code">writer</code>
           with a provided <code class="code">name</code>, version <code class="code">ver</code> and optional description
-          <code class="code">desc</code><br>
+          <code class="code">desc</code></p>
+</div>
 </div>
 
 <pre><span id="VALavailable_readers"><span class="keyword">val</span> available_readers</span> : <code class="type">unit -> <a href="Regular.Std.Data.S.html#TYPEinfo">info</a> list</code></pre><div class="info ">
-<code class="code">available_reader&nbsp;()</code> lists available readers for the data type<br>
+<div class="info-desc">
+<p><code class="code">available_reader&nbsp;()</code> lists available readers for the data type</p>
+</div>
 </div>
 
 <pre><span id="VALdefault_reader"><span class="keyword">val</span> default_reader</span> : <code class="type">unit -> <a href="Regular.Std.Data.S.html#TYPEinfo">info</a></code></pre><div class="info ">
-<code class="code">default_reader</code> returns information about default reader<br>
+<div class="info-desc">
+<p><code class="code">default_reader</code> returns information about default reader</p>
+</div>
 </div>
 
 <pre><span id="VALset_default_reader"><span class="keyword">val</span> set_default_reader</span> : <code class="type">?ver:string -> string -> unit</code></pre><div class="info ">
-<code class="code">set_default_reader&nbsp;?ver&nbsp;name</code> sets new default reader. If
+<div class="info-desc">
+<p><code class="code">set_default_reader&nbsp;?ver&nbsp;name</code> sets new default reader. If
           version is not specifed then the latest available version is
           used. Raises an exception if a reader with a given name doesn't
-          exist.<br>
+          exist.</p>
+</div>
 </div>
 
 <pre><span id="VALwith_reader"><span class="keyword">val</span> with_reader</span> : <code class="type">?ver:string -> string -> (unit -> 'a) -> 'a</code></pre><div class="info ">
-<code class="code">with_reader&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
+<div class="info-desc">
+<p><code class="code">with_reader&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
           reader to a reader with a specified name and version. The default
-          reader is restored after <code class="code">operation</code> is finished.<br>
+          reader is restored after <code class="code">operation</code> is finished.</p>
+</div>
 </div>
 
 <pre><span id="VALavailable_writers"><span class="keyword">val</span> available_writers</span> : <code class="type">unit -> <a href="Regular.Std.Data.S.html#TYPEinfo">info</a> list</code></pre><div class="info ">
-<code class="code">available_writer&nbsp;()</code> lists available writers for the data type<br>
+<div class="info-desc">
+<p><code class="code">available_writer&nbsp;()</code> lists available writers for the data type</p>
+</div>
 </div>
 
 <pre><span id="VALdefault_writer"><span class="keyword">val</span> default_writer</span> : <code class="type">unit -> <a href="Regular.Std.Data.S.html#TYPEinfo">info</a></code></pre><div class="info ">
-<code class="code">default_writer</code> returns information about the default writer<br>
+<div class="info-desc">
+<p><code class="code">default_writer</code> returns information about the default writer</p>
+</div>
 </div>
 
 <pre><span id="VALset_default_writer"><span class="keyword">val</span> set_default_writer</span> : <code class="type">?ver:string -> string -> unit</code></pre><div class="info ">
-<code class="code">set_default_writer&nbsp;?ver&nbsp;name</code> sets new default writer. If
+<div class="info-desc">
+<p><code class="code">set_default_writer&nbsp;?ver&nbsp;name</code> sets new default writer. If
           version is not specifed then the latest available version is
           used. Raises an exception if a writer with a given name doesn't
-          exist.<br>
+          exist.</p>
+</div>
 </div>
 
 <pre><span id="VALwith_writer"><span class="keyword">val</span> with_writer</span> : <code class="type">?ver:string -> string -> (unit -> 'a) -> 'a</code></pre><div class="info ">
-<code class="code">with_writer&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
+<div class="info-desc">
+<p><code class="code">with_writer&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
           writer to a writer with a specified name and version. The default
-          writer is restored after <code class="code">operation</code> is finished.<br>
+          writer is restored after <code class="code">operation</code> is finished.</p>
+</div>
 </div>
 
 <pre><span id="VALdefault_printer"><span class="keyword">val</span> default_printer</span> : <code class="type">unit -> <a href="Regular.Std.Data.S.html#TYPEinfo">info</a> option</code></pre><div class="info ">
-<code class="code">default_writer</code> optionally returns an information about
-          default printer<br>
+<div class="info-desc">
+<p><code class="code">default_writer</code> optionally returns an information about
+          default printer</p>
+</div>
 </div>
 
 <pre><span id="VALset_default_printer"><span class="keyword">val</span> set_default_printer</span> : <code class="type">?ver:string -> string -> unit</code></pre><div class="info ">
-<code class="code">set_default_printer&nbsp;?ver&nbsp;name</code> sets new default printer. If
+<div class="info-desc">
+<p><code class="code">set_default_printer&nbsp;?ver&nbsp;name</code> sets new default printer. If
           version is not specifed then the latest available version is
           used. Raises an exception if a printer with a given name doesn't
-          exist.<br>
+          exist.</p>
+</div>
 </div>
 
 <pre><span id="VALwith_printer"><span class="keyword">val</span> with_printer</span> : <code class="type">?ver:string -> string -> (unit -> 'a) -> 'a</code></pre><div class="info ">
-<code class="code">with_printer&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
+<div class="info-desc">
+<p><code class="code">with_printer&nbsp;?ver&nbsp;name&nbsp;operation</code> temporary sets a default
           printer to a printer with a specified name and version. The default
-          printer is restored after <code class="code">operation</code> is finished.<br>
+          printer is restored after <code class="code">operation</code> is finished.</p>
 </div>
-<br>
-<h2 id="2_Lowlevelaccesstoserializers">Low level access to serializers</h2><br>
-
+</div>
+<h3 id="2_Lowlevelaccesstoserializers">Low level access to serializers</h3>
 <pre><span id="VALfind_reader"><span class="keyword">val</span> find_reader</span> : <code class="type">?ver:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEreader">Std.reader</a> option</code></pre><div class="info ">
-<code class="code">find_reader&nbsp;?ver&nbsp;name</code> lookups a reader with a given name. If
+<div class="info-desc">
+<p><code class="code">find_reader&nbsp;?ver&nbsp;name</code> lookups a reader with a given name. If
           version is not specified, then a reader with maximum version is
-          returned.<br>
+          returned.</p>
+</div>
 </div>
 
 <pre><span id="VALfind_writer"><span class="keyword">val</span> find_writer</span> : <code class="type">?ver:string -> string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEwriter">Std.writer</a> option</code></pre><div class="info ">
-<code class="code">find_writer&nbsp;?ver&nbsp;name</code> lookups a writer with a given name. If
+<div class="info-desc">
+<p><code class="code">find_writer&nbsp;?ver&nbsp;name</code> lookups a writer with a given name. If
           version is not specified, then a writer with maximum version is
-          returned.<br>
+          returned.</p>
+</div>
 </div>
 </body></html>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,23 +93,26 @@
 </div>
 <h1>Module <a href="type_Bap_strings.Std.Strings.Scanner.html">Bap_strings.Std.Strings.Scanner</a></h1>
 
-<pre><span class="keyword">module</span> Scanner: <code class="type"><a href="Bap_strings_scanner.html">Bap_strings_scanner</a></code></pre><hr width="100%">
+<pre><span id="MODULEScanner"><span class="keyword">module</span> Scanner</span>: <code class="type"><a href="Bap_strings_scanner.html">Bap_strings_scanner</a></code></pre><hr width="100%">
 
 <pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">?is_stop:(char -> bool) -> read:(int -> char option) -> int -> string</code></pre><div class="info ">
-<code class="code">next&nbsp;~is_stop&nbsp;~read&nbsp;off</code> reads characters starting with the
+<div class="info-desc">
+<p><code class="code">next&nbsp;~is_stop&nbsp;~read&nbsp;off</code> reads characters starting with the
     offset <code class="code">off</code>, using the <code class="code">read</code> function to map offsets to
     characters, until the <code class="code">is_stop</code> character occurs, or the <code class="code">read</code>
-    function returns <code class="code"><span class="constructor">None</span></code>.
-<p>
+    function returns <code class="code"><span class="constructor">None</span></code>.</p>
 
-    Postcondition:
-    forall <code class="code">c</code> in <code class="code">result</code>, <code class="code">not&nbsp;(is_stop&nbsp;c)</code><br>
+<p>Postcondition:
+    forall <code class="code">c</code> in <code class="code">result</code>, <code class="code">not&nbsp;(is_stop&nbsp;c)</code></p>
+</div>
 </div>
 
 <pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?is_stop:(char -> bool) -><br>       read:(int -> char option) -> int -> (int * string) Sequence.t</code></pre><div class="info ">
-<code class="code">scan&nbsp;~is_stop&nbsp;~read&nbsp;off</code> applies <code class="code">next&nbsp;~is_stop&nbsp;~read</code> for all
+<div class="info-desc">
+<p><code class="code">scan&nbsp;~is_stop&nbsp;~read&nbsp;off</code> applies <code class="code">next&nbsp;~is_stop&nbsp;~read</code> for all
     offsets that are bigger than <code class="code">off</code> until <code class="code">read&nbsp;off</code> is not <code class="code"><span class="constructor">None</span></code>.
     Returns a sequence of non-empty strings, paired with their
-    corresponding offsets in data.<br>
+    corresponding offsets in data.</p>
+</div>
 </div>
 </body></html>

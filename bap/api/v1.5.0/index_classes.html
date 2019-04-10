@@ -8,6 +8,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -94,10 +95,156 @@ Base class for computing size of C data types.
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.S.base-c.html">base</a> [<a href="Bap_c_type_mapper_intf.S.html">Bap_c_type_mapper_intf.S</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.bili-c.html">bili</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated">BIL <a href="Bap.Std.Bili.html">interpreter</a>
+</span></div>
+</td></tr>
+<tr><td><a href="Bap.Std.biri-c.html">biri</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated">BIR <a href="Bap.Std.Biri.html">interpreter</a>
+</span></div>
+</td></tr>
+<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Bap.Std.Stmt.constant_folder-c.html">constant_folder</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td><div class="info">
+<code class="code">constant_folder</code> is a class that implements the <code class="code">fold_consts</code>
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Taint.context-c.html">context</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.context-c.html">context</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
+<td><div class="info">
+Biri evaluates terms in the context of a whole program (since
+        terms may contain calls and jumps).
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.context-c.html">context</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
+<td><div class="info">
+<code class="code"><span class="constructor">Bili</span>.context</code> extends <code class="code"><span class="constructor">Expi</span>.context</code> with PC (Program
+        Counter).
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.context-c.html">context</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
+<td><div class="info">
+Context for expression evaluation.
+</div>
+</td></tr>
 <tr><td align="left"><br>D</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.dfs_identity_visitor-c.html">dfs_identity_visitor</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
 base class with all methods defaults to nothing.
+</div>
+</td></tr>
+<tr><td align="left"><br>E</td></tr>
+<tr><td><a href="Bap.Std.expi-c.html">expi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated">Expression <a href="Bap.Std.Expi.html">interpreter</a>
+</span></div>
+</td></tr>
+<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Bap.Std.Stmt.finder-c.html">finder</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td><div class="info">
+A visitor with a shortcut.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Exp.finder-c.html">finder</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td><div class="info">
+A visitor with a shortcut.
+</div>
+</td></tr>
+<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Bap.Std.Bil.Storage.linear-c.html">linear</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
+<td><div class="info">
+linear storage literally implements operational
+          semantics, but has O(N) lookup and uses space
+          very ineffectively, as it is implemented as a list
+          of assignments.
+</div>
+</td></tr>
+<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Bap.Std.Term.mapper-c.html">mapper</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+Mapper perfoms deep identity term mapping.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Stmt.mapper-c.html">mapper</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td><div class="info">
+AST transformation.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Exp.mapper-c.html">mapper</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td><div class="info">
+Exp mapper.
+</div>
+</td></tr>
+<tr><td align="left"><br>P</td></tr>
+<tr><td><a href="Bap.Std.Taint.S.propagator-c.html">propagator</a> [<a href="Bap.Std.Taint.S.html">Bap.Std.Taint.S</a>]</td>
+<td><div class="info">
+Propagate taint through expressions.
+</div>
+</td></tr>
+<tr><td align="left"><br>S</td></tr>
+<tr><td><a href="Bap.Std.Bil.Storage.sparse-c.html">sparse</a> [<a href="Bap.Std.Bil.Storage.html">Bap.Std.Bil.Storage</a>]</td>
+<td><div class="info">
+sparse storage is slightly more efficient storage,
+          in comparison with linear.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Stmt.state-c.html">state</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td><div class="info">
+All visitors provide some information about the current
+        position of the visitor
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Exp.state-c.html">state</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td><div class="info">
+All visitors provide some information about the current
+        position of the visitor
+</div>
+</td></tr>
+<tr><td align="left"><br>T</td></tr>
+<tr><td><a href="Bap.Std.Biri.S.t-c.html">t</a> [<a href="Bap.Std.Biri.S.html">Bap.Std.Biri.S</a>]</td>
+<td><div class="info">
+base class for BIR interpreters
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.S.t-c.html">t</a> [<a href="Bap.Std.Bili.S.html">Bap.Std.Bili.S</a>]</td>
+<td><div class="info">
+Base class for BIL interpreters
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.S.t-c.html">t</a> [<a href="Bap.Std.Expi.S.html">Bap.Std.Expi.S</a>]</td>
+<td><div class="info">
+Expression interpreter.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eval.S.t-c.html">t</a> [<a href="Bap.Std.Eval.S.html">Bap.Std.Eval.S</a>]</td>
+<td><div class="info">
+a virtual base class for all evaluators
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.t-c.html">t</a> [<a href="Bap.Std.Eval.S2.html">Bap.Std.Eval.S2</a>]</td>
+<td><div class="info">
+a virtual base class for all evaluators
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Context.t-c.html">t</a> [<a href="Bap.Std.Context.html">Bap.Std.Context</a>]</td>
+<td></td></tr>
+<tr><td align="left"><br>V</td></tr>
+<tr><td><a href="Bap.Std.Term.visitor-c.html">visitor</a> [<a href="Bap.Std.Term.html">Bap.Std.Term</a>]</td>
+<td><div class="info">
+Visitor performs deep visiting.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Stmt.visitor-c.html">visitor</a> [<a href="Bap.Std.Stmt.html">Bap.Std.Stmt</a>]</td>
+<td><div class="info">
+Visitor.
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Exp.visitor-c.html">visitor</a> [<a href="Bap.Std.Exp.html">Bap.Std.Exp</a>]</td>
+<td><div class="info">
+expression visitor.
 </div>
 </td></tr>
 </table>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,33 +93,38 @@
 </div>
 <h1>Module <a href="type_Regular.Std.Regular.html">Regular.Std.Regular</a></h1>
 
-<pre><span class="keyword">module</span> Regular: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Regular types models a general concept of value, i.e., something
+<pre><span id="MODULERegular"><span class="keyword">module</span> Regular</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Regular types models a general concept of value, i.e., something
       that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
       <code class="code">char</code> and other built in types. So that it can be compared, used
-      in maps, sets, hashtables, printer, etc.
-<p>
+      in maps, sets, hashtables, printer, etc.</p>
 
-      Note: this signature is pretty similar to core's <code class="code"><span class="constructor">Identifiable</span></code>,
+<p>Note: this signature is pretty similar to core's <code class="code"><span class="constructor">Identifiable</span></code>,
       but doesn't require <code class="code">of_string</code> function, that is usually much
       harder to implement in comparison with <code class="code">to_string</code> function. Also,
       instead of <code class="code">to_string</code> it requires <code class="code">pp</code> function that can be
       implemented much more efficiently and elegantly. From the <code class="code">pp</code>
       function the whole plethora of printing functions are derived:
-      <code class="code">str</code>, <code class="code">pps</code>, <code class="code">ppo</code>.<br>
-<b>See also</b><ul><li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Comparable.mod/S_binable.modt/"><code class="code"><span class="constructor">Comparable</span>.<span class="constructor">S_binable</span></code></a></li>
+      <code class="code">str</code>, <code class="code">pps</code>, <code class="code">ppo</code>.</p>
+</div>
+<ul class="info-attributes">
+<li><b>See also</b><ul><li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Std/Comparable.mod/S_binable.modt/"><code class="code"><span class="constructor">Comparable</span>.<span class="constructor">S_binable</span></code></a></li>
 <li><a href="https://ocaml.janestreet.com/ocaml-core/latest/doc/core_kernel/Hashable/S_binable.modt/"><code class="code"><span class="constructor">Hashable</span>.<span class="constructor">S_binable</span></code></a></li>
+</ul></li>
 </ul>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Regular.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Regular interface.
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Regular.Std.Regular.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Regular interface.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Regular.Minimal.html">Minimal</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.Minimal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Regular.Std.Regular.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Regular.Std.Regular.Minimal.html">Minimal</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Regular.Std.Regular.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info">
-In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
-        minimum implementation <code class="code"><span class="constructor">M</span></code>
+<pre><span id="MODULETYPEMinimal"><span class="keyword">module type</span> <a href="Regular.Std.Regular.Minimal.html">Minimal</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Regular.Minimal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Regular.Std.Regular.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Regular.Std.Regular.Minimal.html">Minimal</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Regular.Std.Regular.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info">
+<p>In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
+        minimum implementation <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </body></html>

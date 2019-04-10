@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,11 +93,13 @@
 </div>
 <h1>Module <a href="type_Graphlib.Std.Group.html">Graphlib.Std.Group</a></h1>
 
-<pre><span class="keyword">module</span> Group: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Group.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Group is a non-empty set that is a result of partitioning of an
+<pre><span id="MODULEGroup"><span class="keyword">module</span> Group</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Group.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Group is a non-empty set that is a result of partitioning of an
       underlying set <code class="code"><span class="constructor">S</span></code> into a set of non-intersecting and non-empty
       subsets that cover set <code class="code"><span class="constructor">S</span></code>. See <a href="Graphlib.Std.Partition.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Partition</span></code></a> for more
-      information.<br>
+      information.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -104,26 +107,36 @@ Group is a non-empty set that is a result of partitioning of an
 
 
 <pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">enum&nbsp;group</code> enumerates all elements of a group, including the
-        designated one.<br>
+<div class="info-desc">
+<p><code class="code">enum&nbsp;group</code> enumerates all elements of a group, including the
+        designated one.</p>
+</div>
 </div>
 
 <pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a -> bool</code></pre><div class="info ">
-<code class="code">mem&nbsp;group&nbsp;x</code> checks membership of <code class="code">x</code> in a given <code class="code">group</code>.<br>
+<div class="info-desc">
+<p><code class="code">mem&nbsp;group&nbsp;x</code> checks membership of <code class="code">x</code> in a given <code class="code">group</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> 'a</code></pre><div class="info ">
-<code class="code">top&nbsp;group</code> returns the top element of a group also known as a
+<div class="info-desc">
+<p><code class="code">top&nbsp;group</code> returns the top element of a group also known as a
         representative element. The function is total since groups is
-        guaranteed to be non-empty.<br>
+        guaranteed to be non-empty.</p>
+</div>
 </div>
 
 <pre><span id="VALto_equiv"><span class="keyword">val</span> to_equiv</span> : <code class="type">'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> -> <a href="Graphlib.Std.html#TYPEequiv">Std.equiv</a></code></pre><div class="info ">
-<code class="code">to_equiv&nbsp;g</code> returns the ordinal number representing the
-        particular group <code class="code">g</code><br>
+<div class="info-desc">
+<p><code class="code">to_equiv&nbsp;g</code> returns the ordinal number representing the
+        particular group <code class="code">g</code></p>
+</div>
 </div>
 
 <pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Graphlib.Std.Group.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
-<code class="code">pp&nbsp;pp_elem&nbsp;g</code> prints group <code class="code">g</code> using element printer <code class="code">pp_elem</code><br>
+<div class="info-desc">
+<p><code class="code">pp&nbsp;pp_elem&nbsp;g</code> prints group <code class="code">g</code> using element printer <code class="code">pp_elem</code></p>
+</div>
 </div>
 </body></html>

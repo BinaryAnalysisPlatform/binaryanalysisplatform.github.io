@@ -21,21 +21,16 @@ relocatable &#45; provides facility to load relocatable files
 
 <P>
 
-<PRE>
-
-      <B>&#45;&#45;brancher=relocatable</B>
-     
-</PRE>
-
+<B>relocatable</B> [<I>OPTION</I>]&#46;&#46;&#46; 
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
 <P>
 
-Provides a brancher for relocatable files&#46;
+Extracts symbol information from the program relocations&#46;
 <P>
 
-Usually, jumps in a relocatable program do not have a direct static references to a destination but rather some bogus fixup&#46; The default brancher is unable to infer the destination, as it is not encoded in a program itself, but in meta data of a file&#46; The relocatable brancher will use OGRE to query for relocations and provide correct direct references to static code&#46; For the external code references it will ouput a reference to the NULL address (along with the fallthrough address)
+The relocation symbolizer leverages the relocation information stored in files to extract symbol names&#46; Since a relocation references an external symbol which doesn&#39;t have an address we use an address of a callsite&#46;
 <A NAME="lbAE">&nbsp;</A>
 <H2>OPTIONS</H2>
 
@@ -66,6 +61,6 @@ Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `au
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 13:35:06 GMT, May 17, 2018
+Time: 19:20:05 GMT, April 10, 2019
 </BODY>
 </HTML>

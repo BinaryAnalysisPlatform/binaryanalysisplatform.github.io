@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,19 +93,20 @@
 </div>
 <h1>Functor <a href="type_Graphlib.Std.Graphlib.Labeled.html">Graphlib.Std.Graphlib.Labeled</a></h1>
 
-<pre><span class="keyword">module</span> Labeled <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Regular.Std.Opaque.S.html">Std.Opaque.S</a></code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Graphlib.Std.Graph.html">Std.Graph</a></code><code class="type"> 
+<pre><span id="MODULELabeled"><span class="keyword">module</span> Labeled</span> <code class="code">(</code><code class="code"><span class="constructor">Node</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Regular.Std.Opaque.S.html">Std.Opaque.S</a></code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">NL</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">EL</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Graphlib.Std.Graph.html">Std.Graph</a></code><code class="type"> 
       with type node = (Node.t, NL.t) labeled
        and type Node.label = (Node.t, NL.t) labeled
        and type Edge.label = EL.t</code></pre><div class="info module top">
-<code class="code"><span class="constructor">Labeled</span>(<span class="constructor">Node</span>)(<span class="constructor">Node_label</span>)(<span class="constructor">Edge_label</span>)</code> creates a graph
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Labeled</span>(<span class="constructor">Node</span>)(<span class="constructor">Node_label</span>)(<span class="constructor">Edge_label</span>)</code> creates a graph
         structure with both nodes and edges labeled with abitrary
-        types.
-<p>
+        types.</p>
 
-        Contrary to <code class="code"><span class="constructor">Make</span></code> functor, where a node and a node label are
+<p>Contrary to <code class="code"><span class="constructor">Make</span></code> functor, where a node and a node label are
         unified, the <code class="code"><span class="constructor">Labeled</span></code> functor creates a graph data structure,
         where they are different. Moreover, the node label is pure
-        abstract and can be any type, including functional.<br>
+        abstract and can be any type, including functional.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -131,128 +133,134 @@
 </tr>
 </table>
 <hr width="100%">
-<br>
-Graph is mathematical data structure that is used to represent
+<p>Graph is mathematical data structure that is used to represent
         relations between elements of a set. Usually, graph is defined
         as an ordered pair of two sets - a set of vertices and a set
-        of edges that is a 2-subset of the set of nodes,
-<p>
+        of edges that is a 2-subset of the set of nodes,</p>
 
-        <pre class="verbatim">G = (V,E).</pre>
-<p>
-
-        In Graphlib vertices (called nodes in our parlance) and edges
+<pre class="verbatim">G = (V,E).</pre>
+<p>In Graphlib vertices (called nodes in our parlance) and edges
         are labeled. That means that we can associate data with edges
         and nodes. Thus graph should be considered as an associative
         data structure. And from mathematics perspective graph is
         represented as an ordered 6-tuple, consisting of a set of nodes,
         edges, node labels, edge labels, and two functions that maps
-        nodes and edges to their corresponding labels:
-<p>
+        nodes and edges to their corresponding labels:</p>
 
-        <pre class="verbatim">G = (N, E, N', E', ν : N -&gt; N', ε : E -&gt; E'),</pre>
-<p>
+<pre class="verbatim">G = (N, E, N', E', ν : N -&gt; N', ε : E -&gt; E'),</pre>
+<p>where set <code class="code"><span class="constructor">E</span></code> is a subset of <code class="code"> N × N </code>.</p>
 
-        where set <code class="code"><span class="constructor">E</span></code> is a subset of <code class="code"> N × N </code>.
-<p>
+<p>With this general framework an unlabeled graph can be
+        represented as:</p>
 
-        With this general framework an unlabeled graph can be
-        represented as:
-<p>
+<pre class="verbatim">G = (N, E, N, E, ν = λx.x, ε = λx.x)</pre>
+<p>Another possible representation of an unlabeled graph would be:</p>
 
-        <pre class="verbatim">G = (N, E, N, E, ν = λx.x, ε = λx.x)</pre>
-<p>
-
-        Another possible representation of an unlabeled graph would be:
-<p>
-
-        <pre class="verbatim">G = (N, E, {u}, {v}, ν = λx.u, ε = λx.v).</pre>
-<p>
-
-        Implementations are free to choose any suitable representation
+<pre class="verbatim">G = (N, E, {u}, {v}, ν = λx.u, ε = λx.v).</pre>
+<p>Implementations are free to choose any suitable representation
         of graph data structure, if it conforms to the graph signature
         and all operations follows the described semantics and
-        properties of a graph structure are preserved.
-<p>
+        properties of a graph structure are preserved.</p>
 
-        The axiomatic semantics of operations on a graph is described by
+<p>The axiomatic semantics of operations on a graph is described by
         a set of postconditions. To describe the semantics of an
         operation in terms of input and output arguments, we project
         graphs to its fields with the following notation
-        <code class="code">&lt;field&gt;(&lt;graph&gt;)</code>, e.g., <code class="code"><span class="constructor">N</span>(g)</code> is a set of nodes of graph <code class="code">g</code>.
-<p>
+        <code class="code">&lt;field&gt;(&lt;graph&gt;)</code>, e.g., <code class="code"><span class="constructor">N</span>(g)</code> is a set of nodes of graph <code class="code">g</code>.</p>
 
-        Only the strongest postcondition is specified, e.g., if it is
-        specified that <code class="code">νn = l</code>, then it also means that
-<p>
+<p>Only the strongest postcondition is specified, e.g., if it is
+        specified that <code class="code">νn = l</code>, then it also means that</p>
 
-        <code class="code">n ∈ N ∧ ∃u((u,v) ∈ E ∨ (v,u) ∈ E) ∧ l ∈ N' ∧ ...</code>
-<p>
+<p><code class="code">n ∈ N ∧ ∃u((u,v) ∈ E ∨ (v,u) ∈ E) ∧ l ∈ N' ∧ ...</code></p>
 
-        In other words the structure <code class="code"><span class="constructor">G</span></code> of the graph G is an invariant
-        that is always preserved.<br>
+<p>In other words the structure <code class="code"><span class="constructor">G</span></code> of the graph G is an invariant
+        that is always preserved.</p>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-type of graph<br>
+<div class="info-desc">
+<p>type of graph</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEnode"><span class="keyword">type</span> <code class="type"></code>node</span> </pre>
 <div class="info ">
-type of nodes<br>
+<div class="info-desc">
+<p>type of nodes</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEedge"><span class="keyword">type</span> <code class="type"></code>edge</span> </pre>
 <div class="info ">
-type of edges<br>
+<div class="info-desc">
+<p>type of edges</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Node.html">Node</a>: <code class="type"><a href="Graphlib.Std.Node.html">Std.Node</a></code><code class="type">  with type graph = t
+<pre><span id="MODULENode"><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Node.html">Node</a></span>: <code class="type"><a href="Graphlib.Std.Node.html">Std.Node</a></code><code class="type">  with type graph = t
                         and type t = node
                         and type edge = edge</code></pre><div class="info">
-Graph nodes.
+<p>Graph nodes.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Edge.html">Edge</a>: <code class="type"><a href="Graphlib.Std.Edge.html">Std.Edge</a></code><code class="type">  with type graph = t
+<pre><span id="MODULEEdge"><span class="keyword">module</span> <a href="Graphlib.Std.Graph.Edge.html">Edge</a></span>: <code class="type"><a href="Graphlib.Std.Edge.html">Std.Edge</a></code><code class="type">  with type graph = t
                         and type t = edge
                         and type node = node</code></pre><div class="info">
-Graph edges
+<p>Graph edges</p>
+
 </div>
 
 <pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">empty</code> is an empty graph<br>
+<div class="info-desc">
+<p><code class="code">empty</code> is an empty graph</p>
+</div>
 </div>
 
 <pre><span id="VALnodes"><span class="keyword">val</span> nodes</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEnode">node</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">nodes&nbsp;g</code> returns all nodes of graph <code class="code">g</code> in an unspecified order<br>
+<div class="info-desc">
+<p><code class="code">nodes&nbsp;g</code> returns all nodes of graph <code class="code">g</code> in an unspecified order</p>
+</div>
 </div>
 
 <pre><span id="VALedges"><span class="keyword">val</span> edges</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> <a href="Graphlib.Std.Graph.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">edges&nbsp;g</code> returns all edges of graph <code class="code">g</code> in an unspecified order<br>
+<div class="info-desc">
+<p><code class="code">edges&nbsp;g</code> returns all edges of graph <code class="code">g</code> in an unspecified order</p>
+</div>
 </div>
 
 <pre><span id="VALis_directed"><span class="keyword">val</span> is_directed</span> : <code class="type">bool</code></pre><div class="info ">
-<code class="code">is_directed</code> is true if graph is a directed graph.<br>
+<div class="info-desc">
+<p><code class="code">is_directed</code> is true if graph is a directed graph.</p>
+</div>
 </div>
 
 <pre><span id="VALnumber_of_edges"><span class="keyword">val</span> number_of_edges</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">number_of_edges&nbsp;g</code> returns the size of a graph <code class="code">g</code>.<br>
+<div class="info-desc">
+<p><code class="code">number_of_edges&nbsp;g</code> returns the size of a graph <code class="code">g</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALnumber_of_nodes"><span class="keyword">val</span> number_of_nodes</span> : <code class="type"><a href="Graphlib.Std.Graph.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">number_of_nodes&nbsp;g</code> returns the order of a graph <code class="code">g</code><br>
+<div class="info-desc">
+<p><code class="code">number_of_nodes&nbsp;g</code> returns the order of a graph <code class="code">g</code></p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> Opaque.S</pre>
 <div class="info ">
-All graphs provides a common interface for any opaque data structure<br>
+<div class="info-desc">
+<p>All graphs provides a common interface for any opaque data structure</p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> Printable.S</pre>
 <div class="info ">
-All graphs are printable.<br>
+<div class="info-desc">
+<p>All graphs are printable.</p>
+</div>
 </div>
 </body></html>

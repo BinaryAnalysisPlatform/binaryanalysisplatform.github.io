@@ -1,9 +1,3 @@
-cmdliner error: Undefined variable $(recipe.scm) in "Load the specified recipe. The $(docv) parameter specifies the\n  name of the recipe along with an optional colon separated list of\n  arguments. The $(docv) parameter has the following syntax:\n  $(b,<name> : <arg1>=<val1> : <arg2>=<val2> : ...).\n\n  The $(b,<name>) part could be either a path to a valid\n  recipe or the name of a recipe, that would be search in the recipe\n  search paths. A name may omit $(b,.recipe) or $(b,.scm) extensions\n  for brevity.\n\n  The valid representations of a recipe is either the recipe file\n  itself (i.e., a file consisting of a list of s-expressions), a\n  directory with a valid $(recipe.scm) file, or zip file, that\n  contains a valid recipe directory. See the $(b,RECIPES) section for\n  more information.\n\n  If a recipe is a zip file then it will be unpacked to a temporary\n  folder that will be removed after the program terminates. Otherwise,\n  all recipe resources will be used as is and won't be restored to\n  their previous state, e.g., if the input/output files were provided,\n  and they were modified, the modifications will persist."
-cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
-cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
-cmdliner error: Undefined variable $(recipe.scm) in "Load the specified recipe. The $(docv) parameter specifies the\n  name of the recipe along with an optional colon separated list of\n  arguments. The $(docv) parameter has the following syntax:\n  $(b,<name> : <arg1>=<val1> : <arg2>=<val2> : ...).\n\n  The $(b,<name>) part could be either a path to a valid\n  recipe or the name of a recipe, that would be search in the recipe\n  search paths. A name may omit $(b,.recipe) or $(b,.scm) extensions\n  for brevity.\n\n  The valid representations of a recipe is either the recipe file\n  itself (i.e., a file consisting of a list of s-expressions), a\n  directory with a valid $(recipe.scm) file, or zip file, that\n  contains a valid recipe directory. See the $(b,RECIPES) section for\n  more information.\n\n  If a recipe is a zip file then it will be unpacked to a temporary\n  folder that will be removed after the program terminates. Otherwise,\n  all recipe resources will be used as is and won't be restored to\n  their previous state, e.g., if the input/output files were provided,\n  and they were modified, the modifications will persist."
-cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
-cmdliner error: unescaped '$' in "\n    (parameter depth 128 \"maximum depth of analysis\")\n    (option analysis-depth $depth)\n   "
 Warning: can't render manpage for baptop
 Called as "false", got:
 
@@ -16,10 +10,13 @@ Called as "false", got:
 Warning: can't render manpage for bapbundle
 Called as "false", got:
 
-cmdliner error: unescaped '$' in "\n    $(b,--no-$mname)\n"
-cmdliner error: unescaped '$' in "\n    $(b,--no-$mname)\n"
+cmdliner error: Undefined variable $(bap-plugin-llvm) in "$(b,bap-elf)(3), $(bap-plugin-llvm)(1)"
+cmdliner error: Undefined variable $(bap-plugin-llvm) in "$(b,bap-elf)(3), $(bap-plugin-llvm)(1)"
 cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
 cmdliner error: unescaped '$' in "\n    $(b,$mname)\n"
+Warning: Module or module type ?? not found
+Warning: Module or module type Stringable not found
+Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Data.S not found
@@ -171,6 +168,7 @@ Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Printable.S not found
+Warning: Module or module type Printable.S not found
 Warning: Module type Printable.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Data.S not found
@@ -207,9 +205,6 @@ Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
-Warning: Module or module type ?? not found
-Warning: Module or module type ?? not found
-Warning: Module or module type Stringable not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Element Regular.Std not found
@@ -306,7 +301,6 @@ Warning: Element Sys.is_directory not found
 Warning: Element Sys.file_exists not found
 Warning: Element Sys.is_directory not found
 Warning: Module type Blit.S_distinct not found
-Warning: Module type Blit.S_distinct not found
 Warning: Module or module type Identifiable.S not found
 Warning: Module or module type Blit.S not found
 Warning: Module or module type Container.S0 not found
@@ -381,13 +375,10 @@ Warning: Element Marshal.from_bytes not found
 Warning: Module type Identifiable.S not found
 Warning: Module type Identifiable.S not found
 Warning: Module or module type Identifiable not found
-Warning: Module type Core_kernel.Std.Monad.S2 not found
-Warning: Module type Core_kernel.Std.Monad.S not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
 Warning: Module or module type Monad.S2 not found
 Warning: Module or module type Monad.S not found
-Warning: Element abstract not found
-Warning: Element intro not found
-Warning: Element conv not found
 Warning: Element abstract not found
 Warning: Element intro not found
 Warning: Element conv not found
@@ -406,17 +397,6 @@ Warning: Module or module type Printable.S not found
 Warning: Module or module type Opaque.S not found
 Warning: Module or module type Opaque.S not found
 Warning: Module or module type Opaque.S not found
-Warning: Element Graph not found
-Warning: Element Graphlib.To_ocamlgraph not found
-Warning: Element Graphlib.Of_ocamlgraph not found
-Warning: Element Graph not found
-Warning: Element Opaque not found
-Warning: Element Printable not found
-Warning: Element Path not found
-Warning: Element Tree not found
-Warning: Element Partition not found
-Warning: Element Graph not found
-Warning: Element Graphlib.create not found
 Warning: Element Opaque not found
 Warning: Element Printable not found
 Warning: Element Opaque.S not found
@@ -436,17 +416,8 @@ Warning: Element Graph.pp not found
 Warning: Module type Bap_primus.Std.Primus.Machine.Component not found
 Warning: Module or module type Comparable.S_plain not found
 Warning: Module or module type Comparable.S_plain not found
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2402, characters 24-43:
-Warning 3: deprecated: Primitives
-[since 2018-03] use [Closure]
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2402, characters 24-43:
-Warning 3: deprecated: Primitives
-[since 2018-03] use [Closure]
-File "/home/ivg/.opam/dev/lib/bap-primus/bap_primus.mli", line 2501, characters 30-40:
-Warning 3: deprecated: primitives
-[since 2018-03] use [closure]
-Warning: Module type Regular.S not found
 Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Strings.Index.Persistent.S not found
@@ -472,27 +443,24 @@ Warning: Element Word.(lxor) not found
 Warning: Element Word.(land) not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
+Warning: Module or module type Bap.Std.CPU not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
 Warning: Module or module type Bap.Std.Disasm_expert.Basic not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Regular.S not found
+Warning: Module or module type ?? not found
 Warning: Module or module type Bap.Std.CPU not found
-Warning: Module or module type Regular.S not found
-Warning: Module or module type ?? not found
-Warning: Module or module type Regular.S not found
-Warning: Module or module type ?? not found
-Warning: Module or module type Regular.S not found
-Warning: Module or module type ?? not found
+Warning: Module or module type Bap.Std.CPU not found
 Warning: Module or module type Bap.Std.Bitvector not found
-Warning: Module or module type Bap.Std.CPU not found
-Warning: Module or module type Bap.Std.CPU not found
 Warning: Module type S not found
 Warning: Module type S not found
 Warning: Module type S not found
 Warning: Module or module type Monad.S2 not found
 Warning: Module or module type S not found
-Warning: Element C.Type.Mapper.base not found
-Warning: Element C.Type.Mapper.State.base not found
-Warning: Element C.Type.Mapper.Finder.base not found
 Warning: Element C.Type.Mapper.base not found
 Warning: Element C.Type.Mapper.State.base not found
 Warning: Element C.Type.Mapper.Finder.base not found
@@ -632,8 +600,8 @@ Warning: Module or module type ?? not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
-Warning: Module type Regular.S not found
 Warning: Module or module type ?? not found
+Warning: Module type Regular.S not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Strings.Index.Persistent.S not found
@@ -662,11 +630,10 @@ Warning: Module or module type ?? not found
 Warning: Module type Identifiable.S not found
 Warning: Module type Identifiable.S not found
 Warning: Module or module type Identifiable not found
-Warning: Module type Core_kernel.Std.Monad.S2 not found
-Warning: Module type Core_kernel.Std.Monad.S not found
+Warning: Module type Core_kernel.Monad.S2 not found
+Warning: Module type Core_kernel.Monad.S not found
 Warning: Module or module type Monad.S2 not found
 Warning: Module or module type Monad.S not found
-Warning: Module type Blit.S_distinct not found
 Warning: Module type Blit.S_distinct not found
 Warning: Module or module type Identifiable.S not found
 Warning: Module or module type Blit.S not found
@@ -685,6 +652,9 @@ Warning: Module or module type Sequence not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Pretty_printer.S not found
 Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type ?? not found
+Warning: Module or module type Stringable not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
@@ -837,6 +807,7 @@ Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type Printable.S not found
+Warning: Module or module type Printable.S not found
 Warning: Module type Printable.S not found
 Warning: Module or module type Regular.S not found
 Warning: Module or module type Data.S not found
@@ -873,9 +844,6 @@ Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
-Warning: Module or module type ?? not found
-Warning: Module or module type ?? not found
-Warning: Module or module type Stringable not found
 Warning: Module or module type ?? not found
 Warning: Module or module type ?? not found
 Warning: Element bv_string not found
@@ -918,28 +886,11 @@ Warning: Element Marshal.from_bytes not found
 Warning: Element abstract not found
 Warning: Element intro not found
 Warning: Element conv not found
-Warning: Element abstract not found
-Warning: Element intro not found
-Warning: Element conv not found
-Warning: Element Graph not found
-Warning: Element Graphlib.To_ocamlgraph not found
-Warning: Element Graphlib.Of_ocamlgraph not found
-Warning: Element Graph not found
-Warning: Element Opaque not found
-Warning: Element Printable not found
-Warning: Element Path not found
-Warning: Element Tree not found
-Warning: Element Partition not found
-Warning: Element Graph not found
-Warning: Element Graphlib.create not found
 Warning: Element Opaque not found
 Warning: Element Printable not found
 Warning: Element Opaque.S not found
 Warning: Element filter not found
 Warning: Element Graph.pp not found
-Warning: Element C.Type.Mapper.base not found
-Warning: Element C.Type.Mapper.State.base not found
-Warning: Element C.Type.Mapper.Finder.base not found
 Warning: Element C.Type.Mapper.base not found
 Warning: Element C.Type.Mapper.State.base not found
 Warning: Element C.Type.Mapper.Finder.base not found

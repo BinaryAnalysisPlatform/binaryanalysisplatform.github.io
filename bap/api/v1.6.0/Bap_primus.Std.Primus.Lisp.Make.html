@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,9 +91,11 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Bap_primus.Std.Primus.Lisp.Make.html">Bap_primus.Std.Primus.Lisp.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Make(Machine) creates a Lisp machine embedded into the
-          Primus <code class="code"><span class="constructor">Machine</span></code>.<br>
+<pre><span id="MODULEMake"><span class="keyword">module</span> Make</span> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Make(Machine) creates a Lisp machine embedded into the
+          Primus <code class="code"><span class="constructor">Machine</span></code>.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -111,24 +114,27 @@ Make(Machine) creates a Lisp machine embedded into the
 <hr width="100%">
 
 <pre><span id="VALlink_program"><span class="keyword">val</span> link_program</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a> -> unit Machine.t</code></pre><div class="info ">
-<code class="code">link_program&nbsp;p</code> links the program <code class="code">p</code> into the Lisp
-            Machine. Previous program, if any, is discarded.<br>
+<div class="info-desc">
+<p><code class="code">link_program&nbsp;p</code> links the program <code class="code">p</code> into the Lisp
+            Machine. Previous program, if any, is discarded.</p>
+</div>
 </div>
 
 <pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a> Machine.t</code></pre><div class="info ">
-<code class="code">program</code> is the current Machine program.<br>
+<div class="info-desc">
+<p><code class="code">program</code> is the current Machine program.</p>
+</div>
 </div>
 
 <pre><span id="VALdefine"><span class="keyword">val</span> define</span> : <code class="type">?types:<a href="Bap_primus.Std.Primus.Lisp.Type.html#TYPEsignature">Std.Primus.Lisp.Type.signature</a> -><br>       ?docs:string -><br>       string -> <a href="Bap_primus.Std.Primus.Lisp.html#TYPEclosure">Std.Primus.Lisp.closure</a> -> unit Machine.t</code></pre><div class="info ">
-<code class="code">define&nbsp;?docs&nbsp;name&nbsp;code</code> defines a lisp primitive with
+<div class="info-desc">
+<p><code class="code">define&nbsp;?docs&nbsp;name&nbsp;code</code> defines a lisp primitive with
             the given <code class="code">name</code> and an optional documentation string
-            <code class="code">doscs</code>.
-<p>
+            <code class="code">doscs</code>.</p>
 
-            Example:
-<p>
+<p>Example:</p>
 
-            <pre class="codepre"><code class="code">              <span class="keyword">open</span> <span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>
+<pre class="codepre"><code class="code">              <span class="keyword">open</span> <span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>
 
               <span class="keyword">type</span> <span class="constructor">Primus</span>.exn += <span class="constructor">Bad_abs_call</span>
 
@@ -147,53 +153,64 @@ Make(Machine) creates a Lisp machine embedded into the
                     ...;
                   ]
               <span class="keyword">end</span>
-            </code></pre><br>
+            </code></pre></div>
 </div>
 
 <pre><span id="VALsignal"><span class="keyword">val</span> signal</span> : <code class="type">?params:<a href="Bap_primus.Std.Primus.Lisp.Type.html#TYPEparameters">Std.Primus.Lisp.Type.parameters</a> -><br>       ?doc:string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -><br>       ('a -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list Machine.t) -> unit Machine.t</code></pre><div class="info ">
-<code class="code">signal&nbsp;?params&nbsp;?docs&nbsp;obs&nbsp;proj</code> defines a new signal.
-<p>
+<div class="info-desc">
+<p><code class="code">signal&nbsp;?params&nbsp;?docs&nbsp;obs&nbsp;proj</code> defines a new signal.</p>
 
-            Primus Observations are reflected onto Primus Lisp
+<p>Primus Observations are reflected onto Primus Lisp
             signals. Each reflection is defined via the <code class="code">signal</code>
             operator that establishes a mapping between an observation
-            and a signal.
-<p>
+            and a signal.</p>
 
-            After the signal is defined, every time the observation
+<p>After the signal is defined, every time the observation
             <code class="code">obs</code> is made, the signal <code class="code">(signal&nbsp;args)</code> will be sent,
             where <code class="code">signal&nbsp;=&nbsp;<span class="constructor">Observation</span>.name&nbsp;obs</code> and <code class="code">args</code> is a
-            mapping from the observation value to a list of values.
-<p>
+            mapping from the observation value to a list of values.</p>
 
-            The signal will match with the observation name. Though
+<p>The signal will match with the observation name. Though
             the same observation may produce signals with different
-            arities.<br>
+            arities.</p>
+</div>
 </div>
 <div class="param_info"><code class="code">params</code> : optional type specification</div>
 <div class="param_info"><code class="code">doc</code> : optional documentation string</div>
 
 <pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, unit -> 'b Machine.t) format4 -> 'a</code></pre><div class="info ">
-<code class="code">failf&nbsp;msg&nbsp;a1&nbsp;...&nbsp;am&nbsp;()</code> terminates a lisp machine, and
+<div class="info-desc">
+<p><code class="code">failf&nbsp;msg&nbsp;a1&nbsp;...&nbsp;am&nbsp;()</code> terminates a lisp machine, and
             correspondingly the Primus machine with the
-            <code class="code"><span class="constructor">Runtime_error</span></code>.<br>
+            <code class="code"><span class="constructor">Runtime_error</span></code>.</p>
+</div>
 </div>
 
 <pre><span id="VALeval_fun"><span class="keyword">val</span> eval_fun</span> : <code class="type">string -><br>       <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> Machine.t</code></pre><div class="info ">
-<code class="code">eval_fun&nbsp;name&nbsp;args</code> calls a lisp function with the given
+<div class="info-desc">
+<p><code class="code">eval_fun&nbsp;name&nbsp;args</code> calls a lisp function with the given
             <code class="code">name</code>, that is the most specific to the current context
-            and is applicable to the specified list of arguments.<br>
-<b>Since</b> 1.5<br>
+            and is applicable to the specified list of arguments.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
 <pre><span id="VALeval_method"><span class="keyword">val</span> eval_method</span> : <code class="type">string -> <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> list -> unit Machine.t</code></pre><div class="info ">
-<code class="code">eval_method&nbsp;name&nbsp;args</code> invokes all methods with the given
+<div class="info-desc">
+<p><code class="code">eval_method&nbsp;name&nbsp;args</code> invokes all methods with the given
             <code class="code">name</code> that are applicable in the current context to the
-            specified list of arguments.<br>
-<b>Since</b> 1.5<br>
+            specified list of arguments.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
 <pre><span id="VALlink_primitives"><span class="keyword">val</span> link_primitives</span> : <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEprimitives">Std.Primus.Lisp.primitives</a> -> unit Machine.t</code></pre><div class="info ">
-<code class="code">link_primitives&nbsp;prims</code> provides the primitives <code class="code">prims</code><br>
+<div class="info-desc">
+<p><code class="code">link_primitives&nbsp;prims</code> provides the primitives <code class="code">prims</code></p>
+</div>
 </div>
 </body></html>

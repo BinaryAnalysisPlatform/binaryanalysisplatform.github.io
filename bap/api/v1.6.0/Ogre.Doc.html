@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,11 +93,12 @@
 </div>
 <h1>Module <a href="type_Ogre.Doc.html">Ogre.Doc</a></h1>
 
-<pre><span class="keyword">module</span> Doc: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Doc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-An Ogre document.
-<p>
+<pre><span id="MODULEDoc"><span class="keyword">module</span> Doc</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Doc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>An Ogre document.</p>
 
-    A concrete representation of a database.<br>
+<p>A concrete representation of a database.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -106,62 +108,85 @@ An Ogre document.
 
 
 <pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a></code></pre><div class="info ">
-<code class="code">empty</code> creates an empty document<br>
+<div class="info-desc">
+<p><code class="code">empty</code> creates an empty document</p>
+</div>
 </div>
 
 <pre><span id="VALmerge"><span class="keyword">val</span> merge</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Or_error.t</code></pre><div class="info ">
-<code class="code">merge&nbsp;d1&nbsp;d2</code> merges two documents in one. Returns an error,
-      if documents contain inconsistent declarations.<br>
+<div class="info-desc">
+<p><code class="code">merge&nbsp;d1&nbsp;d2</code> merges two documents in one. Returns an error,
+      if documents contain inconsistent declarations.</p>
+</div>
 </div>
 
 <pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">In_channel.t -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Or_error.t</code></pre><div class="info ">
-<code class="code">load&nbsp;chan</code> loads a document from a channel, returns an error if
+<div class="info-desc">
+<p><code class="code">load&nbsp;chan</code> loads a document from a channel, returns an error if
       a document is not well-formed, raises an exception if a system error
-      has occured.<br>
+      has occured.</p>
+</div>
 </div>
 
 <pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> Out_channel.t -> unit</code></pre><div class="info ">
-<code class="code">save&nbsp;doc&nbsp;out</code> stores the document in a channel. Raises an
-      exception in case of a system error.<br>
+<div class="info-desc">
+<p><code class="code">save&nbsp;doc&nbsp;out</code> stores the document in a channel. Raises an
+      exception in case of a system error.</p>
+</div>
 </div>
 
 <pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Or_error.t</code></pre><div class="info ">
-<code class="code">from_file&nbsp;name</code> reads a document from a file with the given
+<div class="info-desc">
+<p><code class="code">from_file&nbsp;name</code> reads a document from a file with the given
       <code class="code">name</code>, returns an error, if a document is not well-formed, raises
-      an exception if a system error has occured.<br>
+      an exception if a system error has occured.</p>
+</div>
 </div>
 
 <pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> Or_error.t</code></pre><div class="info ">
-<code class="code">from_string&nbsp;data</code> parses document from <code class="code">data</code>. Returns an error
-      if a document is not well-formed.<br>
+<div class="info-desc">
+<p><code class="code">from_string&nbsp;data</code> parses document from <code class="code">data</code>. Returns an error
+      if a document is not well-formed.</p>
+</div>
 </div>
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> string</code></pre><div class="info ">
-<code class="code">to_string&nbsp;doc</code> returns a textual representation of a document<br>
+<div class="info-desc">
+<p><code class="code">to_string&nbsp;doc</code> returns a textual representation of a document</p>
+</div>
 </div>
 
 <pre><span id="VALto_file"><span class="keyword">val</span> to_file</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> string -> unit</code></pre><div class="info ">
-<code class="code">to_file&nbsp;doc&nbsp;name</code> stores a document to a file with the given name.<br>
+<div class="info-desc">
+<p><code class="code">to_file&nbsp;doc&nbsp;name</code> stores a document to a file with the given name.</p>
+</div>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> unit</code></pre><div class="info ">
-<code class="code">pp&nbsp;ppf&nbsp;doc</code> prints a <code class="code">doc</code> in the specified formatter <code class="code">ppf</code><br>
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Stdlib.Format.formatter -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp&nbsp;ppf&nbsp;doc</code> prints a <code class="code">doc</code> in the specified formatter <code class="code">ppf</code></p>
+</div>
 </div>
 
 <pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> <a href="Ogre.html#TYPEdoc">Ogre.doc</a></code></pre><div class="info ">
-<code class="code">clear&nbsp;doc</code> removes all facts from the document.
-<p>
+<div class="info-desc">
+<p><code class="code">clear&nbsp;doc</code> removes all facts from the document.</p>
 
-      Useful for extracting scheme from a document.<br>
+<p>Useful for extracting scheme from a document.</p>
+</div>
 </div>
 
 <pre><span id="VALdeclarations"><span class="keyword">val</span> declarations</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> int</code></pre><div class="info ">
-<code class="code">declarations&nbsp;doc</code> returns a number of declarations in the
-      document<br>
+<div class="info-desc">
+<p><code class="code">declarations&nbsp;doc</code> returns a number of declarations in the
+      document</p>
+</div>
 </div>
 
 <pre><span id="VALdefinitions"><span class="keyword">val</span> definitions</span> : <code class="type"><a href="Ogre.html#TYPEdoc">Ogre.doc</a> -> int</code></pre><div class="info ">
-<code class="code">definitions&nbsp;doc</code> returns a number of facts, defined in the
-      document.<br>
+<div class="info-desc">
+<p><code class="code">definitions&nbsp;doc</code> returns a number of facts, defined in the
+      document.</p>
+</div>
 </div>
 </body></html>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,223 +93,315 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a></h1>
 
-<pre><span class="keyword">module</span> Interpreter: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-The Interpreter.
-<p>
+<pre><span id="MODULEInterpreter"><span class="keyword">module</span> Interpreter</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>The Interpreter.</p>
 
-        The Interpreter is the core componet of the Primus Machine. It
+<p>The Interpreter is the core componet of the Primus Machine. It
         provides lots of observations, giving other components an
         ability to track every event that happens during the program
         evaluation. The components can affect the results of
         evaluation in a limited way, by affecting the state of the
         components that are used by the Interpreter, name the
-        Environemnt and the Memory.
-<p>
+        Environemnt and the Memory.</p>
 
-        Note: we the <code class="code">observation&nbsp;(x,y,z)</code> notation in the
+<p>Note: we the <code class="code">observation&nbsp;(x,y,z)</code> notation in the
         documentation to denote an observation of a value represented
         with the <code class="code">(x,y,z)</code> tuple, that in fact corresponds to
-        <code class="code">observation&nbsp;&gt;&gt;&gt;&nbsp;<span class="keyword">fun</span>&nbsp;(x,y,z)</code> -&gt; ...<br>
+        <code class="code">observation&nbsp;&gt;&gt;&gt;&nbsp;<span class="keyword">fun</span>&nbsp;(x,y,z)</code> -&gt; ...</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span id="VALpc_change"><span class="keyword">val</span> pc_change</span> : <code class="type">Std.addr <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">pc_change&nbsp;x</code> happens every time a code at address <code class="code">x</code> is executed.<br>
+<pre><span id="VALpc_change"><span class="keyword">val</span> pc_change</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pc_change&nbsp;x</code> happens every time a code at address <code class="code">x</code> is executed.</p>
+</div>
 </div>
 
 <pre><span id="VALloading"><span class="keyword">val</span> loading</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">loading&nbsp;x</code> happens before a value from the address <code class="code">x</code> is loaded
-          by the interpreter from the memory.<br>
+<div class="info-desc">
+<p><code class="code">loading&nbsp;x</code> happens before a value from the address <code class="code">x</code> is loaded
+          by the interpreter from the memory.</p>
+</div>
 </div>
 
 <pre><span id="VALloaded"><span class="keyword">val</span> loaded</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">loaded&nbsp;(addr,value)</code> happens after the <code class="code">value</code> is loaded
-          from the address <code class="code">addr</code>.<br>
+<div class="info-desc">
+<p><code class="code">loaded&nbsp;(addr,value)</code> happens after the <code class="code">value</code> is loaded
+          from the address <code class="code">addr</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALstoring"><span class="keyword">val</span> storing</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">storing&nbsp;x</code> happens before a value is stored at address <code class="code">x</code><br>
+<div class="info-desc">
+<p><code class="code">storing&nbsp;x</code> happens before a value is stored at address <code class="code">x</code></p>
+</div>
 </div>
 
 <pre><span id="VALstored"><span class="keyword">val</span> stored</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">stored&nbsp;(addr,value)</code> happens after the <code class="code">value</code> is stored at
-          the address <code class="code">addr</code><br>
+<div class="info-desc">
+<p><code class="code">stored&nbsp;(addr,value)</code> happens after the <code class="code">value</code> is stored at
+          the address <code class="code">addr</code></p>
+</div>
 </div>
 
-<pre><span id="VALreading"><span class="keyword">val</span> reading</span> : <code class="type">Std.var <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">reading&nbsp;x</code> happens before the variable <code class="code">x</code> is read from the
-          environment.<br>
+<pre><span id="VALreading"><span class="keyword">val</span> reading</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">reading&nbsp;x</code> happens before the variable <code class="code">x</code> is read from the
+          environment.</p>
+</div>
 </div>
 
-<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">(Std.var * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">read&nbsp;(var,x)</code> happens after a variable <code class="code">var</code> is evaluated
-          to the value <code class="code">x</code><br>
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">Std.var</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">read&nbsp;(var,x)</code> happens after a variable <code class="code">var</code> is evaluated
+          to the value <code class="code">x</code></p>
+</div>
 </div>
 
-<pre><span id="VALwriting"><span class="keyword">val</span> writing</span> : <code class="type">Std.var <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">writing&nbsp;v</code> happens before a value is written to the variable <code class="code">v</code><br>
+<pre><span id="VALwriting"><span class="keyword">val</span> writing</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">writing&nbsp;v</code> happens before a value is written to the variable <code class="code">v</code></p>
+</div>
 </div>
 
-<pre><span id="VALwritten"><span class="keyword">val</span> written</span> : <code class="type">(Std.var * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">written&nbsp;(v,x)</code> happens after <code class="code">x</code> is assinged to <code class="code">v</code><br>
+<pre><span id="VALwritten"><span class="keyword">val</span> written</span> : <code class="type">(<a href="Bap.Std.html#TYPEvar">Std.var</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">written&nbsp;(v,x)</code> happens after <code class="code">x</code> is assinged to <code class="code">v</code></p>
+</div>
 </div>
 
 <pre><span id="VALjumping"><span class="keyword">val</span> jumping</span> : <code class="type">(<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">jumping&nbsp;(cond,dest)</code> happens just before a jump to <code class="code">dest</code>
+<div class="info-desc">
+<p><code class="code">jumping&nbsp;(cond,dest)</code> happens just before a jump to <code class="code">dest</code>
           is taken under the specified condition <code class="code">cond</code>.
-          Note: <code class="code">cond</code> is always <code class="code"><span class="keyword">true</span></code><br>
-<b>Since</b> 1.5.0<br>
+          Note: <code class="code">cond</code> is always <code class="code"><span class="keyword">true</span></code></p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5.0</li>
+</ul>
 </div>
 
 <pre><span id="VALeval_cond"><span class="keyword">val</span> eval_cond</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">eval_cond&nbsp;v</code> occurs every time the <code class="code">cond</code> part of a jump is
-          evaluated.<br>
-<b>Since</b> 1.5.0<br>
+<div class="info-desc">
+<p><code class="code">eval_cond&nbsp;v</code> occurs every time the <code class="code">cond</code> part of a jump is
+          evaluated.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5.0</li>
+</ul>
 </div>
 
 <pre><span id="VALundefined"><span class="keyword">val</span> undefined</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">undefined&nbsp;x</code> happens when a computation produces an
-          undefined value <code class="code">x</code>.<br>
+<div class="info-desc">
+<p><code class="code">undefined&nbsp;x</code> happens when a computation produces an
+          undefined value <code class="code">x</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALconst"><span class="keyword">val</span> const</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">const&nbsp;x</code> happens when a constant <code class="code">x</code> is created<br>
+<div class="info-desc">
+<p><code class="code">const&nbsp;x</code> happens when a constant <code class="code">x</code> is created</p>
+</div>
 </div>
 
-<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">((Std.binop * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">binop&nbsp;((op,x,y),r)</code> happens after the binary operation <code class="code">op</code>
-          is applied to values <code class="code">x</code> and <code class="code">y</code> and evaluates to <code class="code">r</code><br>
+<pre><span id="VALbinop"><span class="keyword">val</span> binop</span> : <code class="type">((<a href="Bap.Std.html#TYPEbinop">Std.binop</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">binop&nbsp;((op,x,y),r)</code> happens after the binary operation <code class="code">op</code>
+          is applied to values <code class="code">x</code> and <code class="code">y</code> and evaluates to <code class="code">r</code></p>
+</div>
 </div>
 
-<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">((Std.unop * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">unop&nbsp;((op,x),r)</code> happens after the unary operation <code class="code">op</code> is
-          applied to <code class="code">x</code> and results <code class="code">r</code><br>
+<pre><span id="VALunop"><span class="keyword">val</span> unop</span> : <code class="type">((<a href="Bap.Std.html#TYPEunop">Std.unop</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">unop&nbsp;((op,x),r)</code> happens after the unary operation <code class="code">op</code> is
+          applied to <code class="code">x</code> and results <code class="code">r</code></p>
+</div>
 </div>
 
-<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">((Std.cast * int * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">cast&nbsp;((t,x),r)</code> happens after <code class="code">x</code> is casted to <code class="code">r</code> using
-          the casting type <code class="code">t</code><br>
+<pre><span id="VALcast"><span class="keyword">val</span> cast</span> : <code class="type">((<a href="Bap.Std.html#TYPEcast">Std.cast</a> * int * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">cast&nbsp;((t,x),r)</code> happens after <code class="code">x</code> is casted to <code class="code">r</code> using
+          the casting type <code class="code">t</code></p>
+</div>
 </div>
 
 <pre><span id="VALextract"><span class="keyword">val</span> extract</span> : <code class="type">((int * int * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">extract&nbsp;((hi,lo,x),r)</code> happens after <code class="code">r</code> is extracted from <code class="code">x</code><br>
+<div class="info-desc">
+<p><code class="code">extract&nbsp;((hi,lo,x),r)</code> happens after <code class="code">r</code> is extracted from <code class="code">x</code></p>
+</div>
 </div>
 
 <pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">((<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">extract&nbsp;((x,y),z)</code> happens after <code class="code">x</code> is concatenated with <code class="code">y</code>
-          and produces <code class="code">z</code> as a result.<br>
+<div class="info-desc">
+<p><code class="code">extract&nbsp;((x,y),z)</code> happens after <code class="code">x</code> is concatenated with <code class="code">y</code>
+          and produces <code class="code">z</code> as a result.</p>
+</div>
 </div>
 
 <pre><span id="VALite"><span class="keyword">val</span> ite</span> : <code class="type">((<a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> * <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a> *<br>         <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>) *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">ite&nbsp;((cond,&nbsp;yes,&nbsp;no),&nbsp;res)</code> happens after the ite expression
+<div class="info-desc">
+<p><code class="code">ite&nbsp;((cond,&nbsp;yes,&nbsp;no),&nbsp;res)</code> happens after the ite expression
           that corresponds to ite(<code class="code">cond</code>, <code class="code">yes</code>, <code class="code">no</code>) is evaluated
-          to <code class="code">res</code>.<br>
+          to <code class="code">res</code>.</p>
+</div>
 </div>
 
-<pre><span id="VALenter_term"><span class="keyword">val</span> enter_term</span> : <code class="type">Std.tid <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-an identifier of a term that will be executed next.<br>
+<pre><span id="VALenter_term"><span class="keyword">val</span> enter_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>an identifier of a term that will be executed next.</p>
+</div>
 </div>
 
-<pre><span id="VALleave_term"><span class="keyword">val</span> leave_term</span> : <code class="type">Std.tid <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-an identifier of a term that just finished the execution.<br>
+<pre><span id="VALleave_term"><span class="keyword">val</span> leave_term</span> : <code class="type"><a href="Bap.Std.html#TYPEtid">Std.tid</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>an identifier of a term that just finished the execution.</p>
+</div>
 </div>
 
 <pre><span id="VALenter_pos"><span class="keyword">val</span> enter_pos</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEpos">Std.Primus.pos</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-new program locatio entered<br>
+<div class="info-desc">
+<p>new program locatio entered</p>
+</div>
 </div>
 
 <pre><span id="VALleave_pos"><span class="keyword">val</span> leave_pos</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEpos">Std.Primus.pos</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a program location left<br>
+<div class="info-desc">
+<p>a program location left</p>
+</div>
 </div>
 
-<pre><span id="VALenter_sub"><span class="keyword">val</span> enter_sub</span> : <code class="type">Std.sub Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a subroutine entered<br>
+<pre><span id="VALenter_sub"><span class="keyword">val</span> enter_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a subroutine entered</p>
+</div>
 </div>
 
-<pre><span id="VALenter_arg"><span class="keyword">val</span> enter_arg</span> : <code class="type">Std.arg Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a subroutine argument is entered<br>
+<pre><span id="VALenter_arg"><span class="keyword">val</span> enter_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a subroutine argument is entered</p>
+</div>
 </div>
 
-<pre><span id="VALenter_blk"><span class="keyword">val</span> enter_blk</span> : <code class="type">Std.blk Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a basic block is entered<br>
+<pre><span id="VALenter_blk"><span class="keyword">val</span> enter_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a basic block is entered</p>
+</div>
 </div>
 
-<pre><span id="VALenter_phi"><span class="keyword">val</span> enter_phi</span> : <code class="type">Std.phi Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a phi-node is entered<br>
+<pre><span id="VALenter_phi"><span class="keyword">val</span> enter_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a phi-node is entered</p>
+</div>
 </div>
 
-<pre><span id="VALenter_def"><span class="keyword">val</span> enter_def</span> : <code class="type">Std.def Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a definition is entered<br>
+<pre><span id="VALenter_def"><span class="keyword">val</span> enter_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a definition is entered</p>
+</div>
 </div>
 
-<pre><span id="VALenter_jmp"><span class="keyword">val</span> enter_jmp</span> : <code class="type">Std.jmp Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a jump term is entered<br>
+<pre><span id="VALenter_jmp"><span class="keyword">val</span> enter_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a jump term is entered</p>
+</div>
 </div>
 
-<pre><span id="VALleave_sub"><span class="keyword">val</span> leave_sub</span> : <code class="type">Std.sub Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a subroutine was left<br>
+<pre><span id="VALleave_sub"><span class="keyword">val</span> leave_sub</span> : <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a subroutine was left</p>
+</div>
 </div>
 
-<pre><span id="VALleave_arg"><span class="keyword">val</span> leave_arg</span> : <code class="type">Std.arg Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a subroutine argument was left<br>
+<pre><span id="VALleave_arg"><span class="keyword">val</span> leave_arg</span> : <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a subroutine argument was left</p>
+</div>
 </div>
 
-<pre><span id="VALleave_blk"><span class="keyword">val</span> leave_blk</span> : <code class="type">Std.blk Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a basic block was left<br>
+<pre><span id="VALleave_blk"><span class="keyword">val</span> leave_blk</span> : <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a basic block was left</p>
+</div>
 </div>
 
-<pre><span id="VALleave_phi"><span class="keyword">val</span> leave_phi</span> : <code class="type">Std.phi Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a phi-node was left<br>
+<pre><span id="VALleave_phi"><span class="keyword">val</span> leave_phi</span> : <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a phi-node was left</p>
+</div>
 </div>
 
-<pre><span id="VALleave_def"><span class="keyword">val</span> leave_def</span> : <code class="type">Std.def Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a definition was left<br>
+<pre><span id="VALleave_def"><span class="keyword">val</span> leave_def</span> : <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a definition was left</p>
+</div>
 </div>
 
-<pre><span id="VALleave_jmp"><span class="keyword">val</span> leave_jmp</span> : <code class="type">Std.jmp Std.term <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-a jump term was left<br>
+<pre><span id="VALleave_jmp"><span class="keyword">val</span> leave_jmp</span> : <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>a jump term was left</p>
+</div>
 </div>
 
-<pre><span id="VALenter_exp"><span class="keyword">val</span> enter_exp</span> : <code class="type">Std.exp <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-an expression was entered<br>
+<pre><span id="VALenter_exp"><span class="keyword">val</span> enter_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>an expression was entered</p>
+</div>
 </div>
 
-<pre><span id="VALleave_exp"><span class="keyword">val</span> leave_exp</span> : <code class="type">Std.exp <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-an expression was left<br>
+<pre><span id="VALleave_exp"><span class="keyword">val</span> leave_exp</span> : <code class="type"><a href="Bap.Std.html#TYPEexp">Std.exp</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>an expression was left</p>
+</div>
 </div>
 
 <pre><span id="VALhalting"><span class="keyword">val</span> halting</span> : <code class="type">unit <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-occurs on <code class="code">halt</code> operation<br>
+<div class="info-desc">
+<p>occurs on <code class="code">halt</code> operation</p>
+</div>
 </div>
 
 <pre><span id="VALinterrupt"><span class="keyword">val</span> interrupt</span> : <code class="type">int <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">interrupt&nbsp;n</code> occurs on the machine interrupt <code class="code">n</code> (aka CPU
-          exception)<br>
+<div class="info-desc">
+<p><code class="code">interrupt&nbsp;n</code> occurs on the machine interrupt <code class="code">n</code> (aka CPU
+          exception)</p>
+</div>
 </div>
 
 <pre><span id="VALdivision_by_zero"><span class="keyword">val</span> division_by_zero</span> : <code class="type">unit <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">division_by_zero</code> occurs just before the division by zero trap
-          is signaled.
-<p>
+<div class="info-desc">
+<p><code class="code">division_by_zero</code> occurs just before the division by zero trap
+          is signaled.</p>
 
-          See the <code class="code">binop</code> operation and <code class="code">division_by_zero_handler</code> for more
-          information.<br>
-<b>Since</b> 1.5<br>
+<p>See the <code class="code">binop</code> operation and <code class="code">division_by_zero_handler</code> for more
+          information.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
-<pre><span id="VALpagefault"><span class="keyword">val</span> pagefault</span> : <code class="type">Std.addr <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">pagefault&nbsp;x</code> occurs just before the pagefault trap is signaled.
-<p>
+<pre><span id="VALpagefault"><span class="keyword">val</span> pagefault</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pagefault&nbsp;x</code> occurs just before the pagefault trap is signaled.</p>
 
-          See <code class="code">load</code> and <code class="code">store</code> operations, and <code class="code">pagefault_handler</code> for
-          more information.<br>
-<b>Since</b> 1.5<br>
+<p>See <code class="code">load</code> and <code class="code">store</code> operations, and <code class="code">pagefault_handler</code> for
+          more information.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
-<pre><span id="VALsegfault"><span class="keyword">val</span> segfault</span> : <code class="type">Std.addr <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-<code class="code">segfault&nbsp;x</code> occurs when an invalid memory operation is performed
-          on the address <code class="code">x</code>. See the <code class="code">load</code> and <code class="code">store</code> operations for more.<br>
-<b>Since</b> 1.5<br>
+<pre><span id="VALsegfault"><span class="keyword">val</span> segfault</span> : <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a> <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">segfault&nbsp;x</code> occurs when an invalid memory operation is performed
+          on the address <code class="code">x</code>. See the <code class="code">load</code> and <code class="code">store</code> operations for more.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
 <tr>
@@ -320,7 +413,9 @@ occurs on <code class="code">halt</code> operation<br>
 </tr></table>
 
 <div class="info ">
-is raised when a computation is halted<br>
+<div class="info-desc">
+<p>is raised when a computation is halted</p>
+</div>
 </div>
 
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
@@ -333,7 +428,9 @@ is raised when a computation is halted<br>
 </tr></table>
 
 <div class="info ">
-is raised by a machine that attempts to divide by zero<br>
+<div class="info-desc">
+<p>is raised by a machine that attempts to divide by zero</p>
+</div>
 </div>
 
 <pre><code><span class="keyword">type</span> <code class="type"></code><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> += </code></pre><table class="typetable">
@@ -341,39 +438,49 @@ is raised by a machine that attempts to divide by zero<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="EXTENSIONSegmentation_fault">Segmentation_fault</span> <span class="keyword">of</span> <code class="type">Std.addr</code></code></td>
+<code><span id="EXTENSIONSegmentation_fault">Segmentation_fault</span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEaddr">Std.addr</a></code></code></td>
 
 </tr></table>
 
 <div class="info ">
-is raised when a memory operation has failed.<br>
+<div class="info-desc">
+<p>is raised when a memory operation has failed.</p>
+</div>
 </div>
 
 
 <pre><span id="VALpagefault_handler"><span class="keyword">val</span> pagefault_handler</span> : <code class="type">string</code></pre><div class="info ">
-<code class="code">pagefault_hanlder</code> is a trap handler that is invoked when the <code class="code"><span class="constructor">Pagefault</span></code>
+<div class="info-desc">
+<p><code class="code">pagefault_hanlder</code> is a trap handler that is invoked when the <code class="code"><span class="constructor">Pagefault</span></code>
           exception is raised by the machine memory component. If the handler is
           provided via the Linker, then it is invoked, otherwise a segmentation
           fault is raised. If the hanlder returns normally then the faulty operation is
-          repeated.
-<p>
+          repeated.</p>
 
-          Note, page faults are usually handled together with the <code class="code">pagefault</code>
-          observation.<br>
-<b>Since</b> 1.5<br>
+<p>Note, page faults are usually handled together with the <code class="code">pagefault</code>
+          observation.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
 <pre><span id="VALdivision_by_zero_handler"><span class="keyword">val</span> division_by_zero_handler</span> : <code class="type">string</code></pre><div class="info ">
-<code class="code">division_by_zero_hanlder</code> is a trap handler for
+<div class="info-desc">
+<p><code class="code">division_by_zero_hanlder</code> is a trap handler for
           the Division_by_zero exception. If it is linked into the machine,
           then it will be invoked when the division by zero trap is signaled.
           If it returns normally, then the result of the faulty operation is
-          undefined.<br>
-<b>Since</b> 1.5<br>
+          undefined.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Since</b> 1.5</li>
+</ul>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Make(Machine) makes an interpreter that computes in the
-          given <code class="code"><span class="constructor">Machine</span></code>.
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">Machine</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_primus.Std.Primus.Machine.S.html">Std.Primus.Machine.S</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Interpreter.Make.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Make(Machine) makes an interpreter that computes in the
+          given <code class="code"><span class="constructor">Machine</span></code>.</p>
+
 </div>
 </body></html>

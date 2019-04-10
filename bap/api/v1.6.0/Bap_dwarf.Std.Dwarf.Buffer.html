@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,37 +93,48 @@
 </div>
 <h1>Module <a href="type_Bap_dwarf.Std.Dwarf.Buffer.html">Bap_dwarf.Std.Dwarf.Buffer</a></h1>
 
-<pre><span class="keyword">module</span> Buffer: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Dwarf.Buffer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
+<pre><span id="MODULEBuffer"><span class="keyword">module</span> Buffer</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Dwarf.Buffer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
         that can allow one to share the same string for different sections
-        without explicit copying.<br>
+        without explicit copying.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
-<code class="code">create&nbsp;~pos:0&nbsp;</code> creates a buffer from a data<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;~pos:0&nbsp;</code> creates a buffer from a data</p>
+</div>
 </div>
 
 
 <pre><span id="VALwith_pos"><span class="keyword">val</span> with_pos</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a> -> int -> 'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">with_pos&nbsp;buf&nbsp;pos</code> creates a new buffer that shares data with
-          <code class="code">buf</code>, but has different starting position<br>
+<div class="info-desc">
+<p><code class="code">with_pos&nbsp;buf&nbsp;pos</code> creates a new buffer that shares data with
+          <code class="code">buf</code>, but has different starting position</p>
+</div>
 </div>
 
 <pre><span id="VALwith_off"><span class="keyword">val</span> with_off</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a> -> int -> 'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">with_off&nbsp;buf&nbsp;off</code> creates a new buffer that shares data with
-          <code class="code">buf</code>, but has different starting position equal to <code class="code">pos&nbsp;buf&nbsp;+&nbsp;off</code><br>
+<div class="info-desc">
+<p><code class="code">with_off&nbsp;buf&nbsp;off</code> creates a new buffer that shares data with
+          <code class="code">buf</code>, but has different starting position equal to <code class="code">pos&nbsp;buf&nbsp;+&nbsp;off</code></p>
+</div>
 </div>
 
 <pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">pos&nbsp;buf</code> starting position<br>
+<div class="info-desc">
+<p><code class="code">pos&nbsp;buf</code> starting position</p>
+</div>
 </div>
 
 <pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type">'a <a href="Bap_dwarf.Std.Dwarf.Buffer.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
-<code class="code">data&nbsp;pos</code> actual data.
-<p>
+<div class="info-desc">
+<p><code class="code">data&nbsp;pos</code> actual data.</p>
 
-          Note: it doesn't start from <code class="code">pos</code>, it start from <code class="code">0</code><br>
+<p>Note: it doesn't start from <code class="code">pos</code>, it start from <code class="code">0</code></p>
+</div>
 </div>
 </body></html>

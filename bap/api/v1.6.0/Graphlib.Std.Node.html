@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,17 +91,20 @@
 </div>
 <h1>Module type <a href="type_Graphlib.Std.Node.html">Graphlib.Std.Node</a></h1>
 
-<pre><span class="keyword">module type</span> Node = <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-<a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.<br>
+<pre><span id="MODULETYPENode"><span class="keyword">module type</span> Node</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Node.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<div class="info-desc">
+<p><a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> nodes.</p>
+</div>
 </div>
 <hr width="100%">
-<br>
-Semantics of operations is denoted using mathematical model,
-        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface.<br>
+<p>Semantics of operations is denoted using mathematical model,
+        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface.</p>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-node type is opaque<br>
+<div class="info-desc">
+<p>node type is opaque</p>
+</div>
 </div>
 
 
@@ -114,88 +118,113 @@ node type is opaque<br>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPElabel">label</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;label</code> creates a new node, and associates it with a
-        a given <code class="code">label</code>.<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;label</code> creates a new node, and associates it with a
+        a given <code class="code">label</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALlabel"><span class="keyword">val</span> label</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPElabel">label</a></code></pre><div class="info ">
-<code class="code">label&nbsp;n</code> returns a value associated with a node <code class="code">n</code>.<br>
+<div class="info-desc">
+<p><code class="code">label&nbsp;n</code> returns a value associated with a node <code class="code">n</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">mem&nbsp;n&nbsp;g</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">n</code> is a member of nodes <code class="code"><span class="constructor">N</span></code> of graph
-        <code class="code">g</code>.<br>
+<div class="info-desc">
+<p><code class="code">mem&nbsp;n&nbsp;g</code> is <code class="code"><span class="keyword">true</span></code> if <code class="code">n</code> is a member of nodes <code class="code"><span class="constructor">N</span></code> of graph
+        <code class="code">g</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALsuccs"><span class="keyword">val</span> succs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">succs&nbsp;node&nbsp;graph</code> returns a sequence of successors of a
-        <code class="code">node</code> in a a given <code class="code">graph</code><br>
+<div class="info-desc">
+<p><code class="code">succs&nbsp;node&nbsp;graph</code> returns a sequence of successors of a
+        <code class="code">node</code> in a a given <code class="code">graph</code></p>
+</div>
 </div>
 
 <pre><span id="VALpreds"><span class="keyword">val</span> preds</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">preds&nbsp;node&nbsp;graph</code> returns a sequence of predecessors of a
-        <code class="code">node</code> in a a given <code class="code">graph</code><br>
+<div class="info-desc">
+<p><code class="code">preds&nbsp;node&nbsp;graph</code> returns a sequence of predecessors of a
+        <code class="code">node</code> in a a given <code class="code">graph</code></p>
+</div>
 </div>
 
 <pre><span id="VALinputs"><span class="keyword">val</span> inputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">inputs&nbsp;node&nbsp;graph</code> is incomming edges of a <code class="code">node</code> in <code class="code">graph</code><br>
+<div class="info-desc">
+<p><code class="code">inputs&nbsp;node&nbsp;graph</code> is incomming edges of a <code class="code">node</code> in <code class="code">graph</code></p>
+</div>
 </div>
 
 <pre><span id="VALoutputs"><span class="keyword">val</span> outputs</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">outputs&nbsp;node&nbsp;graph</code> is outcomming edges of a <code class="code">node</code> in <code class="code">graph</code><br>
+<div class="info-desc">
+<p><code class="code">outputs&nbsp;node&nbsp;graph</code> is outcomming edges of a <code class="code">node</code> in <code class="code">graph</code></p>
+</div>
 </div>
 
 <pre><span id="VALdegree"><span class="keyword">val</span> degree</span> : <code class="type">?dir:[ `In | `Out ] -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> int</code></pre><div class="info ">
-<code class="code">degree&nbsp;?dir&nbsp;n</code> when <code class="code">in_or_out</code> is <code class="code"><span class="keywordsign">`</span><span class="constructor">In</span></code> then returns
+<div class="info-desc">
+<p><code class="code">degree&nbsp;?dir&nbsp;n</code> when <code class="code">in_or_out</code> is <code class="code"><span class="keywordsign">`</span><span class="constructor">In</span></code> then returns
         the amount of incomming edges, otherwise returns the amount of
         outcomming edges. If parameter <code class="code">dir</code> is left absent, then
         return the amount of adjacent nodes (i.e., a sum of incomming
-        and outcomming edges).<br>
+        and outcomming edges).</p>
+</div>
 </div>
 
 <pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">insert&nbsp;n&nbsp;g</code> returns new graph <code class="code">g'</code> that has a set of nodes
+<div class="info-desc">
+<p><code class="code">insert&nbsp;n&nbsp;g</code> returns new graph <code class="code">g'</code> that has a set of nodes
         <code class="code"><span class="constructor">N</span></code> extended with node <code class="code">n</code>. If <code class="code"><span class="constructor">N</span></code> was contained <code class="code">n</code>, then
-        the <code class="code">g&nbsp;==&nbsp;g'</code>. Use <a href="Graphlib.Std.Node.html#VALupdate"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Node</span>.update</code></a> to change existing nodes.
-<p>
+        the <code class="code">g&nbsp;==&nbsp;g'</code>. Use <a href="Graphlib.Std.Node.html#VALupdate"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Node</span>.update</code></a> to change existing nodes.</p>
 
-        Postconditions: <pre class="verbatim">          - N(g') = N(g) ∪ {n}.
-         </pre><br>
+<p>Postconditions:</p>
+<pre class="verbatim">          - N(g') = N(g) ∪ {n}.
+         </pre></div>
 </div>
 
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPElabel">label</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">update&nbsp;n&nbsp;l&nbsp;g</code> if node <code class="code">n</code> is not in <code class="code"><span class="constructor">N</span>(g)</code> then return <code class="code">g</code>,
-        else return graph <code class="code">g</code> where node <code class="code">n</code> is labeled with <code class="code">l</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">update&nbsp;n&nbsp;l&nbsp;g</code> if node <code class="code">n</code> is not in <code class="code"><span class="constructor">N</span>(g)</code> then return <code class="code">g</code>,
+        else return graph <code class="code">g</code> where node <code class="code">n</code> is labeled with <code class="code">l</code>.</p>
 
-        Postconditions: <pre class="verbatim">          - n ∉ N(g) -&gt; n ∉ N(g').
+<p>Postconditions:</p>
+<pre class="verbatim">          - n ∉ N(g) -&gt; n ∉ N(g').
           - n ∈ N(g) → ν(g')n = l.
-         </pre><br>
+         </pre></div>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">remove&nbsp;n&nbsp;g</code> returns graph <code class="code">g'</code>, with a node <code class="code">n</code> removed from
-        a set of nodes <code class="code"><span class="constructor">N</span></code>.
-<p>
+<div class="info-desc">
+<p><code class="code">remove&nbsp;n&nbsp;g</code> returns graph <code class="code">g'</code>, with a node <code class="code">n</code> removed from
+        a set of nodes <code class="code"><span class="constructor">N</span></code>.</p>
 
-        Postconditions: <pre class="verbatim">          - E(g) ⊆ E(g')
+<p>Postconditions:</p>
+<pre class="verbatim">          - E(g) ⊆ E(g')
           - N(g) ⊆ N(g')
           - N(g') = N(g) \ {n}.
-         </pre><br>
+         </pre></div>
 </div>
 
 <pre><span id="VALhas_edge"><span class="keyword">val</span> has_edge</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEt">t</a> -> <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">has_edge&nbsp;x&nbsp;y&nbsp;g</code> is true iff (x,y) ∈ E.<br>
+<div class="info-desc">
+<p><code class="code">has_edge&nbsp;x&nbsp;y&nbsp;g</code> is true iff (x,y) ∈ E.</p>
+</div>
 </div>
 
 <pre><span id="VALedge"><span class="keyword">val</span> edge</span> : <code class="type"><a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Node.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Node.html#TYPEedge">edge</a> option</code></pre><div class="info ">
-<code class="code">edge&nbsp;x&nbsp;y&nbsp;g</code> if graph <code class="code">g</code> has an edge between nodes <code class="code">x</code> and
-        <code class="code">y</code> then it is returned.<br>
+<div class="info-desc">
+<p><code class="code">edge&nbsp;x&nbsp;y&nbsp;g</code> if graph <code class="code">g</code> has an edge between nodes <code class="code">x</code> and
+        <code class="code">y</code> then it is returned.</p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> Opaque.S</pre>
 <div class="info ">
-node provides common data structures, like Table, Map, Set,
-        Hash_set, etc.<br>
+<div class="info-desc">
+<p>node provides common data structures, like Table, Map, Set,
+        Hash_set, etc.</p>
+</div>
 </div>
 </body></html>

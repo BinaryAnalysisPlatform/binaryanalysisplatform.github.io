@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,13 +91,14 @@
 </div>
 <h1>Module <a href="type_Bap_traces.Std.Trace.Reader.html">Bap_traces.Std.Trace.Reader</a></h1>
 
-<pre><span class="keyword">module</span> Reader: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Reader interface.<br>
+<pre><span id="MODULEReader"><span class="keyword">module</span> Reader</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.Reader.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Reader interface.</p>
+</div>
 </div>
 <hr width="100%">
-<br>
-This is an interface that should be implemented to add a new
-          backend.<br>
+<p>This is an interface that should be implemented to add a new
+          backend.</p>
 
 <pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = {</code></pre><table class="typetable">
 <tr>
@@ -105,7 +107,9 @@ This is an interface that should be implemented to add a new
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.tool">tool</span>&nbsp;: <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEtool">Bap_traces.Std.Trace.tool</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a tool descriptor read from trace<br>
+<div class="info-desc">
+<p>a tool descriptor read from trace</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -113,9 +117,11 @@ a tool descriptor read from trace<br>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.meta">meta</span>&nbsp;: <code class="type">Std.dict</code>;</code></td>
+<code><span id="TYPEELTt.meta">meta</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEdict">Std.dict</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-meta information read from trace<br>
+<div class="info-desc">
+<p>meta information read from trace</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -125,7 +131,9 @@ meta information read from trace<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.next">next</span>&nbsp;: <code class="type">unit -> <a href="Bap_traces.Std.Trace.html#TYPEevent">Bap_traces.Std.Trace.event</a> Or_error.t option</code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a stream function<br>
+<div class="info-desc">
+<p>a stream function</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>

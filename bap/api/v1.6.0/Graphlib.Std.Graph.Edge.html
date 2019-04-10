@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,15 +91,16 @@
 &nbsp;</div>
 <h1>Module <a href="type_Graphlib.Std.Graph.Edge.html">Graphlib.Std.Graph.Edge</a></h1>
 
-<pre><span class="keyword">module</span> Edge: <code class="type"><a href="Graphlib.Std.Edge.html">Std.Edge</a></code><code class="type">  with type graph = t
+<pre><span id="MODULEEdge"><span class="keyword">module</span> Edge</span>: <code class="type"><a href="Graphlib.Std.Edge.html">Std.Edge</a></code><code class="type">  with type graph = t
                         and type t = edge
                         and type node = node</code></pre><div class="info module top">
-Graph edges<br>
+<div class="info-desc">
+<p>Graph edges</p>
+</div>
 </div>
 <hr width="100%">
-<br>
-Semantics of operations is denoted using mathematical model,
-        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface.<br>
+<p>Semantics of operations is denoted using mathematical model,
+        described in <a href="Graphlib.Std.Graph.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graph</span></code></a> interface.</p>
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
@@ -113,57 +115,70 @@ Semantics of operations is denoted using mathematical model,
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEnode">node</a> -><br>       <a href="Graphlib.Std.Edge.html#TYPEnode">node</a> -> <a href="Graphlib.Std.Edge.html#TYPElabel">label</a> -> <a href="Graphlib.Std.Edge.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;x&nbsp;y&nbsp;l</code> creates an edge connecting nodes <code class="code">x</code> and <code class="code">y</code>
-        labeled with a a given label <code class="code">l</code><br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;x&nbsp;y&nbsp;l</code> creates an edge connecting nodes <code class="code">x</code> and <code class="code">y</code>
+        labeled with a a given label <code class="code">l</code></p>
+</div>
 </div>
 
 <pre><span id="VALlabel"><span class="keyword">val</span> label</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPElabel">label</a></code></pre><div class="info ">
-<code class="code">label&nbsp;e</code> returns a label of an edge <code class="code">e</code><br>
+<div class="info-desc">
+<p><code class="code">label&nbsp;e</code> returns a label of an edge <code class="code">e</code></p>
+</div>
 </div>
 
 <pre><span id="VALsrc"><span class="keyword">val</span> src</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPEnode">node</a></code></pre><div class="info ">
-<code class="code">src&nbsp;e</code> returns a source of an edge <code class="code">e</code><br>
+<div class="info-desc">
+<p><code class="code">src&nbsp;e</code> returns a source of an edge <code class="code">e</code></p>
+</div>
 </div>
 
 <pre><span id="VALdst"><span class="keyword">val</span> dst</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPEnode">node</a></code></pre><div class="info ">
-<code class="code">dst&nbsp;e</code> returns a destination of an edge <code class="code">e</code><br>
+<div class="info-desc">
+<p><code class="code">dst&nbsp;e</code> returns a destination of an edge <code class="code">e</code></p>
+</div>
 </div>
 
 <pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a> -> bool</code></pre><div class="info ">
-<code class="code">mem&nbsp;e&nbsp;g</code> is true if <code class="code">e</code> ∈ E.<br>
+<div class="info-desc">
+<p><code class="code">mem&nbsp;e&nbsp;g</code> is true if <code class="code">e</code> ∈ E.</p>
+</div>
 </div>
 
 <pre><span id="VALinsert"><span class="keyword">val</span> insert</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">insert&nbsp;e&nbsp;g</code> returns a graph <code class="code">g'</code> with a set of edges extended
+<div class="info-desc">
+<p><code class="code">insert&nbsp;e&nbsp;g</code> returns a graph <code class="code">g'</code> with a set of edges extended
         with edge <code class="code">e</code>. If <code class="code">src&nbsp;e</code> or <code class="code">dst&nbsp;e</code> wasn't in the set of nodes
         <code class="code"><span class="constructor">N</span></code>, then it is extended as well, so that axioms of graph are
-        preserved.
-<p>
+        preserved.</p>
 
-        Postconditions: <pre class="verbatim">          - E(g') = E(g) ∪ {e}.
-         </pre><br>
+<p>Postconditions:</p>
+<pre class="verbatim">          - E(g') = E(g) ∪ {e}.
+         </pre></div>
 </div>
 
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -><br>       <a href="Graphlib.Std.Edge.html#TYPElabel">label</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">update&nbsp;e&nbsp;l&nbsp;g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then return a
+<div class="info-desc">
+<p><code class="code">update&nbsp;e&nbsp;l&nbsp;g</code> if edge <code class="code">e</code> exists in graph <code class="code">g</code> then return a
         new graph <code class="code">g'</code> in which edge <code class="code">e</code> is associated with label <code class="code">l</code>.
-        Otherwise return <code class="code">g</code> unchanged.
-<p>
+        Otherwise return <code class="code">g</code> unchanged.</p>
 
-        Postcondition: <pre class="verbatim">          - E(g) ⊆ E(g')
+<p>Postcondition:</p>
+<pre class="verbatim">          - E(g) ⊆ E(g')
           - N(g) ⊆ N(g')
           - e ∉ E(g) → e ∉ E(g').
           - e ∈ E(g) → ε(g')e = l.
-         </pre><br>
+         </pre></div>
 </div>
 
 <pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type"><a href="Graphlib.Std.Edge.html#TYPEt">t</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a> -> <a href="Graphlib.Std.Edge.html#TYPEgraph">graph</a></code></pre><div class="info ">
-<code class="code">remove&nbsp;e&nbsp;g</code> returns a graph <code class="code">g'</code> that doesn't contain edge
-        <code class="code">e</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">remove&nbsp;e&nbsp;g</code> returns a graph <code class="code">g'</code> that doesn't contain edge
+        <code class="code">e</code>.</p>
 
-        Postconditions: <pre class="verbatim">          - E(g') = E(g) \ {e}.
-         </pre><br>
+<p>Postconditions:</p>
+<pre class="verbatim">          - E(g') = E(g) \ {e}.
+         </pre></div>
 </div>
 
 <pre><span class="keyword">include</span> Opaque.S</pre>

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,43 +89,51 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a></h1>
 
-<pre><span class="keyword">module</span> Taint: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Abstract taint.
-<p>
+<pre><span id="MODULETaint"><span class="keyword">module</span> Taint</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Abstract taint.</p>
 
-      This module defines several abstractions that are used to track
+<p>This module defines several abstractions that are used to track
       objects as well as provide the interface to the taint tracker,
       that could be used for introducing and sanitizing taints or even
-      for specifying the taint propagation policies.<br>
+      for specifying the taint propagation policies.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Kind.html">Kind</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Kind.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Each object that the engine tracks has an associated kind,
+<pre><span id="MODULEKind"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Kind.html">Kind</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Kind.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Each object that the engine tracks has an associated kind,
         that denotes a class of objects that share the same semantic
-        properties.
+        properties.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Rel.html">Rel</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Rel.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Relation between a value and an object that we track.
+<pre><span id="MODULERel"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Rel.html">Rel</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Rel.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Relation between a value and an object that we track.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Object.html">Object</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Object.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Each taint represents an abstract object that we would like
-        to track.
+<pre><span id="MODULEObject"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Object.html">Object</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Object.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Each taint represents an abstract object that we would like
+        to track.</p>
+
 </div>
 
 <pre><span id="VALattached"><span class="keyword">val</span> attached</span> : <code class="type">(<a href="Bap_taint.Std.Taint.Rel.html#TYPEt">Rel.t</a> * <a href="Bap_taint.Std.Taint.Object.html#TYPEt">Object.t</a> *<br>        <a href="Bap_primus.Std.Primus.html#TYPEvalue">Std.Primus.value</a>)<br>       <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a></code></pre><div class="info ">
-(attached (r,o,v) occurs when the relation <code class="code">r</code> is established
-        between <code class="code">o</code> and <code class="code">v</code><br>
+<div class="info-desc">
+<p>(attached (r,o,v) occurs when the relation <code class="code">r</code> is established
+        between <code class="code">o</code> and <code class="code">v</code></p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Tracker.html">Tracker</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Tracker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Taint tracker control module.
+<pre><span id="MODULETracker"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Tracker.html">Tracker</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Tracker.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Taint tracker control module.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Propagation.html">Propagation</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Propagation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Policy based propagation.
+<pre><span id="MODULEPropagation"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Propagation.html">Propagation</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Propagation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Policy based propagation.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Gc.html">Gc</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Gc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="MODULEGc"><span class="keyword">module</span> <a href="Bap_taint.Std.Taint.Gc.html">Gc</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Gc.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

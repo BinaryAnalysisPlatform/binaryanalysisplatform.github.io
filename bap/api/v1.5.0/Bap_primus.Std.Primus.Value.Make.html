@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -127,14 +128,14 @@
             new identifier.<br>
 </div>
 
-<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> -> Std.word</code></pre><div class="info ">
+<pre><span id="VALto_word"><span class="keyword">val</span> to_word</span> : <code class="type"><a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEword">Std.word</a></code></pre><div class="info ">
 <code class="code">to_word&nbsp;x</code> projects <code class="code">x</code> to a machine <code class="code">word</code>. Note, many
             operations from the <code class="code"><span class="constructor">Word</span></code> module are lifted into the
             <code class="code"><span class="constructor">Machine</span></code> monad by this functor, so this operation is not
             usually necessary.<br>
 </div>
 
-<pre><span id="VALof_word"><span class="keyword">val</span> of_word</span> : <code class="type">Std.word -><br>       <a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> <a href="Bap_primus.Std.Primus.Value.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALof_word"><span class="keyword">val</span> of_word</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -><br>       <a href="Bap_primus.Std.Primus.Value.Make.html#TYPEt">t</a> <a href="Bap_primus.Std.Primus.Value.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">of_word&nbsp;x</code> computes a fresh new value from <code class="code">x</code><br>
 </div>
 

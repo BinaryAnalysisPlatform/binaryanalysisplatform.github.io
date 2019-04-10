@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -124,7 +125,7 @@ Trace is a stream of events plus meta data.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type">Std.value</code> </pre>
+<pre><span id="TYPEevent"><span class="keyword">type</span> <code class="type"></code>event</span> = <code class="type"><a href="Bap.Std.html#TYPEvalue">Std.value</a></code> </pre>
 
 
 
@@ -146,10 +147,10 @@ Trace is a stream of events plus meta data.
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_traces.Std.html#TYPEtrace">Bap_traces.Std.trace</a></code> </pre>
 
 
-<pre><span id="TYPEio_error"><span class="keyword">type</span> <code class="type"></code>io_error</span> = <code class="type">[ `Protocol_error of Error.t | `System_error of Unix.error ]</code> </pre>
+<pre><span id="TYPEio_error"><span class="keyword">type</span> <code class="type"></code>io_error</span> = <code class="type">[ `Protocol_error of Std.Error.t | `System_error of Unix.error ]</code> </pre>
 
 
-<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Ambiguous_uri<br>       | `No_provider<br>       | `Protocol_error of Error.t<br>       | `System_error of Unix.error ]</code> </pre>
+<pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> = <code class="type">[ `Ambiguous_uri<br>       | `No_provider<br>       | `Protocol_error of Std.Error.t<br>       | `System_error of Unix.error ]</code> </pre>
 
 <br>
 <h2 id="2_Serialization">Serialization</h2>
@@ -159,18 +160,18 @@ Trace is a stream of events plus meta data.
         destination. URI contains enough information to uniquely designate
         data format and transporting options.<br>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?monitor:<a href="Bap_traces.Std.Trace.html#TYPEmonitor">monitor</a> -><br>       Uri.t -><br>       (<a href="Bap_traces.Std.Trace.html#TYPEt">t</a>, <a href="Bap_traces.Std.Trace.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?monitor:<a href="Bap_traces.Std.Trace.html#TYPEmonitor">monitor</a> -><br>       Uri.t -><br>       (<a href="Bap_traces.Std.Trace.html#TYPEt">t</a>, <a href="Bap_traces.Std.Trace.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">load&nbsp;~monitor&nbsp;uri</code> fetches trace from a provided <code class="code">uri</code>.
         <code class="code">monitor</code> is fail_on_error by default.<br>
 </div>
 
-<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">Uri.t -><br>       <a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -><br>       (unit, <a href="Bap_traces.Std.Trace.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type">Uri.t -><br>       <a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -><br>       (unit, <a href="Bap_traces.Std.Trace.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">save&nbsp;uri</code> pushes trace to a provided <code class="code">uri</code><br>
 </div>
 <br>
 <h2 id="2_Creating">Creating</h2><br>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?monitor:<a href="Bap_traces.Std.Trace.html#TYPEmonitor">monitor</a> -><br>       <a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> -><br>       (unit -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Or_error.t option) -><br>       <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?monitor:<a href="Bap_traces.Std.Trace.html#TYPEmonitor">monitor</a> -><br>       <a href="Bap_traces.Std.Trace.html#TYPEtool">tool</a> -><br>       (unit -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Std.Or_error.t option) -><br>       <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">create&nbsp;tool&nbsp;next</code> creates a new trace from the observer
         <code class="code">next</code>.<br>
 </div>
@@ -184,17 +185,17 @@ Trace is a stream of events plus meta data.
 Trace global unique identifier.<br>
 </div>
 
-<pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> 'a -> <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALset_attr"><span class="keyword">val</span> set_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a -> <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set_attr&nbsp;trace&nbsp;attr&nbsp;value</code> updates <code class="code">trace</code> meta attribute <code class="code">attr</code>
         with a provided value.<br>
 </div>
 
-<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> 'a option</code></pre><div class="info ">
+<pre><span id="VALget_attr"><span class="keyword">val</span> get_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a option</code></pre><div class="info ">
 <code class="code">get_attr&nbsp;trace&nbsp;attr</code> retrieves a value of a given attribute
         <code class="code">attr</code><br>
 </div>
 
-<pre><span id="VALhas_attr"><span class="keyword">val</span> has_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> bool</code></pre><div class="info ">
+<pre><span id="VALhas_attr"><span class="keyword">val</span> has_attr</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> bool</code></pre><div class="info ">
 <code class="code">has_attr&nbsp;trace&nbsp;attr</code> evaluates to <code class="code"><span class="keyword">true</span></code> if <code class="code">trace</code> has a given
         attribute <code class="code">attr</code><br>
 </div>
@@ -204,37 +205,37 @@ Trace global unique identifier.<br>
         create the <code class="code">trace</code>.<br>
 </div>
 
-<pre><span id="VALmeta"><span class="keyword">val</span> meta</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> Std.dict</code></pre><div class="info ">
+<pre><span id="VALmeta"><span class="keyword">val</span> meta</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdict">Std.dict</a></code></pre><div class="info ">
 <code class="code">meta&nbsp;trace</code> returns all <code class="code">trace</code> attributes as a dictionary<br>
 </div>
 
-<pre><span id="VALset_meta"><span class="keyword">val</span> set_meta</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> Std.dict -> <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALset_meta"><span class="keyword">val</span> set_meta</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEdict">Std.dict</a> -> <a href="Bap_traces.Std.Trace.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">set_meta&nbsp;trace&nbsp;meta</code> substitutes meta attributes of a <code class="code">trace</code> with
         attributes taken from a dictionary <code class="code">meta</code>.<br>
 </div>
 <br>
 <h2 id="2_Queryingdata">Querying  data</h2><br>
 
-<pre><span id="VALsupports"><span class="keyword">val</span> supports</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> bool</code></pre><div class="info ">
+<pre><span id="VALsupports"><span class="keyword">val</span> supports</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> bool</code></pre><div class="info ">
 <code class="code">supports&nbsp;trace&nbsp;feature</code> is <code class="code"><span class="keyword">true</span></code> if a tool that was used to
         generate the trace, as well as transporting protocol and
         underlying format support the given feature.<br>
 </div>
 
-<pre><span id="VALread_all"><span class="keyword">val</span> read_all</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> 'a Std.seq</code></pre><div class="info ">
+<pre><span id="VALread_all"><span class="keyword">val</span> read_all</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">read_all&nbsp;trace&nbsp;tag</code> reads all event of the a given type<br>
 </div>
 
-<pre><span id="VALread_all_matching"><span class="keyword">val</span> read_all_matching</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.Value.Match.t -> 'a Std.seq</code></pre><div class="info ">
+<pre><span id="VALread_all_matching"><span class="keyword">val</span> read_all_matching</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Value.Match.html#TYPEt">Std.Value.Match.t</a> -> 'a <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">read_all_matching&nbsp;trace&nbsp;matcher</code> reads all events
         matching with a provided <code class="code">matcher</code>.<br>
 </div>
 
-<pre><span id="VALread_events"><span class="keyword">val</span> read_events</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> Std.seq</code></pre><div class="info ">
+<pre><span id="VALread_events"><span class="keyword">val</span> read_events</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> <a href="Bap_traces.Std.Trace.html#TYPEevent">event</a> <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">read_events&nbsp;trace</code> reads a sequence of events from the <code class="code">trace</code>.<br>
 </div>
 
-<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.tag -> 'a option</code></pre><div class="info ">
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> 'a option</code></pre><div class="info ">
 <code class="code">next&nbsp;trace&nbsp;tag</code> reads and discards events until an event with a
         given tag is found.<br>
 </div>
@@ -243,7 +244,7 @@ Trace global unique identifier.<br>
 <code class="code">next_event&nbsp;trace</code> reads next event from the trace<br>
 </div>
 
-<pre><span id="VALnext_matching"><span class="keyword">val</span> next_matching</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a Std.Value.Match.t -> 'a option</code></pre><div class="info ">
+<pre><span id="VALnext_matching"><span class="keyword">val</span> next_matching</span> : <code class="type"><a href="Bap_traces.Std.Trace.html#TYPEt">t</a> -> 'a <a href="Bap.Std.Value.Match.html#TYPEt">Std.Value.Match.t</a> -> 'a option</code></pre><div class="info ">
 <code class="code">next_matching&nbsp;trace&nbsp;matcher</code> reads and discards trace events
         until an event matching with the <code class="code">matcher</code> is found.<br>
 </div>

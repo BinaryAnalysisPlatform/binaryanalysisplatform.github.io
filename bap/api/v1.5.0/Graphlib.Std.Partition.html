@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -119,32 +120,6 @@ Result of a set partitioning.
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Graphlib.Std.html#TYPEpartition">Std.partition</a></code> </pre>
 
-
-<pre><span id="VALtrivial"><span class="keyword">val</span> trivial</span> : <code class="type">('a, 'b) Set.t -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">trivial&nbsp;s</code> creates the trivial partition with a single
-        equivalence class containing every member of <code class="code">s</code><br>
-</div>
-
-<pre><span id="VALdiscrete"><span class="keyword">val</span> discrete</span> : <code class="type">('a, 'b) Set.t -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">discrete&nbsp;s</code> returns the partition with one class per element of <code class="code">s</code><br>
-</div>
-
-<pre><span id="VALrefine"><span class="keyword">val</span> refine</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -><br>       equiv:('a -> 'a -> bool) -><br>       cmp:('a -> 'a -> int) -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">refine&nbsp;p&nbsp;~rel&nbsp;~comp</code> takes a partition <code class="code">p</code>, and refines it
-        according to the equivalence relation <code class="code">r</code>, so that the
-        resulting partition corresponds to the classes of <code class="code">r</code>, assuming
-        that those classes are finer that the original <code class="code">p</code>.
-<p>
-
-        Takes an additional <code class="code">comp</code> argument to compare for equality
-        within the equivalence classes.<br>
-</div>
-
-<pre><span id="VALunion"><span class="keyword">val</span> union</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a -> 'a -> 'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">union&nbsp;p&nbsp;x&nbsp;y</code> returns the partition p with the classes of <code class="code">x</code>
-        and <code class="code">y</code> merged.  Returns <code class="code">p</code> unchanged if either <code class="code">x</code> or <code class="code">y</code> are
-        not part of any equivalence class.<br>
-</div>
 
 <pre><span id="VALgroups"><span class="keyword">val</span> groups</span> : <code class="type">'a <a href="Graphlib.Std.Partition.html#TYPEt">t</a> -> 'a <a href="Graphlib.Std.html#TYPEgroup">Std.group</a> <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">groups&nbsp;p</code> returns all partition cells of a partitioning <code class="code">p</code><br>

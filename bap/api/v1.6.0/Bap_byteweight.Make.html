@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,16 +91,17 @@
 </div>
 <h1>Functor <a href="type_Bap_byteweight.Make.html">Bap_byteweight.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">Corpus</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_byteweight.Corpus.html">Corpus</a></code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">Trie</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">Trie.S</code><code class="type">  with type key = Corpus.key</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Bap_byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
+<pre><span id="MODULEMake"><span class="keyword">module</span> Make</span> <code class="code">(</code><code class="code"><span class="constructor">Corpus</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Bap_byteweight.Corpus.html">Corpus</a></code><code class="code">)&nbsp;</code> <code class="code">(</code><code class="code"><span class="constructor">Trie</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">Trie.S</code><code class="type">  with type key = Corpus.key</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Bap_byteweight.S.html">S</a></code><code class="type">  with type key = Corpus.key
      and type corpus = Corpus.t</code></pre><div class="info module top">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
     that works in the <code class="code"><span class="constructor">Corpus</span></code> domain and uses <code class="code"><span class="constructor">Trie</span></code> for its
-    implementation.
-<p>
+    implementation.</p>
 
-    The <code class="code"><span class="constructor">Trie</span></code> module specifies how substrings are compared. In
+<p>The <code class="code"><span class="constructor">Trie</span></code> module specifies how substrings are compared. In
     particular, it gives an opportunity, to implement normalized
-    string comparison.<br>
+    string comparison.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -134,25 +136,33 @@
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap_byteweight.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;()</code> creates an empty instance of the byteweigth decider.<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;()</code> creates an empty instance of the byteweigth decider.</p>
+</div>
 </div>
 
 <pre><span id="VALtrain"><span class="keyword">val</span> train</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -><br>       max_length:int -><br>       (<a href="Bap_byteweight.S.html#TYPEkey">key</a> -> bool) -> <a href="Bap_byteweight.S.html#TYPEcorpus">corpus</a> -> unit</code></pre><div class="info ">
-<code class="code">train&nbsp;decider&nbsp;~max_length&nbsp;test&nbsp;corpus</code> train the <code class="code">decider</code> on
+<div class="info-desc">
+<p><code class="code">train&nbsp;decider&nbsp;~max_length&nbsp;test&nbsp;corpus</code> train the <code class="code">decider</code> on
       the specified <code class="code">corpus</code>. The <code class="code">test</code> function classifies extracted
       substrings.  The <code class="code">max_length</code> parameter binds the maximum
-      length of substrings.<br>
+      length of substrings.</p>
+</div>
 </div>
 
 <pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">length&nbsp;decider</code> total amount of different substrings known to a
-      decider.<br>
+<div class="info-desc">
+<p><code class="code">length&nbsp;decider</code> total amount of different substrings known to a
+      decider.</p>
+</div>
 </div>
 
 <pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_byteweight.S.html#TYPEt">t</a> -><br>       length:int -> threshold:float -> <a href="Bap_byteweight.S.html#TYPEcorpus">corpus</a> -> int -> int option</code></pre><div class="info ">
-<code class="code">next&nbsp;decider&nbsp;~length&nbsp;~threshold&nbsp;data&nbsp;<span class="keyword">begin</span></code> returns an offset
+<div class="info-desc">
+<p><code class="code">next&nbsp;decider&nbsp;~length&nbsp;~threshold&nbsp;data&nbsp;<span class="keyword">begin</span></code> returns an offset
       greater then <code class="code"><span class="keyword">begin</span></code> of the next substring of the given
       <code class="code">length</code>, that is positively classified, with the given
-      <code class="code">thresold</code>.<br>
+      <code class="code">thresold</code>.</p>
+</div>
 </div>
 </body></html>

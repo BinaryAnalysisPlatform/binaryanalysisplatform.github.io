@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,9 +93,11 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Machine.S.Local.html">Bap_primus.Std.Primus.Machine.S.Local</a></h1>
 
-<pre><span class="keyword">module</span> Local: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
+<pre><span id="MODULELocal"><span class="keyword">module</span> Local</span>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
                                and type 'a t := 'a state</code></pre><div class="info module top">
-Local state of the machine.<br>
+<div class="info-desc">
+<p>Local state of the machine.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -105,14 +108,20 @@ Local state of the machine.<br>
 
 
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">get&nbsp;state</code> extracts the state.<br>
+<div class="info-desc">
+<p><code class="code">get&nbsp;state</code> extracts the state.</p>
+</div>
 </div>
 
 <pre><span id="VALput"><span class="keyword">val</span> put</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       'a -> unit <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">put&nbsp;state&nbsp;x</code> saves a machine state<br>
+<div class="info-desc">
+<p><code class="code">put&nbsp;state&nbsp;x</code> saves a machine state</p>
+</div>
 </div>
 
 <pre><span id="VALupdate"><span class="keyword">val</span> update</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEt">t</a> -><br>       f:('a -> 'a) -> unit <a href="Bap_primus.Std.Primus.Machine.State.html#TYPEm">m</a></code></pre><div class="info ">
-<code class="code">update&nbsp;state&nbsp;~f</code> updates a state using function <code class="code">f</code>.<br>
+<div class="info-desc">
+<p><code class="code">update&nbsp;state&nbsp;~f</code> updates a state using function <code class="code">f</code>.</p>
+</div>
 </div>
 </body></html>

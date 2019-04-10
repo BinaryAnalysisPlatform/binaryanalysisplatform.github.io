@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -117,7 +118,7 @@ An observation provider.
 </div>
 
 
-<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">?inspect:('a -> Sexp.t) -><br>       string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> * 'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Std.Primus.statement</a></code></pre><div class="info ">
+<pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">?inspect:('a -> Std.Sexp.t) -><br>       string -><br>       'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> * 'a <a href="Bap_primus.Std.Primus.html#TYPEstatement">Std.Primus.statement</a></code></pre><div class="info ">
 <code class="code">provide&nbsp;?inspect&nbsp;name</code> returns a pair of two handlers. The
           first element is used to observe values, the second is used
           to provide values for the observation.
@@ -133,7 +134,7 @@ An observation provider.
 <code class="code">name&nbsp;observation</code> is a name of the observed attribute.<br>
 </div>
 
-<pre><span id="VALinspect"><span class="keyword">val</span> inspect</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -> 'a -> Sexp.t</code></pre><div class="info ">
+<pre><span id="VALinspect"><span class="keyword">val</span> inspect</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.html#TYPEobservation">Std.Primus.observation</a> -> 'a -> Std.Sexp.t</code></pre><div class="info ">
 <code class="code">inspect&nbsp;observation&nbsp;value</code> returns a sexp representation of
           an observed <code class="code">value</code><br>
 </div>

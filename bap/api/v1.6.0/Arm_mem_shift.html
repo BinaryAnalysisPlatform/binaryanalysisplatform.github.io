@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,29 +93,24 @@
 </div>
 <h1>Module <a href="type_Arm_mem_shift.html">Arm_mem_shift</a></h1>
 
-<pre><span class="keyword">module</span> Arm_mem_shift: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_mem_shift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Combine Mem and Shift<br>
-</div>
-<hr width="100%">
-<br>
-Combine Mem and Shift<br>
+<pre><span id="MODULEArm_mem_shift"><span class="keyword">module</span> Arm_mem_shift</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_mem_shift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<p>Combine Mem and Shift</p>
 
-<pre><span id="VALrepair_imm"><span class="keyword">val</span> repair_imm</span> : <code class="type">Std.word -><br>       sign_mask:int -> imm_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> Std.exp</code></pre><div class="info ">
-takes a word and converts it to an exp that is the offset for some
+<pre><span id="VALrepair_imm"><span class="keyword">val</span> repair_imm</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -><br>       sign_mask:int -> imm_mask:int -> <a href="Arm_types.html#TYPErepair">Arm_types.repair</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>takes a word and converts it to an exp that is the offset for some
     memory instructions sign_mask - a bitmask that determines the bit
     in src that is the repair bit imm_mask - a bitmask that determines
     which bits in src are the immediate type - whether a set mask
-    indicates a positive or negative immediate.  *<br>
+    indicates a positive or negative immediate.  *</p>
 </div>
-<br>
-takes a word and a register and converts it to an exp that is the
+</div>
+<p>takes a word and a register and converts it to an exp that is the
     offset for some memory instructions sign_mask - a bitmask that
     determines the bit in src that is the negative bit rtype - whether
-    a set mask indicates a positive or negative operand.<br>
-<br>
-Decides whether to use the register or immediate as the offset
-    value Also performs conversion to remove the negative bit and the<br>
-<br>
-Decides whether to use the register or immediate as the offset
-    value Also performs conversion to remove the negative bit and the<br>
+    a set mask indicates a positive or negative operand.</p>
+<p>Decides whether to use the register or immediate as the offset
+    value Also performs conversion to remove the negative bit and the</p>
+<p>Decides whether to use the register or immediate as the offset
+    value Also performs conversion to remove the negative bit and the</p>
 </body></html>

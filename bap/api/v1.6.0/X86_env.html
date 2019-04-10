@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -93,90 +94,122 @@
 </div>
 <h1>Module <a href="type_X86_env.html">X86_env</a></h1>
 
-<pre><span class="keyword">module</span> X86_env: <code class="code"><span class="keyword">sig</span></code> <a href="X86_env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-<h2 id="2_conditionflagbits">condition flag bits</h2><br>
+<pre><span id="MODULEX86_env"><span class="keyword">module</span> X86_env</span>: <code class="code"><span class="keyword">sig</span></code> <a href="X86_env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<h3 id="2_conditionflagbits">condition flag bits</h3>
+<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>carry flag</p>
 </div>
-<hr width="100%">
-<br>
-<h2 id="2_conditionflagbits">condition flag bits</h2><br>
-
-<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type">Std.var</code></pre><div class="info ">
-carry flag<br>
 </div>
 
-<pre><span id="VALpf"><span class="keyword">val</span> pf</span> : <code class="type">Std.var</code></pre><div class="info ">
-parity flag<br>
+<pre><span id="VALpf"><span class="keyword">val</span> pf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>parity flag</p>
+</div>
 </div>
 
-<pre><span id="VALaf"><span class="keyword">val</span> af</span> : <code class="type">Std.var</code></pre><div class="info ">
-adjust flag<br>
+<pre><span id="VALaf"><span class="keyword">val</span> af</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>adjust flag</p>
+</div>
 </div>
 
-<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type">Std.var</code></pre><div class="info ">
-zero flag<br>
+<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>zero flag</p>
+</div>
 </div>
 
-<pre><span id="VALsf"><span class="keyword">val</span> sf</span> : <code class="type">Std.var</code></pre><div class="info ">
-sign flag<br>
+<pre><span id="VALsf"><span class="keyword">val</span> sf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>sign flag</p>
+</div>
 </div>
 
-<pre><span id="VALoF"><span class="keyword">val</span> oF</span> : <code class="type">Std.var</code></pre><div class="info ">
-overflow flag<br>
+<pre><span id="VALoF"><span class="keyword">val</span> oF</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>overflow flag</p>
+</div>
 </div>
 
-<pre><span id="VALdf"><span class="keyword">val</span> df</span> : <code class="type">Std.var</code></pre><div class="info ">
-direction flag<br>
+<pre><span id="VALdf"><span class="keyword">val</span> df</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>direction flag</p>
+</div>
 </div>
 
-<pre><span id="VALcs"><span class="keyword">val</span> cs</span> : <code class="type">Std.var</code></pre><div class="info ">
-code segment<br>
+<pre><span id="VALcs"><span class="keyword">val</span> cs</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>code segment</p>
+</div>
 </div>
 
-<pre><span id="VALds"><span class="keyword">val</span> ds</span> : <code class="type">Std.var</code></pre><div class="info ">
-data segment<br>
+<pre><span id="VALds"><span class="keyword">val</span> ds</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>data segment</p>
+</div>
 </div>
 
-<pre><span id="VALes"><span class="keyword">val</span> es</span> : <code class="type">Std.var</code></pre><div class="info ">
-extra data segment #1<br>
+<pre><span id="VALes"><span class="keyword">val</span> es</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>extra data segment #1</p>
+</div>
 </div>
 
-<pre><span id="VALfs"><span class="keyword">val</span> fs</span> : <code class="type">Std.var</code></pre><div class="info ">
-extra data segment #2<br>
+<pre><span id="VALfs"><span class="keyword">val</span> fs</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>extra data segment #2</p>
+</div>
 </div>
 
-<pre><span id="VALgs"><span class="keyword">val</span> gs</span> : <code class="type">Std.var</code></pre><div class="info ">
-extra data segment #3<br>
+<pre><span id="VALgs"><span class="keyword">val</span> gs</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>extra data segment #3</p>
+</div>
 </div>
 
-<pre><span id="VALss"><span class="keyword">val</span> ss</span> : <code class="type">Std.var</code></pre><div class="info ">
-stack segment<br>
+<pre><span id="VALss"><span class="keyword">val</span> ss</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>stack segment</p>
+</div>
 </div>
 
-<pre><span id="VALfpu_ctrl"><span class="keyword">val</span> fpu_ctrl</span> : <code class="type">Std.var</code></pre><div class="info ">
-fpu control register<br>
+<pre><span id="VALfpu_ctrl"><span class="keyword">val</span> fpu_ctrl</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>fpu control register</p>
+</div>
 </div>
 
-<pre><span id="VALmxcsr"><span class="keyword">val</span> mxcsr</span> : <code class="type">Std.var</code></pre><div class="info ">
-mx status control register<br>
+<pre><span id="VALmxcsr"><span class="keyword">val</span> mxcsr</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>mx status control register</p>
+</div>
 </div>
 
 <pre><span id="VALstandard_prefs"><span class="keyword">val</span> standard_prefs</span> : <code class="type">int list</code></pre><div class="info ">
-Prefixes that we can usually handle automatically<br>
+<div class="info-desc">
+<p>Prefixes that we can usually handle automatically</p>
+</div>
 </div>
 
-<pre><span class="keyword">module type</span> <a href="X86_env.ModeVars.html">ModeVars</a> = <code class="code"><span class="keyword">sig</span></code> <a href="X86_env.ModeVars.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-CPU BIL variables.
+<pre><span id="MODULETYPEModeVars"><span class="keyword">module type</span> <a href="X86_env.ModeVars.html">ModeVars</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="X86_env.ModeVars.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>CPU BIL variables.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="X86_env.R32.html">R32</a>: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info">
-32-bit mode registers
+<pre><span id="MODULER32"><span class="keyword">module</span> <a href="X86_env.R32.html">R32</a></span>: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info">
+<p>32-bit mode registers</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="X86_env.R64.html">R64</a>: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info">
-64-bit mode registers
+<pre><span id="MODULER64"><span class="keyword">module</span> <a href="X86_env.R64.html">R64</a></span>: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info">
+<p>64-bit mode registers</p>
+
 </div>
 
 <pre><span id="VALvars_of_mode"><span class="keyword">val</span> vars_of_mode</span> : <code class="type"><a href="X86_types.html#TYPEmode">X86_types.mode</a> -> (module X86_env.ModeVars)</code></pre><div class="info ">
-<code class="code">vars_of_mode&nbsp;mode</code> creates registers for a <code class="code">mode</code><br>
+<div class="info-desc">
+<p><code class="code">vars_of_mode&nbsp;mode</code> creates registers for a <code class="code">mode</code></p>
+</div>
 </div>
 </body></html>

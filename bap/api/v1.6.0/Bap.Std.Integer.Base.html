@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,85 +91,123 @@
 </div>
 <h1>Module type <a href="type_Bap.Std.Integer.Base.html">Bap.Std.Integer.Base</a></h1>
 
-<pre><span class="keyword">module type</span> Base = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.Base.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-The minimal interface of an integer.<br>
+<pre><span id="MODULETYPEBase"><span class="keyword">module type</span> Base</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap.Std.Integer.Base.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<div class="info-desc">
+<p>The minimal interface of an integer.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-type of integer<br>
+<div class="info-desc">
+<p>type of integer</p>
+</div>
 </div>
 
 
 <pre><span id="VALzero"><span class="keyword">val</span> zero</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-element neutral to the addition<br>
+<div class="info-desc">
+<p>element neutral to the addition</p>
+</div>
 </div>
 
 <pre><span id="VALone"><span class="keyword">val</span> one</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-element neutral to the multiplication<br>
+<div class="info-desc">
+<p>element neutral to the multiplication</p>
+</div>
 </div>
 
 <pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">succ&nbsp;n</code> successor of <code class="code">n</code><br>
+<div class="info-desc">
+<p><code class="code">succ&nbsp;n</code> successor of <code class="code">n</code></p>
+</div>
 </div>
 
 <pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">pred&nbsp;n</code> is a predecessor of <code class="code">n</code><br>
+<div class="info-desc">
+<p><code class="code">pred&nbsp;n</code> is a predecessor of <code class="code">n</code></p>
+</div>
 </div>
 
 <pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">abs&nbsp;x</code> absolute value of <code class="code">x</code><br>
+<div class="info-desc">
+<p><code class="code">abs&nbsp;x</code> absolute value of <code class="code">x</code></p>
+</div>
 </div>
 
 <pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">neg&nbsp;x</code> = <code class="code">-x</code><br>
+<div class="info-desc">
+<p><code class="code">neg&nbsp;x</code> = <code class="code">-x</code></p>
+</div>
 </div>
 
 <pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">add&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;+&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">add&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;+&nbsp;y</code></p>
+</div>
 </div>
 
 <pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">sub&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;-&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">sub&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;-&nbsp;y</code></p>
+</div>
 </div>
 
 <pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">mul&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;*&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">mul&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;*&nbsp;y</code></p>
+</div>
 </div>
 
 <pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">div&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;/&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">div&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;/&nbsp;y</code></p>
+</div>
 </div>
 
 <pre><span id="VALmodulo"><span class="keyword">val</span> modulo</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">modulo&nbsp;&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;<span class="keyword">mod</span>&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">modulo&nbsp;&nbsp;x&nbsp;y</code> is <code class="code">x&nbsp;<span class="keyword">mod</span>&nbsp;y</code></p>
+</div>
 </div>
 
 <pre><span id="VALlnot"><span class="keyword">val</span> lnot</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">lnot&nbsp;x</code> is a logical negation of <code class="code">x</code> (1-complement)
-<p>
-<code class="code">logand&nbsp;x&nbsp;y</code> is a conjunction of <code class="code">x</code> and <code class="code">y</code><br>
+<div class="info-desc">
+<p><code class="code">lnot&nbsp;x</code> is a logical negation of <code class="code">x</code> (1-complement)</p>
+
+<p><code class="code">logand&nbsp;x&nbsp;y</code> is a conjunction of <code class="code">x</code> and <code class="code">y</code></p>
+</div>
 </div>
 
 <pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">logor&nbsp;x&nbsp;y</code> is a disjunction of <code class="code">x</code> and <code class="code">y</code><br>
+<div class="info-desc">
+<p><code class="code">logor&nbsp;x&nbsp;y</code> is a disjunction of <code class="code">x</code> and <code class="code">y</code></p>
+</div>
 </div>
 
 <pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">logxor&nbsp;x&nbsp;y</code> is exclusive or between <code class="code">x</code> and <code class="code">y</code><br>
+<div class="info-desc">
+<p><code class="code">logxor&nbsp;x&nbsp;y</code> is exclusive or between <code class="code">x</code> and <code class="code">y</code></p>
+</div>
 </div>
 
 <pre><span id="VALlshift"><span class="keyword">val</span> lshift</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">lshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits left<br>
+<div class="info-desc">
+<p><code class="code">lshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits left</p>
+</div>
 </div>
 
 <pre><span id="VALrshift"><span class="keyword">val</span> rshift</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">rshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right<br>
+<div class="info-desc">
+<p><code class="code">rshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right</p>
+</div>
 </div>
 
 <pre><span id="VALarshift"><span class="keyword">val</span> arshift</span> : <code class="type"><a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a> -> <a href="Bap.Std.Integer.Base.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">arshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right and fill with
-          the sign bit.<br>
+<div class="info-desc">
+<p><code class="code">arshift&nbsp;x&nbsp;y</code> shift <code class="code">x</code> by <code class="code">y</code> bits to the right and fill with
+          the sign bit.</p>
+</div>
 </div>
 </body></html>

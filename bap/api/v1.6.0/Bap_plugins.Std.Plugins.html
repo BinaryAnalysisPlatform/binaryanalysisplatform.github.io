@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,15 +91,15 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_plugins.Std.Plugins.html">Bap_plugins.Std.Plugins</a></h1>
 
-<pre><span class="keyword">module</span> Plugins: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Plugin loader.
-<p>
+<pre><span id="MODULEPlugins"><span class="keyword">module</span> Plugins</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Plugin loader.</p>
 
-      This module handles the set of plugins, visible to the
-      platform.
-<p>
+<p>This module handles the set of plugins, visible to the
+      platform.</p>
 
-      Plugins are looked at the following locations:<ul>
+<p>Plugins are looked at the following locations:</p>
+<ul>
 <li>paths explicitly specified by a user (via <code class="code">library</code>
         parameter);</li>
 <li>paths specified by the <code class="code"><span class="constructor">BAP_PLUGIN_PATH</span></code> environment
@@ -106,17 +107,16 @@ Plugin loader.
 <li>$prefix/lib/bap, where $prefix is the installation prefix,
         specified during the installation.</li>
 </ul>
+<p>The latter destination is used by the <code class="code">bapbundle&nbsp;install</code>
+      command, so this is the default repository of plugins.</p>
 
-      The latter destination is used by the <code class="code">bapbundle&nbsp;install</code>
-      command, so this is the default repository of plugins.
-<p>
-
-      The plugin loader is an event driven system. Once, <code class="code"><span class="constructor">Plugins</span>.run</code>
+<p>The plugin loader is an event driven system. Once, <code class="code"><span class="constructor">Plugins</span>.run</code>
       function is called, events of type <code class="code"><span class="constructor">Plugins</span>.events</code> will start
       to fire. By default they are intercepted by a logger, and by the
       default handler (see <a href="Bap_plugins.Std.Plugins.html#VALrun"><code class="code"><span class="constructor">Bap_plugins</span>.<span class="constructor">Std</span>.<span class="constructor">Plugins</span>.run</code></a> function description about
       the default handler). The logger will write the infromation
-      about events, that is useful for debugging issues with plugins.<br>
+      about events, that is useful for debugging issues with plugins.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -126,35 +126,45 @@ Plugin loader.
 
 
 <pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">?env:string list -><br>       ?provides:string list -><br>       ?library:string list -> unit -> <a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a> list</code></pre><div class="info ">
-<code class="code">list&nbsp;?env&nbsp;~provides:features&nbsp;?library&nbsp;()</code> scans a list of directories, provided by a
+<div class="info-desc">
+<p><code class="code">list&nbsp;?env&nbsp;~provides:features&nbsp;?library&nbsp;()</code> scans a list of directories, provided by a
         <code class="code">library</code> parameter, and, finally, <code class="code"><span class="constructor">Config</span>.libdir</code> for files with
         a <code class="code">plugin</code> extension. Returns all plugins that provide a
-        superset of <code class="code">features</code> and has constrains that are subset of <code class="code">env</code>.<br>
+        superset of <code class="code">features</code> and has constrains that are subset of <code class="code">env</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type">?argv:string array -><br>       ?env:string list -><br>       ?provides:string list -><br>       ?don't_setup_handlers:bool -><br>       ?library:string list -> ?exclude:string list -> unit -> unit</code></pre><div class="info ">
-<code class="code">run&nbsp;?env&nbsp;?provides&nbsp;?library&nbsp;?exclude</code> load and execute all plugins that can
+<div class="info-desc">
+<p><code class="code">run&nbsp;?env&nbsp;?provides&nbsp;?library&nbsp;?exclude</code> load and execute all plugins that can
         be found in the <code class="code">library</code> paths, and are not in the <code class="code">exclude</code>
         list. The default event handler will abort the program if
         there is any <code class="code"><span class="constructor">Errored</span></code> event occurs, a message will be printed
         to the standard output. If <code class="code">don't_setup_handlers</code> option is
         chosen, then events are not treated, so that a host program may
-        setup a more fine granular error handling.<br>
+        setup a more fine granular error handling.</p>
+</div>
 </div>
 
 <pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?argv:string array -><br>       ?env:string list -><br>       ?provides:string list -><br>       ?library:string list -><br>       ?exclude:string list -><br>       unit -><br>       (<a href="Bap_plugins.Std.html#TYPEplugin">Bap_plugins.Std.plugin</a>, string * Error.t) Result.t<br>       list</code></pre><div class="info ">
-<code class="code">load&nbsp;?env&nbsp;?provides&nbsp;?library&nbsp;?exclude</code> is like <code class="code">run</code>, but will not setup
+<div class="info-desc">
+<p><code class="code">load&nbsp;?env&nbsp;?provides&nbsp;?library&nbsp;?exclude</code> is like <code class="code">run</code>, but will not setup
         handlers, and will return a result of loading. Each element of
         the list is either an <code class="code"><span class="constructor">Ok</span>&nbsp;plugin</code> if a <code class="code">plugin</code> was
         successfully loaded, or <code class="code"><span class="constructor">Error</span>&nbsp;(name,error)</code> if a plugin with
-        the given <code class="code">name</code> failed with <code class="code">error</code>.<br>
+        the given <code class="code">name</code> failed with <code class="code">error</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALevents"><span class="keyword">val</span> events</span> : <code class="type"><a href="Bap_plugins.Std.Plugins.html#TYPEevent">event</a> <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
-plugin subsystem event stream.<br>
+<div class="info-desc">
+<p>plugin subsystem event stream.</p>
+</div>
 </div>
 
 <pre><span id="VALloaded"><span class="keyword">val</span> loaded</span> : <code class="type">unit <a href="Bap_future.Std.html#TYPEfuture">Bap_future.Std.future</a></code></pre><div class="info ">
-<code class="code">loaded</code> occurs when all plugins are loaded<br>
+<div class="info-desc">
+<p><code class="code">loaded</code> occurs when all plugins are loaded</p>
+</div>
 </div>
 </body></html>

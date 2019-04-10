@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -98,7 +99,7 @@ Function boundary identification.<br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">Bap_dwarf.Std.Dwarf.Data.t</a> -><br>       <a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">Bap_dwarf.Std.Dwarf.Data.t</a> -><br>       <a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">create&nbsp;data</code> tries to create a DWARF reader, from
           supplied <code class="code">data</code>. May yield an error, if there wasn't sufficient
           sections, or if format is not understandable.
@@ -115,7 +116,7 @@ Function boundary identification.<br>
 <br>
 </div>
 
-<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap_dwarf.Std.Dwarf.html#TYPEfn">Bap_dwarf.Std.Dwarf.fn</a>) Std.seq</code></pre><div class="info ">
+<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap_dwarf.Std.Dwarf.html#TYPEfn">Bap_dwarf.Std.Dwarf.fn</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
 <code class="code">functions&nbsp;searcher</code> enumerates functions<br>
 </div>
 </body></html>

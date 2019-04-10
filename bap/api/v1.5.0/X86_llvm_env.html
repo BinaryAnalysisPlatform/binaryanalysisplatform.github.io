@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -99,7 +100,7 @@ This module exposes register functionality that is based on
 </div>
 <hr width="100%">
 
-<pre><span id="VALbase_var"><span class="keyword">val</span> base_var</span> : <code class="type"><a href="X86_types.html#TYPEmode">X86_types.mode</a> -> Std.reg -> Std.Var.t option</code></pre><div class="info ">
+<pre><span id="VALbase_var"><span class="keyword">val</span> base_var</span> : <code class="type"><a href="X86_types.html#TYPEmode">X86_types.mode</a> -> <a href="Bap.Std.html#TYPEreg">Std.reg</a> -> <a href="Bap.Std.Var.html#TYPEt">Std.Var.t</a> option</code></pre><div class="info ">
 <code class="code">base_var&nbsp;mode&nbsp;reg</code> given a <code class="code">reg</code> operand provided by the LLVM
     disassembler, <code class="code">base_var</code> returns the variable corresponding to
     the physical register for that <code class="code">mode</code> if it exists. If no such

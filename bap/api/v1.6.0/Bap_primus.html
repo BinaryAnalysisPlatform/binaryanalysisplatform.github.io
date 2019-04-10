@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,62 +93,6 @@
 </div>
 <h1>Module <a href="type_Bap_primus.html">Bap_primus</a></h1>
 
-<pre><span class="keyword">module</span> Bap_primus: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Primus - The Microexecution Framework.
-<p>
+<pre><span id="MODULEBap_primus"><span class="keyword">module</span> Bap_primus</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-      Primus is a microexecution framework that can be used to build
-      CPU and full system emulators, symbolic executers, static
-      fuzzers, policy checkers, tracers, quickcheck-like test suites,
-      etc.
-<p>
-
-      The underlying idea is quite simple - Primus interprets a lifted
-      program. The interpreter provides a set of extension points
-      through which it is possible to observe what is happening inside
-      the interpreter, and even to change the interpreter
-      behavior. This extension points are called "observations" in
-      Primus parlance. A simple publish/subscriber architecture is
-      used to watch for the interpreter events, where subscribers are
-      allowed to arbitrary change the interpreter state.
-<p>
-
-      A novel idea is that the interpreter is non-deterministic
-      in the same sense as a non-deterministic Turing machine. That
-      means that any computation may have more than one result. Every
-      time there is a non-determinism in the computation the machine
-      state is cloned. Different scheduling policies mixed with
-      different non-deterministic startegies provide an analyst a vast
-      selection of avenues to investigate.
-<p>
-
-      Primus is build around an idea of a component base linearly
-      extensible interpreter. That means, that an analysis can be
-      built from basic building blocks, with minimal coupling between
-      them. The central component is the Interpreter itself. It
-      evaluates a program and interacts with three other components:<ul>
-<li>Linker</li>
-<li>Env</li>
-<li>Memory</li>
-</ul>
-
-      The Linker is responsible for linking code into the program
-      abstraction. The <code class="code"><span class="constructor">Env</span></code> component defines the environment
-      behavior, i.e., variables. Finally, the <code class="code"><span class="constructor">Memory</span></code> component is
-      responsible for the memory representation.
-<p>
-
-      Primus framework is implemented as a monad transformer that
-      wraps any monad into the <code class="code"><span class="constructor">Machine</span></code> monad. The <code class="code"><span class="constructor">Machine</span></code> monad
-      denotes a computation, and is implemented as a composition of
-      state, exception, and continuation passing monad.
-<p>
-
-      Each user component is a functor that is parametrized by a
-      Machine monad. It is require to provide only one function -
-      <code class="code">init</code>. Usually, this function subscribes to observations, but
-      it can modify other components (depending on their interface).<br>
-</div>
-<hr width="100%">
-
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.html">Std</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>
+<pre><span id="MODULEStd"><span class="keyword">module</span> <a href="Bap_primus.Std.html">Std</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre></body></html>

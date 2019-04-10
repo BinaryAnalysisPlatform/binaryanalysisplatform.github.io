@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -107,11 +108,11 @@ ABI dispatcher.
 </div>
 <hr width="100%">
 
-<pre><span id="VALpass"><span class="keyword">val</span> pass</span> : <code class="type">Std.project -> Std.project</code></pre><div class="info ">
+<pre><span id="VALpass"><span class="keyword">val</span> pass</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">Std.project</a> -> <a href="Bap.Std.html#TYPEproject">Std.project</a></code></pre><div class="info ">
 <code class="code">pass</code> will apply all registered passes in the unspecified order<br>
 </div>
 
-<pre><span id="VALregister_pass"><span class="keyword">val</span> register_pass</span> : <code class="type">(Std.project -> Std.project) -> unit</code></pre><div class="info ">
+<pre><span id="VALregister_pass"><span class="keyword">val</span> register_pass</span> : <code class="type">(<a href="Bap.Std.html#TYPEproject">Std.project</a> -> <a href="Bap.Std.html#TYPEproject">Std.project</a>) -> unit</code></pre><div class="info ">
 <code class="code">register_pass&nbsp;pass</code> registers a pass for the later execution.
     The pass will be run by a <code class="code">api</code> pass. Usually the <code class="code">pass</code> will
     inspect the project structure, and if it is not recognized, then

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,25 +89,32 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Generator.Random.Seeded.html">Bap_primus.Std.Primus.Generator.Random.Seeded</a></h1>
 
-<pre><span class="keyword">module</span> Seeded: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Self seeded generators.
-<p>
+<pre><span id="MODULESeeded"><span class="keyword">module</span> Seeded</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Self seeded generators.</p>
 
-            These generators will be seeded by a value derived from
-            the Machine clone identifier.<br>
+<p>These generators will be seeded by a value derived from
+            the Machine clone identifier.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(int -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Std.Primus.Generator.t</a>) -><br>       <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Std.Primus.Generator.t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;init</code> creates a self-seeded generator from a
-              regular generator.<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;init</code> creates a self-seeded generator from a
+              regular generator.</p>
+</div>
 </div>
 
 <pre><span id="VALlcg"><span class="keyword">val</span> lcg</span> : <code class="type">?min:int -> ?max:int -> unit -> <a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Std.Primus.Generator.t</a></code></pre><div class="info ">
-<code class="code">lcg&nbsp;~min&nbsp;~max&nbsp;()</code> a linear congruential generator.<br>
+<div class="info-desc">
+<p><code class="code">lcg&nbsp;~min&nbsp;~max&nbsp;()</code> a linear congruential generator.</p>
+</div>
 </div>
 
 <pre><span id="VALbyte"><span class="keyword">val</span> byte</span> : <code class="type"><a href="Bap_primus.Std.Primus.Generator.html#TYPEt">Std.Primus.Generator.t</a></code></pre><div class="info ">
-<code class="code">byte</code> is the same as <code class="code">lcg&nbsp;~min:0&nbsp;~max:255&nbsp;()</code><br>
+<div class="info-desc">
+<p><code class="code">byte</code> is the same as <code class="code">lcg&nbsp;~min:0&nbsp;~max:255&nbsp;()</code></p>
+</div>
 </div>
 </body></html>

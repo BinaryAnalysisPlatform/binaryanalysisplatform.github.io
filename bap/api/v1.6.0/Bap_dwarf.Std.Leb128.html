@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,11 +91,13 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_dwarf.Std.Leb128.html">Bap_dwarf.Std.Leb128</a></h1>
 
-<pre><span class="keyword">module</span> Leb128: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Leb128.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="MODULELeb128"><span class="keyword">module</span> Leb128</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Leb128.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-an encoded value<br>
+<div class="info-desc">
+<p>an encoded value</p>
+</div>
 </div>
 
 
@@ -102,10 +105,12 @@ an encoded value<br>
 
 <pre><span id="TYPEencoder"><span class="keyword">type</span> <code class="type">'a</code> encoder</span> = <code class="type">?signed:bool -> 'a -> <a href="Bap_dwarf.Std.Leb128.html#TYPEt">t</a></code> </pre>
 <div class="info ">
-<code class="code">encode&nbsp;~signed&nbsp;v</code> encodes value <code class="code">v</code> in a LEB128 format. If
-        signed is true, then uses signed encoding.
-<p>
-<code class="code">decode&nbsp;leb</code> decodes a number from LEB128 representation.<br>
+<div class="info-desc">
+<p><code class="code">encode&nbsp;~signed&nbsp;v</code> encodes value <code class="code">v</code> in a LEB128 format. If
+        signed is true, then uses signed encoding.</p>
+
+<p><code class="code">decode&nbsp;leb</code> decodes a number from LEB128 representation.</p>
+</div>
 </div>
 
 
@@ -113,7 +118,9 @@ an encoded value<br>
 
 
 <pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Bap_dwarf.Std.Leb128.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">size&nbsp;leb</code> return size in bytes of the number stored in LEB128
-        encoding.<br>
+<div class="info-desc">
+<p><code class="code">size&nbsp;leb</code> return size in bytes of the number stored in LEB128
+        encoding.</p>
+</div>
 </div>
 </body></html>

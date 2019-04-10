@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,64 +93,79 @@
 </div>
 <h1>Module type <a href="type_Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a></h1>
 
-<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="MODULETYPES2"><span class="keyword">module type</span> S2</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'e)</code> t</span> </pre>
 
 
 <pre><span id="VALvoid"><span class="keyword">val</span> void</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a> -> (unit, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">void&nbsp;m</code> computes <code class="code">m</code> and discrards the result.<br>
+<div class="info-desc">
+<p><code class="code">void&nbsp;m</code> computes <code class="code">m</code> and discrards the result.</p>
+</div>
 </div>
 
 <pre><span id="VALsequence"><span class="keyword">val</span> sequence</span> : <code class="type">(unit, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a> list -> (unit, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">sequence&nbsp;xs</code> computes a sequence of computations <code class="code">xs</code> in
-          the left to right order.<br>
+<div class="info-desc">
+<p><code class="code">sequence&nbsp;xs</code> computes a sequence of computations <code class="code">xs</code> in
+          the left to right order.</p>
+</div>
 </div>
 
 <pre><span id="VALforever"><span class="keyword">val</span> forever</span> : <code class="type">('a, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a> -> ('b, 'e) <a href="Monads.Std.Monad.S2.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">forever&nbsp;xs</code> creates a computationt that never returns.<br>
+<div class="info-desc">
+<p><code class="code">forever&nbsp;xs</code> creates a computationt that never returns.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Fn.html">Fn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Fn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Various function combinators lifted into the Kleisli category.
+<pre><span id="MODULEFn"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Fn.html">Fn</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Fn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Various function combinators lifted into the Kleisli category.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Pair.html">Pair</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Pair.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The pair interface lifted into the monad.
+<pre><span id="MODULEPair"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Pair.html">Pair</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Pair.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The pair interface lifted into the monad.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Triple.html">Triple</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Triple.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-The triple interface lifted into a monad.
+<pre><span id="MODULETriple"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Triple.html">Triple</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Triple.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>The triple interface lifted into a monad.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Lift.html">Lift</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Lift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lifts functions into the monad.
+<pre><span id="MODULELift"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Lift.html">Lift</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Lift.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Lifts functions into the monad.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Exn.html">Exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Interacting between monads and language exceptions
+<pre><span id="MODULEExn"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Exn.html">Exn</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Interacting between monads and language exceptions</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Collection.html">Collection</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Lifts collection interface into the monad.
+<pre><span id="MODULECollection"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Collection.html">Collection</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.S2.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Lifts collection interface into the monad.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.List.html">List</a>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">Collection.S</a></code><code class="type">  with type 'a t := 'a list</code></pre><div class="info">
-The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
-            for lists
+<pre><span id="MODULEList"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.List.html">List</a></span>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">Collection.S</a></code><code class="type">  with type 'a t := 'a list</code></pre><div class="info">
+<p>The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
+            for lists</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Seq.html">Seq</a>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">Collection.S</a></code><code class="type">  with type 'a t := 'a Sequence.t</code></pre><div class="info">
-The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
-            for sequences
+<pre><span id="MODULESeq"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Seq.html">Seq</a></span>: <code class="type"><a href="Monads.Std.Monad.S2.Collection.S.html">Collection.S</a></code><code class="type">  with type 'a t := 'a Sequence.t</code></pre><div class="info">
+<p>The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
+            for sequences</p>
+
 </div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Syntax.S2.html">Monads.Std.Monad.Syntax.S2</a></pre>
 
 <pre><span class="keyword">include</span> Monad.S2</pre>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Syntax.html">Syntax</a>: <code class="type"><a href="Monads.Std.Monad.Syntax.S2.html">Std.Monad.Syntax.S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) t</code></pre><div class="info">
-Monadic operators, see
-          <a href="Monads.Std.Monad.Syntax.S2.html">Monad.Syntax.S2</a> for more.
+<pre><span id="MODULESyntax"><span class="keyword">module</span> <a href="Monads.Std.Monad.S2.Syntax.html">Syntax</a></span>: <code class="type"><a href="Monads.Std.Monad.Syntax.S2.html">Std.Monad.Syntax.S2</a></code><code class="type">  with type ('a,'e) t := ('a,'e) t</code></pre><div class="info">
+<p>Monadic operators, see
+          <a href="Monads.Std.Monad.Syntax.S2.html">Monad.Syntax.S2</a> for more.</p>
+
 </div>
 </body></html>

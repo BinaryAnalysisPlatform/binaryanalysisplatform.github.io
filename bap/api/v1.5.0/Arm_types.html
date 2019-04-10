@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -97,7 +98,7 @@ General purpose registers<br>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module</span> <a href="Arm_types.Basic.html">Basic</a>: <code class="type">Std.Disasm_expert.Basic</code></pre>
+<pre><span class="keyword">module</span> <a href="Arm_types.Basic.html">Basic</a>: <code class="type"><a href="Bap.Std.Disasm_expert.Basic.html">Std.Disasm_expert.Basic</a></code></pre>
 <pre><span id="EXCEPTIONLifting_failed"><span class="keyword">exception</span> Lifting_failed</span> <span class="keyword">of</span> <code class="type">string</code></pre>
 
 <pre><span id="TYPEcond"><span class="keyword">type</span> <code class="type"></code>cond</span> = <code class="type">[ `AL<br>       | `CC<br>       | `CS<br>       | `EQ<br>       | `GE<br>       | `GT<br>       | `HI<br>       | `LE<br>       | `LS<br>       | `LT<br>       | `MI<br>       | `NE<br>       | `PL<br>       | `VC<br>       | `VS ]</code> </pre>
@@ -130,7 +131,7 @@ conditition code registers<br>
 <pre><span id="TYPEreg"><span class="keyword">type</span> <code class="type"></code>reg</span> = <code class="type">[ `CPSR<br>       | `ITSTATE<br>       | `LR<br>       | `Nil<br>       | `PC<br>       | `R0<br>       | `R1<br>       | `R10<br>       | `R11<br>       | `R12<br>       | `R2<br>       | `R3<br>       | `R4<br>       | `R5<br>       | `R6<br>       | `R7<br>       | `R8<br>       | `R9<br>       | `SP<br>       | `SPSR ]</code> </pre>
 
 
-<pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type">[ `Imm of Std.word | `Reg of <a href="Arm_types.html#TYPEreg">reg</a> ]</code> </pre>
+<pre><span id="TYPEop"><span class="keyword">type</span> <code class="type"></code>op</span> = <code class="type">[ `Imm of <a href="Bap.Std.html#TYPEword">Std.word</a> | `Reg of <a href="Arm_types.html#TYPEreg">reg</a> ]</code> </pre>
 
 
 <pre><span id="TYPEmove_insn"><span class="keyword">type</span> <code class="type"></code>move_insn</span> = <code class="type">[ `ADCri<br>       | `ADCrr<br>       | `ADCrsi<br>       | `ADCrsr<br>       | `ADDri<br>       | `ADDrr<br>       | `ADDrsi<br>       | `ADDrsr<br>       | `ANDri<br>       | `ANDrr<br>       | `ANDrsi<br>       | `ANDrsr<br>       | `BICri<br>       | `BICrr<br>       | `BICrsi<br>       | `BICrsr<br>       | `CMNri<br>       | `CMNzrr<br>       | `CMNzrsi<br>       | `CMNzrsr<br>       | `CMPri<br>       | `CMPrr<br>       | `CMPrsi<br>       | `CMPrsr<br>       | `EORri<br>       | `EORrr<br>       | `EORrsi<br>       | `EORrsr<br>       | `MOVPCLR<br>       | `MOVTi16<br>       | `MOVi<br>       | `MOVi16<br>       | `MOVr<br>       | `MOVsi<br>       | `MOVsr<br>       | `MVNi<br>       | `MVNr<br>       | `MVNsi<br>       | `MVNsr<br>       | `ORRri<br>       | `ORRrr<br>       | `ORRrsi<br>       | `ORRrsr<br>       | `RSBri<br>       | `RSBrr<br>       | `RSBrsi<br>       | `RSBrsr<br>       | `RSCri<br>       | `RSCrr<br>       | `RSCrsi<br>       | `RSCrsr<br>       | `SBCri<br>       | `SBCrr<br>       | `SBCrsi<br>       | `SBCrsr<br>       | `SUBri<br>       | `SUBrr<br>       | `SUBrsi<br>       | `SUBrsr<br>       | `TEQri<br>       | `TEQrr<br>       | `TEQrsi<br>       | `TEQrsr<br>       | `TSTri<br>       | `TSTrr<br>       | `TSTrsi<br>       | `TSTrsr ]</code> </pre>

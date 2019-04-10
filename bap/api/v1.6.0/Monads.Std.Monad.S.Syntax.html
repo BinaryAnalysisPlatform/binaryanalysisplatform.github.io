@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,9 +91,11 @@
 &nbsp;</div>
 <h1>Module <a href="type_Monads.Std.Monad.S.Syntax.html">Monads.Std.Monad.S.Syntax</a></h1>
 
-<pre><span class="keyword">module</span> Syntax: <code class="type"><a href="Monads.Std.Monad.Syntax.S.html">Std.Monad.Syntax.S</a></code><code class="type">  with type 'a t := 'a t</code></pre><div class="info module top">
-Monadic operators, see
-          <a href="Monads.Std.Monad.Syntax.S.html">Monad.Syntax.S</a> for more.<br>
+<pre><span id="MODULESyntax"><span class="keyword">module</span> Syntax</span>: <code class="type"><a href="Monads.Std.Monad.Syntax.S.html">Std.Monad.Syntax.S</a></code><code class="type">  with type 'a t := 'a t</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Monadic operators, see
+          <a href="Monads.Std.Monad.Syntax.S.html">Monad.Syntax.S</a> for more.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -100,38 +103,56 @@ Monadic operators, see
 
 
 <pre><span id="VAL(>>=)"><span class="keyword">val</span> (&gt;&gt;=)</span> : <code class="type">'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       ('a -> 'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a>) -> 'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">m&nbsp;&gt;&gt;=&nbsp;f</code> is <code class="code">bind&nbsp;m&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">m&nbsp;&gt;&gt;=&nbsp;f</code> is <code class="code">bind&nbsp;m&nbsp;f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(>>|)"><span class="keyword">val</span> (&gt;&gt;|)</span> : <code class="type">'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       ('a -> 'b) -> 'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">m&nbsp;&gt;&gt;=&nbsp;f</code> is <code class="code">map&nbsp;m&nbsp;~f</code><br>
+<div class="info-desc">
+<p><code class="code">m&nbsp;&gt;&gt;=&nbsp;f</code> is <code class="code">map&nbsp;m&nbsp;~f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(>=>)"><span class="keyword">val</span> (&gt;=&gt;)</span> : <code class="type">('a -> 'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a>) -><br>       ('b -> 'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a>) -><br>       'a -> 'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">f&nbsp;&gt;=&gt;&nbsp;g</code> is <code class="code"><span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f&nbsp;x&nbsp;&gt;&gt;=&nbsp;g</code><br>
+<div class="info-desc">
+<p><code class="code">f&nbsp;&gt;=&gt;&nbsp;g</code> is <code class="code"><span class="keyword">fun</span>&nbsp;x&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;f&nbsp;x&nbsp;&gt;&gt;=&nbsp;g</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!!)"><span class="keyword">val</span> (!!)</span> : <code class="type">'a -> 'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!!x</code> is <code class="code">return&nbsp;x</code><br>
+<div class="info-desc">
+<p><code class="code">!!x</code> is <code class="code">return&nbsp;x</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!$)"><span class="keyword">val</span> (!$)</span> : <code class="type">('a -> 'b) -><br>       'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -> 'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!$f</code> is <code class="code"><span class="constructor">Lift</span>.unary&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">!$f</code> is <code class="code"><span class="constructor">Lift</span>.unary&nbsp;f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!$$)"><span class="keyword">val</span> (!$$)</span> : <code class="type">('a -> 'b -> 'c) -><br>       'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -> 'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!$$f</code> is <code class="code"><span class="constructor">Lift</span>.binary&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">!$$f</code> is <code class="code"><span class="constructor">Lift</span>.binary&nbsp;f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!$$$)"><span class="keyword">val</span> (!$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd) -><br>       'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -> 'd <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!$$$f</code> is <code class="code"><span class="constructor">Lift</span>.ternary&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">!$$$f</code> is <code class="code"><span class="constructor">Lift</span>.ternary&nbsp;f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!$$$$)"><span class="keyword">val</span> (!$$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e) -><br>       'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'd <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -> 'e <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quaternary&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">!$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quaternary&nbsp;f</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(!$$$$$)"><span class="keyword">val</span> (!$$$$$)</span> : <code class="type">('a -> 'b -> 'c -> 'd -> 'e -> 'f) -><br>       'a <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'b <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'c <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'd <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -><br>       'e <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a> -> 'f <a href="Monads.Std.Monad.Syntax.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">!$$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quinary&nbsp;f</code><br>
+<div class="info-desc">
+<p><code class="code">!$$$$$f</code> is <code class="code"><span class="constructor">Lift</span>.quinary&nbsp;f</code></p>
+</div>
 </div>
 </body></html>

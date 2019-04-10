@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -173,7 +174,7 @@ A stream of elements.
         becomes determined.<br>
 </div>
 
-<pre><span id="VALunfold'"><span class="keyword">val</span> unfold'</span> : <code class="type">init:'b -><br>       f:('b -> 'a Queue.t * 'b) -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * unit <a href="Bap_future.Std.html#TYPEsignal">Bap_future.Std.signal</a></code></pre><div class="info ">
+<pre><span id="VALunfold'"><span class="keyword">val</span> unfold'</span> : <code class="type">init:'b -><br>       f:('b -> 'a Std.Queue.t * 'b) -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * unit <a href="Bap_future.Std.html#TYPEsignal">Bap_future.Std.signal</a></code></pre><div class="info ">
 <code class="code">unfold'&nbsp;~init&nbsp;~f</code> is a batched version of the <code class="code">unfold</code>
         function. A new value is produced by a stream, every time it
         is signaled with associated signal handler.<br>
@@ -202,7 +203,7 @@ A stream of elements.
         ignored.<br>
 </div>
 
-<pre><span id="VALof_sequence"><span class="keyword">val</span> of_sequence</span> : <code class="type">'a Sequence.t -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * unit <a href="Bap_future.Std.html#TYPEsignal">Bap_future.Std.signal</a> *<br>       unit <a href="Bap_future.Std.html#TYPEfuture">Bap_future.Std.future</a></code></pre><div class="info ">
+<pre><span id="VALof_sequence"><span class="keyword">val</span> of_sequence</span> : <code class="type">'a Std.Sequence.t -><br>       'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> * unit <a href="Bap_future.Std.html#TYPEsignal">Bap_future.Std.signal</a> *<br>       unit <a href="Bap_future.Std.html#TYPEfuture">Bap_future.Std.future</a></code></pre><div class="info ">
 <code class="code">of_seq&nbsp;xs</code> returns a stream <code class="code">ss</code>, a signal <code class="code">s</code> and a future
         <code class="code">es</code>. Stream will produce consequently elements of <code class="code">xs</code> every
         time the signal <code class="code">s</code> is sent. Once all elements are produced
@@ -273,7 +274,7 @@ A stream of elements.
 <br>
 <h2 id="2_Combinators">Combinators</h2><br>
 
-<pre><span id="VALmap'"><span class="keyword">val</span> map'</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       f:('a -> 'b Queue.t) -> 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmap'"><span class="keyword">val</span> map'</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       f:('a -> 'b Std.Queue.t) -> 'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">s'&nbsp;=&nbsp;map'&nbsp;s&nbsp;~f</code> apply function <code class="code">f</code> for each value of a
         stream <code class="code">s</code> and push values from a resulting queue into the
         stream <code class="code">s'</code>.
@@ -307,7 +308,7 @@ A stream of elements.
         stream <code class="code">s</code>, for which <code class="code">f</code> evaluates to true.<br>
 </div>
 
-<pre><span id="VALeither"><span class="keyword">val</span> either</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       ('a, 'b) Either.t <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALeither"><span class="keyword">val</span> either</span> : <code class="type">'a <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       'b <a href="Bap_future.Std.Stream.html#TYPEt">t</a> -><br>       ('a, 'b) Std.Either.t <a href="Bap_future.Std.Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">either&nbsp;xs&nbsp;ys</code> is a discriminated union of two streams.<br>
 </div>
 

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,15 +93,17 @@
 </div>
 <h1>Module <a href="type_ARM.Cond.html">ARM.Cond</a></h1>
 
-<pre><span class="keyword">module</span> Cond: <code class="type"><a href="Arm_cond.html">Arm_cond</a></code></pre><hr width="100%">
+<pre><span id="MODULECond"><span class="keyword">module</span> Cond</span>: <code class="type"><a href="Arm_cond.html">Arm_cond</a></code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Arm_types.html#TYPEcond">Arm_types.cond</a></code> </pre>
 
 
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">Std.word -> <a href="Arm_types.html#TYPEcond">Arm_types.cond</a> Or_error.t</code></pre><div class="info ">
-decodes condition value from a word<br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> -> <a href="Arm_types.html#TYPEcond">Arm_types.cond</a> Or_error.t</code></pre><div class="info ">
+<div class="info-desc">
+<p>decodes condition value from a word</p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> Regular.S</pre>

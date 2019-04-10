@@ -7,6 +7,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -84,12 +85,12 @@
 <code class="code"><span class="keyword">sig</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;provider<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;provide&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;?inspect:(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;?inspect:(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t)&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation&nbsp;*&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.statement<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;name&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;inspect&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.observation&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;list_providers&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Observation</span>.provider&nbsp;list<br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Provider</span>&nbsp;:<br>
@@ -102,6 +103,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unit&nbsp;<span class="constructor">Bap_future</span>.<span class="constructor">Std</span>.stream<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;data&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Bap_primus</span>.<span class="constructor">Std</span>.<span class="constructor">Primus</span>.<span class="constructor">Observation</span>.<span class="constructor">Provider</span>.t&nbsp;<span class="keywordsign">-&gt;</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="constructor">Bap_future</span>.<span class="constructor">Std</span>.stream<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t&nbsp;<span class="constructor">Bap_future</span>.<span class="constructor">Std</span>.stream<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 <span class="keyword">end</span></code></body></html>

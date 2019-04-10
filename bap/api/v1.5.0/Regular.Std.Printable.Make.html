@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -144,12 +145,12 @@ type of printable<br>
 synonym for <code class="code">str</code><br>
 </div>
 
-<pre><span id="VALppo"><span class="keyword">val</span> ppo</span> : <code class="type">Out_channel.t -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALppo"><span class="keyword">val</span> ppo</span> : <code class="type">Std.Out_channel.t -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
 will print to a standard <code class="code">output_channel</code>, useful for using in
           <code class="code">printf</code>, <code class="code">fprintf</code>, etc.<br>
 </div>
 
-<pre><span id="VALpp_seq"><span class="keyword">val</span> pp_seq</span> : <code class="type">Format.formatter -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> Sequence.t -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_seq"><span class="keyword">val</span> pp_seq</span> : <code class="type">Format.formatter -><br>       <a href="Regular.Std.Printable.S.html#TYPEt">t</a> Std.Sequence.t -> unit</code></pre><div class="info ">
 prints a sequence of values of type <code class="code">t</code><br>
 </div>
 

@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -121,7 +122,7 @@
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> = <code class="type">'a Machine.t</code> </pre>
 
 
-<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?addr:Std.addr -><br>       ?name:string -><br>       ?tid:Std.tid -><br>       <a href="Bap_primus.Std.Primus.Linker.html#TYPEcode">Std.Primus.Linker.code</a> -> unit <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?addr:<a href="Bap.Std.html#TYPEaddr">Std.addr</a> -><br>       ?name:string -><br>       ?tid:<a href="Bap.Std.html#TYPEtid">Std.tid</a> -><br>       <a href="Bap_primus.Std.Primus.Linker.html#TYPEcode">Std.Primus.Linker.code</a> -> unit <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">link&nbsp;~addr&nbsp;~name&nbsp;~tid&nbsp;code</code> links the given <code class="code">code</code>
             fragment into the Machine. The code can be invoked by one
             of the provided identifier. If no idetifiers were
@@ -149,7 +150,7 @@
             associated with any code fragment.<br>
 </div>
 
-<pre><span id="VALresolve_addr"><span class="keyword">val</span> resolve_addr</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       Std.addr option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALresolve_addr"><span class="keyword">val</span> resolve_addr</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       <a href="Bap.Std.html#TYPEaddr">Std.addr</a> option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">resolve_addr&nbsp;name</code> returns the address associated with the
             given <code class="code">name</code>.<br>
 </div>
@@ -160,7 +161,7 @@
 <b>Since</b> 1.5.0<br>
 </div>
 
-<pre><span id="VALresolve_tid"><span class="keyword">val</span> resolve_tid</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       Std.tid option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
+<pre><span id="VALresolve_tid"><span class="keyword">val</span> resolve_tid</span> : <code class="type"><a href="Bap_primus.Std.Primus.Linker.html#TYPEname">Std.Primus.Linker.name</a> -><br>       <a href="Bap.Std.html#TYPEtid">Std.tid</a> option <a href="Bap_primus.Std.Primus.Linker.Make.html#TYPEm">m</a></code></pre><div class="info ">
 <code class="code">resolve_tid&nbsp;name</code> returns the term identifier associated
             with the given <code class="code">name</code>.<br>
 <b>Since</b> 1.5.0<br>

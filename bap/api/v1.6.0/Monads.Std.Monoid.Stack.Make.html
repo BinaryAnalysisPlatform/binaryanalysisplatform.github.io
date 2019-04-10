@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,9 +89,11 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Monads.Std.Monoid.Stack.Make.html">Monads.Std.Monoid.Stack.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre><div class="info module top">
-Make(T) constructs a monoid that accumulates elements of
-          type <code class="code"><span class="constructor">T</span>.t</code><br>
+<pre><span id="MODULEMake"><span class="keyword">module</span> Make</span> <code class="code">(</code><code class="code"><span class="constructor">T</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T</code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monoid.S.html">Std.Monoid.S</a></code><code class="type">  with type t := TList(T).t</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code></p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -111,10 +114,14 @@ Make(T) constructs a monoid that accumulates elements of
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monoid.Base.html">Monads.Std.Monoid.Base</a></pre>
 
 <pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">t list -> t</code></pre><div class="info ">
-<code class="code">concat&nbsp;xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code><br>
+<div class="info-desc">
+<p><code class="code">concat&nbsp;xs</code> reduces <code class="code">xs</code> to using <code class="code">plus</code></p>
+</div>
 </div>
 
 <pre><span id="VAL(@@)"><span class="keyword">val</span> (@@)</span> : <code class="type">t -> t -> t</code></pre><div class="info ">
-<code class="code">x&nbsp;@@&nbsp;y</code> is <code class="code">plus&nbsp;x&nbsp;y</code><br>
+<div class="info-desc">
+<p><code class="code">x&nbsp;@@&nbsp;y</code> is <code class="code">plus&nbsp;x&nbsp;y</code></p>
+</div>
 </div>
 </body></html>

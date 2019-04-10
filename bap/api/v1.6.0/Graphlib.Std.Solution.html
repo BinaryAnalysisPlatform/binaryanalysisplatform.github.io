@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,54 +93,69 @@
 </div>
 <h1>Module <a href="type_Graphlib.Std.Solution.html">Graphlib.Std.Solution</a></h1>
 
-<pre><span class="keyword">module</span> Solution: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Solution.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-A solution to a system of fixed-point equations.
-<p>
+<pre><span id="MODULESolution"><span class="keyword">module</span> Solution</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Solution.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>A solution to a system of fixed-point equations.</p>
 
-      We represent the solution to a system of fixed-point equations
+<p>We represent the solution to a system of fixed-point equations
       as a pair of a finite mapping <code class="code"><span class="constructor">M</span></code> that associates a variable (a
       node) with its value, and a default value, that is a value of
-      all variables that are not in <code class="code"><span class="constructor">M</span></code>.<br>
+      all variables that are not in <code class="code"><span class="constructor">M</span></code>.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('n, 'd)</code> t</span> </pre>
 <div class="info ">
-an abstract representation of a solution<br>
+<div class="info-desc">
+<p>an abstract representation of a solution</p>
+</div>
 </div>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('n, 'd, 'a) Map.t -> 'd -> ('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;constraints&nbsp;default</code> creates an initial approximation of a
+<div class="info-desc">
+<p><code class="code">create&nbsp;constraints&nbsp;default</code> creates an initial approximation of a
         solution. The <code class="code">default</code> parameter defines the default value of
-        all variables unspecified in the initial constraints.<br>
+        all variables unspecified in the initial constraints.</p>
+</div>
 </div>
 
 <pre><span id="VALiterations"><span class="keyword">val</span> iterations</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-<code class="code">iterations&nbsp;s</code> returns the total number of iterations that was
-        made to obtain the current solution.<br>
+<div class="info-desc">
+<p><code class="code">iterations&nbsp;s</code> returns the total number of iterations that was
+        made to obtain the current solution.</p>
+</div>
 </div>
 
 <pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> 'd</code></pre><div class="info ">
-<code class="code">default&nbsp;s</code> return the default value assigned to all variables
+<div class="info-desc">
+<p><code class="code">default&nbsp;s</code> return the default value assigned to all variables
         not in the internal finite mapping. This is usually a bottom
         or top value, depending on whether iteration increases or
-        decreases.<br>
+        decreases.</p>
+</div>
 </div>
 
 <pre><span id="VALis_fixpoint"><span class="keyword">val</span> is_fixpoint</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_fixpoint&nbsp;s</code> is <code class="code"><span class="keyword">true</span></code> if the solution is a fixed point
+<div class="info-desc">
+<p><code class="code">is_fixpoint&nbsp;s</code> is <code class="code"><span class="keyword">true</span></code> if the solution is a fixed point
         solution, i.e., is a solution that stabilizes the system of
-        equations.<br>
+        equations.</p>
+</div>
 </div>
 
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -> 'n -> 'd</code></pre><div class="info ">
-<code class="code">get&nbsp;s&nbsp;x</code> returns a value of <code class="code">x</code>.<br>
+<div class="info-desc">
+<p><code class="code">get&nbsp;s&nbsp;x</code> returns a value of <code class="code">x</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALderive"><span class="keyword">val</span> derive</span> : <code class="type">('n, 'd) <a href="Graphlib.Std.Solution.html#TYPEt">t</a> -><br>       f:('n -> 'd -> 'a option) -> 'a -> ('n, 'a) <a href="Graphlib.Std.Solution.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">derive&nbsp;s&nbsp;~f&nbsp;default</code> creates a new solution from an old one
+<div class="info-desc">
+<p><code class="code">derive&nbsp;s&nbsp;~f&nbsp;default</code> creates a new solution from an old one
         with a new <code class="code">default</code> and where for each node <code class="code">n</code> in <code class="code">s</code>'s finite
-        map, if <code class="code">f&nbsp;n&nbsp;(get&nbsp;s&nbsp;n)&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;v</code> then <code class="code">n</code> maps to <code class="code">v</code>.<br>
+        map, if <code class="code">f&nbsp;n&nbsp;(get&nbsp;s&nbsp;n)&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;v</code> then <code class="code">n</code> maps to <code class="code">v</code>.</p>
+</div>
 </div>
 </body></html>

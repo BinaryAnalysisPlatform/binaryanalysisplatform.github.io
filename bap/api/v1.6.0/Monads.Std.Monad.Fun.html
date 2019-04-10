@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,38 +93,41 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Fun.html">Monads.Std.Monad.Fun</a></h1>
 
-<pre><span class="keyword">module</span> Fun: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-The Function Monad.
-<p>
+<pre><span id="MODULEFun"><span class="keyword">module</span> Fun</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>The Function Monad.</p>
 
-        The function monad delays the computation until it is actually
+<p>The function monad delays the computation until it is actually
         run. This is not the only monad that has such behavior, i.e.,
         State, Cont, Lazy, and Reader monads are also delayed, but
         they all have other additional behaviors on top of the
         delaying the computation. The function monad can be seen as a
         Reader monad with <code class="code">unit</code> environment, or as a Lazy monad
-        without the memoization.<br>
+        without the memoization.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULETYPES2"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Fun.S2.html">S2</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span id="TYPEthunk"><span class="keyword">type</span> <code class="type">'a</code> thunk</span> </pre>
 <div class="info ">
-A function monad computation is a thunk that returns a value
-          of type <code class="code"><span class="keywordsign">'</span>a</code>.<br>
+<div class="info-desc">
+<p>A function monad computation is a thunk that returns a value
+          of type <code class="code"><span class="keywordsign">'</span>a</code>.</p>
+</div>
 </div>
 
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Fun.S.html">Monads.Std.Monad.Fun.S</a></pre>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.T1.html">T1</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Fun.S.html">S</a></code><code class="type"> 
+<pre><span id="MODULET1"><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.T1.html">T1</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Fun.S.html">S</a></code><code class="type"> 
         with type 'a t := 'a T1(M).t
          and type 'a m := 'a T1(M).m
          and type 'a e := 'a T1(M).e</code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.T2.html">T2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad2.html">Std.Monad.Monad2</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.Make2.html">Make2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad2.html">Std.Monad.Monad2</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Fun.S2.html">S2</a></code><code class="type"> 
+<pre><span id="MODULET2"><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.T2.html">T2</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad2.html">Std.Monad.Monad2</a></code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Fun.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEMake2"><span class="keyword">module</span> <a href="Monads.Std.Monad.Fun.Make2.html">Make2</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad2.html">Std.Monad.Monad2</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Fun.S2.html">S2</a></code><code class="type"> 
         with type ('a,'e) t := ('a,'e) T2(M).t
          and type ('a,'e) m := ('a,'e) T2(M).m
          and type ('a,'e) e := ('a,'e) T2(M).e</code></pre></body></html>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,8 +93,10 @@
 </div>
 <h1>Module <a href="type_Bap_future.Std.Promise.html">Bap_future.Std.Promise</a></h1>
 
-<pre><span class="keyword">module</span> Promise: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Promise.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-An promise to provide a value in a future.<br>
+<pre><span id="MODULEPromise"><span class="keyword">module</span> Promise</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Promise.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>An promise to provide a value in a future.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -101,23 +104,25 @@ An promise to provide a value in a future.<br>
 
 
 <pre><span id="VALfulfill"><span class="keyword">val</span> fulfill</span> : <code class="type">'a <a href="Bap_future.Std.Promise.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info ">
-<code class="code">fulfill&nbsp;promise</code> will fill a future value associated with a
+<div class="info-desc">
+<p><code class="code">fulfill&nbsp;promise</code> will fill a future value associated with a
         <code class="code">promise</code> and evaluate to <code class="code">unit</code> if promise is not yet
-        fulfilled.
-<p>
+        fulfilled.</p>
 
-        All actions associated with the future will be called in the
-        context of the function calling <code class="code">fulfull</code>.
-<p>
+<p>All actions associated with the future will be called in the
+        context of the function calling <code class="code">fulfull</code>.</p>
 
-        The <code class="code">fulfill</code> function is not thread-safe, in the
+<p>The <code class="code">fulfill</code> function is not thread-safe, in the
         sense, that <code class="code">fulfill</code> calls to the same object made from different
         threads should be serialized. Note: since <code class="code">fulfill</code> should be
-        called once, it is rarely a case.<br>
+        called once, it is rarely a case.</p>
+</div>
 </div>
 
 <pre><span id="VALis_fulfilled"><span class="keyword">val</span> is_fulfilled</span> : <code class="type">'a <a href="Bap_future.Std.Promise.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_fulfilled&nbsp;promise</code> is <code class="code"><span class="keyword">true</span></code> if associated promise is
-        already fulfilled<br>
+<div class="info-desc">
+<p><code class="code">is_fulfilled&nbsp;promise</code> is <code class="code"><span class="keyword">true</span></code> if associated promise is
+        already fulfilled</p>
+</div>
 </div>
 </body></html>

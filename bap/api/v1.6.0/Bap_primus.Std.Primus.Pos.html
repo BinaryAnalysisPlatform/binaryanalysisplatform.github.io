@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,24 +93,29 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Pos.html">Bap_primus.Std.Primus.Pos</a></h1>
 
-<pre><span class="keyword">module</span> Pos: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Pos.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-A hierarchical program position.
-<p>
+<pre><span id="MODULEPos"><span class="keyword">module</span> Pos</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Pos.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>A hierarchical program position.</p>
 
-        The <code class="code"><span class="constructor">Pos</span>.t</code> is a cursor-like data structure, that
-        describes a program position in the program term hierarchy.<br>
+<p>The <code class="code"><span class="constructor">Pos</span>.t</code> is a cursor-like data structure, that
+        describes a program position in the program term hierarchy.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEnil"><span class="keyword">type</span> <code class="type"></code>nil</span> </pre>
 <div class="info ">
-uninhabited type<br>
+<div class="info-desc">
+<p>uninhabited type</p>
+</div>
 </div>
 
 
-<pre><span id="TYPEtop"><span class="keyword">type</span> <code class="type"></code>top</span> = <code class="type">Std.program</code> </pre>
+<pre><span id="TYPEtop"><span class="keyword">type</span> <code class="type"></code>top</span> = <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a></code> </pre>
 <div class="info ">
-the top-most program term.<br>
+<div class="info-desc">
+<p>the top-most program term.</p>
+</div>
 </div>
 
 
@@ -118,9 +124,11 @@ the top-most program term.<br>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTlevel.me">me</span>&nbsp;: <code class="type">'a Std.term</code>;</code></td>
+<code><span id="TYPEELTlevel.me">me</span>&nbsp;: <code class="type">'a <a href="Bap.Std.html#TYPEterm">Std.term</a></code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<code class="code">me</code> current position<br>
+<div class="info-desc">
+<p><code class="code">me</code> current position</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -130,40 +138,52 @@ the top-most program term.<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTlevel.up">up</span>&nbsp;: <code class="type">'b</code>;</code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<code class="code">up</code> parent cursor<br>
+<div class="info-desc">
+<p><code class="code">up</code> parent cursor</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 }
 
 <div class="info ">
-<code class="code">(t,p)&nbsp;level</code> a cursor pointing to a <code class="code">t&nbsp;term</code>, that is
-          nested in the parent cursor <code class="code">p</code>.<br>
+<div class="info-desc">
+<p><code class="code">(t,p)&nbsp;level</code> a cursor pointing to a <code class="code">t&nbsp;term</code>, that is
+          nested in the parent cursor <code class="code">p</code>.</p>
+</div>
 </div>
 
 
 <pre><span id="TYPElevel3"><span class="keyword">type</span> <code class="type"></code>level3</span> = <code class="type">(<a href="Bap_primus.Std.Primus.Pos.html#TYPEtop">top</a>, <a href="Bap_primus.Std.Primus.Pos.html#TYPEnil">nil</a>)<br>       <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
 <div class="info ">
-the highest level of the hierarchy - a cursor the points
-          to the whole program. This is a starting position.<br>
+<div class="info-desc">
+<p>the highest level of the hierarchy - a cursor the points
+          to the whole program. This is a starting position.</p>
+</div>
 </div>
 
 
-<pre><span id="TYPElevel2"><span class="keyword">type</span> <code class="type"></code>level2</span> = <code class="type">(Std.sub, <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel3">level3</a>)<br>       <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
+<pre><span id="TYPElevel2"><span class="keyword">type</span> <code class="type"></code>level2</span> = <code class="type">(<a href="Bap.Std.html#TYPEsub">Std.sub</a>, <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel3">level3</a>)<br>       <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
 <div class="info ">
-a cursor pointing to a function<br>
+<div class="info-desc">
+<p>a cursor pointing to a function</p>
+</div>
 </div>
 
 
 <pre><span id="TYPElevel1"><span class="keyword">type</span> <code class="type">'a</code> level1</span> = <code class="type">('a, <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel2">level2</a>) <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
 <div class="info ">
-a level of arguments and basic blocks<br>
+<div class="info-desc">
+<p>a level of arguments and basic blocks</p>
+</div>
 </div>
 
 
-<pre><span id="TYPElevel0"><span class="keyword">type</span> <code class="type">'a</code> level0</span> = <code class="type">('a, Std.blk <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a>)<br>       <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
+<pre><span id="TYPElevel0"><span class="keyword">type</span> <code class="type">'a</code> level0</span> = <code class="type">('a, <a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a>)<br>       <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel">level</a></code> </pre>
 <div class="info ">
-a level of the basic terms, e.g., defs, jmps and phi-nodes.<br>
+<div class="info-desc">
+<p>a level of the basic terms, e.g., defs, jmps and phi-nodes.</p>
+</div>
 </div>
 
 
@@ -174,7 +194,9 @@ a level of the basic terms, e.g., defs, jmps and phi-nodes.<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.Top"><span class="constructor">Top</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel3">level3</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a program<br>
+<div class="info-desc">
+<p>a program</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -184,7 +206,9 @@ a program<br>
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.Sub"><span class="constructor">Sub</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPElevel2">level2</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a subroutine<br>
+<div class="info-desc">
+<p>a subroutine</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -192,9 +216,11 @@ a subroutine<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Arg"><span class="constructor">Arg</span></span> <span class="keyword">of</span> <code class="type">Std.arg <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a></code></code></td>
+<code><span id="TYPEELTt.Arg"><span class="constructor">Arg</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEarg">Std.arg</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-subroutine argument<br>
+<div class="info-desc">
+<p>subroutine argument</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -202,9 +228,11 @@ subroutine argument<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Blk"><span class="constructor">Blk</span></span> <span class="keyword">of</span> <code class="type">Std.blk <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a></code></code></td>
+<code><span id="TYPEELTt.Blk"><span class="constructor">Blk</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEblk">Std.blk</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel1">level1</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a basic block<br>
+<div class="info-desc">
+<p>a basic block</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -212,9 +240,11 @@ a basic block<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Phi"><span class="constructor">Phi</span></span> <span class="keyword">of</span> <code class="type">Std.phi <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
+<code><span id="TYPEELTt.Phi"><span class="constructor">Phi</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEphi">Std.phi</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a phi-node<br>
+<div class="info-desc">
+<p>a phi-node</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -222,9 +252,11 @@ a phi-node<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Def"><span class="constructor">Def</span></span> <span class="keyword">of</span> <code class="type">Std.def <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
+<code><span id="TYPEELTt.Def"><span class="constructor">Def</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEdef">Std.def</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a definition<br>
+<div class="info-desc">
+<p>a definition</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -232,38 +264,50 @@ a definition<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Jmp"><span class="constructor">Jmp</span></span> <span class="keyword">of</span> <code class="type">Std.jmp <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
+<code><span id="TYPEELTt.Jmp"><span class="constructor">Jmp</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEjmp">Std.jmp</a> <a href="Bap_primus.Std.Primus.Pos.html#TYPElevel0">level0</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-a jump term<br>
+<div class="info-desc">
+<p>a jump term</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr></table>
 
 <div class="info ">
-a program location<br>
+<div class="info-desc">
+<p>a program location</p>
+</div>
 </div>
 
 
-<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -> Std.tid</code></pre><div class="info ">
-<code class="code">tid&nbsp;p</code> is term identifier of the term enclosing position <code class="code">p</code><br>
+<pre><span id="VALtid"><span class="keyword">val</span> tid</span> : <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -> <a href="Bap.Std.html#TYPEtid">Std.tid</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">tid&nbsp;p</code> is term identifier of the term enclosing position <code class="code">p</code></p>
+</div>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a Std.tag -> <a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
-<code class="code">get&nbsp;a&nbsp;p</code> get a value of the attribute <code class="code">a</code> associated with
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Bap.Std.html#TYPEtag">Std.tag</a> -> <a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">get&nbsp;a&nbsp;p</code> get a value of the attribute <code class="code">a</code> associated with
           the given position <code class="code">p</code>. Example, <code class="code"><span class="constructor">Pos</span>.get&nbsp;address&nbsp;p</code> returns
-          a machine address of the position <code class="code">p</code>.<br>
+          a machine address of the position <code class="code">p</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">to_string&nbsp;level</code> a textual and human readable
-          representation of a cursor.<br>
+<div class="info-desc">
+<p><code class="code">to_string&nbsp;level</code> a textual and human readable
+          representation of a cursor.</p>
+</div>
 </div>
 
-<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -><br>       ('p, 't) Std.cls -><br>       't Std.term -><br>       (<a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a>, <a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a>)<br>       <a href="Monads.Std.Monad.Result.html#TYPEresult">Std.Monad.Result.result</a></code></pre><div class="info ">
-<code class="code">next&nbsp;p&nbsp;cls&nbsp;t</code> moves the cursor position <code class="code">p</code> to the next
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type"><a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a> -><br>       ('p, 't) <a href="Bap.Std.html#TYPEcls">Std.cls</a> -><br>       't <a href="Bap.Std.html#TYPEterm">Std.term</a> -><br>       (<a href="Bap_primus.Std.Primus.Pos.html#TYPEt">t</a>, <a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a>)<br>       <a href="Monads.Std.Monad.Result.html#TYPEresult">Std.Monad.Result.result</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">next&nbsp;p&nbsp;cls&nbsp;t</code> moves the cursor position <code class="code">p</code> to the next
           position, that points to the term <code class="code">t</code> of the class
           <code class="code">cls</code>. Returns an error if there is no valid transition
           from the current program position to the specified program
-          term.<br>
+          term.</p>
+</div>
 </div>
 </body></html>

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,77 +93,100 @@
 </div>
 <h1>Module type <a href="type_Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a></h1>
 
-<pre><span class="keyword">module type</span> S = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
-The Machine interface.<br>
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> S</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info modtype top">
+<div class="info-desc">
+<p>The Machine interface.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
-the machine computation<br>
+<div class="info-desc">
+<p>the machine computation</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEm"><span class="keyword">type</span> <code class="type">'a</code> m</span> </pre>
 <div class="info ">
-an external monad in which the machine computation is wrapped<br>
+<div class="info-desc">
+<p>an external monad in which the machine computation is wrapped</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">Observation</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Observations interface.
+<pre><span id="MODULEObservation"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">Observation</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Observation.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Observations interface.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">Syntax</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Computation Syntax.
+<pre><span id="MODULESyntax"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">Syntax</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Computation Syntax.</p>
+
 </div>
 
 <pre><span class="keyword">include</span> Monad.State.Multi.S</pre>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
+<pre><span id="MODULELocal"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a></span>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
                                and type 'a t := 'a state</code></pre><div class="info">
-Local state of the machine.
+<p>Local state of the machine.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Global.html">Global</a>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
+<pre><span id="MODULEGlobal"><span class="keyword">module</span> <a href="Bap_primus.Std.Primus.Machine.S.Global.html">Global</a></span>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.State.html">Std.Primus.Machine.State</a></code><code class="type">  with type 'a m := 'a t
                                and type 'a t := 'a state</code></pre><div class="info">
-Global state shared across all machine clones.
+<p>Global state shared across all machine clones.</p>
+
 </div>
 
 <pre><span id="VALraise"><span class="keyword">val</span> raise</span> : <code class="type"><a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> -> 'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">raise&nbsp;exn</code> raises the machine exception <code class="code">exn</code>, intiating
-            an abonormal control flow<br>
+<div class="info-desc">
+<p><code class="code">raise&nbsp;exn</code> raises the machine exception <code class="code">exn</code>, intiating
+            an abonormal control flow</p>
+</div>
 </div>
 
 <pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a> -><br>       (<a href="Bap_primus.Std.Primus.html#TYPEexn">Std.Primus.exn</a> -> 'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a>) -><br>       'a <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">catch&nbsp;x&nbsp;f</code> creates a computation that is equal to <code class="code">x</code> if
+<div class="info-desc">
+<p><code class="code">catch&nbsp;x&nbsp;f</code> creates a computation that is equal to <code class="code">x</code> if
             it terminates normally, and to <code class="code">f&nbsp;e</code> if <code class="code">x</code> terminates
-            abnormally with the exception <code class="code">e</code>.<br>
+            abnormally with the exception <code class="code">e</code>.</p>
+</div>
 </div>
 
-<pre><span id="VALproject"><span class="keyword">val</span> project</span> : <code class="type">Std.project <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">project</code> is a computation that results with the project
+<pre><span id="VALproject"><span class="keyword">val</span> project</span> : <code class="type"><a href="Bap.Std.html#TYPEproject">Std.project</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">project</code> is a computation that results with the project
             data structure. Note, that Machine is a State monad
             with the <code class="code">env</code> type equal to <code class="code">project</code>, thus <code class="code">project</code> is
-            a shortcut to <code class="code">get&nbsp;()</code>.
-<p>
+            a shortcut to <code class="code">get&nbsp;()</code>.</p>
 
-            You can use <code class="code">put&nbsp;project</code> to update the project data structure.<br>
+<p>You can use <code class="code">put&nbsp;project</code> to update the project data structure.</p>
+</div>
 </div>
 
-<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type">Std.program Std.term <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">program</code> program representation<br>
+<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type"><a href="Bap.Std.html#TYPEprogram">Std.program</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">program</code> program representation</p>
+</div>
 </div>
 
-<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type">Std.arch <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">arch</code> code architecture<br>
+<pre><span id="VALarch"><span class="keyword">val</span> arch</span> : <code class="type"><a href="Bap.Std.html#TYPEarch">Std.arch</a> <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">arch</code> code architecture</p>
+</div>
 </div>
 
 <pre><span id="VALargs"><span class="keyword">val</span> args</span> : <code class="type">string array <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">args</code> program command line arguments<br>
+<div class="info-desc">
+<p><code class="code">args</code> program command line arguments</p>
+</div>
 </div>
 
 <pre><span id="VALenvp"><span class="keyword">val</span> envp</span> : <code class="type">string array <a href="Bap_primus.Std.Primus.Machine.S.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">envp</code> program environment variables.<br>
+<div class="info-desc">
+<p><code class="code">envp</code> program environment variables.</p>
+</div>
 </div>
 </body></html>

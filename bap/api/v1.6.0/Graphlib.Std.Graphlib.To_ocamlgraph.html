@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,13 +93,15 @@
 </div>
 <h1>Functor <a href="type_Graphlib.Std.Graphlib.To_ocamlgraph.html">Graphlib.Std.Graphlib.To_ocamlgraph</a></h1>
 
-<pre><span class="keyword">module</span> To_ocamlgraph <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Graphlib.Std.Graph.html">Std.Graph</a></code><code class="code">)&nbsp;</code>: <code class="type">Graph.Sig.P</code><code class="type">  with type t = G.t
+<pre><span id="MODULETo_ocamlgraph"><span class="keyword">module</span> To_ocamlgraph</span> <code class="code">(</code><code class="code"><span class="constructor">G</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Graphlib.Std.Graph.html">Std.Graph</a></code><code class="code">)&nbsp;</code>: <code class="type">Graph.Sig.P</code><code class="type">  with type t = G.t
                    and type V.t = G.node
                    and type E.t = G.edge
                    and type V.label = G.Node.label
                    and type E.label = G.Edge.label</code></pre><div class="info module top">
-<code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
-        OCamlGraph interface for a persistent graph.<br>
+<div class="info-desc">
+<p><code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
+        OCamlGraph interface for a persistent graph.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>

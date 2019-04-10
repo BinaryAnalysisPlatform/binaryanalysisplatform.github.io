@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -113,7 +114,7 @@ cacher type class<br>
 <code class="code">create&nbsp;~load&nbsp;~save</code> creates a cache provider.<br>
 </div>
 
-<pre><span id="VALdigest"><span class="keyword">val</span> digest</span> : <code class="type">namespace:string -><br>       ('a, Format.formatter, unit, <a href="Regular.Std.html#TYPEdigest">Std.digest</a>) format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALdigest"><span class="keyword">val</span> digest</span> : <code class="type">namespace:string -><br>       ('a, Format.formatter, unit, <a href="Regular.Std.html#TYPEdigest">Std.digest</a>) Std.format4 -><br>       'a</code></pre><div class="info ">
 <code class="code">digest&nbsp;~namespace&nbsp;fmt&nbsp;x&nbsp;y&nbsp;z&nbsp;...</code> a variadic function to
           create data digests. Use it like a printf, e.g.,
           <pre class="codepre"><code class="code">            <span class="keyword">type</span> t = {name : string; parent : string; lang : string}

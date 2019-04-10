@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,12 +89,13 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Observation.Provider.html">Bap_primus.Std.Primus.Observation.Provider</a></h1>
 
-<pre><span class="keyword">module</span> Provider: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.Provider.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Data interface to the provider.
-<p>
+<pre><span id="MODULEProvider"><span class="keyword">module</span> Provider</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Observation.Provider.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Data interface to the provider.</p>
 
-          This interface provides access to the data stream of all
-          providers expresses as a stream of s-expressions.<br>
+<p>This interface provides access to the data stream of all
+          providers expresses as a stream of s-expressions.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -101,18 +103,26 @@ Data interface to the provider.
 
 
 <pre><span id="VALname"><span class="keyword">val</span> name</span> : <code class="type"><a href="Bap_primus.Std.Primus.Observation.Provider.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-unique name of a provider<br>
+<div class="info-desc">
+<p>unique name of a provider</p>
+</div>
 </div>
 
 <pre><span id="VALobservers"><span class="keyword">val</span> observers</span> : <code class="type"><a href="Bap_primus.Std.Primus.Observation.Provider.html#TYPEt">t</a> -> int</code></pre><div class="info ">
-a total number of observers that subscribed to this provider<br>
+<div class="info-desc">
+<p>a total number of observers that subscribed to this provider</p>
+</div>
 </div>
 
 <pre><span id="VALtriggers"><span class="keyword">val</span> triggers</span> : <code class="type"><a href="Bap_primus.Std.Primus.Observation.Provider.html#TYPEt">t</a> -> unit <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
-triggers a stream of occurences of this observation<br>
+<div class="info-desc">
+<p>triggers a stream of occurences of this observation</p>
+</div>
 </div>
 
 <pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type"><a href="Bap_primus.Std.Primus.Observation.Provider.html#TYPEt">t</a> -><br>       Sexp.t <a href="Bap_future.Std.html#TYPEstream">Bap_future.Std.stream</a></code></pre><div class="info ">
-a data stream from this observation<br>
+<div class="info-desc">
+<p>a data stream from this observation</p>
+</div>
 </div>
 </body></html>

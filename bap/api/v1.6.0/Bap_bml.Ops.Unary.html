@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,22 +91,28 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_bml.Ops.Unary.html">Bap_bml.Ops.Unary</a></h1>
 
-<pre><span class="keyword">module</span> Unary: <code class="type"><a href="Bap_bml.Registry.html">Bap_bml.Registry</a></code><code class="type">  with type t = string -> t</code></pre><hr width="100%">
+<pre><span id="MODULEUnary"><span class="keyword">module</span> Unary</span>: <code class="type"><a href="Bap_bml.Registry.html">Bap_bml.Registry</a></code><code class="type">  with type t = string -> t</code></pre><hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
 <pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> <a href="Bap_bml.Registry.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-<code class="code">register&nbsp;name&nbsp;value</code> register <code class="code">value</code> with a given <code class="code">name</code>.
+<div class="info-desc">
+<p><code class="code">register&nbsp;name&nbsp;value</code> register <code class="code">value</code> with a given <code class="code">name</code>.
       If <code class="code">name</code> was already associated with some other value, then
-      it will be superseeded with the new binding.<br>
+      it will be superseeded with the new binding.</p>
+</div>
 </div>
 
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">string -> <a href="Bap_bml.Registry.html#TYPEt">t</a> option</code></pre><div class="info ">
-<code class="code">find&nbsp;name</code> find a value associated with the given <code class="code">value</code><br>
+<div class="info-desc">
+<p><code class="code">find&nbsp;name</code> find a value associated with the given <code class="code">value</code></p>
+</div>
 </div>
 
 <pre><span id="VALlist"><span class="keyword">val</span> list</span> : <code class="type">unit -> (string * <a href="Bap_bml.Registry.html#TYPEt">t</a>) list</code></pre><div class="info ">
-<code class="code">list&nbsp;()</code> list all bindings<br>
+<div class="info-desc">
+<p><code class="code">list&nbsp;()</code> list all bindings</p>
+</div>
 </div>
 </body></html>

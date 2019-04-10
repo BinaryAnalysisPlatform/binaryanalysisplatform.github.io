@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -102,7 +103,7 @@ Need the operand and the carry flag value src - the source, if you
 </div>
 <hr width="100%">
 
-<pre><span id="VALlift_c"><span class="keyword">val</span> lift_c</span> : <code class="type">src:Std.exp -><br>       <a href="Arm_types.html#TYPEshift">Arm_types.shift</a> -><br>       shift:Std.exp -> Std.typ -> Std.exp * Std.exp</code></pre><div class="info ">
+<pre><span id="VALlift_c"><span class="keyword">val</span> lift_c</span> : <code class="type">src:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -><br>       <a href="Arm_types.html#TYPEshift">Arm_types.shift</a> -><br>       shift:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> * <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 Need the operand and the carry flag value src - the source, if you
     intend to use the carry bit, this must not be the destination of the
     shift expression.  This means it must be a temp that contains the
@@ -120,7 +121,7 @@ decodes a register shifted operand
  * t - the type
  *<br>
 
-<pre><span id="VALlift_i"><span class="keyword">val</span> lift_i</span> : <code class="type">src:Std.exp -> <a href="Arm_types.html#TYPEop">Arm_types.op</a> -> Std.typ -> Std.exp * Std.exp</code></pre><div class="info ">
+<pre><span id="VALlift_i"><span class="keyword">val</span> lift_i</span> : <code class="type">src:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Arm_types.html#TYPEop">Arm_types.op</a> -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a> * <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 decodes an immediate shifted operand
  * src - the operand to be shifted, cannot be the destination
  *        in practice this means it must be a temp variable.
@@ -133,7 +134,7 @@ decodes an immediate shifted operand
  *<br>
 </div>
 
-<pre><span id="VALlift_mem"><span class="keyword">val</span> lift_mem</span> : <code class="type">src:Std.exp -> <a href="Arm_types.html#TYPEop">Arm_types.op</a> -> Std.typ -> Std.exp</code></pre><div class="info ">
+<pre><span id="VALlift_mem"><span class="keyword">val</span> lift_mem</span> : <code class="type">src:<a href="Bap.Std.html#TYPEexp">Std.exp</a> -> <a href="Arm_types.html#TYPEop">Arm_types.op</a> -> <a href="Bap.Std.html#TYPEtyp">Std.typ</a> -> <a href="Bap.Std.html#TYPEexp">Std.exp</a></code></pre><div class="info ">
 decodes a shifted operand for a memory operation
  * src - the operand to be shifted
  * shift - an int64,

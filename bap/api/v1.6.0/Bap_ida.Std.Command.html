@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,8 +93,10 @@
 </div>
 <h1>Module <a href="type_Bap_ida.Std.Command.html">Bap_ida.Std.Command</a></h1>
 
-<pre><span class="keyword">module</span> Command: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_ida.Std.Command.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Commands that can be passed into an IDA session<br>
+<pre><span id="MODULECommand"><span class="keyword">module</span> Command</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_ida.Std.Command.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Commands that can be passed into an IDA session</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -104,29 +107,35 @@ Commands that can be passed into an IDA session<br>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type"><a href="Bap_ida.Std.Command.html#TYPElanguage">language</a> -><br>       script:string -> parser:(string -> 'a) -> 'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;lang&nbsp;~script&nbsp;~<span class="keyword">parser</span></code> create a command that will
+<div class="info-desc">
+<p><code class="code">create&nbsp;lang&nbsp;~script&nbsp;~<span class="keyword">parser</span></code> create a command that will
         execute a <code class="code">script</code>, written in a given language, at then
-        parse the output using the specified parser function.
-<p>
+        parse the output using the specified parser function.</p>
 
-        If a script needs to output information, it must use a
+<p>If a script needs to output information, it must use a
         filename <code class="code">$output</code> (that will be substituted with the real
-        file name).
-<p>
+        file name).</p>
 
-        The parse name will get the name of the output file, so that
-        it can read and parse it.<br>
+<p>The parse name will get the name of the output file, so that
+        it can read and parse it.</p>
+</div>
 </div>
 
 <pre><span id="VALlanguage"><span class="keyword">val</span> language</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> <a href="Bap_ida.Std.Command.html#TYPElanguage">language</a></code></pre><div class="info ">
-<code class="code">language&nbsp;command</code> is a script language<br>
+<div class="info-desc">
+<p><code class="code">language&nbsp;command</code> is a script language</p>
+</div>
 </div>
 
 <pre><span id="VALscript"><span class="keyword">val</span> script</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">script&nbsp;command</code> the script text<br>
+<div class="info-desc">
+<p><code class="code">script&nbsp;command</code> the script text</p>
+</div>
 </div>
 
 <pre><span id="VALparser"><span class="keyword">val</span> parser</span> : <code class="type">'a <a href="Bap_ida.Std.Command.html#TYPEt">t</a> -> string -> 'a</code></pre><div class="info ">
-<code class="code"><span class="keyword">parser</span>&nbsp;command</code> the associated parser function.<br>
+<div class="info-desc">
+<p><code class="code"><span class="keyword">parser</span>&nbsp;command</code> the associated parser function.</p>
+</div>
 </div>
 </body></html>

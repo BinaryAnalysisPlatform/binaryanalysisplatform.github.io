@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -101,7 +102,7 @@ C language ABI.
 </div>
 <hr width="100%">
 
-<pre><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> * Std.exp</code> </pre>
+<pre><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> * <a href="Bap.Std.html#TYPEexp">Std.exp</a></code> </pre>
 <div class="info ">
 Function formal parameter is represented as a pair of
     an abstraction of data, that is passed via the parameter,
@@ -163,14 +164,14 @@ subroutine argument list is split into three parts:
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.insert_args">insert_args</span>&nbsp;: <code class="type">Std.sub Std.term -><br>       <a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> -> <a href="Bap_c_abi.html#TYPEargs">args</a> option</code>;</code></td>
+<code><span id="TYPEELTt.insert_args">insert_args</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -><br>       <a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> -> <a href="Bap_c_abi.html#TYPEargs">args</a> option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.apply_attrs">apply_attrs</span>&nbsp;: <code class="type"><a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> Std.sub Std.term -> Std.sub Std.term</code>;</code></td>
+<code><span id="TYPEELTt.apply_attrs">apply_attrs</span>&nbsp;: <code class="type"><a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> <a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code>;</code></td>
 
 </tr></table>
 }
@@ -202,7 +203,7 @@ an abi processor.
     sizes of primitive types, padding and alignment restrictions, etc.<br>
 </div>
 
-<pre><span id="VALarg_intent"><span class="keyword">val</span> arg_intent</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> Std.intent</code></pre><div class="info ">
+<pre><span id="VALarg_intent"><span class="keyword">val</span> arg_intent</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap.Std.html#TYPEintent">Std.intent</a></code></pre><div class="info ">
 <code class="code">arg_intent&nbsp;t</code> infers argument intention based on its C type.  If
     an argument is passed by value, i.e., it is a c basic type, then
     it is an input argument. If an argument is a reference, but not a

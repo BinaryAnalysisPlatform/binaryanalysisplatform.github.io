@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,36 +89,36 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_taint.Std.Taint.Gc.Conservative.html">Bap_taint.Std.Taint.Gc.Conservative</a></h1>
 
-<pre><span class="keyword">module</span> Conservative: <code class="type"><a href="Bap_primus.Std.Primus.Machine.Component.html">Std.Primus.Machine.Component</a></code><code class="type"> </code></pre><div class="info module top">
-Conservative Garbage Collector.
-<p>
+<pre><span id="MODULEConservative"><span class="keyword">module</span> Conservative</span>: <code class="type"><a href="Bap_primus.Std.Primus.Machine.Component.html">Std.Primus.Machine.Component</a></code><code class="type"> </code></pre><div class="info module top">
+<div class="info-desc">
+<p>Conservative Garbage Collector.</p>
 
-          The conservative garbage collector may keep taints alive
+<p>The conservative garbage collector may keep taints alive
           even when they become unreachable. This is an
           over-approximation and it is possible to devise a more precise
           GC, especially if soundness is not required (or not strictly
-          required).
-<p>
+          required).</p>
 
-          Taint is live if either of the following is true:
+<p>Taint is live if either of the following is true:
           1. it is attached to a value of a variable in <code class="code"><span class="constructor">Env</span>.all</code>;
-          2. it is attached to any address.
-<p>
+          2. it is attached to any address.</p>
 
-          The second clause gives a possibility for
+<p>The second clause gives a possibility for
           over-approximation, as we do not track, whether an address
           is reachable from the current program location. So once a
           tainted value is stored and the taint is attached to an
           address, the only way to kill this taint, is to overwrite it
-          with another value using another store operation.
-<p>
+          with another value using another store operation.</p>
 
-          Currently, the garbage collection runs every basic block,
-          but this may change in future.<br>
+<p>Currently, the garbage collection runs every basic block,
+          but this may change in future.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">unit -> unit Machine.t</code></pre><div class="info ">
-<code class="code">init&nbsp;()</code> component initialization function.<br>
+<div class="info-desc">
+<p><code class="code">init&nbsp;()</code> component initialization function.</p>
+</div>
 </div>
 </body></html>

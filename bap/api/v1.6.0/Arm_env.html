@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,120 +93,173 @@
 </div>
 <h1>Module <a href="type_Arm_env.html">Arm_env</a></h1>
 
-<pre><span class="keyword">module</span> Arm_env: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-<code class="code">spsr</code>  Saved Processor Status Register<br>
-</div>
-<hr width="100%">
+<pre><span id="MODULEArm_env"><span class="keyword">module</span> Arm_env</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Arm_env.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
-<pre><span id="VALspsr"><span class="keyword">val</span> spsr</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">spsr</code>  Saved Processor Status Register<br>
+<pre><span id="VALspsr"><span class="keyword">val</span> spsr</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">spsr</code>  Saved Processor Status Register</p>
 </div>
-
-<pre><span id="VALcpsr"><span class="keyword">val</span> cpsr</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">cpsr</code> Current Processor Status Register<br>
 </div>
 
-<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">nf</code> Negative Flag<br>
+<pre><span id="VALcpsr"><span class="keyword">val</span> cpsr</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">cpsr</code> Current Processor Status Register</p>
+</div>
 </div>
 
-<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">zf</code> Zero Flag<br>
+<pre><span id="VALnf"><span class="keyword">val</span> nf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">nf</code> Negative Flag</p>
+</div>
 </div>
 
-<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">cf</code> Carry Flag<br>
+<pre><span id="VALzf"><span class="keyword">val</span> zf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">zf</code> Zero Flag</p>
+</div>
 </div>
 
-<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">vf</code> oVerfrlow Flag<br>
+<pre><span id="VALcf"><span class="keyword">val</span> cf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">cf</code> Carry Flag</p>
+</div>
 </div>
 
-<pre><span id="VALqf"><span class="keyword">val</span> qf</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">qf</code> underflow (saturation) Flag<br>
+<pre><span id="VALvf"><span class="keyword">val</span> vf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">vf</code> oVerfrlow Flag</p>
+</div>
 </div>
 
-<pre><span id="VALge"><span class="keyword">val</span> ge</span> : <code class="type">Std.var array</code></pre><div class="info ">
-<code class="code">ge</code> array of general registers<br>
+<pre><span id="VALqf"><span class="keyword">val</span> qf</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">qf</code> underflow (saturation) Flag</p>
+</div>
 </div>
 
-<pre><span id="VALitstate"><span class="keyword">val</span> itstate</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">itstate</code> ITSTATE register<br>
+<pre><span id="VALge"><span class="keyword">val</span> ge</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> array</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">ge</code> array of general registers</p>
+</div>
 </div>
 
-<pre><span id="VALlr"><span class="keyword">val</span> lr</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">lr</code> Link Register<br>
+<pre><span id="VALitstate"><span class="keyword">val</span> itstate</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">itstate</code> ITSTATE register</p>
+</div>
 </div>
 
-<pre><span id="VALpc"><span class="keyword">val</span> pc</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">pc</code> Program Counter<br>
+<pre><span id="VALlr"><span class="keyword">val</span> lr</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">lr</code> Link Register</p>
+</div>
 </div>
 
-<pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">sp</code> Stack Pointer<br>
+<pre><span id="VALpc"><span class="keyword">val</span> pc</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pc</code> Program Counter</p>
+</div>
 </div>
 
-<pre><span id="VALr0"><span class="keyword">val</span> r0</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALsp"><span class="keyword">val</span> sp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">sp</code> Stack Pointer</p>
+</div>
 </div>
 
-<pre><span id="VALr1"><span class="keyword">val</span> r1</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr0"><span class="keyword">val</span> r0</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr2"><span class="keyword">val</span> r2</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr1"><span class="keyword">val</span> r1</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr3"><span class="keyword">val</span> r3</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr2"><span class="keyword">val</span> r2</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr4"><span class="keyword">val</span> r4</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr3"><span class="keyword">val</span> r3</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr5"><span class="keyword">val</span> r5</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr4"><span class="keyword">val</span> r4</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr6"><span class="keyword">val</span> r6</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr5"><span class="keyword">val</span> r5</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr7"><span class="keyword">val</span> r7</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr6"><span class="keyword">val</span> r6</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr8"><span class="keyword">val</span> r8</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr7"><span class="keyword">val</span> r7</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr9"><span class="keyword">val</span> r9</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr8"><span class="keyword">val</span> r8</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr10"><span class="keyword">val</span> r10</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr9"><span class="keyword">val</span> r9</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr11"><span class="keyword">val</span> r11</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr10"><span class="keyword">val</span> r10</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALr12"><span class="keyword">val</span> r12</span> : <code class="type">Std.var</code></pre><div class="info ">
-general purpose register<br>
+<pre><span id="VALr11"><span class="keyword">val</span> r11</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALof_reg"><span class="keyword">val</span> of_reg</span> : <code class="type"><a href="Arm_types.html#TYPEreg">Arm_types.reg</a> -> Std.var</code></pre><div class="info ">
-<code class="code">of_reg&nbsp;arm_reg</code> lifts arm register into BIL variable<br>
+<pre><span id="VALr12"><span class="keyword">val</span> r12</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>general purpose register</p>
+</div>
 </div>
 
-<pre><span id="VALnew_var"><span class="keyword">val</span> new_var</span> : <code class="type">string -> Std.var</code></pre><div class="info ">
-<code class="code">new_var&nbsp;name</code> creates a freshly new variable prefixed with <code class="code">name</code><br>
+<pre><span id="VALof_reg"><span class="keyword">val</span> of_reg</span> : <code class="type"><a href="Arm_types.html#TYPEreg">Arm_types.reg</a> -> <a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">of_reg&nbsp;arm_reg</code> lifts arm register into BIL variable</p>
+</div>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">Std.var</code></pre><div class="info ">
-<code class="code">mem</code> BIL variable that denotes the system memory.<br>
+<pre><span id="VALnew_var"><span class="keyword">val</span> new_var</span> : <code class="type">string -> <a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">new_var&nbsp;name</code> creates a freshly new variable prefixed with <code class="code">name</code></p>
+</div>
+</div>
+
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">mem</code> BIL variable that denotes the system memory.</p>
+</div>
 </div>
 </body></html>

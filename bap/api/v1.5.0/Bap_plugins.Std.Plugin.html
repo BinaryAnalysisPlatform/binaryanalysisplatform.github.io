@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -122,7 +123,7 @@ Plugin - a loadable self-contained piece of code.
 <code class="code">bundle&nbsp;plugin</code> returns a plugin's bundle<br>
 </div>
 
-<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?argv:string array -> <a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit Or_error.t</code></pre><div class="info ">
+<pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type">?argv:string array -><br>       <a href="Bap_plugins.Std.Plugin.html#TYPEt">t</a> -> unit Std.Or_error.t</code></pre><div class="info ">
 <code class="code">load&nbsp;plugin</code> load all unsatisfied dependencies of a <code class="code">plugin</code>,
         and then load the <code class="code">plugin</code> itself. If it is already
         loaded, then do nothing.

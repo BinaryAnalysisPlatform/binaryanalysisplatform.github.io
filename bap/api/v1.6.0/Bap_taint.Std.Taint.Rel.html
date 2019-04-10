@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,32 +93,36 @@
 </div>
 <h1>Module <a href="type_Bap_taint.Std.Taint.Rel.html">Bap_taint.Std.Taint.Rel</a></h1>
 
-<pre><span class="keyword">module</span> Rel: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Rel.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Relation between a value and an object that we track.
-<p>
+<pre><span id="MODULERel"><span class="keyword">module</span> Rel</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_taint.Std.Taint.Rel.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Relation between a value and an object that we track.</p>
 
-        The framework tracks runtime values. Each value is a word,
+<p>The framework tracks runtime values. Each value is a word,
         e.g., a byte, a bit, or a machine word, that can be somehow
-        related to the actual object that we track.
-<p>
+        related to the actual object that we track.</p>
 
-        There could be different kinds of relations, denoted with
+<p>There could be different kinds of relations, denoted with
         different values of this abstract type. So far, we distinguish
-        between the <code class="code">direct</code> and <code class="code">indirect</code> relation.<br>
+        between the <code class="code">direct</code> and <code class="code">indirect</code> relation.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-Denotes the direct relation between a value and the object
+<div class="info-desc">
+<p>Denotes the direct relation between a value and the object
           that we track, e.g., a value contains the runtime
-          representation of the object or a part of it.<br>
+          representation of the object or a part of it.</p>
+</div>
 </div>
 
 
 <pre><span id="VALindirect"><span class="keyword">val</span> indirect</span> : <code class="type"><a href="Bap_taint.Std.Taint.Rel.html#TYPEt">t</a></code></pre><div class="info ">
-Denotes the indirect relation between a value and the object
+<div class="info-desc">
+<p>Denotes the indirect relation between a value and the object
           that we track, e.g., a value is a pointer that points to a
-          value that has the direct relation with the object.<br>
+          value that has the direct relation with the object.</p>
+</div>
 </div>
 </body></html>

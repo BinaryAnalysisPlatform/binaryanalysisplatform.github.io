@@ -7,6 +7,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -82,17 +83,19 @@
 </head>
 <body>
 <code class="code"><span class="keyword">sig</span><br>
-&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;tuple&nbsp;=&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;tuple&nbsp;=&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Sexp</span>.t<br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;fact&nbsp;=&nbsp;<span class="constructor">Bare</span>.tuple<br>
 &nbsp;&nbsp;<span class="keyword">module</span>&nbsp;<span class="constructor">Rule</span>&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">sig</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;t<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Ppx_sexp_conv_lib</span>.<span class="constructor">Sexp</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;sexp_of_t&nbsp;:&nbsp;t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Sexplib</span>.<span class="constructor">Sexp</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">type</span>&nbsp;error<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;from_string&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;list,&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.error)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Result</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;list,&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.error)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Result</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;from_file&nbsp;:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;list,&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.error)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Result</span>.t<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;list,&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.error)&nbsp;<span class="constructor">Core_kernel</span>.<span class="constructor">Std</span>.<span class="constructor">Result</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;of_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;lhs&nbsp;:&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bare</span>.tuple&nbsp;list<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;rhs&nbsp;:&nbsp;<span class="constructor">Bare</span>.<span class="constructor">Rule</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">Bare</span>.fact&nbsp;list<br>

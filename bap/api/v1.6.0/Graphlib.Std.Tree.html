@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,12 +91,13 @@
 </div>
 <h1>Module <a href="type_Graphlib.Std.Tree.html">Graphlib.Std.Tree</a></h1>
 
-<pre><span class="keyword">module</span> Tree: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Tree.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Tree is a particular subtype of a graph for which
+<pre><span id="MODULETree"><span class="keyword">module</span> Tree</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Tree.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Tree is a particular subtype of a graph for which
       each node has only one predecessor, and there is only
       one path between tree root and any other node.
-      Here is an example of a tree:
-      <pre class="verbatim">                                 (A)
+      Here is an example of a tree:</p>
+<pre class="verbatim">                                 (A)
                                   |
                           +-------+-------+
                           |       |       |
@@ -106,7 +108,7 @@ Tree is a particular subtype of a graph for which
                          (E)     (F)     (G)
                                   |
                                  (H)
-       </pre><br>
+       </pre></div>
 </div>
 <hr width="100%">
 
@@ -114,64 +116,81 @@ Tree is a particular subtype of a graph for which
 
 
 <pre><span id="VALchildren"><span class="keyword">val</span> children</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">children&nbsp;tree&nbsp;x</code> returns all immediate successors of node
+<div class="info-desc">
+<p><code class="code">children&nbsp;tree&nbsp;x</code> returns all immediate successors of node
         <code class="code">x</code>. For example, children of node <code class="code"><span class="constructor">A</span></code> is a sequence of
-        <code class="code"><span class="constructor">B</span>,<span class="constructor">C</span>,<span class="constructor">D</span></code>. But node <code class="code"><span class="constructor">B</span></code> doesn't have any children at all.<br>
+        <code class="code"><span class="constructor">B</span>,<span class="constructor">C</span>,<span class="constructor">D</span></code>. But node <code class="code"><span class="constructor">B</span></code> doesn't have any children at all.</p>
+</div>
 </div>
 
 <pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a option</code></pre><div class="info ">
-<code class="code">parent&nbsp;tree&nbsp;n</code> returns an immediate parent of a given node.
+<div class="info-desc">
+<p><code class="code">parent&nbsp;tree&nbsp;n</code> returns an immediate parent of a given node.
         Returns <code class="code"><span class="constructor">None</span></code> only if <code class="code">n</code> is a tree root. For example, parent
-        of <code class="code"><span class="constructor">F</span></code> is <code class="code"><span class="constructor">C</span></code>. And <code class="code"><span class="constructor">A</span></code> doesn't have a parent.<br>
+        of <code class="code"><span class="constructor">F</span></code> is <code class="code"><span class="constructor">C</span></code>. And <code class="code"><span class="constructor">A</span></code> doesn't have a parent.</p>
+</div>
 </div>
 
 <pre><span id="VALancestors"><span class="keyword">val</span> ancestors</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">ancestors&nbsp;tree&nbsp;n</code> returns a sequence of all ancestors of node
+<div class="info-desc">
+<p><code class="code">ancestors&nbsp;tree&nbsp;n</code> returns a sequence of all ancestors of node
         <code class="code">n</code>. An ancestor of a node is either a parent or an ancestor of
         the parent. For example, ancestors of <code class="code"><span class="constructor">G</span></code> are <code class="code"><span class="constructor">C</span></code> and <code class="code"><span class="constructor">D</span></code>. The
         root node is the only one, that has an empty set of
-        ancestors.<br>
+        ancestors.</p>
+</div>
 </div>
 
 <pre><span id="VALdescendants"><span class="keyword">val</span> descendants</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">descendants&nbsp;tree&nbsp;n</code> returns a set of all descendants of a given
+<div class="info-desc">
+<p><code class="code">descendants&nbsp;tree&nbsp;n</code> returns a set of all descendants of a given
         node <code class="code">n</code>. Descendant is either a child or a descendant of a
         child. For example, all nodes in the example <code class="code">tree</code> (except
         the roots itself) are descendants of the root <code class="code"><span class="constructor">A</span></code>.  The
-        descendants of <code class="code"><span class="constructor">C</span></code> are <code class="code"><span class="constructor">E</span>,<span class="constructor">F</span>,<span class="constructor">G</span>,<span class="constructor">H</span></code>.<br>
+        descendants of <code class="code"><span class="constructor">C</span></code> are <code class="code"><span class="constructor">E</span>,<span class="constructor">F</span>,<span class="constructor">G</span>,<span class="constructor">H</span></code>.</p>
+</div>
 </div>
 
 <pre><span id="VALis_child_of"><span class="keyword">val</span> is_child_of</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> parent:'a -> 'a -> bool</code></pre><div class="info ">
-<code class="code">is_child_of&nbsp;tree&nbsp;parent&nbsp;child</code> returns <code class="code"><span class="keyword">true</span></code> if child is one
-        of <code class="code">children&nbsp;tree&nbsp;root</code><br>
+<div class="info-desc">
+<p><code class="code">is_child_of&nbsp;tree&nbsp;parent&nbsp;child</code> returns <code class="code"><span class="keyword">true</span></code> if child is one
+        of <code class="code">children&nbsp;tree&nbsp;root</code></p>
+</div>
 </div>
 
 <pre><span id="VALis_ancestor_of"><span class="keyword">val</span> is_ancestor_of</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> child:'a -> 'a -> bool</code></pre><div class="info ">
-<code class="code">is_ancestor_of&nbsp;tree&nbsp;child&nbsp;x</code> returns true, if <code class="code">x</code> is one of
-        the ancestors of a <code class="code">child</code> node.<br>
+<div class="info-desc">
+<p><code class="code">is_ancestor_of&nbsp;tree&nbsp;child&nbsp;x</code> returns true, if <code class="code">x</code> is one of
+        the ancestors of a <code class="code">child</code> node.</p>
+</div>
 </div>
 
 <pre><span id="VALis_descendant_of"><span class="keyword">val</span> is_descendant_of</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> parent:'a -> 'a -> bool</code></pre><div class="info ">
-<code class="code">is_descendant_of&nbsp;~parent&nbsp;tree&nbsp;x</code> is <code class="code"><span class="keyword">true</span></code> for all <code class="code">x</code> that
-        are descendants of a <code class="code">parent</code> node.<br>
+<div class="info-desc">
+<p><code class="code">is_descendant_of&nbsp;~parent&nbsp;tree&nbsp;x</code> is <code class="code"><span class="keyword">true</span></code> for all <code class="code">x</code> that
+        are descendants of a <code class="code">parent</code> node.</p>
+</div>
 </div>
 
 <pre><span id="VALto_sequence"><span class="keyword">val</span> to_sequence</span> : <code class="type">'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> -> 'a <a href="Regular.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
-<code class="code">to_sequence&nbsp;tree</code> enumerates nodes of a <code class="code">tree</code> in an
-        unspecified order.<br>
+<div class="info-desc">
+<p><code class="code">to_sequence&nbsp;tree</code> enumerates nodes of a <code class="code">tree</code> in an
+        unspecified order.</p>
+</div>
 </div>
 
 <pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">'a <a href="Regular.Std.html#TYPEprinter">Std.printer</a> -> 'a <a href="Graphlib.Std.Tree.html#TYPEt">t</a> <a href="Regular.Std.html#TYPEprinter">Std.printer</a></code></pre><div class="info ">
-<code class="code">pp&nbsp;pp_elt</code> creates a pretty-printer for a node, based on
+<div class="info-desc">
+<p><code class="code">pp&nbsp;pp_elt</code> creates a pretty-printer for a node, based on
         element's pretty-printer <code class="code">pp_elt</code>. The tree is printed in a dot
-        format, for the ease of visualization. Example:
-        <pre class="codepre"><code class="code"><span class="keyword">let</span> pp_int_tree = <span class="constructor">Tree</span>.pp <span class="constructor">Int</span>.pp</code></pre>
-        Note: For all instatiations of <code class="code"><span class="constructor">Graph</span></code> interface in the
+        format, for the ease of visualization. Example:</p>
+<pre class="codepre"><code class="code"><span class="keyword">let</span> pp_int_tree = <span class="constructor">Tree</span>.pp <span class="constructor">Int</span>.pp</code></pre><p>Note: For all instatiations of <code class="code"><span class="constructor">Graph</span></code> interface in the
         <code class="code"><span class="constructor">Graphlib</span></code> library printable versions of <code class="code">tree</code>, <code class="code">partition</code>,
         <code class="code">group</code> etc are provided. For example, for <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Int</span>.<span class="constructor">Bool</span></code>
         graph the printable version of a <code class="code">tree</code> is available under
         <code class="code"><span class="constructor">Graphlib</span>.<span class="constructor">Int</span>.<span class="constructor">Tree</span></code>. All instantiated pretty-printers are
         automatically installed once the library is loaded into the
-        toplevel.<br>
+        toplevel.</p>
+</div>
 </div>
 </body></html>

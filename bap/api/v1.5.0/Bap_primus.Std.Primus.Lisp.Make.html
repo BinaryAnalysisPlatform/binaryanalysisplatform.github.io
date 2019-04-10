@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -173,7 +174,7 @@ Make(Machine) creates a Lisp machine embedded into the
 <div class="param_info"><code class="code">params</code> : optional type specification</div>
 <div class="param_info"><code class="code">doc</code> : optional documentation string</div>
 
-<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, unit -> 'b Machine.t) format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALfailf"><span class="keyword">val</span> failf</span> : <code class="type">('a, unit, string, unit -> 'b Machine.t) Std.format4 -> 'a</code></pre><div class="info ">
 <code class="code">failf&nbsp;msg&nbsp;a1&nbsp;...&nbsp;am&nbsp;()</code> terminates a lisp machine, and
             correspondingly the Primus machine with the
             <code class="code"><span class="constructor">Runtime_error</span></code>.<br>

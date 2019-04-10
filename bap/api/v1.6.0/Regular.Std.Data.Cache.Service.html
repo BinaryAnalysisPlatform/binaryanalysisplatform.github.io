@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,35 +91,38 @@
 &nbsp;</div>
 <h1>Module <a href="type_Regular.Std.Data.Cache.Service.html">Regular.Std.Data.Cache.Service</a></h1>
 
-<pre><span class="keyword">module</span> Service: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Cache.Service.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Service injection point.
-<p>
+<pre><span id="MODULEService"><span class="keyword">module</span> Service</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Cache.Service.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Service injection point.</p>
 
-          By default the library doesn't provide any caching
-          services. All data stored in the cache is forgotten.
-<p>
+<p>By default the library doesn't provide any caching
+          services. All data stored in the cache is forgotten.</p>
 
-          The caching service is provided by plugins, who register
+<p>The caching service is provided by plugins, who register
           itself using <code class="code"><span class="constructor">Service</span>.provide</code> function. Only one caching
-          service can be active at given moment.
-<p>
+          service can be active at given moment.</p>
 
-          Note: this interface is for implementing caching for data
+<p>Note: this interface is for implementing caching for data
           type. If you're using data type whose module <code class="code"><span class="constructor">T</span></code> implements
           interface <a href="Regular.Std.Data.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span></code></a>, then you can just use <code class="code"><span class="constructor">T</span>.<span class="constructor">Data</span>.<span class="constructor">Cache</span></code>
           module. If you need to add caching to your custom data type,
           then use <a href="Regular.html"><code class="code"><span class="constructor">Regular</span></code></a>, <a href="Regular.Std.Opaque.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Opaque</span></code></a> or <a href="Regular.Std.Data.Make.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">Make</span></code></a> functors (in
-          the order of preference).<br>
+          the order of preference).</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type"><a href="Regular.Std.Data.Cache.html#TYPEservice">Std.Data.Cache.service</a> -> unit</code></pre><div class="info ">
-<code class="code">provide&nbsp;service</code> will substitute current caching service
-            with a new <code class="code">service</code>.<br>
+<div class="info-desc">
+<p><code class="code">provide&nbsp;service</code> will substitute current caching service
+            with a new <code class="code">service</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALrequest"><span class="keyword">val</span> request</span> : <code class="type">'a <a href="Regular.Std.html#TYPEreader">Std.reader</a> -> 'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a> -> 'a <a href="Regular.Std.Data.Cache.html#TYPEt">Std.Data.Cache.t</a></code></pre><div class="info ">
-<code class="code">request&nbsp;reader&nbsp;writer</code> returns a caching service for
-            type <code class="code"><span class="keywordsign">'</span>a</code>.<br>
+<div class="info-desc">
+<p><code class="code">request&nbsp;reader&nbsp;writer</code> returns a caching service for
+            type <code class="code"><span class="keywordsign">'</span>a</code>.</p>
+</div>
 </div>
 </body></html>

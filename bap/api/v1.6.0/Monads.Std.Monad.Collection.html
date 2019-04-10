@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,21 +93,20 @@
 </div>
 <h1>Module <a href="type_Monads.Std.Monad.Collection.html">Monads.Std.Monad.Collection</a></h1>
 
-<pre><span class="keyword">module</span> Collection: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Container interface in the Kleisli category.
-<p>
+<pre><span id="MODULECollection"><span class="keyword">module</span> Collection</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Container interface in the Kleisli category.</p>
 
-        The module provides two interfaces for collections
+<p>The module provides two interfaces for collections
         (containters) where functions return monadic computations
-        instead of values.
-<p>
+        instead of values.</p>
 
-        As usuall, two interfaces are provided:<ul>
+<p>As usuall, two interfaces are provided:</p>
+<ul>
 <li> <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> for unary monad</li>
 <li> <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> for binary monad</li>
 </ul>
-
-        The container interfaces can be derived for any collection
+<p>The container interfaces can be derived for any collection
         that implements a base interface. In our case we have two
         versions of the base interfaces,
         <a href="Monads.Std.Monad.Collection.Eager.html">Eager</a> and
@@ -114,10 +114,9 @@ Container interface in the Kleisli category.
         only in the type of the <code class="code">fold</code> function. The <code class="code"><span class="constructor">Eager</span></code> interface
         provides a regular <code class="code">fold</code> function, while the <code class="code"><span class="constructor">Delay</span>.fold</code> is
         a more general variant of <code class="code">fold</code> that is parametrized by a
-        continuation.
-<p>
+        continuation.</p>
 
-        If it is not possible to provide the generic version of <code class="code">fold</code>,
+<p>If it is not possible to provide the generic version of <code class="code">fold</code>,
         then all iterators will be implemented using continuations,
         (i.e., will use a constant stack size). However, the iterators
         that maybe short circuited (i.e., a computation may be
@@ -126,27 +125,33 @@ Container interface in the Kleisli category.
         elements. This is especially problematic with infinite
         sequences. So if it is possible the delayed version of <code class="code">fold</code>
         should be provided, especially in the case of infinite
-        sequences.<br>
+        sequences.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Basic.html">Basic</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Base signature for collections
+<pre><span id="MODULETYPEBasic"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Basic.html">Basic</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Basic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Base signature for collections</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Eager.html">Eager</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Eager.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A container with an eager (regular) fold.
+<pre><span id="MODULETYPEEager"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Eager.html">Eager</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Eager.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A container with an eager (regular) fold.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Delay.html">Delay</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Delay.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A container with a generic fold
+<pre><span id="MODULETYPEDelay"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.Delay.html">Delay</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.Delay.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A container with a generic fold</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.S2.html">S2</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A container interface for a binary monad.
+<pre><span id="MODULETYPES2"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.S2.html">S2</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A container interface for a binary monad.</p>
+
 </div>
 
-<pre><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A container interface for an unary monad
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Monads.Std.Monad.Collection.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Collection.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A container interface for an unary monad</p>
+
 </div>
 </body></html>

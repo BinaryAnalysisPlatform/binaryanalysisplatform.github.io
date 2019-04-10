@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,27 +91,27 @@
 &nbsp;</div>
 <h1>Module <a href="type_Ogre.Query.String.html">Ogre.Query.String</a></h1>
 
-<pre><span class="keyword">module</span> String: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Query.String.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Defines field subscripting syntax.
-<p>
+<pre><span id="MODULEString"><span class="keyword">module</span> String</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Query.String.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Defines field subscripting syntax.</p>
 
-      It is also possible to reference a field of a  column by
-      the column's number in the selection. For example, in a query
-<p>
+<p>It is also possible to reference a field of a  column by
+      the column's number in the selection. For example, in a query</p>
 
-      <pre class="codepre"><code class="code">select (from students $ students)
+<pre class="codepre"><code class="code">select (from students $ students)
           ~join:[[field name]]
           ~where:(id.[0] &lt;&gt; id.[1])</code></pre>
-<p>
-
-      a variable <code class="code">id.[0]</code> will be bound to the field <code class="code">id</code> of the
+<p>a variable <code class="code">id.[0]</code> will be bound to the field <code class="code">id</code> of the
       first column of a selection, and <code class="code">id.[1]</code> will be bound to the
-      second one.<br>
+      second one.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Ogre.html#TYPEfield">Ogre.field</a> -> int -> <a href="Ogre.Query.html#TYPEexp">Ogre.Query.exp</a></code></pre><div class="info ">
-<code class="code">filed.(n)</code> creates a field variable that ranges over values
-        of <code class="code">field</code> that belongs to the n'th attribute of a selection.<br>
+<div class="info-desc">
+<p><code class="code">filed.(n)</code> creates a field variable that ranges over values
+        of <code class="code">field</code> that belongs to the n'th attribute of a selection.</p>
+</div>
 </div>
 </body></html>

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,7 +89,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_bundle.Std.html">Bap_bundle.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span id="EXCEPTIONNot_a_bundle"><span class="keyword">exception</span> Not_a_bundle</span></pre>
 
@@ -96,20 +97,24 @@
 
 
 <pre><span id="VALmain_bundle"><span class="keyword">val</span> main_bundle</span> : <code class="type">unit -> <a href="Bap_bundle.Std.html#TYPEbundle">bundle</a></code></pre><div class="info ">
-<code class="code">main_bundle&nbsp;()</code> returns a program's bundle if the program is
+<div class="info-desc">
+<p><code class="code">main_bundle&nbsp;()</code> returns a program's bundle if the program is
       bundled, otherwise creates a fresh new bundle in current working
       directory. The name of the bundle is a basename of
-      <code class="code"><span class="constructor">Sys</span>.executable_name</code> with a <code class="code">bundle</code> extension.<br>
+      <code class="code"><span class="constructor">Sys</span>.executable_name</code> with a <code class="code">bundle</code> extension.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Manifest.html">Manifest</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Manifest.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Program meta infromation.
+<pre><span id="MODULEManifest"><span class="keyword">module</span> <a href="Bap_bundle.Std.Manifest.html">Manifest</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Manifest.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Program meta infromation.</p>
+
 </div>
 
 <pre><span id="TYPEmanifest"><span class="keyword">type</span> <code class="type"></code>manifest</span> = <code class="type"><a href="Bap_bundle.Std.Manifest.html#TYPEt">Manifest.t</a></code> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_bundle.Std.Bundle.html">Bundle</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Program Bundle.
+<pre><span id="MODULEBundle"><span class="keyword">module</span> <a href="Bap_bundle.Std.Bundle.html">Bundle</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Program Bundle.</p>
+
 </div>
 </body></html>

@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,36 +91,37 @@
 &nbsp;</div>
 <h1>Module <a href="type_Graphlib.Std.Graphlib.Dot.html">Graphlib.Std.Graphlib.Dot</a></h1>
 
-<pre><span class="keyword">module</span> Dot: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Graphlib.Dot.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Generic dot printer.<br>
+<pre><span id="MODULEDot"><span class="keyword">module</span> Dot</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Graphlib.Std.Graphlib.Dot.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Generic dot printer.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Sequence.t -><br>       edges:'e Sequence.t -> Format.formatter -> unit</code></pre><div class="info ">
-<code class="code">pp_graph&nbsp;~nodes_of_edge&nbsp;~nodes&nbsp;~edges&nbsp;ppf</code> - generic dot
-          printer.
-<p>
+<pre><span id="VALpp_graph"><span class="keyword">val</span> pp_graph</span> : <code class="type">?name:string -><br>       ?attrs:string list -><br>       ?string_of_node:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?node_label:'n <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       ?edge_label:'e <a href="Graphlib.Std.Graphlib.html#TYPEsymbolizer">Std.Graphlib.symbolizer</a> -><br>       nodes_of_edge:('e -> 'n * 'n) -><br>       nodes:'n Sequence.t -><br>       edges:'e Sequence.t -> Stdlib.Format.formatter -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp_graph&nbsp;~nodes_of_edge&nbsp;~nodes&nbsp;~edges&nbsp;ppf</code> - generic dot
+          printer.</p>
 
-          This function is useful for implementing custom dot
+<p>This function is useful for implementing custom dot
           printers. Use it if the default dot printer <code class="code"><span class="constructor">Graph</span>.pp</code>
-          doesn't suit your needs.
-<p>
+          doesn't suit your needs.</p>
 
-          For the purpose of this function a graph can be represented
-          with three values:<ul>
+<p>For the purpose of this function a graph can be represented
+          with three values:</p>
+<ul>
 <li><code class="code">nodes_of_edge</code> returns the source and destination nodes
               of an edge;</li>
 <li><code class="code">nodes</code> is a sequence of nodes;</li>
 <li><code class="code">edges</code> is a sequence of edges;</li>
 </ul>
-<br>
+</div>
 </div>
 <div class="param_info"><code class="code">name</code> : the name of the graph.</div>
 <div class="param_info"><code class="code">attrs</code> : graphviz attributes of the graph.</div>
 <div class="param_info"><code class="code">string_of_node</code> : name of a node.</div>
 <div class="param_info"><code class="code">node_label</code> : text representation of the node label.</div>
 <div class="param_info"><code class="code">edge_label</code> : text representation of the edge label.
-<p>
 
           All optional parameters default to a null value, so that
           if a parameter is not specified, then a corresponding entry

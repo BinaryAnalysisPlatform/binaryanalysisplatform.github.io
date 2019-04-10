@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,33 +89,41 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_plugins.Std.html">Bap_plugins.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Interface to the plugin subsystem.<br>
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Interface to the plugin subsystem.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEplugin"><span class="keyword">type</span> <code class="type"></code>plugin</span> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugin.html">Plugin</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Plugin - a loadable self-contained piece of code.
+<pre><span id="MODULEPlugin"><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugin.html">Plugin</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugin.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Plugin - a loadable self-contained piece of code.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugins.html">Plugins</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Plugin loader.
+<pre><span id="MODULEPlugins"><span class="keyword">module</span> <a href="Bap_plugins.Std.Plugins.html">Plugins</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_plugins.Std.Plugins.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Plugin loader.</p>
+
 </div>
 
 <pre><span id="VALlist_loaded_units"><span class="keyword">val</span> list_loaded_units</span> : <code class="type">unit -> string list</code></pre><div class="info ">
-<code class="code">list_loaded_units&nbsp;()</code> evaluates to a list of compilation unit
+<div class="info-desc">
+<p><code class="code">list_loaded_units&nbsp;()</code> evaluates to a list of compilation unit
       names currently loaded into the system. The list includes both,
       units loaded dynamically, and those that were statically linked
-      into the host program.<br>
+      into the host program.</p>
+</div>
 </div>
 
 <pre><span id="VALsetup_dynamic_loader"><span class="keyword">val</span> setup_dynamic_loader</span> : <code class="type">(string -> unit) -> unit</code></pre><div class="info ">
-<code class="code">setup_dynamic_loader&nbsp;loader</code> installs <code class="code">loader</code> program. The
+<div class="info-desc">
+<p><code class="code">setup_dynamic_loader&nbsp;loader</code> installs <code class="code">loader</code> program. The
       <code class="code">loader</code> takes a filename and loads it.
       This function is used internally, for different modes of
-      execution (native, byte, topleve)<br>
+      execution (native, byte, topleve)</p>
+</div>
 </div>
 </body></html>

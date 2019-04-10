@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,38 +91,47 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.Load.html">Bap_primus.Std.Primus.Lisp.Load</a></h1>
 
-<pre><span class="keyword">module</span> Load: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Load.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Primus Lisp program loader<br>
+<pre><span id="MODULELoad"><span class="keyword">module</span> Load</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Load.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Primus Lisp program loader</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> </pre>
 <div class="info ">
-abstract error type<br>
+<div class="info-desc">
+<p>abstract error type</p>
+</div>
 </div>
 
 
-<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type">?paths:string list -><br>       Std.project -><br>       string list -><br>       (<a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a>, <a href="Bap_primus.Std.Primus.Lisp.Load.html#TYPEerror">error</a>)<br>       result</code></pre><div class="info ">
-<code class="code">program&nbsp;?paths&nbsp;proj&nbsp;features</code> loads a program that
+<pre><span id="VALprogram"><span class="keyword">val</span> program</span> : <code class="type">?paths:string list -><br>       <a href="Bap.Std.html#TYPEproject">Std.project</a> -><br>       string list -><br>       (<a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a>, <a href="Bap_primus.Std.Primus.Lisp.Load.html#TYPEerror">error</a>)<br>       result</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">program&nbsp;?paths&nbsp;proj&nbsp;features</code> loads a program that
             implements a set of <code class="code">features</code>. For each feature its
             implementation file, that must have the same basename as
             the name of feature, is looked up in the list of
             directories, specified by the <code class="code">path</code> parameter (defaults
             to the current folder). The first implementation that is
-            found, will be used, thus the order of the paths matters.
-<p>
+            found, will be used, thus the order of the paths matters.</p>
 
-            Returns an abstract representation of a program, that can
+<p>Returns an abstract representation of a program, that can
             be linked into the Lisp machine, or an error if the program
-            is not well-formed.<br>
+            is not well-formed.</p>
+</div>
 </div>
 
-<pre><span id="VALpp_error"><span class="keyword">val</span> pp_error</span> : <code class="type">Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.Load.html#TYPEerror">error</a> -> unit</code></pre><div class="info ">
-<code class="code">pp_error&nbsp;ppf&nbsp;err</code> outputs error information into the
-            pretty-printing formatter <code class="code">ppf</code>.<br>
+<pre><span id="VALpp_error"><span class="keyword">val</span> pp_error</span> : <code class="type">Stdlib.Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.Load.html#TYPEerror">error</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp_error&nbsp;ppf&nbsp;err</code> outputs error information into the
+            pretty-printing formatter <code class="code">ppf</code>.</p>
+</div>
 </div>
 
-<pre><span id="VALpp_program"><span class="keyword">val</span> pp_program</span> : <code class="type">Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a> -> unit</code></pre><div class="info ">
-<code class="code">pp_program&nbsp;ppf&nbsp;program</code> dumps program definitions into the formatter <code class="code">ppf</code><br>
+<pre><span id="VALpp_program"><span class="keyword">val</span> pp_program</span> : <code class="type">Stdlib.Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.html#TYPEprogram">Std.Primus.Lisp.program</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp_program&nbsp;ppf&nbsp;program</code> dumps program definitions into the formatter <code class="code">ppf</code></p>
+</div>
 </div>
 </body></html>

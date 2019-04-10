@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -174,16 +175,16 @@ Data representation version. After any change in data
           the <code class="code">offset</code>.<br>
 </div>
 
-<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">?ver:string -> ?fmt:string -> bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">?ver:string -><br>       ?fmt:string -> Std.bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a></code></pre><div class="info ">
 <code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buf</code> deserializes a datum from bigstring<br>
 </div>
 
-<pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">?ver:string -> ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> bigstring</code></pre><div class="info ">
+<pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">?ver:string -><br>       ?fmt:string -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> Std.bigstring</code></pre><div class="info ">
 <code class="code">of_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;datum</code> serializes a datum to a sequence of
           bytes represented as bigstring<br>
 </div>
 
-<pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">?ver:string -><br>       ?fmt:string -> bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">?ver:string -><br>       ?fmt:string -><br>       Std.bigstring -> <a href="Regular.Std.Data.S.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
 <code class="code">blit_to_bigstring&nbsp;?ver&nbsp;?fmt&nbsp;buffer&nbsp;datum&nbsp;offset</code> copies a
           serialized representation of datum into a <code class="code">buffer</code>, starting from
           <code class="code">offset</code>.<br>

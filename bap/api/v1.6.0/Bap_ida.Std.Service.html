@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,8 +91,10 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_ida.Std.Service.html">Bap_ida.Std.Service</a></h1>
 
-<pre><span class="keyword">module</span> Service: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_ida.Std.Service.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Allow plugins to specify that they can provide IDA service<br>
+<pre><span id="MODULEService"><span class="keyword">module</span> Service</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_ida.Std.Service.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Allow plugins to specify that they can provide IDA service</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -115,11 +118,12 @@ Allow plugins to specify that they can provide IDA service<br>
 
 
 <pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type">(string -> <a href="Bap_ida.Std.Service.html#TYPEt">t</a>) -> unit</code></pre><div class="info ">
-<code class="code">provide&nbsp;creator</code> provides for a service that can perform the
-        roles of <code class="code"><span class="constructor">Ida</span>.create</code>, <code class="code"><span class="constructor">Ida</span>.exec</code>, <code class="code"><span class="constructor">Ida</span>.close</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">provide&nbsp;creator</code> provides for a service that can perform the
+        roles of <code class="code"><span class="constructor">Ida</span>.create</code>, <code class="code"><span class="constructor">Ida</span>.exec</code>, <code class="code"><span class="constructor">Ida</span>.close</code>.</p>
 
-        The <code class="code">creator</code> function accepts a path to a target file and
-        returns an instance of ida service.<br>
+<p>The <code class="code">creator</code> function accepts a path to a target file and
+        returns an instance of ida service.</p>
+</div>
 </div>
 </body></html>

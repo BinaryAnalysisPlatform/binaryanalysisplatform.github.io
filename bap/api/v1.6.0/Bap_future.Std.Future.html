@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,16 +93,15 @@
 </div>
 <h1>Module <a href="type_Bap_future.Std.Future.html">Bap_future.Std.Future</a></h1>
 
-<pre><span class="keyword">module</span> Future: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Future.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Future is an object whose value will be decided somewhere in the
-      future, if that future has occurred.
-<p>
+<pre><span id="MODULEFuture"><span class="keyword">module</span> Future</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Future.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Future is an object whose value will be decided somewhere in the
+      future, if that future has occurred.</p>
 
-      Futures can be seen as memory cells that can be set only once,
-      thus having two states: empty and filled.
-<p>
+<p>Futures can be seen as memory cells that can be set only once,
+      thus having two states: empty and filled.</p>
 
-      A future may occur at some point of physical time. A future
+<p>A future may occur at some point of physical time. A future
       is total. If a promise cannot be fulfilled due to an error,
       that just means, that in this world this future is not
       possible. Thus the future object models nonlinear tree-like
@@ -109,24 +109,21 @@ Future is an object whose value will be decided somewhere in the
       one can use either a sum type as a future value, or a tuple of
       futures. The former is preferred, if different future is
       decidable (i.e., only one path is possible). The latter is
-      preferred if different variants are possible.
-<p>
+      preferred if different variants are possible.</p>
 
-      A future is a monad, and it is preferred to work with the future
-      via the monadic interface, e.g.,
-<p>
+<p>A future is a monad, and it is preferred to work with the future
+      via the monadic interface, e.g.,</p>
 
-      <pre class="codepre"><code class="code">        <span class="keyword">let</span> first_insn mem pc : mem <span class="constructor">Or_error</span>.t future =
+<pre class="codepre"><code class="code">        <span class="keyword">let</span> first_insn mem pc : mem <span class="constructor">Or_error</span>.t future =
           <span class="constructor">Future</span>.(<span class="constructor">Stream</span>.nth pc 0 &gt;&gt;= <span class="keyword">fun</span> fst <span class="keywordsign">-&gt;</span>
                   <span class="constructor">Stream</span>.nth pc 1 &gt;&gt;= <span class="keyword">fun</span> snd <span class="keywordsign">-&gt;</span>
                   return (<span class="constructor">Memory</span>.range mem fst snd))
       </code></pre>
-<p>
-
-      Note: the future is a common denominator between lwt thread,
+<p>Note: the future is a common denominator between lwt thread,
       async deferred, native ocaml event, or any other value, that is
       defined asynchronously. Once can also think of futures and
-      threads as a software pattern to work with callbacks.<br>
+      threads as a software pattern to work with callbacks.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -137,29 +134,39 @@ Future is an object whose value will be decided somewhere in the
 
 <pre><span class="keyword">include</span> Applicative.S</pre>
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Future.Variadic.html">Variadic</a>: <code class="type"><a href="Bap_future.Std.Variadic.S.html">Bap_future.Std.Variadic.S</a></code><code class="type">  with type 'a arg = 'a t</code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Future.Args.html">Args</a>: <code class="type">Applicative.Args</code><code class="type">  with type 'a arg := 'a t</code></pre>
+<pre><span id="MODULEVariadic"><span class="keyword">module</span> <a href="Bap_future.Std.Future.Variadic.html">Variadic</a></span>: <code class="type"><a href="Bap_future.Std.Variadic.S.html">Bap_future.Std.Variadic.S</a></code><code class="type">  with type 'a arg = 'a t</code></pre>
+<pre><span id="MODULEArgs"><span class="keyword">module</span> <a href="Bap_future.Std.Future.Args.html">Args</a></span>: <code class="type">Applicative.Args</code><code class="type">  with type 'a arg := 'a t</code></pre>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="Bap_future.Std.Future.html#TYPEt">t</a> * 'a <a href="Bap_future.Std.html#TYPEpromise">Bap_future.Std.promise</a></code></pre><div class="info ">
-<code class="code">create&nbsp;()</code> creates a new future. The function returns a pair
+<div class="info-desc">
+<p><code class="code">create&nbsp;()</code> creates a new future. The function returns a pair
         of the future itself and a promise that can be used to fulfill
-        the future.<br>
+        the future.</p>
+</div>
 </div>
 
 <pre><span id="VALupon"><span class="keyword">val</span> upon</span> : <code class="type">'a <a href="Bap_future.Std.Future.html#TYPEt">t</a> -> ('a -> unit) -> unit</code></pre><div class="info ">
-<code class="code">upon&nbsp;f&nbsp;action</code> will call <code class="code">action</code> as soon a future <code class="code">f</code> occurs.<br>
+<div class="info-desc">
+<p><code class="code">upon&nbsp;f&nbsp;action</code> will call <code class="code">action</code> as soon a future <code class="code">f</code> occurs.</p>
+</div>
 </div>
 
 <pre><span id="VALis_decided"><span class="keyword">val</span> is_decided</span> : <code class="type">'a <a href="Bap_future.Std.Future.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
-<code class="code">is_decided&nbsp;f</code> is true if a future <code class="code">f</code> is already decided.<br>
+<div class="info-desc">
+<p><code class="code">is_decided&nbsp;f</code> is true if a future <code class="code">f</code> is already decided.</p>
+</div>
 </div>
 
 <pre><span id="VALpeek"><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="Bap_future.Std.Future.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
-<code class="code">peek&nbsp;f</code> will return <code class="code"><span class="constructor">Some</span>&nbsp;value</code> if future <code class="code">f</code> has already
-        occurred with this <code class="code">value</code>.<br>
+<div class="info-desc">
+<p><code class="code">peek&nbsp;f</code> will return <code class="code"><span class="constructor">Some</span>&nbsp;value</code> if future <code class="code">f</code> has already
+        occurred with this <code class="code">value</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALpeek_exn"><span class="keyword">val</span> peek_exn</span> : <code class="type">'a <a href="Bap_future.Std.Future.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
-<code class="code">peek_exn&nbsp;f</code>
-        will evaluate to <code class="code">x</code> iff <code class="code">is_decided&nbsp;f&nbsp;<span class="keywordsign">&amp;&amp;</span>&nbsp;peek&nbsp;f&nbsp;x&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;x</code><br>
+<div class="info-desc">
+<p><code class="code">peek_exn&nbsp;f</code>
+        will evaluate to <code class="code">x</code> iff <code class="code">is_decided&nbsp;f&nbsp;<span class="keywordsign">&amp;&amp;</span>&nbsp;peek&nbsp;f&nbsp;x&nbsp;=&nbsp;<span class="constructor">Some</span>&nbsp;x</code></p>
+</div>
 </div>
 </body></html>

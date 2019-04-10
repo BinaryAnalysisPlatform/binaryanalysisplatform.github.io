@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -91,51 +92,57 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_traces.Std.html">Bap_traces.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Traces of execution.<br>
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Traces of execution.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEtrace"><span class="keyword">type</span> <code class="type"></code>trace</span> </pre>
 <div class="info ">
-the trace<br>
+<div class="info-desc">
+<p>the trace</p>
+</div>
 </div>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Trace.html">Trace</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Trace is a stream of events plus meta data.
+<pre><span id="MODULETrace"><span class="keyword">module</span> <a href="Bap_traces.Std.Trace.html">Trace</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Trace is a stream of events plus meta data.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Traces.html">Traces</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Traces.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Loaded traces.
+<pre><span id="MODULETraces"><span class="keyword">module</span> <a href="Bap_traces.Std.Traces.html">Traces</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Traces.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Loaded traces.</p>
+
 </div>
-<br>
-<h2 id="2_TraceEvents">Trace Events</h2>
-<p>
+<h3 id="2_TraceEvents">Trace Events</h3>
+<p>The trace may contain arbitrary events. The events below is a
+      good starting point. Other libraries may add more event.</p>
+<h4 id="3_Supportingdatatypes">Supporting data types</h4>
+<pre><span id="MODULEMove"><span class="keyword">module</span> <a href="Bap_traces.Std.Move.html">Move</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Move.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Represent a movement of data</p>
 
-      The trace may contain arbitrary events. The events below is a
-      good starting point. Other libraries may add more event.<br>
-<br>
-<h3 id="3_Supportingdatatypes">Supporting data types</h3><br>
-
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Move.html">Move</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Move.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Represent a movement of data
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Chunk.html">Chunk</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Chunk.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Represent a memory chunk.
+<pre><span id="MODULEChunk"><span class="keyword">module</span> <a href="Bap_traces.Std.Chunk.html">Chunk</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Chunk.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Represent a memory chunk.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Syscall.html">Syscall</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Syscall.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-a system call
+<pre><span id="MODULESyscall"><span class="keyword">module</span> <a href="Bap_traces.Std.Syscall.html">Syscall</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Syscall.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>a system call</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Exn.html">Exn</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-hardware exception
+<pre><span id="MODULEExn"><span class="keyword">module</span> <a href="Bap_traces.Std.Exn.html">Exn</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Exn.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>hardware exception</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Location.html">Location</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Location.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A code location
+<pre><span id="MODULELocation"><span class="keyword">module</span> <a href="Bap_traces.Std.Location.html">Location</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Location.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A code location</p>
+
 </div>
 
 <pre><span id="TYPElocation"><span class="keyword">type</span> <code class="type"></code>location</span> = <code class="type"><a href="Bap_traces.Std.Location.html#TYPEt">Location.t</a></code> </pre>
@@ -143,16 +150,19 @@ A code location
 
 
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Call.html">Call</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Call.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A subroutine call.
+<pre><span id="MODULECall"><span class="keyword">module</span> <a href="Bap_traces.Std.Call.html">Call</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Call.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A subroutine call.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Return.html">Return</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Return.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A return from a call.
+<pre><span id="MODULEReturn"><span class="keyword">module</span> <a href="Bap_traces.Std.Return.html">Return</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Return.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A return from a call.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Modload.html">Modload</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Modload.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-linking event
+<pre><span id="MODULEModload"><span class="keyword">module</span> <a href="Bap_traces.Std.Modload.html">Modload</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Modload.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>linking event</p>
+
 </div>
 
 <pre><span id="TYPEmove"><span class="keyword">type</span> <code class="type">'a</code> move</span> = <code class="type">'a <a href="Bap_traces.Std.Move.html#TYPEt">Move.t</a></code> </pre>
@@ -190,26 +200,29 @@ linking event
 
 
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Event.html">Event</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Types of events.
-</div>
-<br>
-<h2 id="2_Metainformation">Meta information</h2><br>
+<pre><span id="MODULEEvent"><span class="keyword">module</span> <a href="Bap_traces.Std.Event.html">Event</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Event.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Types of events.</p>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Tracer.html">Tracer</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Tracer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Information about a tracer tool.
 </div>
+<h3 id="2_Metainformation">Meta information</h3>
+<pre><span id="MODULETracer"><span class="keyword">module</span> <a href="Bap_traces.Std.Tracer.html">Tracer</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Tracer.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Information about a tracer tool.</p>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Binary.html">Binary</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Binary.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Information about a traced binary.
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.File_stats.html">File_stats</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.File_stats.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-File information.
+<pre><span id="MODULEBinary"><span class="keyword">module</span> <a href="Bap_traces.Std.Binary.html">Binary</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Binary.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Information about a traced binary.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Trace_stats.html">Trace_stats</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace_stats.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Information about the trace itself
+<pre><span id="MODULEFile_stats"><span class="keyword">module</span> <a href="Bap_traces.Std.File_stats.html">File_stats</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.File_stats.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>File information.</p>
+
+</div>
+
+<pre><span id="MODULETrace_stats"><span class="keyword">module</span> <a href="Bap_traces.Std.Trace_stats.html">Trace_stats</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace_stats.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Information about the trace itself</p>
+
 </div>
 
 <pre><span id="TYPEtracer"><span class="keyword">type</span> <code class="type"></code>tracer</span> = <code class="type"><a href="Bap_traces.Std.Tracer.html#TYPEt">Tracer.t</a></code> </pre>
@@ -232,7 +245,8 @@ Information about the trace itself
 
 
 
-<pre><span class="keyword">module</span> <a href="Bap_traces.Std.Meta.html">Meta</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Meta.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Types of meta information.
+<pre><span id="MODULEMeta"><span class="keyword">module</span> <a href="Bap_traces.Std.Meta.html">Meta</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Meta.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Types of meta information.</p>
+
 </div>
 </body></html>

@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,7 +91,7 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_c.Std.C.Parser.html">Bap_c.Std.C.Parser</a></h1>
 
-<pre><span class="keyword">module</span> Parser: <code class="type"><a href="Bap_c_parser.html">Bap_c_parser</a></code></pre><hr width="100%">
+<pre><span id="MODULEParser"><span class="keyword">module</span> Parser</span>: <code class="type"><a href="Bap_c_parser.html">Bap_c_parser</a></code></pre><hr width="100%">
 
 <pre><span id="TYPEdecls"><span class="keyword">type</span> <code class="type"></code>decls</span> = <code class="type">(string * <a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a>) list</code> </pre>
 
@@ -99,11 +100,15 @@
 
 
 <pre><span id="VALrun"><span class="keyword">val</span> run</span> : <code class="type"><a href="Bap_c_parser.html#TYPEparser">parser</a></code></pre><div class="info ">
-<code class="code">run&nbsp;filename</code> parses file and returns a mapping from identifier
-    to its type.<br>
+<div class="info-desc">
+<p><code class="code">run&nbsp;filename</code> parses file and returns a mapping from identifier
+    to its type.</p>
+</div>
 </div>
 
 <pre><span id="VALprovide"><span class="keyword">val</span> provide</span> : <code class="type"><a href="Bap_c_parser.html#TYPEparser">parser</a> -> unit</code></pre><div class="info ">
-called by a plugin that provides a parser.<br>
+<div class="info-desc">
+<p>called by a plugin that provides a parser.</p>
+</div>
 </div>
 </body></html>

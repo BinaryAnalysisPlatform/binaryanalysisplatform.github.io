@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -100,14 +101,14 @@ Language processor interface.<br>
 <code class="code">language</code> a name of a language, e.g., <code class="code"><span class="string">"C"</span></code><br>
 </div>
 
-<pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">(<a href="Bap_api.html#TYPEapi">Bap_api.api</a> -> <a href="Bap_api.html#TYPEfilename">Bap_api.filename</a> option) -><br>       <a href="Bap_api.html#TYPEapi">Bap_api.api</a> list -> <a href="Bap_api.S.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
+<pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">(<a href="Bap_api.html#TYPEapi">Bap_api.api</a> -> <a href="Bap_api.html#TYPEfilename">Bap_api.filename</a> option) -><br>       <a href="Bap_api.html#TYPEapi">Bap_api.api</a> list -> <a href="Bap_api.S.html#TYPEt">t</a> Std.Or_error.t</code></pre><div class="info ">
 <code class="code">parse&nbsp;get_api&nbsp;apis</code> creates a language processor from a list of
       api. Function <code class="code">get_api&nbsp;api</code> must return a name of an existing
       file, that corresponds to the given <code class="code">api</code>. The <code class="code">apis</code> parameter
       is a list of <code class="code">api</code> names.<br>
 </div>
 
-<pre><span id="VALmapper"><span class="keyword">val</span> mapper</span> : <code class="type"><a href="Bap_api.S.html#TYPEt">t</a> -> Std.Term.mapper</code></pre><div class="info ">
+<pre><span id="VALmapper"><span class="keyword">val</span> mapper</span> : <code class="type"><a href="Bap_api.S.html#TYPEt">t</a> -> <a href="Bap.Std.Term.mapper-c.html">Std.Term.mapper</a></code></pre><div class="info ">
 the processor itself<br>
 </div>
 </body></html>

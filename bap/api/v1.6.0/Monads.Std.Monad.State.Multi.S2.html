@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,53 +91,71 @@
 &nbsp;</div>
 <h1>Module type <a href="type_Monads.Std.Monad.State.Multi.S2.html">Monads.Std.Monad.State.Multi.S2</a></h1>
 
-<pre><span class="keyword">module type</span> S2 = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
+<pre><span id="MODULETYPES2"><span class="keyword">module type</span> S2</span> = <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.State.Multi.S2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><hr width="100%">
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Trans.S1.html">Monads.Std.Monad.Trans.S1</a></pre>
 
 <pre><span id="TYPEid"><span class="keyword">type</span> <code class="type"></code>id</span> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.State.Multi.S2.Id.html">Id</a>: <code class="type">Identifiable.S</code><code class="type">  with type t = id</code></pre>
+<pre><span id="MODULEId"><span class="keyword">module</span> <a href="Monads.Std.Monad.State.Multi.S2.Id.html">Id</a></span>: <code class="type">Identifiable.S</code><code class="type">  with type t = id</code></pre>
 <pre><span id="VALglobal"><span class="keyword">val</span> global</span> : <code class="type"><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a></code></pre><div class="info ">
-the identifier of the global (initial) state.<br>
+<div class="info-desc">
+<p>the identifier of the global (initial) state.</p>
+</div>
 </div>
 
 <pre><span id="VALfork"><span class="keyword">val</span> fork</span> : <code class="type">unit -> (unit, 'e) t</code></pre><div class="info ">
-<code class="code">fork&nbsp;()</code> forks the current state.<br>
+<div class="info-desc">
+<p><code class="code">fork&nbsp;()</code> forks the current state.</p>
+</div>
 </div>
 
 <pre><span id="VALswitch"><span class="keyword">val</span> switch</span> : <code class="type"><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> -> (unit, 'e) t</code></pre><div class="info ">
-<code class="code">switch&nbsp;id</code> switches to the state with the given <code class="code">id</code> if
+<div class="info-desc">
+<p><code class="code">switch&nbsp;id</code> switches to the state with the given <code class="code">id</code> if
               such state is alive, otherwise switches to the closest
-              alive ancestor of the state with the given <code class="code">id</code><br>
+              alive ancestor of the state with the given <code class="code">id</code></p>
+</div>
 </div>
 
 <pre><span id="VALparent"><span class="keyword">val</span> parent</span> : <code class="type">unit -> (<a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a>, 'e) t</code></pre><div class="info ">
-<code class="code">parent&nbsp;()</code> returns an identifier of the closest alive parent.<br>
+<div class="info-desc">
+<p><code class="code">parent&nbsp;()</code> returns an identifier of the closest alive parent.</p>
+</div>
 </div>
 
 <pre><span id="VALancestor"><span class="keyword">val</span> ancestor</span> : <code class="type"><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> list -><br>       (<a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a>, 'e) t</code></pre><div class="info ">
-<code class="code">ancestor&nbsp;ids</code> returns an identifier of the closest
-              common ancestor of states with the given identifiers.<br>
+<div class="info-desc">
+<p><code class="code">ancestor&nbsp;ids</code> returns an identifier of the closest
+              common ancestor of states with the given identifiers.</p>
+</div>
 </div>
 
 <pre><span id="VALcurrent"><span class="keyword">val</span> current</span> : <code class="type">unit -> (<a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a>, 'e) t</code></pre><div class="info ">
-<code class="code">current&nbsp;id</code> returns an identifier of current state.<br>
+<div class="info-desc">
+<p><code class="code">current&nbsp;id</code> returns an identifier of current state.</p>
+</div>
 </div>
 
 <pre><span id="VALkill"><span class="keyword">val</span> kill</span> : <code class="type"><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> -> (unit, 'e) t</code></pre><div class="info ">
-<code class="code">kill&nbsp;id</code> kills a state with the specified <code class="code">id</code>. If <code class="code">id</code>
+<div class="info-desc">
+<p><code class="code">kill&nbsp;id</code> kills a state with the specified <code class="code">id</code>. If <code class="code">id</code>
               corresponds to the current state, then switches to the
-              closest ancestor.  If <code class="code">id&nbsp;=&nbsp;global</code> then do nothing.<br>
+              closest ancestor.  If <code class="code">id&nbsp;=&nbsp;global</code> then do nothing.</p>
+</div>
 </div>
 
 <pre><span id="VALforks"><span class="keyword">val</span> forks</span> : <code class="type">unit -> (<a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> Sequence.t, 'e) t</code></pre><div class="info ">
-<code class="code">forks&nbsp;xs</code> returns a sequence of all alive states<br>
+<div class="info-desc">
+<p><code class="code">forks&nbsp;xs</code> returns a sequence of all alive states</p>
+</div>
 </div>
 
 <pre><span id="VALstatus"><span class="keyword">val</span> status</span> : <code class="type"><a href="Monads.Std.Monad.State.Multi.S2.html#TYPEid">id</a> -><br>       (<a href="Monads.Std.Monad.State.Multi.html#TYPEstatus">Std.Monad.State.Multi.status</a>, 'e) t</code></pre><div class="info ">
-<code class="code">status&nbsp;id</code> returns a status of a state with the given <code class="code">id</code><br>
+<div class="info-desc">
+<p><code class="code">status&nbsp;id</code> returns a status of a state with the given <code class="code">id</code></p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.State.S2.html">Monads.Std.Monad.State.S2</a></pre>

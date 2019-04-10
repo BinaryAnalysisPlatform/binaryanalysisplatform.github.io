@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,25 +93,29 @@
 </div>
 <h1>Module <a href="type_Regular.Std.Opaque.html">Regular.Std.Opaque</a></h1>
 
-<pre><span class="keyword">module</span> Opaque: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Opaque type is like regular type, except that we can print or
+<pre><span id="MODULEOpaque"><span class="keyword">module</span> Opaque</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Opaque type is like regular type, except that we can print or
       examine it in any way. So it can't be serialized or
       pretty-printed. An <a href="Regular.Std.Opaque.Make.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Opaque</span>.<span class="constructor">Make</span></code></a> can create an instances of
-      such type.<br>
+      such type.</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">module type</span> <a href="Regular.Std.Opaque.S.html">S</a> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Opaque type is like regular type, except that we can print or
-      examine it in any way.
+<pre><span id="MODULETYPES"><span class="keyword">module type</span> <a href="Regular.Std.Opaque.S.html">S</a></span> = <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Opaque.S.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Opaque type is like regular type, except that we can print or
+      examine it in any way.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Regular.Std.Opaque.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="code"><span class="keyword">sig</span></code></pre><div class="sig_block">
+<pre><span id="MODULEMake"><span class="keyword">module</span> <a href="Regular.Std.Opaque.Make.html">Make</a></span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="code"><span class="keyword">sig</span></code></pre><div class="sig_block">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
 
 
 </div><pre><code class="code"><span class="keyword">end</span></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Regular.Std.Opaque.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info">
-creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+<p>creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.</p>
+
 </div>
 </body></html>

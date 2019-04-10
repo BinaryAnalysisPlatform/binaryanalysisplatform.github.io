@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,47 +93,57 @@
 </div>
 <h1>Module <a href="type_Regular.Std.Data.Read.html">Regular.Std.Data.Read</a></h1>
 
-<pre><span class="keyword">module</span> Read: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Read.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-<code class="code"><span class="constructor">Read</span></code> typeclass.
-<p>
+<pre><span id="MODULERead"><span class="keyword">module</span> Read</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Read.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Read</span></code> typeclass.</p>
 
-        A class of readable values. It is rarely needed to use this
+<p>A class of readable values. It is rarely needed to use this
         module directly, as it is used for implementing new readers,
         i.e., new protocols. If you are looking for the IO functions
-        available for a type, then look at the <a href="Regular.Std.Data.S.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">S</span></code></a> interface.<br>
+        available for a type, then look at the <a href="Regular.Std.Data.S.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">S</span></code></a> interface.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code> </pre>
 <div class="info ">
-readable<br>
+<div class="info-desc">
+<p>readable</p>
+</div>
 </div>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?of_channel:(In_channel.t -> 'a) -><br>       ?of_lexbuf:(<a href="Regular.Std.Data.html#TYPElexbuf">Std.Data.lexbuf</a> -> 'a) -><br>       ?of_scanbuf:(<a href="Regular.Std.Data.html#TYPEscanbuf">Std.Data.scanbuf</a> -> 'a) -><br>       ?of_bigstring:(bigstring -> 'a) -><br>       ?of_bytes:(<a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> 'a) -> unit -> 'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a></code></pre><div class="info ">
-A minimal complete definition is any method except
-          <code class="code">of_channel</code> (that is not sufficient).
-<p>
+<div class="info-desc">
+<p>A minimal complete definition is any method except
+          <code class="code">of_channel</code> (that is not sufficient).</p>
 
-          If a class is defined only with <code class="code">from_bigstring</code> or <code class="code">from_bytes</code>
+<p>If a class is defined only with <code class="code">from_bigstring</code> or <code class="code">from_bytes</code>
           then <code class="code">from_channel</code> function will consume all input and pass it
-          to the correspondings function.<br>
+          to the correspondings function.</p>
+</div>
 </div>
 
 <pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> 'a</code></pre><div class="info ">
-<code class="code">of_bytes&nbsp;readable&nbsp;bytes</code> reads a value from <code class="code">bytes</code><br>
+<div class="info-desc">
+<p><code class="code">of_bytes&nbsp;readable&nbsp;bytes</code> reads a value from <code class="code">bytes</code></p>
+</div>
 </div>
 
 <pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> In_channel.t -> 'a</code></pre><div class="info ">
-<code class="code">of_channel&nbsp;readable&nbsp;channel</code> inputs a value from a
+<div class="info-desc">
+<p><code class="code">of_channel&nbsp;readable&nbsp;channel</code> inputs a value from a
           channel. If <code class="code">of_channel</code> function wasn't provided when
           <code class="code">readable</code> was created, then the whole content of the
           <code class="code"><span class="constructor">In_channel</span>.t</code> is read into an intermediate buffer, that is later
-          read. Any leftover bytes are discarded.<br>
+          read. Any leftover bytes are discarded.</p>
+</div>
 </div>
 
 <pre><span id="VALof_bigstring"><span class="keyword">val</span> of_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Read.html#TYPEt">t</a> -> bigstring -> 'a</code></pre><div class="info ">
-<code class="code">of_bigstring&nbsp;readable&nbsp;buf</code> deserializes a <code class="code">readable</code> value
-          from the bigstring.<br>
+<div class="info-desc">
+<p><code class="code">of_bigstring&nbsp;readable&nbsp;buf</code> deserializes a <code class="code">readable</code> value
+          from the bigstring.</p>
+</div>
 </div>
 </body></html>

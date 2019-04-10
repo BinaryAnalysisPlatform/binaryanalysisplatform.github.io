@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,14 +89,15 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_bundle.Std.Bundle.Builder.html">Bap_bundle.Std.Bundle.Builder</a></h1>
 
-<pre><span class="keyword">module</span> Builder: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Incremental bundle builder.
-<p>
+<pre><span id="MODULEBuilder"><span class="keyword">module</span> Builder</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_bundle.Std.Bundle.Builder.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Incremental bundle builder.</p>
 
-        Using this module it is possible to build bundle
+<p>Using this module it is possible to build bundle
         recipe incrementally. The data, that was added to
         the bundle will not be copied until the <code class="code">flush</code> method is
-        called.<br>
+        called.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -103,27 +105,37 @@ Incremental bundle builder.
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;()</code> creates a builder.<br>
+<div class="info-desc">
+<p><code class="code">create&nbsp;()</code> creates a builder.</p>
+</div>
 </div>
 
 <pre><span id="VALput_file"><span class="keyword">val</span> put_file</span> : <code class="type">?name:string -> <a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> Uri.t -> unit</code></pre><div class="info ">
-<code class="code">put_file&nbsp;?name&nbsp;builder&nbsp;uri</code> insert a file specified by the
+<div class="info-desc">
+<p><code class="code">put_file&nbsp;?name&nbsp;builder&nbsp;uri</code> insert a file specified by the
           <code class="code">uri</code>. If <code class="code">name</code> is specified, then the file will be stored
-          under the specified <code class="code">name</code> in the bundle.<br>
+          under the specified <code class="code">name</code> in the bundle.</p>
+</div>
 </div>
 
 <pre><span id="VALput_data"><span class="keyword">val</span> put_data</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> name:string -> data:string -> unit</code></pre><div class="info ">
-<code class="code">put_data&nbsp;builder&nbsp;~name&nbsp;~data</code> insert <code class="code">data</code> at path
-          <code class="code">name</code>.<br>
+<div class="info-desc">
+<p><code class="code">put_data&nbsp;builder&nbsp;~name&nbsp;~data</code> insert <code class="code">data</code> at path
+          <code class="code">name</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALembed_manifest"><span class="keyword">val</span> embed_manifest</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> <a href="Bap_bundle.Std.html#TYPEmanifest">Bap_bundle.Std.manifest</a> -> unit</code></pre><div class="info ">
-<code class="code">embed_manifest&nbsp;builder&nbsp;manifest</code> embeds a manifest. If it
-          was already embedded, then old one will be overwritten.<br>
+<div class="info-desc">
+<p><code class="code">embed_manifest&nbsp;builder&nbsp;manifest</code> embeds a manifest. If it
+          was already embedded, then old one will be overwritten.</p>
+</div>
 </div>
 
 <pre><span id="VALflush"><span class="keyword">val</span> flush</span> : <code class="type"><a href="Bap_bundle.Std.Bundle.Builder.html#TYPEt">t</a> -> Uri.t -> unit</code></pre><div class="info ">
-<code class="code">flush&nbsp;builder&nbsp;output</code> finish the building and output the
-          resulting bundle into the file <code class="code">output</code>.<br>
+<div class="info-desc">
+<p><code class="code">flush&nbsp;builder&nbsp;output</code> finish the building and output the
+          resulting bundle into the file <code class="code">output</code>.</p>
+</div>
 </div>
 </body></html>

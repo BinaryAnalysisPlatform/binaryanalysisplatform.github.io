@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,17 +91,21 @@
 &nbsp;</div>
 <h1>Module <a href="type_X86_cpu.AMD64.html">X86_cpu.AMD64</a></h1>
 
-<pre><span class="keyword">module</span> AMD64: <code class="code"><span class="keyword">sig</span></code> <a href="X86_cpu.AMD64.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-AMD64 registers<br>
+<pre><span id="MODULEAMD64"><span class="keyword">module</span> AMD64</span>: <code class="code"><span class="keyword">sig</span></code> <a href="X86_cpu.AMD64.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>AMD64 registers</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span class="keyword">include</span> Bap.Std.CPU</pre>
+<pre><span class="keyword">include</span> <a href="Bap.Std.CPU.html">Bap.Std.CPU</a></pre>
 
 <pre><span class="keyword">include</span> <a href="X86_cpu.IA32.html">X86_cpu.IA32</a></pre>
 
-<pre><span id="VALr"><span class="keyword">val</span> r</span> : <code class="type">Std.var array</code></pre><div class="info ">
-r8-r15 registers.
-      Due to a legacy issues r.(0) -&gt; r8, r.(1) -&gt; r8, ...<br>
+<pre><span id="VALr"><span class="keyword">val</span> r</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> array</code></pre><div class="info ">
+<div class="info-desc">
+<p>r8-r15 registers.
+      Due to a legacy issues r.(0) -&gt; r8, r.(1) -&gt; r8, ...</p>
+</div>
 </div>
 </body></html>

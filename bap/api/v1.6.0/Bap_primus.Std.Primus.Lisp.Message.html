@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,20 +93,23 @@
 </div>
 <h1>Module <a href="type_Bap_primus.Std.Primus.Lisp.Message.html">Bap_primus.Std.Primus.Lisp.Message</a></h1>
 
-<pre><span class="keyword">module</span> Message: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Message.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Lisp Machine Message interface.
-<p>
+<pre><span id="MODULEMessage"><span class="keyword">module</span> Message</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_primus.Std.Primus.Lisp.Message.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Lisp Machine Message interface.</p>
 
-          Lisp machine messages are sent with the <code class="code">msg</code> primitive. The
-          messages are abstract, but they could be printed.<br>
+<p>Lisp machine messages are sent with the <code class="code">msg</code> primitive. The
+          messages are abstract, but they could be printed.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type"><a href="Bap_primus.Std.Primus.Lisp.html#TYPEmessage">Std.Primus.Lisp.message</a></code> </pre>
 
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.Message.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-<code class="code">pp&nbsp;ppf&nbsp;msg</code> prints the message into the specified
-            formatter <code class="code">ppf</code>.<br>
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Stdlib.Format.formatter -> <a href="Bap_primus.Std.Primus.Lisp.Message.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp&nbsp;ppf&nbsp;msg</code> prints the message into the specified
+            formatter <code class="code">ppf</code>.</p>
+</div>
 </div>
 </body></html>

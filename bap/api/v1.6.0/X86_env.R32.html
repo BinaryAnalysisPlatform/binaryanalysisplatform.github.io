@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,77 +91,113 @@
 </div>
 <h1>Module <a href="type_X86_env.R32.html">X86_env.R32</a></h1>
 
-<pre><span class="keyword">module</span> R32: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info module top">
-32-bit mode registers<br>
+<pre><span id="MODULER32"><span class="keyword">module</span> R32</span>: <code class="type"><a href="X86_env.ModeVars.html">ModeVars</a></code><code class="type"> </code></pre><div class="info module top">
+<div class="info-desc">
+<p>32-bit mode registers</p>
+</div>
 </div>
 <hr width="100%">
 
-<pre><span id="VALrbp"><span class="keyword">val</span> rbp</span> : <code class="type">Std.var</code></pre><div class="info ">
-base pointer<br>
+<pre><span id="VALrbp"><span class="keyword">val</span> rbp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>base pointer</p>
+</div>
 </div>
 
-<pre><span id="VALrsp"><span class="keyword">val</span> rsp</span> : <code class="type">Std.var</code></pre><div class="info ">
-stack pointer<br>
+<pre><span id="VALrsp"><span class="keyword">val</span> rsp</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>stack pointer</p>
+</div>
 </div>
 
-<pre><span id="VALrsi"><span class="keyword">val</span> rsi</span> : <code class="type">Std.var</code></pre><div class="info ">
-source index<br>
+<pre><span id="VALrsi"><span class="keyword">val</span> rsi</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>source index</p>
+</div>
 </div>
 
-<pre><span id="VALrdi"><span class="keyword">val</span> rdi</span> : <code class="type">Std.var</code></pre><div class="info ">
-destination index<br>
+<pre><span id="VALrdi"><span class="keyword">val</span> rdi</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>destination index</p>
+</div>
 </div>
 
-<pre><span id="VALrip"><span class="keyword">val</span> rip</span> : <code class="type">Std.var</code></pre><div class="info ">
-instruction pointer<br>
+<pre><span id="VALrip"><span class="keyword">val</span> rip</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>instruction pointer</p>
+</div>
 </div>
 
-<pre><span id="VALrax"><span class="keyword">val</span> rax</span> : <code class="type">Std.var</code></pre><div class="info ">
-accumulator register<br>
+<pre><span id="VALrax"><span class="keyword">val</span> rax</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>accumulator register</p>
+</div>
 </div>
 
-<pre><span id="VALrbx"><span class="keyword">val</span> rbx</span> : <code class="type">Std.var</code></pre><div class="info ">
-base register<br>
+<pre><span id="VALrbx"><span class="keyword">val</span> rbx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>base register</p>
+</div>
 </div>
 
-<pre><span id="VALrcx"><span class="keyword">val</span> rcx</span> : <code class="type">Std.var</code></pre><div class="info ">
-counter register<br>
+<pre><span id="VALrcx"><span class="keyword">val</span> rcx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>counter register</p>
+</div>
 </div>
 
-<pre><span id="VALrdx"><span class="keyword">val</span> rdx</span> : <code class="type">Std.var</code></pre><div class="info ">
-data register<br>
+<pre><span id="VALrdx"><span class="keyword">val</span> rdx</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>data register</p>
+</div>
 </div>
 
-<pre><span id="VALrflags"><span class="keyword">val</span> rflags</span> : <code class="type">Std.var</code></pre><div class="info ">
-RFLAGS register<br>
+<pre><span id="VALrflags"><span class="keyword">val</span> rflags</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>RFLAGS register</p>
+</div>
 </div>
 
-<pre><span id="VALgdt"><span class="keyword">val</span> gdt</span> : <code class="type">Std.var</code></pre><div class="info ">
-Global Descriptor Table<br>
+<pre><span id="VALgdt"><span class="keyword">val</span> gdt</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Global Descriptor Table</p>
+</div>
 </div>
 
-<pre><span id="VALldt"><span class="keyword">val</span> ldt</span> : <code class="type">Std.var</code></pre><div class="info ">
-Local Descriptor Table<br>
+<pre><span id="VALldt"><span class="keyword">val</span> ldt</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>Local Descriptor Table</p>
+</div>
 </div>
 
-<pre><span id="VALfs_base"><span class="keyword">val</span> fs_base</span> : <code class="type">Std.var</code></pre><div class="info ">
-segment registers let bases<br>
+<pre><span id="VALfs_base"><span class="keyword">val</span> fs_base</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>segment registers let bases</p>
+</div>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">Std.var</code></pre><div class="info ">
-memory<br>
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a></code></pre><div class="info ">
+<div class="info-desc">
+<p>memory</p>
+</div>
 </div>
 
-<pre><span id="VALr"><span class="keyword">val</span> r</span> : <code class="type">Std.var array</code></pre><div class="info ">
-r8-r15 registers.
-      Due to a legacy issues r.(0) -&gt; r8, r.(1) -&gt; r8, ...<br>
+<pre><span id="VALr"><span class="keyword">val</span> r</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> array</code></pre><div class="info ">
+<div class="info-desc">
+<p>r8-r15 registers.
+      Due to a legacy issues r.(0) -&gt; r8, r.(1) -&gt; r8, ...</p>
+</div>
 </div>
 
-<pre><span id="VALnums"><span class="keyword">val</span> nums</span> : <code class="type">Std.var array</code></pre><div class="info ">
-Legacy version of the `r` array.<br>
+<pre><span id="VALnums"><span class="keyword">val</span> nums</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> array</code></pre><div class="info ">
+<div class="info-desc">
+<p>Legacy version of the `r` array.</p>
+</div>
 </div>
 
-<pre><span id="VALymms"><span class="keyword">val</span> ymms</span> : <code class="type">Std.var array</code></pre><div class="info ">
-array of YMM registers<br>
+<pre><span id="VALymms"><span class="keyword">val</span> ymms</span> : <code class="type"><a href="Bap.Std.html#TYPEvar">Std.var</a> array</code></pre><div class="info ">
+<div class="info-desc">
+<p>array of YMM registers</p>
+</div>
 </div>
 </body></html>

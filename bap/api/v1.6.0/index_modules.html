@@ -8,6 +8,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -86,28 +87,55 @@
 &nbsp;</div>
 <h1>Index of modules</h1>
 <table>
-<tr><td align="left"><br>A</td></tr>
+<tr><td align="left"><div>A</div></td></tr>
 <tr><td><a href="X86_cpu.AMD64.html">AMD64</a> [<a href="X86_cpu.html">X86_cpu</a>]</td>
 <td><div class="info">
-AMD64 registers
+<p>AMD64 registers</p>
+
 </div>
 </td></tr>
 <tr><td><a href="ARM.html">ARM</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_c.Std.C.Abi.html">Abi</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Addr.html">Addr</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Shortcut for bitvectors that represent addresses</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Alpha.html">Alpha</a> [<a href="Bap_strings_unscrambler.Ascii.html">Bap_strings_unscrambler.Ascii</a>]</td>
 <td><div class="info">
-Letters
+<p>Letters</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Alphanum.html">Alphanum</a> [<a href="Bap_strings_unscrambler.Ascii.html">Bap_strings_unscrambler.Ascii</a>]</td>
 <td><div class="info">
-Letters and Numbers
+<p>Letters and Numbers</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Applicable.html">Applicable</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Apply.html">Apply</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<p>Maps BIL operators to bitvectors.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Arch.html">Arch</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Architecture</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Arg.html">Arg</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Subroutine argument.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Future.Args.html">Args</a> [<a href="Bap_future.Std.Future.html">Bap_future.Std.Future</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_bit.html">Arm_bit</a> </td>
@@ -115,625 +143,873 @@ Letters and Numbers
 <tr><td><a href="Arm_branch.html">Arm_branch</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_cond.html">Arm_cond</a> </td>
-<td><div class="info">
-decodes condition value from a word
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_env.html">Arm_env</a> </td>
-<td><div class="info">
-<code class="code">spsr</code>  Saved Processor Status Register
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_flags.html">Arm_flags</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_helpers.html">Arm_helpers</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_insn.html">Arm_insn</a> </td>
-<td><div class="info">
-insn opcode.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_lifter.html">Arm_lifter</a> </td>
-<td><div class="info">
-<code class="code">lift&nbsp;mem&nbsp;insn</code> lifts instruction.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_mem.html">Arm_mem</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_mem_shift.html">Arm_mem_shift</a> </td>
-<td><div class="info">
-Combine Mem and Shift
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_mov.html">Arm_mov</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_mul.html">Arm_mul</a> </td>
 <td></td></tr>
 <tr><td><a href="Arm_op.html">Arm_op</a> </td>
-<td><div class="info">
-<code class="code">create&nbsp;op</code> projects bap generic operand into arm specific.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_reg.html">Arm_reg</a> </td>
-<td><div class="info">
-lifts basic register to a ARM one
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_shift.html">Arm_shift</a> </td>
-<td><div class="info">
-Need the operand and the carry flag value src - the source, if you
-    intend to use the carry bit, this must not be the destination of the
-    shift expression.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_types.html">Arm_types</a> </td>
-<td><div class="info">
-General purpose registers
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_utils.html">Arm_utils</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.Array.html">Array</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Ogre.Query.Array.html">Array</a> [<a href="Ogre.Query.html">Ogre.Query</a>]</td>
 <td><div class="info">
-Defines a subscripting syntax for creating field variables.
+<p>Defines a subscripting syntax for creating field variables.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.Array.html">Array</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+<p>Prefix and suffix tries for specified token types.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.html">Ascii</a> [<a href="Bap_strings_unscrambler.html">Bap_strings_unscrambler</a>]</td>
 <td><div class="info">
-ASCII Characters
+<p>ASCII Characters</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Text_tags.Attr.html">Attr</a> [<a href="Text_tags.html">Text_tags</a>]</td>
 <td><div class="info">
-Attributes mode.
+<p>Attributes mode.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Attr.html">Attr</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Attribute
+<p>Attribute</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.C.Attr.html">Attr</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c_type.Attr.html">Attr</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
-<tr><td align="left"><br>B</td></tr>
+<tr><td align="left"><div>B</div></td></tr>
 <tr><td><a href="X86_types.BV.html">BV</a> [<a href="X86_types.html">X86_types</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Backend.html">Backend</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>A backend interface.</p>
+
+</span></div>
+</td></tr>
 <tr><td><a href="Bap.html">Bap</a> </td>
 <td><div class="info">
-BAP Standard Library
+<p>BAP Standard Library</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_abi.html">Bap_abi</a> </td>
 <td><div class="info">
-ABI dispatcher.
+<p>ABI dispatcher.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_api.html">Bap_api</a> </td>
 <td><div class="info">
-An interface to the api pass.
+<p>An interface to the api pass.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bml.html">Bap_bml</a> </td>
-<td><div class="info">
-BML - Bap Mapping Language.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_build.html">Bap_build</a> </td>
 <td><div class="info">
-bapbuild implentation library
+<p>bapbuild implentation library</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.html">Bap_bundle</a> </td>
-<td><div class="info">
-<code class="code">main_bundle&nbsp;()</code> returns a program's bundle if the program is
-      bundled, otherwise creates a fresh new bundle in current working
-      directory.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_byteweight.html">Bap_byteweight</a> </td>
 <td><div class="info">
-Byteweight library.
+<p>Byteweight library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_byteweight_signatures.html">Bap_byteweight_signatures</a> </td>
 <td><div class="info">
-Provides signatures storage
+<p>Provides signatures storage</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.html">Bap_c</a> </td>
 <td><div class="info">
-C language support library.
+<p>C language support library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_abi.html">Bap_c_abi</a> </td>
 <td><div class="info">
-C language ABI.
+<p>C language ABI.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_attr.html">Bap_c_attr</a> </td>
 <td><div class="info">
-Attribute processing.
+<p>Attribute processing.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_data.html">Bap_c_data</a> </td>
 <td><div class="info">
-C Data model.
+<p>C Data model.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_parser.html">Bap_c_parser</a> </td>
 <td><div class="info">
-A parser interface.
+<p>A parser interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_size.html">Bap_c_size</a> </td>
 <td><div class="info">
-An abstraction of sizeof operator.
+<p>An abstraction of sizeof operator.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_term_attributes.html">Bap_c_term_attributes</a> </td>
 <td><div class="info">
-BIR attributes.
+<p>BIR attributes.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.html">Bap_c_type</a> </td>
 <td><div class="info">
-C Type System.
+<p>C Type System.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a> </td>
-<td><div class="info">
-include visitor/mapper with the monad stripped away.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_c_type_mapper_intf.html">Bap_c_type_mapper_intf</a> </td>
-<td><div class="info">
-Type mapper, visitor, iterator, finder all in one.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_c_type_printer.html">Bap_c_type_printer</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_config.html">Bap_config</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_demangle.html">Bap_demangle</a> </td>
 <td><div class="info">
-Name demangling.
+<p>Name demangling.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.html">Bap_dwarf</a> </td>
-<td><div class="info">
-DWARF parser
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_future.html">Bap_future</a> </td>
-<td><div class="info">
-Future library.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_ida.html">Bap_ida</a> </td>
 <td><div class="info">
-IDA integration.
+<p>IDA integration.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_llvm.html">Bap_llvm</a> </td>
-<td><div class="info">
-Initialize LLVM backend.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_llvm_loader.html">Bap_llvm_loader</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_plugins.html">Bap_plugins</a> </td>
 <td><div class="info">
-Bap Plugin Library.
+<p>Bap Plugin Library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.html">Bap_primus</a> </td>
-<td><div class="info">
-Primus - The Microexecution Framework.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_strings.html">Bap_strings</a> </td>
 <td></td></tr>
 <tr><td><a href="Bap_strings_detector.html">Bap_strings_detector</a> </td>
 <td><div class="info">
-String computation detector.
+<p>String computation detector.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_index.html">Bap_strings_index</a> </td>
-<td><div class="info">
-<code class="code">empty</code> an empty index
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_strings_scanner.html">Bap_strings_scanner</a> </td>
-<td><div class="info">
-<code class="code">next&nbsp;~is_stop&nbsp;~read&nbsp;off</code> reads characters starting with the
-    offset <code class="code">off</code>, using the <code class="code">read</code> function to map offsets to
-    characters, until the <code class="code">is_stop</code> character occurs, or the <code class="code">read</code>
-    function returns <code class="code"><span class="constructor">None</span></code>.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_strings_unscrambler.html">Bap_strings_unscrambler</a> </td>
-<td><div class="info">
-symbol encoding
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_taint.html">Bap_taint</a> </td>
 <td><div class="info">
-Taint Analysis Framework.
+<p>Taint Analysis Framework.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.html">Bap_traces</a> </td>
-<td><div class="info">
-Traces of execution.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bare.html">Bare</a> </td>
-<td><div class="info">
-Binary Analysis Rule Engine (BARE).
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Arm_types.Basic.html">Basic</a> [<a href="Arm_types.html">Arm_types</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Basic.html">Basic</a> [<a href="Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a>]</td>
+<td><div class="info">
+<p>Basic disassembler.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Big.html">Big</a> [<a href="Bap.Std.Bitvector.Trie.html">Bap.Std.Bitvector.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bil.html">Bil</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Main BIL module.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bili.html">Bili</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>BIL Interpreter.</p>
+
+</span></div>
+</td></tr>
 <tr><td><a href="Bap_traces.Std.Binary.html">Binary</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Information about a traced binary.
+<p>Information about a traced binary.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Biri.html">Biri</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>BIR Interpreter</p>
+
+</span></div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Little.Bits.html">Bits</a> [<a href="Bap.Std.Bitvector.Trie.Little.html">Bap.Std.Bitvector.Trie.Little</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Big.Bits.html">Bits</a> [<a href="Bap.Std.Bitvector.Trie.Big.html">Bap.Std.Bitvector.Trie.Big</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.html">Bitvector</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Bitvector -- an integer with modular arithmentics.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.html">Blk</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Basic block.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Block.html">Block</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Basic block.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Brancher.html">Brancher</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Brancher is responsible for resolving destinations of branch
+      instructions.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Buffer.html">Buffer</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
+<p>Buffer is a light abstraction over <code class="code">string</code> and <code class="code">bigstring</code>,
         that can allow one to share the same string for different sections
-        without explicit copying.
+        without explicit copying.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.Builder.html">Builder</a> [<a href="Bap_bundle.Std.Bundle.html">Bap_bundle.Std.Bundle</a>]</td>
 <td><div class="info">
-Incremental bundle builder.
+<p>Incremental bundle builder.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Blk.Builder.html">Builder</a> [<a href="Bap.Std.Blk.html">Bap.Std.Blk</a>]</td>
+<td><div class="info">
+<p>Builder interface.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Sub.Builder.html">Builder</a> [<a href="Bap.Std.Sub.html">Bap.Std.Sub</a>]</td>
+<td><div class="info">
+<p>Subroutine builder</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Program.Builder.html">Builder</a> [<a href="Bap.Std.Program.html">Bap.Std.Program</a>]</td>
+<td><div class="info">
+<p>Program builder.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.Bundle.html">Bundle</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
 <td><div class="info">
-Program Bundle.
+<p>Program Bundle.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_byteweight.Bytes.html">Bytes</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
 <td><div class="info">
-Default implementation that uses memory chunk as the domain.
+<p>Default implementation that uses memory chunk as the domain.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.html">Bytes</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Extension of the standard bytes module.
+<p>Extension of the standard bytes module.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>C</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Little.Bytes.html">Bytes</a> [<a href="Bap.Std.Bitvector.Trie.Little.html">Bap.Std.Bitvector.Trie.Little</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Big.Bytes.html">Bytes</a> [<a href="Bap.Std.Bitvector.Trie.Big.html">Bap.Std.Bitvector.Trie.Big</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>C</div></td></tr>
 <tr><td><a href="Bap_c.Std.C.html">C</a> [<a href="Bap_c.Std.html">Bap_c.Std</a>]</td>
 <td></td></tr>
 <tr><td><a href="Arm_lifter.CPU.html">CPU</a> [<a href="Arm_lifter.html">Arm_lifter</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Target.CPU.html">CPU</a> [<a href="Bap.Std.Target.html">Bap.Std.Target</a>]</td>
+<td><div class="info">
+<p>access to the CPU variables.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.html">Cache</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-Generic caching.
+<p>Generic caching.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.S.Cache.html">Cache</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
-Data cache.
+<p>Data cache.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Call.html">Call</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-A subroutine call.
+<p>A subroutine call.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Call.html">Call</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>A control transfer to another subroutine.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphs.Callgraph.html">Callgraph</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
+<td><div class="info">
+<p>A call graph representation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Alphanum.Caseless.html">Caseless</a> [<a href="Bap_strings_unscrambler.Ascii.Alphanum.html">Bap_strings_unscrambler.Ascii.Alphanum</a>]</td>
 <td><div class="info">
-Caseless Letters
+<p>Caseless Letters</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Alpha.Caseless.html">Caseless</a> [<a href="Bap_strings_unscrambler.Ascii.Alpha.html">Bap_strings_unscrambler.Ascii.Alpha</a>]</td>
 <td><div class="info">
-Caseless Letters
+<p>Caseless Letters</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Category.html">Category</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.html">Bap_primus.Std.Primus.Lisp.Doc</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Graphs.Cfg.html">Cfg</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
+<td><div class="info">
+<p>Control Flow Graph with a machine basic block as a node.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.html">Choice</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-A choice monad interface.
+<p>A choice monad interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Chunk.html">Chunk</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Represent a memory chunk.
+<p>Represent a memory chunk.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Collection.html">Collection</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-Lifts collection interface into the monad.
+<p>Lifts collection interface into the monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Collection.html">Collection</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-Lifts collection interface into the monad.
+<p>Lifts collection interface into the monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Collection.html">Collection</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-Container interface in the Kleisli category.
+<p>Container interface in the Kleisli category.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_ida.Std.Command.html">Command</a> [<a href="Bap_ida.Std.html">Bap_ida.Std</a>]</td>
 <td><div class="info">
-Commands that can be passed into an IDA session
+<p>Commands that can be passed into an IDA session</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.Compound.html">Compound</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="ARM.Cond.html">Cond</a> [<a href="ARM.html">ARM</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Self.Config.html">Config</a> [<a href="Bap.Std.Self.html">Bap.Std.Self</a>]</td>
+<td><div class="info">
+<p>This module allows plugins to access BAP configuration variables.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Gc.Conservative.html">Conservative</a> [<a href="Bap_taint.Std.Taint.Gc.html">Bap_taint.Std.Taint.Gc</a>]</td>
 <td><div class="info">
-Conservative Garbage Collector.
+<p>Conservative Garbage Collector.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Cont.html">Cont</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The continuation monad.
+<p>The continuation monad.</p>
+
 </div>
+</td></tr>
+<tr><td><a href="Bap.Std.Context.html">Context</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>Base class for evaluation contexts.</p>
+
+</span></div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Core.html">Core</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Core</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
-        <a href="Monads.Std.Monad.Core.html">Core</a> implementation
+<p><code class="code"><span class="constructor">Core</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Core.html">Core</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Core2.html">Core2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Core2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
-        <a href="Monads.Std.Monad.Core2.html">Core</a> implementation
+<p><code class="code"><span class="constructor">Core2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Core2.html">Core</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Core_printers.html">Core_printers</a> </td>
 <td></td></tr>
-<tr><td align="left"><br>D</td></tr>
+<tr><td align="left"><div>D</div></td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Data.html">Data</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_c.Std.C.Data.html">Data</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Regular.Std.Data.html">Data</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Data types support module.
+<p>Data types support module.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Def.html">Def</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Definition.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Collection.Delay.html">Delay</a> [<a href="Monads.Std.Monad.S2.Collection.html">Monads.Std.Monad.S2.Collection</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Delay</span>(<span class="constructor">C</span>)</code> derives
+<p><code class="code"><span class="constructor">Delay</span>(<span class="constructor">C</span>)</code> derives
             <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> for container
-            <code class="code"><span class="constructor">C</span></code>
+            <code class="code"><span class="constructor">C</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Collection.Delay.html">Delay</a> [<a href="Monads.Std.Monad.S.Collection.html">Monads.Std.Monad.S.Collection</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Delay</span>(<span class="constructor">C</span>)</code> derives
+<p><code class="code"><span class="constructor">Delay</span>(<span class="constructor">C</span>)</code> derives
             <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> for container
-            <code class="code"><span class="constructor">C</span></code>
+            <code class="code"><span class="constructor">C</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_demangle.Std.Demangler.html">Demangler</a> [<a href="Bap_demangle.Std.html">Bap_demangle.Std</a>]</td>
 <td><div class="info">
-Demangler is a named string transformation.
+<p>Demangler is a named string transformation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_demangle.Std.Demanglers.html">Demanglers</a> [<a href="Bap_demangle.Std.html">Bap_demangle.Std</a>]</td>
 <td><div class="info">
-Registry of demanglers.
+<p>Registry of demanglers.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Descr.html">Descr</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.html">Bap_primus.Std.Primus.Lisp.Doc</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_strings.Std.Strings.Detector.html">Detector</a> [<a href="Bap_strings.Std.Strings.html">Bap_strings.Std.Strings</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Dict.html">Dict</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Universal Heterogeneous Map.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.Digest.html">Digest</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
 <td><div class="info">
-Data digesting for caching.
+<p>Data digesting for caching.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Digits.html">Digits</a> [<a href="Bap_strings_unscrambler.Ascii.html">Bap_strings_unscrambler.Ascii</a>]</td>
 <td><div class="info">
-Digits
+<p>Digits</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm.html">Disasm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Disassembled program.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.html">Disasm_expert</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Expert interface to disassembler.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.html">Doc</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td></td></tr>
 <tr><td><a href="Ogre.Doc.html">Doc</a> [<a href="Ogre.html">Ogre</a>]</td>
 <td><div class="info">
-An Ogre document.
+<p>An Ogre document.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Dot.html">Dot</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-Generic dot printer.
+<p>Generic dot printer.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.html">Dwarf</a> [<a href="Bap_dwarf.Std.html">Bap_dwarf.Std</a>]</td>
 <td><div class="info">
-Dwarf library
+<p>Dwarf library
       This library gives an access to debugging information stored
-      in a binary program.
+      in a binary program.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>E</td></tr>
+<tr><td align="left"><div>E</div></td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Collection.Eager.html">Eager</a> [<a href="Monads.Std.Monad.S2.Collection.html">Monads.Std.Monad.S2.Collection</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Eager</span>(<span class="constructor">C</span>)</code> derives
+<p><code class="code"><span class="constructor">Eager</span>(<span class="constructor">C</span>)</code> derives
             <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> for container
-            <code class="code"><span class="constructor">C</span></code>
+            <code class="code"><span class="constructor">C</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Collection.Eager.html">Eager</a> [<a href="Monads.Std.Monad.S.Collection.html">Monads.Std.Monad.S.Collection</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Eager</span>(<span class="constructor">C</span>)</code> derives
+<p><code class="code"><span class="constructor">Eager</span>(<span class="constructor">C</span>)</code> derives
             <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> for container
-            <code class="code"><span class="constructor">C</span></code>
+            <code class="code"><span class="constructor">C</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graph.Edge.html">Edge</a> [<a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a>]</td>
 <td><div class="info">
-Graph edges
+<p>Graph edges</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphs.Ir.Edge.html">Edge</a> [<a href="Bap.Std.Graphs.Ir.html">Bap.Std.Graphs.Ir</a>]</td>
+<td><div class="info">
+<p>since in IR the order of edges defines semantics, we provide
+          extra functions</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eff.html">Eff</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Effect analysis.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.html">Env</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Evaluation environemnt.
+<p>Evaluation environemnt.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Equiv.html">Equiv</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Ordinal for representing equivalence.
+<p>Ordinal for representing equivalence.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Error.html">Error</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
 <td><div class="info">
-The Error monad.
+<p>The Error monad.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Type.Error.html">Error</a> [<a href="Bap.Std.Type.html">Bap.Std.Type</a>]</td>
+<td><div class="info">
+<p>BIL type errors.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Expi.S.Eval.html">Eval</a> [<a href="Bap.Std.Expi.S.html">Bap.Std.Expi.S</a>]</td>
+<td><div class="info">
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Eval.html">Eval</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Basic and generic expression evaluator.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Event.html">Event</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Types of events.
+<p>Types of events.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Event.html">Event</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Event subsystem.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Exception.html">Exception</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
 <td><div class="info">
-The Exception monad.
+<p>The Exception monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Exn.html">Exn</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-hardware exception
+<p>hardware exception</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Exn.html">Exn</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Primus error.
+<p>Primus error.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Exn.html">Exn</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-Interacting between monads and language exceptions
+<p>Interacting between monads and language exceptions</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Exn.html">Exn</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-Interacting between monads and language exceptions
+<p>Interacting between monads and language exceptions</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>F</td></tr>
+<tr><td><a href="Bap.Std.Exp.html">Exp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">Regular</span></code> interface for BIL expressions</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Taint.S.Expi.html">Expi</a> [<a href="Bap.Std.Taint.S.html">Bap.Std.Taint.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Biri.S.Expi.html">Expi</a> [<a href="Bap.Std.Biri.S.html">Bap.Std.Biri.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bili.S.Expi.html">Expi</a> [<a href="Bap.Std.Bili.S.html">Bap.Std.Bili.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Expi.html">Expi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>Expression Language Interpreter.</p>
+
+</span></div>
+</td></tr>
+<tr><td align="left"><div>F</div></td></tr>
+<tr><td><a href="Bap.Std.Reconstructor.Factory.html">Factory</a> [<a href="Bap.Std.Reconstructor.html">Bap.Std.Reconstructor</a>]</td>
+<td><div class="info">
+<p>a factory of reconstructors</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Brancher.Factory.html">Factory</a> [<a href="Bap.Std.Brancher.html">Bap.Std.Brancher</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Rooter.Factory.html">Factory</a> [<a href="Bap.Std.Rooter.html">Bap.Std.Rooter</a>]</td>
+<td><div class="info">
+<p>A factory of rooters.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Symbolizer.Factory.html">Factory</a> [<a href="Bap.Std.Symbolizer.html">Bap.Std.Symbolizer</a>]</td>
+<td><div class="info">
+<p>A factory of symbolizers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Source.Factory.html">Factory</a> [<a href="Bap.Std.Source.html">Bap.Std.Source</a>]</td>
+<td><div class="info">
+<p>Factory of data processors.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Fail.html">Fail</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-A fail monad interface.
+<p>A fail monad interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Fbi.html">Fbi</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Function boundary identification.
+<p>Function boundary identification.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.File_stats.html">File_stats</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-File information.
+<p>File information.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Filtered.html">Filtered</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-functorized version of a <code class="code">filter</code> function.
+<p>functorized version of a <code class="code">filter</code> function.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.Finder.html">Finder</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
 <td><div class="info">
-the visitor lifted into the search monad.
+<p>the visitor lifted into the search monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.html">Float</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-Provides monoids in the R domain.
+<p>Provides monoids in the R domain.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Fmm.html">Fmm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Floating point immediate operand</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Fn.html">Fn</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Function representation.
+<p>Function representation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Fn.html">Fn</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-Various function combinators lifted into the Kleisli category.
+<p>Various function combinators lifted into the Kleisli category.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Fn.html">Fn</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-Various function combinators lifted into the Kleisli category.
+<p>Various function combinators lifted into the Kleisli category.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Form.html">Form</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Attribute form
+<p>Attribute form</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.From_string.html">From_string</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Frontier.html">Frontier</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Frontier maps each node into a possibly empty set of nodes.
+<p>Frontier maps each node into a possibly empty set of nodes.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Fun.html">Fun</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Function Monad.
+<p>The Function Monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Future.html">Future</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
-Future is an object whose value will be decided somewhere in the
-      future, if that future has occurred.
+<p>Future is an object whose value will be decided somewhere in the
+      future, if that future has occurred.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>G</td></tr>
+<tr><td align="left"><div>G</div></td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Gc.html">Gc</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.html">Generator</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Value generators
+<p>Value generators</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Global.html">Global</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-Global state shared across all machine clones.
+<p>Global state shared across all machine clones.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.html">Graphlib</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Generic Graph Library
+<p>Generic Graph Library</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.html">Graphlib</a> </td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Graphs.html">Graphs</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Graph library
+<p>BAP Common Graphs.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Group.html">Group</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Group is a non-empty set that is a result of partitioning of an
+<p>Group is a non-empty set that is a result of partitioning of an
       underlying set <code class="code"><span class="constructor">S</span></code> into a set of non-intersecting and non-empty
-      subsets that cover set <code class="code"><span class="constructor">S</span></code>.
+      subsets that cover set <code class="code"><span class="constructor">S</span></code>.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>I</td></tr>
+<tr><td align="left"><div>I</div></td></tr>
 <tr><td><a href="X86_cpu.IA32.html">IA32</a> [<a href="X86_cpu.html">X86_cpu</a>]</td>
 <td><div class="info">
-IA32 Architecture Registers.
+<p>IA32 Architecture Registers.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Id.html">Id</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
@@ -746,214 +1022,380 @@ IA32 Architecture Registers.
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.Id.html">Id</a> [<a href="Monads.Std.Monad.State.Multi.html">Monads.Std.Monad.State.Multi</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.Id.html">Id</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td><div class="info">
+<p>Result identifier.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_ida.Std.Ida.html">Ida</a> [<a href="Bap_ida.Std.html">Bap_ida.Std</a>]</td>
 <td><div class="info">
-Interaction with ida instance
+<p>Interaction with ida instance</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Ident.html">Ident</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The identity monad.
+<p>The identity monad.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Image.html">Image</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Binary Image.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Backend.Img.html">Img</a> [<a href="Bap.Std.Backend.html">Bap.Std.Backend</a>]</td>
+<td><div class="info">
+<p>A Img from a backend perspective.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Imm.html">Imm</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Integer immediate operand</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings.Std.Strings.Index.html">Index</a> [<a href="Bap_strings.Std.Strings.html">Bap_strings.Std.Strings</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Index.html">Index</a> [<a href="Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a>]</td>
 <td><div class="info">
-Indexing strings by values.
+<p>Indexing strings by values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Infix.html">Infix</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<p>Infix operators</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.Info.html">Info</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<p>Information obtained during project reconstruction.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.Input.html">Input</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<p>Input information.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memory.Input.html">Input</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
+<td><div class="info">
+<p>A set of low level input operations.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="ARM.Insn.html">Insn</a> [<a href="ARM.html">ARM</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Insn.html">Insn</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Assembly instruction.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Basic.Insn.html">Insn</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
+<td><div class="info">
+<p>Basic instruction.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.html">Int</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-Provides monoids in the Z domain.
+<p>Provides monoids in the Z domain.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Int_err.html">Int_err</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>Arithmetic raised into <code class="code"><span class="constructor">Or_error</span></code> monad</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Int_exn.html">Int_exn</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>Arithmetic that raises exceptions.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap.Std.Integer.html">Integer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Abstract integral type.
+<p>Abstract integral type.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.html">Interpreter</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-The Interpreter.
+<p>The Interpreter.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.html">Interval_tree</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Balanced Interval Tree.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.S.Io.html">Io</a> [<a href="Regular.Std.Data.S.html">Regular.Std.Data.S</a>]</td>
 <td><div class="info">
-Input/Output functions for the given datum.
+<p>Input/Output functions for the given datum.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphs.Ir.html">Ir</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
+<td><div class="info">
+<p>Graph view over IR.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Iterator.html">Iterator</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Iterator is a sequence of values of some domain.
+<p>Iterator is a sequence of values of some domain.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>K</td></tr>
+<tr><td align="left"><div>J</div></td></tr>
+<tr><td><a href="Bap.Std.Jmp.html">Jmp</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>A control transfer operation.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>K</div></td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Kind.html">Kind</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td><div class="info">
-Each object that the engine tracks has an associated kind,
+<p>Each object that the engine tracks has an associated kind,
         that denotes a class of objects that share the same semantic
-        properties.
+        properties.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>L</td></tr>
+<tr><td><a href="Bap.Std.Kind.html">Kind</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Kinds of instructions</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>L</div></td></tr>
+<tr><td><a href="Bap.Std.Label.html">Label</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Target of a control flow transfer.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Labeled.html">Labeled</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Labeled</span>(<span class="constructor">Node</span>)(<span class="constructor">Node_label</span>)(<span class="constructor">Edge_label</span>)</code> creates a graph
+<p><code class="code"><span class="constructor">Labeled</span>(<span class="constructor">Node</span>)(<span class="constructor">Node_label</span>)(<span class="constructor">Edge_label</span>)</code> creates a graph
         structure with both nodes and edges labeled with abitrary
-        types.
+        types.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Lazy.html">Lazy</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Lazy monad.
+<p>The Lazy monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Leb128.html">Leb128</a> [<a href="Bap_dwarf.Std.html">Bap_dwarf.Std</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.html">Legacy</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td><div class="info">
-<span class="deprecated">Legacy
-</span></div>
-</td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Lift.html">Lift</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-Lifts functions into the monad.
+<p>Lifts functions into the monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Lift.html">Lift</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-Lifts functions into the monad.
+<p>Lifts functions into the monad.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Linear.html">Linear</a> [<a href="Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a>]</td>
+<td><div class="info">
+<p>A simple linear sweep disassembler.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.html">Linker</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Machine Linker.
+<p>Machine Linker.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.html">Lisp</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Lisp machine.
+<p>Lisp machine.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.List.html">List</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The List monad.
+<p>The List monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.List.html">List</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
-            for lists
+<p>The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
+            for lists</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.List.html">List</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-The <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> interface
-            for lists
+<p>The <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> interface
+            for lists</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.List.html">List</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-A monoid that accumulates data in a list.
+<p>A monoid that accumulates data in a list.</p>
+
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.Little.html">Little</a> [<a href="Bap.Std.Bitvector.Trie.html">Bap.Std.Bitvector.Trie</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Load.html">Load</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
-Primus Lisp program loader
+<p>Primus Lisp program loader</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Local.html">Local</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-Local state of the machine.
+<p>Local state of the machine.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Location.html">Location</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-A code location
+<p>A code location</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>M</td></tr>
+<tr><td><a href="Bap.Std.Location.html">Location</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>A locations of a chunk of memory</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Log.html">Log</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Default Logger.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Event.Log.html">Log</a> [<a href="Bap.Std.Event.html">Bap.Std.Event</a>]</td>
+<td><div class="info">
+<p>Logging event.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>M</div></td></tr>
+<tr><td><a href="Bap.Std.Expi.S.M.html">M</a> [<a href="Bap.Std.Expi.S.html">Bap.Std.Expi.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S.M.html">M</a> [<a href="Bap.Std.Eval.S.html">Bap.Std.Eval.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Eval.S2.M.html">M</a> [<a href="Bap.Std.Eval.S2.html">Bap.Std.Eval.S2</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.html">Machine</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Primus Machine.
+<p>Primus Machine.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Main.html">Main</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
-Primus Entry Point.
+<p>Primus Entry Point.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Make.html">Make</a> [<a href="Bap_strings_unscrambler.html">Bap_strings_unscrambler</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Alphabet</span>)</code> creates an unscrambler for the given alphabet.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Alphabet</span>)</code> creates an unscrambler for the given alphabet.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_index.Persistent.Make.html">Make</a> [<a href="Bap_strings_index.Persistent.html">Bap_strings_index.Persistent</a>]</td>
 <td><div class="info">
-Make(Key) creates an index with the given <code class="code"><span class="constructor">Key</span></code>.
+<p>Make(Key) creates an index with the given <code class="code"><span class="constructor">Key</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_byteweight.Make.html">Make</a> [<a href="Bap_byteweight.html">Bap_byteweight</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Corpus</span>)(<span class="constructor">Trie</span>)</code> creates a Byteweight procedure,
     that works in the <code class="code"><span class="constructor">Corpus</span></code> domain and uses <code class="code"><span class="constructor">Trie</span></code> for its
-    implementation.
+    implementation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.Make.html">Make</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> lifts the visitor into monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> lifts the visitor into monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
-Make(Machine) creates a Lisp machine embedded into the
-          Primus <code class="code"><span class="constructor">Machine</span></code>.
+<p>Make(Machine) creates a Lisp machine embedded into the
+          Primus <code class="code"><span class="constructor">Machine</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.html">Bap_primus.Std.Primus.Lisp.Doc</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Memory.html">Bap_primus.Std.Primus.Memory</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the memory interface into the
-          <code class="code"><span class="constructor">Machine</span></code> monad.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the memory interface into the
+          <code class="code"><span class="constructor">Machine</span></code> monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Env.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Env.html">Bap_primus.Std.Primus.Env</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Env</span>&nbsp;=&nbsp;<span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code>
+<p><code class="code"><span class="constructor">Env</span>&nbsp;=&nbsp;<span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the generator interface into the
-          Machine monad.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> lifts the generator interface into the
+          Machine monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Linker.html">Bap_primus.Std.Primus.Linker</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> parametrize the <code class="code"><span class="constructor">Linker</span></code> with the <code class="code"><span class="constructor">Machine</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> parametrize the <code class="code"><span class="constructor">Linker</span></code> with the <code class="code"><span class="constructor">Machine</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Interpreter.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Interpreter.html">Bap_primus.Std.Primus.Interpreter</a>]</td>
 <td><div class="info">
-Make(Machine) makes an interpreter that computes in the
-          given <code class="code"><span class="constructor">Machine</span></code>.
+<p>Make(Machine) makes an interpreter that computes in the
+          given <code class="code"><span class="constructor">Machine</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Value.html">Bap_primus.Std.Primus.Value</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> provides an interface to the Value type
-          lifted into the <code class="code"><span class="constructor">Machine</span></code> monad.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Machine</span>)</code> provides an interface to the Value type
+          lifted into the <code class="code"><span class="constructor">Machine</span></code> monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.Make.html">Make</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Monad</span>)</code> a monad transformer that wraps the Machine
-          into an arbitrary <code class="code"><span class="constructor">Monad</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Monad</span>)</code> a monad transformer that wraps the Machine
+          into an arbitrary <code class="code"><span class="constructor">Monad</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Propagation.Policy.Make.html">Make</a> [<a href="Bap_taint.Std.Taint.Propagation.Policy.html">Bap_taint.Std.Taint.Propagation.Policy</a>]</td>
@@ -966,22 +1408,25 @@ Make(Machine) makes an interpreter that computes in the
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Make.html">Make</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Node</span>)(<span class="constructor">Edge</span>)</code> creates a module that implements <code class="code"><span class="constructor">Graph</span></code>
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Node</span>)(<span class="constructor">Edge</span>)</code> creates a module that implements <code class="code"><span class="constructor">Graph</span></code>
         interface and has unlabeled nodes of type <code class="code"><span class="constructor">Node</span>.t</code> and edges
-        labeled with <code class="code"><span class="constructor">Edge</span>.t</code>
+        labeled with <code class="code"><span class="constructor">Edge</span>.t</code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Variadic.Make.html">Make</a> [<a href="Bap_future.Std.Variadic.html">Bap_future.Std.Variadic</a>]</td>
 <td></td></tr>
 <tr><td><a href="Ogre.Make.html">Make</a> [<a href="Ogre.html">Ogre</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> returns an Ogre monad implementation wrapped in a monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> returns an Ogre monad implementation wrapped in a monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Cont.Make.html">Make</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">T</span>)(<span class="constructor">M</span>)</code> wraps the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad
-          and fix the type of the whole computation to <code class="code"><span class="constructor">T</span>.t</code>
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">T</span>)(<span class="constructor">M</span>)</code> wraps the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad
+          and fix the type of the whole computation to <code class="code"><span class="constructor">T</span>.t</code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Lazy.Make.html">Make</a> [<a href="Monads.Std.Monad.Lazy.html">Monads.Std.Monad.Lazy</a>]</td>
@@ -994,114 +1439,152 @@ Make(Machine) makes an interpreter that computes in the
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Reader.Make.html">Make</a> [<a href="Monads.Std.Monad.Reader.html">Monads.Std.Monad.Reader</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> concretizes the environment type to <code class="code"><span class="constructor">Env</span>.t</code>
-          and composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> concretizes the environment type to <code class="code"><span class="constructor">Env</span>.t</code>
+          and composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Writer.Make.html">Make</a> [<a href="Monads.Std.Monad.Writer.html">Monads.Std.Monad.Writer</a>]</td>
 <td><div class="info">
-Make(Sum)(M) constructs a reader that uses <code class="code"><span class="constructor">Sum</span>.t</code> type as a
+<p>Make(Sum)(M) constructs a reader that uses <code class="code"><span class="constructor">Sum</span>.t</code> type as a
           state accumulator and composes the Writer with the monad
-          <code class="code"><span class="constructor">M</span></code>.
+          <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Seq.Make.html">Make</a> [<a href="Monads.Std.Monad.Seq.html">Monads.Std.Monad.Seq</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code>
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.List.Make.html">Make</a> [<a href="Monads.Std.Monad.List.html">Monads.Std.Monad.List</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the List monad with <code class="code"><span class="constructor">M</span></code>
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the List monad with <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Exception.Make.html">Make</a> [<a href="Monads.Std.Monad.Result.Exception.html">Monads.Std.Monad.Result.Exception</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Error.Make.html">Make</a> [<a href="Monads.Std.Monad.Result.Error.html">Monads.Std.Monad.Result.Error</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> wraps <code class="code"><span class="constructor">M</span></code> into the <code class="code"><span class="constructor">Error</span></code> monad.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> wraps <code class="code"><span class="constructor">M</span></code> into the <code class="code"><span class="constructor">Error</span></code> monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Make.html">Make</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">E</span>)(<span class="constructor">M</span>)</code> concretized the type of error to <code class="code"><span class="constructor">E</span>.t</code> and
-          composes the Result monad with the monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">E</span>)(<span class="constructor">M</span>)</code> concretized the type of error to <code class="code"><span class="constructor">E</span>.t</code> and
+          composes the Result monad with the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Option.Make.html">Make</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the option monad with the monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> composes the option monad with the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Make.html">Make</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
-        <a href="Monads.Std.Monad.Basic.html">Basic</a> implementation
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Basic.html">Basic</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Make.html">Make</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.Set.Make.html">Make</a> [<a href="Monads.Std.Monoid.Set.html">Monads.Std.Monoid.Set</a>]</td>
 <td><div class="info">
-Derives a set monoind from the set <code class="code"><span class="constructor">S</span></code>.
+<p>Derives a set monoind from the set <code class="code"><span class="constructor">S</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.List.Make.html">Make</a> [<a href="Monads.Std.Monoid.List.html">Monads.Std.Monoid.List</a>]</td>
 <td><div class="info">
-Make(T) constructs a monoid that accumulates elements of
-          type <code class="code"><span class="constructor">T</span>.t</code>
+<p>Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Stack.Make.html">Make</a> [<a href="Monads.Std.Monoid.Stack.html">Monads.Std.Monoid.Stack</a>]</td>
 <td><div class="info">
-Make(T) constructs a monoid that accumulates elements of
-          type <code class="code"><span class="constructor">T</span>.t</code>
+<p>Make(T) constructs a monoid that accumulates elements of
+          type <code class="code"><span class="constructor">T</span>.t</code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Make.html">Make</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-Make(Base) derives a monoid from its minimal definition
+<p>Make(Base) derives a monoid from its minimal definition</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Opaque.Make.html">Make</a> [<a href="Regular.Std.Opaque.html">Regular.Std.Opaque</a>]</td>
 <td><div class="info">
-creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.
+<p>creates a module implementing <code class="code"><span class="constructor">Opaque</span></code> interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Regular.Make.html">Make</a> [<a href="Regular.Std.Regular.html">Regular.Std.Regular</a>]</td>
 <td><div class="info">
-In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
-        minimum implementation <code class="code"><span class="constructor">M</span></code>
+<p>In order to implement <code class="code"><span class="constructor">Regular</span></code> interface you need to provide a
+        minimum implementation <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Make.html">Make</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-Implements <code class="code"><span class="constructor">Data</span>.<span class="constructor">S</span></code> interface from the provided minimal implementation.
+<p>Implements <code class="code"><span class="constructor">Data</span>.<span class="constructor">S</span></code> interface from the provided minimal implementation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Printable.Make.html">Make</a> [<a href="Regular.Std.Printable.html">Regular.Std.Printable</a>]</td>
 <td><div class="info">
-Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.
+<p>Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.</p>
+
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.State.Make.html">Make</a> [<a href="Bap.Std.Legacy.Monad.T.State.html">Bap.Std.Legacy.Monad.T.State</a>]</td>
+<tr><td><a href="Bap.Std.Taint.Make.html">Make</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Result.Make.html">Make</a> [<a href="Bap.Std.Legacy.Monad.T.Result.html">Bap.Std.Legacy.Monad.T.Result</a>]</td>
+<tr><td><a href="Bap.Std.Source.Factory.Make.html">Make</a> [<a href="Bap.Std.Source.Factory.html">Bap.Std.Source.Factory</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Or_error.Make.html">Make</a> [<a href="Bap.Std.Legacy.Monad.T.Or_error.html">Bap.Std.Legacy.Monad.T.Or_error</a>]</td>
+<tr><td><a href="Bap.Std.Biri.Make.html">Make</a> [<a href="Bap.Std.Biri.html">Bap.Std.Biri</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Option.Make.html">Make</a> [<a href="Bap.Std.Legacy.Monad.T.Option.html">Bap.Std.Legacy.Monad.T.Option</a>]</td>
+<tr><td><a href="Bap.Std.Bili.Make.html">Make</a> [<a href="Bap.Std.Bili.html">Bap.Std.Bili</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Make.html">Make</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
+<tr><td><a href="Bap.Std.Expi.Make.html">Make</a> [<a href="Bap.Std.Expi.html">Bap.Std.Expi</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Eval.Make.html">Make</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">M</span>)</code> provides an implementation of the <code class="code"><span class="constructor">S2</span></code> interface
+        lifted into the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.Make.html">Make</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">Make</span>(<span class="constructor">Interval</span>)</code> create an abstract interval tree data type
+        that uses abstract <code class="code"><span class="constructor">Interval</span></code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.Make.html">Make</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+<p>Create a trie for a given <code class="code"><span class="constructor">Key</span></code></p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap.Std.Integer.Make.html">Make</a> [<a href="Bap.Std.Integer.html">Bap.Std.Integer</a>]</td>
 <td><div class="info">
-Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Integer</span>.<span class="constructor">S</span></code></a> from the minimal implementation.
+<p>Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Integer</span>.<span class="constructor">S</span></code></a> from the minimal implementation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Cont.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> wrapes the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad.
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> wrapes the monad <code class="code"><span class="constructor">M</span></code> into the continuation monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Lazy.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Lazy.html">Monads.Std.Monad.Lazy</a>]</td>
@@ -1114,216 +1597,321 @@ Derive <a href="Bap.Std.Integer.S.html"><code class="code"><span class="construc
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Reader.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Reader.html">Monads.Std.Monad.Reader</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">Env</span>)(<span class="constructor">M</span>)</code> composes the Reader monad with <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Seq.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Seq.html">Monads.Std.Monad.Seq</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code>
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the Seq monad with <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.List.Make2.html">Make2</a> [<a href="Monads.Std.Monad.List.html">Monads.Std.Monad.List</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the List monad with <code class="code"><span class="constructor">M</span></code>
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the List monad with <code class="code"><span class="constructor">M</span></code></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Result.html">Monads.Std.Monad.Result</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the result monad with the monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the result monad with the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Option.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the option monad with the monad <code class="code"><span class="constructor">M</span></code>.
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> composes the option monad with the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Make2.html">Make2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
-        <a href="Monads.Std.Monad.Basic2.html">Basic</a> implementation
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Basic2.html">Basic</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Choice.Make2.html">Make2</a> [<a href="Monads.Std.Monad.Choice.html">Monads.Std.Monad.Choice</a>]</td>
 <td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Or_error.Make2.html">Make2</a> [<a href="Bap.Std.Legacy.Monad.T.Or_error.html">Bap.Std.Legacy.Monad.T.Or_error</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Option.Make2.html">Make2</a> [<a href="Bap.Std.Legacy.Monad.T.Option.html">Bap.Std.Legacy.Monad.T.Option</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.Make2.html">Make2</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap_bundle.Std.Manifest.html">Manifest</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
+<tr><td><a href="Bap.Std.Eval.Make2.html">Make2</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
 <td><div class="info">
-Program meta infromation.
+<p><code class="code"><span class="constructor">Make2</span>(<span class="constructor">M</span>)</code> provides an implementation of the <code class="code"><span class="constructor">S2</span></code> interface
+        lifted into the monad <code class="code"><span class="constructor">M</span></code>.</p>
+
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Interval_tree.Make_binable.html">Make_binable</a> [<a href="Bap.Std.Interval_tree.html">Bap.Std.Interval_tree</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">Make_binable</span>(<span class="constructor">Interval</span>)</code> create an abstract interval tree data type
+        that uses abstract <code class="code"><span class="constructor">Interval</span></code> and can be serialized via the Binable
+        interface.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memory.Make_iterators.html">Make_iterators</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
+<td><div class="info">
+<p>lifts iterators to monad <code class="code"><span class="constructor">M</span></code></p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap_bundle.Std.Manifest.html">Manifest</a> [<a href="Bap_bundle.Std.html">Bap_bundle.Std</a>]</td>
+<td><div class="info">
+<p>Program meta infromation.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Taint.Map.html">Map</a> [<a href="Bap.Std.Taint.html">Bap.Std.Taint</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_c.Std.C.Type.Mapper.html">Mapper</a> [<a href="Bap_c.Std.C.Type.html">Bap_c.Std.C.Type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Mapper.html">Mapper</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.view</code></a> function.
+<p>functorized version of <a href="Graphlib.Std.Graphlib.html#VALview"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Graphlib</span>.view</code></a> function.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bml.Mappers.html">Mappers</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Value.Match.html">Match</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
+<td><div class="info">
+<p>Runtime parallel match.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memmap.html">Memmap</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Memory maps.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Memory.html">Memory</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Virtual memory.
+<p>Virtual memory.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memory.html">Memory</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Memory region</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Message.html">Message</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
-Lisp Machine Message interface.
+<p>Lisp Machine Message interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Meta.html">Meta</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Types of meta information.
+<p>Types of meta information.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Minimal.html">Minimal</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Minimal</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
-        <a href="Monads.Std.Monad.Minimal.html">Minimal</a> implementation
+<p><code class="code"><span class="constructor">Minimal</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S.html">Monad.S</a> from the
+        <a href="Monads.Std.Monad.Minimal.html">Minimal</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Minimal2.html">Minimal2</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Minimal2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
-        <a href="Monads.Std.Monad.Minimal2.html">Minimal</a> implementation
+<p><code class="code"><span class="constructor">Minimal2</span>(<span class="constructor">M</span>)</code> derives <a href="Monads.Std.Monad.S2.html">Monad.S2</a> from the
+        <a href="Monads.Std.Monad.Minimal2.html">Minimal</a> implementation</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Modload.html">Modload</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-linking event
+<p>linking event</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.html">Monad</a> [<a href="Monads.Std.html">Monads.Std</a>]</td>
 <td><div class="info">
-The Monad module.
+<p>The Monad module.</p>
+
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Monad.html">Monad</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.html">Monad</a> [<a href="Bap.Std.Legacy.html">Bap.Std.Legacy</a>]</td>
-<td></td></tr>
 <tr><td><a href="Monads.html">Monads</a> </td>
-<td><div class="info">
-Monad Transformer Library.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Monitor.html">Monitor</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
-Monitor defines an error handling policy.
+<p>Monitor defines an error handling policy.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Mono.html">Mono</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>A comparable interface with size-monomorphic comparison.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.html">Monoid</a> [<a href="Monads.Std.html">Monads.Std</a>]</td>
 <td><div class="info">
-A monoid set.
+<p>A monoid set.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Move.html">Move</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Represent a movement of data
+<p>Represent a movement of data</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.State.Multi.html">Multi</a> [<a href="Monads.Std.Monad.State.html">Monads.Std.Monad.State</a>]</td>
 <td><div class="info">
-The Multi State monad.
+<p>The Multi State monad.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>N</td></tr>
+<tr><td align="left"><div>N</div></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Doc.Name.html">Name</a> [<a href="Bap_primus.Std.Primus.Lisp.Doc.html">Bap_primus.Std.Primus.Lisp.Doc</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Name.html">Name</a> [<a href="Bap_primus.Std.Primus.Linker.html">Bap_primus.Std.Primus.Linker</a>]</td>
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Graph.Node.html">Node</a> [<a href="Graphlib.Std.Graph.html">Graphlib.Std.Graph</a>]</td>
 <td><div class="info">
-Graph nodes.
+<p>Graph nodes.</p>
+
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Graphs.Ir.Node.html">Node</a> [<a href="Bap.Std.Graphs.Ir.html">Bap.Std.Graphs.Ir</a>]</td>
+<td><div class="info">
+<p>IR Graph node.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Insn.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Insn.Trie.html">Bap.Std.Insn.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Basic.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Disasm_expert.Basic.Trie.html">Bap.Std.Disasm_expert.Basic.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Op.Normalized.html">Normalized</a> [<a href="Bap.Std.Op.html">Bap.Std.Op</a>]</td>
+<td><div class="info">
+<p>Normalized comparison.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Trie.Normalized.html">Normalized</a> [<a href="Bap.Std.Bil.Trie.html">Bap.Std.Bil.Trie</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_bml.Ops.Nullary.html">Nullary</a> [<a href="Bap_bml.Ops.html">Bap_bml.Ops</a>]</td>
 <td></td></tr>
-<tr><td align="left"><br>O</td></tr>
+<tr><td align="left"><div>O</div></td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Object.html">Object</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td><div class="info">
-Each taint represents an abstract object that we would like
-        to track.
+<p>Each taint represents an abstract object that we would like
+        to track.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Observation.html">Observation</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-Observations interface.
+<p>Observations interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Observation.html">Observation</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-Machine Observation.
+<p>Machine Observation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.Of_ocamlgraph.html">Of_ocamlgraph</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Of_ocamlgraph</span>(<span class="constructor">O</span>)</code> creates an adapter module, that implements
+<p><code class="code"><span class="constructor">Of_ocamlgraph</span>(<span class="constructor">O</span>)</code> creates an adapter module, that implements
         <code class="code"><span class="constructor">Graphlib</span></code> interface on top of the module implementing
-        <code class="code"><span class="constructor">OCamlGraph</span></code> interface.
+        <code class="code"><span class="constructor">OCamlGraph</span></code> interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Ogre.html">Ogre</a> </td>
 <td><div class="info">
-OGRE - Open Generic Representation.
+<p>OGRE - Open Generic Representation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="ARM.Op.html">Op</a> [<a href="ARM.html">ARM</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Op.html">Op</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Operand</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Opaque.html">Opaque</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Opaque type is like regular type, except that we can print or
-      examine it in any way.
+<p>Opaque type is like regular type, except that we can print or
+      examine it in any way.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Option.html">Option</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The option aka Maybe monad.
+<p>The option aka Maybe monad.</p>
+
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Option.html">Option</a> [<a href="Bap.Std.Legacy.Monad.T.html">Bap.Std.Legacy.Monad.T</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Or_error.html">Or_error</a> [<a href="Bap.Std.Legacy.Monad.T.html">Bap.Std.Legacy.Monad.T</a>]</td>
-<td></td></tr>
-<tr><td align="left"><br>P</td></tr>
+<tr><td align="left"><div>P</div></td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Pair.html">Pair</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-The pair interface lifted into the monad.
+<p>The pair interface lifted into the monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Pair.html">Pair</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-The pair interface lifted into the monad.
+<p>The pair interface lifted into the monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.C.Parser.html">Parser</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.Partition.html">Partition</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Result of a set partitioning.
+<p>Result of a set partitioning.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.Pass.html">Pass</a> [<a href="Bap.Std.Project.html">Bap.Std.Project</a>]</td>
+<td><div class="info">
+<p>A program analysis pass.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Pass.html">Pass</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<p>A BIL analysis pass</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Path.html">Path</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Path between two nodes.
+<p>Path between two nodes.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="X86_types.Pcmpstr.html">Pcmpstr</a> [<a href="X86_types.html">X86_types</a>]</td>
 <td><div class="info">
-See section 4.1 of the Intel® 64 and IA-32 Architectures Software
+<p>See section 4.1 of the Intel® 64 and IA-32 Architectures Software
    Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
-   (order numbers 253666 and 253667)
+   (order numbers 253666 and 253667)</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings_index.Persistent.html">Persistent</a> [<a href="Bap_strings_index.html">Bap_strings_index</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Phi.html">Phi</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>PHI-node</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugin.html">Plugin</a> [<a href="Bap_plugins.Std.html">Bap_plugins.Std</a>]</td>
 <td><div class="info">
-Plugin - a loadable self-contained piece of code.
+<p>Plugin - a loadable self-contained piece of code.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_build.Std.Plugin_options.html">Plugin_options</a> [<a href="Bap_build.Std.html">Bap_build.Std</a>]</td>
@@ -1332,22 +1920,29 @@ Plugin - a loadable self-contained piece of code.
 <td></td></tr>
 <tr><td><a href="Bap_plugins.Std.Plugins.html">Plugins</a> [<a href="Bap_plugins.Std.html">Bap_plugins.Std</a>]</td>
 <td><div class="info">
-Plugin loader.
+<p>Plugin loader.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Plus.html">Plus</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-A parametric <a href="Monads.Std.Monoid.html">monoid</a>
+<p>A parametric <a href="Monads.Std.Monoid.html">monoid</a></p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Propagation.Policy.html">Policy</a> [<a href="Bap_taint.Std.Taint.Propagation.html">Bap_taint.Std.Taint.Propagation</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Pos.html">Pos</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-A hierarchical program position.
+<p>A hierarchical program position.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bml.Predicates.html">Predicates</a> [<a href="Bap_bml.html">Bap_bml</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Trie.String.Prefix.html">Prefix</a> [<a href="Bap.Std.Trie.String.html">Bap.Std.Trie.String</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Trie.Array.Prefix.html">Prefix</a> [<a href="Bap.Std.Trie.Array.html">Bap.Std.Trie.Array</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Primitive.html">Primitive</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td></td></tr>
@@ -1355,246 +1950,401 @@ A hierarchical program position.
 <td></td></tr>
 <tr><td><a href="Bap_strings_unscrambler.Ascii.Printable.html">Printable</a> [<a href="Bap_strings_unscrambler.Ascii.html">Bap_strings_unscrambler.Ascii</a>]</td>
 <td><div class="info">
-All printable ASCII characters
+<p>All printable ASCII characters</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Printable.html">Printable</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Printable data structures.
+<p>Printable data structures.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.Product.html">Product</a> [<a href="Monads.Std.Monoid.Float.html">Monads.Std.Monoid.Float</a>]</td>
 <td><div class="info">
-A monoid over product
+<p>A monoid over product</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.Product.html">Product</a> [<a href="Monads.Std.Monoid.Int.html">Monads.Std.Monoid.Int</a>]</td>
 <td><div class="info">
-A monoid over product
+<p>A monoid over product</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Program.html">Program</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Program in Intermediate representation.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Project.html">Project</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Disassembled program.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Promise.html">Promise</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
-An promise to provide a value in a future.
+<p>An promise to provide a value in a future.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Propagation.html">Propagation</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td><div class="info">
-Policy based propagation.
+<p>Policy based propagation.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.Proto.html">Proto</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Observation.Provider.html">Provider</a> [<a href="Bap_primus.Std.Primus.Observation.html">Bap_primus.Std.Primus.Observation</a>]</td>
 <td><div class="info">
-Data interface to the provider.
+<p>Data interface to the provider.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>Q</td></tr>
+<tr><td align="left"><div>Q</div></td></tr>
 <tr><td><a href="Bap_c_type.Qualifier.html">Qualifier</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Ogre.Query.html">Query</a> [<a href="Ogre.html">Ogre</a>]</td>
 <td><div class="info">
-Domain specific language for constructing queries.
+<p>Domain specific language for constructing queries.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>R</td></tr>
+<tr><td align="left"><div>R</div></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.R16.html">R16</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V2.R16.html">R16</a> [<a href="Bap.Std.Memory.Trie.Stable.V2.html">Bap.Std.Memory.Trie.Stable.V2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V1.R16.html">R16</a> [<a href="Bap.Std.Memory.Trie.Stable.V1.html">Bap.Std.Memory.Trie.Stable.V1</a>]</td>
+<td></td></tr>
 <tr><td><a href="X86_env.R32.html">R32</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td><div class="info">
-32-bit mode registers
+<p>32-bit mode registers</p>
+
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.R32.html">R32</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V2.R32.html">R32</a> [<a href="Bap.Std.Memory.Trie.Stable.V2.html">Bap.Std.Memory.Trie.Stable.V2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V1.R32.html">R32</a> [<a href="Bap.Std.Memory.Trie.Stable.V1.html">Bap.Std.Memory.Trie.Stable.V1</a>]</td>
+<td></td></tr>
 <tr><td><a href="X86_env.R64.html">R64</a> [<a href="X86_env.html">X86_env</a>]</td>
 <td><div class="info">
-64-bit mode registers
+<p>64-bit mode registers</p>
+
 </div>
 </td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.R64.html">R64</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V2.R64.html">R64</a> [<a href="Bap.Std.Memory.Trie.Stable.V2.html">Bap.Std.Memory.Trie.Stable.V2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V1.R64.html">R64</a> [<a href="Bap.Std.Memory.Trie.Stable.V1.html">Bap.Std.Memory.Trie.Stable.V1</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.R8.html">R8</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V2.R8.html">R8</a> [<a href="Bap.Std.Memory.Trie.Stable.V2.html">Bap.Std.Memory.Trie.Stable.V2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V1.R8.html">R8</a> [<a href="Bap.Std.Memory.Trie.Stable.V1.html">Bap.Std.Memory.Trie.Stable.V1</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.html">Random</a> [<a href="Bap_primus.Std.Primus.Generator.html">Bap_primus.Std.Primus.Generator</a>]</td>
 <td><div class="info">
-Random Number Generators
+<p>Random Number Generators</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Read.html">Read</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">Read</span></code> typeclass.
+<p><code class="code"><span class="constructor">Read</span></code> typeclass.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.Reader.html">Reader</a> [<a href="Bap_traces.Std.Trace.html">Bap_traces.Std.Trace</a>]</td>
 <td><div class="info">
-Reader interface.
+<p>Reader interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Reader.html">Reader</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Reader monad.
+<p>The Reader monad.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Reconstructor.html">Reconstructor</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Reconstructor is responsible for reconstructing symbol table
+      from a CFG.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Recursive.html">Recursive</a> [<a href="Bap.Std.Disasm_expert.html">Bap.Std.Disasm_expert</a>]</td>
+<td><div class="info">
+<p>Recursive Descent Disassembler.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="X86_asm.Reg.html">Reg</a> [<a href="X86_asm.html">X86_asm</a>]</td>
 <td></td></tr>
 <tr><td><a href="ARM.Reg.html">Reg</a> [<a href="ARM.html">ARM</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Reg.html">Reg</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Register.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Regular.html">Regular</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Regular types models a general concept of value, i.e., something
+<p>Regular types models a general concept of value, i.e., something
       that can be used in way similar to regular <code class="code">int</code>, <code class="code">string</code>,
-      <code class="code">char</code> and other built in types.
+      <code class="code">char</code> and other built in types.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.html">Regular</a> </td>
 <td><div class="info">
-Regular Library.
+<p>Regular Library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Rel.html">Rel</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td><div class="info">
-Relation between a value and an object that we track.
+<p>Relation between a value and an object that we track.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.html">Result</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Result Monad.
+<p>The Result Monad.</p>
+
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.Result.html">Result</a> [<a href="Bap.Std.Legacy.Monad.T.html">Bap.Std.Legacy.Monad.T</a>]</td>
+<tr><td><a href="Bap.Std.Bil.Result.html">Result</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Return.html">Return</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-A return from a call.
+<p>A return from a call.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Rooter.html">Rooter</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Rooter finds starts of functions in the binary.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bare.Rule.html">Rule</a> [<a href="Bare.html">Bare</a>]</td>
 <td><div class="info">
-Matching rule specification.
+<p>Matching rule specification.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>S</td></tr>
+<tr><td align="left"><div>S</div></td></tr>
 <tr><td><a href="Bap_strings.Std.Strings.Scanner.html">Scanner</a> [<a href="Bap_strings.Std.Strings.html">Bap_strings.Std.Strings</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Image.Scheme.html">Scheme</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
+<td><div class="info">
+<p>A scheme of image specification.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Bap_c_type_mapper.Search.html">Search</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
 <td><div class="info">
-Search Monad.
+<p>Search Monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Section.html">Section</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-File sections
+<p>File sections</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Backend.Section.html">Section</a> [<a href="Bap.Std.Backend.html">Bap.Std.Backend</a>]</td>
+<td><div class="info">
+<p>Just a named region of memory.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Generator.Random.Seeded.html">Seeded</a> [<a href="Bap_primus.Std.Primus.Generator.Random.html">Bap_primus.Std.Primus.Generator.Random</a>]</td>
 <td><div class="info">
-Self seeded generators.
+<p>Self seeded generators.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Image.Segment.html">Segment</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
+<td><div class="info">
+<p>Image Segments.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Backend.Segment.html">Segment</a> [<a href="Bap.Std.Backend.html">Bap.Std.Backend</a>]</td>
+<td><div class="info">
+<p>A named contiguous part of file with permissions.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Self.html">Self</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>A self reflection.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Seq.html">Seq</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Sequence monad.
+<p>The Sequence monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Seq.html">Seq</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
-            for sequences
+<p>The <a href="Monads.Std.Monad.Collection.S2.html">Monad.Collection.S2</a> interface
+            for sequences</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Seq.html">Seq</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-The <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> interface
-            for sequences
+<p>The <a href="Monads.Std.Monad.Collection.S.html">Monad.Collection.S</a> interface
+            for sequences</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Seq.html">Seq</a> [<a href="Regular.Std.html">Regular.Std</a>]</td>
 <td><div class="info">
-Lazy sequence.
+<p>Lazy sequence.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Seq.html">Seq</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Lazy sequence</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_ida.Std.Service.html">Service</a> [<a href="Bap_ida.Std.html">Bap_ida.Std</a>]</td>
 <td><div class="info">
-Allow plugins to specify that they can provide IDA service
+<p>Allow plugins to specify that they can provide IDA service</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Cache.Service.html">Service</a> [<a href="Regular.Std.Data.Cache.html">Regular.Std.Data.Cache</a>]</td>
 <td><div class="info">
-Service injection point.
+<p>Service injection point.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Set.html">Set</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-A set monoind.
+<p>A set monoind.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Signal.html">Signal</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
-A handler to produce elements in streams.
+<p>A handler to produce elements in streams.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.C.Size.html">Size</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Size.html">Size</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Type safe operand and register sizes.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Graphlib.Std.Solution.html">Solution</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-A solution to a system of fixed-point equations.
+<p>A solution to a system of fixed-point equations.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Source.html">Source</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Source of information.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type.Spec.html">Spec</a> [<a href="Bap_c_type.html">Bap_c_type</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.Spec.html">Spec</a> [<a href="Bap_primus.Std.Primus.Lisp.Type.html">Bap_primus.Std.Primus.Lisp.Type</a>]</td>
 <td><div class="info">
-Type Specifier DSL.
+<p>Type Specifier DSL.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.html">Stable</a> [<a href="Bap.Std.Memory.Trie.html">Bap.Std.Memory.Trie</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Stable.html">Stable</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>Stable marshaling interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_abi.Stack.html">Stack</a> [<a href="Bap_c_abi.html">Bap_c_abi</a>]</td>
 <td><div class="info">
-An abstraction of a stack, commonly used in C compilers.
+<p>An abstraction of a stack, commonly used in C compilers.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Stack.html">Stack</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-A <a href="Monads.Std.Monoid.List.html">list monoid</a> that accumulates data in a
-        reversed order.
+<p>A <a href="Monads.Std.Monoid.List.html">list monoid</a> that accumulates data in a
+        reversed order.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c_type_mapper.State.html">State</a> [<a href="Bap_c_type_mapper.html">Bap_c_type_mapper</a>]</td>
 <td><div class="info">
-the mapper lifted into a regular state monad.
+<p>the mapper lifted into a regular state monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.State.html">State</a> [<a href="Bap_primus.Std.Primus.Machine.html">Bap_primus.Std.Primus.Machine</a>]</td>
 <td><div class="info">
-Machine State.
+<p>Machine State.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.State.html">State</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The State Monad.
+<p>The State Monad.</p>
+
 </div>
 </td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.State.html">State</a> [<a href="Bap.Std.Legacy.Monad.T.html">Bap.Std.Legacy.Monad.T</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.State.html">State</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
-<td></td></tr>
 <tr><td><a href="Bap_strings.Std.html">Std</a> [<a href="Bap_strings.html">Bap_strings</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.html">Std</a> [<a href="Bap_traces.html">Bap_traces</a>]</td>
 <td><div class="info">
-Traces of execution.
+<p>Traces of execution.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_llvm.Std.html">Std</a> [<a href="Bap_llvm.html">Bap_llvm</a>]</td>
 <td><div class="info">
-Initialize LLVM backend.
+<p>Initialize LLVM backend.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_ida.Std.html">Std</a> [<a href="Bap_ida.html">Bap_ida</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_dwarf.Std.html">Std</a> [<a href="Bap_dwarf.html">Bap_dwarf</a>]</td>
 <td><div class="info">
-DWARF parser
+<p>DWARF parser</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_demangle.Std.html">Std</a> [<a href="Bap_demangle.html">Bap_demangle</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_build.Std.html">Std</a> [<a href="Bap_build.html">Bap_build</a>]</td>
 <td><div class="info">
-bapbuild support library.
+<p>bapbuild support library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.html">Std</a> [<a href="Bap_c.html">Bap_c</a>]</td>
@@ -1605,103 +2355,171 @@ bapbuild support library.
 <td></td></tr>
 <tr><td><a href="Graphlib.Std.html">Std</a> [<a href="Graphlib.html">Graphlib</a>]</td>
 <td><div class="info">
-Graph library
+<p>Graph library</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.html">Std</a> [<a href="Bap_future.html">Bap_future</a>]</td>
 <td><div class="info">
-Future library.
+<p>Future library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.html">Std</a> [<a href="Monads.html">Monads</a>]</td>
 <td><div class="info">
-Monad Transformer Library.
+<p>Monad Transformer Library.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.html">Std</a> [<a href="Regular.html">Regular</a>]</td>
 <td><div class="info">
-Interface that should support any regular data type.
+<p>Interface that should support any regular data type.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_plugins.Std.html">Std</a> [<a href="Bap_plugins.html">Bap_plugins</a>]</td>
 <td><div class="info">
-Interface to the plugin subsystem.
+<p>Interface to the plugin subsystem.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_bundle.Std.html">Std</a> [<a href="Bap_bundle.html">Bap_bundle</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap.Std.html">Std</a> [<a href="Bap.html">Bap</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Stmt.html">Stmt</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">Regular</span></code> interface for BIL statements</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Storage.html">Storage</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>Predefined storage classes</p>
+
+</span></div>
+</td></tr>
 <tr><td><a href="Bap_future.Std.Stream.html">Stream</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
-A stream of elements.
+<p>A stream of elements.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Ogre.Query.String.html">String</a> [<a href="Ogre.Query.html">Ogre.Query</a>]</td>
 <td><div class="info">
-Defines field subscripting syntax.
+<p>Defines field subscripting syntax.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.String.html">String</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-A monoid on strings.
+<p>A monoid on strings.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.String.html">String</a> [<a href="Bap.Std.Trie.html">Bap.Std.Trie</a>]</td>
+<td><div class="info">
+<p>Predefined prefix and suffix string tries.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings.Std.Strings.html">Strings</a> [<a href="Bap_strings.Std.html">Bap_strings.Std</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Sub.html">Sub</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Subroutine.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.String.Suffix.html">Suffix</a> [<a href="Bap.Std.Trie.String.html">Bap.Std.Trie.String</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Trie.Array.Suffix.html">Suffix</a> [<a href="Bap.Std.Trie.Array.html">Bap.Std.Trie.Array</a>]</td>
+<td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.Float.Sum.html">Sum</a> [<a href="Monads.Std.Monoid.Float.html">Monads.Std.Monoid.Float</a>]</td>
 <td><div class="info">
-A monoind over addition
+<p>A monoind over addition</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monoid.Int.Sum.html">Sum</a> [<a href="Monads.Std.Monoid.Int.html">Monads.Std.Monoid.Int</a>]</td>
 <td><div class="info">
-A monoind over addition
+<p>A monoind over addition</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Make.Symbol.html">Symbol</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
 <td><div class="info">
-Symbol Value Isomorphism.
+<p>Symbol Value Isomorphism.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Image.Symbol.html">Symbol</a> [<a href="Bap.Std.Image.html">Bap.Std.Image</a>]</td>
+<td><div class="info">
+<p>Symbol.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Backend.Symbol.html">Symbol</a> [<a href="Bap.Std.Backend.html">Bap.Std.Backend</a>]</td>
+<td><div class="info">
+<p>Symbol definition, that can span several non-contiguous parts of
+        memory</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Symbolizer.html">Symbolizer</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Symbolizer maps addresses to function names</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Symtab.html">Symtab</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Reconstructed symbol table.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.Make.Syntax.html">Syntax</a> [<a href="Bap_primus.Std.Primus.Value.Make.html">Bap_primus.Std.Primus.Value.Make</a>]</td>
 <td><div class="info">
-Int-like syntax.
+<p>Int-like syntax.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Machine.S.Syntax.html">Syntax</a> [<a href="Bap_primus.Std.Primus.Machine.S.html">Bap_primus.Std.Primus.Machine.S</a>]</td>
 <td><div class="info">
-Computation Syntax.
+<p>Computation Syntax.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Syntax.html">Syntax</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-Monadic operators, see
-          <a href="Monads.Std.Monad.Syntax.S2.html">Monad.Syntax.S2</a> for more.
+<p>Monadic operators, see
+          <a href="Monads.Std.Monad.Syntax.S2.html">Monad.Syntax.S2</a> for more.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Syntax.html">Syntax</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-Monadic operators, see
-          <a href="Monads.Std.Monad.Syntax.S.html">Monad.Syntax.S</a> for more.
+<p>Monadic operators, see
+          <a href="Monads.Std.Monad.Syntax.S.html">Monad.Syntax.S</a> for more.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Syntax.html">Syntax</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-Describes monadic operators.
+<p>Describes monadic operators.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Syscall.html">Syscall</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-a system call
+<p>a system call</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>T</td></tr>
+<tr><td align="left"><div>T</div></td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Exception.T.html">T</a> [<a href="Monads.Std.Monad.Result.Exception.html">Monads.Std.Monad.Result.Exception</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Result.Error.T.html">T</a> [<a href="Monads.Std.Monad.Result.Error.html">Monads.Std.Monad.Result.Error</a>]</td>
-<td></td></tr>
-<tr><td><a href="Bap.Std.Legacy.Monad.T.html">T</a> [<a href="Bap.Std.Legacy.Monad.html">Bap.Std.Legacy.Monad</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Cont.T1.html">T1</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
 <td></td></tr>
@@ -1725,6 +2543,12 @@ a system call
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Option.T1.html">T1</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T1.html">T1</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+<p>An evaluator interface parametrized by a <code class="code"><span class="constructor">T1</span></code> monad.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monad.Cont.T2.html">T2</a> [<a href="Monads.Std.Monad.Cont.html">Monads.Std.Monad.Cont</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Lazy.T2.html">T2</a> [<a href="Monads.Std.Monad.Lazy.html">Monads.Std.Monad.Lazy</a>]</td>
@@ -1745,117 +2569,258 @@ a system call
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monad.Option.T2.html">T2</a> [<a href="Monads.Std.Monad.Option.html">Monads.Std.Monad.Option</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bap.Std.Eval.T2.html">T2</a> [<a href="Bap.Std.Eval.html">Bap.Std.Eval</a>]</td>
+<td><div class="info">
+<p>An evaluator parametrized by a <code class="code"><span class="constructor">T2</span></code> monad.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Monads.Std.Monoid.TList.html">TList</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-Concretizes <code class="code"><span class="keywordsign">'</span>a&nbsp;list</code> to <code class="code"><span class="constructor">T</span>.t&nbsp;list</code>
+<p>Concretizes <code class="code"><span class="keywordsign">'</span>a&nbsp;list</code> to <code class="code"><span class="constructor">T</span>.t&nbsp;list</code></p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Table.html">Table</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Table.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_dwarf.Std.Dwarf.Tag.html">Tag</a> [<a href="Bap_dwarf.Std.Dwarf.html">Bap_dwarf.Std.Dwarf</a>]</td>
 <td><div class="info">
-Debug Entry Tag
+<p>Debug Entry Tag</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Value.Tag.html">Tag</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
+<td><div class="info">
+<p>Variants of values.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.html">Taint</a> [<a href="Bap_taint.Std.html">Bap_taint.Std</a>]</td>
 <td><div class="info">
-Abstract taint.
+<p>Abstract taint.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Taint.html">Taint</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<span class="deprecated"><p>Abstract taint.</p>
+
+</span></div>
+</td></tr>
+<tr><td><a href="Bap.Std.Term.html">Term</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>IR language term.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Text_tags.html">Text_tags</a> </td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Tid.html">Tid</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
 <td><div class="info">
-Controls tags in format strings.
+<p>Term identifier</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Graphs.Tid.html">Tid</a> [<a href="Bap.Std.Graphs.html">Bap.Std.Graphs</a>]</td>
+<td><div class="info">
+<p>Graph of Term identifiers.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Graphlib.To_ocamlgraph.html">To_ocamlgraph</a> [<a href="Graphlib.Std.Graphlib.html">Graphlib.Std.Graphlib</a>]</td>
 <td><div class="info">
-<code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
-        OCamlGraph interface for a persistent graph.
+<p><code class="code"><span class="constructor">To_ocamlgraph</span>(<span class="constructor">G</span>)</code> returns a module that implements
+        OCamlGraph interface for a persistent graph.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.To_string.html">To_string</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_traces.Std.Trace.html">Trace</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Trace is a stream of events plus meta data.
+<p>Trace is a stream of events plus meta data.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Linker.Trace.html">Trace</a> [<a href="Bap_primus.Std.Primus.Linker.html">Bap_primus.Std.Primus.Linker</a>]</td>
 <td><div class="info">
-Call tracing.
+<p>Call tracing.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Trace_stats.html">Trace_stats</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Information about the trace itself
+<p>Information about the trace itself</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Tracer.html">Tracer</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Information about a tracer tool.
+<p>Information about a tracer tool.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_traces.Std.Traces.html">Traces</a> [<a href="Bap_traces.Std.html">Bap_traces.Std</a>]</td>
 <td><div class="info">
-Loaded traces.
+<p>Loaded traces.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_taint.Std.Taint.Tracker.html">Tracker</a> [<a href="Bap_taint.Std.Taint.html">Bap_taint.Std.Taint</a>]</td>
 <td><div class="info">
-Taint tracker control module.
+<p>Taint tracker control module.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Trans.html">Trans</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-Monad Transformer Interface.
+<p>Monad Transformer Interface.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Graphlib.Std.Tree.html">Tree</a> [<a href="Graphlib.Std.html">Graphlib.Std</a>]</td>
 <td><div class="info">
-Tree is a particular subtype of a graph for which
+<p>Tree is a particular subtype of a graph for which
       each node has only one predecessor, and there is only
-      one path between tree root and any other node.
+      one path between tree root and any other node.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Insn.Trie.html">Trie</a> [<a href="Bap.Std.Insn.html">Bap.Std.Insn</a>]</td>
+<td><div class="info">
+<p>Prefix Tree
+        This module provides a trie data structure where a sequence of
+        instructions is used as a key (and an individual instruction
+        as a token).</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Basic.Trie.html">Trie</a> [<a href="Bap.Std.Disasm_expert.Basic.html">Bap.Std.Disasm_expert.Basic</a>]</td>
+<td><div class="info">
+<p>Trie maps over instructions</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.html">Trie</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
+<td><div class="info">
+<p>Tries over memory</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Trie.html">Trie</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td><div class="info">
+<p>Tries on BIL.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Trie.html">Trie</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>Prefix trees for bitvectors.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Trie.html">Trie</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Constructs a trie</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S2.Triple.html">Triple</a> [<a href="Monads.Std.Monad.S2.html">Monads.Std.Monad.S2</a>]</td>
 <td><div class="info">
-The triple interface lifted into a monad.
+<p>The triple interface lifted into a monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.S.Triple.html">Triple</a> [<a href="Monads.Std.Monad.S.html">Monads.Std.Monad.S</a>]</td>
 <td><div class="info">
-The triple interface lifted into a monad.
+<p>The triple interface lifted into a monad.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_c.Std.C.Type.html">Type</a> [<a href="Bap_c.Std.C.html">Bap_c.Std.C</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Lisp.Type.html">Type</a> [<a href="Bap_primus.Std.Primus.Lisp.html">Bap_primus.Std.Primus.Lisp</a>]</td>
 <td><div class="info">
-Lisp Type System.
+<p>Lisp Type System.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Ogre.Type.html">Type</a> [<a href="Ogre.html">Ogre</a>]</td>
 <td><div class="info">
-Ogre type system.
+<p>Ogre type system.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>U</td></tr>
+<tr><td><a href="Bap.Std.Type.html">Type</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>The type of a BIL expression.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Type_error.html">Type_error</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Value.Typeid.html">Typeid</a> [<a href="Bap.Std.Value.html">Bap.Std.Value</a>]</td>
+<td><div class="info">
+<p>Persistent type identifiers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Types.html">Types</a> [<a href="Bap.Std.Bil.html">Bap.Std.Bil</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>U</div></td></tr>
 <tr><td><a href="Bap_bml.Ops.Unary.html">Unary</a> [<a href="Bap_bml.Ops.html">Bap_bml.Ops</a>]</td>
 <td></td></tr>
 <tr><td><a href="Monads.Std.Monoid.Unit.html">Unit</a> [<a href="Monads.Std.Monoid.html">Monads.Std.Monoid</a>]</td>
 <td><div class="info">
-a trivial monoid
+<p>a trivial monoid</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Bytes.Unsafe.html">Unsafe</a> [<a href="Regular.Std.Bytes.html">Regular.Std.Bytes</a>]</td>
 <td><div class="info">
-Unsafe conversions (for advanced users)
+<p>Unsafe conversions (for advanced users)</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Unsafe.html">Unsafe</a> [<a href="Bap.Std.Bitvector.html">Bap.Std.Bitvector</a>]</td>
+<td><div class="info">
+<p>Arithmentic operations that doesn't check the widths.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_strings.Std.Strings.Unscrambler.html">Unscrambler</a> [<a href="Bap_strings.Std.Strings.html">Bap_strings.Std.Strings</a>]</td>
 <td></td></tr>
-<tr><td align="left"><br>V</td></tr>
+<tr><td align="left"><div>V</div></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V1.html">V1</a> [<a href="Bap.Std.Memory.Trie.Stable.html">Bap.Std.Memory.Trie.Stable</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Stable.V1.html">V1</a> [<a href="Bap.Std.Bitvector.Stable.html">Bap.Std.Bitvector.Stable</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Memory.Trie.Stable.V2.html">V2</a> [<a href="Bap.Std.Memory.Trie.Stable.html">Bap.Std.Memory.Trie.Stable</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Bitvector.Stable.V2.html">V2</a> [<a href="Bap.Std.Bitvector.Stable.html">Bap.Std.Bitvector.Stable</a>]</td>
+<td></td></tr>
 <tr><td><a href="Bap_primus.Std.Primus.Value.html">Value</a> [<a href="Bap_primus.Std.Primus.html">Bap_primus.Std.Primus</a>]</td>
 <td><div class="info">
-A result of computation.
+<p>A result of computation.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Value.html">Value</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Universal Values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Bil.Result.Value.html">Value</a> [<a href="Bap.Std.Bil.Result.html">Bap.Std.Bil.Result</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Var.html">Var</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>BIL variable.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Bap_future.Std.Stream.Variadic.html">Variadic</a> [<a href="Bap_future.Std.Stream.html">Bap_future.Std.Stream</a>]</td>
@@ -1864,61 +2829,80 @@ A result of computation.
 <td></td></tr>
 <tr><td><a href="Bap_future.Std.Variadic.html">Variadic</a> [<a href="Bap_future.Std.html">Bap_future.Std</a>]</td>
 <td><div class="info">
-Variadic arguments.
+<p>Variadic arguments.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Vector.html">Vector</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Resizable Array.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Regular.Std.Data.Versioned.html">Versioned</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-Versioned interfaces
+<p>Versioned interfaces</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>W</td></tr>
+<tr><td align="left"><div>W</div></td></tr>
+<tr><td><a href="Bap.Std.Memory.With_error.html">With_error</a> [<a href="Bap.Std.Memory.html">Bap.Std.Memory</a>]</td>
+<td><div class="info">
+<p>iterators lifter to the Or_error monad</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm.With_exn.html">With_exn</a> [<a href="Bap.Std.Disasm.html">Bap.Std.Disasm</a>]</td>
+<td><div class="info">
+<p><code class="code"><span class="constructor">With_exn</span>.f</code> is the same as <code class="code">f</code> except that it throws an
+        exception instead of returning <code class="code"><span class="constructor">Error</span></code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bap.Std.Disasm_expert.Linear.With_exn.html">With_exn</a> [<a href="Bap.Std.Disasm_expert.Linear.html">Bap.Std.Disasm_expert.Linear</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bap.Std.Word.html">Word</a> [<a href="Bap.Std.html">Bap.Std</a>]</td>
+<td><div class="info">
+<p>Shortcut for bitvectors that represent words</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Regular.Std.Data.Write.html">Write</a> [<a href="Regular.Std.Data.html">Regular.Std.Data</a>]</td>
 <td><div class="info">
-Write typeclass.
+<p>Write typeclass.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Monads.Std.Monad.Writer.html">Writer</a> [<a href="Monads.Std.Monad.html">Monads.Std.Monad</a>]</td>
 <td><div class="info">
-The Writer monad.
+<p>The Writer monad.</p>
+
 </div>
 </td></tr>
-<tr><td align="left"><br>X</td></tr>
+<tr><td align="left"><div>X</div></td></tr>
 <tr><td><a href="X86_asm.html">X86_asm</a> </td>
 <td></td></tr>
 <tr><td><a href="X86_asm_reg.html">X86_asm_reg</a> </td>
-<td><div class="info">
-<code class="code">width&nbsp;reg_type</code> returns the size of the given <code class="code">reg_type</code>
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="X86_asm_reg_types.html">X86_asm_reg_types</a> </td>
 <td><div class="info">
-Basic register types of all supported X86 registers.
+<p>Basic register types of all supported X86 registers.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="X86_cpu.html">X86_cpu</a> </td>
-<td><div class="info">
-IA32 Architecture Registers.
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="X86_env.html">X86_env</a> </td>
-<td><div class="info">
-condition flag bits
-</div>
-</td></tr>
+<td></td></tr>
 <tr><td><a href="X86_llvm_env.html">X86_llvm_env</a> </td>
 <td><div class="info">
-This module exposes register functionality that is based on
-    LLVM's disassembler.
+<p>This module exposes register functionality that is based on
+    LLVM's disassembler.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="X86_types.html">X86_types</a> </td>
-<td><div class="info">
-See section 4.1 of the Intel® 64 and IA-32 Architectures Software
-   Developer’s Manual, Volumes 2A &amp; 2B: Instruction Set Reference
-   (order numbers 253666 and 253667)
-</div>
-</td></tr>
+<td></td></tr>
 </table>
 </body>
 </html>

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,15 +89,16 @@
 &nbsp;</div>
 <h1>Functor <a href="type_Regular.Std.Printable.Make.html">Regular.Std.Printable.Make</a></h1>
 
-<pre><span class="keyword">module</span> Make <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="code"><span class="keyword">sig</span></code></pre><div class="sig_block">
+<pre><span id="MODULEMake"><span class="keyword">module</span> Make</span> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="code"><span class="keyword">sig</span></code></pre><div class="sig_block">
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 </div><pre><code class="code"><span class="keyword">end</span></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Regular.Std.Printable.S.html">S</a></code><code class="type">  with type t := M.t</code></pre><div class="info module top">
-Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.
-<p>
+<div class="info-desc">
+<p>Implement <code class="code"><span class="constructor">Printable</span></code> interface from the minimum implementation.</p>
 
-        Takes a module <code class="code"><span class="constructor">T</span></code>, that provides a function <code class="code">pp&nbsp;:&nbsp;t&nbsp;printer</code>
+<p>Takes a module <code class="code"><span class="constructor">T</span></code>, that provides a function <code class="code">pp&nbsp;:&nbsp;t&nbsp;printer</code>
         and a <code class="code">module_name</code>, and implements the rest of the
-        <code class="code"><span class="constructor">Printable</span></code> interface.<br>
+        <code class="code"><span class="constructor">Printable</span></code> interface.</p>
+</div>
 </div>
 <table border="0" cellpadding="3" width="100%">
 <tr>
@@ -119,44 +121,56 @@ Implement <code class="code"><span class="constructor">Printable</span></code> i
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-type of printable<br>
+<div class="info-desc">
+<p>type of printable</p>
+</div>
 </div>
 
 
 <pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type"><a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">to_string&nbsp;x</code> returns a human-readable representation of <code class="code">x</code><br>
+<div class="info-desc">
+<p><code class="code">to_string&nbsp;x</code> returns a human-readable representation of <code class="code">x</code></p>
+</div>
 </div>
 
 <pre><span id="VALstr"><span class="keyword">val</span> str</span> : <code class="type">unit -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">str&nbsp;()&nbsp;t</code> is formatted output function that matches "%a"
+<div class="info-desc">
+<p><code class="code">str&nbsp;()&nbsp;t</code> is formatted output function that matches "%a"
           conversion format specifier in functions, that prints to string,
           e.g., <code class="code">sprintf</code>, <code class="code">failwithf</code>, <code class="code">errorf</code> and, suprisingly all
           <code class="code"><span class="constructor">Lwt</span></code> printing function, including <code class="code"><span class="constructor">Lwt_io</span>.printf</code> and logging
           (or any other function with type ('a,unit,string,...)
-          formatN`. Example:
-<p>
+          formatN`. Example:</p>
 
-          <pre class="codepre"><code class="code"><span class="constructor">Or_error</span>.errorf <span class="string">"type %a is not valid for %a"</span>
-            <span class="constructor">Type</span>.str ty <span class="constructor">Exp</span>.str exp</code></pre><br>
+<pre class="codepre"><code class="code"><span class="constructor">Or_error</span>.errorf <span class="string">"type %a is not valid for %a"</span>
+            <span class="constructor">Type</span>.str ty <span class="constructor">Exp</span>.str exp</code></pre></div>
 </div>
 
 <pre><span id="VALpps"><span class="keyword">val</span> pps</span> : <code class="type">unit -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-synonym for <code class="code">str</code><br>
+<div class="info-desc">
+<p>synonym for <code class="code">str</code></p>
+</div>
 </div>
 
 <pre><span id="VALppo"><span class="keyword">val</span> ppo</span> : <code class="type">Out_channel.t -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-will print to a standard <code class="code">output_channel</code>, useful for using in
-          <code class="code">printf</code>, <code class="code">fprintf</code>, etc.<br>
+<div class="info-desc">
+<p>will print to a standard <code class="code">output_channel</code>, useful for using in
+          <code class="code">printf</code>, <code class="code">fprintf</code>, etc.</p>
+</div>
 </div>
 
-<pre><span id="VALpp_seq"><span class="keyword">val</span> pp_seq</span> : <code class="type">Format.formatter -> <a href="Regular.Std.Printable.S.html#TYPEt">t</a> Sequence.t -> unit</code></pre><div class="info ">
-prints a sequence of values of type <code class="code">t</code><br>
+<pre><span id="VALpp_seq"><span class="keyword">val</span> pp_seq</span> : <code class="type">Stdlib.Format.formatter -><br>       <a href="Regular.Std.Printable.S.html#TYPEt">t</a> Sequence.t -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p>prints a sequence of values of type <code class="code">t</code></p>
+</div>
 </div>
 
 <pre><span class="keyword">include</span> Pretty_printer.S</pre>
 <div class="info ">
-this will include <code class="code">pp</code> function from <code class="code"><span class="constructor">Core</span></code> that has type
+<div class="info-desc">
+<p>this will include <code class="code">pp</code> function from <code class="code"><span class="constructor">Core</span></code> that has type
           <code class="code">t&nbsp;printer</code>, and can be used in <code class="code"><span class="constructor">Format</span>.printf</code>
-          family of functions<br>
+          family of functions</p>
+</div>
 </div>
 </body></html>

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -118,7 +119,7 @@ an abstract representation of an error<br>
 <br>
 <h3 id="3_RuleParsing">Rule Parsing</h3><br>
 
-<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> (<a href="Bare.Rule.html#TYPEt">t</a> list, <a href="Bare.Rule.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
+<pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> (<a href="Bare.Rule.html#TYPEt">t</a> list, <a href="Bare.Rule.html#TYPEerror">error</a>) Std.Result.t</code></pre><div class="info ">
 <code class="code">from_file&nbsp;name</code> parses a file that contains zero or more rule
       specifications. Returns <code class="code"><span class="constructor">Ok</span>&nbsp;rules</code> if all rules specifications
       were well-formed, otherwise returns <code class="code"><span class="constructor">Error</span>&nbsp;e</code> with a detailed

@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -113,8 +114,8 @@ The binary option monad
 
 <pre><span class="keyword">include</span> <a href="Monads.Std.Monad.Option.S.html">Monads.Std.Monad.Option.S</a></pre>
 
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.T1.html">T1</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T1</code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.T2.html">T2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">T2</code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.T1.html">T1</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">Std.T1</code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.T1.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.T2.html">T2</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type">Std.T2</code><code class="code">)&nbsp;</code>: <code class="code"><span class="keyword">sig</span></code> <a href="Monads.Std.Monad.Option.T2.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
 <pre><span class="keyword">module</span> <a href="Monads.Std.Monad.Option.Make.html">Make</a> <code class="code">(</code><code class="code"><span class="constructor">M</span></code><code class="code">&nbsp;:&nbsp;</code><code class="type"><a href="Monads.Std.Monad.Monad.html">Std.Monad.Monad</a></code><code class="code">)&nbsp;</code>: <code class="type"><a href="Monads.Std.Monad.Option.S.html">S</a></code><code class="type">  with type 'a m := 'a T1(M).m
            and type 'a t := 'a T1(M).t
            and type 'a e := 'a T1(M).e</code></pre><div class="info">

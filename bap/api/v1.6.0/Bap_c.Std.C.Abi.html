@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,13 +91,15 @@
 </div>
 <h1>Module <a href="type_Bap_c.Std.C.Abi.html">Bap_c.Std.C.Abi</a></h1>
 
-<pre><span class="keyword">module</span> Abi: <code class="type"><a href="Bap_c_abi.html">Bap_c_abi</a></code></pre><hr width="100%">
+<pre><span id="MODULEAbi"><span class="keyword">module</span> Abi</span>: <code class="type"><a href="Bap_c_abi.html">Bap_c_abi</a></code></pre><hr width="100%">
 
-<pre><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> * Std.exp</code> </pre>
+<pre><span id="TYPEparam"><span class="keyword">type</span> <code class="type"></code>param</span> = <code class="type"><a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a> * <a href="Bap.Std.html#TYPEexp">Std.exp</a></code> </pre>
 <div class="info ">
-Function formal parameter is represented as a pair of
+<div class="info-desc">
+<p>Function formal parameter is represented as a pair of
     an abstraction of data, that is passed via the parameter,
-    and a BIL expression, that denotes the parameter.<br>
+    and a BIL expression, that denotes the parameter.</p>
+</div>
 </div>
 
 
@@ -125,19 +128,19 @@ Function formal parameter is represented as a pair of
 }
 
 <div class="info ">
-subroutine argument list is split into three parts:
+<div class="info-desc">
+<p>subroutine argument list is split into three parts:
     <code class="code">return</code> is the return arguments, that is optional;
     <code class="code">params</code> are regular positional parameters, the length
     of the <code class="code">params</code> list must equal to the amount of the
     formals in the function prototype;
     <code class="code">hidden</code> are hidden parameters, that are inserted by abi
     to pass special arguments, like <code class="code">this</code> pointer or a pointer
-    to a structural value, for example.
-<p>
+    to a structural value, for example.</p>
 
-    The api processor, created by this module, will insert arg terms
-    into sub in the following way:
-<p>
+<p>The api processor, created by this module, will insert arg terms
+    into sub in the following way:</p>
+
 <ul>
 <li>nth positional argument corresponds to nth arg term (counting
       from 0).</li>
@@ -145,7 +148,7 @@ subroutine argument list is split into three parts:
 <li>all hidden arguments are put between the last positional and the
       return argument.</li>
 </ul>
-<br>
+</div>
 </div>
 
 
@@ -154,56 +157,64 @@ subroutine argument list is split into three parts:
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.insert_args">insert_args</span>&nbsp;: <code class="type">Std.sub Std.term -><br>       <a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> -> <a href="Bap_c_abi.html#TYPEargs">args</a> option</code>;</code></td>
+<code><span id="TYPEELTt.insert_args">insert_args</span>&nbsp;: <code class="type"><a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -><br>       <a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap_c_type.html#TYPEproto">Bap_c_type.proto</a> -> <a href="Bap_c_abi.html#TYPEargs">args</a> option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.apply_attrs">apply_attrs</span>&nbsp;: <code class="type"><a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> Std.sub Std.term -> Std.sub Std.term</code>;</code></td>
+<code><span id="TYPEELTt.apply_attrs">apply_attrs</span>&nbsp;: <code class="type"><a href="Bap_c_type.html#TYPEattr">Bap_c_type.attr</a> list -> <a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a> -> <a href="Bap.Std.html#TYPEsub">Std.sub</a> <a href="Bap.Std.html#TYPEterm">Std.term</a></code>;</code></td>
 
 </tr></table>
 }
 
 <div class="info ">
-an abi processor.
+<div class="info-desc">
+<p>an abi processor.
     Each architecture registers its own abi processor, that is
     responsible for dispatching the processed subroutine between
-    architecture specific abi processors.<br>
+    architecture specific abi processors.</p>
+</div>
 </div>
 
 
 <pre><span id="VALcreate_api_processor"><span class="keyword">val</span> create_api_processor</span> : <code class="type">#<a href="Bap_c_size.base-c.html">Bap_c_size.base</a> -> <a href="Bap_c_abi.html#TYPEt">t</a> -> <a href="Bap_api.html#TYPEt">Bap_api.t</a></code></pre><div class="info ">
-<code class="code">create_api_processor&nbsp;size&nbsp;t</code> packs an api processor. The
+<div class="info-desc">
+<p><code class="code">create_api_processor&nbsp;size&nbsp;t</code> packs an api processor. The
     processor will insert arg terms into each recognized subroutine,
     propagate some known C attributes into corresponding BIR
     attributes, annotate each inserted arg term with its corresponding
     C type and datum model, and annotate each regognized subroutine
-    with its C prototype.
-<p>
+    with its C prototype.</p>
 
-    The api processor relies on an availability of a front end parser
-    for C language.<br>
+<p>The api processor relies on an availability of a front end parser
+    for C language.</p>
+</div>
 </div>
 
 <pre><span id="VALdata"><span class="keyword">val</span> data</span> : <code class="type">#<a href="Bap_c_size.base-c.html">Bap_c_size.base</a> -> <a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap_c_data.html#TYPEt">Bap_c_data.t</a></code></pre><div class="info ">
-<code class="code">data&nbsp;size&nbsp;t</code> creates an abstraction of data that is represented
+<div class="info-desc">
+<p><code class="code">data&nbsp;size&nbsp;t</code> creates an abstraction of data that is represented
     by type <code class="code">t</code>. The <code class="code">size</code> parameter defines a data model, e.g.,
-    sizes of primitive types, padding and alignment restrictions, etc.<br>
+    sizes of primitive types, padding and alignment restrictions, etc.</p>
+</div>
 </div>
 
-<pre><span id="VALarg_intent"><span class="keyword">val</span> arg_intent</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> Std.intent</code></pre><div class="info ">
-<code class="code">arg_intent&nbsp;t</code> infers argument intention based on its C type.  If
+<pre><span id="VALarg_intent"><span class="keyword">val</span> arg_intent</span> : <code class="type"><a href="Bap_c_type.html#TYPEt">Bap_c_type.t</a> -> <a href="Bap.Std.html#TYPEintent">Std.intent</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">arg_intent&nbsp;t</code> infers argument intention based on its C type.  If
     an argument is passed by value, i.e., it is a c basic type, then
     it is an input argument. If an argument is a reference, but not a
     function, then it is input/output if any value, referenced by the
     argument is non-const. A reference to function always has the
     input intent. If an argyment is a structure or union, then it is
-    input/output if any of its fields is input/output.<br>
+    input/output if any of its fields is input/output.</p>
+</div>
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_c_abi.Stack.html">Stack</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_abi.Stack.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-An abstraction of a stack, commonly used in C compilers.
+<pre><span id="MODULEStack"><span class="keyword">module</span> <a href="Bap_c_abi.Stack.html">Stack</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_abi.Stack.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>An abstraction of a stack, commonly used in C compilers.</p>
+
 </div>
 </body></html>

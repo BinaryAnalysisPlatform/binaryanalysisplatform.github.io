@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,44 +93,48 @@
 </div>
 <h1>Module <a href="type_Bap_c_data.html">Bap_c_data</a></h1>
 
-<pre><span class="keyword">module</span> Bap_c_data: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-C Data model.
-<p>
+<pre><span id="MODULEBap_c_data"><span class="keyword">module</span> Bap_c_data</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_c_data.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>C Data model.</p>
 
-    This module defines abstractions for C values.
-<p>
+<p>This module defines abstractions for C values.</p>
 
-    A value is backed by a datum - a sequence of bits that represents
+<p>A value is backed by a datum - a sequence of bits that represents
     the value. This module also defines models for integer
-    representation.<br>
+    representation.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEmodel32"><span class="keyword">type</span> <code class="type"></code>model32</span> = <code class="type">[ `ILP32 | `LP32 ]</code> </pre>
 <div class="info ">
-models for 32 bit systems<br>
+<div class="info-desc">
+<p>models for 32 bit systems</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEmodel64"><span class="keyword">type</span> <code class="type"></code>model64</span> = <code class="type">[ `ILP64 | `LLP64 | `LP64 ]</code> </pre>
 <div class="info ">
-models for 64 bit systems<br>
+<div class="info-desc">
+<p>models for 64 bit systems</p>
+</div>
 </div>
 
 
 <pre><span id="TYPEmodel"><span class="keyword">type</span> <code class="type"></code>model</span> = <code class="type">[ `ILP32 | `ILP64 | `LLP64 | `LP32 | `LP64 ]</code> </pre>
 <div class="info ">
-The following table summarize all models of integer
-    representation.
-<p>
+<div class="info-desc">
+<p>The following table summarize all models of integer
+    representation.</p>
 
-    <pre class="verbatim">       LP32	 ILP32	 ILP64	 LLP64	 LP64
+<pre class="verbatim">       LP32	 ILP32	 ILP64	 LLP64	 LP64
  char	  8	    8	     8	     8	    8
  short	 16	   16	    16	    16	   16
  int	 16	   32	    64	    32	   32
  long	 32	   32	    64	    32	   64
  addr    32	   32	    64	    64	   64
-</pre><br>
+</pre></div>
 </div>
 
 
@@ -140,7 +145,9 @@ The following table summarize all models of integer
 <td align="left" valign="top" >
 <code><span id="TYPEELTvalue.Top"><span class="constructor">Top</span></span></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-any possible value<br>
+<div class="info-desc">
+<p>any possible value</p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -148,13 +155,15 @@ any possible value<br>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTvalue.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type">Std.word list</code></code></td>
+<code><span id="TYPEELTvalue.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.html#TYPEword">Std.word</a> list</code></code></td>
 
 </tr></table>
 
 <div class="info ">
-Abstract value lattice. The lattice is complete, and
-    <code class="code"><span class="constructor">Set</span>&nbsp;[]</code> is the supremum, i.e., the bot.<br>
+<div class="info-desc">
+<p>Abstract value lattice. The lattice is complete, and
+    <code class="code"><span class="constructor">Set</span>&nbsp;[]</code> is the supremum, i.e., the bot.</p>
+</div>
 </div>
 
 
@@ -163,9 +172,11 @@ Abstract value lattice. The lattice is complete, and
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTt.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type">Std.Size.t * <a href="Bap_c_data.html#TYPEvalue">value</a></code></code></td>
+<code><span id="TYPEELTt.Imm"><span class="constructor">Imm</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap.Std.Size.html#TYPEt">Std.Size.t</a> * <a href="Bap_c_data.html#TYPEvalue">value</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<code class="code"><span class="constructor">Imm</span>&nbsp;(size,value)</code><br>
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Imm</span>&nbsp;(size,value)</code></p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -175,7 +186,9 @@ Abstract value lattice. The lattice is complete, and
 <td align="left" valign="top" >
 <code><span id="TYPEELTt.Seq"><span class="constructor">Seq</span></span> <span class="keyword">of</span> <code class="type"><a href="Bap_c_data.html#TYPEt">t</a> list</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
-<code class="code"><span class="constructor">Seq</span>&nbsp;(t1,..,tN)</code><br>
+<div class="info-desc">
+<p><code class="code"><span class="constructor">Seq</span>&nbsp;(t1,..,tN)</code></p>
+</div>
 </div>
 </td><td class="typefieldcomment" align="left" valign="bottom" ><code>*)</code></td>
 </tr>
@@ -188,13 +201,14 @@ Abstract value lattice. The lattice is complete, and
 </tr></table>
 
 <div class="info ">
-abstraction of a С datum.
-<p>
+<div class="info-desc">
+<p>abstraction of a С datum.</p>
 
-    The datum is a sequence of bits, that represent a particular C
+<p>The datum is a sequence of bits, that represent a particular C
     value. We abstract datum as either an immediate value of the given
     size and value lattice, or a sequence of data, or a pointer to a
-    datum.<br>
+    datum.</p>
+</div>
 </div>
 
 </body></html>

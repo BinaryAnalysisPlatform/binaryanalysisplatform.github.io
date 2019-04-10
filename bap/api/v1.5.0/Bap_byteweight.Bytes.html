@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -97,7 +98,7 @@ Default implementation that uses memory chunk as the domain.<br>
 
 <pre><span class="keyword">include</span> <a href="Bap_byteweight.S.html">Bap_byteweight.S</a></pre>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">t -> length:int -> threshold:float -> corpus -> Std.addr list</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">t -> length:int -> threshold:float -> corpus -> <a href="Bap.Std.html#TYPEaddr">Std.addr</a> list</code></pre><div class="info ">
 <code class="code">find&nbsp;mem&nbsp;~length&nbsp;~threshold&nbsp;corpus</code> extract addresses of all
       memory chunks of the specified <code class="code">length</code>, that were classified
       positively under given <code class="code">threshold</code>.<br>

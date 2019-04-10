@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -92,79 +93,101 @@
 </div>
 <h1>Module <a href="type_Regular.Std.Data.Write.html">Regular.Std.Data.Write</a></h1>
 
-<pre><span class="keyword">module</span> Write: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Write.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Write typeclass.
-<p>
+<pre><span id="MODULEWrite"><span class="keyword">module</span> Write</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.Write.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Write typeclass.</p>
 
-        Defines a class of writeable (serializable) values. See module
+<p>Defines a class of writeable (serializable) values. See module
         <a href="Regular.Std.Data.Read.html"><code class="code"><span class="constructor">Std</span>.<span class="constructor">Data</span>.<span class="constructor">Read</span></code></a> for more information concerning when and why to use
-        this module.<br>
+        this module.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code> </pre>
 <div class="info ">
-a writer type class<br>
+<div class="info-desc">
+<p>a writer type class</p>
+</div>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?to_bytes:('a -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a>) -><br>       ?to_bigstring:('a -> bigstring) -><br>       ?dump:(Out_channel.t -> 'a -> unit) -><br>       ?pp:(Format.formatter -> 'a -> unit) -><br>       ?size:('a -> int) -><br>       ?blit_to_string:('a, <a href="Regular.Std.html#TYPEbytes">Std.bytes</a>) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       ?blit_to_bigstring:('a, bigstring) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       unit -> 'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;&lt;minimal-implementation&gt;</code> creates a writable
-          instance from a provided minimal implementation.
-<p>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?to_bytes:('a -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a>) -><br>       ?to_bigstring:('a -> bigstring) -><br>       ?dump:(Out_channel.t -> 'a -> unit) -><br>       ?pp:(Stdlib.Format.formatter -> 'a -> unit) -><br>       ?size:('a -> int) -><br>       ?blit_to_string:('a, <a href="Regular.Std.html#TYPEbytes">Std.bytes</a>) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       ?blit_to_bigstring:('a, bigstring) <a href="Regular.Std.Data.html#TYPEcopy">Std.Data.copy</a> -><br>       unit -> 'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">create&nbsp;&lt;minimal-implementation&gt;</code> creates a writable
+          instance from a provided minimal implementation.</p>
 
-          The minimal implementation is either of:<ul>
+<p>The minimal implementation is either of:</p>
+<ul>
 <li><code class="code">to_bytes</code>;</li>
 <li><code class="code">to_bigstring</code>;</li>
 <li><code class="code">pp</code>.</li>
 </ul>
-<br>
+</div>
 </div>
 
 <pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> int</code></pre><div class="info ">
-<code class="code">size&nbsp;writebale&nbsp;value</code> returns a size in bytes that
-          <code class="code">writeable</code> will use to write <code class="code">value</code><br>
+<div class="info-desc">
+<p><code class="code">size&nbsp;writebale&nbsp;value</code> returns a size in bytes that
+          <code class="code">writeable</code> will use to write <code class="code">value</code></p>
+</div>
 </div>
 
 <pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> Out_channel.t -> 'a -> unit</code></pre><div class="info ">
-<code class="code">to_channel&nbsp;writeable&nbsp;out&nbsp;value</code> writes the <code class="code">writable</code>
-          <code class="code">value</code> into the channel <code class="code">chan</code><br>
+<div class="info-desc">
+<p><code class="code">to_channel&nbsp;writeable&nbsp;out&nbsp;value</code> writes the <code class="code">writable</code>
+          <code class="code">value</code> into the channel <code class="code">chan</code></p>
+</div>
 </div>
 
-<pre><span id="VALto_formatter"><span class="keyword">val</span> to_formatter</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> Format.formatter -> 'a -> unit</code></pre><div class="info ">
-<code class="code">to_formatter&nbsp;writeable&nbsp;ppf&nbsp;value</code> outputs the value
-          into the formatter <code class="code">ppf</code><br>
+<pre><span id="VALto_formatter"><span class="keyword">val</span> to_formatter</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> Stdlib.Format.formatter -> 'a -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">to_formatter&nbsp;writeable&nbsp;ppf&nbsp;value</code> outputs the value
+          into the formatter <code class="code">ppf</code></p>
+</div>
 </div>
 
 <pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a></code></pre><div class="info ">
-<code class="code">to_bytes&nbsp;writeable&nbsp;value</code> serializes the <code class="code">value</code> into
-          <code class="code">bytes</code> data type.<br>
+<div class="info-desc">
+<p><code class="code">to_bytes&nbsp;writeable&nbsp;value</code> serializes the <code class="code">value</code> into
+          <code class="code">bytes</code> data type.</p>
+</div>
 </div>
 
 <pre><span id="VALto_bigstring"><span class="keyword">val</span> to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> 'a -> bigstring</code></pre><div class="info ">
-<code class="code">to_bigstring&nbsp;writeable&nbsp;value</code> serializes the <code class="code">value</code> into
-          <code class="code">bigstring</code> data type.<br>
+<div class="info-desc">
+<p><code class="code">to_bigstring&nbsp;writeable&nbsp;value</code> serializes the <code class="code">value</code> into
+          <code class="code">bigstring</code> data type.</p>
+</div>
 </div>
 
 <pre><span id="VALblit_to_string"><span class="keyword">val</span> blit_to_string</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> 'a -> int -> unit</code></pre><div class="info ">
-<code class="code">blit_to_string&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a serialized
+<div class="info-deprecated">
+<span class="warning">Deprecated.</span>use the blit_to_bytes instead</div>
+<div class="info-desc">
+<p><code class="code">blit_to_string&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a serialized
           representation of the <code class="code">value</code> into existing string <code class="code">buf</code>,
           starting from the given position. It is undefined behavior,
-          if the <code class="code">value</code> doesn't fit into the string <code class="code">buf</code><br>
+          if the <code class="code">value</code> doesn't fit into the string <code class="code">buf</code>.</p>
+</div>
 </div>
 
 <pre><span id="VALblit_to_bytes"><span class="keyword">val</span> blit_to_bytes</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> <a href="Regular.Std.html#TYPEbytes">Std.bytes</a> -> 'a -> int -> unit</code></pre><div class="info ">
-<code class="code">blit_to_bytes&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a serialized
+<div class="info-desc">
+<p><code class="code">blit_to_bytes&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a serialized
           representation of the <code class="code">value</code> into existing buffer <code class="code">buf</code>,
           starting from the given position. It is undefined behavior,
-          if the <code class="code">value</code> doesn't fit into the <code class="code">buf</code><br>
+          if the <code class="code">value</code> doesn't fit into the <code class="code">buf</code></p>
+</div>
 </div>
 
 <pre><span id="VALblit_to_bigstring"><span class="keyword">val</span> blit_to_bigstring</span> : <code class="type">'a <a href="Regular.Std.Data.Write.html#TYPEt">t</a> -> bigstring -> 'a -> int -> unit</code></pre><div class="info ">
-<code class="code">blit_to_bigstring&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a
+<div class="info-desc">
+<p><code class="code">blit_to_bigstring&nbsp;writeable&nbsp;buf&nbsp;value&nbsp;pos</code> copies a
           serialized representation of the <code class="code">value</code> into existing
           bigstring <code class="code">buf</code>, starting from the given position. It is
           undefined behavior, if the <code class="code">value</code> doesn't fit into the
-          string <code class="code">buf</code><br>
+          string <code class="code">buf</code></p>
+</div>
 </div>
 </body></html>

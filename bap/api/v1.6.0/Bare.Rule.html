@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -91,20 +92,23 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bare.Rule.html">Bare.Rule</a></h1>
 
-<pre><span class="keyword">module</span> Rule: <code class="code"><span class="keyword">sig</span></code> <a href="Bare.Rule.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Matching rule specification.
-<p>
+<pre><span id="MODULERule"><span class="keyword">module</span> Rule</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bare.Rule.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Matching rule specification.</p>
 
-    A rule is consists of the rule specification and matching state,
+<p>A rule is consists of the rule specification and matching state,
     thus applying a rule to a fact will produce another rule that will
     store the partial matching state and, if some states reached the
-    completion, it will also produce a sequence of facts.<br>
+    completion, it will also produce a sequence of facts.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info ">
-<code class="code">rule&nbsp;abstract&nbsp;<span class="keyword">type</span></code><br>
+<div class="info-desc">
+<p><code class="code">rule&nbsp;abstract&nbsp;<span class="keyword">type</span></code></p>
+</div>
 </div>
 
 
@@ -112,55 +116,66 @@ Matching rule specification.
 
 <pre><span id="TYPEerror"><span class="keyword">type</span> <code class="type"></code>error</span> </pre>
 <div class="info ">
-an abstract representation of an error<br>
+<div class="info-desc">
+<p>an abstract representation of an error</p>
+</div>
 </div>
 
-<br>
-<h3 id="3_RuleParsing">Rule Parsing</h3><br>
-
+<h4 id="3_RuleParsing">Rule Parsing</h4>
 <pre><span id="VALfrom_file"><span class="keyword">val</span> from_file</span> : <code class="type">string -> (<a href="Bare.Rule.html#TYPEt">t</a> list, <a href="Bare.Rule.html#TYPEerror">error</a>) Result.t</code></pre><div class="info ">
-<code class="code">from_file&nbsp;name</code> parses a file that contains zero or more rule
+<div class="info-desc">
+<p><code class="code">from_file&nbsp;name</code> parses a file that contains zero or more rule
       specifications. Returns <code class="code"><span class="constructor">Ok</span>&nbsp;rules</code> if all rules specifications
       were well-formed, otherwise returns <code class="code"><span class="constructor">Error</span>&nbsp;e</code> with a detailed
       description of an error and a location of a subterm that is not
-      part of the grammar.<br>
+      part of the grammar.</p>
+</div>
 </div>
 
 <pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> <a href="Bare.Rule.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">of_string&nbsp;s</code> parses the rule specification <code class="code">s</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">of_string&nbsp;s</code> parses the rule specification <code class="code">s</code>.</p>
 
-      Precondition: <code class="code">s</code> is a well-formed rule specification.<br>
+<p>Precondition: <code class="code">s</code> is a well-formed rule specification.</p>
 </div>
-<br>
-<h3 id="3_Ruleintrospecting">Rule introspecting</h3><br>
-
+</div>
+<h4 id="3_Ruleintrospecting">Rule introspecting</h4>
 <pre><span id="VALlhs"><span class="keyword">val</span> lhs</span> : <code class="type"><a href="Bare.Rule.html#TYPEt">t</a> -> <a href="Bare.html#TYPEtuple">Bare.tuple</a> list</code></pre><div class="info ">
-<code class="code">lhs&nbsp;rule</code> is the left hand side of the rule.<br>
+<div class="info-desc">
+<p><code class="code">lhs&nbsp;rule</code> is the left hand side of the rule.</p>
+</div>
 </div>
 
 <pre><span id="VALrhs"><span class="keyword">val</span> rhs</span> : <code class="type"><a href="Bare.Rule.html#TYPEt">t</a> -> <a href="Bare.html#TYPEfact">Bare.fact</a> list</code></pre><div class="info ">
-<code class="code">rhs&nbsp;rule</code> is the right hand side of the rule<br>
+<div class="info-desc">
+<p><code class="code">rhs&nbsp;rule</code> is the right hand side of the rule</p>
+</div>
 </div>
 
 <pre><span id="VALspec"><span class="keyword">val</span> spec</span> : <code class="type"><a href="Bare.Rule.html#TYPEt">t</a> -> string</code></pre><div class="info ">
-<code class="code">spec&nbsp;rule</code> is the human readable and machine parseable
-      well-formed rule specification.<br>
+<div class="info-desc">
+<p><code class="code">spec&nbsp;rule</code> is the human readable and machine parseable
+      well-formed rule specification.</p>
+</div>
 </div>
 
-<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Format.formatter -> <a href="Bare.Rule.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
-<code class="code">pp&nbsp;ppf&nbsp;rule</code> prints <code class="code">rule</code> into the formatter <code class="code">ppf</code>.<br>
+<pre><span id="VALpp"><span class="keyword">val</span> pp</span> : <code class="type">Stdlib.Format.formatter -> <a href="Bare.Rule.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">pp&nbsp;ppf&nbsp;rule</code> prints <code class="code">rule</code> into the formatter <code class="code">ppf</code>.</p>
 </div>
-<br>
-<h3 id="3_Ruletransformations">Rule transformations</h3><br>
-
+</div>
+<h4 id="3_Ruletransformations">Rule transformations</h4>
 <pre><span id="VALapply"><span class="keyword">val</span> apply</span> : <code class="type"><a href="Bare.Rule.html#TYPEt">t</a> -> <a href="Bare.html#TYPEfact">Bare.fact</a> -> <a href="Bare.Rule.html#TYPEt">t</a> * <a href="Bare.html#TYPEfact">Bare.fact</a> list</code></pre><div class="info ">
-<code class="code">apply&nbsp;rule&nbsp;fact</code> applies <code class="code">rule</code> to <code class="code">fact</code> and produces a new
+<div class="info-desc">
+<p><code class="code">apply&nbsp;rule&nbsp;fact</code> applies <code class="code">rule</code> to <code class="code">fact</code> and produces a new
       rule that contains a partial mathcing state, as well as a list
-      (possibly empty) of newly produced facts.<br>
+      (possibly empty) of newly produced facts.</p>
+</div>
 </div>
 
 <pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type"><a href="Bare.Rule.html#TYPEt">t</a> -> <a href="Bare.Rule.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">reset&nbsp;rule</code> discards the matching state and returns a fresh rule.<br>
+<div class="info-desc">
+<p><code class="code">reset&nbsp;rule</code> discards the matching state and returns a fresh rule.</p>
+</div>
 </div>
 </body></html>

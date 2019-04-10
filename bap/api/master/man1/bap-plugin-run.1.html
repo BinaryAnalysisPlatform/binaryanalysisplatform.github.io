@@ -35,7 +35,7 @@ Run a program in the Primus emulator&#46;
 <DT><B>&#45;&#45;argv</B>=<I>VAL</I><DD>
 Process argument vector
 <DT><B>&#45;&#45;entry&#45;points</B>=<I>VAL</I><DD>
-Can a list of entry points or a special keyword <B>all&#45;subroutines</B>&#46; An entry point is either a string denoting a function name, a tid starting with the <B>%</B> percent, or an address in a hexadecimal format starting prefixed with <B>0x</B>&#46; When the option is specified, the Primus Machine will start the execution from the specified entry point(s)&#46; Otherwise the execution will be started from all program terms that are marked with the [entry_point] attribute&#46; If there are several entry points, then the execution will be started from all of them in parallel, i&#46;e&#46;, by forking the machine and starting each machine from its own entry point&#46; Consider enabling corresponding scheduler&#46; If neither the argument nor there any entry points in the program, then a function called <B>_start</B> is called&#46;
+Can be a list of entry points or a special keyword <B>all&#45;subroutines</B>&#46; An entry point is either a string denoting a function name, a tid starting with the <B>%</B> percent, or an address in a hexadecimal format prefixed with <B>0x</B>&#46; When the option is specified, the Primus Machine will start the execution from the specified entry point(s)&#46; Otherwise the execution will be started from all program terms that are marked with the [entry_point] attribute&#46; If there are several entry points, then the execution will be started from all of them in parallel, i&#46;e&#46;, by forking the machine and starting each machine from its own entry point&#46; Consider enabling corresponding scheduler&#46; If neither the argument nor there any entry points in the program, then a function called <B>_start</B> is called&#46; If <B>all&#45;subroutines</B> are specified then Primus will execute all subroutines in topological order
 <DT><B>&#45;&#45;env</B>=<I>VAL</I><DD>
 Program environemt as a comma separated list of VAR=VAL pairs
 <DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
@@ -66,6 +66,6 @@ Run each entry point as an isolated machine&#46; Each entry point is started in 
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 13:35:08 GMT, May 17, 2018
+Time: 19:20:05 GMT, April 10, 2019
 </BODY>
 </HTML>

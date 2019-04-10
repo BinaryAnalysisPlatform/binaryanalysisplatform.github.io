@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,8 +91,10 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_traces.Std.Trace.Monitor.html">Bap_traces.Std.Trace.Monitor</a></h1>
 
-<pre><span class="keyword">module</span> Monitor: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.Monitor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Monitor defines an error handling policy.<br>
+<pre><span id="MODULEMonitor"><span class="keyword">module</span> Monitor</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_traces.Std.Trace.Monitor.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Monitor defines an error handling policy.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -99,28 +102,38 @@ Monitor defines an error handling policy.<br>
 
 
 <pre><span id="VALignore_errors"><span class="keyword">val</span> ignore_errors</span> : <code class="type"><a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">ignore_errors</code> filters good events and silently drops error events
-<p>
-<code class="code">warn_on_error&nbsp;on_error</code> same as <code class="code">ignore_errors</code> but calls
-          <code class="code">on_error</code> function when an error has occured<br>
+<div class="info-desc">
+<p><code class="code">ignore_errors</code> filters good events and silently drops error events</p>
+
+<p><code class="code">warn_on_error&nbsp;on_error</code> same as <code class="code">ignore_errors</code> but calls
+          <code class="code">on_error</code> function when an error has occured</p>
+</div>
 </div>
 
 <pre><span id="VALfail_on_error"><span class="keyword">val</span> fail_on_error</span> : <code class="type"><a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">fail_on_error</code> will fail with an <code class="code">error</code> <code class="code"><span class="constructor">Error</span>.raise&nbsp;error</code><br>
+<div class="info-desc">
+<p><code class="code">fail_on_error</code> will fail with an <code class="code">error</code> <code class="code"><span class="constructor">Error</span>.raise&nbsp;error</code></p>
+</div>
 </div>
 
 <pre><span id="VALstop_on_error"><span class="keyword">val</span> stop_on_error</span> : <code class="type"><a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">stop_on_error</code> will silently finish a stream in case of error.<br>
+<div class="info-desc">
+<p><code class="code">stop_on_error</code> will silently finish a stream in case of error.</p>
+</div>
 </div>
 
 <pre><span id="VALpack_errors"><span class="keyword">val</span> pack_errors</span> : <code class="type">(Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEevent">Bap_traces.Std.Trace.event</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">pack_errors&nbsp;pack</code> will transform any occured error into event
-          using <code class="code">pack</code> function.<br>
+<div class="info-desc">
+<p><code class="code">pack_errors&nbsp;pack</code> will transform any occured error into event
+          using <code class="code">pack</code> function.</p>
+</div>
 </div>
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">(Error.t -> <a href="Bap_traces.Std.Trace.html#TYPEstep">Bap_traces.Std.Trace.step</a>) -><br>       <a href="Bap_traces.Std.Trace.Monitor.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">create&nbsp;filter</code> creates a user defined monitor from function
+<div class="info-desc">
+<p><code class="code">create&nbsp;filter</code> creates a user defined monitor from function
           <code class="code">filter</code> that is applied to a sequence of events or errors, and
-          returns a sequence of events.<br>
+          returns a sequence of events.</p>
+</div>
 </div>
 </body></html>

@@ -10,6 +10,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -88,14 +89,12 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_future.Std.html">Bap_future.Std</a></h1>
 
-<pre><span class="keyword">module</span> Std: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Future library.
-<p>
+<pre><span id="MODULEStd"><span class="keyword">module</span> Std</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Future library.</p>
 
-    <h1 id="1_Overview">Overview</h1>
-<p>
-
-    The purpose of the library is to provide mechanisms for reasoning
+<h2 id="1_Overview">Overview</h2>
+<p>The purpose of the library is to provide mechanisms for reasoning
     about state based dynamic system. Due to a separation of concerns,
     the library allows to reason about such system purely
     mathematically, without any dependency on the actual
@@ -108,10 +107,9 @@ Future library.
     such systems with coinduction. The library defines two main
     coinductive types: <code class="code">future</code> and <code class="code">stream</code>. The <code class="code">future</code> type is
     dual of the option type (a co-option), and <code class="code">stream</code> is a dual of
-    the list (co-list).
-<p>
+    the list (co-list).</p>
 
-    A value of type <code class="code">future</code> is an object, with some observable state,
+<p>A value of type <code class="code">future</code> is an object, with some observable state,
     that is not yet defined. We know, that it might happen, but it is not
     guaranteed. The <code class="code">future</code> can be defined only once. Once it is
     defined, it cannot be changed. Basically, the time line of the
@@ -119,15 +117,13 @@ Future library.
     value of the object is undefined, and on the second it is defined
     and fixed. Both phases can be empty, i.e., an object can be
     brought into life with a defined value, and an undefined future,
-    might be never defined.
-<p>
+    might be never defined.</p>
 
-    A value of type <code class="code">stream</code> is an infinite sequence of finite
+<p>A value of type <code class="code">stream</code> is an infinite sequence of finite
     values. More precisely, a stream can be viewed as an object, whose
-    value varies in time.
-<p>
+    value varies in time.</p>
 
-    The library can be also seen as a common denominator between
+<p>The library can be also seen as a common denominator between
     different async libraries and methods, e.g., lwt, async, threads,
     forthcoming effective programming in multicore OCaml, etc. For
     example, the <code class="code">future</code> are quite similar to the <code class="code"><span class="constructor">Lwt</span>.t</code> in <code class="code"><span class="constructor">Lwt</span></code>
@@ -138,56 +134,46 @@ Future library.
     that just means, that this particular future has never
     occurred. If a user wants to represent a future value, that can
     fail or succeed, that he is welcome to use sum types, e.g.,
-    <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Result</span>.t&nbsp;future</code>. The same is true for the async library.
-<p>
+    <code class="code">(<span class="keywordsign">'</span>a,<span class="keywordsign">'</span>b)&nbsp;<span class="constructor">Result</span>.t&nbsp;future</code>. The same is true for the async library.</p>
 
-    <h1 id="1_Notionoftime">Notion of time</h1>
-<p>
-
-    The future library handles time in a special way. The notion of
+<h2 id="1_Notionoftime">Notion of time</h2>
+<p>The future library handles time in a special way. The notion of
     physical time is replaced with the notion of order. We consider
     only the precedence of events. There is no notion of simultaneity
     built into the model of the library. Every event occurs in its own
-    separate time slot, i.e., all events are serialized in the time.
-<p>
+    separate time slot, i.e., all events are serialized in the time.</p>
 
-    That is not to say, that simultaneous events are not
+<p>That is not to say, that simultaneous events are not
     representable. The library just allows a user, to engineer its own
     timescale and define, what is simultaneous and what is not. For
     example, a clock timer can be represented as a stream of seconds,
     and everything that occurs after the start of the <code class="code">n</code>'th second,
-    but before the start of the <code class="code">n+1</code>'th second, is simultaneous.
-<p>
+    but before the start of the <code class="code">n+1</code>'th second, is simultaneous.</p>
 
-    <h1 id="1_Mainloop">Main-loop</h1>
-<p>
-
-    Since the internal state of the dynamic system is usually
+<h2 id="1_Mainloop">Main-loop</h2>
+<p>Since the internal state of the dynamic system is usually
     impossible to represent, it is modeled by a notion of primitive
     signals and promises. When a future is created a corresponding
     promise is made. The system, that models the dynamic system is
     responsible to fulfill the promise. A signal is akin to the
     promise, with only difference, that it can (and should) be
-    fulfilled, or signaled, more than once.
-<p>
+    fulfilled, or signaled, more than once.</p>
 
-    The use of promises and signals is totally under a user control
+<p>The use of promises and signals is totally under a user control
     and is separated from the rest of the library. They can be
     signaled from event loops, such as Lwt or Async main loops, or from
     a window system event loop. The only requirement, is that this
     calls should be serialized, if it is possible that they are made
-    from different threads.
-<p>
+    from different threads.</p>
 
-    A common way to bind <code class="code"><span class="constructor">Lwt</span></code> thread with <code class="code"><span class="constructor">Future</span></code> is to use
-    <code class="code">on_success</code> function (or <code class="code">upon</code> function for <code class="code"><span class="constructor">Async</span></code>'s <code class="code"><span class="constructor">Deferred</span></code>):
-<p>
+<p>A common way to bind <code class="code"><span class="constructor">Lwt</span></code> thread with <code class="code"><span class="constructor">Future</span></code> is to use
+    <code class="code">on_success</code> function (or <code class="code">upon</code> function for <code class="code"><span class="constructor">Async</span></code>'s <code class="code"><span class="constructor">Deferred</span></code>):</p>
 
-    <pre class="codepre"><code class="code">      <span class="keyword">let</span> future_of_thread t =
+<pre class="codepre"><code class="code">      <span class="keyword">let</span> future_of_thread t =
         <span class="keyword">let</span> future,promise = <span class="constructor">Future</span>.create () <span class="keyword">in</span>
         <span class="constructor">Lwt</span>.on_success t (<span class="constructor">Promise</span>.fulfill promise);
         future
-    </code></pre><br>
+    </code></pre></div>
 </div>
 <hr width="100%">
 
@@ -203,25 +189,30 @@ Future library.
 <pre><span id="TYPEsignal"><span class="keyword">type</span> <code class="type">'a</code> signal</span> </pre>
 
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Applicable.html">Applicable</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Applicable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Variadic.html">Variadic</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Variadic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Variadic arguments.
+<pre><span id="MODULEApplicable"><span class="keyword">module</span> <a href="Bap_future.Std.Applicable.html">Applicable</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Applicable.html">..</a> <code class="code"><span class="keyword">end</span></code></pre>
+<pre><span id="MODULEVariadic"><span class="keyword">module</span> <a href="Bap_future.Std.Variadic.html">Variadic</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Variadic.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Variadic arguments.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Future.html">Future</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Future.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-Future is an object whose value will be decided somewhere in the
-      future, if that future has occurred.
+<pre><span id="MODULEFuture"><span class="keyword">module</span> <a href="Bap_future.Std.Future.html">Future</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Future.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>Future is an object whose value will be decided somewhere in the
+      future, if that future has occurred.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Promise.html">Promise</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Promise.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-An promise to provide a value in a future.
+<pre><span id="MODULEPromise"><span class="keyword">module</span> <a href="Bap_future.Std.Promise.html">Promise</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Promise.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>An promise to provide a value in a future.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Stream.html">Stream</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Stream.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A stream of elements.
+<pre><span id="MODULEStream"><span class="keyword">module</span> <a href="Bap_future.Std.Stream.html">Stream</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Stream.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A stream of elements.</p>
+
 </div>
 
-<pre><span class="keyword">module</span> <a href="Bap_future.Std.Signal.html">Signal</a>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Signal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
-A handler to produce elements in streams.
+<pre><span id="MODULESignal"><span class="keyword">module</span> <a href="Bap_future.Std.Signal.html">Signal</a></span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_future.Std.Signal.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info">
+<p>A handler to produce elements in streams.</p>
+
 </div>
 </body></html>

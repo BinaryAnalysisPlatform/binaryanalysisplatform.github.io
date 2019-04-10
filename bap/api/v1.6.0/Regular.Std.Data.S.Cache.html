@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,29 +91,26 @@
 &nbsp;</div>
 <h1>Module <a href="type_Regular.Std.Data.S.Cache.html">Regular.Std.Data.S.Cache</a></h1>
 
-<pre><span class="keyword">module</span> Cache: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Cache.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Data cache.
-<p>
+<pre><span id="MODULECache"><span class="keyword">module</span> Cache</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Regular.Std.Data.S.Cache.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Data cache.</p>
 
-          Store and retrieve data from cache. The cache can seen as a
+<p>Store and retrieve data from cache. The cache can seen as a
           persistant weak key-value storage. Data stored here can
           disappear at any time, but can survive for a long time
           (outliving the program). The library by itself doesn't provide
           a caching service for any type, only the interface. The
-          caching service can be added externally (e.g., via a plugin).
-<p>
+          caching service can be added externally (e.g., via a plugin).</p>
 
-          The caching infrastructure provides only facilities for
+<p>The caching infrastructure provides only facilities for
           storing and loading data. In fact this is just a weak
           key-value storage. A weak, because storage is allowed to
-          to loose data.
-<p>
+          to loose data.</p>
 
-          As a key, we use <code class="code">digest</code> that is underneath the hood is and
-          md5 sum of arguments used to build the cached data.
-<p>
+<p>As a key, we use <code class="code">digest</code> that is underneath the hood is and
+          md5 sum of arguments used to build the cached data.</p>
 
-          Let's take for example a function that builds some control
+<p>Let's take for example a function that builds some control
           flow graphs. It has three parameters, one is an optional
           <code class="code">debug</code>, that doesn't affect the algorithm, and the rest two
           has type <code class="code">string</code> and <code class="code">int</code> correspondingly. The following
@@ -121,10 +119,9 @@ Data cache.
           computed and stored in the cache. This function will work even
           if there is no caching service. Of course, there will be no
           benefits, since the <code class="code">save</code> function will just immediately
-          forget its argument.
-<p>
+          forget its argument.</p>
 
-          <pre class="codepre"><code class="code">            <span class="keyword">let</span> compute_graph ?(debug=<span class="keyword">false</span>) x y : <span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.t =
+<pre class="codepre"><code class="code">            <span class="keyword">let</span> compute_graph ?(debug=<span class="keyword">false</span>) x y : <span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.t =
               <span class="keyword">let</span> digest =
                 <span class="constructor">Data</span>.<span class="constructor">Cache</span>.digest ~namespace:<span class="string">"example"</span> <span class="string">"%s%d"</span> x y <span class="keyword">in</span>
               <span class="keyword">match</span> <span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.<span class="constructor">Cache</span>.load digest <span class="keyword">with</span>
@@ -134,19 +131,22 @@ Data cache.
                 <span class="constructor">Graphs</span>.<span class="constructor">Cfg</span>.<span class="constructor">Cache</span>.save digest g;
                 g
           </code></pre>
-<p>
-
-          Note: it is only reasonable to use caching for data types,
-          that take significant amount of time to create.<br>
+<p>Note: it is only reasonable to use caching for data types,
+          that take significant amount of time to create.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="VALload"><span class="keyword">val</span> load</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">Std.digest</a> -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> option</code></pre><div class="info ">
-<code class="code">load&nbsp;id</code> load data previously stored under give <code class="code">id</code><br>
+<div class="info-desc">
+<p><code class="code">load&nbsp;id</code> load data previously stored under give <code class="code">id</code></p>
+</div>
 </div>
 
 <pre><span id="VALsave"><span class="keyword">val</span> save</span> : <code class="type"><a href="Regular.Std.html#TYPEdigest">Std.digest</a> -> <a href="Regular.Std.Data.S.html#TYPEt">Std.Data.S.t</a> -> unit</code></pre><div class="info ">
-<code class="code">save&nbsp;id&nbsp;data</code> store data under given <code class="code">id</code>. If something is
-            already stored, then it will be overwritten.<br>
+<div class="info-desc">
+<p><code class="code">save&nbsp;id&nbsp;data</code> store data under given <code class="code">id</code>. If something is
+            already stored, then it will be overwritten.</p>
+</div>
 </div>
 </body></html>

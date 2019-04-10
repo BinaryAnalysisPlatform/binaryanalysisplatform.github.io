@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,8 +91,10 @@
 &nbsp;</div>
 <h1>Module <a href="type_Bap_dwarf.Std.Dwarf.Fbi.html">Bap_dwarf.Std.Dwarf.Fbi</a></h1>
 
-<pre><span class="keyword">module</span> Fbi: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Dwarf.Fbi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Function boundary identification.<br>
+<pre><span id="MODULEFbi"><span class="keyword">module</span> Fbi</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Bap_dwarf.Std.Dwarf.Fbi.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Function boundary identification.</p>
+</div>
 </div>
 <hr width="100%">
 
@@ -99,23 +102,25 @@ Function boundary identification.<br>
 
 
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">string <a href="Bap_dwarf.Std.Dwarf.Data.html#TYPEt">Bap_dwarf.Std.Dwarf.Data.t</a> -><br>       <a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> Or_error.t</code></pre><div class="info ">
-<code class="code">create&nbsp;data</code> tries to create a DWARF reader, from
+<div class="info-desc">
+<p><code class="code">create&nbsp;data</code> tries to create a DWARF reader, from
           supplied <code class="code">data</code>. May yield an error, if there wasn't sufficient
-          sections, or if format is not understandable.
-<p>
+          sections, or if format is not understandable.</p>
 
-          To provide information about functions parser needs at least this
-          three sections:
-<p>
+<p>To provide information about functions parser needs at least this
+          three sections:</p>
+
 <ul>
 <li>.debug_abbrev <code class="code"><span class="constructor">Section</span>.<span class="constructor">Abbr</span></code></li>
 <li>.debug_info   <code class="code"><span class="constructor">Section</span>.<span class="constructor">Info</span></code></li>
 <li>.debug_str    <code class="code"><span class="constructor">Section</span>.<span class="constructor">Str</span></code></li>
 </ul>
-<br>
+</div>
 </div>
 
-<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap_dwarf.Std.Dwarf.html#TYPEfn">Bap_dwarf.Std.Dwarf.fn</a>) Std.seq</code></pre><div class="info ">
-<code class="code">functions&nbsp;searcher</code> enumerates functions<br>
+<pre><span id="VALfunctions"><span class="keyword">val</span> functions</span> : <code class="type"><a href="Bap_dwarf.Std.Dwarf.Fbi.html#TYPEt">t</a> -> (string * <a href="Bap_dwarf.Std.Dwarf.html#TYPEfn">Bap_dwarf.Std.Dwarf.fn</a>) <a href="Bap.Std.html#TYPEseq">Std.seq</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">functions&nbsp;searcher</code> enumerates functions</p>
+</div>
 </div>
 </body></html>

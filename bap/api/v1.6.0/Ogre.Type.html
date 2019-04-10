@@ -11,6 +11,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -90,88 +91,96 @@
 </div>
 <h1>Module <a href="type_Ogre.Type.html">Ogre.Type</a></h1>
 
-<pre><span class="keyword">module</span> Type: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
-Ogre type system.
-<p>
+<pre><span id="MODULEType"><span class="keyword">module</span> Type</span>: <code class="code"><span class="keyword">sig</span></code> <a href="Ogre.Type.html">..</a> <code class="code"><span class="keyword">end</span></code></pre><div class="info module top">
+<div class="info-desc">
+<p>Ogre type system.</p>
 
-    Ogre type system is extremly simple, it has only four types:
+<p>Ogre type system is extremly simple, it has only four types:
     1. boolean - a logical type that has only two values (true,false);
     2. int - an integral number that maps to OCaml's <code class="code">int64</code>;
     3. float - a real number that maps to OCaml's <code class="code">float</code>;
-    4. str - an arbitrary string, represented as <code class="code">string</code> in OCaml.
-<p>
+    4. str - an arbitrary string, represented as <code class="code">string</code> in OCaml.</p>
 
-    A scheme is a first class value, that  describes how to construct
-    attributes from fields, and how to deconstruct them.
-<p>
+<p>A scheme is a first class value, that  describes how to construct
+    attributes from fields, and how to deconstruct them.</p>
 
-    A field is a pair of a name and a type, and is used to reference
+<p>A field is a pair of a name and a type, and is used to reference
     to construct attributes, and to reference to attribute objects in
-    queries.<br>
+    queries.</p>
+</div>
 </div>
 <hr width="100%">
 
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info ">
-type descriptor.<br>
+<div class="info-desc">
+<p>type descriptor.</p>
+</div>
 </div>
 
 
 <pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type">int64 <a href="Ogre.Type.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">int</code> is represented with OCaml's int64, and has a
-      corresponding representation<br>
+<div class="info-desc">
+<p><code class="code">int</code> is represented with OCaml's int64, and has a
+      corresponding representation</p>
+</div>
 </div>
 
 <pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type">bool <a href="Ogre.Type.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">bool</code> is either <code class="code"><span class="keyword">true</span></code> or <code class="code"><span class="keyword">false</span></code>.<br>
+<div class="info-desc">
+<p><code class="code">bool</code> is either <code class="code"><span class="keyword">true</span></code> or <code class="code"><span class="keyword">false</span></code>.</p>
+</div>
 </div>
 
 <pre><span id="VALstr"><span class="keyword">val</span> str</span> : <code class="type">string <a href="Ogre.Type.html#TYPEt">t</a></code></pre><div class="info ">
-<code class="code">str</code> represented by a sequence of characters. If the sequence
+<div class="info-desc">
+<p><code class="code">str</code> represented by a sequence of characters. If the sequence
       contains whitespaces or parenthesis then the sequence should be
       delimited with quotes. Note, the requirements are for the
       database backend implementations. A user of the library
-      shouldn't be bothered by the representation.<br>
+      shouldn't be bothered by the representation.</p>
+</div>
 </div>
 
 <pre><span id="VALscheme"><span class="keyword">val</span> scheme</span> : <code class="type">'a <a href="Ogre.html#TYPEfield">Ogre.field</a> -> (('a -> 'r) -> 'r, ('a -> 'p) -> 'p) <a href="Ogre.html#TYPEscheme">Ogre.scheme</a></code></pre><div class="info ">
-<code class="code">scheme&nbsp;field</code> defines a scheme with one field.<br>
+<div class="info-desc">
+<p><code class="code">scheme&nbsp;field</code> defines a scheme with one field.</p>
+</div>
 </div>
 
 <pre><span id="VAL($)"><span class="keyword">val</span> ($)</span> : <code class="type">('a -> 'b -> 'r, 'd -> 'b -> 'p) <a href="Ogre.html#TYPEscheme">Ogre.scheme</a> -><br>       'b <a href="Ogre.html#TYPEfield">Ogre.field</a> -> ('a -> 'r, 'd -> 'p) <a href="Ogre.html#TYPEscheme">Ogre.scheme</a></code></pre><div class="info ">
-<code class="code">scm&nbsp;$field</code> adds a <code class="code">field</code> to a scheme <code class="code">scm</code>.
-<p>
+<div class="info-desc">
+<p><code class="code">scm&nbsp;$field</code> adds a <code class="code">field</code> to a scheme <code class="code">scm</code>.</p>
 
-      Usually, all the fields are combined in a one expression,
-      starting with the call to a function <code class="code">scheme</code>, e.g.,
-<p>
+<p>Usually, all the fields are combined in a one expression,
+      starting with the call to a function <code class="code">scheme</code>, e.g.,</p>
 
-      <code class="code">scheme&nbsp;name&nbsp;$&nbsp;age&nbsp;$&nbsp;salary</code>
-<p>
+<p><code class="code">scheme&nbsp;name&nbsp;$&nbsp;age&nbsp;$&nbsp;salary</code></p>
 
-      The <code class="code">scheme</code> had type <code class="code">((<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r,&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;scheme</code>, then
+<p>The <code class="code">scheme</code> had type <code class="code">((<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r,&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;scheme</code>, then
       the type of a resulting scheme would be <code class="code">[((<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>r,&nbsp;(<span class="keywordsign">'</span>a&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>b&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>p)&nbsp;scheme]</code>, i.e., a type of <code class="code">$field</code> will be attached
-      to the scheme.
-<p>
+      to the scheme.</p>
 
-      For example, the <code class="code">scheme&nbsp;name&nbsp;$age&nbsp;$salary</code> expression will have
+<p>For example, the <code class="code">scheme&nbsp;name&nbsp;$age&nbsp;$salary</code> expression will have
       a type (assuming, that name, age and salary are represented with
-      string, int, and int, correspondingly):
-<p>
+      string, int, and int, correspondingly):</p>
 
-      <pre class="codepre"><code class="code">(string <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a) <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a,
+<pre class="codepre"><code class="code">(string <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a) <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>a,
         (string <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> int64 <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>b) <span class="keywordsign">-&gt;</span> <span class="keywordsign">'</span>b</code></pre>
-<p>
-
-      The scheme is used to construct an attribute. See below.<br>
+<p>The scheme is used to construct an attribute. See below.</p>
+</div>
 </div>
 
 <pre><span id="VALdef"><span class="keyword">val</span> def</span> : <code class="type">string -> 'a <a href="Ogre.Type.html#TYPEt">t</a> -> 'a <a href="Ogre.html#TYPEfield">Ogre.field</a></code></pre><div class="info ">
-<code class="code">def&nbsp;name&nbsp;t</code> defines a field with the give <code class="code">name</code> and type <code class="code">t</code>.<br>
+<div class="info-desc">
+<p><code class="code">def&nbsp;name&nbsp;t</code> defines a field with the give <code class="code">name</code> and type <code class="code">t</code>.</p>
+</div>
 </div>
 
 <pre><span id="VAL(%:)"><span class="keyword">val</span> (%:)</span> : <code class="type">string -> 'a <a href="Ogre.Type.html#TYPEt">t</a> -> 'a <a href="Ogre.html#TYPEfield">Ogre.field</a></code></pre><div class="info ">
-<code class="code">name&nbsp;:&nbsp;t</code> is the same as <code class="code">def&nbsp;name&nbsp;t</code><br>
+<div class="info-desc">
+<p><code class="code">name&nbsp;:&nbsp;t</code> is the same as <code class="code">def&nbsp;name&nbsp;t</code></p>
+</div>
 </div>
 </body></html>

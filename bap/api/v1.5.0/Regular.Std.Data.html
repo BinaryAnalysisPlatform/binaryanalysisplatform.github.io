@@ -12,6 +12,7 @@
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of class attributes" rel=Appendix href="index_attributes.html">
 <link title="Index of class methods" rel=Appendix href="index_methods.html">
 <link title="Index of classes" rel=Appendix href="index_classes.html">
 <link title="Index of class types" rel=Appendix href="index_class_types.html">
@@ -138,31 +139,31 @@ Data types support module.
 Versioned interfaces
 </div>
 
-<pre><span id="VALmarshal_reader"><span class="keyword">val</span> marshal_reader</span> : <code class="type">(module Core_kernel.T with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
+<pre><span id="VALmarshal_reader"><span class="keyword">val</span> marshal_reader</span> : <code class="type">(module Core_kernel.Std.T with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
 <code class="code">marshal_reader&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a reader in OCaml
         <code class="code"><span class="constructor">Marshal</span></code> format.<br>
 </div>
 
-<pre><span id="VALmarshal_writer"><span class="keyword">val</span> marshal_writer</span> : <code class="type">(module Core_kernel.T with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
+<pre><span id="VALmarshal_writer"><span class="keyword">val</span> marshal_writer</span> : <code class="type">(module Core_kernel.Std.T with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
 <code class="code">marshal_writer&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a writer in OCaml
         <code class="code"><span class="constructor">Marshal</span></code> format.<br>
 </div>
 
-<pre><span id="VALsexp_reader"><span class="keyword">val</span> sexp_reader</span> : <code class="type">(module Core_kernel.Sexpable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
+<pre><span id="VALsexp_reader"><span class="keyword">val</span> sexp_reader</span> : <code class="type">(module Core_kernel.Std.Sexpable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
 <code class="code">sexp_reader&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a reader in  sexp format.
 <p>
 <code class="code">sexp_writer&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a writer in  sexp format.<br>
 </div>
 
-<pre><span id="VALbin_reader"><span class="keyword">val</span> bin_reader</span> : <code class="type">(module Core_kernel.Binable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
+<pre><span id="VALbin_reader"><span class="keyword">val</span> bin_reader</span> : <code class="type">(module Core_kernel.Std.Binable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEreader">Std.reader</a></code></pre><div class="info ">
 <code class="code">bin_reader&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a reader in  binprot format.<br>
 </div>
 
-<pre><span id="VALbin_writer"><span class="keyword">val</span> bin_writer</span> : <code class="type">(module Core_kernel.Binable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
+<pre><span id="VALbin_writer"><span class="keyword">val</span> bin_writer</span> : <code class="type">(module Core_kernel.Std.Binable with type t = 'a) -> 'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
 <code class="code">bin_writer&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span>)</code> returns a writer in  binprot format.<br>
 </div>
 
-<pre><span id="VALpretty_writer"><span class="keyword">val</span> pretty_writer</span> : <code class="type">(module Core_kernel.Pretty_printer.S with type t = 'a) -><br>       'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
+<pre><span id="VALpretty_writer"><span class="keyword">val</span> pretty_writer</span> : <code class="type">(module Core_kernel.Std.Pretty_printer.S with type t = 'a) -><br>       'a <a href="Regular.Std.html#TYPEwriter">Std.writer</a></code></pre><div class="info ">
 <code class="code">pretty_printer&nbsp;(<span class="keyword">module</span>&nbsp;<span class="constructor">T</span></code> creates a writer that uses <code class="code"><span class="constructor">T</span>.pp</code>
         function for outputting.<br>
 </div>
