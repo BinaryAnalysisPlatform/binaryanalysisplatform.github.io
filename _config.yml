@@ -5,6 +5,7 @@ author:      David Brumley
 description: "The Binary Analysis Platform Blog"
 baseurl:     ""
 url:         "http://binaryanalysisplatform.github.io"
+exclude: [bap]
 
 # Google analytics
 google_analytics:
