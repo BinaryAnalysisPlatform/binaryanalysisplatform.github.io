@@ -61,7 +61,7 @@ The `label-addr`, `insn`, and `mem` properties are pretty self-explanatory, so l
   - `insn-asm` - the assembly string
   - `insn-properties` - semantic properties provided by the decoder
 
-As may see, most of those properties are good old properties of the `Bap.Std.Insn` data type in BAP 1.x, and indeed in BAP 2.x `Bap.Std.Insn.t` is represented as a `Knowledge.value` instance. The only new field is the set of destinations, which denote a set of program objects that are reachable from the given address. Which lets us explore the whole graph.
+As we may see, most of those properties are good old properties of the `Bap.Std.Insn` data type in BAP 1.x, and indeed in BAP 2.x `Bap.Std.Insn.t` is represented as a `Knowledge.value` instance. The only new field is the set of destinations, which denote a set of program objects that are reachable from the given address. Which lets us explore the whole graph.
 
 This brings us to the end of the first blog post about BAP 2.0 and the new knowledge system. We will discuss the knowledge system, along with an actual program interface in the upcoming blog posts. To make those posts productive I encourage everyone to join the discussion of BAP 2.0 in our [gitter channel][1]. Please, feel free to provide feedback, ask questions and drive the future posts.
 
