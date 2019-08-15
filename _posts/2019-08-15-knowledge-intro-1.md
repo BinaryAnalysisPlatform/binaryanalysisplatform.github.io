@@ -43,11 +43,11 @@ Now, we are ready to read the output of `-dknowledge`. In the following output, 
 
 We can see, that the object is having the following properties:
 
-- core-theory:semantics - the semantics of this instruction
-- core-theory:label-addr - the address
-- bap.std:insn -- the disassembled instruction
-- bap.std:mem - the region of memory which this instruction occupies
-- bap.std:arch  - and the architecture
+- `core-theory:semantics` - the semantics of this instruction
+- `core-theory:label-addr` - the address
+- `bap.std:insn` -- the disassembled instruction
+- `bap.std:mem` - the region of memory which this instruction occupies
+- `bap.std:arch`  - and the architecture
 
 We can immediately infer a novel feature of bap 2.0, is that architecture is now a property of a particular instruction object (basically of an address), not of the whole project. Which enables multi-architectural analysis, where in the same base we have programs from different architectures, calling each other (ARM/Thumb is a good example).
 
