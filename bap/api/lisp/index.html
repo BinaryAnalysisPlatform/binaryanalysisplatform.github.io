@@ -3,30 +3,23 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-04-26 Fri 12:03 -->
+<title>index</title>
+<!-- 2020-03-06 Fri 13:35 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta  name="viewport" content="width=device-width, initial-scale=1" />
-<title></title>
 <meta  name="generator" content="Org-mode" />
-<meta  name="author" content="Oleg" />
+<meta  name="author" content="Ivan" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  .title  { text-align: center;
-             margin-bottom: .2em; }
-  .subtitle { text-align: center;
-              font-size: medium;
-              font-weight: bold;
-              margin-top:0; }
+  .title  { text-align: center; }
   .todo   { font-family: monospace; color: red; }
-  .done   { font-family: monospace; color: green; }
-  .priority { font-family: monospace; color: orange; }
+  .done   { color: green; }
   .tag    { background-color: #eee; font-family: monospace;
             padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
-  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
-  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
   .underline { text-decoration: underline; }
   #postamble p, #preamble p { font-size: 90%; margin: .2em; }
   p.verse { margin-left: 3%; }
@@ -65,14 +58,15 @@
   caption.t-above { caption-side: top; }
   caption.t-bottom { caption-side: bottom; }
   td, th { vertical-align:top;  }
-  th.org-right  { text-align: center;  }
-  th.org-left   { text-align: center;   }
-  th.org-center { text-align: center; }
-  td.org-right  { text-align: right;  }
-  td.org-left   { text-align: left;   }
-  td.org-center { text-align: center; }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  .footpara { display: inline; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
   .footdef  { margin-bottom: 1em; }
   .figure { padding: 1em; }
   .figure p { text-align: center; }
@@ -143,244 +137,307 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
+<h1 class="title">index</h1>
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgheadline34">1. Macros</a>
+<li><a href="#sec-1">1. Macros</a>
 <ul>
-<li><a href="#orgheadline1">1.1. <code>+=</code></a></li>
-<li><a href="#orgheadline2">1.2. <code>and</code></a></li>
-<li><a href="#orgheadline3">1.3. <code>array-get</code></a></li>
-<li><a href="#orgheadline4">1.4. <code>array-set</code></a></li>
-<li><a href="#orgheadline5">1.5. <code>assert</code></a></li>
-<li><a href="#orgheadline6">1.6. <code>bitwidth</code></a></li>
-<li><a href="#orgheadline7">1.7. <code>cast</code></a></li>
-<li><a href="#orgheadline8">1.8. <code>compare</code></a></li>
-<li><a href="#orgheadline9">1.9. <code>copy-byte-shift</code></a></li>
-<li><a href="#orgheadline10">1.10. <code>copy-byte-shift-left</code></a></li>
-<li><a href="#orgheadline11">1.11. <code>copy-left</code></a></li>
-<li><a href="#orgheadline12">1.12. <code>copy-right</code></a></li>
-<li><a href="#orgheadline13">1.13. <code>decr</code></a></li>
-<li><a href="#orgheadline14">1.14. <code>endian</code></a></li>
-<li><a href="#orgheadline15">1.15. <code>find-character</code></a></li>
-<li><a href="#orgheadline16">1.16. <code>fold</code></a></li>
-<li><a href="#orgheadline17">1.17. <code>incr</code></a></li>
-<li><a href="#orgheadline18">1.18. <code>is-in</code></a></li>
-<li><a href="#orgheadline19">1.19. <code>make-copy</code></a></li>
-<li><a href="#orgheadline20">1.20. <code>max</code></a></li>
-<li><a href="#orgheadline21">1.21. <code>min</code></a></li>
-<li><a href="#orgheadline22">1.22. <code>nth-byte-of-word</code></a></li>
-<li><a href="#orgheadline23">1.23. <code>or</code></a></li>
-<li><a href="#orgheadline24">1.24. <code>points-to</code></a></li>
-<li><a href="#orgheadline25">1.25. <code>ptr+</code></a></li>
-<li><a href="#orgheadline26">1.26. <code>ptr+1</code></a></li>
-<li><a href="#orgheadline27">1.27. <code>read-word</code></a></li>
-<li><a href="#orgheadline28">1.28. <code>sign</code></a></li>
-<li><a href="#orgheadline29">1.29. <code>sizeof</code></a></li>
-<li><a href="#orgheadline30">1.30. <code>skip-all</code></a></li>
-<li><a href="#orgheadline31">1.31. <code>until</code></a></li>
-<li><a href="#orgheadline32">1.32. <code>when</code></a></li>
-<li><a href="#orgheadline33">1.33. <code>write-word</code></a></li>
+<li><a href="#sec-1-1">1.1. <code>+=</code></a></li>
+<li><a href="#sec-1-2">1.2. <code>and</code></a></li>
+<li><a href="#sec-1-3">1.3. <code>array-get</code></a></li>
+<li><a href="#sec-1-4">1.4. <code>array-set</code></a></li>
+<li><a href="#sec-1-5">1.5. <code>assert</code></a></li>
+<li><a href="#sec-1-6">1.6. <code>bitwidth</code></a></li>
+<li><a href="#sec-1-7">1.7. <code>case</code></a></li>
+<li><a href="#sec-1-8">1.8. <code>case/dispatch</code></a></li>
+<li><a href="#sec-1-9">1.9. <code>cast</code></a></li>
+<li><a href="#sec-1-10">1.10. <code>compare</code></a></li>
+<li><a href="#sec-1-11">1.11. <code>copy-byte-shift</code></a></li>
+<li><a href="#sec-1-12">1.12. <code>copy-byte-shift-left</code></a></li>
+<li><a href="#sec-1-13">1.13. <code>copy-left</code></a></li>
+<li><a href="#sec-1-14">1.14. <code>copy-right</code></a></li>
+<li><a href="#sec-1-15">1.15. <code>decr</code></a></li>
+<li><a href="#sec-1-16">1.16. <code>endian</code></a></li>
+<li><a href="#sec-1-17">1.17. <code>find-character</code></a></li>
+<li><a href="#sec-1-18">1.18. <code>fold</code></a></li>
+<li><a href="#sec-1-19">1.19. <code>incr</code></a></li>
+<li><a href="#sec-1-20">1.20. <code>is-in</code></a></li>
+<li><a href="#sec-1-21">1.21. <code>make-converter</code></a></li>
+<li><a href="#sec-1-22">1.22. <code>make-copy</code></a></li>
+<li><a href="#sec-1-23">1.23. <code>max</code></a></li>
+<li><a href="#sec-1-24">1.24. <code>min</code></a></li>
+<li><a href="#sec-1-25">1.25. <code>nth-byte-of-word</code></a></li>
+<li><a href="#sec-1-26">1.26. <code>or</code></a></li>
+<li><a href="#sec-1-27">1.27. <code>points-to</code></a></li>
+<li><a href="#sec-1-28">1.28. <code>ptr+</code></a></li>
+<li><a href="#sec-1-29">1.29. <code>ptr+1</code></a></li>
+<li><a href="#sec-1-30">1.30. <code>read-word</code></a></li>
+<li><a href="#sec-1-31">1.31. <code>sign</code></a></li>
+<li><a href="#sec-1-32">1.32. <code>sizeof</code></a></li>
+<li><a href="#sec-1-33">1.33. <code>skip-all</code></a></li>
+<li><a href="#sec-1-34">1.34. <code>unless</code></a></li>
+<li><a href="#sec-1-35">1.35. <code>until</code></a></li>
+<li><a href="#sec-1-36">1.36. <code>when</code></a></li>
+<li><a href="#sec-1-37">1.37. <code>write-word</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline35">2. Substitutions</a></li>
-<li><a href="#orgheadline39">3. Constants</a>
+<li><a href="#sec-2">2. Substitutions</a></li>
+<li><a href="#sec-3">3. Constants</a>
 <ul>
-<li><a href="#orgheadline36">3.1. <code>false</code></a></li>
-<li><a href="#orgheadline37">3.2. <code>nil</code></a></li>
-<li><a href="#orgheadline38">3.3. <code>true</code></a></li>
+<li><a href="#sec-3-1">3.1. <code>false</code></a></li>
+<li><a href="#sec-3-2">3.2. <code>nil</code></a></li>
+<li><a href="#sec-3-3">3.3. <code>true</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline112">4. Functions</a>
+<li><a href="#sec-4">4. Functions</a>
 <ul>
-<li><a href="#orgheadline40">4.1. <code>+1</code></a></li>
-<li><a href="#orgheadline41">4.2. <code>-1</code></a></li>
-<li><a href="#orgheadline42">4.3. <code>abort</code></a></li>
-<li><a href="#orgheadline43">4.4. <code>ascii-digit</code></a></li>
-<li><a href="#orgheadline44">4.5. <code>ascii-sign</code></a></li>
-<li><a href="#orgheadline45">4.6. <code>ascii-special</code></a></li>
-<li><a href="#orgheadline46">4.7. <code>ascii-whitespace</code></a></li>
-<li><a href="#orgheadline47">4.8. <code>atexit</code></a></li>
-<li><a href="#orgheadline48">4.9. <code>atoi</code></a></li>
-<li><a href="#orgheadline49">4.10. <code>atoi-prefix</code></a></li>
-<li><a href="#orgheadline50">4.11. <code>atoi-read-digit</code></a></li>
-<li><a href="#orgheadline51">4.12. <code>atol</code></a></li>
-<li><a href="#orgheadline52">4.13. <code>atoll</code></a></li>
-<li><a href="#orgheadline53">4.14. <code>calloc</code></a></li>
-<li><a href="#orgheadline54">4.15. <code>char</code></a></li>
-<li><a href="#orgheadline55">4.16. <code>copy-byte</code></a></li>
-<li><a href="#orgheadline56">4.17. <code>exit</code></a></li>
-<li><a href="#orgheadline57">4.18. <code>fgetc</code></a></li>
-<li><a href="#orgheadline58">4.19. <code>fgets</code></a></li>
-<li><a href="#orgheadline59">4.20. <code>fgets-step</code></a></li>
-<li><a href="#orgheadline60">4.21. <code>fini</code></a></li>
-<li><a href="#orgheadline61">4.22. <code>fopen</code></a></li>
-<li><a href="#orgheadline62">4.23. <code>fputc</code></a></li>
-<li><a href="#orgheadline63">4.24. <code>fputs</code></a></li>
-<li><a href="#orgheadline64">4.25. <code>fread</code></a></li>
-<li><a href="#orgheadline65">4.26. <code>free</code></a></li>
-<li><a href="#orgheadline66">4.27. <code>fwrite</code></a></li>
-<li><a href="#orgheadline67">4.28. <code>getchar</code></a></li>
-<li><a href="#orgheadline68">4.29. <code>getenv</code></a></li>
-<li><a href="#orgheadline69">4.30. <code>handle-unresolved-names</code></a></li>
-<li><a href="#orgheadline70">4.31. <code>init</code></a></li>
-<li><a href="#orgheadline71">4.32. <code>input-item</code></a></li>
-<li><a href="#orgheadline72">4.33. <code>input-item-nth-char</code></a></li>
-<li><a href="#orgheadline73">4.34. <code>int</code></a></li>
-<li><a href="#orgheadline74">4.35. <code>int32_t</code></a></li>
-<li><a href="#orgheadline75">4.36. <code>int64_t</code></a></li>
-<li><a href="#orgheadline76">4.37. <code>long</code></a></li>
-<li><a href="#orgheadline77">4.38. <code>long-long</code></a></li>
-<li><a href="#orgheadline78">4.39. <code>malloc</code></a></li>
-<li><a href="#orgheadline79">4.40. <code>malloc-heap-size</code></a></li>
-<li><a href="#orgheadline80">4.41. <code>malloc-will-reach-limit</code></a></li>
-<li><a href="#orgheadline81">4.42. <code>malloc/fill-edges</code></a></li>
-<li><a href="#orgheadline82">4.43. <code>memccpy</code></a></li>
-<li><a href="#orgheadline83">4.44. <code>memchr</code></a></li>
-<li><a href="#orgheadline84">4.45. <code>memcmp</code></a></li>
-<li><a href="#orgheadline85">4.46. <code>memcpy</code></a></li>
-<li><a href="#orgheadline86">4.47. <code>memmove</code></a></li>
-<li><a href="#orgheadline87">4.48. <code>memrchr</code></a></li>
-<li><a href="#orgheadline88">4.49. <code>memset</code></a></li>
-<li><a href="#orgheadline89">4.50. <code>non-zero</code></a></li>
-<li><a href="#orgheadline90">4.51. <code>open3</code></a></li>
-<li><a href="#orgheadline91">4.52. <code>output-item</code></a></li>
-<li><a href="#orgheadline92">4.53. <code>output-item-nth-char</code></a></li>
-<li><a href="#orgheadline93">4.54. <code>points-to-null</code></a></li>
-<li><a href="#orgheadline94">4.55. <code>ptr_t</code></a></li>
-<li><a href="#orgheadline95">4.56. <code>putchar</code></a></li>
-<li><a href="#orgheadline96">4.57. <code>puts</code></a></li>
-<li><a href="#orgheadline97">4.58. <code>read</code></a></li>
-<li><a href="#orgheadline98">4.59. <code>read-ascii-word</code></a></li>
-<li><a href="#orgheadline99">4.60. <code>security-init-cookie</code></a></li>
-<li><a href="#orgheadline100">4.61. <code>strchr</code></a></li>
-<li><a href="#orgheadline101">4.62. <code>strcmp</code></a></li>
-<li><a href="#orgheadline102">4.63. <code>strcpy</code></a></li>
-<li><a href="#orgheadline103">4.64. <code>strdup</code></a></li>
-<li><a href="#orgheadline104">4.65. <code>strlen</code></a></li>
-<li><a href="#orgheadline105">4.66. <code>strlen/with-null</code></a></li>
-<li><a href="#orgheadline106">4.67. <code>strncmp</code></a></li>
-<li><a href="#orgheadline107">4.68. <code>strncpy</code></a></li>
-<li><a href="#orgheadline108">4.69. <code>strpbrk</code></a></li>
-<li><a href="#orgheadline109">4.70. <code>strrchr</code></a></li>
-<li><a href="#orgheadline110">4.71. <code>stub</code></a></li>
-<li><a href="#orgheadline111">4.72. <code>write</code></a></li>
+<li><a href="#sec-4-1">4.1. <code>+1</code></a></li>
+<li><a href="#sec-4-2">4.2. <code>-1</code></a></li>
+<li><a href="#sec-4-3">4.3. <code>abort</code></a></li>
+<li><a href="#sec-4-4">4.4. <code>ascii-digit</code></a></li>
+<li><a href="#sec-4-5">4.5. <code>ascii-sign</code></a></li>
+<li><a href="#sec-4-6">4.6. <code>ascii-special</code></a></li>
+<li><a href="#sec-4-7">4.7. <code>ascii-whitespace</code></a></li>
+<li><a href="#sec-4-8">4.8. <code>atexit</code></a></li>
+<li><a href="#sec-4-9">4.9. <code>atoi</code></a></li>
+<li><a href="#sec-4-10">4.10. <code>atoi-prefix</code></a></li>
+<li><a href="#sec-4-11">4.11. <code>atoi-read-digit</code></a></li>
+<li><a href="#sec-4-12">4.12. <code>atol</code></a></li>
+<li><a href="#sec-4-13">4.13. <code>atoll</code></a></li>
+<li><a href="#sec-4-14">4.14. <code>calloc</code></a></li>
+<li><a href="#sec-4-15">4.15. <code>char</code></a></li>
+<li><a href="#sec-4-16">4.16. <code>copy-byte</code></a></li>
+<li><a href="#sec-4-17">4.17. <code>double</code></a></li>
+<li><a href="#sec-4-18">4.18. <code>exit</code></a></li>
+<li><a href="#sec-4-19">4.19. <code>fgetc</code></a></li>
+<li><a href="#sec-4-20">4.20. <code>fgets</code></a></li>
+<li><a href="#sec-4-21">4.21. <code>fgets-step</code></a></li>
+<li><a href="#sec-4-22">4.22. <code>fini</code></a></li>
+<li><a href="#sec-4-23">4.23. <code>float</code></a></li>
+<li><a href="#sec-4-24">4.24. <code>fopen</code></a></li>
+<li><a href="#sec-4-25">4.25. <code>fputc</code></a></li>
+<li><a href="#sec-4-26">4.26. <code>fputs</code></a></li>
+<li><a href="#sec-4-27">4.27. <code>fread</code></a></li>
+<li><a href="#sec-4-28">4.28. <code>free</code></a></li>
+<li><a href="#sec-4-29">4.29. <code>fwrite</code></a></li>
+<li><a href="#sec-4-30">4.30. <code>getchar</code></a></li>
+<li><a href="#sec-4-31">4.31. <code>getenv</code></a></li>
+<li><a href="#sec-4-32">4.32. <code>handle-unresolved-names</code></a></li>
+<li><a href="#sec-4-33">4.33. <code>init</code></a></li>
+<li><a href="#sec-4-34">4.34. <code>input-item</code></a></li>
+<li><a href="#sec-4-35">4.35. <code>input-item-nth-char</code></a></li>
+<li><a href="#sec-4-36">4.36. <code>int</code></a></li>
+<li><a href="#sec-4-37">4.37. <code>int32_t</code></a></li>
+<li><a href="#sec-4-38">4.38. <code>int64_t</code></a></li>
+<li><a href="#sec-4-39">4.39. <code>long</code></a></li>
+<li><a href="#sec-4-40">4.40. <code>long-long</code></a></li>
+<li><a href="#sec-4-41">4.41. <code>malloc</code></a></li>
+<li><a href="#sec-4-42">4.42. <code>malloc-heap-size</code></a></li>
+<li><a href="#sec-4-43">4.43. <code>malloc-will-reach-limit</code></a></li>
+<li><a href="#sec-4-44">4.44. <code>malloc/fill-edges</code></a></li>
+<li><a href="#sec-4-45">4.45. <code>malloc/get-chunk-size</code></a></li>
+<li><a href="#sec-4-46">4.46. <code>malloc/put-chunk-size</code></a></li>
+<li><a href="#sec-4-47">4.47. <code>memccpy</code></a></li>
+<li><a href="#sec-4-48">4.48. <code>memchr</code></a></li>
+<li><a href="#sec-4-49">4.49. <code>memcmp</code></a></li>
+<li><a href="#sec-4-50">4.50. <code>memcpy</code></a></li>
+<li><a href="#sec-4-51">4.51. <code>memmove</code></a></li>
+<li><a href="#sec-4-52">4.52. <code>memory/allocate</code></a></li>
+<li><a href="#sec-4-53">4.53. <code>memrchr</code></a></li>
+<li><a href="#sec-4-54">4.54. <code>memset</code></a></li>
+<li><a href="#sec-4-55">4.55. <code>model-ilp32</code></a></li>
+<li><a href="#sec-4-56">4.56. <code>model-ilp64</code></a></li>
+<li><a href="#sec-4-57">4.57. <code>model-llp64</code></a></li>
+<li><a href="#sec-4-58">4.58. <code>model-lp32</code></a></li>
+<li><a href="#sec-4-59">4.59. <code>model-lp64</code></a></li>
+<li><a href="#sec-4-60">4.60. <code>non-zero</code></a></li>
+<li><a href="#sec-4-61">4.61. <code>open3</code></a></li>
+<li><a href="#sec-4-62">4.62. <code>output-item</code></a></li>
+<li><a href="#sec-4-63">4.63. <code>output-item-nth-char</code></a></li>
+<li><a href="#sec-4-64">4.64. <code>points-to-null</code></a></li>
+<li><a href="#sec-4-65">4.65. <code>ptr_t</code></a></li>
+<li><a href="#sec-4-66">4.66. <code>putchar</code></a></li>
+<li><a href="#sec-4-67">4.67. <code>puts</code></a></li>
+<li><a href="#sec-4-68">4.68. <code>read</code></a></li>
+<li><a href="#sec-4-69">4.69. <code>read-ascii-word</code></a></li>
+<li><a href="#sec-4-70">4.70. <code>realloc</code></a></li>
+<li><a href="#sec-4-71">4.71. <code>realloc/as-free</code></a></li>
+<li><a href="#sec-4-72">4.72. <code>realloc/shrink-chunk</code></a></li>
+<li><a href="#sec-4-73">4.73. <code>realloc/update-chunk</code></a></li>
+<li><a href="#sec-4-74">4.74. <code>security-init-cookie</code></a></li>
+<li><a href="#sec-4-75">4.75. <code>short</code></a></li>
+<li><a href="#sec-4-76">4.76. <code>strchr</code></a></li>
+<li><a href="#sec-4-77">4.77. <code>strcmp</code></a></li>
+<li><a href="#sec-4-78">4.78. <code>strcpy</code></a></li>
+<li><a href="#sec-4-79">4.79. <code>strdup</code></a></li>
+<li><a href="#sec-4-80">4.80. <code>strlen</code></a></li>
+<li><a href="#sec-4-81">4.81. <code>strlen/with-null</code></a></li>
+<li><a href="#sec-4-82">4.82. <code>strncmp</code></a></li>
+<li><a href="#sec-4-83">4.83. <code>strncpy</code></a></li>
+<li><a href="#sec-4-84">4.84. <code>strpbrk</code></a></li>
+<li><a href="#sec-4-85">4.85. <code>strrchr</code></a></li>
+<li><a href="#sec-4-86">4.86. <code>stub</code></a></li>
+<li><a href="#sec-4-87">4.87. <code>write</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline114">5. Methods</a>
+<li><a href="#sec-5">5. Methods</a>
 <ul>
-<li><a href="#orgheadline113">5.1. <code>finished</code></a></li>
+<li><a href="#sec-5-1">5.1. <code>machine-kill</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline121">6. Parameters</a>
+<li><a href="#sec-6">6. Parameters</a>
 <ul>
-<li><a href="#orgheadline115">6.1. <code>*malloc-arena-start*</code></a></li>
-<li><a href="#orgheadline116">6.2. <code>*malloc-guard-edges*</code></a></li>
-<li><a href="#orgheadline117">6.3. <code>*malloc-guard-pattern*</code></a></li>
-<li><a href="#orgheadline118">6.4. <code>*malloc-max-arena-size*</code></a></li>
-<li><a href="#orgheadline119">6.5. <code>*malloc-max-chunk-size*</code></a></li>
-<li><a href="#orgheadline120">6.6. <code>*malloc-zero-sentinel*</code></a></li>
+<li><a href="#sec-6-1">6.1. <code>*malloc-arena-start*</code></a></li>
+<li><a href="#sec-6-2">6.2. <code>*malloc-guard-edges*</code></a></li>
+<li><a href="#sec-6-3">6.3. <code>*malloc-guard-pattern*</code></a></li>
+<li><a href="#sec-6-4">6.4. <code>*malloc-initial-value*</code></a></li>
+<li><a href="#sec-6-5">6.5. <code>*malloc-initialize-memory*</code></a></li>
+<li><a href="#sec-6-6">6.6. <code>*malloc-max-arena-size*</code></a></li>
+<li><a href="#sec-6-7">6.7. <code>*malloc-max-chunk-size*</code></a></li>
+<li><a href="#sec-6-8">6.8. <code>*malloc-zero-sentinel*</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline181">7. Primitives</a>
+<li><a href="#sec-7">7. Primitives</a>
 <ul>
-<li><a href="#orgheadline122">7.1. <code>*</code></a></li>
-<li><a href="#orgheadline123">7.2. <code>+</code></a></li>
-<li><a href="#orgheadline124">7.3. <code>-</code></a></li>
-<li><a href="#orgheadline125">7.4. <code>/</code></a></li>
-<li><a href="#orgheadline126">7.5. <code>/=</code></a></li>
-<li><a href="#orgheadline127">7.6. <code>&lt;</code></a></li>
-<li><a href="#orgheadline128">7.7. <code>&lt;=</code></a></li>
-<li><a href="#orgheadline129">7.8. <code>=</code></a></li>
-<li><a href="#orgheadline130">7.9. <code>&gt;</code></a></li>
-<li><a href="#orgheadline131">7.10. <code>&gt;=</code></a></li>
-<li><a href="#orgheadline132">7.11. <code>all-static-constant</code></a></li>
-<li><a href="#orgheadline133">7.12. <code>arshift</code></a></li>
-<li><a href="#orgheadline134">7.13. <code>channel-close</code></a></li>
-<li><a href="#orgheadline135">7.14. <code>channel-flush</code></a></li>
-<li><a href="#orgheadline136">7.15. <code>channel-input</code></a></li>
-<li><a href="#orgheadline137">7.16. <code>channel-open</code></a></li>
-<li><a href="#orgheadline138">7.17. <code>channel-output</code></a></li>
-<li><a href="#orgheadline139">7.18. <code>concat</code></a></li>
-<li><a href="#orgheadline140">7.19. <code>dict-add</code></a></li>
-<li><a href="#orgheadline141">7.20. <code>dict-del</code></a></li>
-<li><a href="#orgheadline142">7.21. <code>dict-get</code></a></li>
-<li><a href="#orgheadline143">7.22. <code>dict-has</code></a></li>
-<li><a href="#orgheadline144">7.23. <code>exit-with</code></a></li>
-<li><a href="#orgheadline145">7.24. <code>extract</code></a></li>
-<li><a href="#orgheadline146">7.25. <code>get-current-program-counter</code></a></li>
-<li><a href="#orgheadline147">7.26. <code>incident-location</code></a></li>
-<li><a href="#orgheadline148">7.27. <code>incident-report</code></a></li>
-<li><a href="#orgheadline149">7.28. <code>is-negative</code></a></li>
-<li><a href="#orgheadline150">7.29. <code>is-positive</code></a></li>
-<li><a href="#orgheadline151">7.30. <code>is-zero</code></a></li>
-<li><a href="#orgheadline152">7.31. <code>lnot</code></a></li>
-<li><a href="#orgheadline153">7.32. <code>logand</code></a></li>
-<li><a href="#orgheadline154">7.33. <code>logor</code></a></li>
-<li><a href="#orgheadline155">7.34. <code>logxor</code></a></li>
-<li><a href="#orgheadline156">7.35. <code>lshift</code></a></li>
-<li><a href="#orgheadline157">7.36. <code>memory-allocate</code></a></li>
-<li><a href="#orgheadline158">7.37. <code>memory-read</code></a></li>
-<li><a href="#orgheadline159">7.38. <code>memory-write</code></a></li>
-<li><a href="#orgheadline160">7.39. <code>mod</code></a></li>
-<li><a href="#orgheadline161">7.40. <code>neg</code></a></li>
-<li><a href="#orgheadline162">7.41. <code>not</code></a></li>
-<li><a href="#orgheadline163">7.42. <code>points-to-static-data</code></a></li>
-<li><a href="#orgheadline164">7.43. <code>region-contains</code></a></li>
-<li><a href="#orgheadline165">7.44. <code>region-create</code></a></li>
-<li><a href="#orgheadline166">7.45. <code>region-move</code></a></li>
-<li><a href="#orgheadline167">7.46. <code>rshift</code></a></li>
-<li><a href="#orgheadline168">7.47. <code>s/</code></a></li>
-<li><a href="#orgheadline169">7.48. <code>signed-mod</code></a></li>
-<li><a href="#orgheadline170">7.49. <code>symbol-concat</code></a></li>
-<li><a href="#orgheadline171">7.50. <code>taint-get-direct</code></a></li>
-<li><a href="#orgheadline172">7.51. <code>taint-get-indirect</code></a></li>
-<li><a href="#orgheadline173">7.52. <code>taint-introduce-directly</code></a></li>
-<li><a href="#orgheadline174">7.53. <code>taint-introduce-indirectly</code></a></li>
-<li><a href="#orgheadline175">7.54. <code>taint-kind</code></a></li>
-<li><a href="#orgheadline176">7.55. <code>taint-policy-select</code></a></li>
-<li><a href="#orgheadline177">7.56. <code>taint-policy-set-default</code></a></li>
-<li><a href="#orgheadline178">7.57. <code>taint-sanitize-direct</code></a></li>
-<li><a href="#orgheadline179">7.58. <code>taint-sanitize-indirect</code></a></li>
-<li><a href="#orgheadline180">7.59. <code>word-width</code></a></li>
+<li><a href="#sec-7-1">7.1. <code>*</code></a></li>
+<li><a href="#sec-7-2">7.2. <code>+</code></a></li>
+<li><a href="#sec-7-3">7.3. <code>-</code></a></li>
+<li><a href="#sec-7-4">7.4. <code>/</code></a></li>
+<li><a href="#sec-7-5">7.5. <code>/=</code></a></li>
+<li><a href="#sec-7-6">7.6. <code>&lt;</code></a></li>
+<li><a href="#sec-7-7">7.7. <code>&lt;=</code></a></li>
+<li><a href="#sec-7-8">7.8. <code>=</code></a></li>
+<li><a href="#sec-7-9">7.9. <code>&gt;</code></a></li>
+<li><a href="#sec-7-10">7.10. <code>&gt;=</code></a></li>
+<li><a href="#sec-7-11">7.11. <code>all-static-constant</code></a></li>
+<li><a href="#sec-7-12">7.12. <code>arshift</code></a></li>
+<li><a href="#sec-7-13">7.13. <code>channel-close</code></a></li>
+<li><a href="#sec-7-14">7.14. <code>channel-flush</code></a></li>
+<li><a href="#sec-7-15">7.15. <code>channel-input</code></a></li>
+<li><a href="#sec-7-16">7.16. <code>channel-open</code></a></li>
+<li><a href="#sec-7-17">7.17. <code>channel-output</code></a></li>
+<li><a href="#sec-7-18">7.18. <code>concat</code></a></li>
+<li><a href="#sec-7-19">7.19. <code>dict-add</code></a></li>
+<li><a href="#sec-7-20">7.20. <code>dict-del</code></a></li>
+<li><a href="#sec-7-21">7.21. <code>dict-get</code></a></li>
+<li><a href="#sec-7-22">7.22. <code>dict-has</code></a></li>
+<li><a href="#sec-7-23">7.23. <code>exec-addr</code></a></li>
+<li><a href="#sec-7-24">7.24. <code>exec-symbol</code></a></li>
+<li><a href="#sec-7-25">7.25. <code>exit-with</code></a></li>
+<li><a href="#sec-7-26">7.26. <code>extract</code></a></li>
+<li><a href="#sec-7-27">7.27. <code>get-current-program-counter</code></a></li>
+<li><a href="#sec-7-28">7.28. <code>ieee754-abs</code></a></li>
+<li><a href="#sec-7-29">7.29. <code>ieee754-acos</code></a></li>
+<li><a href="#sec-7-30">7.30. <code>ieee754-add</code></a></li>
+<li><a href="#sec-7-31">7.31. <code>ieee754-asin</code></a></li>
+<li><a href="#sec-7-32">7.32. <code>ieee754-atan</code></a></li>
+<li><a href="#sec-7-33">7.33. <code>ieee754-atan2</code></a></li>
+<li><a href="#sec-7-34">7.34. <code>ieee754-ceil</code></a></li>
+<li><a href="#sec-7-35">7.35. <code>ieee754-cos</code></a></li>
+<li><a href="#sec-7-36">7.36. <code>ieee754-cosh</code></a></li>
+<li><a href="#sec-7-37">7.37. <code>ieee754-cti</code></a></li>
+<li><a href="#sec-7-38">7.38. <code>ieee754-div</code></a></li>
+<li><a href="#sec-7-39">7.39. <code>ieee754-eq</code></a></li>
+<li><a href="#sec-7-40">7.40. <code>ieee754-exp</code></a></li>
+<li><a href="#sec-7-41">7.41. <code>ieee754-expm1</code></a></li>
+<li><a href="#sec-7-42">7.42. <code>ieee754-floor</code></a></li>
+<li><a href="#sec-7-43">7.43. <code>ieee754-ge</code></a></li>
+<li><a href="#sec-7-44">7.44. <code>ieee754-gt</code></a></li>
+<li><a href="#sec-7-45">7.45. <code>ieee754-hypot</code></a></li>
+<li><a href="#sec-7-46">7.46. <code>ieee754-le</code></a></li>
+<li><a href="#sec-7-47">7.47. <code>ieee754-log</code></a></li>
+<li><a href="#sec-7-48">7.48. <code>ieee754-log10</code></a></li>
+<li><a href="#sec-7-49">7.49. <code>ieee754-log1p</code></a></li>
+<li><a href="#sec-7-50">7.50. <code>ieee754-lt</code></a></li>
+<li><a href="#sec-7-51">7.51. <code>ieee754-mod</code></a></li>
+<li><a href="#sec-7-52">7.52. <code>ieee754-mul</code></a></li>
+<li><a href="#sec-7-53">7.53. <code>ieee754-ne</code></a></li>
+<li><a href="#sec-7-54">7.54. <code>ieee754-neg</code></a></li>
+<li><a href="#sec-7-55">7.55. <code>ieee754-pos</code></a></li>
+<li><a href="#sec-7-56">7.56. <code>ieee754-pow</code></a></li>
+<li><a href="#sec-7-57">7.57. <code>ieee754-sin</code></a></li>
+<li><a href="#sec-7-58">7.58. <code>ieee754-sinh</code></a></li>
+<li><a href="#sec-7-59">7.59. <code>ieee754-sqrt</code></a></li>
+<li><a href="#sec-7-60">7.60. <code>ieee754-sub</code></a></li>
+<li><a href="#sec-7-61">7.61. <code>ieee754-tan</code></a></li>
+<li><a href="#sec-7-62">7.62. <code>ieee754-tanh</code></a></li>
+<li><a href="#sec-7-63">7.63. <code>incident-location</code></a></li>
+<li><a href="#sec-7-64">7.64. <code>incident-report</code></a></li>
+<li><a href="#sec-7-65">7.65. <code>is-negative</code></a></li>
+<li><a href="#sec-7-66">7.66. <code>is-positive</code></a></li>
+<li><a href="#sec-7-67">7.67. <code>is-zero</code></a></li>
+<li><a href="#sec-7-68">7.68. <code>lnot</code></a></li>
+<li><a href="#sec-7-69">7.69. <code>logand</code></a></li>
+<li><a href="#sec-7-70">7.70. <code>logor</code></a></li>
+<li><a href="#sec-7-71">7.71. <code>logxor</code></a></li>
+<li><a href="#sec-7-72">7.72. <code>lshift</code></a></li>
+<li><a href="#sec-7-73">7.73. <code>memory-allocate</code></a></li>
+<li><a href="#sec-7-74">7.74. <code>memory-read</code></a></li>
+<li><a href="#sec-7-75">7.75. <code>memory-write</code></a></li>
+<li><a href="#sec-7-76">7.76. <code>mod</code></a></li>
+<li><a href="#sec-7-77">7.77. <code>neg</code></a></li>
+<li><a href="#sec-7-78">7.78. <code>not</code></a></li>
+<li><a href="#sec-7-79">7.79. <code>points-to-static-data</code></a></li>
+<li><a href="#sec-7-80">7.80. <code>reg-name</code></a></li>
+<li><a href="#sec-7-81">7.81. <code>region-contains</code></a></li>
+<li><a href="#sec-7-82">7.82. <code>region-create</code></a></li>
+<li><a href="#sec-7-83">7.83. <code>region-move</code></a></li>
+<li><a href="#sec-7-84">7.84. <code>rshift</code></a></li>
+<li><a href="#sec-7-85">7.85. <code>s/</code></a></li>
+<li><a href="#sec-7-86">7.86. <code>set-symbol-value</code></a></li>
+<li><a href="#sec-7-87">7.87. <code>signed-mod</code></a></li>
+<li><a href="#sec-7-88">7.88. <code>symbol-concat</code></a></li>
+<li><a href="#sec-7-89">7.89. <code>taint-get-direct</code></a></li>
+<li><a href="#sec-7-90">7.90. <code>taint-get-indirect</code></a></li>
+<li><a href="#sec-7-91">7.91. <code>taint-introduce-directly</code></a></li>
+<li><a href="#sec-7-92">7.92. <code>taint-introduce-indirectly</code></a></li>
+<li><a href="#sec-7-93">7.93. <code>taint-kind</code></a></li>
+<li><a href="#sec-7-94">7.94. <code>taint-policy-select</code></a></li>
+<li><a href="#sec-7-95">7.95. <code>taint-policy-set-default</code></a></li>
+<li><a href="#sec-7-96">7.96. <code>taint-sanitize-direct</code></a></li>
+<li><a href="#sec-7-97">7.97. <code>taint-sanitize-indirect</code></a></li>
+<li><a href="#sec-7-98">7.98. <code>word-width</code></a></li>
 </ul>
 </li>
-<li><a href="#orgheadline197">8. Signals</a>
+<li><a href="#sec-8">8. Signals</a>
 <ul>
-<li><a href="#orgheadline182">8.1. <code>call</code></a></li>
-<li><a href="#orgheadline183">8.2. <code>call-return</code></a></li>
-<li><a href="#orgheadline184">8.3. <code>eval-cond</code></a></li>
-<li><a href="#orgheadline185">8.4. <code>fini</code></a></li>
-<li><a href="#orgheadline186">8.5. <code>init</code></a></li>
-<li><a href="#orgheadline187">8.6. <code>interrupt</code></a></li>
-<li><a href="#orgheadline188">8.7. <code>jumping</code></a></li>
-<li><a href="#orgheadline189">8.8. <code>loaded</code></a></li>
-<li><a href="#orgheadline190">8.9. <code>loading</code></a></li>
-<li><a href="#orgheadline191">8.10. <code>pc-changed</code></a></li>
-<li><a href="#orgheadline192">8.11. <code>read</code></a></li>
-<li><a href="#orgheadline193">8.12. <code>stored</code></a></li>
-<li><a href="#orgheadline194">8.13. <code>storing</code></a></li>
-<li><a href="#orgheadline195">8.14. <code>taint-finalize</code></a></li>
-<li><a href="#orgheadline196">8.15. <code>written</code></a></li>
+<li><a href="#sec-8-1">8.1. <code>call</code></a></li>
+<li><a href="#sec-8-2">8.2. <code>call-return</code></a></li>
+<li><a href="#sec-8-3">8.3. <code>eval-cond</code></a></li>
+<li><a href="#sec-8-4">8.4. <code>fini</code></a></li>
+<li><a href="#sec-8-5">8.5. <code>init</code></a></li>
+<li><a href="#sec-8-6">8.6. <code>interrupt</code></a></li>
+<li><a href="#sec-8-7">8.7. <code>jumping</code></a></li>
+<li><a href="#sec-8-8">8.8. <code>loaded</code></a></li>
+<li><a href="#sec-8-9">8.9. <code>loading</code></a></li>
+<li><a href="#sec-8-10">8.10. <code>machine-kill</code></a></li>
+<li><a href="#sec-8-11">8.11. <code>pc-changed</code></a></li>
+<li><a href="#sec-8-12">8.12. <code>read</code></a></li>
+<li><a href="#sec-8-13">8.13. <code>stored</code></a></li>
+<li><a href="#sec-8-14">8.14. <code>storing</code></a></li>
+<li><a href="#sec-8-15">8.15. <code>system-stop</code></a></li>
+<li><a href="#sec-8-16">8.16. <code>taint-finalize</code></a></li>
+<li><a href="#sec-8-17">8.17. <code>written</code></a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgheadline34" class="outline-2">
-<h2 id="orgheadline34"><span class="section-number-2">1</span> Macros</h2>
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Macros</h2>
 <div class="outline-text-2" id="text-1">
-</div><div id="outline-container-orgheadline1" class="outline-3">
-<h3 id="orgheadline1"><span class="section-number-3">1.1</span> <code>+=</code></h3>
+</div><div id="outline-container-sec-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> <code>+=</code></h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 (+= X Y) assigns a sum of X and Y to variable X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline2" class="outline-3">
-<h3 id="orgheadline2"><span class="section-number-3">1.2</span> <code>and</code></h3>
+<div id="outline-container-sec-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> <code>and</code></h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 (and X Y &#x2026;) evaluates expressions X,Y,&#x2026; until the first
@@ -389,8 +446,8 @@ value of the last evaluated expression.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline3" class="outline-3">
-<h3 id="orgheadline3"><span class="section-number-3">1.3</span> <code>array-get</code></h3>
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <code>array-get</code></h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 (array-get T P N) gets the N-th element of the
@@ -398,8 +455,8 @@ array of elements of type T, pointed by P
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline4" class="outline-3">
-<h3 id="orgheadline4"><span class="section-number-3">1.4</span> <code>array-set</code></h3>
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> <code>array-set</code></h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 (array-set T P N W) sets to W the N-th element of the array of
@@ -408,78 +465,108 @@ element
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline5" class="outline-3">
-<h3 id="orgheadline5"><span class="section-number-3">1.5</span> <code>assert</code></h3>
+<div id="outline-container-sec-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> <code>assert</code></h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 (assert COND) terminates program if COND is false
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline6" class="outline-3">
-<h3 id="orgheadline6"><span class="section-number-3">1.6</span> <code>bitwidth</code></h3>
+<div id="outline-container-sec-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> <code>bitwidth</code></h3>
 </div>
 
-<div id="outline-container-orgheadline7" class="outline-3">
-<h3 id="orgheadline7"><span class="section-number-3">1.7</span> <code>cast</code></h3>
+<div id="outline-container-sec-1-7" class="outline-3">
+<h3 id="sec-1-7"><span class="section-number-3">1.7</span> <code>case</code></h3>
+<div class="outline-text-3" id="text-1-7">
+<p>
+(case K K1 X1 K2 X2 &#x2026; Kn Xn [DEF]) evaluates K then consequently
+evaluates keys K1 &#x2026;Kn until a key Ki such that (= K Ki) is found.
+If such key is found then the whole form evaluates to Xi.
+If no matching key was found, then if the number of keys is equal to
+the number of expressions, nil is returned, otherwise, i.e., if an
+extra expression DEF is provided, then it becomes the value of the
+whole form.
+Examples:
+(defun dispatch-with-default-case (c)
+(case c
+1 'hello
+2 'cruel
+3 'world
+'unknown))
+(defun dispatch-with-no-default (c)
+(case c
+1 'hello
+2 'cruel
+3 'world))
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-8" class="outline-3">
+<h3 id="sec-1-8"><span class="section-number-3">1.8</span> <code>case/dispatch</code></h3>
 </div>
 
-<div id="outline-container-orgheadline8" class="outline-3">
-<h3 id="orgheadline8"><span class="section-number-3">1.8</span> <code>compare</code></h3>
-<div class="outline-text-3" id="text-1-8">
+<div id="outline-container-sec-1-9" class="outline-3">
+<h3 id="sec-1-9"><span class="section-number-3">1.9</span> <code>cast</code></h3>
+</div>
+
+<div id="outline-container-sec-1-10" class="outline-3">
+<h3 id="sec-1-10"><span class="section-number-3">1.10</span> <code>compare</code></h3>
+<div class="outline-text-3" id="text-1-10">
 <p>
 (compare X Y) returns 0 if X = Y, a negative value if X&lt;Y
 and a positive value if X&gt;Y
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline9" class="outline-3">
-<h3 id="orgheadline9"><span class="section-number-3">1.9</span> <code>copy-byte-shift</code></h3>
-<div class="outline-text-3" id="text-1-9">
+<div id="outline-container-sec-1-11" class="outline-3">
+<h3 id="sec-1-11"><span class="section-number-3">1.11</span> <code>copy-byte-shift</code></h3>
+<div class="outline-text-3" id="text-1-11">
 <p>
 (copy-byte-shift DST SRC) copies byte from
 SRC to DST and increments SRC and DST.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline10" class="outline-3">
-<h3 id="orgheadline10"><span class="section-number-3">1.10</span> <code>copy-byte-shift-left</code></h3>
-<div class="outline-text-3" id="text-1-10">
+<div id="outline-container-sec-1-12" class="outline-3">
+<h3 id="sec-1-12"><span class="section-number-3">1.12</span> <code>copy-byte-shift-left</code></h3>
+<div class="outline-text-3" id="text-1-12">
 <p>
 (copy-byte-shift-left DST SRC) copies
 byte from DST to SRC and decrements SRC and DST.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline11" class="outline-3">
-<h3 id="orgheadline11"><span class="section-number-3">1.11</span> <code>copy-left</code></h3>
-<div class="outline-text-3" id="text-1-11">
+<div id="outline-container-sec-1-13" class="outline-3">
+<h3 id="sec-1-13"><span class="section-number-3">1.13</span> <code>copy-left</code></h3>
+<div class="outline-text-3" id="text-1-13">
 <p>
 (copy-left DST SRC LEN) copies LEN bytes
 from SRC to DST (right to left)
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline12" class="outline-3">
-<h3 id="orgheadline12"><span class="section-number-3">1.12</span> <code>copy-right</code></h3>
-<div class="outline-text-3" id="text-1-12">
+<div id="outline-container-sec-1-14" class="outline-3">
+<h3 id="sec-1-14"><span class="section-number-3">1.14</span> <code>copy-right</code></h3>
+<div class="outline-text-3" id="text-1-14">
 <p>
 (copy-right DST SRC LEN) copies LEN bytes
 from SRC to DST (left to right)
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline13" class="outline-3">
-<h3 id="orgheadline13"><span class="section-number-3">1.13</span> <code>decr</code></h3>
-<div class="outline-text-3" id="text-1-13">
+<div id="outline-container-sec-1-15" class="outline-3">
+<h3 id="sec-1-15"><span class="section-number-3">1.15</span> <code>decr</code></h3>
+<div class="outline-text-3" id="text-1-15">
 <p>
 (decr X Y &#x2026;) decrements the value bound with the variables X, Y, &#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline14" class="outline-3">
-<h3 id="orgheadline14"><span class="section-number-3">1.14</span> <code>endian</code></h3>
-<div class="outline-text-3" id="text-1-14">
+<div id="outline-container-sec-1-16" class="outline-3">
+<h3 id="sec-1-16"><span class="section-number-3">1.16</span> <code>endian</code></h3>
+<div class="outline-text-3" id="text-1-16">
 <p>
 (endian F X Y) expands to (F X Y) if applied
 in the big endian context
@@ -489,70 +576,74 @@ in the little endian context
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline15" class="outline-3">
-<h3 id="orgheadline15"><span class="section-number-3">1.15</span> <code>find-character</code></h3>
+<div id="outline-container-sec-1-17" class="outline-3">
+<h3 id="sec-1-17"><span class="section-number-3">1.17</span> <code>find-character</code></h3>
 </div>
 
-<div id="outline-container-orgheadline16" class="outline-3">
-<h3 id="orgheadline16"><span class="section-number-3">1.16</span> <code>fold</code></h3>
-<div class="outline-text-3" id="text-1-16">
+<div id="outline-container-sec-1-18" class="outline-3">
+<h3 id="sec-1-18"><span class="section-number-3">1.18</span> <code>fold</code></h3>
+<div class="outline-text-3" id="text-1-18">
 <p>
 (fold F A X Y &#x2026;) expands to (F (F A X) Y) &#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline17" class="outline-3">
-<h3 id="orgheadline17"><span class="section-number-3">1.17</span> <code>incr</code></h3>
-<div class="outline-text-3" id="text-1-17">
+<div id="outline-container-sec-1-19" class="outline-3">
+<h3 id="sec-1-19"><span class="section-number-3">1.19</span> <code>incr</code></h3>
+<div class="outline-text-3" id="text-1-19">
 <p>
 (incr X Y &#x2026;) increments the value bound with the variables X, Y, &#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline18" class="outline-3">
-<h3 id="orgheadline18"><span class="section-number-3">1.18</span> <code>is-in</code></h3>
-<div class="outline-text-3" id="text-1-18">
+<div id="outline-container-sec-1-20" class="outline-3">
+<h3 id="sec-1-20"><span class="section-number-3">1.20</span> <code>is-in</code></h3>
+<div class="outline-text-3" id="text-1-20">
 <p>
 (is-in X A B C &#x2026;) returns true if X is equal A or B or C or &#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline19" class="outline-3">
-<h3 id="orgheadline19"><span class="section-number-3">1.19</span> <code>make-copy</code></h3>
-<div class="outline-text-3" id="text-1-19">
+<div id="outline-container-sec-1-21" class="outline-3">
+<h3 id="sec-1-21"><span class="section-number-3">1.21</span> <code>make-converter</code></h3>
+</div>
+
+<div id="outline-container-sec-1-22" class="outline-3">
+<h3 id="sec-1-22"><span class="section-number-3">1.22</span> <code>make-copy</code></h3>
+<div class="outline-text-3" id="text-1-22">
 <p>
 &lt;internal&gt;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline20" class="outline-3">
-<h3 id="orgheadline20"><span class="section-number-3">1.20</span> <code>max</code></h3>
-<div class="outline-text-3" id="text-1-20">
+<div id="outline-container-sec-1-23" class="outline-3">
+<h3 id="sec-1-23"><span class="section-number-3">1.23</span> <code>max</code></h3>
+<div class="outline-text-3" id="text-1-23">
 <p>
 (max X Y &#x2026;) returns the upper bound of the (X,Y,&#x2026;) set
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline21" class="outline-3">
-<h3 id="orgheadline21"><span class="section-number-3">1.21</span> <code>min</code></h3>
-<div class="outline-text-3" id="text-1-21">
+<div id="outline-container-sec-1-24" class="outline-3">
+<h3 id="sec-1-24"><span class="section-number-3">1.24</span> <code>min</code></h3>
+<div class="outline-text-3" id="text-1-24">
 <p>
 (min X Y &#x2026;) returns the lower bound of the (X,Y,&#x2026;) set
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline22" class="outline-3">
-<h3 id="orgheadline22"><span class="section-number-3">1.22</span> <code>nth-byte-of-word</code></h3>
-<div class="outline-text-3" id="text-1-22">
+<div id="outline-container-sec-1-25" class="outline-3">
+<h3 id="sec-1-25"><span class="section-number-3">1.25</span> <code>nth-byte-of-word</code></h3>
+<div class="outline-text-3" id="text-1-25">
 <p>
 (nth-byte-of-word T N X) returns N-th byte
 of the word X that has type T
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline23" class="outline-3">
-<h3 id="orgheadline23"><span class="section-number-3">1.23</span> <code>or</code></h3>
-<div class="outline-text-3" id="text-1-23">
+<div id="outline-container-sec-1-26" class="outline-3">
+<h3 id="sec-1-26"><span class="section-number-3">1.26</span> <code>or</code></h3>
+<div class="outline-text-3" id="text-1-26">
 <p>
 (or &lt;expr&gt; &#x2026;) evaluates a sequence of expressions EXPR from left
 to right until it meets the first expression that evaluates to the
@@ -562,78 +653,91 @@ form is 0:1
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline24" class="outline-3">
-<h3 id="orgheadline24"><span class="section-number-3">1.24</span> <code>points-to</code></h3>
-<div class="outline-text-3" id="text-1-24">
+<div id="outline-container-sec-1-27" class="outline-3">
+<h3 id="sec-1-27"><span class="section-number-3">1.27</span> <code>points-to</code></h3>
+<div class="outline-text-3" id="text-1-27">
 <p>
 (points-to T P V) return true if t P points
 to a value of type T that is equal to V.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline25" class="outline-3">
-<h3 id="orgheadline25"><span class="section-number-3">1.25</span> <code>ptr+</code></h3>
-<div class="outline-text-3" id="text-1-25">
+<div id="outline-container-sec-1-28" class="outline-3">
+<h3 id="sec-1-28"><span class="section-number-3">1.28</span> <code>ptr+</code></h3>
+<div class="outline-text-3" id="text-1-28">
 <p>
 (ptr+ T P N) increments N times the
 pointer P to a value of type T.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline26" class="outline-3">
-<h3 id="orgheadline26"><span class="section-number-3">1.26</span> <code>ptr+1</code></h3>
-<div class="outline-text-3" id="text-1-26">
+<div id="outline-container-sec-1-29" class="outline-3">
+<h3 id="sec-1-29"><span class="section-number-3">1.29</span> <code>ptr+1</code></h3>
+<div class="outline-text-3" id="text-1-29">
 <p>
 (ptr+1 T P) increments the pointer P to
 a value of to type T.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline27" class="outline-3">
-<h3 id="orgheadline27"><span class="section-number-3">1.27</span> <code>read-word</code></h3>
-<div class="outline-text-3" id="text-1-27">
+<div id="outline-container-sec-1-30" class="outline-3">
+<h3 id="sec-1-30"><span class="section-number-3">1.30</span> <code>read-word</code></h3>
+<div class="outline-text-3" id="text-1-30">
 <p>
 (read-word T A) reads a word of type T at address A
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline28" class="outline-3">
-<h3 id="orgheadline28"><span class="section-number-3">1.28</span> <code>sign</code></h3>
-<div class="outline-text-3" id="text-1-28">
+<div id="outline-container-sec-1-31" class="outline-3">
+<h3 id="sec-1-31"><span class="section-number-3">1.31</span> <code>sign</code></h3>
+<div class="outline-text-3" id="text-1-31">
 <p>
 returns 1 if X &gt; 0, 0 if X = 0, and -1 if X &lt; 0
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline29" class="outline-3">
-<h3 id="orgheadline29"><span class="section-number-3">1.29</span> <code>sizeof</code></h3>
+<div id="outline-container-sec-1-32" class="outline-3">
+<h3 id="sec-1-32"><span class="section-number-3">1.32</span> <code>sizeof</code></h3>
 </div>
 
-<div id="outline-container-orgheadline30" class="outline-3">
-<h3 id="orgheadline30"><span class="section-number-3">1.30</span> <code>skip-all</code></h3>
+<div id="outline-container-sec-1-33" class="outline-3">
+<h3 id="sec-1-33"><span class="section-number-3">1.33</span> <code>skip-all</code></h3>
 </div>
 
-<div id="outline-container-orgheadline31" class="outline-3">
-<h3 id="orgheadline31"><span class="section-number-3">1.31</span> <code>until</code></h3>
-<div class="outline-text-3" id="text-1-31">
+<div id="outline-container-sec-1-34" class="outline-3">
+<h3 id="sec-1-34"><span class="section-number-3">1.34</span> <code>unless</code></h3>
+<div class="outline-text-3" id="text-1-34">
 <p>
-(unit COND BODY) if CND is not true then evaluates BODY and returns
-the value of the last expression in BODY, otherwise returns false.
+(unless CND BODY) if CND evaluates to false, then BODY is evaluated and
+the value of the last expression in BODY becomes the value of the
+whole expression. Otherwise, if CND evaluates to true, nil is returned.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline32" class="outline-3">
-<h3 id="orgheadline32"><span class="section-number-3">1.32</span> <code>when</code></h3>
-<div class="outline-text-3" id="text-1-32">
+<div id="outline-container-sec-1-35" class="outline-3">
+<h3 id="sec-1-35"><span class="section-number-3">1.35</span> <code>until</code></h3>
+<div class="outline-text-3" id="text-1-35">
 <p>
-(when CND BODY) if CND is true then evaluates BODY and returns the
-value of last expression in BODY, otherwise returns false.
+(until COND BODY) if COND evaluates to true, then the whole expression
+evaluates to nil and BODY is not evaluated. Otherwise, if COND evaluates
+to false, then BODY is evaluated until COND evaluates to true and the value
+of the last evaluation of BODY becomes the value of the whole expression.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline33" class="outline-3">
-<h3 id="orgheadline33"><span class="section-number-3">1.33</span> <code>write-word</code></h3>
-<div class="outline-text-3" id="text-1-33">
+<div id="outline-container-sec-1-36" class="outline-3">
+<h3 id="sec-1-36"><span class="section-number-3">1.36</span> <code>when</code></h3>
+<div class="outline-text-3" id="text-1-36">
+<p>
+(when CND BODY) if CND evaluates to true, then BODY is evaluated and
+the value of the last expression in BODY becomes the value of the
+whole expression. Otherwise, if CND evaluates to false, nil is returned.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-1-37" class="outline-3">
+<h3 id="sec-1-37"><span class="section-number-3">1.37</span> <code>write-word</code></h3>
+<div class="outline-text-3" id="text-1-37">
 <p>
 (write-word T A X) writes the word X of type T to address A
 returns an address that points to the first byte that follows
@@ -643,30 +747,30 @@ the just written word.
 </div>
 </div>
 
-<div id="outline-container-orgheadline35" class="outline-2">
-<h2 id="orgheadline35"><span class="section-number-2">2</span> Substitutions</h2>
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Substitutions</h2>
 </div>
-<div id="outline-container-orgheadline39" class="outline-2">
-<h2 id="orgheadline39"><span class="section-number-2">3</span> Constants</h2>
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Constants</h2>
 <div class="outline-text-2" id="text-3">
-</div><div id="outline-container-orgheadline36" class="outline-3">
-<h3 id="orgheadline36"><span class="section-number-3">3.1</span> <code>false</code></h3>
+</div><div id="outline-container-sec-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> <code>false</code></h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 false is another name for 0:1
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline37" class="outline-3">
-<h3 id="orgheadline37"><span class="section-number-3">3.2</span> <code>nil</code></h3>
+<div id="outline-container-sec-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> <code>nil</code></h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 nil is another name for false
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline38" class="outline-3">
-<h3 id="orgheadline38"><span class="section-number-3">3.3</span> <code>true</code></h3>
+<div id="outline-container-sec-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> <code>true</code></h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 true is another name for 1:1
@@ -674,103 +778,103 @@ true is another name for 1:1
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline112" class="outline-2">
-<h2 id="orgheadline112"><span class="section-number-2">4</span> Functions</h2>
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Functions</h2>
 <div class="outline-text-2" id="text-4">
-</div><div id="outline-container-orgheadline40" class="outline-3">
-<h3 id="orgheadline40"><span class="section-number-3">4.1</span> <code>+1</code></h3>
+</div><div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> <code>+1</code></h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 (+1 x) returns the successor of X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline41" class="outline-3">
-<h3 id="orgheadline41"><span class="section-number-3">4.2</span> <code>-1</code></h3>
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> <code>-1</code></h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 (-1 X) returns the predecessor of X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline42" class="outline-3">
-<h3 id="orgheadline42"><span class="section-number-3">4.3</span> <code>abort</code></h3>
+<div id="outline-container-sec-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> <code>abort</code></h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 terminates program with exit code 1
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline43" class="outline-3">
-<h3 id="orgheadline43"><span class="section-number-3">4.4</span> <code>ascii-digit</code></h3>
+<div id="outline-container-sec-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> <code>ascii-digit</code></h3>
 <div class="outline-text-3" id="text-4-4">
 <p>
 (ascii-digit s) is true if S is an ascii representation of decimal digit
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline44" class="outline-3">
-<h3 id="orgheadline44"><span class="section-number-3">4.5</span> <code>ascii-sign</code></h3>
+<div id="outline-container-sec-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> <code>ascii-sign</code></h3>
 <div class="outline-text-3" id="text-4-5">
 <p>
 (ascii-sign S) is 1 if S is + and -1 otherwise
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline45" class="outline-3">
-<h3 id="orgheadline45"><span class="section-number-3">4.6</span> <code>ascii-special</code></h3>
+<div id="outline-container-sec-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> <code>ascii-special</code></h3>
 <div class="outline-text-3" id="text-4-6">
 <p>
 (ascii-special S) is true if S is an ascii special character
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline46" class="outline-3">
-<h3 id="orgheadline46"><span class="section-number-3">4.7</span> <code>ascii-whitespace</code></h3>
+<div id="outline-container-sec-4-7" class="outline-3">
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> <code>ascii-whitespace</code></h3>
 <div class="outline-text-3" id="text-4-7">
 <p>
 (ascii-whitespace S)is true if S is a whitespace
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline47" class="outline-3">
-<h3 id="orgheadline47"><span class="section-number-3">4.8</span> <code>atexit</code></h3>
+<div id="outline-container-sec-4-8" class="outline-3">
+<h3 id="sec-4-8"><span class="section-number-3">4.8</span> <code>atexit</code></h3>
 </div>
 
-<div id="outline-container-orgheadline48" class="outline-3">
-<h3 id="orgheadline48"><span class="section-number-3">4.9</span> <code>atoi</code></h3>
+<div id="outline-container-sec-4-9" class="outline-3">
+<h3 id="sec-4-9"><span class="section-number-3">4.9</span> <code>atoi</code></h3>
 </div>
 
-<div id="outline-container-orgheadline49" class="outline-3">
-<h3 id="orgheadline49"><span class="section-number-3">4.10</span> <code>atoi-prefix</code></h3>
+<div id="outline-container-sec-4-10" class="outline-3">
+<h3 id="sec-4-10"><span class="section-number-3">4.10</span> <code>atoi-prefix</code></h3>
 </div>
 
-<div id="outline-container-orgheadline50" class="outline-3">
-<h3 id="orgheadline50"><span class="section-number-3">4.11</span> <code>atoi-read-digit</code></h3>
+<div id="outline-container-sec-4-11" class="outline-3">
+<h3 id="sec-4-11"><span class="section-number-3">4.11</span> <code>atoi-read-digit</code></h3>
 </div>
 
-<div id="outline-container-orgheadline51" class="outline-3">
-<h3 id="orgheadline51"><span class="section-number-3">4.12</span> <code>atol</code></h3>
+<div id="outline-container-sec-4-12" class="outline-3">
+<h3 id="sec-4-12"><span class="section-number-3">4.12</span> <code>atol</code></h3>
 </div>
 
-<div id="outline-container-orgheadline52" class="outline-3">
-<h3 id="orgheadline52"><span class="section-number-3">4.13</span> <code>atoll</code></h3>
+<div id="outline-container-sec-4-13" class="outline-3">
+<h3 id="sec-4-13"><span class="section-number-3">4.13</span> <code>atoll</code></h3>
 </div>
 
-<div id="outline-container-orgheadline53" class="outline-3">
-<h3 id="orgheadline53"><span class="section-number-3">4.14</span> <code>calloc</code></h3>
+<div id="outline-container-sec-4-14" class="outline-3">
+<h3 id="sec-4-14"><span class="section-number-3">4.14</span> <code>calloc</code></h3>
 <div class="outline-text-3" id="text-4-14">
 <p>
 allocates memory and initializes it with zero
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline54" class="outline-3">
-<h3 id="orgheadline54"><span class="section-number-3">4.15</span> <code>char</code></h3>
+<div id="outline-container-sec-4-15" class="outline-3">
+<h3 id="sec-4-15"><span class="section-number-3">4.15</span> <code>char</code></h3>
 </div>
 
-<div id="outline-container-orgheadline55" class="outline-3">
-<h3 id="orgheadline55"><span class="section-number-3">4.16</span> <code>copy-byte</code></h3>
+<div id="outline-container-sec-4-16" class="outline-3">
+<h3 id="sec-4-16"><span class="section-number-3">4.16</span> <code>copy-byte</code></h3>
 <div class="outline-text-3" id="text-4-16">
 <p>
 (copy-byte DST SRC) copies byte from
@@ -778,77 +882,85 @@ the address SRC to DST.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline56" class="outline-3">
-<h3 id="orgheadline56"><span class="section-number-3">4.17</span> <code>exit</code></h3>
+<div id="outline-container-sec-4-17" class="outline-3">
+<h3 id="sec-4-17"><span class="section-number-3">4.17</span> <code>double</code></h3>
 </div>
 
-<div id="outline-container-orgheadline57" class="outline-3">
-<h3 id="orgheadline57"><span class="section-number-3">4.18</span> <code>fgetc</code></h3>
+<div id="outline-container-sec-4-18" class="outline-3">
+<h3 id="sec-4-18"><span class="section-number-3">4.18</span> <code>exit</code></h3>
 </div>
 
-<div id="outline-container-orgheadline58" class="outline-3">
-<h3 id="orgheadline58"><span class="section-number-3">4.19</span> <code>fgets</code></h3>
+<div id="outline-container-sec-4-19" class="outline-3">
+<h3 id="sec-4-19"><span class="section-number-3">4.19</span> <code>fgetc</code></h3>
 </div>
 
-<div id="outline-container-orgheadline59" class="outline-3">
-<h3 id="orgheadline59"><span class="section-number-3">4.20</span> <code>fgets-step</code></h3>
+<div id="outline-container-sec-4-20" class="outline-3">
+<h3 id="sec-4-20"><span class="section-number-3">4.20</span> <code>fgets</code></h3>
 </div>
 
-<div id="outline-container-orgheadline60" class="outline-3">
-<h3 id="orgheadline60"><span class="section-number-3">4.21</span> <code>fini</code></h3>
+<div id="outline-container-sec-4-21" class="outline-3">
+<h3 id="sec-4-21"><span class="section-number-3">4.21</span> <code>fgets-step</code></h3>
 </div>
 
-<div id="outline-container-orgheadline61" class="outline-3">
-<h3 id="orgheadline61"><span class="section-number-3">4.22</span> <code>fopen</code></h3>
+<div id="outline-container-sec-4-22" class="outline-3">
+<h3 id="sec-4-22"><span class="section-number-3">4.22</span> <code>fini</code></h3>
 </div>
 
-<div id="outline-container-orgheadline62" class="outline-3">
-<h3 id="orgheadline62"><span class="section-number-3">4.23</span> <code>fputc</code></h3>
+<div id="outline-container-sec-4-23" class="outline-3">
+<h3 id="sec-4-23"><span class="section-number-3">4.23</span> <code>float</code></h3>
 </div>
 
-<div id="outline-container-orgheadline63" class="outline-3">
-<h3 id="orgheadline63"><span class="section-number-3">4.24</span> <code>fputs</code></h3>
+<div id="outline-container-sec-4-24" class="outline-3">
+<h3 id="sec-4-24"><span class="section-number-3">4.24</span> <code>fopen</code></h3>
 </div>
 
-<div id="outline-container-orgheadline64" class="outline-3">
-<h3 id="orgheadline64"><span class="section-number-3">4.25</span> <code>fread</code></h3>
+<div id="outline-container-sec-4-25" class="outline-3">
+<h3 id="sec-4-25"><span class="section-number-3">4.25</span> <code>fputc</code></h3>
 </div>
 
-<div id="outline-container-orgheadline65" class="outline-3">
-<h3 id="orgheadline65"><span class="section-number-3">4.26</span> <code>free</code></h3>
-<div class="outline-text-3" id="text-4-26">
+<div id="outline-container-sec-4-26" class="outline-3">
+<h3 id="sec-4-26"><span class="section-number-3">4.26</span> <code>fputs</code></h3>
+</div>
+
+<div id="outline-container-sec-4-27" class="outline-3">
+<h3 id="sec-4-27"><span class="section-number-3">4.27</span> <code>fread</code></h3>
+</div>
+
+<div id="outline-container-sec-4-28" class="outline-3">
+<h3 id="sec-4-28"><span class="section-number-3">4.28</span> <code>free</code></h3>
+<div class="outline-text-3" id="text-4-28">
 <p>
 frees the memory region pointed by P
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline66" class="outline-3">
-<h3 id="orgheadline66"><span class="section-number-3">4.27</span> <code>fwrite</code></h3>
+<div id="outline-container-sec-4-29" class="outline-3">
+<h3 id="sec-4-29"><span class="section-number-3">4.29</span> <code>fwrite</code></h3>
 </div>
 
-<div id="outline-container-orgheadline67" class="outline-3">
-<h3 id="orgheadline67"><span class="section-number-3">4.28</span> <code>getchar</code></h3>
+<div id="outline-container-sec-4-30" class="outline-3">
+<h3 id="sec-4-30"><span class="section-number-3">4.30</span> <code>getchar</code></h3>
 </div>
 
-<div id="outline-container-orgheadline68" class="outline-3">
-<h3 id="orgheadline68"><span class="section-number-3">4.29</span> <code>getenv</code></h3>
-<div class="outline-text-3" id="text-4-29">
+<div id="outline-container-sec-4-31" class="outline-3">
+<h3 id="sec-4-31"><span class="section-number-3">4.31</span> <code>getenv</code></h3>
+<div class="outline-text-3" id="text-4-31">
 <p>
 finds a value of an environment variable with the given name
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline69" class="outline-3">
-<h3 id="orgheadline69"><span class="section-number-3">4.30</span> <code>handle-unresolved-names</code></h3>
-<div class="outline-text-3" id="text-4-30">
+<div id="outline-container-sec-4-32" class="outline-3">
+<h3 id="sec-4-32"><span class="section-number-3">4.32</span> <code>handle-unresolved-names</code></h3>
+<div class="outline-text-3" id="text-4-32">
 <p>
 (handle-unresolved-names) emits a diagnostic message when called
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline70" class="outline-3">
-<h3 id="orgheadline70"><span class="section-number-3">4.31</span> <code>init</code></h3>
-<div class="outline-text-3" id="text-4-31">
+<div id="outline-container-sec-4-33" class="outline-3">
+<h3 id="sec-4-33"><span class="section-number-3">4.33</span> <code>init</code></h3>
+<div class="outline-text-3" id="text-4-33">
 <p>
 GNU libc initialization stub
 OR
@@ -858,217 +970,269 @@ GNU libc initialization stub
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline71" class="outline-3">
-<h3 id="orgheadline71"><span class="section-number-3">4.32</span> <code>input-item</code></h3>
+<div id="outline-container-sec-4-34" class="outline-3">
+<h3 id="sec-4-34"><span class="section-number-3">4.34</span> <code>input-item</code></h3>
 </div>
 
-<div id="outline-container-orgheadline72" class="outline-3">
-<h3 id="orgheadline72"><span class="section-number-3">4.33</span> <code>input-item-nth-char</code></h3>
+<div id="outline-container-sec-4-35" class="outline-3">
+<h3 id="sec-4-35"><span class="section-number-3">4.35</span> <code>input-item-nth-char</code></h3>
 </div>
 
-<div id="outline-container-orgheadline73" class="outline-3">
-<h3 id="orgheadline73"><span class="section-number-3">4.34</span> <code>int</code></h3>
+<div id="outline-container-sec-4-36" class="outline-3">
+<h3 id="sec-4-36"><span class="section-number-3">4.36</span> <code>int</code></h3>
 </div>
 
-<div id="outline-container-orgheadline74" class="outline-3">
-<h3 id="orgheadline74"><span class="section-number-3">4.35</span> <code>int32_t</code></h3>
+<div id="outline-container-sec-4-37" class="outline-3">
+<h3 id="sec-4-37"><span class="section-number-3">4.37</span> <code>int32_t</code></h3>
 </div>
 
-<div id="outline-container-orgheadline75" class="outline-3">
-<h3 id="orgheadline75"><span class="section-number-3">4.36</span> <code>int64_t</code></h3>
+<div id="outline-container-sec-4-38" class="outline-3">
+<h3 id="sec-4-38"><span class="section-number-3">4.38</span> <code>int64_t</code></h3>
 </div>
 
-<div id="outline-container-orgheadline76" class="outline-3">
-<h3 id="orgheadline76"><span class="section-number-3">4.37</span> <code>long</code></h3>
+<div id="outline-container-sec-4-39" class="outline-3">
+<h3 id="sec-4-39"><span class="section-number-3">4.39</span> <code>long</code></h3>
 </div>
 
-<div id="outline-container-orgheadline77" class="outline-3">
-<h3 id="orgheadline77"><span class="section-number-3">4.38</span> <code>long-long</code></h3>
+<div id="outline-container-sec-4-40" class="outline-3">
+<h3 id="sec-4-40"><span class="section-number-3">4.40</span> <code>long-long</code></h3>
 </div>
 
-<div id="outline-container-orgheadline78" class="outline-3">
-<h3 id="orgheadline78"><span class="section-number-3">4.39</span> <code>malloc</code></h3>
-<div class="outline-text-3" id="text-4-39">
+<div id="outline-container-sec-4-41" class="outline-3">
+<h3 id="sec-4-41"><span class="section-number-3">4.41</span> <code>malloc</code></h3>
+<div class="outline-text-3" id="text-4-41">
 <p>
 allocates a memory region of size N
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline79" class="outline-3">
-<h3 id="orgheadline79"><span class="section-number-3">4.40</span> <code>malloc-heap-size</code></h3>
+<div id="outline-container-sec-4-42" class="outline-3">
+<h3 id="sec-4-42"><span class="section-number-3">4.42</span> <code>malloc-heap-size</code></h3>
 </div>
 
-<div id="outline-container-orgheadline80" class="outline-3">
-<h3 id="orgheadline80"><span class="section-number-3">4.41</span> <code>malloc-will-reach-limit</code></h3>
+<div id="outline-container-sec-4-43" class="outline-3">
+<h3 id="sec-4-43"><span class="section-number-3">4.43</span> <code>malloc-will-reach-limit</code></h3>
 </div>
 
-<div id="outline-container-orgheadline81" class="outline-3">
-<h3 id="orgheadline81"><span class="section-number-3">4.42</span> <code>malloc/fill-edges</code></h3>
+<div id="outline-container-sec-4-44" class="outline-3">
+<h3 id="sec-4-44"><span class="section-number-3">4.44</span> <code>malloc/fill-edges</code></h3>
 </div>
 
-<div id="outline-container-orgheadline82" class="outline-3">
-<h3 id="orgheadline82"><span class="section-number-3">4.43</span> <code>memccpy</code></h3>
+<div id="outline-container-sec-4-45" class="outline-3">
+<h3 id="sec-4-45"><span class="section-number-3">4.45</span> <code>malloc/get-chunk-size</code></h3>
 </div>
 
-<div id="outline-container-orgheadline83" class="outline-3">
-<h3 id="orgheadline83"><span class="section-number-3">4.44</span> <code>memchr</code></h3>
+<div id="outline-container-sec-4-46" class="outline-3">
+<h3 id="sec-4-46"><span class="section-number-3">4.46</span> <code>malloc/put-chunk-size</code></h3>
 </div>
 
-<div id="outline-container-orgheadline84" class="outline-3">
-<h3 id="orgheadline84"><span class="section-number-3">4.45</span> <code>memcmp</code></h3>
+<div id="outline-container-sec-4-47" class="outline-3">
+<h3 id="sec-4-47"><span class="section-number-3">4.47</span> <code>memccpy</code></h3>
 </div>
 
-<div id="outline-container-orgheadline85" class="outline-3">
-<h3 id="orgheadline85"><span class="section-number-3">4.46</span> <code>memcpy</code></h3>
+<div id="outline-container-sec-4-48" class="outline-3">
+<h3 id="sec-4-48"><span class="section-number-3">4.48</span> <code>memchr</code></h3>
 </div>
 
-<div id="outline-container-orgheadline86" class="outline-3">
-<h3 id="orgheadline86"><span class="section-number-3">4.47</span> <code>memmove</code></h3>
+<div id="outline-container-sec-4-49" class="outline-3">
+<h3 id="sec-4-49"><span class="section-number-3">4.49</span> <code>memcmp</code></h3>
 </div>
 
-<div id="outline-container-orgheadline87" class="outline-3">
-<h3 id="orgheadline87"><span class="section-number-3">4.48</span> <code>memrchr</code></h3>
+<div id="outline-container-sec-4-50" class="outline-3">
+<h3 id="sec-4-50"><span class="section-number-3">4.50</span> <code>memcpy</code></h3>
 </div>
 
-<div id="outline-container-orgheadline88" class="outline-3">
-<h3 id="orgheadline88"><span class="section-number-3">4.49</span> <code>memset</code></h3>
+<div id="outline-container-sec-4-51" class="outline-3">
+<h3 id="sec-4-51"><span class="section-number-3">4.51</span> <code>memmove</code></h3>
 </div>
 
-<div id="outline-container-orgheadline89" class="outline-3">
-<h3 id="orgheadline89"><span class="section-number-3">4.50</span> <code>non-zero</code></h3>
-<div class="outline-text-3" id="text-4-50">
+<div id="outline-container-sec-4-52" class="outline-3">
+<h3 id="sec-4-52"><span class="section-number-3">4.52</span> <code>memory/allocate</code></h3>
+</div>
+
+<div id="outline-container-sec-4-53" class="outline-3">
+<h3 id="sec-4-53"><span class="section-number-3">4.53</span> <code>memrchr</code></h3>
+</div>
+
+<div id="outline-container-sec-4-54" class="outline-3">
+<h3 id="sec-4-54"><span class="section-number-3">4.54</span> <code>memset</code></h3>
+</div>
+
+<div id="outline-container-sec-4-55" class="outline-3">
+<h3 id="sec-4-55"><span class="section-number-3">4.55</span> <code>model-ilp32</code></h3>
+</div>
+
+<div id="outline-container-sec-4-56" class="outline-3">
+<h3 id="sec-4-56"><span class="section-number-3">4.56</span> <code>model-ilp64</code></h3>
+</div>
+
+<div id="outline-container-sec-4-57" class="outline-3">
+<h3 id="sec-4-57"><span class="section-number-3">4.57</span> <code>model-llp64</code></h3>
+</div>
+
+<div id="outline-container-sec-4-58" class="outline-3">
+<h3 id="sec-4-58"><span class="section-number-3">4.58</span> <code>model-lp32</code></h3>
+</div>
+
+<div id="outline-container-sec-4-59" class="outline-3">
+<h3 id="sec-4-59"><span class="section-number-3">4.59</span> <code>model-lp64</code></h3>
+</div>
+
+<div id="outline-container-sec-4-60" class="outline-3">
+<h3 id="sec-4-60"><span class="section-number-3">4.60</span> <code>non-zero</code></h3>
+<div class="outline-text-3" id="text-4-60">
 <p>
 (non-zero X) is true if X is not zero
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline90" class="outline-3">
-<h3 id="orgheadline90"><span class="section-number-3">4.51</span> <code>open3</code></h3>
+<div id="outline-container-sec-4-61" class="outline-3">
+<h3 id="sec-4-61"><span class="section-number-3">4.61</span> <code>open3</code></h3>
 </div>
 
-<div id="outline-container-orgheadline91" class="outline-3">
-<h3 id="orgheadline91"><span class="section-number-3">4.52</span> <code>output-item</code></h3>
+<div id="outline-container-sec-4-62" class="outline-3">
+<h3 id="sec-4-62"><span class="section-number-3">4.62</span> <code>output-item</code></h3>
 </div>
 
-<div id="outline-container-orgheadline92" class="outline-3">
-<h3 id="orgheadline92"><span class="section-number-3">4.53</span> <code>output-item-nth-char</code></h3>
+<div id="outline-container-sec-4-63" class="outline-3">
+<h3 id="sec-4-63"><span class="section-number-3">4.63</span> <code>output-item-nth-char</code></h3>
 </div>
 
-<div id="outline-container-orgheadline93" class="outline-3">
-<h3 id="orgheadline93"><span class="section-number-3">4.54</span> <code>points-to-null</code></h3>
-<div class="outline-text-3" id="text-4-54">
+<div id="outline-container-sec-4-64" class="outline-3">
+<h3 id="sec-4-64"><span class="section-number-3">4.64</span> <code>points-to-null</code></h3>
+<div class="outline-text-3" id="text-4-64">
 <p>
 (points-to-null P) true if P points to a zero byte
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline94" class="outline-3">
-<h3 id="orgheadline94"><span class="section-number-3">4.55</span> <code>ptr_t</code></h3>
+<div id="outline-container-sec-4-65" class="outline-3">
+<h3 id="sec-4-65"><span class="section-number-3">4.65</span> <code>ptr_t</code></h3>
 </div>
 
-<div id="outline-container-orgheadline95" class="outline-3">
-<h3 id="orgheadline95"><span class="section-number-3">4.56</span> <code>putchar</code></h3>
+<div id="outline-container-sec-4-66" class="outline-3">
+<h3 id="sec-4-66"><span class="section-number-3">4.66</span> <code>putchar</code></h3>
 </div>
 
-<div id="outline-container-orgheadline96" class="outline-3">
-<h3 id="orgheadline96"><span class="section-number-3">4.57</span> <code>puts</code></h3>
+<div id="outline-container-sec-4-67" class="outline-3">
+<h3 id="sec-4-67"><span class="section-number-3">4.67</span> <code>puts</code></h3>
 </div>
 
-<div id="outline-container-orgheadline97" class="outline-3">
-<h3 id="orgheadline97"><span class="section-number-3">4.58</span> <code>read</code></h3>
+<div id="outline-container-sec-4-68" class="outline-3">
+<h3 id="sec-4-68"><span class="section-number-3">4.68</span> <code>read</code></h3>
 </div>
 
-<div id="outline-container-orgheadline98" class="outline-3">
-<h3 id="orgheadline98"><span class="section-number-3">4.59</span> <code>read-ascii-word</code></h3>
+<div id="outline-container-sec-4-69" class="outline-3">
+<h3 id="sec-4-69"><span class="section-number-3">4.69</span> <code>read-ascii-word</code></h3>
 </div>
 
-<div id="outline-container-orgheadline99" class="outline-3">
-<h3 id="orgheadline99"><span class="section-number-3">4.60</span> <code>security-init-cookie</code></h3>
-<div class="outline-text-3" id="text-4-60">
+<div id="outline-container-sec-4-70" class="outline-3">
+<h3 id="sec-4-70"><span class="section-number-3">4.70</span> <code>realloc</code></h3>
+</div>
+
+<div id="outline-container-sec-4-71" class="outline-3">
+<h3 id="sec-4-71"><span class="section-number-3">4.71</span> <code>realloc/as-free</code></h3>
+</div>
+
+<div id="outline-container-sec-4-72" class="outline-3">
+<h3 id="sec-4-72"><span class="section-number-3">4.72</span> <code>realloc/shrink-chunk</code></h3>
+</div>
+
+<div id="outline-container-sec-4-73" class="outline-3">
+<h3 id="sec-4-73"><span class="section-number-3">4.73</span> <code>realloc/update-chunk</code></h3>
+</div>
+
+<div id="outline-container-sec-4-74" class="outline-3">
+<h3 id="sec-4-74"><span class="section-number-3">4.74</span> <code>security-init-cookie</code></h3>
+<div class="outline-text-3" id="text-4-74">
 <p>
 Windows CRT buffer overrun protection
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline100" class="outline-3">
-<h3 id="orgheadline100"><span class="section-number-3">4.61</span> <code>strchr</code></h3>
+<div id="outline-container-sec-4-75" class="outline-3">
+<h3 id="sec-4-75"><span class="section-number-3">4.75</span> <code>short</code></h3>
 </div>
 
-<div id="outline-container-orgheadline101" class="outline-3">
-<h3 id="orgheadline101"><span class="section-number-3">4.62</span> <code>strcmp</code></h3>
+<div id="outline-container-sec-4-76" class="outline-3">
+<h3 id="sec-4-76"><span class="section-number-3">4.76</span> <code>strchr</code></h3>
 </div>
 
-<div id="outline-container-orgheadline102" class="outline-3">
-<h3 id="orgheadline102"><span class="section-number-3">4.63</span> <code>strcpy</code></h3>
+<div id="outline-container-sec-4-77" class="outline-3">
+<h3 id="sec-4-77"><span class="section-number-3">4.77</span> <code>strcmp</code></h3>
 </div>
 
-<div id="outline-container-orgheadline103" class="outline-3">
-<h3 id="orgheadline103"><span class="section-number-3">4.64</span> <code>strdup</code></h3>
+<div id="outline-container-sec-4-78" class="outline-3">
+<h3 id="sec-4-78"><span class="section-number-3">4.78</span> <code>strcpy</code></h3>
 </div>
 
-<div id="outline-container-orgheadline104" class="outline-3">
-<h3 id="orgheadline104"><span class="section-number-3">4.65</span> <code>strlen</code></h3>
+<div id="outline-container-sec-4-79" class="outline-3">
+<h3 id="sec-4-79"><span class="section-number-3">4.79</span> <code>strdup</code></h3>
 </div>
 
-<div id="outline-container-orgheadline105" class="outline-3">
-<h3 id="orgheadline105"><span class="section-number-3">4.66</span> <code>strlen/with-null</code></h3>
-<div class="outline-text-3" id="text-4-66">
+<div id="outline-container-sec-4-80" class="outline-3">
+<h3 id="sec-4-80"><span class="section-number-3">4.80</span> <code>strlen</code></h3>
+</div>
+
+<div id="outline-container-sec-4-81" class="outline-3">
+<h3 id="sec-4-81"><span class="section-number-3">4.81</span> <code>strlen/with-null</code></h3>
+<div class="outline-text-3" id="text-4-81">
 <p>
 returns a length of the string S
 (including the terminating null character)
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline106" class="outline-3">
-<h3 id="orgheadline106"><span class="section-number-3">4.67</span> <code>strncmp</code></h3>
+<div id="outline-container-sec-4-82" class="outline-3">
+<h3 id="sec-4-82"><span class="section-number-3">4.82</span> <code>strncmp</code></h3>
 </div>
 
-<div id="outline-container-orgheadline107" class="outline-3">
-<h3 id="orgheadline107"><span class="section-number-3">4.68</span> <code>strncpy</code></h3>
+<div id="outline-container-sec-4-83" class="outline-3">
+<h3 id="sec-4-83"><span class="section-number-3">4.83</span> <code>strncpy</code></h3>
 </div>
 
-<div id="outline-container-orgheadline108" class="outline-3">
-<h3 id="orgheadline108"><span class="section-number-3">4.69</span> <code>strpbrk</code></h3>
+<div id="outline-container-sec-4-84" class="outline-3">
+<h3 id="sec-4-84"><span class="section-number-3">4.84</span> <code>strpbrk</code></h3>
 </div>
 
-<div id="outline-container-orgheadline109" class="outline-3">
-<h3 id="orgheadline109"><span class="section-number-3">4.70</span> <code>strrchr</code></h3>
+<div id="outline-container-sec-4-85" class="outline-3">
+<h3 id="sec-4-85"><span class="section-number-3">4.85</span> <code>strrchr</code></h3>
 </div>
 
-<div id="outline-container-orgheadline110" class="outline-3">
-<h3 id="orgheadline110"><span class="section-number-3">4.71</span> <code>stub</code></h3>
-<div class="outline-text-3" id="text-4-71">
+<div id="outline-container-sec-4-86" class="outline-3">
+<h3 id="sec-4-86"><span class="section-number-3">4.86</span> <code>stub</code></h3>
+<div class="outline-text-3" id="text-4-86">
 <p>
 stubs that does nothing
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline111" class="outline-3">
-<h3 id="orgheadline111"><span class="section-number-3">4.72</span> <code>write</code></h3>
+<div id="outline-container-sec-4-87" class="outline-3">
+<h3 id="sec-4-87"><span class="section-number-3">4.87</span> <code>write</code></h3>
 </div>
 </div>
 
-<div id="outline-container-orgheadline114" class="outline-2">
-<h2 id="orgheadline114"><span class="section-number-2">5</span> Methods</h2>
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Methods</h2>
 <div class="outline-text-2" id="text-5">
-</div><div id="outline-container-orgheadline113" class="outline-3">
-<h3 id="orgheadline113"><span class="section-number-3">5.1</span> <code>finished</code></h3>
+</div><div id="outline-container-sec-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> <code>machine-kill</code></h3>
 </div>
 </div>
 
-<div id="outline-container-orgheadline121" class="outline-2">
-<h2 id="orgheadline121"><span class="section-number-2">6</span> Parameters</h2>
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> Parameters</h2>
 <div class="outline-text-2" id="text-6">
-</div><div id="outline-container-orgheadline115" class="outline-3">
-<h3 id="orgheadline115"><span class="section-number-3">6.1</span> <code>*malloc-arena-start*</code></h3>
+</div><div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> <code>*malloc-arena-start*</code></h3>
 <div class="outline-text-3" id="text-6-1">
 <p>
 the starting address of the malloc arena
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline116" class="outline-3">
-<h3 id="orgheadline116"><span class="section-number-3">6.2</span> <code>*malloc-guard-edges*</code></h3>
+<div id="outline-container-sec-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> <code>*malloc-guard-edges*</code></h3>
 <div class="outline-text-3" id="text-6-2">
 <p>
 if not nil, then add padding of the specified size
@@ -1076,55 +1240,71 @@ around allocated chunks
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline117" class="outline-3">
-<h3 id="orgheadline117"><span class="section-number-3">6.3</span> <code>*malloc-guard-pattern*</code></h3>
+<div id="outline-container-sec-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> <code>*malloc-guard-pattern*</code></h3>
 <div class="outline-text-3" id="text-6-3">
 <p>
 a byte that will be used to fill guard edges
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline118" class="outline-3">
-<h3 id="orgheadline118"><span class="section-number-3">6.4</span> <code>*malloc-max-arena-size*</code></h3>
+<div id="outline-container-sec-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> <code>*malloc-initial-value*</code></h3>
 <div class="outline-text-3" id="text-6-4">
+<p>
+initialize allocated memory with the said value
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> <code>*malloc-initialize-memory*</code></h3>
+<div class="outline-text-3" id="text-6-5">
+<p>
+if true then initialize allocated memory with <b>malloc-initial-value</b>
+</p>
+</div>
+</div>
+<div id="outline-container-sec-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="section-number-3">6.6</span> <code>*malloc-max-arena-size*</code></h3>
+<div class="outline-text-3" id="text-6-6">
 <p>
 the maximum number of bytes totally allocated by malloc,
 if not set, then there is no limit
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline119" class="outline-3">
-<h3 id="orgheadline119"><span class="section-number-3">6.5</span> <code>*malloc-max-chunk-size*</code></h3>
-<div class="outline-text-3" id="text-6-5">
+<div id="outline-container-sec-6-7" class="outline-3">
+<h3 id="sec-6-7"><span class="section-number-3">6.7</span> <code>*malloc-max-chunk-size*</code></h3>
+<div class="outline-text-3" id="text-6-7">
 <p>
 the maximum size of a single memory chunk,
-if nil then there is no limit.
+if nil then there is no limit. 
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline120" class="outline-3">
-<h3 id="orgheadline120"><span class="section-number-3">6.6</span> <code>*malloc-zero-sentinel*</code></h3>
-<div class="outline-text-3" id="text-6-6">
+<div id="outline-container-sec-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="section-number-3">6.8</span> <code>*malloc-zero-sentinel*</code></h3>
+<div class="outline-text-3" id="text-6-8">
 <p>
 a pointer that is returned by (malloc 0)
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline181" class="outline-2">
-<h2 id="orgheadline181"><span class="section-number-2">7</span> Primitives</h2>
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Primitives</h2>
 <div class="outline-text-2" id="text-7">
-</div><div id="outline-container-orgheadline122" class="outline-3">
-<h3 id="orgheadline122"><span class="section-number-3">7.1</span> <code>*</code></h3>
+</div><div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> <code>*</code></h3>
 <div class="outline-text-3" id="text-7-1">
 <p>
-(* X Y Z &#x2026;) returns the product of arguments or 1 if the list
+(* X Y Z &#x2026;) returns the product of arguments or 0 if the list
 of arguments is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline123" class="outline-3">
-<h3 id="orgheadline123"><span class="section-number-3">7.2</span> <code>+</code></h3>
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> <code>+</code></h3>
 <div class="outline-text-3" id="text-7-2">
 <p>
 (+ X Y &#x2026;) returns the sum of arguments, or 0 if there are
@@ -1132,8 +1312,8 @@ no arguments,
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline124" class="outline-3">
-<h3 id="orgheadline124"><span class="section-number-3">7.3</span> <code>-</code></h3>
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> <code>-</code></h3>
 <div class="outline-text-3" id="text-7-3">
 <p>
 (- X Y Z &#x2026;) returns X - Y - Z - &#x2026;, or 0 if there are no
@@ -1141,8 +1321,8 @@ arguments.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline125" class="outline-3">
-<h3 id="orgheadline125"><span class="section-number-3">7.4</span> <code>/</code></h3>
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> <code>/</code></h3>
 <div class="outline-text-3" id="text-7-4">
 <p>
 (/ X Y Z &#x2026;) returns X / Y / Z / &#x2026; or 0 if the list of
@@ -1150,8 +1330,8 @@ arguments is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline126" class="outline-3">
-<h3 id="orgheadline126"><span class="section-number-3">7.5</span> <code>/=</code></h3>
+<div id="outline-container-sec-7-5" class="outline-3">
+<h3 id="sec-7-5"><span class="section-number-3">7.5</span> <code>/=</code></h3>
 <div class="outline-text-3" id="text-7-5">
 <p>
 (/= X Y Z &#x2026;) returns true if at least one argument is not
@@ -1160,8 +1340,8 @@ arguments is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline127" class="outline-3">
-<h3 id="orgheadline127"><span class="section-number-3">7.6</span> <code>&lt;</code></h3>
+<div id="outline-container-sec-7-6" class="outline-3">
+<h3 id="sec-7-6"><span class="section-number-3">7.6</span> <code>&lt;</code></h3>
 <div class="outline-text-3" id="text-7-6">
 <p>
 (&lt; X Y Z &#x2026;) is true if the list of arguments is an
@@ -1169,8 +1349,8 @@ strict ascending chain or if it is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline128" class="outline-3">
-<h3 id="orgheadline128"><span class="section-number-3">7.7</span> <code>&lt;=</code></h3>
+<div id="outline-container-sec-7-7" class="outline-3">
+<h3 id="sec-7-7"><span class="section-number-3">7.7</span> <code>&lt;=</code></h3>
 <div class="outline-text-3" id="text-7-7">
 <p>
 (&lt; X Y Z &#x2026;) is true if the list of arguments is an
@@ -1178,8 +1358,8 @@ ascending chain or if it is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline129" class="outline-3">
-<h3 id="orgheadline129"><span class="section-number-3">7.8</span> <code>=</code></h3>
+<div id="outline-container-sec-7-8" class="outline-3">
+<h3 id="sec-7-8"><span class="section-number-3">7.8</span> <code>=</code></h3>
 <div class="outline-text-3" id="text-7-8">
 <p>
 (= X Y Z &#x2026;) returns true if all arguments are equal. True
@@ -1187,8 +1367,8 @@ if the list of arguments is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline130" class="outline-3">
-<h3 id="orgheadline130"><span class="section-number-3">7.9</span> <code>&gt;</code></h3>
+<div id="outline-container-sec-7-9" class="outline-3">
+<h3 id="sec-7-9"><span class="section-number-3">7.9</span> <code>&gt;</code></h3>
 <div class="outline-text-3" id="text-7-9">
 <p>
 (&lt; X Y Z &#x2026;) is true if the list of arguments is a
@@ -1196,8 +1376,8 @@ strict descending chain or if it is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline131" class="outline-3">
-<h3 id="orgheadline131"><span class="section-number-3">7.10</span> <code>&gt;=</code></h3>
+<div id="outline-container-sec-7-10" class="outline-3">
+<h3 id="sec-7-10"><span class="section-number-3">7.10</span> <code>&gt;=</code></h3>
 <div class="outline-text-3" id="text-7-10">
 <p>
 (&lt; X Y Z &#x2026;) is true if the list of arguments is a
@@ -1205,8 +1385,8 @@ descending chain or if it is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline132" class="outline-3">
-<h3 id="orgheadline132"><span class="section-number-3">7.11</span> <code>all-static-constant</code></h3>
+<div id="outline-container-sec-7-11" class="outline-3">
+<h3 id="sec-7-11"><span class="section-number-3">7.11</span> <code>all-static-constant</code></h3>
 <div class="outline-text-3" id="text-7-11">
 <p>
 (all-static-constant X Y ..) is true if X,Y,&#x2026; are static constants.
@@ -1215,16 +1395,16 @@ value or computed from static constant values.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline133" class="outline-3">
-<h3 id="orgheadline133"><span class="section-number-3">7.12</span> <code>arshift</code></h3>
+<div id="outline-container-sec-7-12" class="outline-3">
+<h3 id="sec-7-12"><span class="section-number-3">7.12</span> <code>arshift</code></h3>
 <div class="outline-text-3" id="text-7-12">
 <p>
 (arshift X N) arithmetically shifts X right by N bits
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline134" class="outline-3">
-<h3 id="orgheadline134"><span class="section-number-3">7.13</span> <code>channel-close</code></h3>
+<div id="outline-container-sec-7-13" class="outline-3">
+<h3 id="sec-7-13"><span class="section-number-3">7.13</span> <code>channel-close</code></h3>
 <div class="outline-text-3" id="text-7-13">
 <p>
 (channel-close DESCR) closes a channel that has the
@@ -1236,8 +1416,8 @@ with it and not yet flushed, then the data is discarded.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline135" class="outline-3">
-<h3 id="orgheadline135"><span class="section-number-3">7.14</span> <code>channel-flush</code></h3>
+<div id="outline-container-sec-7-14" class="outline-3">
+<h3 id="sec-7-14"><span class="section-number-3">7.14</span> <code>channel-flush</code></h3>
 <div class="outline-text-3" id="text-7-14">
 <p>
 (channel-flush DESCR) forces data that were written to a
@@ -1247,8 +1427,8 @@ if in case of an IO error.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline136" class="outline-3">
-<h3 id="orgheadline136"><span class="section-number-3">7.15</span> <code>channel-input</code></h3>
+<div id="outline-container-sec-7-15" class="outline-3">
+<h3 id="sec-7-15"><span class="section-number-3">7.15</span> <code>channel-input</code></h3>
 <div class="outline-text-3" id="text-7-15">
 <p>
 (channel-input DESC) reads one byte from a channel that
@@ -1258,8 +1438,8 @@ readable, or if the channel is in the end-of-file condition.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline137" class="outline-3">
-<h3 id="orgheadline137"><span class="section-number-3">7.16</span> <code>channel-open</code></h3>
+<div id="outline-container-sec-7-16" class="outline-3">
+<h3 id="sec-7-16"><span class="section-number-3">7.16</span> <code>channel-open</code></h3>
 <div class="outline-text-3" id="text-7-16">
 <p>
 (channel-open PTR) creates a new channel that is
@@ -1271,8 +1451,8 @@ a negative value.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline138" class="outline-3">
-<h3 id="orgheadline138"><span class="section-number-3">7.17</span> <code>channel-output</code></h3>
+<div id="outline-container-sec-7-17" class="outline-3">
+<h3 id="sec-7-17"><span class="section-number-3">7.17</span> <code>channel-output</code></h3>
 <div class="outline-text-3" id="text-7-17">
 <p>
 (channel-output DESCR CHAR &#x2026;) outputs one or more
@@ -1286,8 +1466,8 @@ operation (as well as errors) could be delayed until
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline139" class="outline-3">
-<h3 id="orgheadline139"><span class="section-number-3">7.18</span> <code>concat</code></h3>
+<div id="outline-container-sec-7-18" class="outline-3">
+<h3 id="sec-7-18"><span class="section-number-3">7.18</span> <code>concat</code></h3>
 <div class="outline-text-3" id="text-7-18">
 <p>
 (concat X Y Z &#x2026;) concatenates words X, Y, Z, &#x2026; into one
@@ -1295,8 +1475,8 @@ big word
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline140" class="outline-3">
-<h3 id="orgheadline140"><span class="section-number-3">7.19</span> <code>dict-add</code></h3>
+<div id="outline-container-sec-7-19" class="outline-3">
+<h3 id="sec-7-19"><span class="section-number-3">7.19</span> <code>dict-add</code></h3>
 <div class="outline-text-3" id="text-7-19">
 <p>
 (dict-add DIC KEY DATA) associates DATA with KEY in the
@@ -1304,8 +1484,8 @@ dictionary DIC. Returns KEY.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline141" class="outline-3">
-<h3 id="orgheadline141"><span class="section-number-3">7.20</span> <code>dict-del</code></h3>
+<div id="outline-container-sec-7-20" class="outline-3">
+<h3 id="sec-7-20"><span class="section-number-3">7.20</span> <code>dict-del</code></h3>
 <div class="outline-text-3" id="text-7-20">
 <p>
 (dict-del DIC KEY) deletes any association with KEY in the
@@ -1313,8 +1493,8 @@ dictionary DIC
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline142" class="outline-3">
-<h3 id="orgheadline142"><span class="section-number-3">7.21</span> <code>dict-get</code></h3>
+<div id="outline-container-sec-7-21" class="outline-3">
+<h3 id="sec-7-21"><span class="section-number-3">7.21</span> <code>dict-get</code></h3>
 <div class="outline-text-3" id="text-7-21">
 <p>
 (dict-get DIC KEY) returns data associated with KEY in the
@@ -1323,8 +1503,8 @@ no data are associated
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline143" class="outline-3">
-<h3 id="orgheadline143"><span class="section-number-3">7.22</span> <code>dict-has</code></h3>
+<div id="outline-container-sec-7-22" class="outline-3">
+<h3 id="sec-7-22"><span class="section-number-3">7.22</span> <code>dict-has</code></h3>
 <div class="outline-text-3" id="text-7-22">
 <p>
 (dict-has DIC KEY) returns T if the dictionary DIC has the
@@ -1332,74 +1512,370 @@ key KEY
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline144" class="outline-3">
-<h3 id="orgheadline144"><span class="section-number-3">7.23</span> <code>exit-with</code></h3>
+<div id="outline-container-sec-7-23" class="outline-3">
+<h3 id="sec-7-23"><span class="section-number-3">7.23</span> <code>exec-addr</code></h3>
 <div class="outline-text-3" id="text-7-23">
+<p>
+(exec-addr D) passes the control flow to D and never returns
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-24" class="outline-3">
+<h3 id="sec-7-24"><span class="section-number-3">7.24</span> <code>exec-symbol</code></h3>
+<div class="outline-text-3" id="text-7-24">
+<p>
+(exec-symbol D) passes the control flow to D and never returns
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-25" class="outline-3">
+<h3 id="sec-7-25"><span class="section-number-3">7.25</span> <code>exit-with</code></h3>
+<div class="outline-text-3" id="text-7-25">
 <p>
 (exit-with N) terminates program with the exit codeN
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline145" class="outline-3">
-<h3 id="orgheadline145"><span class="section-number-3">7.24</span> <code>extract</code></h3>
-<div class="outline-text-3" id="text-7-24">
+<div id="outline-container-sec-7-26" class="outline-3">
+<h3 id="sec-7-26"><span class="section-number-3">7.26</span> <code>extract</code></h3>
+<div class="outline-text-3" id="text-7-26">
 <p>
 (extract HI LO X) extracts bits from HI to LO (including
 both) from the word X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline146" class="outline-3">
-<h3 id="orgheadline146"><span class="section-number-3">7.25</span> <code>get-current-program-counter</code></h3>
-<div class="outline-text-3" id="text-7-25">
+<div id="outline-container-sec-7-27" class="outline-3">
+<h3 id="sec-7-27"><span class="section-number-3">7.27</span> <code>get-current-program-counter</code></h3>
+<div class="outline-text-3" id="text-7-27">
 <p>
 (get-current-program-counter) returns current program cunnter
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline147" class="outline-3">
-<h3 id="orgheadline147"><span class="section-number-3">7.26</span> <code>incident-location</code></h3>
-</div>
-
-<div id="outline-container-orgheadline148" class="outline-3">
-<h3 id="orgheadline148"><span class="section-number-3">7.27</span> <code>incident-report</code></h3>
-</div>
-
-<div id="outline-container-orgheadline149" class="outline-3">
-<h3 id="orgheadline149"><span class="section-number-3">7.28</span> <code>is-negative</code></h3>
+<div id="outline-container-sec-7-28" class="outline-3">
+<h3 id="sec-7-28"><span class="section-number-3">7.28</span> <code>ieee754-abs</code></h3>
 <div class="outline-text-3" id="text-7-28">
+<p>
+applies abs to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-29" class="outline-3">
+<h3 id="sec-7-29"><span class="section-number-3">7.29</span> <code>ieee754-acos</code></h3>
+<div class="outline-text-3" id="text-7-29">
+<p>
+applies acos to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-30" class="outline-3">
+<h3 id="sec-7-30"><span class="section-number-3">7.30</span> <code>ieee754-add</code></h3>
+<div class="outline-text-3" id="text-7-30">
+<p>
+reduces the list of operands with add
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-31" class="outline-3">
+<h3 id="sec-7-31"><span class="section-number-3">7.31</span> <code>ieee754-asin</code></h3>
+<div class="outline-text-3" id="text-7-31">
+<p>
+applies asin to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-32" class="outline-3">
+<h3 id="sec-7-32"><span class="section-number-3">7.32</span> <code>ieee754-atan</code></h3>
+<div class="outline-text-3" id="text-7-32">
+<p>
+applies atan to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-33" class="outline-3">
+<h3 id="sec-7-33"><span class="section-number-3">7.33</span> <code>ieee754-atan2</code></h3>
+<div class="outline-text-3" id="text-7-33">
+<p>
+reduces the list of operands with atan2
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-34" class="outline-3">
+<h3 id="sec-7-34"><span class="section-number-3">7.34</span> <code>ieee754-ceil</code></h3>
+<div class="outline-text-3" id="text-7-34">
+<p>
+applies ceil to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-35" class="outline-3">
+<h3 id="sec-7-35"><span class="section-number-3">7.35</span> <code>ieee754-cos</code></h3>
+<div class="outline-text-3" id="text-7-35">
+<p>
+applies cos to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-36" class="outline-3">
+<h3 id="sec-7-36"><span class="section-number-3">7.36</span> <code>ieee754-cosh</code></h3>
+<div class="outline-text-3" id="text-7-36">
+<p>
+applies cosh to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-37" class="outline-3">
+<h3 id="sec-7-37"><span class="section-number-3">7.37</span> <code>ieee754-cti</code></h3>
+<div class="outline-text-3" id="text-7-37">
+<p>
+truncates to the nearest integer
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-38" class="outline-3">
+<h3 id="sec-7-38"><span class="section-number-3">7.38</span> <code>ieee754-div</code></h3>
+<div class="outline-text-3" id="text-7-38">
+<p>
+reduces the list of operands with div
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-39" class="outline-3">
+<h3 id="sec-7-39"><span class="section-number-3">7.39</span> <code>ieee754-eq</code></h3>
+<div class="outline-text-3" id="text-7-39">
+<p>
+returns true if all operands are ordered with the eq order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-40" class="outline-3">
+<h3 id="sec-7-40"><span class="section-number-3">7.40</span> <code>ieee754-exp</code></h3>
+<div class="outline-text-3" id="text-7-40">
+<p>
+applies exp to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-41" class="outline-3">
+<h3 id="sec-7-41"><span class="section-number-3">7.41</span> <code>ieee754-expm1</code></h3>
+<div class="outline-text-3" id="text-7-41">
+<p>
+applies expm1 to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-42" class="outline-3">
+<h3 id="sec-7-42"><span class="section-number-3">7.42</span> <code>ieee754-floor</code></h3>
+<div class="outline-text-3" id="text-7-42">
+<p>
+applies floor to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-43" class="outline-3">
+<h3 id="sec-7-43"><span class="section-number-3">7.43</span> <code>ieee754-ge</code></h3>
+<div class="outline-text-3" id="text-7-43">
+<p>
+returns true if all operands are ordered with the ge order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-44" class="outline-3">
+<h3 id="sec-7-44"><span class="section-number-3">7.44</span> <code>ieee754-gt</code></h3>
+<div class="outline-text-3" id="text-7-44">
+<p>
+returns true if all operands are ordered with the gt order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-45" class="outline-3">
+<h3 id="sec-7-45"><span class="section-number-3">7.45</span> <code>ieee754-hypot</code></h3>
+<div class="outline-text-3" id="text-7-45">
+<p>
+reduces the list of operands with hypot
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-46" class="outline-3">
+<h3 id="sec-7-46"><span class="section-number-3">7.46</span> <code>ieee754-le</code></h3>
+<div class="outline-text-3" id="text-7-46">
+<p>
+returns true if all operands are ordered with the le order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-47" class="outline-3">
+<h3 id="sec-7-47"><span class="section-number-3">7.47</span> <code>ieee754-log</code></h3>
+<div class="outline-text-3" id="text-7-47">
+<p>
+applies log to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-48" class="outline-3">
+<h3 id="sec-7-48"><span class="section-number-3">7.48</span> <code>ieee754-log10</code></h3>
+<div class="outline-text-3" id="text-7-48">
+<p>
+applies log10 to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-49" class="outline-3">
+<h3 id="sec-7-49"><span class="section-number-3">7.49</span> <code>ieee754-log1p</code></h3>
+<div class="outline-text-3" id="text-7-49">
+<p>
+applies log1p to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-50" class="outline-3">
+<h3 id="sec-7-50"><span class="section-number-3">7.50</span> <code>ieee754-lt</code></h3>
+<div class="outline-text-3" id="text-7-50">
+<p>
+returns true if all operands are ordered with the lt order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-51" class="outline-3">
+<h3 id="sec-7-51"><span class="section-number-3">7.51</span> <code>ieee754-mod</code></h3>
+<div class="outline-text-3" id="text-7-51">
+<p>
+reduces the list of operands with mod
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-52" class="outline-3">
+<h3 id="sec-7-52"><span class="section-number-3">7.52</span> <code>ieee754-mul</code></h3>
+<div class="outline-text-3" id="text-7-52">
+<p>
+reduces the list of operands with mul
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-53" class="outline-3">
+<h3 id="sec-7-53"><span class="section-number-3">7.53</span> <code>ieee754-ne</code></h3>
+<div class="outline-text-3" id="text-7-53">
+<p>
+returns true if all operands are ordered with the ne order
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-54" class="outline-3">
+<h3 id="sec-7-54"><span class="section-number-3">7.54</span> <code>ieee754-neg</code></h3>
+<div class="outline-text-3" id="text-7-54">
+<p>
+applies neg to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-55" class="outline-3">
+<h3 id="sec-7-55"><span class="section-number-3">7.55</span> <code>ieee754-pos</code></h3>
+<div class="outline-text-3" id="text-7-55">
+<p>
+applies pos to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-56" class="outline-3">
+<h3 id="sec-7-56"><span class="section-number-3">7.56</span> <code>ieee754-pow</code></h3>
+<div class="outline-text-3" id="text-7-56">
+<p>
+reduces the list of operands with pow
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-57" class="outline-3">
+<h3 id="sec-7-57"><span class="section-number-3">7.57</span> <code>ieee754-sin</code></h3>
+<div class="outline-text-3" id="text-7-57">
+<p>
+applies sin to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-58" class="outline-3">
+<h3 id="sec-7-58"><span class="section-number-3">7.58</span> <code>ieee754-sinh</code></h3>
+<div class="outline-text-3" id="text-7-58">
+<p>
+applies sinh to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-59" class="outline-3">
+<h3 id="sec-7-59"><span class="section-number-3">7.59</span> <code>ieee754-sqrt</code></h3>
+<div class="outline-text-3" id="text-7-59">
+<p>
+applies sqrt to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-60" class="outline-3">
+<h3 id="sec-7-60"><span class="section-number-3">7.60</span> <code>ieee754-sub</code></h3>
+<div class="outline-text-3" id="text-7-60">
+<p>
+reduces the list of operands with sub
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-61" class="outline-3">
+<h3 id="sec-7-61"><span class="section-number-3">7.61</span> <code>ieee754-tan</code></h3>
+<div class="outline-text-3" id="text-7-61">
+<p>
+applies tan to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-62" class="outline-3">
+<h3 id="sec-7-62"><span class="section-number-3">7.62</span> <code>ieee754-tanh</code></h3>
+<div class="outline-text-3" id="text-7-62">
+<p>
+applies tanh to the operand
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-63" class="outline-3">
+<h3 id="sec-7-63"><span class="section-number-3">7.63</span> <code>incident-location</code></h3>
+</div>
+
+<div id="outline-container-sec-7-64" class="outline-3">
+<h3 id="sec-7-64"><span class="section-number-3">7.64</span> <code>incident-report</code></h3>
+</div>
+
+<div id="outline-container-sec-7-65" class="outline-3">
+<h3 id="sec-7-65"><span class="section-number-3">7.65</span> <code>is-negative</code></h3>
+<div class="outline-text-3" id="text-7-65">
 <p>
 (is-negative X Y &#x2026;) returns true if all arguments are negative
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline150" class="outline-3">
-<h3 id="orgheadline150"><span class="section-number-3">7.29</span> <code>is-positive</code></h3>
-<div class="outline-text-3" id="text-7-29">
+<div id="outline-container-sec-7-66" class="outline-3">
+<h3 id="sec-7-66"><span class="section-number-3">7.66</span> <code>is-positive</code></h3>
+<div class="outline-text-3" id="text-7-66">
 <p>
 (is-positive X Y &#x2026;) returns true if all arguments are positive
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline151" class="outline-3">
-<h3 id="orgheadline151"><span class="section-number-3">7.30</span> <code>is-zero</code></h3>
-<div class="outline-text-3" id="text-7-30">
+<div id="outline-container-sec-7-67" class="outline-3">
+<h3 id="sec-7-67"><span class="section-number-3">7.67</span> <code>is-zero</code></h3>
+<div class="outline-text-3" id="text-7-67">
 <p>
 (is-zero X Y &#x2026;) returns true if all arguments are zeros
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline152" class="outline-3">
-<h3 id="orgheadline152"><span class="section-number-3">7.31</span> <code>lnot</code></h3>
-<div class="outline-text-3" id="text-7-31">
+<div id="outline-container-sec-7-68" class="outline-3">
+<h3 id="sec-7-68"><span class="section-number-3">7.68</span> <code>lnot</code></h3>
+<div class="outline-text-3" id="text-7-68">
 <p>
 (lnot X) returns the one complement of X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline153" class="outline-3">
-<h3 id="orgheadline153"><span class="section-number-3">7.32</span> <code>logand</code></h3>
-<div class="outline-text-3" id="text-7-32">
+<div id="outline-container-sec-7-69" class="outline-3">
+<h3 id="sec-7-69"><span class="section-number-3">7.69</span> <code>logand</code></h3>
+<div class="outline-text-3" id="text-7-69">
 <p>
 (logand X Y Z &#x2026;) returns X &amp; Y &amp; Z &amp; &#x2026; or 0 if the list of
 arguments is empty, where &amp; is the bitwise AND
@@ -1407,105 +1883,114 @@ operation. Returns ~0 if the list of arguments is empty
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline154" class="outline-3">
-<h3 id="orgheadline154"><span class="section-number-3">7.33</span> <code>logor</code></h3>
-<div class="outline-text-3" id="text-7-33">
+<div id="outline-container-sec-7-70" class="outline-3">
+<h3 id="sec-7-70"><span class="section-number-3">7.70</span> <code>logor</code></h3>
+<div class="outline-text-3" id="text-7-70">
 <p>
 (logor X Y Z &#x2026;) returns X | Y | Z | &#x2026; or 0 if the list of
 arguments is empty, where | is the bitwise OR operation
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline155" class="outline-3">
-<h3 id="orgheadline155"><span class="section-number-3">7.34</span> <code>logxor</code></h3>
-<div class="outline-text-3" id="text-7-34">
+<div id="outline-container-sec-7-71" class="outline-3">
+<h3 id="sec-7-71"><span class="section-number-3">7.71</span> <code>logxor</code></h3>
+<div class="outline-text-3" id="text-7-71">
 <p>
 (logxor X Y Z &#x2026;) returns X ^ Y ^ Z ^ &#x2026; or 0 if the list of
 arguments is empty, where ^ is the bitwise XOR operation
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline156" class="outline-3">
-<h3 id="orgheadline156"><span class="section-number-3">7.35</span> <code>lshift</code></h3>
-<div class="outline-text-3" id="text-7-35">
+<div id="outline-container-sec-7-72" class="outline-3">
+<h3 id="sec-7-72"><span class="section-number-3">7.72</span> <code>lshift</code></h3>
+<div class="outline-text-3" id="text-7-72">
 <p>
 (lshift X N) logically shifts X left by N bits
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline157" class="outline-3">
-<h3 id="orgheadline157"><span class="section-number-3">7.36</span> <code>memory-allocate</code></h3>
-<div class="outline-text-3" id="text-7-36">
+<div id="outline-container-sec-7-73" class="outline-3">
+<h3 id="sec-7-73"><span class="section-number-3">7.73</span> <code>memory-allocate</code></h3>
+<div class="outline-text-3" id="text-7-73">
 <p>
 (memory-allocate P N V?) maps memory region [P,P+N), if V is
 provided, then fills the newly mapped region with the value V
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline158" class="outline-3">
-<h3 id="orgheadline158"><span class="section-number-3">7.37</span> <code>memory-read</code></h3>
-<div class="outline-text-3" id="text-7-37">
+<div id="outline-container-sec-7-74" class="outline-3">
+<h3 id="sec-7-74"><span class="section-number-3">7.74</span> <code>memory-read</code></h3>
+<div class="outline-text-3" id="text-7-74">
 <p>
 (memory-read A) loads one byte from the address A
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline159" class="outline-3">
-<h3 id="orgheadline159"><span class="section-number-3">7.38</span> <code>memory-write</code></h3>
-<div class="outline-text-3" id="text-7-38">
+<div id="outline-container-sec-7-75" class="outline-3">
+<h3 id="sec-7-75"><span class="section-number-3">7.75</span> <code>memory-write</code></h3>
+<div class="outline-text-3" id="text-7-75">
 <p>
 (memory-write A X) stores by X to A
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline160" class="outline-3">
-<h3 id="orgheadline160"><span class="section-number-3">7.39</span> <code>mod</code></h3>
-<div class="outline-text-3" id="text-7-39">
+<div id="outline-container-sec-7-76" class="outline-3">
+<h3 id="sec-7-76"><span class="section-number-3">7.76</span> <code>mod</code></h3>
+<div class="outline-text-3" id="text-7-76">
 <p>
 (mod X Y Z &#x2026;) returns X % Y % Z % &#x2026; or 0 if the list of
 arguments is empty, where % is the modulo operation
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline161" class="outline-3">
-<h3 id="orgheadline161"><span class="section-number-3">7.40</span> <code>neg</code></h3>
-<div class="outline-text-3" id="text-7-40">
+<div id="outline-container-sec-7-77" class="outline-3">
+<h3 id="sec-7-77"><span class="section-number-3">7.77</span> <code>neg</code></h3>
+<div class="outline-text-3" id="text-7-77">
 <p>
 (neg X) returns the two complement of X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline162" class="outline-3">
-<h3 id="orgheadline162"><span class="section-number-3">7.41</span> <code>not</code></h3>
-<div class="outline-text-3" id="text-7-41">
+<div id="outline-container-sec-7-78" class="outline-3">
+<h3 id="sec-7-78"><span class="section-number-3">7.78</span> <code>not</code></h3>
+<div class="outline-text-3" id="text-7-78">
 <p>
 (not X) returns true if X is zero
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline163" class="outline-3">
-<h3 id="orgheadline163"><span class="section-number-3">7.42</span> <code>points-to-static-data</code></h3>
-<div class="outline-text-3" id="text-7-42">
+<div id="outline-container-sec-7-79" class="outline-3">
+<h3 id="sec-7-79"><span class="section-number-3">7.79</span> <code>points-to-static-data</code></h3>
+<div class="outline-text-3" id="text-7-79">
 <p>
 (points-to-static-data PTR LEN) is true iff
 (all-static-constant *PTR .. *(PTR+LEN-1))
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline164" class="outline-3">
-<h3 id="orgheadline164"><span class="section-number-3">7.43</span> <code>region-contains</code></h3>
-<div class="outline-text-3" id="text-7-43">
+<div id="outline-container-sec-7-80" class="outline-3">
+<h3 id="sec-7-80"><span class="section-number-3">7.80</span> <code>reg-name</code></h3>
+<div class="outline-text-3" id="text-7-80">
+<p>
+(reg-name N) returns the name of the register with the index N
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-81" class="outline-3">
+<h3 id="sec-7-81"><span class="section-number-3">7.81</span> <code>region-contains</code></h3>
+<div class="outline-text-3" id="text-7-81">
 <p>
 (region-contains ID X) return if set ID has X.
 Returns the lower bound of the first region that contains
 value X in the set of regions with the given ID. Returns nil
-otherwise. Returns nil if a set with the given ID doesn't exist.
+otherwise.
+Returns nil if a set with the given ID doesn't exist.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline165" class="outline-3">
-<h3 id="orgheadline165"><span class="section-number-3">7.44</span> <code>region-create</code></h3>
-<div class="outline-text-3" id="text-7-44">
+<div id="outline-container-sec-7-82" class="outline-3">
+<h3 id="sec-7-82"><span class="section-number-3">7.82</span> <code>region-create</code></h3>
+<div class="outline-text-3" id="text-7-82">
 <p>
 (region-create ID LOWER UPPER) adds [LOWER,UPPER] to the set ID.
 Adds a region denoted with the interval [LOWER,UPPER] to the
@@ -1515,9 +2000,9 @@ If the set of regions ID doesn't exist, then it is created.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline166" class="outline-3">
-<h3 id="orgheadline166"><span class="section-number-3">7.45</span> <code>region-move</code></h3>
-<div class="outline-text-3" id="text-7-45">
+<div id="outline-container-sec-7-83" class="outline-3">
+<h3 id="sec-7-83"><span class="section-number-3">7.83</span> <code>region-move</code></h3>
+<div class="outline-text-3" id="text-7-83">
 <p>
 (region-move DST SRC P) moves all regions that contain the point
 P from the set SRC to the set DST. Returns nil if SRC didn't
@@ -1525,71 +2010,80 @@ contain any such region, otherwise returns t.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline167" class="outline-3">
-<h3 id="orgheadline167"><span class="section-number-3">7.46</span> <code>rshift</code></h3>
-<div class="outline-text-3" id="text-7-46">
+<div id="outline-container-sec-7-84" class="outline-3">
+<h3 id="sec-7-84"><span class="section-number-3">7.84</span> <code>rshift</code></h3>
+<div class="outline-text-3" id="text-7-84">
 <p>
 (rshift X N) logically shifts X right by N bits
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline168" class="outline-3">
-<h3 id="orgheadline168"><span class="section-number-3">7.47</span> <code>s/</code></h3>
-<div class="outline-text-3" id="text-7-47">
+<div id="outline-container-sec-7-85" class="outline-3">
+<h3 id="sec-7-85"><span class="section-number-3">7.85</span> <code>s/</code></h3>
+<div class="outline-text-3" id="text-7-85">
 <p>
 (s/ X Y Z &#x2026;) returns X s/ Y s/ Z s/ &#x2026; or 0 if the list of
 arguments is empty, where s/ is the signed division operation
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline169" class="outline-3">
-<h3 id="orgheadline169"><span class="section-number-3">7.48</span> <code>signed-mod</code></h3>
-<div class="outline-text-3" id="text-7-48">
+<div id="outline-container-sec-7-86" class="outline-3">
+<h3 id="sec-7-86"><span class="section-number-3">7.86</span> <code>set-symbol-value</code></h3>
+<div class="outline-text-3" id="text-7-86">
+<p>
+(set-symbol-value S X) sets the value of the symbol S to X.
+Returns X
+</p>
+</div>
+</div>
+<div id="outline-container-sec-7-87" class="outline-3">
+<h3 id="sec-7-87"><span class="section-number-3">7.87</span> <code>signed-mod</code></h3>
+<div class="outline-text-3" id="text-7-87">
 <p>
 (signed-mod X Y Z &#x2026;) returns X % Y % Z % &#x2026; or 0 if the list of
 arguments is empty, where % is the signed modulo operation
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline170" class="outline-3">
-<h3 id="orgheadline170"><span class="section-number-3">7.49</span> <code>symbol-concat</code></h3>
-<div class="outline-text-3" id="text-7-49">
+<div id="outline-container-sec-7-88" class="outline-3">
+<h3 id="sec-7-88"><span class="section-number-3">7.88</span> <code>symbol-concat</code></h3>
+<div class="outline-text-3" id="text-7-88">
 <p>
 (symbol-concat X Y Z &#x2026;) returns a new symbol that is a
 concatenation of symbols X,Y,Z,&#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline171" class="outline-3">
-<h3 id="orgheadline171"><span class="section-number-3">7.50</span> <code>taint-get-direct</code></h3>
-<div class="outline-text-3" id="text-7-50">
+<div id="outline-container-sec-7-89" class="outline-3">
+<h3 id="sec-7-89"><span class="section-number-3">7.89</span> <code>taint-get-direct</code></h3>
+<div class="outline-text-3" id="text-7-89">
 <p>
 (taint-get-direct K X) returns the direct taint of the kind K
 associatedwith the value X, or nil if there is no such taint
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline172" class="outline-3">
-<h3 id="orgheadline172"><span class="section-number-3">7.51</span> <code>taint-get-indirect</code></h3>
-<div class="outline-text-3" id="text-7-51">
+<div id="outline-container-sec-7-90" class="outline-3">
+<h3 id="sec-7-90"><span class="section-number-3">7.90</span> <code>taint-get-indirect</code></h3>
+<div class="outline-text-3" id="text-7-90">
 <p>
 (taint-get-indirect K X) returns the indirect taint of the
 kind K associated with the value X, or nil if there is no such taint
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline173" class="outline-3">
-<h3 id="orgheadline173"><span class="section-number-3">7.52</span> <code>taint-introduce-directly</code></h3>
-<div class="outline-text-3" id="text-7-52">
+<div id="outline-container-sec-7-91" class="outline-3">
+<h3 id="sec-7-91"><span class="section-number-3">7.91</span> <code>taint-introduce-directly</code></h3>
+<div class="outline-text-3" id="text-7-91">
 <p>
 (taint-introduce-directly K X) introduces a new taint of the
 kind K that is directly associated with the value X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline174" class="outline-3">
-<h3 id="orgheadline174"><span class="section-number-3">7.53</span> <code>taint-introduce-indirectly</code></h3>
-<div class="outline-text-3" id="text-7-53">
+<div id="outline-container-sec-7-92" class="outline-3">
+<h3 id="sec-7-92"><span class="section-number-3">7.92</span> <code>taint-introduce-indirectly</code></h3>
+<div class="outline-text-3" id="text-7-92">
 <p>
 (taint-introduce-indirectly K X N) introduces a new taint of
 the kind K that is indirectly associated with X pointing to an
@@ -1597,64 +2091,64 @@ object of the size N
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline175" class="outline-3">
-<h3 id="orgheadline175"><span class="section-number-3">7.54</span> <code>taint-kind</code></h3>
-<div class="outline-text-3" id="text-7-54">
+<div id="outline-container-sec-7-93" class="outline-3">
+<h3 id="sec-7-93"><span class="section-number-3">7.93</span> <code>taint-kind</code></h3>
+<div class="outline-text-3" id="text-7-93">
 <p>
 (taint-kind t) returns the kind of the taint T.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline176" class="outline-3">
-<h3 id="orgheadline176"><span class="section-number-3">7.55</span> <code>taint-policy-select</code></h3>
-<div class="outline-text-3" id="text-7-55">
+<div id="outline-container-sec-7-94" class="outline-3">
+<h3 id="sec-7-94"><span class="section-number-3">7.94</span> <code>taint-policy-select</code></h3>
+<div class="outline-text-3" id="text-7-94">
 <p>
 (taint-policy-select K P) selects the taint propagation
 policy P for the taints of the kind K
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline177" class="outline-3">
-<h3 id="orgheadline177"><span class="section-number-3">7.56</span> <code>taint-policy-set-default</code></h3>
-<div class="outline-text-3" id="text-7-56">
+<div id="outline-container-sec-7-95" class="outline-3">
+<h3 id="sec-7-95"><span class="section-number-3">7.95</span> <code>taint-policy-set-default</code></h3>
+<div class="outline-text-3" id="text-7-95">
 <p>
 (taint-policy-set-default P) makes P the default taint
 propagation policy.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline178" class="outline-3">
-<h3 id="orgheadline178"><span class="section-number-3">7.57</span> <code>taint-sanitize-direct</code></h3>
-<div class="outline-text-3" id="text-7-57">
+<div id="outline-container-sec-7-96" class="outline-3">
+<h3 id="sec-7-96"><span class="section-number-3">7.96</span> <code>taint-sanitize-direct</code></h3>
+<div class="outline-text-3" id="text-7-96">
 <p>
 (taint-sanitize-direct K X) removes any direct taint of the kind
 K that is directly associated with the value X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline179" class="outline-3">
-<h3 id="orgheadline179"><span class="section-number-3">7.58</span> <code>taint-sanitize-indirect</code></h3>
-<div class="outline-text-3" id="text-7-58">
+<div id="outline-container-sec-7-97" class="outline-3">
+<h3 id="sec-7-97"><span class="section-number-3">7.97</span> <code>taint-sanitize-indirect</code></h3>
+<div class="outline-text-3" id="text-7-97">
 <p>
 (taint-sanitize-indirect K X) removes any direct taint of the kind
 K that is indirectly associated with the value X
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline180" class="outline-3">
-<h3 id="orgheadline180"><span class="section-number-3">7.59</span> <code>word-width</code></h3>
-<div class="outline-text-3" id="text-7-59">
+<div id="outline-container-sec-7-98" class="outline-3">
+<h3 id="sec-7-98"><span class="section-number-3">7.98</span> <code>word-width</code></h3>
+<div class="outline-text-3" id="text-7-98">
 <p>
 (word-width) returns machine word width in bits
 </p>
 </div>
 </div>
 </div>
-<div id="outline-container-orgheadline197" class="outline-2">
-<h2 id="orgheadline197"><span class="section-number-2">8</span> Signals</h2>
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> Signals</h2>
 <div class="outline-text-2" id="text-8">
-</div><div id="outline-container-orgheadline182" class="outline-3">
-<h3 id="orgheadline182"><span class="section-number-3">8.1</span> <code>call</code></h3>
+</div><div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> <code>call</code></h3>
 <div class="outline-text-3" id="text-8-1">
 <p>
 (call NAME X Y &#x2026;) is emitted when a call to a function with the
@@ -1662,8 +2156,8 @@ symbolic NAME occurs with the specified list of arguments X,Y,&#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline183" class="outline-3">
-<h3 id="orgheadline183"><span class="section-number-3">8.2</span> <code>call-return</code></h3>
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> <code>call-return</code></h3>
 <div class="outline-text-3" id="text-8-2">
 <p>
 (call-return NAME X Y &#x2026; R) is emitted when a call to a function with the
@@ -1672,40 +2166,40 @@ X,Y,&#x2026; and return value R.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline184" class="outline-3">
-<h3 id="orgheadline184"><span class="section-number-3">8.3</span> <code>eval-cond</code></h3>
+<div id="outline-container-sec-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> <code>eval-cond</code></h3>
 <div class="outline-text-3" id="text-8-3">
 <p>
-(eval<sub>cond</sub> V) is emitted after evaluating a conditional to V
+(eval-cond V) is emitted after evaluating a conditional to V
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline185" class="outline-3">
-<h3 id="orgheadline185"><span class="section-number-3">8.4</span> <code>fini</code></h3>
+<div id="outline-container-sec-8-4" class="outline-3">
+<h3 id="sec-8-4"><span class="section-number-3">8.4</span> <code>fini</code></h3>
 <div class="outline-text-3" id="text-8-4">
 <p>
 (fini) occurs when the Primus Machine is finished
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline186" class="outline-3">
-<h3 id="orgheadline186"><span class="section-number-3">8.5</span> <code>init</code></h3>
+<div id="outline-container-sec-8-5" class="outline-3">
+<h3 id="sec-8-5"><span class="section-number-3">8.5</span> <code>init</code></h3>
 <div class="outline-text-3" id="text-8-5">
 <p>
 (init) occurs when the Primus Machine is initialized
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline187" class="outline-3">
-<h3 id="orgheadline187"><span class="section-number-3">8.6</span> <code>interrupt</code></h3>
+<div id="outline-container-sec-8-6" class="outline-3">
+<h3 id="sec-8-6"><span class="section-number-3">8.6</span> <code>interrupt</code></h3>
 <div class="outline-text-3" id="text-8-6">
 <p>
 (interrupt N) is emitted when the hardware interrupt N occurs
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline188" class="outline-3">
-<h3 id="orgheadline188"><span class="section-number-3">8.7</span> <code>jumping</code></h3>
+<div id="outline-container-sec-8-7" class="outline-3">
+<h3 id="sec-8-7"><span class="section-number-3">8.7</span> <code>jumping</code></h3>
 <div class="outline-text-3" id="text-8-7">
 <p>
 (jumping C D) is emitted before jump to D occurs under the
@@ -1713,66 +2207,87 @@ condition C
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline189" class="outline-3">
-<h3 id="orgheadline189"><span class="section-number-3">8.8</span> <code>loaded</code></h3>
+<div id="outline-container-sec-8-8" class="outline-3">
+<h3 id="sec-8-8"><span class="section-number-3">8.8</span> <code>loaded</code></h3>
 <div class="outline-text-3" id="text-8-8">
 <p>
 (loaded A X) is emitted when X is loaded from A
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline190" class="outline-3">
-<h3 id="orgheadline190"><span class="section-number-3">8.9</span> <code>loading</code></h3>
+<div id="outline-container-sec-8-9" class="outline-3">
+<h3 id="sec-8-9"><span class="section-number-3">8.9</span> <code>loading</code></h3>
 <div class="outline-text-3" id="text-8-9">
 <p>
 (loading A) is emitted before load from A occurs
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline191" class="outline-3">
-<h3 id="orgheadline191"><span class="section-number-3">8.10</span> <code>pc-changed</code></h3>
+<div id="outline-container-sec-8-10" class="outline-3">
+<h3 id="sec-8-10"><span class="section-number-3">8.10</span> <code>machine-kill</code></h3>
 <div class="outline-text-3" id="text-8-10">
+<p>
+(machine-kill) occurs when Machine is killed and could be
+used for machine cleanup/teardown and analysis summaries.
+The machine is in the resticted mode in the body of the
+methods.
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-11" class="outline-3">
+<h3 id="sec-8-11"><span class="section-number-3">8.11</span> <code>pc-changed</code></h3>
+<div class="outline-text-3" id="text-8-11">
 <p>
 (pc-change PC) is emitted when PC is updated
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline192" class="outline-3">
-<h3 id="orgheadline192"><span class="section-number-3">8.11</span> <code>read</code></h3>
-<div class="outline-text-3" id="text-8-11">
+<div id="outline-container-sec-8-12" class="outline-3">
+<h3 id="sec-8-12"><span class="section-number-3">8.12</span> <code>read</code></h3>
+<div class="outline-text-3" id="text-8-12">
 <p>
 (read V X) is emitted when X is read from V
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline193" class="outline-3">
-<h3 id="orgheadline193"><span class="section-number-3">8.12</span> <code>stored</code></h3>
-<div class="outline-text-3" id="text-8-12">
+<div id="outline-container-sec-8-13" class="outline-3">
+<h3 id="sec-8-13"><span class="section-number-3">8.13</span> <code>stored</code></h3>
+<div class="outline-text-3" id="text-8-13">
 <p>
 (stored A X) is emitted when X is stored to A
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline194" class="outline-3">
-<h3 id="orgheadline194"><span class="section-number-3">8.13</span> <code>storing</code></h3>
-<div class="outline-text-3" id="text-8-13">
+<div id="outline-container-sec-8-14" class="outline-3">
+<h3 id="sec-8-14"><span class="section-number-3">8.14</span> <code>storing</code></h3>
+<div class="outline-text-3" id="text-8-14">
 <p>
 (storing A) is emitted before store to A occurs
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline195" class="outline-3">
-<h3 id="orgheadline195"><span class="section-number-3">8.14</span> <code>taint-finalize</code></h3>
-<div class="outline-text-3" id="text-8-14">
+<div id="outline-container-sec-8-15" class="outline-3">
+<h3 id="sec-8-15"><span class="section-number-3">8.15</span> <code>system-stop</code></h3>
+<div class="outline-text-3" id="text-8-15">
+<p>
+(system-stop NAME) occurs when the system with the given
+name finished its execution. The machine is in the
+restricted mode in the body of the methods
+</p>
+</div>
+</div>
+<div id="outline-container-sec-8-16" class="outline-3">
+<h3 id="sec-8-16"><span class="section-number-3">8.16</span> <code>taint-finalize</code></h3>
+<div class="outline-text-3" id="text-8-16">
 <p>
 (taint-finalize T L) is emitted when the taint T is finilized
 while still live if L is true or dead if T is false.
 </p>
 </div>
 </div>
-<div id="outline-container-orgheadline196" class="outline-3">
-<h3 id="orgheadline196"><span class="section-number-3">8.15</span> <code>written</code></h3>
-<div class="outline-text-3" id="text-8-15">
+<div id="outline-container-sec-8-17" class="outline-3">
+<h3 id="sec-8-17"><span class="section-number-3">8.17</span> <code>written</code></h3>
+<div class="outline-text-3" id="text-8-17">
 <p>
 (written V X) is emitted when X is written to V
 </p>
@@ -1781,8 +2296,9 @@ while still live if L is true or dead if T is false.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: Oleg</p>
-<p class="date">Created: 2019-04-26 Fri 12:03</p>
+<p class="author">Author: Ivan</p>
+<p class="date">Created: 2020-03-06 Fri 13:35</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

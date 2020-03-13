@@ -1,9 +1,9 @@
 Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML><HEAD><TITLE>Man page of bap</TITLE>
+<HTML><HEAD><TITLE>Man page of BAP-DISASSEMBLE</TITLE>
 </HEAD><BODY>
-<H1>bap</H1>
+<H1>BAP-DISASSEMBLE</H1>
 Section: Bap Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
 <A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
 
@@ -15,60 +15,237 @@ Section: Bap Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
 
 <P>
 
-bap
+bap&#45;disassemble &#45; disassembles and analyzes the input file
 <A NAME="lbAC">&nbsp;</A>
 <H2>SYNOPSIS</H2>
 
 <P>
 
-<B>bap</B> <I>COMMAND</I> &#46;&#46;&#46;
+<B>bap disassemble</B> [<I>OPTION</I>]&#46;&#46;&#46; [<I>FILE</I>]
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
 <P>
 
-The main command line utility of the Binary Analysis platform used to invoke BAP analysis from the command line&#46; The utility loads all plugins, parses command line arguments, and runs the specified command&#46; The default command is <B>disassemble</B>, which disassembles and analyzes the specified file&#46;
+Disassembles and analyzes the input file&#46; This is the default command of the bap frontend which is assumed when no other command was specified&#46;
+<P>
+
+The input file is automatically parsed (unless the <B>&#45;&#45;raw</B> or <B>&#45;&#45;loader</B> options were specified), then the extracted code, if any, is disassembled, and the `Bap&#46;Std&#46;project` data structure is built, on which the specified passes are run&#46;
 <A NAME="lbAE">&nbsp;</A>
-<H2>PLUGINS</H2>
+<H2>PASSES</H2>
 
 <P>
 
-The BAP frontend does nothing by itself and all the functionality comes from various BAP plugins&#46; There are many extension points in BAP, but writing a disassembler pass is probably the easiest to start with&#46; See <B>bap dis &#45;&#45;help</B> for more details&#46;
+The passes are specified by the <B>&#45;&#45;pass</B> option and are run in the order in which they specified&#46; In addition, all passes that are flagged with `autorun&#39; are run before the explicitly specified passes&#46; Finally, if a pass specifies other passes as its dependencies, then they are run before it, in the order in which they were specified (modulo their own dependencies)&#46;
+<P>
+
+It&#39;s also possible to specify the passes using the old style syntax, e&#46;g&#46;, `<B>&#45;&#45;&lt;PASS&gt;</B>`, which is discouraged and later could be disabled&#46; Additionaly, it is not allowed to mix passes the old and the new style&#46;
 <A NAME="lbAF">&nbsp;</A>
-<H2>COMMANDS</H2>
+<H2>OUTPUT</H2>
+
+<P>
+
+After all passes are run on the input, the resulting project data structure could be dumped using the <B>&#45;&#45;dump</B> (or <B>&#45;d</B> for short) option, whichaccepts the desired format and, optionally, the output file name&#46;
+<P>
+
+It is possible to specify the <B>&#45;&#45;dump</B> option multiple times, in which case the project will be dumped in several formats&#46;
+<A NAME="lbAG">&nbsp;</A>
+<H2>WRITING A NEW PASS</H2>
+
+<P>
+
+To implement your own analysis as a pass on the project data structure, you need to write a program in OCaml&#46;
+<P>
+
+Start in a fresh new folder and create the `my_analysis&#46;ml` file with the following contents:
+<P>
+
+<PRE>
+
+  open Core_kernel
+  open Bap_main
+  open Bap&#46;Std
+
+  let main proj =
+    print_endline &quot;My analysis is running!&quot;;
+    proj
+
+  let () = Extension&#46;declare @@ fun _ctxt &#45;&gt;
+     Project&#46;register_pass main
+  
+</PRE>
+
+<P>
+
+Then run
+<P>
+
+<PRE>
+
+  bapbuild my_analysis&#46;plugin
+  bapbundle install my_analysis&#46;plugin
+  
+</PRE>
+
+<P>
+
+The analysis is ready and could be run using the `<B>&#45;&#45;passes</B> option, e&#46;g&#46;,
+<P>
+
+<PRE>
+
+  bap dis /bin/echo &#45;&#45;pass=my&#45;analysis
+  
+</PRE>
+
+<P>
+
+Please note, that the name of the pass is automatically derived from the plugin name&#46; If the latter contains underscores then they are substituted with dashes&#46; If a plugin registers a pass with a different name it will be still prefixed with the plugin name&#46;
+<A NAME="lbAH">&nbsp;</A>
+<H2>ARGUMENTS</H2>
 
 <DL COMPACT>
-<DT><B>&#46;</B><DD>
-does nothing and prints nothing
-<DT><B>disassemble</B><DD>
-disassembles and analyzes the input file
-<DT><B>list</B><DD>
-explores various BAP facilities
-<DT><B>mc</B><DD>
-disassembles a (human readable) string of bytes
-<DT><B>objdump</B><DD>
-disassembles and prints a binary using the linear sweep algorithm
-<DT><B>print&#45;recipes</B><DD>
-prints available recipes
-<DT><B>recipes</B><DD>
-provides commands to manipulate the recipe subsystem
+<DT><I>FILE</I><DD>
+The input file
 </DL>
-<A NAME="lbAG">&nbsp;</A>
+<A NAME="lbAI">&nbsp;</A>
 <H2>OPTIONS</H2>
 
 <DL COMPACT>
+<DT><B>&#45;&#45;abi</B><DD>
+Enables the pass abi in the old style (DEPRECATED)
+<DT><B>&#45;&#45;api</B><DD>
+Enables the pass api in the old style (DEPRECATED)
+<DT><B>&#45;&#45;arm</B><DD>
+Enables the pass arm in the old style (DEPRECATED)
+<DT><B>&#45;&#45;beagle</B><DD>
+Enables the pass beagle in the old style (DEPRECATED)
+<DT><B>&#45;&#45;bil</B><DD>
+Enables the pass bil in the old style (DEPRECATED)
+<DT><B>&#45;&#45;byteweight</B><DD>
+Enables the pass byteweight in the old style (DEPRECATED)
+<DT><B>&#45;&#45;cache</B><DD>
+Enables the pass cache in the old style (DEPRECATED)
+<DT><B>&#45;&#45;callsites</B><DD>
+Enables the pass callsites in the old style (DEPRECATED)
+<DT><B>&#45;&#45;constant&#45;tracker</B><DD>
+Enables the pass constant&#45;tracker in the old style (DEPRECATED)
+<DT><B>&#45;&#45;cxxfilt</B><DD>
+Enables the pass cxxfilt in the old style (DEPRECATED)
+<DT><B>&#45;d</B> [<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>], <B>&#45;&#45;dump</B>[=<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>] (default=bir)<DD>
+Dumps the program to &lt;FILE&gt; (defaults to stdout) in the &lt;FMT&gt; format (defaults to bir)&#46;
+<DT><B>&#45;&#45;demangle</B><DD>
+Enables the pass demangle in the old style (DEPRECATED)
+<DT><B>&#45;&#45;disassemble</B><DD>
+Enables the pass disassemble in the old style (DEPRECATED)
+<DT><B>&#45;&#45;dump&#45;symbols</B><DD>
+Enables the pass dump&#45;symbols in the old style (DEPRECATED)
+<DT><B>&#45;&#45;elf&#45;loader</B><DD>
+Enables the pass elf&#45;loader in the old style (DEPRECATED)
+<DT><B>&#45;&#45;emit&#45;ida&#45;script</B><DD>
+Enables the pass emit&#45;ida&#45;script in the old style (DEPRECATED)
+<DT><B>&#45;&#45;frontc&#45;parser</B><DD>
+Enables the pass frontc&#45;parser in the old style (DEPRECATED)
 <DT><B>&#45;&#45;help</B>[=<I>FMT</I>] (default=auto)<DD>
 Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>&#45;&#45;ida</B><DD>
+Enables the pass ida in the old style (DEPRECATED)
 <DT><B>&#45;L</B> <I>VAL</I>, <B>&#45;&#45;plugin&#45;path</B>=<I>VAL</I>, <B>&#45;&#45;load&#45;path</B>=<I>VAL</I> (absent <B>BAP_PLUGIN_PATH</B> env)<DD>
 Adds folder to the list of plugins search paths
+<DT><B>&#45;&#45;llvm</B><DD>
+Enables the pass llvm in the old style (DEPRECATED)
+<DT><B>&#45;&#45;loader</B>=<I>VAL</I> (absent=llvm)<DD>
+Use the specified loader&#46; Use the loader `raw&#39; to load unstructured files
 <DT><B>&#45;&#45;logdir</B>=<I>VAL</I>, <B>&#45;&#45;log&#45;dir</B>=<I>VAL</I> (absent <B>BAP_LOG_DIR</B> env)<DD>
 A folder for log files&#46;
+<DT><B>&#45;&#45;map&#45;terms</B><DD>
+Enables the pass map&#45;terms in the old style (DEPRECATED)
+<DT><B>&#45;&#45;mc</B><DD>
+Enables the pass mc in the old style (DEPRECATED)
+<DT><B>&#45;&#45;mips</B><DD>
+Enables the pass mips in the old style (DEPRECATED)
+<DT><B>&#45;&#45;objdump</B><DD>
+Enables the pass objdump in the old style (DEPRECATED)
+<DT><B>&#45;&#45;optimization</B><DD>
+Enables the pass optimization in the old style (DEPRECATED)
+<DT><B>&#45;p</B> <I>PASSES</I>, <B>&#45;&#45;passes</B>=<I>PASSES</I><DD>
+Run the selected passes (in the specified order)
+<DT><B>&#45;&#45;phoenix</B><DD>
+Enables the pass phoenix in the old style (DEPRECATED)
+<DT><B>&#45;&#45;piqi&#45;printers</B><DD>
+Enables the pass piqi&#45;printers in the old style (DEPRECATED)
+<DT><B>&#45;&#45;powerpc</B><DD>
+Enables the pass powerpc in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;dictionary</B><DD>
+Enables the pass primus&#45;dictionary in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;exploring</B><DD>
+Enables the pass primus&#45;exploring in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;greedy</B><DD>
+Enables the pass primus&#45;greedy in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;limit</B><DD>
+Enables the pass primus&#45;limit in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;lisp</B><DD>
+Enables the pass primus&#45;lisp in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;loader</B><DD>
+Enables the pass primus&#45;loader in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;mark&#45;visited</B><DD>
+Enables the pass primus&#45;mark&#45;visited in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;powerpc</B><DD>
+Enables the pass primus&#45;powerpc in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;print</B><DD>
+Enables the pass primus&#45;print in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;promiscuous</B><DD>
+Enables the pass primus&#45;promiscuous in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;propagate&#45;taint</B><DD>
+Enables the pass primus&#45;propagate&#45;taint in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;region</B><DD>
+Enables the pass primus&#45;region in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;round&#45;robin</B><DD>
+Enables the pass primus&#45;round&#45;robin in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;taint</B><DD>
+Enables the pass primus&#45;taint in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;test</B><DD>
+Enables the pass primus&#45;test in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;wandering</B><DD>
+Enables the pass primus&#45;wandering in the old style (DEPRECATED)
+<DT><B>&#45;&#45;primus&#45;x86</B><DD>
+Enables the pass primus&#45;x86 in the old style (DEPRECATED)
+<DT><B>&#45;&#45;print</B><DD>
+Enables the pass print in the old style (DEPRECATED)
+<DT><B>&#45;&#45;propagate&#45;taint</B><DD>
+Enables the pass propagate&#45;taint in the old style (DEPRECATED)
+<DT><B>&#45;&#45;raw</B><DD>
+Enables the pass raw in the old style (DEPRECATED)
+<DT><B>&#45;&#45;read&#45;symbols</B><DD>
+Enables the pass read&#45;symbols in the old style (DEPRECATED)
 <DT><B>&#45;&#45;recipe</B>=<I>VAL</I><DD>
 Load the specified recipe
+<DT><B>&#45;&#45;recipe&#45;command</B><DD>
+Enables the pass recipe&#45;command in the old style (DEPRECATED)
+<DT><B>&#45;&#45;relocatable</B><DD>
+Enables the pass relocatable in the old style (DEPRECATED)
+<DT><B>&#45;&#45;report</B><DD>
+Enables the pass report in the old style (DEPRECATED)
+<DT><B>&#45;&#45;run</B><DD>
+Enables the pass run in the old style (DEPRECATED)
+<DT><B>&#45;&#45;ssa</B><DD>
+Enables the pass ssa in the old style (DEPRECATED)
+<DT><B>&#45;&#45;strings</B><DD>
+Enables the pass strings in the old style (DEPRECATED)
+<DT><B>&#45;&#45;taint</B><DD>
+Enables the pass taint in the old style (DEPRECATED)
+<DT><B>&#45;&#45;trace</B><DD>
+Enables the pass trace in the old style (DEPRECATED)
+<DT><B>&#45;&#45;trivial&#45;condition&#45;form</B><DD>
+Enables the pass trivial&#45;condition&#45;form in the old style (DEPRECATED)
 <DT><B>&#45;&#45;version</B><DD>
 Show version information&#46;
+<DT><B>&#45;&#45;warn&#45;unused</B><DD>
+Enables the pass warn&#45;unused in the old style (DEPRECATED)
+<DT><B>&#45;&#45;x86</B><DD>
+Enables the pass x86 in the old style (DEPRECATED)
 </DL>
-<A NAME="lbAH">&nbsp;</A>
+<A NAME="lbAJ">&nbsp;</A>
 <H2>COMMON OPTIONS</H2>
 
 <DL COMPACT>
@@ -134,7 +311,7 @@ prints more information about the <B>byteweight</B> plugin
 The maximum length of a word, that could identify a function start&#46; Any signatures that are greater than that length, will not be considered, affect prior probabilities, etc&#46;
 <DT><B>&#45;&#45;byteweight&#45;min&#45;length</B>=<I>VAL</I> (absent=8)<DD>
 The minimum length of a word, that could identify a function start&#46; Any signatures that are below that length, will not be considered, affect prior probabilities, etc&#46;
-<DT><B>&#45;&#45;byteweight&#45;sigs</B>=<I>VAL</I> (absent=/home/ivg/&#46;opam/4&#46;07&#46;0/share/bap/sigs&#46;zip)<DD>
+<DT><B>&#45;&#45;byteweight&#45;sigs</B>=<I>VAL</I> (absent=/home/ivg/&#46;opam/4&#46;09&#46;0/share/bap/sigs&#46;zip)<DD>
 Path to the signature file
 <DT><B>&#45;&#45;byteweight&#45;threshold</B>=<I>VAL</I> (absent=10&#46;)<DD>
 If greater than 1&#46;0 then it is the Bayes factor, otherwise it is a probability&#46;
@@ -549,30 +726,29 @@ prints more information about the <B>x86</B> plugin
 <DT><B>&#45;&#45;x86&#45;lifter</B>=<I>VAL</I> (absent=merge)<DD>
 Debug purpose only&#46; The <I>VAL</I> must be one of `legacy&#39;, `modern&#39; or `merge&#39;&#46; Default: <I>VAL</I> = merge&#46;
 </DL>
-<A NAME="lbAI">&nbsp;</A>
+<A NAME="lbAK">&nbsp;</A>
 <H2>ENVIRONMENT</H2>
 
 <P>
 
-These environment variables affect the execution of <B>bap</B>:
+These environment variables affect the execution of <B>disassemble</B>:
 <DL COMPACT>
 <DT><B>BAP_LOG_DIR</B><DD>
 A folder for log files&#46;
 <DT><B>BAP_PLUGIN_PATH</B><DD>
 Adds folder to the list of plugins search paths
 </DL>
-<A NAME="lbAJ">&nbsp;</A>
-<H2>BUGS</H2>
+<A NAME="lbAL">&nbsp;</A>
+<H2>EXAMPLES</H2>
 
 <P>
 
-Report bugs to <A HREF="https://github">https://github</A>&#46;com/BinaryAnalysisPlatform/bap/issues
-<A NAME="lbAK">&nbsp;</A>
-<H2>SEE ALSO</H2>
+<PRE>
 
-<P>
+  bap dis /bin/echo &#45;&#45;passes=run,check &#45;dbir:out&#46;bir &#45;dasm:out&#46;asm
 
-<B><A HREF="/cgi-bin/man/man2html?1+bapbundle">bapbundle</A></B>(1), <B><A HREF="/cgi-bin/man/man2html?1+bapbuild">bapbuild</A></B>(1), <B><A HREF="/cgi-bin/man/man2html?3+bap">bap</A></B>(3)
+</PRE>
+
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
@@ -580,18 +756,19 @@ Report bugs to <A HREF="https://github">https://github</A>&#46;com/BinaryAnalysi
 <DT><A HREF="#lbAB">NAME</A><DD>
 <DT><A HREF="#lbAC">SYNOPSIS</A><DD>
 <DT><A HREF="#lbAD">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAE">PLUGINS</A><DD>
-<DT><A HREF="#lbAF">COMMANDS</A><DD>
-<DT><A HREF="#lbAG">OPTIONS</A><DD>
-<DT><A HREF="#lbAH">COMMON OPTIONS</A><DD>
-<DT><A HREF="#lbAI">ENVIRONMENT</A><DD>
-<DT><A HREF="#lbAJ">BUGS</A><DD>
-<DT><A HREF="#lbAK">SEE ALSO</A><DD>
+<DT><A HREF="#lbAE">PASSES</A><DD>
+<DT><A HREF="#lbAF">OUTPUT</A><DD>
+<DT><A HREF="#lbAG">WRITING A NEW PASS</A><DD>
+<DT><A HREF="#lbAH">ARGUMENTS</A><DD>
+<DT><A HREF="#lbAI">OPTIONS</A><DD>
+<DT><A HREF="#lbAJ">COMMON OPTIONS</A><DD>
+<DT><A HREF="#lbAK">ENVIRONMENT</A><DD>
+<DT><A HREF="#lbAL">EXAMPLES</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 20:41:46 GMT, November 13, 2019
+Time: 18:35:35 GMT, March 06, 2020
 </BODY>
 </HTML>

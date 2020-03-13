@@ -1,0 +1,271 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of BAPBUNDLE</TITLE>
+</HEAD><BODY>
+<H1>BAPBUNDLE</H1>
+Section: Bap Manual (1)<BR>Updated: 2015-01-26<BR><A HREF="#index">Index</A>
+<A HREF="/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+bapbundle - manages BAP bundles.
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<PRE>
+<B>bapbundle</B> -help
+<B>bapbundle</B> <I>COMMAND</I> -help
+<B>bapbundle</B> <B>install</B> [<I>OPTION</I>]...  <I>BUNDLE</I>
+<B>bapbundle</B> <B>remove</B>  [<I>OPTION</I>]...  <I>BUNDLE</I>
+<B>bapbundle</B> <B>show</B>    [<I>OPTION</I>]...  <I>BUNDLE</I>
+<B>bapbundle</B> <B>update</B>  [<I>OPTION</I>]...  <I>BUNDLE</I>
+<B>bapbundle</B> <B>pack</B>    [<I>OPTION</I>]...  <I>BUNDLE</I>
+</PRE>
+
+<P>
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+<P>
+A bundle is an opaque package containing anything that is requested for a
+program to work in a standalone mode. The <B>bapbundle</B> tool allows a user
+to create bundles, update meta information and pack resources. It also can
+install and remove bundles into the designated bundle repository, where they
+can be found by a main BAP program without extra options.
+<P>
+Usually the <B>bapbundle</B> command is used implicitly by the
+<B>bapbuild</B>, so there is no need to use the <B>pack</B> command
+directly. A user can, however, add some resource files or update meta
+information, using the <B>update</B> command.
+<P>
+The <B>install</B> command copies a <I>BUNDLE</I> to a known
+destination, that is seearched by a main program, when plugins are
+loaded automatically. The default destination is specified at program
+configuration time and usually works out of box. The destination can
+be overridden in the runtime, however.
+<P>
+The <B>remove</B> command removes a previously installed <I>BUNDLE</I>
+from a given destination.
+<P>
+<A NAME="lbAE">&nbsp;</A>
+<H2>ARGUMENTS</H2>
+
+<DL COMPACT>
+<DT><I>BUNDLE</I><DD>
+Name of a bundle.
+<P>
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>COMMON OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-help</B>, <B>--help</B><DD>
+Prints a brief summary of command line options.
+<P>
+<P>
+</DL>
+<A NAME="lbAG">&nbsp;</A>
+<H2>COMMON META OPTIONS</H2>
+
+<P>
+
+<P>
+The following options sets or updates meta information stored in the
+<I>BUNDLE</I>.
+<P>
+<DL COMPACT>
+<DT><B>-author</B> <I>NAME</I><DD>
+<P>
+Set author's name. If unspecified, then a value of <B>USER</B>
+environment variable is used. Ideally, the name should be of the
+form <B>Full Name [Short name] &lt;email&gt;</B>
+<P>
+<DT><B>-name</B> <I>NAME</I><DD>
+<P>
+Sets the name of the <I>BUNDLE</I> to the <I>NAME</I>. If not specified,
+then a basename without an extension of the <I>NAME</I> will be used.
+<P>
+<DT><B>-desc</B> <I>TEXT</I><DD>
+Sets the <I>TEXT</I> as a package description. The text should consist
+of a one line short description, followed by an optional detailed
+multiline description. The detailed description should be separated
+from the short one by a new line symbol.
+<P>
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>INSTALL AND REMOVE OPTIONS</H2>
+
+<P>
+<DL COMPACT>
+<DT><B>-destdir</B> <I>DIR</I><DD>
+Specifies a directory for <B>install</B> and <B>remove</B> commands.
+If unspecified, then a default directory specified at configuration
+time will be used.
+<P>
+</DL>
+<A NAME="lbAI">&nbsp;</A>
+<H2>SHOW OPTIONS</H2>
+
+<P>
+<DL COMPACT>
+<DT><B>-mFR<DD>
+<P>
+Shows meta information.
+<P>
+<DT>-rFR<DD>
+<P>
+Prints a list of resource files stored in the </B><I>BUNDLE</I>.
+<P>
+<DT><B>-lFR<DD>
+<P>
+Prints a list of libraries and other loadable code, stored in the
+</B><I>BUNDLE</I>.
+<P>
+</DL>
+<A NAME="lbAJ">&nbsp;</A>
+<H2>UPDATE OPTIONS</H2>
+
+<P>
+
+Other then <B>COMMON META OPTIONS</B> the <B>update</B> command accepts
+the following options:
+<P>
+<DL COMPACT>
+<DT><B>-add-resources </B><I>RESOURCE-LIST</I><DD>
+<P>
+Adds resources specified by the <I>RESOURCE-LIST</I> to the
+<I>BUNDLE</I>.  The <I>RESOURCE-LIST</I> is a comma separated list of
+resources, where each resources is either a file path or a named
+filepath of a form <B>&lt;name&gt;=&lt;path&gt;</B>, where <B>&lt;name&gt;</B> defines
+how a resource will accessed in the bundle. If not specified, then
+the <B>&lt;name&gt;</B> is equal to <B>&lt;path&gt;</B>. The <I>RESOURCE-LIST</I>
+mustn't contain spaces, unless a filename contains it. In that case
+the resource list must be enclosed in parenthesis.
+<P>
+The <I>RESOURCE-LIST</I> grammar:
+</DL>
+<P>
+
+<PRE>
+<DL COMPACT><DT><DD>resources ::= resource [, resources]
+resource  ::= path | name=path
+</DL>
+</PRE>
+
+<P>
+<A NAME="lbAK">&nbsp;</A>
+<H2>PACK OPTIONS</H2>
+
+<P>
+
+Other then <B>COMMON META OPTIONS</B> the <B>update</B> command accepts
+the following options:
+<P>
+<P>
+<DL COMPACT>
+<DT><B>-main</B> <I>NAME</I><DD>
+<P>
+Set the entry point to <I>NAME</I>. The entry point is a module that is
+loaded by a bap main program.
+<P>
+<DT><B>-requires</B> <I>FEATURE-LIST</I><DD>
+<P>
+Define package requirements. The requirements are libraries used by
+the package. The <I>FEATURE-LIST</I> must be a comma separated list, of
+requirements. Each requirement is a library name, optionally followed
+by filename of the implementation. If implementation is provided, then
+it will be included in the <I>BUNDLE</I>. Othrewise, only the name will
+be stored, and the implementation will be searched at the time of
+loading using <B>ocaml-findlib</B>.
+<P>
+The <I>FEATURE-LIST</I> grammar:
+</DL>
+<P>
+
+<DL COMPACT><DT><DD>
+<PRE>
+feature-list ::= feature [, feature]
+feature      ::= name | name=path
+</PRE>
+
+</DL>
+
+<P>
+<DL COMPACT>
+<DT><B>-provides</B> <I>FEATURE-LIST</I><DD>
+<P>
+Specify a list of features provided by the package. The
+<I>FEATURE-LIST</I> should a comma separated list of names, where each
+name is an interface name provided by a plugin.
+<P>
+<DT><B>-resources</B> ESOURCES<DD>
+<P>
+Specify a list of resources used by the package. See
+<B>-add-resource</B> option for more information.
+<P>
+</DL>
+<A NAME="lbAL">&nbsp;</A>
+<H2>EXIT STATUS</H2>
+
+<P>
+
+<P>
+Program returns:
+<BR>&nbsp;&nbsp;&nbsp;-&nbsp;0&nbsp;if&nbsp;everything&nbsp;is&nbsp;ok.
+<BR>&nbsp;&nbsp;&nbsp;-&nbsp;1&nbsp;for&nbsp;malformed&nbsp;command&nbsp;line
+<BR>&nbsp;&nbsp;&nbsp;-&nbsp;2&nbsp;for&nbsp;all&nbsp;other&nbsp;errors.
+<P>
+<A NAME="lbAM">&nbsp;</A>
+<H2>ENVIRONMENT</H2>
+
+<P>
+
+<P>
+Program reads <B>USER</B> variable to get a user name.
+<P>
+<A NAME="lbAN">&nbsp;</A>
+<H2>BUGS</H2>
+
+<P>
+
+Report bugs to <A HREF="https://github.com/BinaryAnalysisPlatform/bap/issues">https://github.com/BinaryAnalysisPlatform/bap/issues</A>
+<P>
+<A NAME="lbAO">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="/cgi-bin/man/man2html?1+bap">bap</A></B>(1),<B><A HREF="/cgi-bin/man/man2html?1+bapbuild">bapbuild</A></B>(1),<B><A HREF="/cgi-bin/man/man2html?1+ocamlfind">ocamlfind</A></B>(1)
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">ARGUMENTS</A><DD>
+<DT><A HREF="#lbAF">COMMON OPTIONS</A><DD>
+<DT><A HREF="#lbAG">COMMON META OPTIONS</A><DD>
+<DT><A HREF="#lbAH">INSTALL AND REMOVE OPTIONS</A><DD>
+<DT><A HREF="#lbAI">SHOW OPTIONS</A><DD>
+<DT><A HREF="#lbAJ">UPDATE OPTIONS</A><DD>
+<DT><A HREF="#lbAK">PACK OPTIONS</A><DD>
+<DT><A HREF="#lbAL">EXIT STATUS</A><DD>
+<DT><A HREF="#lbAM">ENVIRONMENT</A><DD>
+<DT><A HREF="#lbAN">BUGS</A><DD>
+<DT><A HREF="#lbAO">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 18:35:35 GMT, March 06, 2020
+</BODY>
+</HTML>
