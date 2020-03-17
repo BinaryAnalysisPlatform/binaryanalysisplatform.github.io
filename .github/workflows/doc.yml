@@ -1,0 +1,17 @@
+name: Documentation
+
+on:
+  schedule:
+    - cron: '0 0 */1 * *'
+
+jobs:
+  update-docs:
+     name: update-docs
+     runs-on: ubuntu-latest
+     steps:
+       - name: checkout
+         uses: actions/checkout@v2
+       - name: build
+         run: .github/docs/main.sh
+       - name: push
+         run: .github/docs/push.sh  ${{ secrets.GITHUB_TOKEN }}
