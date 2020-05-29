@@ -28,6 +28,7 @@ Employing the tagless final embedding together with our new Knowledge Base we we
 - [The Main Page][1]
 - [Documentation][5]
 - [The tutorial][6]
+- [Primus Lisp Documentation][10]
 - [Our Chat][7]
 - [Our Blog][8]
 - [Discuss the news][9]
@@ -42,3 +43,4 @@ Employing the tagless final embedding together with our new Knowledge Base we we
 [7]: https://gitter.im/BinaryAnalysisPlatform/bap
 [8]: https://binaryanalysisplatform.github.io/
 [9]: https://discuss.ocaml.org/t/ann-bap-2-0-release/4719
+[10]: http://binaryanalysisplatform.github.io/bap/api/lisp/index.html
