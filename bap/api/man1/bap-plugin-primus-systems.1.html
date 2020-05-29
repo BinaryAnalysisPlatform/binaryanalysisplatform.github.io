@@ -1,0 +1,69 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-systems</TITLE>
+</HEAD><BODY>
+<H1>primus-systems</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Loads Primus systems and registers them in the system repository&#46; The systems are searched in the following directories:
+<DL COMPACT>
+<DT>-<DD>
+the current working directory;
+<DT>-<DD>
+the directories specified by <B>--primus-system-add-path</B>;
+<DT>-<DD>
+the directory specified at the configuration time, usually ($share/primus)
+</DL>
+<P>
+
+The directories are searched and all files that have the [&#46;asd] extension are loaded&#46; Each file may define more than one system and reference other systems (via the [depends-on]) no matter whether they are loaded before or after (systems and components are resolved when the system is run)&#46; Each system should have a distinctive name and if there are systems with repetetive names an exception is raised&#46;
+<P>
+
+The system description file has the following grammar:
+<P>
+
+<PRE>
+
+   systems ::= &lt;system-definition&gt; &#46;&#46;&#46;
+   system-definition ::= (defsystem &lt;ident&gt; &lt;option&gt; &#46;&#46;&#46;)
+   option ::=
+     | :description &lt;string&gt;
+     | :components (&lt;ident&gt; &#46;&#46;&#46;)
+     | :depends-on (&lt;ident&gt; &#46;&#46;&#46;)
+   ident ::= &lt;string&gt; | &lt;string&gt;:&lt;string&gt;
+
+The <B>:components</B> option is the list of components that comprise the
+system&#46; And the <B> :depends-on</B> option specifies the list of
+systems on which the defined system depends&#46; The components of those
+systems are essentially copied to the defined system&#46;
+
+This plugin also provides introspection commands <B>primus-systems</B>,
+<B>primus-components</B>, and <B>primus-observations</B> that provides the
+lists of currently known systems, components, and observations&#46; See
+corresponding command help pages for more information&#46;
+
+</PRE>
+
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:44:07 GMT, May 28, 2020
+</BODY>
+</HTML>

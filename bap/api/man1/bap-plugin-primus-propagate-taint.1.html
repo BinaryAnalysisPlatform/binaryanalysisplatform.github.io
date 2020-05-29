@@ -1,0 +1,37 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-propagate-taint</TITLE>
+</HEAD><BODY>
+<H1>primus-propagate-taint</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+This plugin implements a compatibility layer between the new Primus Taint Analysis Framework and the old taint propagation framework (the <B>propagate-taint</B> plugin)&#46; The new framework uses the pubslisher-subscriber pattern, provides sanitization operations, and tracks the taints liveness, that enables more conventional and online taint analysis&#46; However it represents taints as abstract objects associated with computations (values), while the old taint propagation framework uses a pipeline approach, with taints represented as attributes attached to program terms&#46; Since the new representation of taints is much more precise and there is no bijection between terms and values, this layer will loose information due to this impendance mismatch&#46; The trade-offs of the translation and described below&#46; New analysis, if possible, shall rely on the new framework&#46;
+<P>
+
+The translation is achieved by mapping the <B>tainted-ptr</B> and <B>tainted-reg</B> attributes to corresponding taint introduction operations of the Primus Taint Analysis Framework, and by reflecting the taint state of the analysis into the <B>tainted-regs</B> and <B>tainted-ptrs</B> attributes&#46; Both steps are optional, and could be enabled and disabled individually&#46;
+<P>
+
+Since an attribute is attached to the whole term not to an individual expression or value we need some rule that prescribes how terms maps to values&#46; If a term is marked as a term that introduces a taint, then we assume that a value, computed in this term, references the tainted object either directly (in case of <B>tainted-reg</B>) or indirectly (in case of <B>tainted-ptr</B>)&#46; We always taint a value contained in the left-hand side of a definition&#46; In addition, we also try to taint values on the right hand side&#46; If there is a load or store operation, then we taint address as a pointer to the object that will track, if it was marked with the <B>tainted-reg</B> attribute&#46; If it was marked with the <B>tainted-ptr</B> attribute then we dereference this pointer and taint the dereferenced address&#46; If the right hand side is an arbitrary expression, then we assume that all variables that are used in this expression contain values that are referencing directly or indirectly the tainted object&#46;
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:44:01 GMT, May 28, 2020
+</BODY>
+</HTML>

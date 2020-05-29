@@ -1,0 +1,72 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of taint</TITLE>
+</HEAD><BODY>
+<H1>taint</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Injects taints into a program based on a specification&#46; It is possible to taint a value stored in a register, or a value pointed by a value stored in a register&#46; The former is called a &quot;register taint&quot;, the latter is called a &quot;pointer taint&quot;&#46; They&#39;re controlled, respectively, with <B>--taint-reg=</B><I>STRAIN</I> and <B>--taint-ptr=</B><I>STRAIN</I> command line arguments&#46; The <I>STRAIN</I> value describes what definitions should be tainted&#46; It can be either an address, a variable, a tid or a list of strains&#46; If an address is passed then a definition is tainted if it corresponds to an instruction with the specified address&#46; If a variable is passed, the the definition is tainted if it defines a variable with the given name&#46; Finally, if tid is specified, then a definition must have the specified tid to be tainted&#46; If several strains are specified, then all conditions must be satisfied&#46; Consider the following examples,
+<P>
+
+<PRE>
+
+
+     --taint-reg=0xBAD
+     --taint-ptr=strcpy_dst
+     --taint-reg=&quot;(0xBAD malloc_return)&quot;
+
+
+</PRE>
+
+<P>
+
+The first example will taint a value stored in a register defined by an instruction at address <I>0xBAD</I>&#46; The second example will taint a value that is pointed by a variable <I>strcpy_dst</I> that is defined after each call to a <I>strcpy</I>&#46; (Note: this functionality relies on API plugin, that is responsible for embedding this definitions at the call sites)&#46; The third example will taint values returned by a <I>malloc</I> only at the specified call site address&#46; You can specify these options several times&#46;
+<P>
+
+The full grammar specification of strain specification language follows:
+<P>
+
+<PRE>
+
+
+    strain ::= &lt;tid&gt;
+             | &lt;var&gt;
+             | &lt;addr&gt;
+             | (&lt;strain1&gt; &lt;strain2&gt; &#46;&#46; &lt;strainK&gt;)
+    tid    ::= %&lt;hex-digits&gt;
+    var    ::= &lt;alpha&gt; &#46;&#46; &lt;alpha-num&gt;
+    addr   ::= 0x&lt;hex-digits&gt;
+
+
+</PRE>
+
+<A NAME="lbAC">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-plugin-propagate-taint.1.html">bap-plugin-propagate-taint</A></B>(1), <B><A HREF="../man1/bap-plugin-map-terms.1.html">bap-plugin-map-terms</A></B>(1)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAC">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:44:26 GMT, May 28, 2020
+</BODY>
+</HTML>

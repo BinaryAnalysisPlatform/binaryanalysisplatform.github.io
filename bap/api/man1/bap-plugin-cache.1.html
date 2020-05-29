@@ -1,0 +1,47 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of cache</TITLE>
+</HEAD><BODY>
+<H1>cache</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Provide caching service for all data types&#46; The caching entry point is defined in the [Data] module of the [Regular] library&#46;
+<P>
+
+The cache plugin implements lock-free store/loading operations with <A HREF="../man1/O.1.html">O</A>(1) complexity: the same cache folder can be safely shared between different processes without any performance impact and these operations don&#39;t depend on the cache size&#46;
+<P>
+
+Also, the plugin maintains the cache size below the certain level, unless the garbage collector is manually disabled via <B>--disable-gc</B> option&#46; The maximum occupied size of the cache is controlled by the <B>size</B> and <B>overhead</B> parameters and can be expressed as <B> total-size = size + overhead * size</B>, where <B>size</B> is a cache capacity in Mb and <B>overhead</B> is the percentage of allowed excess&#46; Once the cache size reaches this maximum, <B> 2 * capacity * overhead</B> of entries will be removed by GC on the next program run&#46;
+<P>
+
+GC is also lock-free and removes cache entries randomly with prioritizing larger ones&#46;
+<A NAME="lbAC">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man3/regular.3.html">regular</A></B>(3)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAC">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:18 GMT, May 28, 2020
+</BODY>
+</HTML>

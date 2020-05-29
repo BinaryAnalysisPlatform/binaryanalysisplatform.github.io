@@ -1,0 +1,69 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of optimization</TITLE>
+</HEAD><BODY>
+<H1>optimization</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<PRE>
+
+
+     <B>--</B>optimization
+
+
+</PRE>
+
+<A NAME="lbAC">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+An autorun pass that conservatively removes dead code&#46; The removed dead code is usually produced by a lifter, though it might be possible that a binary indeed contains a dead code&#46; The algorithm doesn&#39;t remove variables that are stored in memory, only registers are considered
+<A NAME="lbAD">&nbsp;</A>
+<H2>ALGORITHM</H2>
+
+<P>
+
+Applies constant folding, dead code elimination, and constant propagation in a loop until the fixed point is reached&#46; The algorithm is interprocedural, however it is not call graph sensitive, as instead of considering the call graph we use an over approximation that any function can call any other, thus any variables that occurs free in any function is considered to be non-constant&#46; The algorithm is, however, flow sensitive on the control flow graph level and uses the SSA form to encode data facts&#46; Since, it is not always safe to rely on the control flow integrity and CFG precision, by default we optimize only flags and virtual variables under a presumption that those two kind of data points rarely used non-locally&#46;
+<P>
+
+See the <B>--optimization-level</B> parameter for the list of available optimization levels and their consequences&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>DEPENDENCIES</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-plugin-api.1.html">bap-plugin-api</A></B>(1)
+<A NAME="lbAF">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-plugin-api.1.html">bap-plugin-api</A></B>(1), <B><A HREF="../man1/bap-plugin-ssa.1.html">bap-plugin-ssa</A></B>(1)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAC">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAD">ALGORITHM</A><DD>
+<DT><A HREF="#lbAE">DEPENDENCIES</A><DD>
+<DT><A HREF="#lbAF">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:44 GMT, May 28, 2020
+</BODY>
+</HTML>

@@ -1,0 +1,398 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of bap-byteweight</TITLE>
+</HEAD><BODY>
+<H1>bap-byteweight</H1>
+Section: Bap-byteweight Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+<P>
+
+bap-byteweight
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>bap-byteweight</B> <I>COMMAND</I> &#46;&#46;&#46;
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+A utitilty to manipulate Byteweight function start signatures&#46; This utility is not needed for Byteweight to function properly, for that you need the byteweight plugin&#46; The utility is used to update signatures, using new training corpora, fetch the existing signatures from the Internet, install it into proper locations, and test the results&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>TRAINING</H2>
+
+<P>
+
+Signatures are stored in an archive, which is managed by the bap-byteweight library&#46; The archive consists of several independent entries, for each combination of an architecture, compiler, and matching mode, having the following name <B>&lt;arch&gt;/&lt;comp&gt;/&lt;mode&gt;</B>&#46; The <B>default</B> name is used as a catch all compiler&#46; The only mode currently supported is the <B>byte</B> mode (i&#46;e&#46;, matching on bytes)&#46;
+<P>
+
+Each entry is a prefix tree, in which each prefix is a substring that was ever seen in the training corpora as a function start&#46; Each prefix is associated with a pair of values, <B>a</B> - the number of occurences of the prefix as a function start, and <B>b</B> - the number of occurences of the prefix as not a function start&#46;
+<P>
+
+During the training, if the operaton mode is set to <B>update</B> (the default), then the existing prefixed will be updated&#46; The oracle, that tells which prefix starts a function or not, is derived from the binary itself&#46; Therefore the training corpora should have non-empty symbol tables (and when applicable DWARF information)&#46; The <B>symbols</B> command will output the set of addresses that will be used for training&#46;
+<P>
+
+When the operation mode is set to <B>rewrite</B> then each round of training (i&#46;e&#46;, each input file) will create a new entry for the given architecture, compiler, matching mode triple&#46; So, probably this is not what you&#39;re looking for&#46;
+<A NAME="lbAF">&nbsp;</A>
+<H2>THE IDENTIFICATION PROCEDURE</H2>
+
+<P>
+
+The input memory is scanned, and for each byte that is not yet classified as a function start the longest sequence of bytes is searched in the signatures&#46; If one is found, then the <B>threshold</B> parameter defines the decision procedure&#46; If it is a value below <B>1&#46;0</B> then the sequence of bytes will be classified as a function start if the the associated probability is higher than the specified threshold&#46; If the threshold is greater or equal than 1&#46;0, then the sequence of bytes will be classified as a function start if the Bayes factor of the two competing hypothesis is greater than the specified threshold&#46; The Bayes factor is the ratio between the posterior probabilities of the competing hypothesis&#46; Therefore, it includes the prior odds of finding a function start, which makes the hypothesis testing more robust&#46; The Bayes factor value is having the following interpretations:
+<P>
+
+<PRE>
+
+    Bayes Factor          Strength
+
+    1 to 3&#46;2              Weak
+    3&#46;2 to 10             Substantial
+    10 to 100             Strong
+    100 and greater       Decisive;
+
+</PRE>
+
+<A NAME="lbAG">&nbsp;</A>
+<H2>COMMANDS</H2>
+
+<DL COMPACT>
+<DT><B>dump</B><DD>
+dumps the function starts in machine readable format
+<DT><B>fetch</B><DD>
+downloads signatures from to the current folder
+<DT><B>find</B><DD>
+outputs the function starts detected with Byteweight
+<DT><B>install</B><DD>
+copies signatures to the predefined location
+<DT><B>symbols</B><DD>
+outputs the function starts provided by the binary (ground truth)
+<DT><B>train</B><DD>
+trains on the specified set of files
+<DT><B>update</B><DD>
+downloads and installs signatures
+</DL>
+<A NAME="lbAH">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--help</B>[=<I>FMT</I>] (default=auto)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>-L</B> <I>VAL</I>, <B>--plugin-path</B>=<I>VAL</I>, <B>--load-path</B>=<I>VAL</I><DD>
+Adds folder to the list of plugins search paths
+<DT><B>--logdir</B>=<I>VAL</I>, <B>--log-dir</B>=<I>VAL</I> (absent <B>BAP_LOG_DIR</B> env)<DD>
+A folder for log files&#46;
+<DT><B>--recipe</B>=<I>VAL</I><DD>
+Load the specified recipe
+<DT><B>--version</B><DD>
+Show version information&#46;
+</DL>
+<A NAME="lbAI">&nbsp;</A>
+<H2>COMMON OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>--abi-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>abi</B> plugin
+<DT><B>--api-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>api</B> plugin
+<DT><B>--arm-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>arm</B> plugin
+<DT><B>--beagle-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>beagle</B> plugin
+<DT><B>--bil-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>bil</B> plugin
+<DT><B>--byteweight-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>byteweight</B> plugin
+<DT><B>--cache-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>cache</B> plugin
+<DT><B>--callsites-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>callsites</B> plugin
+<DT><B>--constant-tracker-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>constant-tracker</B> plugin
+<DT><B>--cxxfilt-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>cxxfilt</B> plugin
+<DT><B>--demangle-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>demangle</B> plugin
+<DT><B>--disassemble-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>disassemble</B> plugin
+<DT><B>--dump-symbols-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>dump-symbols</B> plugin
+<DT><B>--elf-loader-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>elf-loader</B> plugin
+<DT><B>--emit-ida-script-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>emit-ida-script</B> plugin
+<DT><B>--frontc-parser-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>frontc-parser</B> plugin
+<DT><B>--glibc-runtime-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>glibc-runtime</B> plugin
+<DT><B>--ida-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>ida</B> plugin
+<DT><B>--llvm-base</B>=<I>VAL</I><DD>
+Replace image base address&#46; If not set, a reasonable default corresponded to a file type will be used&#46; For example, for any executable file a default image base is equal to lowest image virtual address&#46; For relocatable files a default image base is equal to 0xC0000000&#46;
+<DT><B>--llvm-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>llvm</B> plugin
+<DT><B>--llvm-pdb-path</B>=<I>VAL</I><DD>
+A path to a directory with pdb file OR a path to a PDB file&#46; In the first case the file with the matching name of the target executable will be selected if present&#46; The default is the path to a current working directory&#46;
+<DT><B>--llvm-version</B><DD>
+Prints LLVM version and exits
+<DT><B>--llvm-x86-syntax</B>=<I>VAL</I> (absent=att)<DD>
+Choose style of code for x86 syntax between att and intel
+<DT><B>--map-terms-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>map-terms</B> plugin
+<DT><B>--mc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>mc</B> plugin
+<DT><B>--mips-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>mips</B> plugin
+<DT><B>--no-abi</B><DD>
+Disable the abi plugin
+<DT><B>--no-api</B><DD>
+Disable the api plugin
+<DT><B>--no-arm</B><DD>
+Disable the arm plugin
+<DT><B>--no-beagle</B><DD>
+Disable the beagle plugin
+<DT><B>--no-bil</B><DD>
+Disable the bil plugin
+<DT><B>--no-byteweight</B><DD>
+Disable the byteweight plugin
+<DT><B>--no-cache</B><DD>
+Disable the cache plugin
+<DT><B>--no-callsites</B><DD>
+Disable the callsites plugin
+<DT><B>--no-constant-tracker</B><DD>
+Disable the constant-tracker plugin
+<DT><B>--no-cxxfilt</B><DD>
+Disable the cxxfilt plugin
+<DT><B>--no-demangle</B><DD>
+Disable the demangle plugin
+<DT><B>--no-disassemble</B><DD>
+Disable the disassemble plugin
+<DT><B>--no-dump-symbols</B><DD>
+Disable the dump-symbols plugin
+<DT><B>--no-elf-loader</B><DD>
+Disable the elf-loader plugin
+<DT><B>--no-emit-ida-script</B><DD>
+Disable the emit-ida-script plugin
+<DT><B>--no-frontc-parser</B><DD>
+Disable the frontc-parser plugin
+<DT><B>--no-glibc-runtime</B><DD>
+Disable the glibc-runtime plugin
+<DT><B>--no-ida</B><DD>
+Disable the ida plugin
+<DT><B>--no-llvm</B><DD>
+Disable the llvm plugin
+<DT><B>--no-map-terms</B><DD>
+Disable the map-terms plugin
+<DT><B>--no-mc</B><DD>
+Disable the mc plugin
+<DT><B>--no-mips</B><DD>
+Disable the mips plugin
+<DT><B>--no-objdump</B><DD>
+Disable the objdump plugin
+<DT><B>--no-optimization</B><DD>
+Disable the optimization plugin
+<DT><B>--no-phoenix</B><DD>
+Disable the phoenix plugin
+<DT><B>--no-piqi-printers</B><DD>
+Disable the piqi-printers plugin
+<DT><B>--no-powerpc</B><DD>
+Disable the powerpc plugin
+<DT><B>--no-primus-dictionary</B><DD>
+Disable the primus-dictionary plugin
+<DT><B>--no-primus-exploring</B><DD>
+Disable the primus-exploring plugin
+<DT><B>--no-primus-greedy</B><DD>
+Disable the primus-greedy plugin
+<DT><B>--no-primus-limit</B><DD>
+Disable the primus-limit plugin
+<DT><B>--no-primus-lisp</B><DD>
+Disable the primus-lisp plugin
+<DT><B>--no-primus-loader</B><DD>
+Disable the primus-loader plugin
+<DT><B>--no-primus-mark-visited</B><DD>
+Disable the primus-mark-visited plugin
+<DT><B>--no-primus-powerpc</B><DD>
+Disable the primus-powerpc plugin
+<DT><B>--no-primus-print</B><DD>
+Disable the primus-print plugin
+<DT><B>--no-primus-promiscuous</B><DD>
+Disable the primus-promiscuous plugin
+<DT><B>--no-primus-propagate-taint</B><DD>
+Disable the primus-propagate-taint plugin
+<DT><B>--no-primus-random</B><DD>
+Disable the primus-random plugin
+<DT><B>--no-primus-region</B><DD>
+Disable the primus-region plugin
+<DT><B>--no-primus-round-robin</B><DD>
+Disable the primus-round-robin plugin
+<DT><B>--no-primus-symbolic-executor</B><DD>
+Disable the primus-symbolic-executor plugin
+<DT><B>--no-primus-systems</B><DD>
+Disable the primus-systems plugin
+<DT><B>--no-primus-taint</B><DD>
+Disable the primus-taint plugin
+<DT><B>--no-primus-test</B><DD>
+Disable the primus-test plugin
+<DT><B>--no-primus-wandering</B><DD>
+Disable the primus-wandering plugin
+<DT><B>--no-primus-x86</B><DD>
+Disable the primus-x86 plugin
+<DT><B>--no-print</B><DD>
+Disable the print plugin
+<DT><B>--no-propagate-taint</B><DD>
+Disable the propagate-taint plugin
+<DT><B>--no-raw</B><DD>
+Disable the raw plugin
+<DT><B>--no-read-symbols</B><DD>
+Disable the read-symbols plugin
+<DT><B>--no-recipe-command</B><DD>
+Disable the recipe-command plugin
+<DT><B>--no-relocatable</B><DD>
+Disable the relocatable plugin
+<DT><B>--no-report</B><DD>
+Disable the report plugin
+<DT><B>--no-run</B><DD>
+Disable the run plugin
+<DT><B>--no-ssa</B><DD>
+Disable the ssa plugin
+<DT><B>--no-strings</B><DD>
+Disable the strings plugin
+<DT><B>--no-stub-resolver</B><DD>
+Disable the stub-resolver plugin
+<DT><B>--no-taint</B><DD>
+Disable the taint plugin
+<DT><B>--no-trace</B><DD>
+Disable the trace plugin
+<DT><B>--no-trivial-condition-form</B><DD>
+Disable the trivial-condition-form plugin
+<DT><B>--no-warn-unused</B><DD>
+Disable the warn-unused plugin
+<DT><B>--no-x86</B><DD>
+Disable the x86 plugin
+<DT><B>--objdump-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>objdump</B> plugin
+<DT><B>--optimization-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>optimization</B> plugin
+<DT><B>--phoenix-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>phoenix</B> plugin
+<DT><B>--piqi-printers-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>piqi-printers</B> plugin
+<DT><B>--powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>powerpc</B> plugin
+<DT><B>--primus-dictionary-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-dictionary</B> plugin
+<DT><B>--primus-exploring-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-exploring</B> plugin
+<DT><B>--primus-greedy-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-greedy</B> plugin
+<DT><B>--primus-limit-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-limit</B> plugin
+<DT><B>--primus-lisp-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-lisp</B> plugin
+<DT><B>--primus-loader-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-loader</B> plugin
+<DT><B>--primus-loader-stack-base</B>=<I>VAL</I> (absent=1073741824)<DD>
+default address of the stack base
+<DT><B>--primus-loader-stack-size</B>=<I>VAL</I> (absent=8388608)<DD>
+generic program loader for Primus
+<DT><B>--primus-mark-visited-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-mark-visited</B> plugin
+<DT><B>--primus-powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-powerpc</B> plugin
+<DT><B>--primus-print-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-print</B> plugin
+<DT><B>--primus-promiscuous-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-promiscuous</B> plugin
+<DT><B>--primus-propagate-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-propagate-taint</B> plugin
+<DT><B>--primus-random-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-random</B> plugin
+<DT><B>--primus-region-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-region</B> plugin
+<DT><B>--primus-round-robin-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-round-robin</B> plugin
+<DT><B>--primus-symbolic-executor-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-symbolic-executor</B> plugin
+<DT><B>--primus-systems-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-systems</B> plugin
+<DT><B>--primus-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-taint</B> plugin
+<DT><B>--primus-test-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-test</B> plugin
+<DT><B>--primus-wandering-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-wandering</B> plugin
+<DT><B>--primus-x86-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>primus-x86</B> plugin
+<DT><B>--print-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>print</B> plugin
+<DT><B>--propagate-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>propagate-taint</B> plugin
+<DT><B>--raw-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>raw</B> plugin
+<DT><B>--read-symbols-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>read-symbols</B> plugin
+<DT><B>--recipe-command-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>recipe-command</B> plugin
+<DT><B>--relocatable-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>relocatable</B> plugin
+<DT><B>--report-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>report</B> plugin
+<DT><B>--run-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>run</B> plugin
+<DT><B>--ssa-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>ssa</B> plugin
+<DT><B>--strings-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>strings</B> plugin
+<DT><B>--stub-resolver-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>stub-resolver</B> plugin
+<DT><B>--taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>taint</B> plugin
+<DT><B>--trace-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>trace</B> plugin
+<DT><B>--trivial-condition-form-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>trivial-condition-form</B> plugin
+<DT><B>--warn-unused-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>warn-unused</B> plugin
+<DT><B>--x86-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>x86</B> plugin
+</DL>
+<A NAME="lbAJ">&nbsp;</A>
+<H2>ENVIRONMENT</H2>
+
+<P>
+
+These environment variables affect the execution of <B>bap-byteweight</B>:
+<DL COMPACT>
+<DT><B>BAP_LOG_DIR</B><DD>
+A folder for log files&#46;
+</DL>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">TRAINING</A><DD>
+<DT><A HREF="#lbAF">THE IDENTIFICATION PROCEDURE</A><DD>
+<DT><A HREF="#lbAG">COMMANDS</A><DD>
+<DT><A HREF="#lbAH">OPTIONS</A><DD>
+<DT><A HREF="#lbAI">COMMON OPTIONS</A><DD>
+<DT><A HREF="#lbAJ">ENVIRONMENT</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:09 GMT, May 28, 2020
+</BODY>
+</HTML>

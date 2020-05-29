@@ -1,0 +1,186 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of map-terms</TITLE>
+</HEAD><BODY>
+<H1>map-terms</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>bap</B> [<B>--</B>map-terms<B>-with</B>=<I>SCHEME</I>] [<B>--</B>map-terms<B>-using</B>=<I>FILE</I>] <B>--</B>map-terms
+<A NAME="lbAC">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Transform terms using a domain specific pattern matching language&#46; The pass accepts a list of patterns via a command line argument <B>--</B>map-terms<B>-with</B> (that can be specified several times), or via file, that contains a list of patterns&#46; Each pattern is represented by a pair <B>(&lt;condition&gt; &lt;action&gt;</B>)&#46; The <B>&lt;action&gt;</B> specifies a transformation over a term, that is applied if a <B>&lt;condition&gt;</B> is satisfied&#46; Both <B>&lt;condition&gt;</B> and <B>&lt;action&gt;</B> can be a single <B>&lt;expression&gt;</B> or a list of expressions, delimited with parentheses&#46; If there is a list of conditions, then all must be satisfied&#46; If there is a list of actions, then all actions are applied in order&#46; Each expression is either a nullary function <B>(&lt;id&gt;</B>) or an unary function <B>(&lt;id&gt; &lt;arg&gt;</B>)&#46; Where <B>&lt;id&gt;</B> must be a valid predicate or mapper name&#46; There is a predefined set of standard functions, but it can be extended by adding new mappers or predicates to the BML language using <B> bap-bml</B> library&#46;
+<A NAME="lbAD">&nbsp;</A>
+<H2>STANDARD PREDICATES</H2>
+
+<P>
+
+<B>(true</B>) Is always satisfied&#46;
+<P>
+
+<B>(is-ATTR</B>) Is satisfied when a term has the given attribute, where <I>ATTR</I> must be one of one of <B>synthetic</B>, <B>live</B>, <B>dead</B> or <B>visited</B>&#46;
+<P>
+
+<B>(is-ATTR-sub</B>) Is satisfied when a term is a subroutine with the given attribute, where <I>ATTR</I> must be one of one of <B>const</B>, <B>pure</B>, <B>stub</B>, <B>extern</B>, <B>leaf</B>, <B>malloc</B>, <B>noreturn</B>, <B>return_twice</B> or <B>nothrow</B>&#46;
+<P>
+
+<B>(is-ATTR-arg</B>) Is satisfied when a term is an argument with the given attribute, where <I>ATTR</I> must be one of one of <B>alloc-size</B>, <B>restricted</B> or <B>nonnull</B>&#46;
+<P>
+
+<B>(has-mark</B>) Is satisfied when a term has an attribute <B>mark</B>&#46;
+<P>
+
+<B>(has-color COLOR</B>) Is satisfied when a term&#39;s attribute <B>color</B> has the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(has-foreground COLOR</B>) Is satisfied when a term&#39;s attribute <B>foreground</B> has the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(has-background COLOR</B>) Is satisfied when a term&#39;s attribute <B>background</B> has the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(term-addr VALUE</B>) Is satisfied when a term&#39;s attribute <B>addr</B> has the given value
+<P>
+
+<B>(term-tid VALUE</B>) Is satisfied when a term&#39;s <B>tid</B> has the given value
+<P>
+
+<B>(term-name VALUE</B>) Is satisfied when a term&#39;s <B>name</B> has the given value
+<P>
+
+<B>(term-parent name</B>) Is satisfied when a term is a parent for term with a given name
+<P>
+
+<B>(def-lhs VAR</B>) Is satisfied when a term defines <B>VAR</B>
+<P>
+
+<B>(def-uses VAR</B>) Is satisfied when a term uses <B>VAR</B>
+<P>
+
+<B>(taints</B>) Is satisfied if a term is taint source, i&#46;e&#46;, has <B>tainted-reg</B> or <B>tainted-ptr</B> attributes&#46;
+<P>
+
+<B>(taints-reg</B>) Is satisfied if a term is taint source, that taints a value stored in a register, i&#46;e&#46;, has a <B>tainted-reg</B> attribute&#46;
+<P>
+
+<B>(taints-ptr</B>) Is satisfied if a term is taint source, that taints a value pointed by a value stored in a register, i&#46;e&#46;, has a <B>tainted-ptr</B> attribute&#46;
+<P>
+
+<B>(has-taints</B>) Is satisfied if a term is tainted, i&#46;e&#46;, has <B>tainted-reg</B> or <B>tainted-ptr</B> attributes&#46;
+<P>
+
+<B>(has-tainted-reg</B>) Is satisfied if a term uses a tainted value stored in a register, i&#46;e&#46;, has a <B>tainted-regs</B> attribute&#46;
+<P>
+
+<B>(has-tainted-reg taint</B>) Is satisfied if a term uses a value tainted with <I>taint</I> and stored in a register, where <I>taint</I> must be a valid taint identifier, e&#46;g&#46;, <B>%12</B>&#46;
+<P>
+
+<B>(has-tainted-ptr</B>) Is satisfied if a term loads a value from a tainted address, i&#46;e&#46;, has a <B>tainted-regs</B> attribute&#46;
+<P>
+
+<B>(has-tainted-reg taint</B>) Is satisfied if a term loads a value from an address tainted by the give <I>taint</I>&#46; The <I>taint</I> must be a valid taint identifier, e&#46;g&#46;, <B>%42</B>&#46;
+<A NAME="lbAE">&nbsp;</A>
+<H2>STANDARD MAPPERS</H2>
+
+<P>
+
+<B>(set-ATTR</B>) Mark a term with the specified attribute, where <I>ATTR</I> must be one of one of <B>synthetic</B>, <B>live</B>, <B>dead</B> or <B>visited</B>&#46;
+<P>
+
+<B>(set-ATTR-sub</B>) Mark a term with the specified attribute, where <I>ATTR</I> must be one of one of <B>const</B>, <B>pure</B>, <B>stub</B>, <B>extern</B>, <B>leaf</B>, <B>malloc</B>, <B>noreturn</B>, <B>return_twice</B> or <B>nothrow</B>&#46;
+<P>
+
+<B>(set-ATTR-arg</B>) Mark a term with the specified attribute, where <I>ATTR</I> must be one of one of <B>alloc-size</B>, <B>restricted</B> or <B>nonnull</B>&#46;
+<P>
+
+<B>(set-mark</B>) Attch <B>mark</B> attribute to a term
+<P>
+
+<B>(color COLOR</B>) Set term&#39;s attribute <B>color</B> to the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(foreground COLOR</B>) Set term&#39;s attribute <B>foreground</B> to the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(background COLOR</B>) Set term&#39;s attribute <B>background</B> to the given value, where <I>COLOR</I> must be one of one of <B>black</B>, <B>red</B>, <B>green</B>, <B>yellow</B>, <B>blue</B>, <B>magenta</B>, <B>cyan</B>, <B>white</B> or <B>gray</B>
+<P>
+
+<B>(taint-reg TID</B>) Mark a term with the given <B>TID</B> as a taint source for register values&#46;
+<P>
+
+<B>(taint-ptr TID</B>) Mark a term with the given <B>TID</B> as a taint source for memory values&#46;
+<P>
+
+<B>(unset-ATTR</B>) Unmark a term from attribute <B>ATTR</B> e&#46;g&#46; <B>unset-visited</B>, <B>unset-foreground</B>
+<A NAME="lbAF">&nbsp;</A>
+<H2>LANGUAGE GRAMMAR</H2>
+
+<P>
+
+<PRE>
+
+
+    bml    ::= (&lt;exps&gt; &lt;exps&gt;)
+    exps   ::= &lt;exp&gt;  | (&lt;exp&gt;1 &#46;&#46; &lt;exp&gt;N)
+    exp    ::= (&lt;id&gt;) | (&lt;id&gt; &lt;arg&gt;)
+    arg    ::= &lt;id&gt; | ?quoted string?
+    id     ::= ?alphanumeric sequence?
+
+
+</PRE>
+
+<A NAME="lbAG">&nbsp;</A>
+<H2>EXAMPLES</H2>
+
+<P>
+
+<B>bap</B> exe --map-terms<B>-with</B>=&#39;((is-visited) (foreground blue))&#39;
+<P>
+
+<B>bap</B> exe --map-terms<B>-with</B>=&#39;((taints-ptr %12) (comment &quot;ha ha&quot;))&#39;
+<P>
+
+<B>bap</B> exe --map-terms<B>-with</B>=&#39;((term-name @strlen) (foreground blue))&#39;
+<P>
+
+<B>bap</B> exe --map-terms<B>-with</B>=&#39;((term-tid %0000042) (foreground blue))&#39;
+<P>
+
+<B>bap</B> exe --map-terms<B>-with</B>=&#39;((goto mem[0x42]) (foreground blue))&#39;
+<A NAME="lbAH">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-plugin-taint.1.html">bap-plugin-taint</A></B>(1), <B><A HREF="../man3/bap-bml.3.html">bap-bml</A></B>(3)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAC">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAD">STANDARD PREDICATES</A><DD>
+<DT><A HREF="#lbAE">STANDARD MAPPERS</A><DD>
+<DT><A HREF="#lbAF">LANGUAGE GRAMMAR</A><DD>
+<DT><A HREF="#lbAG">EXAMPLES</A><DD>
+<DT><A HREF="#lbAH">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:40 GMT, May 28, 2020
+</BODY>
+</HTML>

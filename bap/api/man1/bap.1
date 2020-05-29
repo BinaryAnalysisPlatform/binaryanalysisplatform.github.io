@@ -1,0 +1,1073 @@
+.\" Pipe this output to groff -Tutf8 | less
+.\"
+.mso an.tmac
+.TH "bap-disassemble" 1 "" "Bap 2.1.0+5a98402" "Bap Manual"
+.\" Disable hyphenation and ragged-right
+.nh
+.ad l
+.SH NAME
+.P
+bap\N'45'disassemble \N'45' disassembles and analyzes the input file
+.SH SYNOPSIS
+.P
+\fBbap disassemble\fR [\fIOPTION\fR]\N'46'\N'46'\N'46' [\fIFILE\fR]
+.SH DESCRIPTION
+.P
+Disassembles and analyzes the input file\N'46' This is the default command of the bap frontend which is assumed when no other command was specified\N'46'
+.P
+The input file is automatically parsed (unless the \fB\N'45'\N'45'raw\fR or \fB\N'45'\N'45'loader\fR options were specified), then the extracted code, if any, is disassembled, and the `Bap\N'46'Std\N'46'project` data structure is built, on which the specified passes are run\N'46'
+.SH PASSES
+.P
+The passes are specified by the \fB\N'45'\N'45'pass\fR option and are run in the order in which they specified\N'46' In addition, all passes that are flagged with `autorun\N'39' are run before the explicitly specified passes\N'46' Finally, if a pass specifies other passes as its dependencies, then they are run before it, in the order in which they were specified (modulo their own dependencies)\N'46'
+.P
+It\N'39's also possible to specify the passes using the old style syntax, e\N'46'g\N'46', `\fB\N'45'\N'45'<PASS>\fR`, which is discouraged and later could be disabled\N'46' Additionaly, it is not allowed to mix passes the old and the new style\N'46'
+.SH OUTPUT
+.P
+After all passes are run on the input, the resulting project data structure could be dumped using the \fB\N'45'\N'45'dump\fR (or \fB\N'45'd\fR for short) option, whichaccepts the desired format and, optionally, the output file name\N'46'
+.P
+It is possible to specify the \fB\N'45'\N'45'dump\fR option multiple times, in which case the project will be dumped in several formats\N'46'
+.SH WRITING A NEW PASS
+.P
+To implement your own analysis as a pass on the project data structure, you need to write a program in OCaml\N'46'
+.P
+Start in a fresh new folder and create the `my_analysis\N'46'ml` file with the following contents:
+.P
+.nf
+
+  open Core_kernel
+  open Bap_main
+  open Bap\N'46'Std
+
+  let main proj =
+    print_endline "My analysis is running!";
+    proj
+
+  let () = Extension\N'46'declare @@ fun _ctxt \N'45'>
+     Project\N'46'register_pass main
+  
+.fi
+.P
+Then run
+.P
+.nf
+
+  bapbuild my_analysis\N'46'plugin
+  bapbundle install my_analysis\N'46'plugin
+  
+.fi
+.P
+The analysis is ready and could be run using the `\fB\N'45'\N'45'passes\fR option, e\N'46'g\N'46',
+.P
+.nf
+
+  bap dis /bin/echo \N'45'\N'45'pass=my\N'45'analysis
+  
+.fi
+.P
+Please note, that the name of the pass is automatically derived from the plugin name\N'46' If the latter contains underscores then they are substituted with dashes\N'46' If a plugin registers a pass with a different name it will be still prefixed with the plugin name\N'46'
+.SH ARGUMENTS
+.TP 4
+\fIFILE\fR
+The input file
+.SH OPTIONS
+.TP 4
+\fB\N'45'\N'45'abi\fR
+Enables the pass abi in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'api\fR
+Enables the pass api in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'arm\fR
+Enables the pass arm in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'beagle\fR
+Enables the pass beagle in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'bil\fR
+Enables the pass bil in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'byteweight\fR
+Enables the pass byteweight in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'cache\fR
+Enables the pass cache in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'callsites\fR
+Enables the pass callsites in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'constant\N'45'tracker\fR
+Enables the pass constant\N'45'tracker in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'cxxfilt\fR
+Enables the pass cxxfilt in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'd\fR [\fI[<FMT>[:<FILE>]]\fR], \fB\N'45'\N'45'dump\fR[=\fI[<FMT>[:<FILE>]]\fR] (default=bir)
+Dumps the program to <FILE> (defaults to stdout) in the <FMT> format (defaults to bir)\N'46'
+.TP 4
+\fB\N'45'\N'45'demangle\fR
+Enables the pass demangle in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'disassemble\fR
+Enables the pass disassemble in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'dump\N'45'symbols\fR
+Enables the pass dump\N'45'symbols in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'elf\N'45'loader\fR
+Enables the pass elf\N'45'loader in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'emit\N'45'ida\N'45'script\fR
+Enables the pass emit\N'45'ida\N'45'script in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'frontc\N'45'parser\fR
+Enables the pass frontc\N'45'parser in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'glibc\N'45'runtime\fR
+Enables the pass glibc\N'45'runtime in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'help\fR[=\fIFMT\fR] (default=auto)
+Show this help in format \fIFMT\fR\N'46' The value \fIFMT\fR must be one of `auto\N'39', `pager\N'39', `groff\N'39' or `plain\N'39'\N'46' With `auto\N'39', the format is `pager` or `plain\N'39' whenever the \fBTERM\fR env var is `dumb\N'39' or undefined\N'46'
+.TP 4
+\fB\N'45'\N'45'ida\fR
+Enables the pass ida in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'L\fR \fIVAL\fR, \fB\N'45'\N'45'plugin\N'45'path\fR=\fIVAL\fR, \fB\N'45'\N'45'load\N'45'path\fR=\fIVAL\fR
+Adds folder to the list of plugins search paths
+.TP 4
+\fB\N'45'\N'45'llvm\fR
+Enables the pass llvm in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'loader\fR=\fIVAL\fR (absent=llvm)
+Use the specified loader\N'46' Use the loader `raw\N'39' to load unstructured files
+.TP 4
+\fB\N'45'\N'45'logdir\fR=\fIVAL\fR, \fB\N'45'\N'45'log\N'45'dir\fR=\fIVAL\fR (absent \fBBAP_LOG_DIR\fR env)
+A folder for log files\N'46'
+.TP 4
+\fB\N'45'\N'45'map\N'45'terms\fR
+Enables the pass map\N'45'terms in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'mc\fR
+Enables the pass mc in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'mips\fR
+Enables the pass mips in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'objdump\fR
+Enables the pass objdump in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'optimization\fR
+Enables the pass optimization in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'p\fR \fIPASSES\fR, \fB\N'45'\N'45'passes\fR=\fIPASSES\fR
+Run the selected passes (in the specified order)
+.TP 4
+\fB\N'45'\N'45'phoenix\fR
+Enables the pass phoenix in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'piqi\N'45'printers\fR
+Enables the pass piqi\N'45'printers in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'powerpc\fR
+Enables the pass powerpc in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'dictionary\fR
+Enables the pass primus\N'45'dictionary in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'exploring\fR
+Enables the pass primus\N'45'exploring in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'greedy\fR
+Enables the pass primus\N'45'greedy in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'limit\fR
+Enables the pass primus\N'45'limit in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\fR
+Enables the pass primus\N'45'lisp in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'loader\fR
+Enables the pass primus\N'45'loader in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'mark\N'45'visited\fR
+Enables the pass primus\N'45'mark\N'45'visited in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'powerpc\fR
+Enables the pass primus\N'45'powerpc in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\fR
+Enables the pass primus\N'45'print in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'promiscuous\fR
+Enables the pass primus\N'45'promiscuous in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\fR
+Enables the pass primus\N'45'propagate\N'45'taint in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\fR
+Enables the pass primus\N'45'random in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'region\fR
+Enables the pass primus\N'45'region in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'round\N'45'robin\fR
+Enables the pass primus\N'45'round\N'45'robin in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'symbolic\N'45'executor\fR
+Enables the pass primus\N'45'symbolic\N'45'executor in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'systems\fR
+Enables the pass primus\N'45'systems in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'taint\fR
+Enables the pass primus\N'45'taint in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'test\fR
+Enables the pass primus\N'45'test in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'wandering\fR
+Enables the pass primus\N'45'wandering in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'primus\N'45'x86\fR
+Enables the pass primus\N'45'x86 in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'print\fR
+Enables the pass print in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\fR
+Enables the pass propagate\N'45'taint in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'raw\fR
+Enables the pass raw in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'read\N'45'symbols\fR
+Enables the pass read\N'45'symbols in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'recipe\fR=\fIVAL\fR
+Load the specified recipe
+.TP 4
+\fB\N'45'\N'45'recipe\N'45'command\fR
+Enables the pass recipe\N'45'command in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'relocatable\fR
+Enables the pass relocatable in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'report\fR
+Enables the pass report in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'run\fR
+Enables the pass run in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'ssa\fR
+Enables the pass ssa in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'strings\fR
+Enables the pass strings in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'stub\N'45'resolver\fR
+Enables the pass stub\N'45'resolver in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'taint\fR
+Enables the pass taint in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'trace\fR
+Enables the pass trace in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'trivial\N'45'condition\N'45'form\fR
+Enables the pass trivial\N'45'condition\N'45'form in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'version\fR
+Show version information\N'46'
+.TP 4
+\fB\N'45'\N'45'warn\N'45'unused\fR
+Enables the pass warn\N'45'unused in the old style (DEPRECATED)
+.TP 4
+\fB\N'45'\N'45'x86\fR
+Enables the pass x86 in the old style (DEPRECATED)
+.SH COMMON OPTIONS
+.TP 4
+\fB\N'45'\N'45'abi\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBabi\fR plugin
+.TP 4
+\fB\N'45'\N'45'api\N'45'add\fR=\fIVAL\fR
+will be removed in 2\N'46'0\N'46'0 Add specified api module(s) and exit\N'46' Each module should be of the form <lang>:<file>, where <lang> is the language in which API is written, and <file> is a path to the specification\N'46' Multiple modules can be added by specifying this option several times\N'46'
+.TP 4
+\fB\N'45'\N'45'api\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBapi\fR plugin
+.TP 4
+\fB\N'45'\N'45'api\N'45'list\N'45'paths\fR
+List of all registered paths
+.TP 4
+\fB\N'45'\N'45'api\N'45'path\fR=\fIVAL\fR
+Add a list of a paths where to store/search apis
+.TP 4
+\fB\N'45'\N'45'api\N'45'remove\fR=\fIVAL\fR, \fB\N'45'\N'45'api\N'45'rem\fR=\fIVAL\fR
+will be removed in 2\N'46'0\N'46'0 Removed specified api module and exit\N'46' Each module should be of the form <lang>:<file>, where <lang> is the language in which API is written, and <file> is a filename of api module in the \fBapi\N'45'list\N'45'paths\fR option\N'46' Multiple modules can be added by specifying this option several times\N'46'
+.TP 4
+\fB\N'45'\N'45'api\N'45'show\fR
+Show all registered api
+.TP 4
+\fB\N'45'\N'45'arm\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBarm\fR plugin
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'alpha\fR=\fIVAL\fR (absent=0\N'46'05)
+desired probability of a false positive
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'alphabet\fR=\fIVAL\fR (absent=printable)
+Build words from the specified alphabet
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'beta\fR=\fIVAL\fR (absent=0\N'46'001)
+desired probability of a false negative
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'dictionary\fR=\fIVAL\fR
+Add dictionary file(s)\N'46'
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBbeagle\fR plugin
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'ignore\N'45'strings\fR
+don\N'39't put static strings into the initial dictionary
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'no\N'45'words\fR
+Don\N'39't try to build words from a dictionary
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'noise\fR=\fIVAL\fR (absent=0\N'46'05)
+expected amount of noise characters
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'print\N'45'chars\fR
+Print all observed letters\N'46'
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'print\N'45'strings\fR
+Print static strings
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'print\N'45'words\fR
+Print all buildable words\N'46'
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'text\N'45'probability\fR=\fIVAL\fR (absent=0\N'46'1)
+a prior probability of the search data
+.TP 4
+\fB\N'45'\N'45'beagle\N'45'words\fR=\fIVAL\fR
+Add specified words to the dictionary\N'46'
+.TP 4
+\fB\N'45'\N'45'bil\N'45'enable\N'45'fp\N'45'emulation\fR
+Enable the floating point emulation mode\N'46' When specified, enables reification of the floating point operations into Bil expressions that denote those operations in terms of bitvector arithmetic\N'46' This may lead to very large denotations\N'46'
+.TP 4
+\fB\N'45'\N'45'bil\N'45'enable\N'45'intrinsics\fR=\fIVAL\fR
+Translate the specified instructions into calls to intrinsic functions\N'46' The option accepts a list of instruction specifications and can be specified multiple times\N'46' Each element of the list is either a keyword or a parametrized predicate\N'46' If an instruction matches any of the specifications than it will be translated into a call to an intrinsic function\N'46' The following keywords are recognized, \fB:any\fR \N'45' matches with any instruction, \fB:unknown\fR \N'45' matches with instructions that have unknown (to our lifters) semantics, \fB:special\fR \N'45' matches with instructions that have special semantics (expressed with the special statement by our lifters)\N'46' The following predicates are recognized, \fBasm:<str>\fR matches with instructions which assembly strings start with \fB<str>\fR, \fBtag:<str>\fR \N'45' matches with instructions that have a tag (kind) that starts with \fB<str>\fR, \fB<s1>:<s2>\fR \N'45' matches with instructions that have opcodes starting with \fB<s2>\fR in the encoding that starts with \fB<s1>\fR\N'46' For predicates, all string comparisons are made case\N'45'insensitive\N'46' Example, \fB:unknown,:special,asm:addsd,llvm:trap\fR\N'46'
+.TP 4
+\fB\N'45'\N'45'bil\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBbil\fR plugin
+.TP 4
+\fB\N'45'\N'45'bil\N'45'list\N'45'passes\fR
+List all available passes and exit
+.TP 4
+\fB\N'45'\N'45'bil\N'45'normalization\fR=\fIVAL\fR (absent=0)
+Selects a BIL normalization level\N'46' The normalization process doesn\N'39't change the semantics of a BIL program, but applies some transformations to simplify it\N'46' Consult BAP Annotated Reference (BAR) for the detailed description of the BIL normalized forms\N'46'
+.TP 4
+\fB\N'45'\N'45'bil\N'45'optimization\fR=\fIVAL\fR (absent=1)
+Specifies an optimization level\N'46' Level \fB0\fR disables all optimizations, and level \fB1\fR performs regular program simplifications, e\N'46'g\N'46', applies constant folding, propagation, and elimination of dead temporary (aka virtual) variables\N'46'
+.TP 4
+\fB\N'45'\N'45'bil\N'45'passes\fR=\fIVAL\fR
+Selects the list and the order of analyses to be applied during the lifing to BIL code\N'46'
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'comp\fR=\fIVAL\fR
+Assume the input file is compiled by \fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBbyteweight\fR plugin
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'max\N'45'length\fR=\fIVAL\fR, \fB\N'45'\N'45'byteweight\N'45'length\fR=\fIVAL\fR (absent=16)
+The maximum length of a word, that could identify a function start\N'46' Any signatures that are greater than that length, will not be considered, affect prior probabilities, etc\N'46'
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'min\N'45'length\fR=\fIVAL\fR (absent=8)
+The minimum length of a word, that could identify a function start\N'46' Any signatures that are below that length, will not be considered, affect prior probabilities, etc\N'46'
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'sigs\fR=\fIVAL\fR (absent=/home/oleg/\N'46'opam/4\N'46'07\N'46'1/share/bap/sigs\N'46'zip)
+Path to the signature file
+.TP 4
+\fB\N'45'\N'45'byteweight\N'45'threshold\fR=\fIVAL\fR (absent=10\N'46')
+If greater than 1\N'46'0 then it is the Bayes factor, otherwise it is a probability\N'46'
+.TP 4
+\fB\N'45'\N'45'cache\N'45'clean\fR
+Cleanup all caches\N'46' Deprecated, use \fB bap cache \N'45'\N'45'clean\fR instead
+.TP 4
+\fB\N'45'\N'45'cache\N'45'dir\fR=\fIDIR\fR
+Use provided folder as a cache directory
+.TP 4
+\fB\N'45'\N'45'cache\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBcache\fR plugin
+.TP 4
+\fB\N'45'\N'45'callsites\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBcallsites\fR plugin
+.TP 4
+\fB\N'45'\N'45'constant\N'45'tracker\N'45'enable\fR
+Undocumented\N'46'
+.TP 4
+\fB\N'45'\N'45'constant\N'45'tracker\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBconstant\N'45'tracker\fR plugin
+.TP 4
+\fB\N'45'\N'45'cxxfilt\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBcxxfilt\fR plugin
+.TP 4
+\fB\N'45'\N'45'demangle\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBdemangle\fR plugin
+.TP 4
+\fB\N'45'\N'45'demangle\N'45'with\fR=\fIDEMANGLER\fR
+Demangle all function names using \fIDEMANGLER\fR
+.TP 4
+\fB\N'45'\N'45'disassemble\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBdisassemble\fR plugin
+.TP 4
+\fB\N'45'\N'45'dump\N'45'symbols\N'45'file\fR=\fIFILE\fR
+Dump symbols to the specified \fIFILE\fR
+.TP 4
+\fB\N'45'\N'45'dump\N'45'symbols\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBdump\N'45'symbols\fR plugin
+.TP 4
+\fB\N'45'\N'45'elf\N'45'loader\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBelf\N'45'loader\fR plugin
+.TP 4
+\fB\N'45'\N'45'emit\N'45'ida\N'45'script\N'45'attr\fR=\fIVAL\fR
+Emit specified BIR attribute\N'46' Can be specified multiple times\N'46'
+.TP 4
+\fB\N'45'\N'45'emit\N'45'ida\N'45'script\N'45'file\fR=\fINAME\fR
+Dump annotations to the specified file \fINAME\fR\N'46' If not specified, then the script will dumped into the standard output
+.TP 4
+\fB\N'45'\N'45'emit\N'45'ida\N'45'script\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBemit\N'45'ida\N'45'script\fR plugin
+.TP 4
+\fB\N'45'\N'45'frontc\N'45'parser\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBfrontc\N'45'parser\fR plugin
+.TP 4
+\fB\N'45'\N'45'glibc\N'45'runtime\N'45'enable\fR
+Override the glib detection heuristic and enable the runtime fixup\N'46'
+.TP 4
+\fB\N'45'\N'45'glibc\N'45'runtime\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBglibc\N'45'runtime\fR plugin
+.TP 4
+\fB\N'45'\N'45'ida\N'45'headless\fR=\fIVAL\fR (absent=auto)
+Use headless curses based IDA\N'46'
+.TP 4
+\fB\N'45'\N'45'ida\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBida\fR plugin
+.TP 4
+\fB\N'45'\N'45'ida\N'45'mode\fR=\fIVAL\fR (absent=auto)
+Specify IDA mode\N'46'
+.TP 4
+\fB\N'45'\N'45'ida\N'45'path\fR=\fIVAL\fR (absent=/home/oleg/ida\N'45'7\N'46'1)
+Path to IDA directory\N'46'
+.TP 4
+\fB\N'45'\N'45'llvm\N'45'base\fR=\fIVAL\fR
+Replace image base address\N'46' If not set, a reasonable default corresponded to a file type will be used\N'46' For example, for any executable file a default image base is equal to lowest image virtual address\N'46' For relocatable files a default image base is equal to 0xC0000000\N'46'
+.TP 4
+\fB\N'45'\N'45'llvm\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBllvm\fR plugin
+.TP 4
+\fB\N'45'\N'45'llvm\N'45'pdb\N'45'path\fR=\fIVAL\fR
+A path to a directory with pdb file OR a path to a PDB file\N'46' In the first case the file with the matching name of the target executable will be selected if present\N'46' The default is the path to a current working directory\N'46'
+.TP 4
+\fB\N'45'\N'45'llvm\N'45'version\fR
+Prints LLVM version and exits
+.TP 4
+\fB\N'45'\N'45'llvm\N'45'x86\N'45'syntax\fR=\fIVAL\fR (absent=att)
+Choose style of code for x86 syntax between att and intel
+.TP 4
+\fB\N'45'\N'45'map\N'45'terms\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBmap\N'45'terms\fR plugin
+.TP 4
+\fB\N'45'\N'45'map\N'45'terms\N'45'using\fR=\fIFILE\fR
+Read patterns from the \fIFILE\fR
+.TP 4
+\fB\N'45'\N'45'map\N'45'terms\N'45'with\fR=\fIVAL\fR
+Map terms according the \fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'mc\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBmc\fR plugin
+.TP 4
+\fB\N'45'\N'45'mips\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBmips\fR plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'abi\fR
+Disable the abi plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'api\fR
+Disable the api plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'arm\fR
+Disable the arm plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'beagle\fR
+Disable the beagle plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'bil\fR
+Disable the bil plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'byteweight\fR
+Disable the byteweight plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'cache\fR
+Disable the cache plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'callsites\fR
+Disable the callsites plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'constant\N'45'tracker\fR
+Disable the constant\N'45'tracker plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'cxxfilt\fR
+Disable the cxxfilt plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'demangle\fR
+Disable the demangle plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'disassemble\fR
+Disable the disassemble plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'dump\N'45'symbols\fR
+Disable the dump\N'45'symbols plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'elf\N'45'loader\fR
+Disable the elf\N'45'loader plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'emit\N'45'ida\N'45'script\fR
+Disable the emit\N'45'ida\N'45'script plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'frontc\N'45'parser\fR
+Disable the frontc\N'45'parser plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'glibc\N'45'runtime\fR
+Disable the glibc\N'45'runtime plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'ida\fR
+Disable the ida plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'llvm\fR
+Disable the llvm plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'map\N'45'terms\fR
+Disable the map\N'45'terms plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'mc\fR
+Disable the mc plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'mips\fR
+Disable the mips plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'objdump\fR
+Disable the objdump plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'optimization\fR
+Disable the optimization plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'phoenix\fR
+Disable the phoenix plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'piqi\N'45'printers\fR
+Disable the piqi\N'45'printers plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'powerpc\fR
+Disable the powerpc plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'dictionary\fR
+Disable the primus\N'45'dictionary plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'exploring\fR
+Disable the primus\N'45'exploring plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'greedy\fR
+Disable the primus\N'45'greedy plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'limit\fR
+Disable the primus\N'45'limit plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'lisp\fR
+Disable the primus\N'45'lisp plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'loader\fR
+Disable the primus\N'45'loader plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'mark\N'45'visited\fR
+Disable the primus\N'45'mark\N'45'visited plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'powerpc\fR
+Disable the primus\N'45'powerpc plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'print\fR
+Disable the primus\N'45'print plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'promiscuous\fR
+Disable the primus\N'45'promiscuous plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'propagate\N'45'taint\fR
+Disable the primus\N'45'propagate\N'45'taint plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'random\fR
+Disable the primus\N'45'random plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'region\fR
+Disable the primus\N'45'region plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'round\N'45'robin\fR
+Disable the primus\N'45'round\N'45'robin plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'symbolic\N'45'executor\fR
+Disable the primus\N'45'symbolic\N'45'executor plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'systems\fR
+Disable the primus\N'45'systems plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'taint\fR
+Disable the primus\N'45'taint plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'test\fR
+Disable the primus\N'45'test plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'wandering\fR
+Disable the primus\N'45'wandering plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'primus\N'45'x86\fR
+Disable the primus\N'45'x86 plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'print\fR
+Disable the print plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'propagate\N'45'taint\fR
+Disable the propagate\N'45'taint plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'raw\fR
+Disable the raw plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'read\N'45'symbols\fR
+Disable the read\N'45'symbols plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'recipe\N'45'command\fR
+Disable the recipe\N'45'command plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'relocatable\fR
+Disable the relocatable plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'report\fR
+Disable the report plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'run\fR
+Disable the run plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'ssa\fR
+Disable the ssa plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'strings\fR
+Disable the strings plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'stub\N'45'resolver\fR
+Disable the stub\N'45'resolver plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'taint\fR
+Disable the taint plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'trace\fR
+Disable the trace plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'trivial\N'45'condition\N'45'form\fR
+Disable the trivial\N'45'condition\N'45'form plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'warn\N'45'unused\fR
+Disable the warn\N'45'unused plugin
+.TP 4
+\fB\N'45'\N'45'no\N'45'x86\fR
+Disable the x86 plugin
+.TP 4
+\fB\N'45'\N'45'objdump\N'45'demangler\fR=\fIVAL\fR
+Specify the demangler name\N'46' Set to \fIdisabled\fR to disable demangling\N'46'
+.TP 4
+\fB\N'45'\N'45'objdump\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBobjdump\fR plugin
+.TP 4
+\fB\N'45'\N'45'optimization\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBoptimization\fR plugin
+.TP 4
+\fB\N'45'\N'45'optimization\N'45'level\fR=\fIVAL\fR (absent=0)
+Specifies the optimization level\N'46' The higher the value the more aggressive (and less safe) optimizations are applied\N'46' On level 0 we touch nothing, only some constant folding may occur\N'46' On level 1 we optimize only the synthetic code that was generated by the lifter\N'46' Since such code can\N'39't leave a scope of instruction it is not affected by the imprecision of a control flow graph\N'46' On level 2, we also move and optimize processor flags\N'46' This removes a significant amount of code and simplifies the program and is a fair compromise between safety and performance\N'46' (Since flags are rarely used non\N'45'locally)\N'46' Finally, on level 3 we extend our analysis to all variables\N'46'
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBphoenix\fR plugin
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'keep\N'45'alive\fR
+Keep alive unused temporary variables
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'keep\N'45'const\fR
+Disable constant folding
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'labels\N'45'with\fR=\fIVAL\fR (absent=name)
+Put block name, assembler instructions, or bil instructions on graph labels using `name\N'39', `asm\N'39', or `bil\N'39' respectively\N'46' Can be specified as a list of multiple elements separated by commas\N'46'
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'labels\N'45'with\N'45'asm\fR
+Use \N'45'\N'45'label\N'45'with=\N'46'\N'46' instead\N'46' Put assembler instructions on graph labels
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'labels\N'45'with\N'45'bil\fR
+Use \N'45'\N'45'label\N'45'with=\N'46'\N'46' instead\N'46' Put bil instructions on graph labels
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'labels\N'45'with\N'45'name\fR
+Use \N'45'\N'45'label\N'45'with=\N'46'\N'46' instead\N'46' Put block name on graph labels
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'no\N'45'inline\fR
+Disable inlining temporary variables
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'no\N'45'optimizations\fR
+Disable all kinds of optimizations
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'no\N'45'resolve\fR
+Do not resolve addresses to symbolic names
+.TP 4
+\fB\N'45'\N'45'phoenix\N'45'output\N'45'folder\fR=\fIVAL\fR (absent=phoenix)
+Output data into the specified folder
+.TP 4
+\fB\N'45'\N'45'piqi\N'45'printers\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBpiqi\N'45'printers\fR plugin
+.TP 4
+\fB\N'45'\N'45'powerpc\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBpowerpc\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'dictionary\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'dictionary\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'exploring\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'exploring\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'exploring\N'45'scheduler\fR
+Enable the scheduler\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'greedy\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'greedy\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'greedy\N'45'scheduler\fR
+Enable the scheduler\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'limit\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'limit\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'limit\N'45'max\N'45'length\fR=\fIVAL\fR
+Limits the maximum number of basic blocks a single machinine can execute\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'limit\N'45'max\N'45'visited\fR=\fIVAL\fR
+Limits the maximum number of executions of the same block in a given machine\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'add\fR=\fIVAL\fR
+paths to lisp libraries
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'channel\N'45'redirect\fR=\fIVAL\fR
+establishes a redirection between an emulated file path and a file path on a host system\N'46' Each redirection should be of form <emu\N'45'name>:<real\N'45'name>, where <emu\N'45'name> could be a path or a a name of one of the standard channels, i\N'46'e\N'46', <stdin> or <stdout> or <stderr>\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'documentation\fR
+outputs Primus Lisp documentation
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'dump\fR
+dumps generated AST
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'lisp\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'load\fR=\fIVAL\fR (absent=posix)
+load specified module
+.TP 4
+\fB\N'45'\N'45'primus\N'45'lisp\N'45'typecheck\fR, \fB\N'45'\N'45'primus\N'45'lisp\N'45'type\N'45'check\fR
+typechecks the program and prints erros if they exist
+.TP 4
+\fB\N'45'\N'45'primus\N'45'loader\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'loader\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'loader\N'45'stack\N'45'base\fR=\fIVAL\fR (absent=1073741824)
+default address of the stack base
+.TP 4
+\fB\N'45'\N'45'primus\N'45'loader\N'45'stack\N'45'size\fR=\fIVAL\fR (absent=8388608)
+generic program loader for Primus
+.TP 4
+\fB\N'45'\N'45'primus\N'45'mark\N'45'visited\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'mark\N'45'visited\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'powerpc\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'powerpc\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'print\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\N'45'observations\fR=\fIVAL\fR
+A list of observations to print\N'46' A keyword `all` can be use to select all events\N'46' To ignore a particular event, add `\N'45'\N'39' before the name\N'46' An optional + is allowed for the consistency\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\N'45'output\fR=\fIVAL\fR
+A name of a file in which to store the monitor output\N'46' If not specified, then outputs result into stdout
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\N'45'rules\fR=\fIVAL\fR
+Undocumented\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'print\N'45'traceback\fR[=\fIVAL\fR] (default=16)
+Stores and outputs a trace of execution\N'46' Takes an optional argument that limits the traceback length to the specified number of terms\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'promiscuous\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'promiscuous\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'promiscuous\N'45'mode\fR
+(DEPRECATED) Enable the mode\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\N'45'from\N'45'attributes\fR
+Introduces taint in terms that are marked with the \fBtainted\N'45'ptr\fR and \fBtainted\N'45'reg\fR attribute\N'46' 
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'propagate\N'45'taint\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\N'45'no\N'45'marks\fR
+Disables the projection of the taint engine state to term attributes\N'46' The option is only valid when the \fBrun\fR option is specified\N'46' This option is left for compatibility with the old interface and is not compatible with the \fBfrom\N'45'attributes\fR or \fBto\N'45'attrbutes\fR options\N'46' It is an error to mix options from the new and old interfaces\N'46' 
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\N'45'run\fR
+Enables propagating taint from term attributes and back to attributes, unless the latter is disabled with the \fBno\N'45'marks\fR option\N'46' This option is left for compatibility with the old interface and is not compatible with the \fBfrom\N'45'attributes\fR or \fBto\N'45'attrbutes\fR options\N'46' It is an error to mix options from the new and old interfaces\N'46' 
+.TP 4
+\fB\N'45'\N'45'primus\N'45'propagate\N'45'taint\N'45'to\N'45'attributes\fR
+Reflects the state of the taint propagation engine to the \fBtainted\N'45'ptrs\fR and \fBtainted\N'45'regs\fR term attributes\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\N'45'generators\fR=\fIVAL\fR
+A list of generator specifications\N'46' The generators are processed in order, with the first matching operator having the precedence\N'46' This option also has precedence over the generators specified via the initialization files\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'random\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\N'45'init\fR=\fIVAL\fR
+A list of generator initialization scripts\N'46' Files are processed in order, with the first matching operator having the precedence\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\N'45'preserve\N'45'protection\fR
+Preserves page protection flags when a new page is swapped in\N'46' When this flag is not set the \fBbap:mem\N'45'randomizer\fR will map missing memory pages as writable\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'random\N'45'seed\fR=\fIVAL\fR (absent=0)
+The seed that will be used to initialize all generators\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'region\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'region\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'round\N'45'robin\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'round\N'45'robin\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'round\N'45'robin\N'45'scheduler\fR
+Enable the scheduler\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'symbolic\N'45'executor\N'45'cutoff\N'45'level\fR=\fIVAL\fR (absent=1)
+The number of times the same branch is retried\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'symbolic\N'45'executor\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'symbolic\N'45'executor\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'systems\N'45'add\N'45'path\fR=\fIVAL\fR
+adds the path to the list of paths where Primus systems are searched
+.TP 4
+\fB\N'45'\N'45'primus\N'45'systems\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'systems\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'taint\N'45'default\N'45'policy\fR=\fIVAL\fR (absent=propagate\N'45'by\N'45'computation)
+Set the default taint propagation policy
+.TP 4
+\fB\N'45'\N'45'primus\N'45'taint\N'45'gc\fR=\fIVAL\fR (absent=none)
+Picks a taint garbage collector
+.TP 4
+\fB\N'45'\N'45'primus\N'45'taint\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'taint\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'test\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'test\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'wandering\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'wandering\fR plugin
+.TP 4
+\fB\N'45'\N'45'primus\N'45'wandering\N'45'scheduler\fR
+Enable the scheduler\N'46'
+.TP 4
+\fB\N'45'\N'45'primus\N'45'wandering\N'45'seed\fR=\fIVAL\fR (absent=0)
+random generator seed
+.TP 4
+\fB\N'45'\N'45'primus\N'45'x86\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprimus\N'45'x86\fR plugin
+.TP 4
+\fB\N'45'\N'45'print\N'45'bir\N'45'attr\fR=\fIVAL\fR
+When printing IR emit an attribute \fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'print\N'45'demangled\N'45'with\fR=\fIVAL\fR
+Demangle symbols, using the specified demangler
+.TP 4
+\fB\N'45'\N'45'print\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBprint\fR plugin
+.TP 4
+\fB\N'45'\N'45'print\N'45'matching\fR=\fIVAL\fR
+Only print elements that matches with the provided patterns\N'46' A pattern consists of the name of a property and a regular expression, which denotes a set of values of this property\N'46' The property name and the regular expression are separated wit the \fB:\fR symbol, e\N'46'g\N'46', \fBsymbol:main\fR will print all elements that belong to the symbol entry \fBmain\fR\N'46' The syntax of the regular expressions is PCRE with partial matching\N'46' The following properties are supported: \fBsymbol\fR \N'45' name of the enclosing symbol, where the symbol is looked up in the file symbol table or debuging information, if any ; \fBsection\fR \N'45' name of the enclosing section of the file ; \fBsegment\fR \N'45' name of the enclosing segment of the file ; \fBsubroutine\fR \N'45' name of the enclosing subroutine \N'46'
+.TP 4
+\fB\N'45'\N'45'print\N'45'section\fR=\fIVAL\fR
+same as \fB\N'45'\N'45'print\N'45'matching=section:\fR\fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'print\N'45'semantics\fR[=\fISEMANTICS\N'45'LIST\fR] (default=)
+Display the \fISEMANTICS\N'45'LIST\fR semantics of the program\N'46' If used without an argument then all semantic values associated with terms will be printed\N'46' Otherwise only the selected (if present) will be printed\N'46'
+.TP 4
+\fB\N'45'\N'45'print\N'45'symbol\fR=\fIVAL\fR
+same as \fB\N'45'\N'45'print\N'45'matching=symbol:\fR\fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'print\N'45'symbol\N'45'format\fR=\fIVAL\fR
+Print found symbols\N'46' Optional value defines output format, and can be one of `name\N'39', `addr\N'39' or `size\N'39'\N'46' You can specify this parameter several times, if you want both, for example\N'46'
+.TP 4
+\fB\N'45'\N'45'print\N'45'with\N'45'colors\fR=\fIVAL\fR (absent=false)
+Allow coloring output with ansi color escape sequences
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'deterministic\fR
+Run in a deterministic mode\N'46' In this mode we will follow only one execution path, without backtracking, giving a more feasible result, but much less coverage
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBpropagate\N'45'taint\fR plugin
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'interesting\fR=\fIVAL\fR
+Look only at specified functions
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'max\N'45'iterations\fR=\fIN\fR (absent=10)
+Limit loop to \fIN\fR iterations
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'max\N'45'trace\fR=\fIBLOCKS\fR (absent=1000000)
+Limit maximum trace length to \fIBLOCKS\fR
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'mem\N'45'value\fR=\fIVAL\fR (absent=random)
+Input generation policy\N'46' If set to a fixed value, e\N'46'g\N'46' `0\N'39', then all undefined memory locations will be concretized to this value\N'46' If set to an interval, e\N'46'g\N'46', `(0 5)\N'39', then values will be randomly picked from this interval (boundaries including)\N'46' If set to `random\N'39', then values will be picked randomly from a domain, defined by a type of value\N'46'
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'print\N'45'coverage\fR
+print coverage [debug]
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'random\N'45'seed\fR=\fIVAL\fR
+Initialize random number generator with the given seed
+.TP 4
+\fB\N'45'\N'45'propagate\N'45'taint\N'45'reg\N'45'value\fR=\fIVAL\fR (absent=random)
+Input generation policy\N'46' If set to a fixed value, e\N'46'g\N'46' `0\N'39', then all undefined registers will be concretized to this value\N'46' If set to an interval, e\N'46'g\N'46', `(0 5)\N'39', then values will be randomly picked from this interval (boundaries including)\N'46' If set to `random\N'39', then values will be picked randomly from a domain, defined by a type of value\N'46'
+.TP 4
+\fB\N'45'\N'45'raw\N'45'arch\fR=\fIVAL\fR (absent=x86_64)
+Specifies the ISA of raw bytes
+.TP 4
+\fB\N'45'\N'45'raw\N'45'base\fR=\fIVAL\fR (absent=0x0)
+The address of the first byte
+.TP 4
+\fB\N'45'\N'45'raw\N'45'entry\N'45'point\fR=\fIVAL\fR
+Address (or addresses) of entry points
+.TP 4
+\fB\N'45'\N'45'raw\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBraw\fR plugin
+.TP 4
+\fB\N'45'\N'45'raw\N'45'length\fR=\fIVAL\fR
+The length of the code section
+.TP 4
+\fB\N'45'\N'45'raw\N'45'offset\fR=\fIVAL\fR (absent=0)
+The offset of the first byte
+.TP 4
+\fB\N'45'\N'45'read\N'45'symbols\N'45'from\fR=\fISYMS\fR
+Use this file as symbols source
+.TP 4
+\fB\N'45'\N'45'read\N'45'symbols\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBread\N'45'symbols\fR plugin
+.TP 4
+\fB\N'45'\N'45'recipe\N'45'command\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBrecipe\N'45'command\fR plugin
+.TP 4
+\fB\N'45'\N'45'relocatable\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBrelocatable\fR plugin
+.TP 4
+\fB\N'45'\N'45'report\N'45'events\fR
+Output progress events
+.TP 4
+\fB\N'45'\N'45'report\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBreport\fR plugin
+.TP 4
+\fB\N'45'\N'45'report\N'45'progress\fR
+Show progress bars
+.TP 4
+\fB\N'45'\N'45'run\N'45'argv\fR=\fIVAL\fR
+Process argument vector
+.TP 4
+\fB\N'45'\N'45'run\N'45'entry\N'45'points\fR=\fIVAL\fR
+Can be a list of \fIentry points\fR or one of the following keywords: \fBall\N'45'subroutines\fR, \fBmarked\N'45'subroutines\fR, \fBonly\N'45'queue\fR\N'46' An \fIentry point\fR is either a string denoting a function name, a tid starting with the \fB%\fR (percent) symbol, or an address in a hexadecimal format prefixed with \fB0x\fR\N'46' When the option is specified, the Primus Machine will start the execution from the specified entry point(s)\N'46' Otherwise the execution will be started from all program terms that are marked with the [entry_point] attribute\N'46' If there are several entry points, then they will be executed each in a separate machine or, if \fB\N'45'\N'45'run\N'45'in\N'45'separation\fR is specified, in a separate system\N'46' In case when each entry point is run in a separate machine it is necessary to add a scheduler component to the system that is used to run the entry point\N'46' If neither the argument nor there any entry points in the program, then a function called \fB_start\fR is called\N'46' If \fBall\N'45'subroutines\fR are specified then Primus will execute all subroutines in the topological order\N'46' If \fBmarked\N'45'subroutines\fR is specified, then Primus will execute the specified systems on all subroutines that has the \fBmark\fR attribute\N'46' If the \fBonly\N'45'queue\fR is specified, then only jobs already queued in the Primus Job Queue will be run and no entry points will be searched in the project\N'46'
+.TP 4
+\fB\N'45'\N'45'run\N'45'env\fR=\fIVAL\fR
+Program environemt as a comma separated list of VAR=VAL pairs
+.TP 4
+\fB\N'45'\N'45'run\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBrun\fR plugin
+.TP 4
+\fB\N'45'\N'45'run\N'45'in\N'45'isolation\fR
+Run each entry point as new system\N'46' Each entry point is enqueued as a job and run in a separate systems\N'46' The project and knowledge is passed between each system, the rest of the state is discarded\N'46'
+.TP 4
+\fB\N'45'\N'45'run\N'45'systems\fR=\fIVAL\fR
+Runs the specified Primus systems\N'46' If several systems are specified then runs all entry points for each specified system\N'46'
+.TP 4
+\fB\N'45'\N'45'run\N'45'until\N'45'visited\N'45'all\fR
+Runs Primus until all subroutines and blocks are visited\N'46' When this mode is enabled and run plugin finishes it finds the first unvisited subroutine (or if no such found the first unvisited block) and spawns a new system with it as an entry point\N'46' This continues until there are no more unvisited blocks\N'46'
+.TP 4
+\fB\N'45'\N'45'run\N'45'with\N'45'repetitions\fR
+The pass runs subroutines in the topological order meaning the farther a subroutine is in a callgraph from the roots the later it will be run as an entry point and higher chances it will be called before that from some other subroutine\N'46' And being a callee is more interesting case for analysis then being an entry point due to the wider context of the former\N'46' Given that, we skip by default such of entry points that were visited during the run of other ones\N'46' And this option disables this behavior and runs all the subroutines in a row\N'46' 
+.TP 4
+\fB\N'45'\N'45'ssa\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBssa\fR plugin
+.TP 4
+\fB\N'45'\N'45'strings\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBstrings\fR plugin
+.TP 4
+\fB\N'45'\N'45'strings\N'45'min\N'45'len\fR=\fIVAL\fR, \fB\N'45'\N'45'strings\N'45'bytes\fR=\fIVAL\fR (absent=4)
+ignore strings that has length less then \fIVAL\fR
+.TP 4
+\fB\N'45'\N'45'strings\N'45'print\N'45'address\fR
+prints an address of each found string
+.TP 4
+\fB\N'45'\N'45'stub\N'45'resolver\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBstub\N'45'resolver\fR plugin
+.TP 4
+\fB\N'45'\N'45'taint\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBtaint\fR plugin
+.TP 4
+\fB\N'45'\N'45'taint\N'45'ptr\fR=\fIVAL\fR
+Taint ptr value of definition matching with the specification
+.TP 4
+\fB\N'45'\N'45'taint\N'45'reg\fR=\fIVAL\fR
+Taint reg value of definition matching with the specification
+.TP 4
+\fB\N'45'\N'45'trace\N'45'dump\fR=\fIURI\fR
+Dump a trace specified by \fIURI\fR
+.TP 4
+\fB\N'45'\N'45'trace\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBtrace\fR plugin
+.TP 4
+\fB\N'45'\N'45'trace\N'45'load\fR=\fIVAL\fR
+Load trace from the specified \fIVAL\fR\N'46' The option maybe used many times to load several traces
+.TP 4
+\fB\N'45'\N'45'trivial\N'45'condition\N'45'form\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBtrivial\N'45'condition\N'45'form\fR plugin
+.TP 4
+\fB\N'45'\N'45'warn\N'45'unused\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBwarn\N'45'unused\fR plugin
+.TP 4
+\fB\N'45'\N'45'warn\N'45'unused\N'45'mark\fR
+run \fBbap\fR\fB\N'45'mark\fR pass
+.TP 4
+\fB\N'45'\N'45'warn\N'45'unused\N'45'print\fR
+run \fBbap\fR\fB\N'45'print\fR pass
+.TP 4
+\fB\N'45'\N'45'warn\N'45'unused\N'45'taint\fR
+run \fBbap\fR\fB\N'45'taint\fR pass
+.TP 4
+\fB\N'45'\N'45'x86\N'45'64\N'45'abi\fR=\fIVAL\fR
+Use specified \fIVAL\fR as a default one\N'46' The \fIVAL\fR must be either `sysv\N'39' or `ms\N'39'
+.TP 4
+\fB\N'45'\N'45'x86\N'45'abi\fR=\fIVAL\fR
+Use specified \fIVAL\fR as a default one\N'46' The \fIVAL\fR must be one of `cdecl\N'39', `stdcall\N'39', `ms\N'39', `fastcall\N'39', `watcom\N'45'stack\N'39' or `watcom\N'45'regs\N'39'
+.TP 4
+\fB\N'45'\N'45'x86\N'45'help\fR[=\fIVAL\fR] (default=auto)
+prints more information about the \fBx86\fR plugin
+.TP 4
+\fB\N'45'\N'45'x86\N'45'lifter\fR=\fIVAL\fR (absent=merge)
+Debug purpose only\N'46' The \fIVAL\fR must be one of `legacy\N'39', `modern\N'39' or `merge\N'39'\N'46' Default: \fIVAL\fR = merge\N'46'
+.SH ENVIRONMENT
+.P
+These environment variables affect the execution of \fBdisassemble\fR:
+.TP 4
+\fBBAP_LOG_DIR\fR
+A folder for log files\N'46'
+.SH EXAMPLES
+.P
+.nf
+
+  bap dis /bin/echo \N'45'\N'45'passes=run,check \N'45'dbir:out\N'46'bir \N'45'dasm:out\N'46'asm
+
+.fi

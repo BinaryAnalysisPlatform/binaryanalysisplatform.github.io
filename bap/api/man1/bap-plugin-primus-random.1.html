@@ -1,0 +1,166 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of primus-random</TITLE>
+</HEAD><BODY>
+<H1>primus-random</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Provides components for Primus state randomization and controls their parameters&#46;
+<P>
+
+This module provides three highly customizable components for state randomization:
+<DL COMPACT>
+<DT>-<DD>
+bap:var-randomizer;
+<DT>-<DD>
+bap:mem-randomizer;
+<DT>-<DD>
+bap:arg-randomizer&#46;
+</DL>
+<P>
+
+The <B>bap:var-randomizer</B> component randomizes unbound variables&#46; When this component is enabled a read operation from a variable that wasn&#39;t set before will produce a random value instead of terminating the program with the unbound value exception&#46;
+<P>
+
+The <B>mem-randomizer</B> does the same for the Primus memory&#46; It may also preload pages of memory with user specified properties, as well as hot-load pages on each page fault&#46; This component is also disabling the page protection mechanism, thus preventing the segmentation faults&#46; The memory protection can be re-enabled with the <B>--primus-random-preserve-protection</B> flag&#46;
+<P>
+
+The <B>arg-randomizer</B> component traps the unresolved call exception and enables randomization of the output parameters of the unresolved functions&#46; It employs the unresolved handler mechanism of the Primus Linker library&#46; For arguments it uses IR arg terms, which are commonly provided by the api pass (make sure that you provide the header file with prototypes for missing functions)&#46; Note, that if a C ABI is detected by one of the ABI modules and function is missing a prototype, the the <B> int(void</B>) prototype is assumed&#46;
+<P>
+
+All three components use Primus generators to produce random or static values&#46; It is possible to set a specific generator for each variable, subroutine argument, or memory region&#46; The generators can be specified with the <B>--primus-random-generators</B> command line argument or put in files and loaded with <B>--primus-random-init</B>&#46;
+<P>
+
+The specification is a list of generator specifications, with each generator specification consisting of two parts: an optional predicate and the generator parameters&#46; The generators are checked in order and the first matching generator is used&#46; Each generator specification is an s-expression&#46; When no predicates or parameters are specified, then it could be just the name of the generator, e&#46;g&#46;, <B>random</B> - matches with all values and uses a uniform pseudo-random generator, and <B>static</B> also matches with any value and use the static value (zero by default)&#46; The more general form of the specification is
+<P>
+
+<PRE>
+
+(&lt;predicate&gt;? &lt;name&gt; &lt;params&gt;&#46;&#46;&#46;)
+
+</PRE>
+
+<P>
+
+E&#46;g&#46;,
+<P>
+
+<PRE>
+
+((var RAX) random -5 5)
+
+</PRE>
+
+<P>
+
+will create a generator which when the <B>RAX</B> variable is read without being set generates a random number uniformely distributed in the range -5&#46;&#46;5 (bounds included)&#46; If the predicate is omitted, then the specification will match with any read or load target&#46; There are two kind of predicates, predicates for variables and predicates for memory regions&#46; The variable predicate accepts a list of variable names and matches if the variable that is being read is in the list, the underscore (<B>_</B>) denotes the set of all possible variables (i&#46;e&#46;, it will match with any symbol), example,
+<P>
+
+<PRE>
+
+((var RAX RDI RBX) static 42) ; if RAX or RDI or RBX is read return 42
+((var _) static 56) ; for all others return 56
+
+</PRE>
+
+<P>
+
+The memory predicate also accepts the underscore symbol (<B>_</B>) as the wildcard that will match with any address&#46; It is also possible to specify the memory interval or just a single address&#46; The addresses could be specified either as a numeral, that will match literally, or as a variable, that will be evaluated for a concrete value, when the machine is initialized&#46; It is also possible to specify the a section by name, e&#46;g&#46;, <B>:&lt;name&gt;</B>, which is a short-hand for the interval denoted by two variables, <B>bap:&lt;name&gt;-lower</B> and <B>bap:&lt;name&gt;-upper</B>&#46; Example,
+<P>
+
+<PRE>
+
+((mem 0xC0000000 0xFFFFFFFF) static 0xA5A5A5A5) ; color the kernel space
+((mem brk RSP) random -1 0x100) ; randomize the heap with -1, 0, &#46;&#46;&#46; 256
+((mem RSP 0xC0000000) static 0) ; zero the unitialized stack
+((mem _) static 0x5A5A5A5A)     ; color the rest of the memory
+
+</PRE>
+
+<P>
+
+There are currently only two generators, the <B>static</B> generator that is parameterized by the list of values that will be enumerated when this generator is used more than once (e&#46;g&#46;, when it is used to generate a subroutine argument or a memory region) , and the <B>random</B> generator that will produce a uniformely distributed pseudo-random sequence of numbers&#46; The initial value of the sequence, (the seed) is the sum of the hash of the Machine identifier, the sequential number of the generator (each generator has its own number), the global seed value, specified with the <B>--primus-random-seed</B> option, and the local seed that could be specified for each generator individually&#46; To accomodate this variety of options, the <B>random</B> generator accepts from zero to three parameters:
+<DL COMPACT>
+<DT>-<DD>
+<B>(random</B>) - the whole range of numbers;
+<DT>-<DD>
+<B>(random &lt;upper&gt;</B>) - between <B>0</B> and <B>&lt;upper&gt;</B>;
+<DT>-<DD>
+<B>(random &lt;lower&gt; &lt;upper&gt;</B>) - between <B>&lt;lower&gt;</B> and <B>&lt;upper&gt;</B>;
+<DT>-<DD>
+<B>(random &lt;lower&gt; &lt;upper&gt; &lt;seed&gt;</B>) - between <B>&lt;lower&gt;</B> and <B>&lt;upper&gt;</B> with the specified <B>&lt;seed&gt;</B> mixin&#46;
+</DL>
+<P>
+
+Generator specifications are take either directly from the command line via the <B>--primus-random-generators</B> option (in that case don&#39;t forget to delimit it with quotes to prevent your shell program from misinterpreting the parentheses) or from the initialization files, specified with the <B>--primus-random-init</B> option&#46; If no generators are specified, then is is the same as specifying the <B>random</B> generator, i&#46;e&#46;, all data will be randomized by the components using the uniform generator&#46;
+<A NAME="lbAC">&nbsp;</A>
+<H2>GRAMMAR</H2>
+
+<P>
+
+Below is the formal grammar specified in the EBNF notation&#46; Keep in mind, that <B> &quot;,&quot;</B> stands for term concatenation in EBNF, and that terms are separated with whitespaces&#46; The specification syntax is a subset of the s-expression grammar with common lexical rules, e&#46;g&#46;, multi-word atoms could be delimited with double quotes (<B>&quot;</B>) and comments start with the semicolon (<B>;</B>)&#46;
+<P>
+
+<PRE>
+
+specification = {generator};
+generator =
+          | &quot;random&quot;
+          | &quot;static&quot;
+          | &quot;(&quot; [predicate], constructor, &quot;)&quot;;
+predicate =
+          | &quot;_&quot;
+          | &quot;(&quot;, &quot;var&quot;, &quot;_&quot;, &quot;)&quot;
+          | &quot;(&quot;, &quot;var&quot;, ident, {ident}, &quot;)&quot;
+          | &quot;(&quot;, &quot;mem&quot;, &quot;_&quot;, &quot;)&quot;
+          | &quot;(&quot;, &quot;mem&quot;, section, &quot;)&quot;
+          | &quot;(&quot;, &quot;mem&quot;, expression, [expression], &quot;)&quot;
+constructor =
+          | &quot;static&quot;, {numeral}
+          | &quot;random&quot;, {numeral};
+expression =
+          | numeral
+          | ident;
+section = ? a literal that starts with &#39;:&#39; ?;
+numeral = ? a number of arbitrary length ?;
+ident   = ? a string of characters that is not a numeral or section ?;
+
+</PRE>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>NOTES</H2>
+
+<P>
+
+The section specification relies on the presence of the corresponding runtime variables that denote their boundaries, which are expected to be provided by the corresponding loader components&#46;
+<P>
+
+Also, this plugin has control only on generators created by the three components that this plugin provides and has no control on the user created generators (in particular the seed parameter has no effect on user generators) or generators created by other plugins (for example primus-loader and architecture specific plugins may have their own randomization policies)&#46;
+<P>
+
+For backward compatibility the <B>bap:var-randomizer</B>,<B>bap:mem-randomizer</B>, and <B>bap:arg-randomizer</B> are added to the <B>bap:legacy-main</B> system when the <B>--primus-promiscuous-mode</B> is enabled&#46;
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAC">GRAMMAR</A><DD>
+<DT><A HREF="#lbAD">NOTES</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:44:02 GMT, May 28, 2020
+</BODY>
+</HTML>

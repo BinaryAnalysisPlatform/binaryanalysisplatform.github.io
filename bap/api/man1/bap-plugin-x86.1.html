@@ -1,0 +1,58 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of x86</TITLE>
+</HEAD><BODY>
+<H1>x86</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<P>
+
+<B>bap</B> FILE [--x86-abi=ABI]
+<P>
+
+<B>bap</B> FILE [--x86-64-abi=ABI]
+<A NAME="lbAC">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Provides lifter and implements a set of ABI for x86 and x86-64 architectures&#46; No parameters are usually required&#46; Once the pluing is installed it will automatically provide it services&#46; However it is possible to override default abi, e&#46;g&#46;, when working with an executable compiled for MS Windows platform&#46; For a full set of supported ABI use corresponding list option&#46;
+<A NAME="lbAD">&nbsp;</A>
+<H2>EXAMPLE</H2>
+
+<P>
+
+To choose a correct ABI for a binary compiled for MS Windows x64 target, use the following:
+<P>
+
+<B>bap</B> FILE --x86-64=ms
+<A NAME="lbAE">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man3/bap-x86-cpu.3.html">bap-x86-cpu</A></B>(3), <B><A HREF="../man1/bap-plugin-abi.1.html">bap-plugin-abi</A></B>(1), <B><A HREF="../man1/bap-plugin-arm.1.html">bap-plugin-arm</A></B>(1)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAC">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAD">EXAMPLE</A><DD>
+<DT><A HREF="#lbAE">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:44:31 GMT, May 28, 2020
+</BODY>
+</HTML>

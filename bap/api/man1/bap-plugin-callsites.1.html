@@ -1,0 +1,77 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of callsites</TITLE>
+</HEAD><BODY>
+<H1>callsites</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+This pass will inject artificial definitions of a subroutine arguments at call sites&#46; Consider function <B>malloc</B> that has the following declaration in BIR:
+<P>
+
+<PRE>
+
+
+      sub malloc(malloc_size, malloc_result)
+      malloc_size :: in u32 = R0
+      malloc_result :: out u32 = R0
+
+</PRE>
+
+<P>
+
+This plugin will add two definitions, one just before the call to the malloc:
+<P>
+
+<PRE>
+
+
+      &#46;&#46;&#46;
+      000001c3: malloc_size := R0
+      0000015b: call @malloc with return %0000015c
+
+</PRE>
+
+<P>
+
+And prepend another to the block to which malloc will return:
+<P>
+
+<PRE>
+
+
+      0000015c:
+      000001c4: R0 := malloc_result
+      &#46;&#46;&#46;
+
+</PRE>
+
+<A NAME="lbAC">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-plugin-api.1.html">bap-plugin-api</A></B>(1)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAC">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:21 GMT, May 28, 2020
+</BODY>
+</HTML>

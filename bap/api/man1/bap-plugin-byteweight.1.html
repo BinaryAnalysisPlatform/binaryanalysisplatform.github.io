@@ -1,0 +1,59 @@
+Content-type: text/html; charset=UTF-8
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE>Man page of byteweight</TITLE>
+</HEAD><BODY>
+<H1>byteweight</H1>
+Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
+<A HREF="../odoc/index.html">Return to Main Contents</A><HR>
+
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+<P>
+
+Identifies function starts using a predefined sets of function start signatures&#46; Each signature is a sequence of bytes equipped with a sample probability of occuring it as a function start&#46; The input memory is scanned, and for each byte that is not yet classified as a function start the longest sequence of bytes is searched in the signatures&#46; If one is found, then the <B>threshold</B> parameter defines the decision procedure&#46; If it is a value below <B>1&#46;0</B> then the sequence of bytes will be classified as a function start if the the associated probability is higher than the specified threshold&#46; If the threshold is greater or equal than 1&#46;0, then the sequence of bytes will be classified as a function start if the Bayes factor of the two competing hypothesis is greater than the specified threshold&#46; The Bayes factor is the ratio between the posterior probabilities of the competing hypothesis&#46; Therefore, it includes the prior odds of finding a function start, which makes the hypothesis testing more robust&#46; The Bayes factor value is having the following interpretations:
+<P>
+
+<PRE>
+
+
+    Bayes Factor          Strength
+
+    1 to 3&#46;2              Weak
+    3&#46;2 to 10             Substantial
+    10 to 100             Strong
+    100 and greater       Decisive;
+
+
+</PRE>
+
+<P>
+
+This plugin is a partial implementation of the starts, partially BYTEWEIGHT algorithm as described in [1]&#46; Only the byte level matching is implemented&#46; The <B>SEE ALSO</B> section contains links to other plugins, that provide function identification services&#46;
+<P>
+
+[1]: Bao, Tiffany, et al&#46; &quot;Byteweight: Learning to recognize functions in binary code&#46;&quot; 23rd USENIX Security Symposium (USENIX Security 14)&#46; 2014&#46;
+<A NAME="lbAC">&nbsp;</A>
+<H2>SEE ALSO</H2>
+
+<P>
+
+<B><A HREF="../man1/bap-byteweight.1.html">bap-byteweight</A></B>(1), <B><A HREF="../man1/bap-plugin-ida.1.html">bap-plugin-ida</A></B>(1), <B><A HREF="../man1/bap-plugin-read-symbols.1.html">bap-plugin-read-symbols</A></B>(1)
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAC">SEE ALSO</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 17:43:17 GMT, May 28, 2020
+</BODY>
+</HTML>
