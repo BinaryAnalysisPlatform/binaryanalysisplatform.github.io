@@ -62,7 +62,6 @@ jobs:
           cp -r  bap.master/doc/man3 bap/api/
           cp -r  bap.master/doc/lisp bap/api/
           cp -rL bap.master/doc/odoc bap/api/
-          cd blog
           git add bap/api
           git commit -m "updates documentation"
           git push origin master
