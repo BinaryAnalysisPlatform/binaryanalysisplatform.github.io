@@ -51,7 +51,7 @@ jobs:
         run: |
           sudo apt-get install emacs-nox man2html --yes
           opam install odig --yes
-          make -C bap.master doc
+          opam exec -- make -C bap.master doc
 
       - name: update and push
         run: |
