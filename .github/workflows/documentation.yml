@@ -63,5 +63,5 @@ jobs:
           cp -r  bap.master/doc/lisp bap/api/
           cp -rL bap.master/doc/odoc bap/api/
           git add bap/api
-          git commit -m "updates documentation"
+          git commit -m "updates documentation" > /dev/null
           git push origin master
