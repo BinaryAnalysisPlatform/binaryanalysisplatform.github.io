@@ -64,4 +64,4 @@ jobs:
           cp -rL bap.master/doc/odoc bap/api/
           git add bap/api
           git commit -m "updates documentation" > /dev/null
-          git push origin master
+          git push origin adds-actions # <<<<< REPLACE TO master
