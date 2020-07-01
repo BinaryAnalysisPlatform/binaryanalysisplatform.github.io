@@ -1,9 +1,9 @@
 name: Build documentation
 
-
 on:
   - push
-  #temp, replace to weekly later
+#  schedule:
+#    - cron: '0 0 * * SAT' # every Saturday
 
 jobs:
   update-docs:
@@ -63,5 +63,5 @@ jobs:
           cp -r  bap.master/doc/lisp bap/api/
           cp -rL bap.master/doc/odoc bap/api/
           git add bap/api
-          git commit -m "updates documentation" > /dev/null
-          git push origin adds-actions # <<<<< REPLACE TO master
+          git commit -m `git -C bap.master rev-parse --short HEAD` > /dev/null
+          git push origin adds-actions
