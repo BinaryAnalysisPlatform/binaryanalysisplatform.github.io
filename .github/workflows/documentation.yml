@@ -2,8 +2,8 @@ name: Build documentation
 
 on:
   - push
-#  schedule:
-#    - cron: '0 0 * * SAT' # every Saturday
+  #schedule:
+  #  - cron: '0 0 * * SAT' # every Saturday
 
 jobs:
   update-docs:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout blog
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.MY_GHA_TOKEN }}
+          token: ${{ secrets.USER_TOKEN }}
 
       - name: Install OCaml
         uses: avsm/setup-ocaml@v1
@@ -20,7 +20,7 @@ jobs:
           ocaml-version: 4.07.1
 
       - name: Pin OASIS
-        run: opam pin add oasis https://github.com/BinaryAnalysisPlatform/oasis.git
+        run: opam pin add oasis https://github.com/gitoleg/oasis.git
 
       - name: Checkout bap
         uses: actions/checkout@v2
@@ -56,8 +56,8 @@ jobs:
 
       - name: update and push
         run: |
-          git config --global user.name $GITHUB_ACTOR
-          git config --global user.email "action-noreply@github.com"
+          git config --global user.name ${{ secrets.USER_NAME }}
+          git config --global user.email ${{ secrets.USER_EMAIL }}
           cp -r  bap.master/doc/man1 bap/api/
           cp -r  bap.master/doc/man3 bap/api/
           cp -r  bap.master/doc/lisp bap/api/
