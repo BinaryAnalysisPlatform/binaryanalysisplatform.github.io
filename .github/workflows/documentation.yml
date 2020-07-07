@@ -1,9 +1,8 @@
 name: Build documentation
 
 on:
-  - push
-  #schedule:
-  #  - cron: '0 0 * * SAT' # every Saturday
+  schedule:
+    - cron: '0 0 * * SAT' # every Saturday
 
 jobs:
   update-docs:
@@ -17,10 +16,10 @@ jobs:
       - name: Install OCaml
         uses: avsm/setup-ocaml@v1
         with:
-          ocaml-version: 4.07.1
+          ocaml-version: 4.09.1
 
       - name: Pin OASIS
-        run: opam pin add oasis https://github.com/gitoleg/oasis.git
+        run: opam pin add oasis https://github.com/BinaryAnalysisPlatform/oasis.git
 
       - name: Checkout bap
         uses: actions/checkout@v2
@@ -64,4 +63,4 @@ jobs:
           cp -rL bap.master/doc/odoc bap/api/
           git add bap/api
           git commit -m `git -C bap.master rev-parse --short HEAD` > /dev/null
-          git push origin adds-actions
+          git push origin master
