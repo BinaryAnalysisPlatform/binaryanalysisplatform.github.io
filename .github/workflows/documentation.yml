@@ -1,0 +1,80 @@
+name: Build documentation
+
+on:
+  schedule:
+    - cron: '0 0 * * SAT' # every Saturday
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout blog️
+        uses: actions/checkout@v2   # If you're using actions/checkout@v2 you must set persist-credentials
+        with:                       # to false in most cases for the deployment to work correctly.
+          persist-credentials: false
+
+      - name: Install OCaml
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: 4.09.1
+
+      - name: Pin OASIS
+        run: opam pin add oasis https://github.com/BinaryAnalysisPlatform/oasis.git
+
+      - name: Checkout bap
+        uses: actions/checkout@v2
+        with:
+          repository: BinaryAnalysisPlatform/bap
+          path: bap.master
+
+      - name: Pin BAP
+        run:
+          opam pin add bap bap.master --no-action
+
+      - name: Install system dependencies
+        run: opam depext -u bap
+
+      - name: Install opam dependencies
+        run: |
+          opam install bap --deps-only
+          opam install omake
+
+      - name: Install Bap
+        run: |
+          cd bap.master
+          opam exec -- ./configure-omake
+          opam exec -- make
+          opam exec -- make reinstall
+
+      - name: Build Documentation
+        run: |
+          ls -l
+          sudo apt-get install emacs-nox man2html --yes
+          opam install odig
+          opam exec -- make -C bap.master clean
+          opam exec -- make -C bap.master doc
+          echo ::set-env name=BLOG_COMMIT_MESSAGE::$(git -C bap.master rev-parse --short HEAD)
+
+      - uses: actions/upload-artifact@v2
+        if: ${{ always() }}
+        with:
+          name: bapdoc-log
+          path: bap.master/doc/bapdoc.log
+
+      - name: update
+        run: |
+           mkdir ready
+           mv  bap.master/doc/man1 ready/
+           mv  bap.master/doc/man3 ready/
+           mv  bap.master/doc/lisp ready/
+           mv  bap.master/doc/primus ready/
+           cp -rL bap.master/doc/odoc ready/
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: master
+          FOLDER: ready
+          TARGET_FOLDER: bap/api
+          COMMIT_MESSAGE: ${{ env.BLOG_COMMIT_MESSAGE }}
