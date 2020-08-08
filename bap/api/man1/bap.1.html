@@ -1,9 +1,9 @@
 Content-type: text/html; charset=UTF-8
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML><HEAD><TITLE>Man page of bap-disassemble</TITLE>
+<HTML><HEAD><TITLE>Man page of BAP-DISASSEMBLE</TITLE>
 </HEAD><BODY>
-<H1>bap-disassemble</H1>
+<H1>BAP-DISASSEMBLE</H1>
 Section: Bap Manual (1)<BR>Updated: <BR><A HREF="#index">Index</A>
 <A HREF="../odoc/index.html">Return to Main Contents</A><HR>
 
@@ -105,7 +105,7 @@ Please note, that the name of the pass is automatically derived from the plugin 
 <H2>ARGUMENTS</H2>
 
 <DL COMPACT>
-<DT><I>FILE</I><DD>
+<DT><I>FILE</I> (absent=a&#46;out)<DD>
 The input file
 </DL>
 <A NAME="lbAI">&nbsp;</A>
@@ -126,6 +126,8 @@ Enables the pass bil in the old style (DEPRECATED)
 Enables the pass byteweight in the old style (DEPRECATED)
 <DT><B>--cache</B><DD>
 Enables the pass cache in the old style (DEPRECATED)
+<DT><B>--callgraph-collator</B><DD>
+Enables the pass callgraph-collator in the old style (DEPRECATED)
 <DT><B>--callsites</B><DD>
 Enables the pass callsites in the old style (DEPRECATED)
 <DT><B>--constant-tracker</B><DD>
@@ -174,8 +176,6 @@ Enables the pass optimization in the old style (DEPRECATED)
 Run the selected passes (in the specified order)
 <DT><B>--phoenix</B><DD>
 Enables the pass phoenix in the old style (DEPRECATED)
-<DT><B>--piqi-printers</B><DD>
-Enables the pass piqi-printers in the old style (DEPRECATED)
 <DT><B>--powerpc</B><DD>
 Enables the pass powerpc in the old style (DEPRECATED)
 <DT><B>--primus-dictionary</B><DD>
@@ -222,6 +222,8 @@ Enables the pass primus-x86 in the old style (DEPRECATED)
 Enables the pass print in the old style (DEPRECATED)
 <DT><B>--propagate-taint</B><DD>
 Enables the pass propagate-taint in the old style (DEPRECATED)
+<DT><B>--radare2</B><DD>
+Enables the pass radare2 in the old style (DEPRECATED)
 <DT><B>--raw</B><DD>
 Enables the pass raw in the old style (DEPRECATED)
 <DT><B>--read-symbols</B><DD>
@@ -236,6 +238,8 @@ Enables the pass relocatable in the old style (DEPRECATED)
 Enables the pass report in the old style (DEPRECATED)
 <DT><B>--run</B><DD>
 Enables the pass run in the old style (DEPRECATED)
+<DT><B>--specification</B><DD>
+Enables the pass specification in the old style (DEPRECATED)
 <DT><B>--ssa</B><DD>
 Enables the pass ssa in the old style (DEPRECATED)
 <DT><B>--strings</B><DD>
@@ -323,7 +327,7 @@ prints more information about the <B>byteweight</B> plugin
 The maximum length of a word, that could identify a function start&#46; Any signatures that are greater than that length, will not be considered, affect prior probabilities, etc&#46;
 <DT><B>--byteweight-min-length</B>=<I>VAL</I> (absent=8)<DD>
 The minimum length of a word, that could identify a function start&#46; Any signatures that are below that length, will not be considered, affect prior probabilities, etc&#46;
-<DT><B>--byteweight-sigs</B>=<I>VAL</I> (absent=/home/oleg/&#46;opam/4&#46;07&#46;1/share/bap/sigs&#46;zip)<DD>
+<DT><B>--byteweight-sigs</B>=<I>VAL</I> (absent=/home/runner/&#46;opam/4&#46;09&#46;1/share/bap/sigs&#46;zip)<DD>
 Path to the signature file
 <DT><B>--byteweight-threshold</B>=<I>VAL</I> (absent=10&#46;)<DD>
 If greater than 1&#46;0 then it is the Bayes factor, otherwise it is a probability&#46;
@@ -333,6 +337,16 @@ Cleanup all caches&#46; Deprecated, use <B> bap cache --clean</B> instead
 Use provided folder as a cache directory
 <DT><B>--cache-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>cache</B> plugin
+<DT><B>--callgraph-collator-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>callgraph-collator</B> plugin
+<DT><B>--callgraph-collator-ignore-matching</B>=<I>VAL</I><DD>
+Ignore functions that partially match the speciefied PCRE regular expression&#46;
+<DT><B>--callgraph-collator-ignore-reserved</B><DD>
+Ignore functions that have reserved names, i&#46;e&#46;, starting with <B>_</B> (underscore) or <B>&#46;</B> (dot)&#46;
+<DT><B>--callgraph-collator-ignore-unresolved</B><DD>
+Ignore functions with dummy names, i&#46;e&#46;, starting with <B>sub_</B>&#46;
+<DT><B>--callgraph-collator-output</B>=<I>VAL</I><DD>
+Outputs all information into the specified file&#46;
 <DT><B>--callsites-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>callsites</B> plugin
 <DT><B>--constant-tracker-enable</B><DD>
@@ -371,7 +385,7 @@ Use headless curses based IDA&#46;
 prints more information about the <B>ida</B> plugin
 <DT><B>--ida-mode</B>=<I>VAL</I> (absent=auto)<DD>
 Specify IDA mode&#46;
-<DT><B>--ida-path</B>=<I>VAL</I> (absent=/home/oleg/ida-7&#46;1)<DD>
+<DT><B>--ida-path</B>=<I>VAL</I><DD>
 Path to IDA directory&#46;
 <DT><B>--llvm-base</B>=<I>VAL</I><DD>
 Replace image base address&#46; If not set, a reasonable default corresponded to a file type will be used&#46; For example, for any executable file a default image base is equal to lowest image virtual address&#46; For relocatable files a default image base is equal to 0xC0000000&#46;
@@ -407,6 +421,8 @@ Disable the bil plugin
 Disable the byteweight plugin
 <DT><B>--no-cache</B><DD>
 Disable the cache plugin
+<DT><B>--no-callgraph-collator</B><DD>
+Disable the callgraph-collator plugin
 <DT><B>--no-callsites</B><DD>
 Disable the callsites plugin
 <DT><B>--no-constant-tracker</B><DD>
@@ -443,8 +459,6 @@ Disable the objdump plugin
 Disable the optimization plugin
 <DT><B>--no-phoenix</B><DD>
 Disable the phoenix plugin
-<DT><B>--no-piqi-printers</B><DD>
-Disable the piqi-printers plugin
 <DT><B>--no-powerpc</B><DD>
 Disable the powerpc plugin
 <DT><B>--no-primus-dictionary</B><DD>
@@ -491,6 +505,8 @@ Disable the primus-x86 plugin
 Disable the print plugin
 <DT><B>--no-propagate-taint</B><DD>
 Disable the propagate-taint plugin
+<DT><B>--no-radare2</B><DD>
+Disable the radare2 plugin
 <DT><B>--no-raw</B><DD>
 Disable the raw plugin
 <DT><B>--no-read-symbols</B><DD>
@@ -503,6 +519,8 @@ Disable the relocatable plugin
 Disable the report plugin
 <DT><B>--no-run</B><DD>
 Disable the run plugin
+<DT><B>--no-specification</B><DD>
+Disable the specification plugin
 <DT><B>--no-ssa</B><DD>
 Disable the ssa plugin
 <DT><B>--no-strings</B><DD>
@@ -549,8 +567,6 @@ Disable all kinds of optimizations
 Do not resolve addresses to symbolic names
 <DT><B>--phoenix-output-folder</B>=<I>VAL</I> (absent=phoenix)<DD>
 Output data into the specified folder
-<DT><B>--piqi-printers-help</B>[=<I>VAL</I>] (default=auto)<DD>
-prints more information about the <B>piqi-printers</B> plugin
 <DT><B>--powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>powerpc</B> plugin
 <DT><B>--primus-dictionary-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -637,6 +653,8 @@ Enable the scheduler&#46;
 The number of times the same branch is retried&#46;
 <DT><B>--primus-symbolic-executor-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>primus-symbolic-executor</B> plugin
+<DT><B>--primus-symbolic-executor-timeout</B>=<I>VAL</I> (absent=1000)<DD>
+The number of milliseconds alloted to the SMT solver to find a model
 <DT><B>--primus-systems-add-path</B>=<I>VAL</I><DD>
 adds the path to the list of paths where Primus systems are searched
 <DT><B>--primus-systems-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -693,6 +711,8 @@ print coverage [debug]
 Initialize random number generator with the given seed
 <DT><B>--propagate-taint-reg-value</B>=<I>VAL</I> (absent=random)<DD>
 Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined registers will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
+<DT><B>--radare2-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>radare2</B> plugin
 <DT><B>--raw-arch</B>=<I>VAL</I> (absent=x86_64)<DD>
 Specifies the ISA of raw bytes
 <DT><B>--raw-base</B>=<I>VAL</I> (absent=0x0)<DD>
@@ -735,6 +755,8 @@ Runs the specified Primus systems&#46; If several systems are specified then run
 Runs Primus until all subroutines and blocks are visited&#46; When this mode is enabled and run plugin finishes it finds the first unvisited subroutine (or if no such found the first unvisited block) and spawns a new system with it as an entry point&#46; This continues until there are no more unvisited blocks&#46;
 <DT><B>--run-with-repetitions</B><DD>
 The pass runs subroutines in the topological order meaning the farther a subroutine is in a callgraph from the roots the later it will be run as an entry point and higher chances it will be called before that from some other subroutine&#46; And being a callee is more interesting case for analysis then being an entry point due to the wider context of the former&#46; Given that, we skip by default such of entry points that were visited during the run of other ones&#46; And this option disables this behavior and runs all the subroutines in a row&#46; 
+<DT><B>--specification-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>specification</B> plugin
 <DT><B>--ssa-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>ssa</B> plugin
 <DT><B>--strings-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -817,6 +839,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 17:43:09 GMT, May 28, 2020
+Time: 01:36:48 GMT, August 08, 2020
 </BODY>
 </HTML>
