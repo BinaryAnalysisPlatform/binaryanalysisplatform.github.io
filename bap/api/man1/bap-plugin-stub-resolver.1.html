@@ -15,7 +15,33 @@ Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
 
 <P>
 
-Provides an abi pass that transforms a program by substituting calls to stubs with calls to real subroutines when they are present in the binary&#46;
+Identifies functions that are stubs and redirects calls to stubs to the calls to the implemenations, in case if the latter is present in the binary&#46;
+<P>
+
+A stub is piece of binary code that is used to call a function implementation&#46; Most commonly stubs are employed for external functions, whose implementation is later loaded from some library, however some ABIs are using stubs for internal functions, in case if they have external linkage&#46;
+<P>
+
+Usually, it is easy to identify whether a function is a stub or not, since most of the ABIs put them in a specially named section&#46; Some of the section names are already known to BAP, but you can specify more with using the <B>--stub-resolver-names</B> parameter&#46;
+<P>
+
+However, some architectures, in particular PowerPC are storing stub functions directly in the text section with other code without any indicators&#46; To catch them we employ a simple signature matching approach&#46; The signatures, could be specified in a file, named <B>&lt;triple&gt;&#46;stubs</B>, e&#46;g&#46;, for <B>powerpc&#46;stubs</B> with the following contents (see the <B>--stub-resolve-signatures</B> parameter description for more details on the format of accepted inputs):
+<P>
+
+<PRE>
+
+; a list of words that commonly start a stub,
+; one per line, with `;&#39; for comments&#46;
+
+3d601001 ; lis r11, 4097
+3d601002 ; lis r11, 4098
+3d601003 ; lis r11, 4099
+3d601004 ; lis r11, 4100
+
+
+
+
+</PRE>
+
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
@@ -26,6 +52,6 @@ Provides an abi pass that transforms a program by substituting calls to stubs wi
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:38:30 GMT, August 15, 2020
+Time: 01:42:07 GMT, August 22, 2020
 </BODY>
 </HTML>
