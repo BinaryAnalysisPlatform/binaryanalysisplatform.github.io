@@ -114,6 +114,8 @@ The input file
 <DL COMPACT>
 <DT><B>--abi</B><DD>
 Enables the pass abi in the old style (DEPRECATED)
+<DT><B>--analyze</B><DD>
+Enables the pass analyze in the old style (DEPRECATED)
 <DT><B>--api</B><DD>
 Enables the pass api in the old style (DEPRECATED)
 <DT><B>--arm</B><DD>
@@ -154,6 +156,8 @@ Enables the pass glibc-runtime in the old style (DEPRECATED)
 Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
 <DT><B>--ida</B><DD>
 Enables the pass ida in the old style (DEPRECATED)
+<DT><B>-k</B> <I>VAL</I>, <B>--project</B>=<I>VAL</I>, <B>--knowledge-base</B>=<I>VAL</I><DD>
+Import the knowledge to the provided knowledge base&#46; If the <B>--update</B> flag is set the the knowledge base will be also updated with the new information&#46; If <B>--update</B> is set, the the knowledge base might not exist and it will be created
 <DT><B>-L</B> <I>VAL</I>, <B>--plugin-path</B>=<I>VAL</I>, <B>--load-path</B>=<I>VAL</I><DD>
 Adds folder to the list of plugins search paths
 <DT><B>--llvm</B><DD>
@@ -252,6 +256,8 @@ Enables the pass taint in the old style (DEPRECATED)
 Enables the pass trace in the old style (DEPRECATED)
 <DT><B>--trivial-condition-form</B><DD>
 Enables the pass trivial-condition-form in the old style (DEPRECATED)
+<DT><B>-u</B>, <B>--update</B><DD>
+Preserve the knowledge base, i&#46;e&#46;, do not change it&#46;
 <DT><B>--version</B><DD>
 Show version information&#46;
 <DT><B>--warn-unused</B><DD>
@@ -265,6 +271,8 @@ Enables the pass x86 in the old style (DEPRECATED)
 <DL COMPACT>
 <DT><B>--abi-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>abi</B> plugin
+<DT><B>--analyze-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>analyze</B> plugin
 <DT><B>--api-add</B>=<I>VAL</I><DD>
 will be removed in 2&#46;0&#46;0 Add specified api module(s) and exit&#46; Each module should be of the form &lt;lang&gt;:&lt;file&gt;, where &lt;lang&gt; is the language in which API is written, and &lt;file&gt; is a path to the specification&#46; Multiple modules can be added by specifying this option several times&#46;
 <DT><B>--api-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -409,6 +417,8 @@ prints more information about the <B>mc</B> plugin
 prints more information about the <B>mips</B> plugin
 <DT><B>--no-abi</B><DD>
 Disable the abi plugin
+<DT><B>--no-analyze</B><DD>
+Disable the analyze plugin
 <DT><B>--no-api</B><DD>
 Disable the api plugin
 <DT><B>--no-arm</B><DD>
@@ -843,6 +853,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 02:26:30 GMT, September 05, 2020
+Time: 13:52:18 GMT, September 12, 2020
 </BODY>
 </HTML>
