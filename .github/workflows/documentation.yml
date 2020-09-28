@@ -42,7 +42,9 @@ jobs:
       - name: Install Bap
         run: |
           cd bap.master
-          opam exec -- ./configure-omake
+          opam exec -- ./configure-omake \
+            --with-llvm-version=9 \
+            --with-llvm-config=llvm-config-9
           opam exec -- make
           opam exec -- make reinstall
 
