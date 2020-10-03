@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title></title>
-<!-- 2020-09-12 Sat 13:54 -->
+<!-- 2020-10-03 Sat 01:54 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -151,29 +151,35 @@ for the JavaScript code in this tag.
 <h2 id="sec-1"><span class="section-number-2">1</span> Systems</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>bap:base-taint-analyzer:
-Uses promiscuous-executor for taint analysis.
-No policy is specified
+<li>bap:reflective-taint-analyzer:
+A taint analyzer that reflects taints to/from BIR terms
 </li>
 
-<li>bap:constant-tracker:
-Uses promiscuous-executor for constant tracking.
-</li>
-
-<li>bap:base-lisp-machine:
-Executes Primus Lisp program.
-</li>
-
-<li>bap:string-deobfuscator:
-Uses promiscuous-executor to find obfuscated strings.
-</li>
-
-<li>bap:microexecutor-base:
-The base system for microexecution systems.
+<li>bap:promiscuous-executor:
+Executes all linearly independent paths and never fails.
 </li>
 
 <li>bap:multi-analyzer:
 Runs several analyses in parallel.
+</li>
+
+<li>bap:legacy-main:
+The legacy Primus system that contains all components registered with the
+Machine.add<sub>component</sub> function.
+</li>
+
+<li>bap:taint-analyzer:
+Uses promiscuous-executor for taint analysis.
+Propagates taint by computation.
+</li>
+
+<li>bap:terminating-stubbed-executor:
+Executes a binary together with the Lisp Machine that
+is guaranteed to terminate.
+</li>
+
+<li>bap:string-deobfuscator:
+Uses promiscuous-executor to find obfuscated strings.
 </li>
 
 <li>bap:binary-executor:
@@ -185,36 +191,30 @@ Uses symbolic execution to analyze all feasible and
 linearly independent paths.
 </li>
 
-<li>bap:exact-taint-analyzer:
+<li>bap:base-taint-analyzer:
 Uses promiscuous-executor for taint analysis.
-Propagates taint exactly.
+No policy is specified
 </li>
 
-<li>bap:promiscuous-executor:
-Executes all linearly independent paths and never fails.
+<li>bap:microexecutor-base:
+The base system for microexecution systems.
+</li>
+
+<li>bap:constant-tracker:
+Uses promiscuous-executor for constant tracking.
 </li>
 
 <li>bap:stubbed-executor:
 Executes a binary together with the Lisp Machine
 </li>
 
-<li>bap:reflective-taint-analyzer:
-A taint analyzer that reflects taints to/from BIR terms
+<li>bap:base-lisp-machine:
+Executes Primus Lisp program.
 </li>
 
-<li>bap:taint-analyzer:
+<li>bap:exact-taint-analyzer:
 Uses promiscuous-executor for taint analysis.
-Propagates taint by computation.
-</li>
-
-<li>bap:legacy-main:
-The legacy Primus system that contains all components registered with the
-Machine.add<sub>component</sub> function.
-</li>
-
-<li>bap:terminating-stubbed-executor:
-Executes a binary together with the Lisp Machine that
-is guaranteed to terminate.
+Propagates taint exactly.
 </li>
 </ul>
 </div>
@@ -224,20 +224,28 @@ is guaranteed to terminate.
 <h2 id="sec-2"><span class="section-number-2">2</span> Components</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
+<li>bap:load-binary:
+[generic]
+Links the binary program into the Primus machine. All symbols of the binary
+program are linked weakly, i.e., if a symbol is already linked, then this
+component will not override it.
+</li>
+
 <li>bap:report-visited:
 [generic]
 Reports progress when a new basic block is discovered.
 </li>
 
-<li>bap:taint-primitives:
+<li>bap:var-randomizer:
 [generic]
-Exposes Primus Lisp primitives that controls the Primus Taint Engine.
+Randomizes registers.
 </li>
 
-<li>bap:promiscuous-path-explorer:
+<li>bap:arg-randomizer:
 [generic]
-Forces execution of all linearly independent paths by forcefully flipping
-the branch conditions.
+Randomizes output arguments of unbound procedures, as well
+as prevents failures when such procedures are called by trapping
+the unresolved handler.
 </li>
 
 <li>bap:exploring-scheduler:
@@ -250,24 +258,15 @@ amount of times. The round-robin scheduler will switch the context after
 each basic block. It will count the number of time the block was evaluated
 </li>
 
-<li>bap:propagate-taint-by-computation:
+<li>bap:constant-tracker-primitives:
 [generic]
-Enables the propagate-by-computation taint propagation policy. In this
-policy, a value is tainted if it was computed using a tainted value.
+Exposes the constant tracker primitives to Primus Lisp.
 </li>
 
-<li>bap:constant-tracker:
+<li>bap:taint-marker:
 [generic]
-Tracks constants, using the following policy. A value is a static constant
-if it was initialized from a constant value or computed from static
-constant values.
-</li>
-
-<li>bap:mark-visited:
-[generic]
-Marks visited (by Primus) program terms with the [Term.visited] attribute
-and unvisited with the [Term.dead] attribute. Note, that the attributes are
-attached only when the system exits
+Translates tainted values of the Taint engine to tainted-regs and
+tainted-ptrs term attributes of the IR.
 </li>
 
 <li>bap:symbolic-path-constraints:
@@ -276,22 +275,53 @@ tracks the path constraint and records them in the machine's symbolic
 context
 </li>
 
-<li>bap:greedy-scheduler:
+<li>bap:round-robin-scheduler:
 [generic]
-Enables the greedy scheduler. The greedy scheduling strategy will continue
-with the same state, unless the machine reaches a termination state, i.e.,
-when the $(b,next) value in a context becomes $(b,None). In that case
-another alive state that has a $(b,next) value that is not $(b,None) is
-chosen. If such state doesn't exist, then the Machine finally terminates.
-Thus this strategy will perform a depth-first traversal of the state tree,
-and guarantees that all paths are explored. The greedy scheduler will
-attempt to reschedule every time a basic block is evaluated.
+Enables the round-robin scheduler (experimental).
+</li>
+
+<li>bap:lisp-dictionary:
+[generic]
+Provides a key-value storage for Primus Lisp programs. Dictionaries are
+represented with symbols and it is a responsibility of user to prevent name
+clashing between different dictionaries.
+</li>
+
+<li>bap:powerpc-init:
+[generic]
+Initializes PPC registers.
+</li>
+
+<li>bap:x86-registers-initializer:
+[generic]
+Intializes all x86/x86-64 registers to zero.
 </li>
 
 <li>bap:limit:
 [generic]
 Enables program termination by limiting the maximum life time of each
 Primus Machine.
+</li>
+
+<li>bap:symbolic-computer:
+[generic]
+Computes a symbolic formula for each Primus value.
+</li>
+
+<li>bap:lisp-ieee754:
+[generic]
+Provides primitives for IEE754 floating-point arithemtic.
+</li>
+
+<li>bap:lisp-primitives:
+[generic]
+Provides the core set of Primus Lisp primitives.
+</li>
+
+<li>bap:beagle-hunter:
+[generic]
+Monitors execution and detects data that looks like words from the provided
+dictionary.
 </li>
 
 <li>bap:lisp-regions:
@@ -305,15 +335,67 @@ set is denoted with a symbol, and it is possible to create arbitrary number
 of sets, as well as move regions from one set to another.
 </li>
 
-<li>bap:symbolic-computer:
+<li>bap:lisp-core:
 [generic]
-Computes a symbolic formula for each Primus value.
+Initializes Primus Lisp core. Forwards Lisp message to the BAP log
+subsystem and enables propagation of observations to signals.
 </li>
 
-<li>bap:beagle-hunter:
+<li>bap:lisp-type-error-printer:
 [generic]
-Monitors execution and detects data that looks like words from the provided
-dictionary.
+Prints Primus Lisp type errors into the standard output.
+</li>
+
+<li>bap:promiscuous-path-explorer:
+[generic]
+Forces execution of all linearly independent paths by forcefully flipping
+the branch conditions.
+</li>
+
+<li>bap:symbolic-lisp-primitives:
+[generic]
+Provides assume and assert primitives.
+</li>
+
+<li>bap:lisp-type-checker:
+[generic]
+Typechecks program and outputs the summary in the standard output.
+</li>
+
+<li>bap:load-lisp-library:
+[generic]
+Loads the Primus Library. Links all functions defined as external into the
+Primus Machine. Symbols are assumed to be strong, i.e., if the symbol is
+already linked, then it will be overriden by the corresponding Lisp
+implemenetation
+</li>
+
+<li>bap:taint-intro:
+[generic]
+Introduces a taint when a term marked with tainted-reg or tainted-ptr is
+entered.
+</li>
+
+<li>bap:propagate-taint-by-computation:
+[generic]
+Enables the propagate-by-computation taint propagation policy. In this
+policy, a value is tainted if it was computed using a tainted value.
+</li>
+
+<li>bap:observation-printer:
+[generic]
+Prints the specified set of observations. Controlled via the primus-print
+plugin.
+</li>
+
+<li>bap:division-by-zero-handler:
+[generic]
+Disables division by zero errors.
+</li>
+
+<li>bap:lisp-incidents:
+[generic]
+Exposes the incident reporting facitilites to Primus Lisp.
 </li>
 
 <li>bap:x86-setup-plt:
@@ -321,37 +403,16 @@ dictionary.
 Sets up PLT entries.
 </li>
 
-<li>bap:powerpc-init:
+<li>bap:mark-visited:
 [generic]
-Initializes PPC registers.
+Marks visited (by Primus) program terms with the [Term.visited] attribute
+and unvisited with the [Term.dead] attribute. Note, that the attributes are
+attached only when the system exits
 </li>
 
-<li>bap:lisp-basic-io:
+<li>bap:taint-signals:
 [generic]
-Provides basic IO primitives to Primus Lisp.
-</li>
-
-<li>bap:conservative-garbage-collector:
-[generic]
-Enables taint garbage collector. The component scans the memory and
-registers and deletes taints that are no longer reachable.
-</li>
-
-<li>bap:arg-randomizer:
-[generic]
-Randomizes output arguments of unbound procedures, as well
-as prevents failures when such procedures are called by trapping
-the unresolved handler.
-</li>
-
-<li>bap:lisp-primitives:
-[generic]
-Provides the core set of Primus Lisp primitives.
-</li>
-
-<li>bap:x86-registers-initializer:
-[generic]
-Intializes all x86/x86-64 registers to zero.
+Reflects Primus Taint observations to Lisp signals.
 </li>
 
 <li>bap:propagate-taint-exact:
@@ -362,46 +423,10 @@ transparent (not changing the value computation), e.g., store, load, cast,
 concat, extract.
 </li>
 
-<li>bap:var-randomizer:
+<li>bap:conservative-garbage-collector:
 [generic]
-Randomizes registers.
-</li>
-
-<li>bap:incident-location-recorder:
-[generic]
-Records tracepoints for incident reporting.
-</li>
-
-<li>bap:round-robin-scheduler:
-[generic]
-Enables the round-robin scheduler (experimental).
-</li>
-
-<li>bap:taint-mapper:
-[generic]
-Maintains a mapping between tainted objects and term identifiers.
-</li>
-
-<li>bap:division-by-zero-handler:
-[generic]
-Disables division by zero errors.
-</li>
-
-<li>bap:lisp-ieee754:
-[generic]
-Provides primitives for IEE754 floating-point arithemtic.
-</li>
-
-<li>bap:constant-tracker-primitives:
-[generic]
-Exposes the constant tracker primitives to Primus Lisp.
-</li>
-
-<li>bap:lisp-dictionary:
-[generic]
-Provides a key-value storage for Primus Lisp programs. Dictionaries are
-represented with symbols and it is a responsibility of user to prevent name
-clashing between different dictionaries.
+Enables taint garbage collector. The component scans the memory and
+registers and deletes taints that are no longer reachable.
 </li>
 
 <li>bap:program-loader:
@@ -417,20 +442,16 @@ stack-pointer register to the command line arguments. (The environment
 variables follows the arguments).
 </li>
 
-<li>bap:mem-randomizer:
+<li>bap:constant-tracker:
 [generic]
-Randomizes process memory.
+Tracks constants, using the following policy. A value is a static constant
+if it was initialized from a constant value or computed from static
+constant values.
 </li>
 
-<li>bap:lisp-incidents:
+<li>bap:incident-location-recorder:
 [generic]
-Exposes the incident reporting facitilites to Primus Lisp.
-</li>
-
-<li>bap:observation-printer:
-[generic]
-Prints the specified set of observations. Controlled via the primus-print
-plugin.
+Records tracepoints for incident reporting.
 </li>
 
 <li>bap:symbolic-path-explorer:
@@ -439,63 +460,42 @@ Computes a path constraint for each branch and forks a new machine if the
 constraint is satisfiable.
 </li>
 
-<li>bap:symbolic-lisp-primitives:
+<li>bap:taint-primitives:
 [generic]
-Provides assume and assert primitives.
+Exposes Primus Lisp primitives that controls the Primus Taint Engine.
 </li>
 
-<li>bap:load-binary:
+<li>bap:lisp-basic-io:
 [generic]
-Links the binary program into the Primus machine. All symbols of the binary
-program are linked weakly, i.e., if a symbol is already linked, then this
-component will not override it.
+Provides basic IO primitives to Primus Lisp.
+</li>
+
+<li>bap:greedy-scheduler:
+[generic]
+Enables the greedy scheduler. The greedy scheduling strategy will continue
+with the same state, unless the machine reaches a termination state, i.e.,
+when the $(b,next) value in a context becomes $(b,None). In that case
+another alive state that has a $(b,next) value that is not $(b,None) is
+chosen. If such state doesn't exist, then the Machine finally terminates.
+Thus this strategy will perform a depth-first traversal of the state tree,
+and guarantees that all paths are explored. The greedy scheduler will
+attempt to reschedule every time a basic block is evaluated.
+</li>
+
+<li>bap:mem-randomizer:
+[generic]
+Randomizes process memory.
+</li>
+
+<li>bap:taint-mapper:
+[generic]
+Maintains a mapping between tainted objects and term identifiers.
 </li>
 
 <li>bap:wondering-scheduler:
 [generic]
 Enables the random wonderning scheduler (experimental). The scheduler will
 pick between the states randomly.
-</li>
-
-<li>bap:taint-signals:
-[generic]
-Reflects Primus Taint observations to Lisp signals.
-</li>
-
-<li>bap:lisp-type-checker:
-[generic]
-Typechecks program and outputs the summary in the standard output.
-</li>
-
-<li>bap:lisp-type-error-printer:
-[generic]
-Prints Primus Lisp type errors into the standard output.
-</li>
-
-<li>bap:taint-intro:
-[generic]
-Introduces a taint when a term marked with tainted-reg or tainted-ptr is
-entered.
-</li>
-
-<li>bap:load-lisp-library:
-[generic]
-Loads the Primus Library. Links all functions defined as external into the
-Primus Machine. Symbols are assumed to be strong, i.e., if the symbol is
-already linked, then it will be overriden by the corresponding Lisp
-implemenetation
-</li>
-
-<li>bap:lisp-core:
-[generic]
-Initializes Primus Lisp core. Forwards Lisp message to the BAP log
-subsystem and enables propagation of observations to signals.
-</li>
-
-<li>bap:taint-marker:
-[generic]
-Translates tainted values of the Taint engine to tainted-regs and
-tainted-ptrs term attributes of the IR.
 </li>
 </ul>
 </div>
@@ -833,7 +833,7 @@ Occurs after the given term is evaluated.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-09-12 Sat 13:54</p>
+<p class="date">Created: 2020-10-03 Sat 01:54</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

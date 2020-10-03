@@ -780,7 +780,7 @@ prints more information about the <B>stub-resolver</B> plugin
 <DT><B>--stub-resolver-names</B>=<I>VAL</I><DD>
 The list of known sections that contain function stubs&#46; The names specified with this parameter are appended to the existing list that includes: <B>&#46;plt</B>, <B>__stubs</B>, <B>&#46;MIPS&#46;stubs</B>
 <DT><B>--stub-resolver-signatures</B>=<I>VAL</I><DD>
-A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;triple&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The triple has the form <B>&lt;arch&gt;&lt;subarch&gt;-&lt;system&gt;-&lt;abi&gt;</B>&#46; Only <B>&lt;arch&gt;</B> is required, all other fileds could be omitted (or filled in with <B>unknown</B>&#46; E&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap
+A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;target&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The &lt;target&gt; is the name of the target, e&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap
 <DT><B>--taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>taint</B> plugin
 <DT><B>--taint-ptr</B>=<I>VAL</I><DD>
@@ -853,6 +853,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 13:52:18 GMT, September 12, 2020
+Time: 01:50:47 GMT, October 03, 2020
 </BODY>
 </HTML>
