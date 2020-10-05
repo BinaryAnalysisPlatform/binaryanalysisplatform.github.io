@@ -3,6 +3,8 @@ name: Build documentation
 on:
   schedule:
     - cron: '0 0 * * SAT' # every Saturday
+  workflow_dispatch:
+
 
 jobs:
   update-docs:
@@ -66,11 +68,13 @@ jobs:
       - name: update
         run: |
            mkdir ready
-           mv  bap.master/doc/man1 ready/
-           mv  bap.master/doc/man3 ready/
-           mv  bap.master/doc/lisp ready/
-           mv  bap.master/doc/primus ready/
-           cp -rL bap.master/doc/odoc ready/
+           mv bap.master/doc/man1 ready/
+           mv bap.master/doc/man3 ready/
+           mv bap.master/doc/lisp ready/
+           mv bap.master/doc/primus ready/
+           mv bap.master/doc/odoc ready/
+           ln -s ready/odoc ready/master
+           ln -s ready/man1 ready/man
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
