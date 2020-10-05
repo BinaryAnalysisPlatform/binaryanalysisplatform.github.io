@@ -73,8 +73,7 @@ jobs:
            mv bap.master/doc/lisp ready/
            mv bap.master/doc/primus ready/
            cp -rL bap.master/doc/odoc ready/
-           ln -s ready/odoc ready/master
-           ln -s ready/man1 ready/man
+           (cd ready; ln -s odoc master; ln -s man1 man)
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
