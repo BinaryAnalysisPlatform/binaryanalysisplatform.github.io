@@ -72,7 +72,7 @@ jobs:
            mv bap.master/doc/man3 ready/
            mv bap.master/doc/lisp ready/
            mv bap.master/doc/primus ready/
-           mv bap.master/doc/odoc ready/
+           cp -rL bap.master/doc/odoc ready/
            ln -s ready/odoc ready/master
            ln -s ready/man1 ready/man
 
