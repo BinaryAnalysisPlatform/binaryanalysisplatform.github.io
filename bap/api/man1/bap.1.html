@@ -250,6 +250,8 @@ Enables the pass ssa in the old style (DEPRECATED)
 Enables the pass strings in the old style (DEPRECATED)
 <DT><B>--stub-resolver</B><DD>
 Enables the pass stub-resolver in the old style (DEPRECATED)
+<DT><B>--systemz</B><DD>
+Enables the pass systemz in the old style (DEPRECATED)
 <DT><B>--taint</B><DD>
 Enables the pass taint in the old style (DEPRECATED)
 <DT><B>--trace</B><DD>
@@ -537,6 +539,8 @@ Disable the ssa plugin
 Disable the strings plugin
 <DT><B>--no-stub-resolver</B><DD>
 Disable the stub-resolver plugin
+<DT><B>--no-systemz</B><DD>
+Disable the systemz plugin
 <DT><B>--no-taint</B><DD>
 Disable the taint plugin
 <DT><B>--no-trace</B><DD>
@@ -781,6 +785,8 @@ prints more information about the <B>stub-resolver</B> plugin
 The list of known sections that contain function stubs&#46; The names specified with this parameter are appended to the existing list that includes: <B>&#46;plt</B>, <B>__stubs</B>, <B>&#46;MIPS&#46;stubs</B>
 <DT><B>--stub-resolver-signatures</B>=<I>VAL</I><DD>
 A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;target&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The &lt;target&gt; is the name of the target, e&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap
+<DT><B>--systemz-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>systemz</B> plugin
 <DT><B>--taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>taint</B> plugin
 <DT><B>--taint-ptr</B>=<I>VAL</I><DD>
@@ -853,6 +859,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 17:44:51 GMT, October 05, 2020
+Time: 01:58:51 GMT, October 10, 2020
 </BODY>
 </HTML>
