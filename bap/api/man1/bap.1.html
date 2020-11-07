@@ -254,6 +254,8 @@ Enables the pass stub-resolver in the old style (DEPRECATED)
 Enables the pass systemz in the old style (DEPRECATED)
 <DT><B>--taint</B><DD>
 Enables the pass taint in the old style (DEPRECATED)
+<DT><B>--thumb</B><DD>
+Enables the pass thumb in the old style (DEPRECATED)
 <DT><B>--trace</B><DD>
 Enables the pass trace in the old style (DEPRECATED)
 <DT><B>--trivial-condition-form</B><DD>
@@ -289,6 +291,8 @@ will be removed in 2&#46;0&#46;0 Removed specified api module and exit&#46; Each
 Show all registered api
 <DT><B>--arm-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>arm</B> plugin
+<DT><B>--arm-interworking</B>=<I>VAL</I><DD>
+Enable ARM/Thumb interworking&#46; Defaults to (auto), i&#46;e&#46;, to the automatic detection of interworking
 <DT><B>--beagle-alpha</B>=<I>VAL</I> (absent=0&#46;05)<DD>
 desired probability of a false positive
 <DT><B>--beagle-alphabet</B>=<I>VAL</I> (absent=printable)<DD>
@@ -543,6 +547,8 @@ Disable the stub-resolver plugin
 Disable the systemz plugin
 <DT><B>--no-taint</B><DD>
 Disable the taint plugin
+<DT><B>--no-thumb</B><DD>
+Disable the thumb plugin
 <DT><B>--no-trace</B><DD>
 Disable the trace plugin
 <DT><B>--no-trivial-condition-form</B><DD>
@@ -793,6 +799,8 @@ prints more information about the <B>taint</B> plugin
 Taint ptr value of definition matching with the specification
 <DT><B>--taint-reg</B>=<I>VAL</I><DD>
 Taint reg value of definition matching with the specification
+<DT><B>--thumb-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>thumb</B> plugin
 <DT><B>--trace-dump</B>=<I>URI</I><DD>
 Dump a trace specified by <I>URI</I>
 <DT><B>--trace-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -859,6 +867,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:31:43 GMT, October 31, 2020
+Time: 01:36:13 GMT, November 07, 2020
 </BODY>
 </HTML>
