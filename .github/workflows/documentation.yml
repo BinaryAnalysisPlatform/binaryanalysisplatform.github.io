@@ -8,7 +8,7 @@ on:
 
 jobs:
   update-docs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout blog️
         uses: actions/checkout@v2   # If you're using actions/checkout@v2 you must set persist-credentials
@@ -37,7 +37,14 @@ jobs:
           opam pin add bap bap.master --no-action
 
       - name: Install system dependencies
-        run: opam depext -u bap
+        run: opam depext -u bap-extra
+
+      - name: Install Ghidra
+        run: |
+          sudo add-apt-repository ppa:ivg/ghidra -y
+          sudo apt-get install libghidra-dev -y
+          sudo apt-get install libghidra-data -y
+
 
       - name: Install opam dependencies
         run: |
