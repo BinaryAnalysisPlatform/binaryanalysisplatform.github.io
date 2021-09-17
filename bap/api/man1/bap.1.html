@@ -140,6 +140,8 @@ Enables the pass cxxfilt in the old style (DEPRECATED)
 Dumps the program to &lt;FILE&gt; (defaults to stdout) in the &lt;FMT&gt; format (defaults to bir)&#46;
 <DT><B>--demangle</B><DD>
 Enables the pass demangle in the old style (DEPRECATED)
+<DT><B>--dependencies</B><DD>
+Enables the pass dependencies in the old style (DEPRECATED)
 <DT><B>--disassemble</B><DD>
 Enables the pass disassemble in the old style (DEPRECATED)
 <DT><B>--dump-symbols</B><DD>
@@ -148,8 +150,12 @@ Enables the pass dump-symbols in the old style (DEPRECATED)
 Enables the pass elf-loader in the old style (DEPRECATED)
 <DT><B>--emit-ida-script</B><DD>
 Enables the pass emit-ida-script in the old style (DEPRECATED)
+<DT><B>--flatten</B><DD>
+Enables the pass flatten in the old style (DEPRECATED)
 <DT><B>--frontc-parser</B><DD>
 Enables the pass frontc-parser in the old style (DEPRECATED)
+<DT><B>--ghidra</B><DD>
+Enables the pass ghidra in the old style (DEPRECATED)
 <DT><B>--glibc-runtime</B><DD>
 Enables the pass glibc-runtime in the old style (DEPRECATED)
 <DT><B>--help</B>[=<I>FMT</I>] (default=auto)<DD>
@@ -240,6 +246,8 @@ Enables the pass recipe-command in the old style (DEPRECATED)
 Enables the pass relocatable in the old style (DEPRECATED)
 <DT><B>--report</B><DD>
 Enables the pass report in the old style (DEPRECATED)
+<DT><B>--riscv</B><DD>
+Enables the pass riscv in the old style (DEPRECATED)
 <DT><B>--run</B><DD>
 Enables the pass run in the old style (DEPRECATED)
 <DT><B>--specification</B><DD>
@@ -254,6 +262,8 @@ Enables the pass stub-resolver in the old style (DEPRECATED)
 Enables the pass systemz in the old style (DEPRECATED)
 <DT><B>--taint</B><DD>
 Enables the pass taint in the old style (DEPRECATED)
+<DT><B>--target</B>=<I>NAME</I> (absent=:unknown)<DD>
+Refines the target architecture of the binary&#46; See `bap list targets` for the full hierarchy of targets&#46; The specified target must be a refinement of the actual target stored in the binary, otherwise an error is signaled&#46;
 <DT><B>--thumb</B><DD>
 Enables the pass thumb in the old style (DEPRECATED)
 <DT><B>--trace</B><DD>
@@ -289,6 +299,8 @@ Add a list of a paths where to store/search apis
 will be removed in 2&#46;0&#46;0 Removed specified api module and exit&#46; Each module should be of the form &lt;lang&gt;:&lt;file&gt;, where &lt;lang&gt; is the language in which API is written, and &lt;file&gt; is a filename of api module in the <B>api-list-paths</B> option&#46; Multiple modules can be added by specifying this option several times&#46;
 <DT><B>--api-show</B><DD>
 Show all registered api
+<DT><B>--arm-backend</B>=<I>VAL</I><DD>
+Specify the backend that is used for disassembly and lifting&#46;
 <DT><B>--arm-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>arm</B> plugin
 <DT><B>--arm-interworking</B>=<I>VAL</I><DD>
@@ -341,7 +353,7 @@ prints more information about the <B>byteweight</B> plugin
 The maximum length of a word, that could identify a function start&#46; Any signatures that are greater than that length, will not be considered, affect prior probabilities, etc&#46;
 <DT><B>--byteweight-min-length</B>=<I>VAL</I> (absent=8)<DD>
 The minimum length of a word, that could identify a function start&#46; Any signatures that are below that length, will not be considered, affect prior probabilities, etc&#46;
-<DT><B>--byteweight-sigs</B>=<I>VAL</I> (absent=/home/runner/&#46;opam/4&#46;09&#46;1/share/bap/sigs&#46;zip)<DD>
+<DT><B>--byteweight-sigs</B>=<I>VAL</I> (absent=/home/runner/&#46;local/share/bap/signatures/byteweight&#46;zip)<DD>
 Path to the signature file
 <DT><B>--byteweight-threshold</B>=<I>VAL</I> (absent=10&#46;)<DD>
 If greater than 1&#46;0 then it is the Bayes factor, otherwise it is a probability&#46;
@@ -373,6 +385,8 @@ prints more information about the <B>cxxfilt</B> plugin
 prints more information about the <B>demangle</B> plugin
 <DT><B>--demangle-with</B>=<I>DEMANGLER</I><DD>
 Demangle all function names using <I>DEMANGLER</I>
+<DT><B>--dependencies-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>dependencies</B> plugin
 <DT><B>--disassemble-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>disassemble</B> plugin
 <DT><B>--dump-symbols-file</B>=<I>FILE</I><DD>
@@ -387,8 +401,18 @@ Emit specified BIR attribute&#46; Can be specified multiple times&#46;
 Dump annotations to the specified file <I>NAME</I>&#46; If not specified, then the script will dumped into the standard output
 <DT><B>--emit-ida-script-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>emit-ida-script</B> plugin
+<DT><B>--flatten-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>flatten</B> plugin
 <DT><B>--frontc-parser-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>frontc-parser</B> plugin
+<DT><B>--frontc-parser-preprocess</B>[=<I>VAL</I>], <B>--frontc-parser-pp</B>[=<I>VAL</I>] (default=cpp)<DD>
+Preprocess headers with the specified preprocessor&#46;
+<DT><B>--ghidra-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>ghidra</B> plugin
+<DT><B>--ghidra-path</B>=<I>VAL</I><DD>
+Undocumented
+<DT><B>--ghidra-targets</B>, <B>--ghidra-list-targets</B><DD>
+Undocumented
 <DT><B>--glibc-runtime-enable</B><DD>
 Override the glib detection heuristic and enable the runtime fixup&#46;
 <DT><B>--glibc-runtime-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -419,6 +443,8 @@ Read patterns from the <I>FILE</I>
 Map terms according the <I>VAL</I>
 <DT><B>--mc-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>mc</B> plugin
+<DT><B>--mips-backend</B>=<I>VAL</I><DD>
+Specify which backend to use
 <DT><B>--mips-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>mips</B> plugin
 <DT><B>--no-abi</B><DD>
@@ -447,6 +473,8 @@ Disable the constant-tracker plugin
 Disable the cxxfilt plugin
 <DT><B>--no-demangle</B><DD>
 Disable the demangle plugin
+<DT><B>--no-dependencies</B><DD>
+Disable the dependencies plugin
 <DT><B>--no-disassemble</B><DD>
 Disable the disassemble plugin
 <DT><B>--no-dump-symbols</B><DD>
@@ -455,8 +483,12 @@ Disable the dump-symbols plugin
 Disable the elf-loader plugin
 <DT><B>--no-emit-ida-script</B><DD>
 Disable the emit-ida-script plugin
+<DT><B>--no-flatten</B><DD>
+Disable the flatten plugin
 <DT><B>--no-frontc-parser</B><DD>
 Disable the frontc-parser plugin
+<DT><B>--no-ghidra</B><DD>
+Disable the ghidra plugin
 <DT><B>--no-glibc-runtime</B><DD>
 Disable the glibc-runtime plugin
 <DT><B>--no-ida</B><DD>
@@ -533,6 +565,8 @@ Disable the recipe-command plugin
 Disable the relocatable plugin
 <DT><B>--no-report</B><DD>
 Disable the report plugin
+<DT><B>--no-riscv</B><DD>
+Disable the riscv plugin
 <DT><B>--no-run</B><DD>
 Disable the run plugin
 <DT><B>--no-specification</B><DD>
@@ -587,6 +621,8 @@ Disable all kinds of optimizations
 Do not resolve addresses to symbolic names
 <DT><B>--phoenix-output-folder</B>=<I>VAL</I> (absent=phoenix)<DD>
 Output data into the specified folder
+<DT><B>--powerpc-backend</B>=<I>VAL</I><DD>
+Undocumented&#46;
 <DT><B>--powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>powerpc</B> plugin
 <DT><B>--primus-dictionary-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -617,6 +653,10 @@ dumps generated AST
 prints more information about the <B>primus-lisp</B> plugin
 <DT><B>--primus-lisp-load</B>=<I>VAL</I> (absent=posix)<DD>
 load specified module
+<DT><B>--primus-lisp-semantics</B>=<I>VAL</I><DD>
+prepend the specified folders to the list of folders where semantics files are searched&#46; Every file that has the <B>&#46;lisp</B> extension in these folders will be loaded and linked to the Primus Lisp program that is used to define program semantics&#46; The initial list of folders contains <B>/home/runner/&#46;local/share/bap/primus/semantics</B> and <B>/home/runner/&#46;opam/4&#46;09&#46;1/share/bap/primus/semantics</B>&#46; When features are loaded, the first found file that has the matching name is loaded, so it is possible to override features stored in the system or local data directories&#46; When set to <B>disable</B> this option disables the Primus Lisp lifter&#46;
+<DT><B>--primus-lisp-semantics-stdout</B>=<I>VAL</I><DD>
+redirects messages in the semantic definitions to the specified file&#46;
 <DT><B>--primus-lisp-typecheck</B>, <B>--primus-lisp-type-check</B><DD>
 typechecks the program and prints erros if they exist
 <DT><B>--primus-loader-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -733,10 +773,12 @@ Initialize random number generator with the given seed
 Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined registers will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
 <DT><B>--radare2-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>radare2</B> plugin
-<DT><B>--raw-arch</B>=<I>VAL</I> (absent=x86_64)<DD>
+<DT><B>--raw-arch</B>=<I>VAL</I> (absent=x86-64)<DD>
 Specifies the ISA of raw bytes
 <DT><B>--raw-base</B>=<I>VAL</I> (absent=0x0)<DD>
 The address of the first byte
+<DT><B>--raw-bits</B>=<I>VAL</I> (absent=32)<DD>
+The number of bits in the machine word&#46; If not specified then it will be derived from the architecture or default to 32 if the architecture is not known&#46;
 <DT><B>--raw-entry-point</B>=<I>VAL</I><DD>
 Address (or addresses) of entry points
 <DT><B>--raw-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -745,10 +787,12 @@ prints more information about the <B>raw</B> plugin
 The length of the code section
 <DT><B>--raw-offset</B>=<I>VAL</I> (absent=0)<DD>
 The offset of the first byte
-<DT><B>--read-symbols-from</B>=<I>SYMS</I><DD>
-Use this file as symbols source
+<DT><B>--read-symbols-from</B>=<I>VAL</I><DD>
+Undocumented
 <DT><B>--read-symbols-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>read-symbols</B> plugin
+<DT><B>--read-symbols-when-matches</B>[=<I>VAL</I>] (default=)<DD>
+Undocumented
 <DT><B>--recipe-command-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>recipe-command</B> plugin
 <DT><B>--relocatable-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -759,6 +803,10 @@ Output progress events
 prints more information about the <B>report</B> plugin
 <DT><B>--report-progress</B><DD>
 Show progress bars
+<DT><B>--riscv-backend</B>=<I>VAL</I><DD>
+Undocumented
+<DT><B>--riscv-help</B>[=<I>VAL</I>] (default=auto)<DD>
+prints more information about the <B>riscv</B> plugin
 <DT><B>--run-argv</B>=<I>VAL</I><DD>
 Process argument vector
 <DT><B>--run-entry-points</B>=<I>VAL</I><DD>
@@ -788,9 +836,9 @@ prints an address of each found string
 <DT><B>--stub-resolver-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>stub-resolver</B> plugin
 <DT><B>--stub-resolver-names</B>=<I>VAL</I><DD>
-The list of known sections that contain function stubs&#46; The names specified with this parameter are appended to the existing list that includes: <B>&#46;plt</B>, <B>__stubs</B>, <B>&#46;MIPS&#46;stubs</B>
+The list of known sections that contain function stubs&#46; The names specified with this parameter are appended to the existing list that includes: <B>&#46;plt</B>, <B>&#46;plt&#46;sec</B>, <B>__stubs</B>, <B>&#46;MIPS&#46;stubs</B>
 <DT><B>--stub-resolver-signatures</B>=<I>VAL</I><DD>
-A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;target&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The &lt;target&gt; is the name of the target, e&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap
+A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;target&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The &lt;target&gt; is the name of the target, e&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder, /home/runner/&#46;local/share/bap/signatures, and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap/signatures
 <DT><B>--systemz-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>systemz</B> plugin
 <DT><B>--taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
@@ -821,10 +869,14 @@ run <B>bap</B><B>-taint</B> pass
 Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be either `sysv&#39; or `ms&#39;
 <DT><B>--x86-abi</B>=<I>VAL</I><DD>
 Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be one of `cdecl&#39;, `stdcall&#39;, `ms&#39;, `fastcall&#39;, `watcom-stack&#39; or `watcom-regs&#39;
+<DT><B>--x86-backend</B>=<I>VAL</I>, <B>--x86-64-backend</B>=<I>VAL</I><DD>
+Undocumented&#46;
 <DT><B>--x86-help</B>[=<I>VAL</I>] (default=auto)<DD>
 prints more information about the <B>x86</B> plugin
 <DT><B>--x86-lifter</B>=<I>VAL</I> (absent=merge)<DD>
 Debug purpose only&#46; The <I>VAL</I> must be one of `legacy&#39;, `modern&#39; or `merge&#39;&#46; Default: <I>VAL</I> = merge&#46;
+<DT><B>--x86-with-floating-points</B><DD>
+Undocumented&#46;
 </DL>
 <A NAME="lbAK">&nbsp;</A>
 <H2>ENVIRONMENT</H2>
@@ -867,6 +919,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:36:13 GMT, November 07, 2020
+Time: 13:56:36 GMT, September 17, 2021
 </BODY>
 </HTML>

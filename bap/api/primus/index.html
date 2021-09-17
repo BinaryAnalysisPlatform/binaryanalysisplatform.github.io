@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title></title>
-<!-- 2020-11-07 Sat 01:39 -->
+<!-- 2021-09-17 Fri 13:59 -->
 <meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta  name="generator" content="Org-mode" />
 <style type="text/css">
@@ -151,39 +151,12 @@ for the JavaScript code in this tag.
 <h2 id="sec-1"><span class="section-number-2">1</span> Systems</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
-<li>bap:reflective-taint-analyzer:
-A taint analyzer that reflects taints to/from BIR terms
+<li>bap:constant-tracker:
+Uses promiscuous-executor for constant tracking.
 </li>
 
-<li>bap:promiscuous-executor:
-Executes all linearly independent paths and never fails.
-</li>
-
-<li>bap:multi-analyzer:
-Runs several analyses in parallel.
-</li>
-
-<li>bap:legacy-main:
-The legacy Primus system that contains all components registered with the
-Machine.add<sub>component</sub> function.
-</li>
-
-<li>bap:taint-analyzer:
-Uses promiscuous-executor for taint analysis.
-Propagates taint by computation.
-</li>
-
-<li>bap:terminating-stubbed-executor:
-Executes a binary together with the Lisp Machine that
-is guaranteed to terminate.
-</li>
-
-<li>bap:string-deobfuscator:
-Uses promiscuous-executor to find obfuscated strings.
-</li>
-
-<li>bap:binary-executor:
-Executes a binary program.
+<li>bap:microexecutor-base:
+The base system for microexecution systems.
 </li>
 
 <li>bap:symbolic-executor:
@@ -196,25 +169,54 @@ Uses promiscuous-executor for taint analysis.
 No policy is specified
 </li>
 
-<li>bap:microexecutor-base:
-The base system for microexecution systems.
+<li>bap:binary-executor:
+Executes a binary program.
 </li>
 
-<li>bap:constant-tracker:
-Uses promiscuous-executor for constant tracking.
+<li>bap:taint-analyzer:
+Uses promiscuous-executor for taint analysis.
+The default taint propagation policy is selected
+using the &#x2013;primus-taint-select-default-policy
+option (defaults to propagate-by-computation)
+</li>
+
+<li>bap:reflective-taint-analyzer:
+A taint analyzer that reflects taints to/from BIR terms
 </li>
 
 <li>bap:stubbed-executor:
 Executes a binary together with the Lisp Machine
 </li>
 
+<li>bap:legacy-main:
+The legacy Primus system that contains all components registered with the
+Machine.add<sub>component</sub> function.
+</li>
+
 <li>bap:base-lisp-machine:
 Executes Primus Lisp program.
+</li>
+
+<li>bap:promiscuous-executor:
+Executes all linearly independent paths and never fails.
+</li>
+
+<li>bap:terminating-stubbed-executor:
+Executes a binary together with the Lisp Machine that
+is guaranteed to terminate.
+</li>
+
+<li>bap:multi-analyzer:
+Runs several analyses in parallel.
 </li>
 
 <li>bap:exact-taint-analyzer:
 Uses promiscuous-executor for taint analysis.
 Propagates taint exactly.
+</li>
+
+<li>bap:string-deobfuscator:
+Uses promiscuous-executor to find obfuscated strings.
 </li>
 </ul>
 </div>
@@ -246,6 +248,12 @@ Randomizes registers.
 Randomizes output arguments of unbound procedures, as well
 as prevents failures when such procedures are called by trapping
 the unresolved handler.
+</li>
+
+<li>bap:select-default-taint-policy:
+[generic]
+Sets the default policy to the value selected by a user via the
+&#x2013;primus-taint-default-policy command-line option.
 </li>
 
 <li>bap:exploring-scheduler:
@@ -316,6 +324,12 @@ Provides primitives for IEE754 floating-point arithemtic.
 <li>bap:lisp-primitives:
 [generic]
 Provides the core set of Primus Lisp primitives.
+</li>
+
+<li>bap:select-propagate-by-computation-policy:
+[generic]
+Selects the propagate-by-computation as the default taint propagation
+policy. This policy could be overwritten per each taint kind individually.
 </li>
 
 <li>bap:beagle-hunter:
@@ -449,6 +463,12 @@ if it was initialized from a constant value or computed from static
 constant values.
 </li>
 
+<li>bap:select-propagate-taint-exact-policy:
+[generic]
+Selects the propagate-taint-exact as the default taint propagation policy.
+This policy could be overwritten per each taint kind individually.
+</li>
+
 <li>bap:incident-location-recorder:
 [generic]
 Records tracepoints for incident reporting.
@@ -505,335 +525,335 @@ pick between the states randomly.
 <h2 id="sec-3"><span class="section-number-2">3</span> Observations</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
-<li>leave-phi:
-Occurs after the given term is evaluated.
+<li>primus:clock:
+Occurs on each clock (operation) of the interpreter.
 </li>
 
-<li>machine-kill:
+<li>primus:machine-kill:
 Occurs after the given machine is killed.
 Observations are in the restricted mode.
 </li>
 
-<li>leave-pos:
-Occurs after the given position is evaluated.
+<li>primus:memory-switch:
+Occurs when the memory bank is switched.
 </li>
 
-<li>incident-new-class:
-Occurs when a new incident class is created
+<li>primus:incident:
+Occurs when the incident is reported that involves the given locations.
 </li>
 
-<li>concat:
+<li>primus:concat:
 Occurs on each concat operation.
 </li>
 
-<li>stored:
+<li>primus:random-debug:
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>primus:written:
+Occurs after the value is assigned to the variable.
+</li>
+
+<li>primus:stored:
 Occurs after the value is stored at the address.
 </li>
 
-<li>beagle-prey:
-Occurs when the sequence of characters is detected.
+<li>primus:division-by-zero:
+Occurs before the division by zero happens.
 </li>
 
-<li>pc-changed:
-Occurs after the program counter is changed.
-</li>
-
-<li>enter-jmp:
-Occurs before the given term is evaluated.
-</li>
-
-<li>call:
-Occurs when the call is made.
-</li>
-
-<li>enter-def:
-Occurs before the given term is evaluated.
-</li>
-
-<li>lisp-call:
-Occurs when the call to Lisp code is made.
-</li>
-
-<li>pagefault:
-Occurs on pagefault.
-</li>
-
-<li>leave-jmp:
+<li>primus:leave-arg:
 Occurs after the given term is evaluated.
 </li>
 
-<li>enter-sub:
-Occurs before the given term is evaluated.
+<li>primus:lisp-call-return:
+OCcurs when the call to Lisp code returns.
 </li>
 
-<li>call-return:
-Occurs when the call returns.
-</li>
-
-<li>enter-pos:
-Occurs before the given position is evaluated.
-</li>
-
-<li>extract:
+<li>primus:extract:
 Occurs on each extract operation.
 </li>
 
-<li>clock:
-Occurs on each clock (operation) of the interpreter.
+<li>primus:incident-new-instance:
+Occurs on a new instance of the incident class
 </li>
 
-<li>binop:
-Occurs on each binary operation.
-</li>
-
-<li>loaded:
-Occurs after the given address is read.
-</li>
-
-<li>leave-def:
-Occurs after the given term is evaluated.
-</li>
-
-<li>lisp-primitive:
-Occurs when the Lisp primitive is invoked.
-</li>
-
-<li>lisp-message:
-Occurs with X when (msg x) is evaluated.
-</li>
-
-<li>enter-phi:
-Occurs before the given term is evaluated.
-</li>
-
-<li>halting:
+<li>primus:halting:
 Occurs before the halt operation is posted.
 </li>
 
-<li>system-stop:
-Occurs after the system is stopped. Observations
-are in the restricted mode
+<li>primus:machine-switch:
+Occurs when machines are switched.
 </li>
 
-<li>fini:
-Occurs when machine finishes.
-</li>
-
-<li>leave-top:
+<li>primus:leave-phi:
 Occurs after the given term is evaluated.
+</li>
+
+<li>primus:incident-location:
+Occurs when the location of a possible incident is created.
+</li>
+
+<li>primus:exception:
+Occurs just before the Machine exception is raised.
+</li>
+
+<li>primus:interrupt:
+Occurs before an interrupt.
+</li>
+
+<li>primus:leave-pos:
+Occurs after the given position is evaluated.
+</li>
+
+<li>primus:enter-term:
+Occurs before the given term.
+</li>
+
+<li>primus:ite:
+Occurs on each ite expression.
+</li>
+
+<li>primus:enter-phi:
+Occurs before the given term is evaluated.
+</li>
+
+<li>primus:leave-sub:
+Occurs after the given term is evaluated.
+</li>
+
+<li>primus:cast:
+Occurs on each cast.
+</li>
+
+<li>primus:enter-sub:
+Occurs before the given term is evaluated.
+</li>
+
+<li>primus:pc-changed:
+Occurs after the program counter is changed.
+</li>
+
+<li>primus:enter-pos:
+Occurs before the given position is evaluated.
+</li>
+
+<li>primus:call-return:
+Occurs when the call returns.
+</li>
+
+<li>primus:taint-attached:
+Occurs when a taint is attached to the value.
+</li>
+
+<li>primus:reading:
+Occurs before the given variable is read.
+</li>
+
+<li>primus:taint-finalize:
+Occurs when the taint becomes unreachable.
+</li>
+
+<li>primus:lisp-primitive:
+Occurs when the Lisp primitive is invoked.
+</li>
+
+<li>primus:leave-blk:
+Occurs after the given term is evaluated.
+</li>
+
+<li>primus:enter-exp:
+Occurs before the given exp is evaluated.
+</li>
+
+<li>primus:call:
+Occurs when the call is made.
+</li>
+
+<li>primus:executor-debug:
+</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>primus:enter-def:
+Occurs before the given term is evaluated.
 </li>
 
 <li>bap:var-generated:
 Occurs when a new value is generated during the read operation
 </li>
 
-<li>leave-arg:
+<li>primus:fini:
+Occurs when machine finishes.
+</li>
+
+<li>primus:leave-jmp:
 Occurs after the given term is evaluated.
 </li>
 
-<li>incident-new-instance:
-Occurs on a new instance of the incident class
+<li>primus:enter-top:
+Occurs before the given term is evaluated.
 </li>
 
-<li>cast:
-Occurs on each cast.
-</li>
-
-<li>interrupt:
-Occurs before an interrupt.
-</li>
-
-<li>undefined:
-Occurs when an undefined value is created.
-</li>
-
-<li>taint-finalize:
-Occurs when the taint becomes unreachable.
-</li>
-
-<li>jumping:
-Occurs before the jump to the given destination.
-</li>
-
-<li>writing:
+<li>primus:writing:
 Occurs before the value is assigned to the variable.
 </li>
 
-<li>lisp-call-return:
-OCcurs when the call to Lisp code returns.
+<li>primus:incident-new-class:
+Occurs when a new incident class is created
 </li>
 
-<li>system-start:
-Occurs after the system start.
+<li>primus:enter-jmp:
+Occurs before the given term is evaluated.
 </li>
 
-<li>machine-switch:
-Occurs when machines are switched.
+<li>primus:binop:
+Occurs on each binary operation.
 </li>
 
-<li>leave-sub:
+<li>primus:leave-exp:
+Occurs after the given exp is evaluated.
+</li>
+
+<li>primus:incident-new-representative:
+Occurs when a new representative of the class is selected
+</li>
+
+<li>primus:eval-cond:
+Occurs when the jump condition is evaluated.
+</li>
+
+<li>primus:unop:
+Occurs on each unary operation.
+</li>
+
+<li>primus:leave-top:
 Occurs after the given term is evaluated.
 </li>
 
-<li>storing:
-Occurs before the value is stored at the address.
-</li>
-
-<li>memory-switch:
-Occurs when the memory bank is switched.
-</li>
-
-<li>assert-failure:
-occurs when a symbolic executor assertion doesn't hold
-</li>
-
-<li>exception:
-Occurs just before the Machine exception is raised.
-</li>
-
-<li>cfi-violation:
-Occurs before the control flow violation is commited.
-</li>
-
-<li>enter-top:
+<li>primus:enter-blk:
 Occurs before the given term is evaluated.
+</li>
+
+<li>primus:enter-arg:
+Occurs before the given term is evaluated.
+</li>
+
+<li>primus:const:
+Occurs on each constant.
+</li>
+
+<li>primus:assert-failure:
+occurs when a symbolic executor assertion doesn't hold
 </li>
 
 <li>bap:load-generated:
 Occurs when a new value is generated during the load operation
 </li>
 
-<li>beagle:
-Occurs when the sequence of characters is classified as text.
+<li>primus:beagle-prey:
+Occurs when the sequence of characters is detected.
 </li>
 
-<li>linker-exec:
+<li>primus:linker-unresolved:
+Occurs when a linker hits the unresolved name.
+</li>
+
+<li>primus:linker-exec:
 Occurs before code with the given name is executed.
 </li>
 
-<li>segfault:
-Occurs just before the segmentation fault.
+<li>primus:pagefault:
+Occurs on pagefault.
 </li>
 
-<li>ite:
-Occurs on each ite expression.
-</li>
-
-<li>init:
-Occurs when all components of the machine are initialized.
-</li>
-
-<li>read:
-Occurs after the given variable is evaluated to the value.
-</li>
-
-<li>enter-exp:
-Occurs before the given exp is evaluated.
-</li>
-
-<li>lisp-type-error:
-Occurs when the Lisp type error is detected by the type checker
-</li>
-
-<li>division-by-zero:
-Occurs before the division by zero happens.
-</li>
-
-<li>machine-fork:
-Occurs after a machine fork is created.
-</li>
-
-<li>executor-debug:
-</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>enter-blk:
-Occurs before the given term is evaluated.
-</li>
-
-<li>incident-new-representative:
-Occurs when a new representative of the class is selected
-</li>
-
-<li>unop:
-Occurs on each unary operation.
-</li>
-
-<li>taint-attached:
-Occurs when a taint is attached to the value.
-</li>
-
-<li>random-debug:
-</li>
-</ul>
-
-
-<ul class="org-ul">
-<li>enter-arg:
-Occurs before the given term is evaluated.
-</li>
-
-<li>visited-blocks:
+<li>primus:visited-blocks:
 visited-blocks (visited,total) is posted every time a new basic block is
 visited, where [visited] is the number of already visited blocks and
 [total] is the total number of blocks in the program.
 </li>
 
-<li>const:
-Occurs on each constant.
-</li>
-
-<li>reading:
-Occurs before the given variable is read.
-</li>
-
-<li>eval-cond:
-Occurs when the jump condition is evaluated.
-</li>
-
-<li>leave-exp:
-Occurs after the given exp is evaluated.
-</li>
-
-<li>leave-term:
+<li>primus:leave-def:
 Occurs after the given term is evaluated.
 </li>
 
-<li>written:
-Occurs after the value is assigned to the variable.
+<li>primus:jumping:
+Occurs before the jump to the given destination.
 </li>
 
-<li>loading:
+<li>primus:cfi-violation:
+Occurs before the control flow violation is commited.
+</li>
+
+<li>primus:init:
+Occurs when all components of the machine are initialized.
+</li>
+
+<li>primus:loading:
 Occurs just before the given address is dereferenced.
 </li>
 
-<li>enter-term:
-Occurs before the given term.
+<li>primus:undefined:
+Occurs when an undefined value is created.
 </li>
 
-<li>incident-location:
-Occurs when the location of a possible incident is created.
+<li>primus:beagle:
+Occurs when the sequence of characters is classified as text.
 </li>
 
-<li>incident:
-Occurs when the incident is reported that involves the given locations.
+<li>primus:segfault:
+Occurs just before the segmentation fault.
 </li>
 
-<li>linker-unresolved:
-Occurs when a linker hits the unresolved name.
+<li>primus:lisp-message:
+Occurs with X when (msg x) is evaluated.
 </li>
 
-<li>leave-blk:
+<li>primus:leave-term:
 Occurs after the given term is evaluated.
+</li>
+
+<li>primus:lisp-call:
+Occurs when the call to Lisp code is made.
+</li>
+
+<li>primus:read:
+Occurs after the given variable is evaluated to the value.
+</li>
+
+<li>primus:lisp-type-error:
+Occurs when the Lisp type error is detected by the type checker
+</li>
+
+<li>primus:system-stop:
+Occurs after the system is stopped. Observations
+are in the restricted mode
+</li>
+
+<li>primus:storing:
+Occurs before the value is stored at the address.
+</li>
+
+<li>primus:loaded:
+Occurs after the given address is read.
+</li>
+
+<li>primus:system-start:
+Occurs after the system start.
+</li>
+
+<li>primus:machine-fork:
+Occurs after a machine fork is created.
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-11-07 Sat 01:39</p>
+<p class="date">Created: 2021-09-17 Fri 13:59</p>
 <p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>

@@ -10,29 +10,99 @@ Section: BAP Programmer's Manual (3)<BR>Updated: <BR><A HREF="#index">Index</A>
 
 
 
+<P>
+
+Provides functions addresses and (optionally) names from a user specified file(s)&#46; The file format is a list of entries, where each entry is either an address or a delimited with parentheses tuple&#46; The tuple must have at least two fields separated with space, with the first field denoting the name of the function and the second field denoting its start, e&#46;g&#46;, <B>(main 0xDEADBEEF</B>) or <B>(main 0xDEADBEEF some other fields</B>)&#46; The function name can be delimited with double quotes, which is useful if it contains or can contain whitespaces or special characters&#46; Both kinds of entries can occur in the same file&#46; The nameless entries will be registered only as function starts in the knowledge base&#46; And named entries will be both registered as function starts and as named labels&#46;
+<P>
+
+If the same name occurs in several entries with different addresses then the minimal address is chosen as the starting address&#46; If the same address occurs in entries with different names then a warning is reported and inconsistent names and addresses are ignored&#46;
+<P>
+
+If more than one file is specified then the information will be provided only for units (binaries) that has paths that match with the file names&#46; In matching only basenames are compared, i&#46;e&#46;, directory names and extensions (if present) are removed&#46; If the file itself is a directory, then it is expanded to its context&#46; If more than one file matches with the unit name then all files will be used&#46;
+<P>
+
+To enable the same behavior when only one file is present, use the <B>--read-symbols-when-matches</B> flag&#46; This flag also accepts an optional argument that denotes the name of the unit (binary)&#46; If the argument is provided then the information from the file will be provided only for units with names that match the specified argument&#46; The same rules of matching are applied (i&#46;e&#46;, basenames without extension)&#46; When the flag is used with an argument and more than one files are provided, then both the unit names and the names of the files with function information shall match&#46;
+<P>
+
+When the <B>--read-symbols-when-matches</B> flag is not set or only file is provided, then the information from this file will be promised as a rule in the knowledge base for each unit (binary)&#46;
 <A NAME="lbAB">&nbsp;</A>
-<H2>DESCRIPTION</H2>
+<H2>EXAMPLES</H2>
 
 <P>
 
-Read symbol information from a file and provide rooter, symbolizer and a reconstructor, based on this information&#46; Once symbols are read, use <B>--</B><I>SERVICE</I>=<B>file</B> to use them&#46; where <I>SERVICE</I> is one of <B>rooter</B>, <B>symbolizer</B> or <B>reconstructor</B>&#46;
-<A NAME="lbAC">&nbsp;</A>
-<H2>SEE ALSO</H2>
+The input that denotes only function starts:
+<P>
+
+<PRE>
+
+;; use semicolon to denote comments
+;; file mv&#46;scm
+0xf00 0xba1
+0xDEADBEEF
+;; end of file
+
+</PRE>
 
 <P>
 
-<B><A HREF="../man1/bap-plugin-objdump.1.html">bap-plugin-objdump</A></B>(1), <B><A HREF="../man1/bap-plugin-byteweight.1.html">bap-plugin-byteweight</A></B>(1), <B><A HREF="../man1/bap-plugin-ida.1.html">bap-plugin-ida</A></B>(1)
+The input that denotes both function names and starts:
+<P>
+
+<PRE>
+
+;; file ls&#46;scm
+(main 0x4000100)
+(foo 0x400200 0x400300) ; anything past the second element is ignored
+0x400500 0x400600 0x400700
+0x400700 ; any whitespace works as a separator
+(bar 0x400900)
+;; end of file
+
+</PRE>
+
+<P>
+
+Passing the files to bap, with a single file
+<P>
+
+<PRE>
+
+bap /bin/mv --read-symbols-from=mv&#46;scm
+
+</PRE>
+
+<P>
+
+For two files at once,
+<P>
+
+<PRE>
+
+bap compare /bin/{mv,ls} --read-symbols-from={mv,ls}&#46;scm
+
+</PRE>
+
+<P>
+
+For one file, but use symbols only if the match the filename of the binary,
+<P>
+
+<PRE>
+
+bap $binary --read-symbols-from=mv&#46;scm --read-symbols-when-matches
+
+</PRE>
+
 
 <HR>
 <A NAME="index">&nbsp;</A><H2>Index</H2>
 <DL>
-<DT><A HREF="#lbAB">DESCRIPTION</A><DD>
-<DT><A HREF="#lbAC">SEE ALSO</A><DD>
+<DT><A HREF="#lbAB">EXAMPLES</A><DD>
 </DL>
 <HR>
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:38:36 GMT, November 07, 2020
+Time: 13:58:45 GMT, September 17, 2021
 </BODY>
 </HTML>
