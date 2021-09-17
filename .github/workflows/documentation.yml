@@ -67,7 +67,7 @@ jobs:
           opam install odig
           opam exec -- make -C bap.master clean
           opam exec -- make -C bap.master doc
-          echo ::set-env name=BLOG_COMMIT_MESSAGE::$(git -C bap.master rev-parse --short HEAD)
+          echo BLOG_COMMIT_MESSAGE=$(git -C bap.master rev-parse --short HEAD) >> $GITHUB_ENV
 
       - uses: actions/upload-artifact@v2
         if: ${{ always() }}
