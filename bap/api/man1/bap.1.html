@@ -169,7 +169,7 @@ Adds folder to the list of plugins search paths
 <DT><B>--llvm</B><DD>
 Enables the pass llvm in the old style (DEPRECATED)
 <DT><B>--loader</B>=<I>VAL</I> (absent=llvm)<DD>
-Use the specified loader&#46; Use the loader `raw&#39; to load unstructured files
+Use the specified loader&#46; The loader could be either an identifier or a filename&#46; The filename has to be explicit, i&#46;e&#46;, to start with an explicit reference to the root directory or to the current directory (e&#46;g&#46;, <B>&#46;/</B>, or <B>&#46;&#46;/</B>, or <B>/</B> in Unix)&#46; The contents of the file should be a well-formed OGRE document that contains the necessary meta-information about the binary&#46; The default loader is named <B>llvm</B> and uses LLVM loaders to parse the input binary and supports ELF, MachO, and COFF (including Windows PE), formats&#46; To load unstructured files use the <B>raw</B> loader and specify the loader parameters via the <B>raw</B> plugin&#46;
 <DT><B>--logdir</B>=<I>VAL</I>, <B>--log-dir</B>=<I>VAL</I> (absent <B>BAP_LOG_DIR</B> env)<DD>
 A folder for log files&#46;
 <DT><B>--map-terms</B><DD>
@@ -927,6 +927,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:32:03 GMT, January 01, 2022
+Time: 01:38:21 GMT, January 08, 2022
 </BODY>
 </HTML>
