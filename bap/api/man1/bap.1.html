@@ -234,6 +234,8 @@ Enables the pass primus-wandering in the old style (DEPRECATED)
 Enables the pass primus-x86 in the old style (DEPRECATED)
 <DT><B>--print</B><DD>
 Enables the pass print in the old style (DEPRECATED)
+<DT><B>--print-missing</B><DD>
+Print missing instructions&#46; This option disables cache and redisassembles the binary from scratch&#46; It then prints the list of all instructions that do not have a representable semantics, followed by the histogram of all missed opcodes, and finally prints the number of lifted opcodes, the number of addresses that wasn&#39;t disassembled at all, and the number of opcodes that do not have semantics&#46;
 <DT><B>--propagate-taint</B><DD>
 Enables the pass propagate-taint in the old style (DEPRECATED)
 <DT><B>--radare2</B><DD>
@@ -935,6 +937,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:40:49 GMT, January 15, 2022
+Time: 01:31:57 GMT, January 22, 2022
 </BODY>
 </HTML>
