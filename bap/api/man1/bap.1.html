@@ -21,7 +21,7 @@ bap-disassemble - disassembles and analyzes the input file
 
 <P>
 
-<B>bap disassemble</B> [<I>OPTION</I>]&#46;&#46;&#46; [<I>FILE</I>]
+<B>bap disassemble</B> [<I>OPTION</I>]… [<I>FILE</I>]
 <A NAME="lbAD">&nbsp;</A>
 <H2>DESCRIPTION</H2>
 
@@ -105,7 +105,7 @@ Please note, that the name of the pass is automatically derived from the plugin 
 <H2>ARGUMENTS</H2>
 
 <DL COMPACT>
-<DT><I>FILE</I> (absent=a&#46;out)<DD>
+<DT><I>FILE</I> (absent=<B>a&#46;out</B>)<DD>
 The input file
 </DL>
 <A NAME="lbAI">&nbsp;</A>
@@ -138,7 +138,7 @@ Enables the pass constant-tracker in the old style (DEPRECATED)
 Enables the pass core-theory in the old style (DEPRECATED)
 <DT><B>--cxxfilt</B><DD>
 Enables the pass cxxfilt in the old style (DEPRECATED)
-<DT><B>-d</B> [<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>], <B>--dump</B>[=<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>] (default=bir)<DD>
+<DT><B>-d</B> [<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>], <B>--dump</B>[=<I>[&lt;FMT&gt;[:&lt;FILE&gt;]]</I>] (default=<B>bir</B>)<DD>
 Dumps the program to &lt;FILE&gt; (defaults to stdout) in the &lt;FMT&gt; format (defaults to bir)&#46;
 <DT><B>--demangle</B><DD>
 Enables the pass demangle in the old style (DEPRECATED)
@@ -160,8 +160,8 @@ Enables the pass frontc-parser in the old style (DEPRECATED)
 Enables the pass ghidra in the old style (DEPRECATED)
 <DT><B>--glibc-runtime</B><DD>
 Enables the pass glibc-runtime in the old style (DEPRECATED)
-<DT><B>--help</B>[=<I>FMT</I>] (default=auto)<DD>
-Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of `auto&#39;, `pager&#39;, `groff&#39; or `plain&#39;&#46; With `auto&#39;, the format is `pager` or `plain&#39; whenever the <B>TERM</B> env var is `dumb&#39; or undefined&#46;
+<DT><B>--help</B>[=<I>FMT</I>] (default=<B>auto</B>)<DD>
+Show this help in format <I>FMT</I>&#46; The value <I>FMT</I> must be one of <B>auto</B>, <B>pager</B>, <B>groff</B> or <B>plain</B>&#46; With <B>auto</B>, the format is <B>pager</B> or <B>plain</B> whenever the <B>TERM</B> env var is <B>dumb</B> or undefined&#46;
 <DT><B>--ida</B><DD>
 Enables the pass ida in the old style (DEPRECATED)
 <DT><B>-k</B> <I>VAL</I>, <B>--project</B>=<I>VAL</I>, <B>--knowledge-base</B>=<I>VAL</I><DD>
@@ -170,7 +170,7 @@ Import the knowledge to the provided knowledge base&#46; If the <B>--update</B> 
 Adds folder to the list of plugins search paths
 <DT><B>--llvm</B><DD>
 Enables the pass llvm in the old style (DEPRECATED)
-<DT><B>--loader</B>=<I>VAL</I> (absent=llvm)<DD>
+<DT><B>--loader</B>=<I>VAL</I> (absent=<B>llvm</B>)<DD>
 Use the specified loader&#46; The loader could be either an identifier or a filename&#46; The filename has to be explicit, i&#46;e&#46;, to start with an explicit reference to the root directory or to the current directory (e&#46;g&#46;, <B>&#46;/</B>, or <B>&#46;&#46;/</B>, or <B>/</B> in Unix)&#46; The contents of the file should be a well-formed OGRE document that contains the necessary meta-information about the binary&#46; The default loader is named <B>llvm</B> and uses LLVM loaders to parse the input binary and supports ELF, MachO, and COFF (including Windows PE), formats&#46; To load unstructured files use the <B>raw</B> loader and specify the loader parameters via the <B>raw</B> plugin&#46;
 <DT><B>--logdir</B>=<I>VAL</I>, <B>--log-dir</B>=<I>VAL</I> (absent <B>BAP_LOG_DIR</B> env)<DD>
 A folder for log files&#46;
@@ -268,7 +268,7 @@ Enables the pass stub-resolver in the old style (DEPRECATED)
 Enables the pass systemz in the old style (DEPRECATED)
 <DT><B>--taint</B><DD>
 Enables the pass taint in the old style (DEPRECATED)
-<DT><B>--target</B>=<I>NAME</I> (absent=:unknown)<DD>
+<DT><B>--target</B>=<I>NAME</I> (absent=<B>:unknown</B>)<DD>
 Refines the target architecture of the binary&#46; See `bap list targets` for the full hierarchy of targets&#46; The specified target must be a refinement of the actual target stored in the binary, otherwise an error is signaled&#46;
 <DT><B>--thumb</B><DD>
 Enables the pass thumb in the old style (DEPRECATED)
@@ -289,13 +289,13 @@ Enables the pass x86 in the old style (DEPRECATED)
 <H2>COMMON OPTIONS</H2>
 
 <DL COMPACT>
-<DT><B>--abi-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--abi-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>abi</B> plugin
-<DT><B>--analyze-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--analyze-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>analyze</B> plugin
 <DT><B>--api-add</B>=<I>VAL</I><DD>
 will be removed in 2&#46;0&#46;0 Add specified api module(s) and exit&#46; Each module should be of the form &lt;lang&gt;:&lt;file&gt;, where &lt;lang&gt; is the language in which API is written, and &lt;file&gt; is a path to the specification&#46; Multiple modules can be added by specifying this option several times&#46;
-<DT><B>--api-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--api-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>api</B> plugin
 <DT><B>--api-list-paths</B><DD>
 List of all registered paths
@@ -307,25 +307,25 @@ will be removed in 2&#46;0&#46;0 Removed specified api module and exit&#46; Each
 Show all registered api
 <DT><B>--arm-backend</B>=<I>VAL</I><DD>
 Specify the backend that is used for disassembly and lifting&#46;
-<DT><B>--arm-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--arm-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>arm</B> plugin
 <DT><B>--arm-interworking</B>=<I>VAL</I><DD>
 Enable ARM/Thumb interworking&#46; Defaults to (auto), i&#46;e&#46;, to the automatic detection of interworking
-<DT><B>--beagle-alpha</B>=<I>VAL</I> (absent=0&#46;05)<DD>
+<DT><B>--beagle-alpha</B>=<I>VAL</I> (absent=<B>0&#46;05</B>)<DD>
 desired probability of a false positive
-<DT><B>--beagle-alphabet</B>=<I>VAL</I> (absent=printable)<DD>
+<DT><B>--beagle-alphabet</B>=<I>VAL</I> (absent=<B>printable</B>)<DD>
 Build words from the specified alphabet
-<DT><B>--beagle-beta</B>=<I>VAL</I> (absent=0&#46;001)<DD>
+<DT><B>--beagle-beta</B>=<I>VAL</I> (absent=<B>0&#46;001</B>)<DD>
 desired probability of a false negative
 <DT><B>--beagle-dictionary</B>=<I>VAL</I><DD>
 Add dictionary file(s)&#46;
-<DT><B>--beagle-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--beagle-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>beagle</B> plugin
 <DT><B>--beagle-ignore-strings</B><DD>
 don&#39;t put static strings into the initial dictionary
 <DT><B>--beagle-no-words</B><DD>
 Don&#39;t try to build words from a dictionary
-<DT><B>--beagle-noise</B>=<I>VAL</I> (absent=0&#46;05)<DD>
+<DT><B>--beagle-noise</B>=<I>VAL</I> (absent=<B>0&#46;05</B>)<DD>
 expected amount of noise characters
 <DT><B>--beagle-print-chars</B><DD>
 Print all observed letters&#46;
@@ -333,7 +333,7 @@ Print all observed letters&#46;
 Print static strings
 <DT><B>--beagle-print-words</B><DD>
 Print all buildable words&#46;
-<DT><B>--beagle-text-probability</B>=<I>VAL</I> (absent=0&#46;1)<DD>
+<DT><B>--beagle-text-probability</B>=<I>VAL</I> (absent=<B>0&#46;1</B>)<DD>
 a prior probability of the search data
 <DT><B>--beagle-words</B>=<I>VAL</I><DD>
 Add specified words to the dictionary&#46;
@@ -341,35 +341,35 @@ Add specified words to the dictionary&#46;
 Enable the floating point emulation mode&#46; When specified, enables reification of the floating point operations into Bil expressions that denote those operations in terms of bitvector arithmetic&#46; This may lead to very large denotations&#46;
 <DT><B>--bil-enable-intrinsics</B>=<I>VAL</I><DD>
 Translate the specified instructions into calls to intrinsic functions&#46; The option accepts a list of instruction specifications and can be specified multiple times&#46; Each element of the list is either a keyword or a parametrized predicate&#46; If an instruction matches any of the specifications than it will be translated into a call to an intrinsic function&#46; The following keywords are recognized, <B>:any</B> - matches with any instruction, <B>:unknown</B> - matches with instructions that have unknown (to our lifters) semantics, <B>:special</B> - matches with instructions that have special semantics (expressed with the special statement by our lifters)&#46; The following predicates are recognized, <B>asm:&lt;str&gt;</B> matches with instructions which assembly strings start with <B>&lt;str&gt;</B>, <B>tag:&lt;str&gt;</B> - matches with instructions that have a tag (kind) that starts with <B>&lt;str&gt;</B>, <B>&lt;s1&gt;:&lt;s2&gt;</B> - matches with instructions that have opcodes starting with <B>&lt;s2&gt;</B> in the encoding that starts with <B>&lt;s1&gt;</B>&#46; For predicates, all string comparisons are made case-insensitive&#46; Example, <B>:unknown,:special,asm:addsd,llvm:trap</B>&#46;
-<DT><B>--bil-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--bil-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>bil</B> plugin
 <DT><B>--bil-list-passes</B><DD>
 List all available passes and exit
-<DT><B>--bil-normalization</B>=<I>VAL</I> (absent=0)<DD>
+<DT><B>--bil-normalization</B>=<I>VAL</I> (absent=<B>0</B>)<DD>
 Selects a BIL normalization level&#46; The normalization process doesn&#39;t change the semantics of a BIL program, but applies some transformations to simplify it&#46; Consult BAP Annotated Reference (BAR) for the detailed description of the BIL normalized forms&#46;
-<DT><B>--bil-optimization</B>=<I>VAL</I> (absent=1)<DD>
+<DT><B>--bil-optimization</B>=<I>VAL</I> (absent=<B>1</B>)<DD>
 Specifies an optimization level&#46; Level <B>0</B> disables all optimizations, and level <B>1</B> performs regular program simplifications, e&#46;g&#46;, applies constant folding, propagation, and elimination of dead temporary (aka virtual) variables&#46;
 <DT><B>--bil-passes</B>=<I>VAL</I><DD>
 Selects the list and the order of analyses to be applied during the lifing to BIL code&#46;
-<DT><B>--byteweight-comp</B>=<I>VAL</I><DD>
+<DT><B>--byteweight-compiler</B>=<I>VAL</I><DD>
 Assume the input file is compiled by <I>VAL</I>
-<DT><B>--byteweight-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--byteweight-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>byteweight</B> plugin
-<DT><B>--byteweight-max-length</B>=<I>VAL</I>, <B>--byteweight-length</B>=<I>VAL</I> (absent=16)<DD>
+<DT><B>--byteweight-max-length</B>=<I>VAL</I>, <B>--byteweight-length</B>=<I>VAL</I> (absent=<B>16</B>)<DD>
 The maximum length of a word, that could identify a function start&#46; Any signatures that are greater than that length, will not be considered, affect prior probabilities, etc&#46;
-<DT><B>--byteweight-min-length</B>=<I>VAL</I> (absent=8)<DD>
+<DT><B>--byteweight-min-length</B>=<I>VAL</I> (absent=<B>8</B>)<DD>
 The minimum length of a word, that could identify a function start&#46; Any signatures that are below that length, will not be considered, affect prior probabilities, etc&#46;
-<DT><B>--byteweight-sigs</B>=<I>VAL</I> (absent=/home/runner/&#46;local/share/bap/signatures/byteweight&#46;zip)<DD>
+<DT><B>--byteweight-sigs</B>=<I>VAL</I>, <B>--byteweight-signatures</B>=<I>VAL</I><DD>
 Path to the signature file
-<DT><B>--byteweight-threshold</B>=<I>VAL</I> (absent=10&#46;)<DD>
+<DT><B>--byteweight-threshold</B>=<I>VAL</I> (absent=<B>10&#46;</B>)<DD>
 If greater than 1&#46;0 then it is the Bayes factor, otherwise it is a probability&#46;
 <DT><B>--cache-clean</B><DD>
 Cleanup all caches&#46; Deprecated, use <B> bap cache --clean</B> instead
 <DT><B>--cache-dir</B>=<I>DIR</I><DD>
 Use provided folder as a cache directory
-<DT><B>--cache-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--cache-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>cache</B> plugin
-<DT><B>--callgraph-collator-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--callgraph-collator-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>callgraph-collator</B> plugin
 <DT><B>--callgraph-collator-ignore-matching</B>=<I>VAL</I><DD>
 Ignore functions that partially match the speciefied PCRE regular expression&#46;
@@ -379,45 +379,45 @@ Ignore functions that have reserved names, i&#46;e&#46;, starting with <B>_</B> 
 Ignore functions with dummy names, i&#46;e&#46;, starting with <B>sub_</B>&#46;
 <DT><B>--callgraph-collator-output</B>=<I>VAL</I><DD>
 Outputs all information into the specified file&#46;
-<DT><B>--callsites-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--callsites-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>callsites</B> plugin
 <DT><B>--constant-tracker-enable</B><DD>
 Undocumented&#46;
-<DT><B>--constant-tracker-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--constant-tracker-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>constant-tracker</B> plugin
-<DT><B>--core-theory-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--core-theory-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>core-theory</B> plugin
-<DT><B>--core-theory-syntax</B>[=<I>VAL</I>], <B>--core-theory-herbrand</B>[=<I>VAL</I>], <B>--core-theory-debug</B>[=<I>VAL</I>] (default=true) (absent=false)<DD>
+<DT><B>--core-theory-syntax</B>[=<I>VAL</I>], <B>--core-theory-herbrand</B>[=<I>VAL</I>], <B>--core-theory-debug</B>[=<I>VAL</I>] (default=<B>true</B>) (absent=<B>false</B>)<DD>
 Undocumented
-<DT><B>--cxxfilt-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--cxxfilt-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>cxxfilt</B> plugin
-<DT><B>--demangle-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--demangle-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>demangle</B> plugin
 <DT><B>--demangle-with</B>=<I>DEMANGLER</I><DD>
 Demangle all function names using <I>DEMANGLER</I>
-<DT><B>--dependencies-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--dependencies-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>dependencies</B> plugin
-<DT><B>--disassemble-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--disassemble-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>disassemble</B> plugin
 <DT><B>--dump-symbols-file</B>=<I>FILE</I><DD>
 Dump symbols to the specified <I>FILE</I>
-<DT><B>--dump-symbols-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--dump-symbols-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>dump-symbols</B> plugin
-<DT><B>--elf-loader-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--elf-loader-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>elf-loader</B> plugin
 <DT><B>--emit-ida-script-attr</B>=<I>VAL</I><DD>
 Emit specified BIR attribute&#46; Can be specified multiple times&#46;
 <DT><B>--emit-ida-script-file</B>=<I>NAME</I><DD>
 Dump annotations to the specified file <I>NAME</I>&#46; If not specified, then the script will dumped into the standard output
-<DT><B>--emit-ida-script-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--emit-ida-script-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>emit-ida-script</B> plugin
-<DT><B>--flatten-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--flatten-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>flatten</B> plugin
-<DT><B>--frontc-parser-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--frontc-parser-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>frontc-parser</B> plugin
-<DT><B>--frontc-parser-preprocess</B>[=<I>VAL</I>], <B>--frontc-parser-pp</B>[=<I>VAL</I>] (default=cpp)<DD>
+<DT><B>--frontc-parser-preprocess</B>[=<I>VAL</I>], <B>--frontc-parser-pp</B>[=<I>VAL</I>] (default=<B>cpp</B>)<DD>
 Preprocess headers with the specified preprocessor&#46;
-<DT><B>--ghidra-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--ghidra-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>ghidra</B> plugin
 <DT><B>--ghidra-path</B>=<I>VAL</I><DD>
 Undocumented
@@ -425,37 +425,37 @@ Undocumented
 Undocumented
 <DT><B>--glibc-runtime-enable</B><DD>
 Override the glib detection heuristic and enable the runtime fixup&#46;
-<DT><B>--glibc-runtime-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--glibc-runtime-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>glibc-runtime</B> plugin
-<DT><B>--ida-headless</B>=<I>VAL</I> (absent=auto)<DD>
+<DT><B>--ida-headless</B>=<I>VAL</I> (absent=<B>auto</B>)<DD>
 Use headless curses based IDA&#46;
-<DT><B>--ida-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--ida-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>ida</B> plugin
-<DT><B>--ida-mode</B>=<I>VAL</I> (absent=auto)<DD>
+<DT><B>--ida-mode</B>=<I>VAL</I> (absent=<B>auto</B>)<DD>
 Specify IDA mode&#46;
 <DT><B>--ida-path</B>=<I>VAL</I><DD>
 Path to IDA directory&#46;
 <DT><B>--llvm-base</B>=<I>VAL</I><DD>
 Replace image base address&#46; If not set, a reasonable default corresponded to a file type will be used&#46; For example, for any executable file a default image base is equal to lowest image virtual address&#46; For relocatable files a default image base is equal to 0xC0000000&#46;
-<DT><B>--llvm-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--llvm-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>llvm</B> plugin
 <DT><B>--llvm-pdb-path</B>=<I>VAL</I><DD>
 A path to a directory with pdb file OR a path to a PDB file&#46; In the first case the file with the matching name of the target executable will be selected if present&#46; The default is the path to a current working directory&#46;
 <DT><B>--llvm-version</B><DD>
 Prints LLVM version and exits
-<DT><B>--llvm-x86-syntax</B>=<I>VAL</I> (absent=att)<DD>
+<DT><B>--llvm-x86-syntax</B>=<I>VAL</I> (absent=<B>att</B>)<DD>
 Choose style of code for x86 syntax between att and intel
-<DT><B>--map-terms-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--map-terms-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>map-terms</B> plugin
 <DT><B>--map-terms-using</B>=<I>FILE</I><DD>
 Read patterns from the <I>FILE</I>
 <DT><B>--map-terms-with</B>=<I>VAL</I><DD>
 Map terms according the <I>VAL</I>
-<DT><B>--mc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--mc-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>mc</B> plugin
 <DT><B>--mips-backend</B>=<I>VAL</I><DD>
 Specify which backend to use
-<DT><B>--mips-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--mips-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>mips</B> plugin
 <DT><B>--no-abi</B><DD>
 Disable the abi plugin
@@ -607,23 +607,23 @@ Disable the warn-unused plugin
 Disable the x86 plugin
 <DT><B>--objdump-demangler</B>=<I>VAL</I><DD>
 Specify the demangler name&#46; Set to <I>disabled</I> to disable demangling&#46;
-<DT><B>--objdump-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--objdump-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>objdump</B> plugin
-<DT><B>--optimization-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--optimization-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>optimization</B> plugin
-<DT><B>--optimization-level</B>=<I>VAL</I> (absent=0)<DD>
+<DT><B>--optimization-level</B>=<I>VAL</I> (absent=<B>0</B>)<DD>
 Specifies the optimization level&#46; The higher the value the more aggressive (and less safe) optimizations are applied&#46; On level 0 we touch nothing, only some constant folding may occur&#46; On level 1 we optimize only the synthetic code that was generated by the lifter&#46; Since such code can&#39;t leave a scope of instruction it is not affected by the imprecision of a control flow graph&#46; On level 2, we also move and optimize processor flags&#46; This removes a significant amount of code and simplifies the program and is a fair compromise between safety and performance&#46; (Since flags are rarely used non-locally)&#46; Finally, on level 3 we extend our analysis to all variables&#46;
-<DT><B>--patterns-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--patterns-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>patterns</B> plugin
 <DT><B>--patterns-path</B>=<I>VAL</I><DD>
 Add the specified path to the list of patterns directories&#46;
-<DT><B>--phoenix-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--phoenix-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>phoenix</B> plugin
 <DT><B>--phoenix-keep-alive</B><DD>
 Keep alive unused temporary variables
 <DT><B>--phoenix-keep-const</B><DD>
 Disable constant folding
-<DT><B>--phoenix-labels-with</B>=<I>VAL</I> (absent=name)<DD>
+<DT><B>--phoenix-labels-with</B>=<I>VAL</I> (absent=<B>name</B>)<DD>
 Put block name, assembler instructions, or bil instructions on graph labels using `name&#39;, `asm&#39;, or `bil&#39; respectively&#46; Can be specified as a list of multiple elements separated by commas&#46;
 <DT><B>--phoenix-labels-with-asm</B><DD>
 Use --label-with=&#46;&#46; instead&#46; Put assembler instructions on graph labels
@@ -637,23 +637,23 @@ Disable inlining temporary variables
 Disable all kinds of optimizations
 <DT><B>--phoenix-no-resolve</B><DD>
 Do not resolve addresses to symbolic names
-<DT><B>--phoenix-output-folder</B>=<I>VAL</I> (absent=phoenix)<DD>
+<DT><B>--phoenix-output-folder</B>=<I>VAL</I> (absent=<B>phoenix</B>)<DD>
 Output data into the specified folder
 <DT><B>--powerpc-backend</B>=<I>VAL</I><DD>
 Undocumented&#46;
-<DT><B>--powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--powerpc-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>powerpc</B> plugin
-<DT><B>--primus-dictionary-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-dictionary-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-dictionary</B> plugin
-<DT><B>--primus-exploring-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-exploring-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-exploring</B> plugin
 <DT><B>--primus-exploring-scheduler</B><DD>
 Enable the scheduler&#46;
-<DT><B>--primus-greedy-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-greedy-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-greedy</B> plugin
 <DT><B>--primus-greedy-scheduler</B><DD>
 Enable the scheduler&#46;
-<DT><B>--primus-limit-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-limit-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-limit</B> plugin
 <DT><B>--primus-limit-max-length</B>=<I>VAL</I><DD>
 Limits the maximum number of basic blocks a single machinine can execute&#46;
@@ -667,7 +667,7 @@ establishes a redirection between an emulated file path and a file path on a hos
 outputs Primus Lisp documentation
 <DT><B>--primus-lisp-dump</B><DD>
 dumps generated AST
-<DT><B>--primus-lisp-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-lisp-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-lisp</B> plugin
 <DT><B>--primus-lisp-load</B>=<I>VAL</I><DD>
 load specified module
@@ -677,17 +677,17 @@ prepend the specified folders to the list of folders where semantics files are s
 redirects messages in the semantic definitions to the specified file&#46;
 <DT><B>--primus-lisp-typecheck</B>, <B>--primus-lisp-type-check</B><DD>
 typechecks the program and prints erros if they exist
-<DT><B>--primus-loader-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-loader-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-loader</B> plugin
-<DT><B>--primus-loader-stack-base</B>=<I>VAL</I> (absent=1073741824)<DD>
+<DT><B>--primus-loader-stack-base</B>=<I>VAL</I> (absent=<B>1073741824</B>)<DD>
 default address of the stack base
-<DT><B>--primus-loader-stack-size</B>=<I>VAL</I> (absent=8388608)<DD>
+<DT><B>--primus-loader-stack-size</B>=<I>VAL</I> (absent=<B>8388608</B>)<DD>
 generic program loader for Primus
-<DT><B>--primus-mark-visited-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-mark-visited-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-mark-visited</B> plugin
-<DT><B>--primus-powerpc-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-powerpc-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-powerpc</B> plugin
-<DT><B>--primus-print-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-print-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-print</B> plugin
 <DT><B>--primus-print-observations</B>=<I>VAL</I><DD>
 A list of observations to print&#46; A keyword `all` can be use to select all events&#46; To ignore a particular event, add `-&#39; before the name&#46; An optional + is allowed for the consistency&#46;
@@ -695,15 +695,15 @@ A list of observations to print&#46; A keyword `all` can be use to select all ev
 A name of a file in which to store the monitor output&#46; If not specified, then outputs result into stdout
 <DT><B>--primus-print-rules</B>=<I>VAL</I><DD>
 Undocumented&#46;
-<DT><B>--primus-print-traceback</B>[=<I>VAL</I>] (default=16)<DD>
+<DT><B>--primus-print-traceback</B>[=<I>VAL</I>] (default=<B>16</B>)<DD>
 Stores and outputs a trace of execution&#46; Takes an optional argument that limits the traceback length to the specified number of terms&#46;
-<DT><B>--primus-promiscuous-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-promiscuous-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-promiscuous</B> plugin
 <DT><B>--primus-promiscuous-mode</B><DD>
 (DEPRECATED) Enable the mode&#46;
 <DT><B>--primus-propagate-taint-from-attributes</B><DD>
 Introduces taint in terms that are marked with the <B>tainted-ptr</B> and <B>tainted-reg</B> attribute&#46; 
-<DT><B>--primus-propagate-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-propagate-taint-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-propagate-taint</B> plugin
 <DT><B>--primus-propagate-taint-no-marks</B><DD>
 Disables the projection of the taint engine state to term attributes&#46; The option is only valid when the <B>run</B> option is specified&#46; This option is left for compatibility with the old interface and is not compatible with the <B>from-attributes</B> or <B>to-attrbutes</B> options&#46; It is an error to mix options from the new and old interfaces&#46; 
@@ -713,117 +713,117 @@ Enables propagating taint from term attributes and back to attributes, unless th
 Reflects the state of the taint propagation engine to the <B>tainted-ptrs</B> and <B>tainted-regs</B> term attributes&#46;
 <DT><B>--primus-random-generators</B>=<I>VAL</I><DD>
 A list of generator specifications&#46; The generators are processed in order, with the first matching operator having the precedence&#46; This option also has precedence over the generators specified via the initialization files&#46;
-<DT><B>--primus-random-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-random-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-random</B> plugin
 <DT><B>--primus-random-init</B>=<I>VAL</I><DD>
 A list of generator initialization scripts&#46; Files are processed in order, with the first matching operator having the precedence&#46;
 <DT><B>--primus-random-preserve-protection</B><DD>
 Preserves page protection flags when a new page is swapped in&#46; When this flag is not set the <B>bap:mem-randomizer</B> will map missing memory pages as writable&#46;
-<DT><B>--primus-random-seed</B>=<I>VAL</I> (absent=0)<DD>
+<DT><B>--primus-random-seed</B>=<I>VAL</I> (absent=<B>0</B>)<DD>
 The seed that will be used to initialize all generators&#46;
-<DT><B>--primus-region-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-region-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-region</B> plugin
-<DT><B>--primus-round-robin-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-round-robin-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-round-robin</B> plugin
 <DT><B>--primus-round-robin-scheduler</B><DD>
 Enable the scheduler&#46;
-<DT><B>--primus-symbolic-executor-cutoff-level</B>=<I>VAL</I> (absent=1)<DD>
+<DT><B>--primus-symbolic-executor-cutoff-level</B>=<I>VAL</I> (absent=<B>1</B>)<DD>
 The number of times the same branch is retried&#46;
-<DT><B>--primus-symbolic-executor-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-symbolic-executor-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-symbolic-executor</B> plugin
-<DT><B>--primus-symbolic-executor-timeout</B>=<I>VAL</I> (absent=16)<DD>
+<DT><B>--primus-symbolic-executor-timeout</B>=<I>VAL</I> (absent=<B>16</B>)<DD>
 The number of milliseconds alloted to the SMT solver to find a model
 <DT><B>--primus-systems-add-path</B>=<I>VAL</I><DD>
 adds the path to the list of paths where Primus systems are searched
-<DT><B>--primus-systems-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-systems-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-systems</B> plugin
-<DT><B>--primus-taint-default-policy</B>=<I>VAL</I> (absent=propagate-by-computation)<DD>
+<DT><B>--primus-taint-default-policy</B>=<I>VAL</I> (absent=<B>propagate-by-computation</B>)<DD>
 Set the default taint propagation policy
-<DT><B>--primus-taint-gc</B>=<I>VAL</I> (absent=none)<DD>
+<DT><B>--primus-taint-gc</B>=<I>VAL</I> (absent=<B>none</B>)<DD>
 Picks a taint garbage collector
-<DT><B>--primus-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-taint-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-taint</B> plugin
-<DT><B>--primus-test-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-test-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-test</B> plugin
-<DT><B>--primus-wandering-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-wandering-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-wandering</B> plugin
 <DT><B>--primus-wandering-scheduler</B><DD>
 Enable the scheduler&#46;
-<DT><B>--primus-wandering-seed</B>=<I>VAL</I> (absent=0)<DD>
+<DT><B>--primus-wandering-seed</B>=<I>VAL</I> (absent=<B>0</B>)<DD>
 random generator seed
-<DT><B>--primus-x86-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--primus-x86-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>primus-x86</B> plugin
 <DT><B>--print-bir-attr</B>=<I>VAL</I><DD>
 When printing IR emit an attribute <I>VAL</I>
 <DT><B>--print-demangled-with</B>=<I>VAL</I><DD>
 Demangle symbols, using the specified demangler
-<DT><B>--print-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--print-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>print</B> plugin
 <DT><B>--print-matching</B>=<I>VAL</I><DD>
 Only print elements that matches with the provided patterns&#46; A pattern consists of the name of a property and a regular expression, which denotes a set of values of this property&#46; The property name and the regular expression are separated wit the <B>:</B> symbol, e&#46;g&#46;, <B>symbol:main</B> will print all elements that belong to the symbol entry <B>main</B>&#46; The syntax of the regular expressions is PCRE with partial matching&#46; The following properties are supported: <B>symbol</B> - name of the enclosing symbol, where the symbol is looked up in the file symbol table or debuging information, if any ; <B>section</B> - name of the enclosing section of the file ; <B>segment</B> - name of the enclosing segment of the file ; <B>subroutine</B> - name of the enclosing subroutine &#46;
 <DT><B>--print-section</B>=<I>VAL</I><DD>
 same as <B>--print-matching=section:</B><I>VAL</I>
-<DT><B>--print-semantics</B>[=<I>SEMANTICS-LIST</I>] (default=)<DD>
+<DT><B>--print-semantics</B>[=<I>SEMANTICS-LIST</I>] (default=<B></B>)<DD>
 Display the <I>SEMANTICS-LIST</I> semantics of the program&#46; If used without an argument then all semantic values associated with terms will be printed&#46; Otherwise only the selected (if present) will be printed&#46;
 <DT><B>--print-symbol</B>=<I>VAL</I><DD>
 same as <B>--print-matching=symbol:</B><I>VAL</I>
 <DT><B>--print-symbol-format</B>=<I>VAL</I><DD>
-Print found symbols&#46; Optional value defines output format, and can be one of `name&#39;, `addr&#39; or `size&#39;&#46; You can specify this parameter several times, if you want both, for example&#46;
-<DT><B>--print-with-colors</B>=<I>VAL</I> (absent=false)<DD>
+Print found symbols&#46; Optional value defines output format, and can be one of <B>name</B>, <B>addr</B> or <B>size</B>&#46; You can specify this parameter several times, if you want both, for example&#46;
+<DT><B>--print-with-colors</B>=<I>VAL</I> (absent=<B>false</B>)<DD>
 Allow coloring output with ansi color escape sequences
 <DT><B>--propagate-taint-deterministic</B><DD>
 Run in a deterministic mode&#46; In this mode we will follow only one execution path, without backtracking, giving a more feasible result, but much less coverage
-<DT><B>--propagate-taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--propagate-taint-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>propagate-taint</B> plugin
 <DT><B>--propagate-taint-interesting</B>=<I>VAL</I><DD>
 Look only at specified functions
-<DT><B>--propagate-taint-max-iterations</B>=<I>N</I> (absent=10)<DD>
+<DT><B>--propagate-taint-max-iterations</B>=<I>N</I> (absent=<B>10</B>)<DD>
 Limit loop to <I>N</I> iterations
-<DT><B>--propagate-taint-max-trace</B>=<I>BLOCKS</I> (absent=1000000)<DD>
+<DT><B>--propagate-taint-max-trace</B>=<I>BLOCKS</I> (absent=<B>1000000</B>)<DD>
 Limit maximum trace length to <I>BLOCKS</I>
-<DT><B>--propagate-taint-mem-value</B>=<I>VAL</I> (absent=random)<DD>
+<DT><B>--propagate-taint-mem-value</B>=<I>VAL</I> (absent=<B>random</B>)<DD>
 Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined memory locations will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
 <DT><B>--propagate-taint-print-coverage</B><DD>
 print coverage [debug]
 <DT><B>--propagate-taint-random-seed</B>=<I>VAL</I><DD>
 Initialize random number generator with the given seed
-<DT><B>--propagate-taint-reg-value</B>=<I>VAL</I> (absent=random)<DD>
+<DT><B>--propagate-taint-reg-value</B>=<I>VAL</I> (absent=<B>random</B>)<DD>
 Input generation policy&#46; If set to a fixed value, e&#46;g&#46; `0&#39;, then all undefined registers will be concretized to this value&#46; If set to an interval, e&#46;g&#46;, `(0 5)&#39;, then values will be randomly picked from this interval (boundaries including)&#46; If set to `random&#39;, then values will be picked randomly from a domain, defined by a type of value&#46;
-<DT><B>--radare2-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--radare2-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>radare2</B> plugin
-<DT><B>--raw-arch</B>=<I>VAL</I> (absent=x86-64)<DD>
+<DT><B>--raw-arch</B>=<I>VAL</I> (absent=<B>x86-64</B>)<DD>
 Specifies the ISA of raw bytes
-<DT><B>--raw-base</B>=<I>VAL</I> (absent=0x0)<DD>
+<DT><B>--raw-base</B>=<I>VAL</I> (absent=<B>0x0</B>)<DD>
 The address of the first byte
-<DT><B>--raw-bits</B>=<I>VAL</I> (absent=32)<DD>
+<DT><B>--raw-bits</B>=<I>VAL</I> (absent=<B>32</B>)<DD>
 The number of bits in the machine word&#46; If not specified then it will be derived from the architecture or default to 32 if the architecture is not known&#46;
 <DT><B>--raw-entry-point</B>=<I>VAL</I><DD>
 Address (or addresses) of entry points
-<DT><B>--raw-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--raw-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>raw</B> plugin
 <DT><B>--raw-length</B>=<I>VAL</I><DD>
 The length of the code section
-<DT><B>--raw-offset</B>=<I>VAL</I> (absent=0)<DD>
+<DT><B>--raw-offset</B>=<I>VAL</I> (absent=<B>0</B>)<DD>
 The offset of the first byte
 <DT><B>--read-symbols-from</B>=<I>VAL</I><DD>
 Undocumented
-<DT><B>--read-symbols-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--read-symbols-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>read-symbols</B> plugin
-<DT><B>--read-symbols-when-matches</B>[=<I>VAL</I>] (default=)<DD>
+<DT><B>--read-symbols-when-matches</B>[=<I>VAL</I>] (default=<B></B>)<DD>
 Undocumented
-<DT><B>--recipe-command-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--recipe-command-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>recipe-command</B> plugin
-<DT><B>--relocatable-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--relocatable-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>relocatable</B> plugin
 <DT><B>--report-events</B><DD>
 Output progress events
-<DT><B>--report-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--report-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>report</B> plugin
 <DT><B>--report-progress</B><DD>
 Show progress bars
 <DT><B>--riscv-backend</B>=<I>VAL</I><DD>
 Undocumented
-<DT><B>--riscv-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--riscv-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>riscv</B> plugin
 <DT><B>--run-argv</B>=<I>VAL</I><DD>
 Process argument vector
@@ -831,7 +831,7 @@ Process argument vector
 Can be a list of <I>entry points</I> or one of the following keywords: <B>all-subroutines</B>, <B>marked-subroutines</B>, <B>only-queue</B>&#46; An <I>entry point</I> is either a string denoting a function name, a tid starting with the <B>%</B> (percent) symbol, or an address in a hexadecimal format prefixed with <B>0x</B>&#46; When the option is specified, the Primus Machine will start the execution from the specified entry point(s)&#46; Otherwise the execution will be started from all program terms that are marked with the [entry_point] attribute&#46; If there are several entry points, then they will be executed each in a separate machine or, if <B>--run-in-separation</B> is specified, in a separate system&#46; In case when each entry point is run in a separate machine it is necessary to add a scheduler component to the system that is used to run the entry point&#46; If neither the argument nor there any entry points in the program, then a function called <B>_start</B> is called&#46; If <B>all-subroutines</B> are specified then Primus will execute all subroutines in the topological order&#46; If <B>marked-subroutines</B> is specified, then Primus will execute the specified systems on all subroutines that has the <B>mark</B> attribute&#46; If the <B>only-queue</B> is specified, then only jobs already queued in the Primus Job Queue will be run and no entry points will be searched in the project&#46;
 <DT><B>--run-env</B>=<I>VAL</I><DD>
 Program environemt as a comma separated list of VAR=VAL pairs
-<DT><B>--run-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--run-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>run</B> plugin
 <DT><B>--run-in-isolation</B><DD>
 Run each entry point as new system&#46; Each entry point is enqueued as a job and run in a separate systems&#46; The project and knowledge is passed between each system, the rest of the state is discarded&#46;
@@ -841,41 +841,41 @@ Runs the specified Primus systems&#46; If several systems are specified then run
 Runs Primus until all subroutines and blocks are visited&#46; When this mode is enabled and run plugin finishes it finds the first unvisited subroutine (or if no such found the first unvisited block) and spawns a new system with it as an entry point&#46; This continues until there are no more unvisited blocks&#46;
 <DT><B>--run-with-repetitions</B><DD>
 The pass runs subroutines in the topological order meaning the farther a subroutine is in a callgraph from the roots the later it will be run as an entry point and higher chances it will be called before that from some other subroutine&#46; And being a callee is more interesting case for analysis then being an entry point due to the wider context of the former&#46; Given that, we skip by default such of entry points that were visited during the run of other ones&#46; And this option disables this behavior and runs all the subroutines in a row&#46; 
-<DT><B>--specification-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--specification-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>specification</B> plugin
-<DT><B>--ssa-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--ssa-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>ssa</B> plugin
-<DT><B>--strings-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--strings-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>strings</B> plugin
-<DT><B>--strings-min-len</B>=<I>VAL</I>, <B>--strings-bytes</B>=<I>VAL</I> (absent=4)<DD>
+<DT><B>--strings-min-len</B>=<I>VAL</I>, <B>--strings-bytes</B>=<I>VAL</I> (absent=<B>4</B>)<DD>
 ignore strings that has length less then <I>VAL</I>
 <DT><B>--strings-print-address</B><DD>
 prints an address of each found string
-<DT><B>--stub-resolver-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--stub-resolver-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>stub-resolver</B> plugin
 <DT><B>--stub-resolver-names</B>=<I>VAL</I><DD>
 The list of known sections that contain function stubs&#46; The names specified with this parameter are appended to the existing list that includes: <B>&#46;plt</B>, <B>&#46;plt&#46;sec</B>, <B>__stubs</B>, <B>&#46;MIPS&#46;stubs</B>
 <DT><B>--stub-resolver-signatures</B>=<I>VAL</I><DD>
 A list of folders and files that contain signatures for stubs identification&#46; Each file shall have a name of the form <B>&lt;target&gt;&#46;stubs</B> and contain a list of words each denoting a possible starting sequence of a bytes for a stub&#46; The &lt;target&gt; is the name of the target, e&#46;g&#46;, <B>arm&#46;stubs</B>, <B>armv7-linux-gnueabi&#46;stubs</B>, etc&#46; Each word denoting a signature must be encoded as an ASCII number and be binary (start with <B>0b</B>), octal (start with <B>0o</B>, or hexadecimal (start with <B>0x</B>, e&#46;g&#46;, <B>0xDEADBEEF</B>&#46; If the prefix is omitted then the hexadecimal notation is assumed, e&#46;g&#46;, <B>DEADBEEF</B> is also acceptable&#46; The signature length is automatically inferred from the word, i&#46;e&#46;, the leading zeros are not discarded&#46; By default we search in the current working folder, /home/runner/&#46;local/share/bap/signatures, and in /home/runner/&#46;opam/4&#46;09&#46;1/share/bap/signatures
-<DT><B>--systemz-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--systemz-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>systemz</B> plugin
-<DT><B>--taint-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--taint-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>taint</B> plugin
 <DT><B>--taint-ptr</B>=<I>VAL</I><DD>
 Taint ptr value of definition matching with the specification
 <DT><B>--taint-reg</B>=<I>VAL</I><DD>
 Taint reg value of definition matching with the specification
-<DT><B>--thumb-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--thumb-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>thumb</B> plugin
 <DT><B>--trace-dump</B>=<I>URI</I><DD>
 Dump a trace specified by <I>URI</I>
-<DT><B>--trace-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--trace-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>trace</B> plugin
 <DT><B>--trace-load</B>=<I>VAL</I><DD>
 Load trace from the specified <I>VAL</I>&#46; The option maybe used many times to load several traces
-<DT><B>--trivial-condition-form-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--trivial-condition-form-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>trivial-condition-form</B> plugin
-<DT><B>--warn-unused-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--warn-unused-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>warn-unused</B> plugin
 <DT><B>--warn-unused-mark</B><DD>
 run <B>bap</B><B>-mark</B> pass
@@ -884,15 +884,15 @@ run <B>bap</B><B>-print</B> pass
 <DT><B>--warn-unused-taint</B><DD>
 run <B>bap</B><B>-taint</B> pass
 <DT><B>--x86-64-abi</B>=<I>VAL</I><DD>
-Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be either `sysv&#39; or `ms&#39;
+Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be either <B>sysv</B> or <B>ms</B>
 <DT><B>--x86-abi</B>=<I>VAL</I><DD>
-Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be one of `cdecl&#39;, `stdcall&#39;, `ms&#39;, `fastcall&#39;, `watcom-stack&#39; or `watcom-regs&#39;
+Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be one of <B>cdecl</B>, <B>stdcall</B>, <B>ms</B>, <B>fastcall</B>, <B>watcom-stack</B> or <B>watcom-regs</B>
 <DT><B>--x86-backend</B>=<I>VAL</I>, <B>--x86-64-backend</B>=<I>VAL</I><DD>
 Undocumented&#46;
-<DT><B>--x86-help</B>[=<I>VAL</I>] (default=auto)<DD>
+<DT><B>--x86-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>x86</B> plugin
-<DT><B>--x86-lifter</B>=<I>VAL</I> (absent=merge)<DD>
-Debug purpose only&#46; The <I>VAL</I> must be one of `legacy&#39;, `modern&#39; or `merge&#39;&#46; Default: <I>VAL</I> = merge&#46;
+<DT><B>--x86-lifter</B>=<I>VAL</I> (absent=<B>merge</B>)<DD>
+Debug purpose only&#46; The <I>VAL</I> must be one of <B>legacy</B>, <B>modern</B> or <B>merge</B>&#46; Default: <I>VAL</I> = merge&#46;
 <DT><B>--x86-with-floating-points</B><DD>
 Undocumented&#46;
 </DL>
@@ -937,6 +937,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:28:59 GMT, February 05, 2022
+Time: 01:37:32 GMT, February 12, 2022
 </BODY>
 </HTML>
