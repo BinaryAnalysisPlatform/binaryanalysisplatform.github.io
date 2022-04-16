@@ -889,12 +889,16 @@ Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be either <B>
 Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be one of <B>cdecl</B>, <B>stdcall</B>, <B>ms</B>, <B>fastcall</B>, <B>watcom-stack</B> or <B>watcom-regs</B>
 <DT><B>--x86-backend</B>=<I>VAL</I>, <B>--x86-64-backend</B>=<I>VAL</I><DD>
 Undocumented&#46;
+<DT><B>--x86-disable-floating-point-intrinsics</B><DD>
+Disables translation of floating-point instructions into calls to intrinsic functions&#46;
 <DT><B>--x86-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>x86</B> plugin
 <DT><B>--x86-lifter</B>=<I>VAL</I> (absent=<B>merge</B>)<DD>
 Debug purpose only&#46; The <I>VAL</I> must be one of <B>legacy</B>, <B>modern</B> or <B>merge</B>&#46; Default: <I>VAL</I> = merge&#46;
 <DT><B>--x86-with-floating-points</B><DD>
-Undocumented&#46;
+DEPRECATED
+<DT><B>--x86-with-legacy-floating-points</B><DD>
+Enables the legacy floating-point lifter and disables the intrinsic semantics of floating-point operations
 </DL>
 <A NAME="lbAK">&nbsp;</A>
 <H2>ENVIRONMENT</H2>
@@ -937,6 +941,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:48:56 GMT, April 09, 2022
+Time: 01:57:53 GMT, April 16, 2022
 </BODY>
 </HTML>
