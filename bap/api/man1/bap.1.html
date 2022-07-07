@@ -62,7 +62,7 @@ Start in a fresh new folder and create the `my_analysis&#46;ml` file with the fo
 
 <PRE>
 
-  open Core_kernel
+  open Core_kernel[@@warning &quot;-D&quot;]
   open Bap_main
   open Bap&#46;Std
 
@@ -269,7 +269,7 @@ Enables the pass systemz in the old style (DEPRECATED)
 <DT><B>--taint</B><DD>
 Enables the pass taint in the old style (DEPRECATED)
 <DT><B>--target</B>=<I>NAME</I> (absent=<B>:unknown</B>)<DD>
-Refines the target architecture of the binary&#46; See `bap list targets` for the full hierarchy of targets&#46; The specified target must be a refinement of the actual target stored in the binary, otherwise an error is signaled&#46;
+Sets the target architecture of the binary&#46; See `bap list targets` for the full hierarchy of targets&#46;
 <DT><B>--thumb</B><DD>
 Enables the pass thumb in the old style (DEPRECATED)
 <DT><B>--trace</B><DD>
@@ -307,6 +307,8 @@ will be removed in 2&#46;0&#46;0 Removed specified api module and exit&#46; Each
 Show all registered api
 <DT><B>--arm-backend</B>=<I>VAL</I><DD>
 Specify the backend that is used for disassembly and lifting&#46;
+<DT><B>--arm-features</B>=<I>VAL</I><DD>
+Additional target features/attributes&#46; The syntax and the feature names are backend-specific&#46; For the LLVM backend the features are passed to the target attributes, see <B>llvm-mc -mattr=help -triple &lt;target&gt;</B> for the list of features supported by your version of LLVM&#46; To enable a feature just pass its name (you can optionally prepend <B>+</B> to its name), to disable a feature prepend <B>-</B> to its name&#46;
 <DT><B>--arm-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>arm</B> plugin
 <DT><B>--arm-interworking</B>=<I>VAL</I><DD>
@@ -337,10 +339,10 @@ Print all buildable words&#46;
 a prior probability of the search data
 <DT><B>--beagle-words</B>=<I>VAL</I><DD>
 Add specified words to the dictionary&#46;
-<DT><B>--bil-enable-fp-emulation</B><DD>
-Enable the floating point emulation mode&#46; When specified, enables reification of the floating point operations into Bil expressions that denote those operations in terms of bitvector arithmetic&#46; This may lead to very large denotations&#46;
 <DT><B>--bil-enable-intrinsics</B>=<I>VAL</I><DD>
 Translate the specified instructions into calls to intrinsic functions&#46; The option accepts a list of instruction specifications and can be specified multiple times&#46; Each element of the list is either a keyword or a parametrized predicate&#46; If an instruction matches any of the specifications than it will be translated into a call to an intrinsic function&#46; The following keywords are recognized, <B>:any</B> - matches with any instruction, <B>:unknown</B> - matches with instructions that have unknown (to our lifters) semantics, <B>:special</B> - matches with instructions that have special semantics (expressed with the special statement by our lifters)&#46; The following predicates are recognized, <B>asm:&lt;str&gt;</B> matches with instructions which assembly strings start with <B>&lt;str&gt;</B>, <B>tag:&lt;str&gt;</B> - matches with instructions that have a tag (kind) that starts with <B>&lt;str&gt;</B>, <B>&lt;s1&gt;:&lt;s2&gt;</B> - matches with instructions that have opcodes starting with <B>&lt;s2&gt;</B> in the encoding that starts with <B>&lt;s1&gt;</B>&#46; For predicates, all string comparisons are made case-insensitive&#46; Example, <B>:unknown,:special,asm:addsd,llvm:trap</B>&#46;
+<DT><B>--bil-floating-point-emulation</B>[=<I>VAL</I>], <B>--bil-enable-fp-emulation</B>[=<I>VAL</I>] (default=<B>true</B>) (absent=<B>true</B>)<DD>
+Enable/disable floating-point emulation (on by default)&#46; When enabled the floating-point operations will be reified into BIL expressions using bitvector arithmetic&#46; Only IEEE754 binary formats are supported&#46; operations into Bil expressions that denote those operations in terms of bitvector arithmetic&#46; This may lead to very large denotations&#46;
 <DT><B>--bil-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>bil</B> plugin
 <DT><B>--bil-list-passes</B><DD>
@@ -353,6 +355,8 @@ Specifies an optimization level&#46; Level <B>0</B> disables all optimizations, 
 Selects the list and the order of analyses to be applied during the lifing to BIL code&#46;
 <DT><B>--byteweight-compiler</B>=<I>VAL</I><DD>
 Assume the input file is compiled by <I>VAL</I>
+<DT><B>--byteweight-enabled</B>[=<I>VAL</I>] (default=<B>true</B>) (absent=<B>false</B>)<DD>
+Enable/disable byteweight (off by default)
 <DT><B>--byteweight-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>byteweight</B> plugin
 <DT><B>--byteweight-max-length</B>=<I>VAL</I>, <B>--byteweight-length</B>=<I>VAL</I> (absent=<B>16</B>)<DD>
@@ -393,8 +397,8 @@ Undocumented
 prints more information about the <B>cxxfilt</B> plugin
 <DT><B>--demangle-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>demangle</B> plugin
-<DT><B>--demangle-with</B>=<I>DEMANGLER</I><DD>
-Demangle all function names using <I>DEMANGLER</I>
+<DT><B>--demangle-with</B>=<I>VAL</I>, <B>--demangle-override</B>=<I>VAL</I><DD>
+Overrides the default name demangler with the specified one
 <DT><B>--dependencies-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>dependencies</B> plugin
 <DT><B>--disassemble-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
@@ -883,14 +887,14 @@ run <B>bap</B><B>-mark</B> pass
 run <B>bap</B><B>-print</B> pass
 <DT><B>--warn-unused-taint</B><DD>
 run <B>bap</B><B>-taint</B> pass
-<DT><B>--x86-64-abi</B>=<I>VAL</I><DD>
-Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be either <B>sysv</B> or <B>ms</B>
-<DT><B>--x86-abi</B>=<I>VAL</I><DD>
-Use specified <I>VAL</I> as a default one&#46; The <I>VAL</I> must be one of <B>cdecl</B>, <B>stdcall</B>, <B>ms</B>, <B>fastcall</B>, <B>watcom-stack</B> or <B>watcom-regs</B>
+<DT><B>--x86-abi</B>=<I>VAL</I>, <B>--x86-64-abi</B>=<I>VAL</I><DD>
+Override the ABI detection and use the selected ABI&#46;
 <DT><B>--x86-backend</B>=<I>VAL</I>, <B>--x86-64-backend</B>=<I>VAL</I><DD>
 Undocumented&#46;
 <DT><B>--x86-disable-floating-point-intrinsics</B><DD>
 Disables translation of floating-point instructions into calls to intrinsic functions&#46;
+<DT><B>--x86-endbr-enabled</B>, <B>--x86-cet-enabled</B><DD>
+When enabled, translate all endbr instruction into intrinsic calls&#46; Otherwise treat them as nops
 <DT><B>--x86-help</B>[=<I>VAL</I>] (default=<B>auto</B>)<DD>
 prints more information about the <B>x86</B> plugin
 <DT><B>--x86-lifter</B>=<I>VAL</I> (absent=<B>merge</B>)<DD>
@@ -941,6 +945,6 @@ A folder for log files&#46;
 This document was created by
 <A HREF="/cgi-bin/man/man2html">man2html</A>,
 using the manual pages.<BR>
-Time: 01:57:53 GMT, April 16, 2022
+Time: 20:26:55 GMT, July 07, 2022
 </BODY>
 </HTML>
